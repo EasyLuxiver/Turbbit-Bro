@@ -1,0 +1,249 @@
+{
+  "checks": [
+    {
+      "ok": true,
+      "what": "real window is 1280x720 (got (1280, 720))"
+    },
+    {
+      "ok": true,
+      "what": "content scale is 0.8 (got 0.800)"
+    },
+    {
+      "ok": true,
+      "what": "race scene has HUD"
+    },
+    {
+      "ok": true,
+      "what": "total_score still accumulates (12345 -> 12495)"
+    },
+    {
+      "ok": true,
+      "what": "score_log still records entries for analysis"
+    },
+    {
+      "ok": true,
+      "what": "snack boost is active for the snapshot"
+    },
+    {
+      "ok": true,
+      "what": "boost state shows TURBO in HUD ('乌龟 TURBO！加速中')"
+    },
+    {
+      "ok": true,
+      "what": "zh HUD hides fixed total score"
+    },
+    {
+      "ok": true,
+      "what": "zh HUD shows current character ('SHIFT   当前控制：兔子')"
+    },
+    {
+      "ok": true,
+      "what": "zh HUD shows BRO METER ('BRO METER 0/3')"
+    },
+    {
+      "ok": true,
+      "what": "zh HUD shows oxygen ('氧气 8.0s')"
+    },
+    {
+      "ok": true,
+      "what": "zh HUD min actual font 14.4 px >= 14 (design 18, 'SHIFT   当前控制：兔子')"
+    },
+    {
+      "ok": true,
+      "what": "zh panel area 6.44% <= 8%"
+    },
+    {
+      "ok": true,
+      "what": "en boost state shows TURBO ('TURTLE TURBO!')"
+    },
+    {
+      "ok": true,
+      "what": "en HUD hides fixed total score"
+    },
+    {
+      "ok": true,
+      "what": "en HUD shows current character ('SHIFT   CONTROL: RABBIT')"
+    },
+    {
+      "ok": true,
+      "what": "en HUD shows BRO METER ('BRO METER 0/3')"
+    },
+    {
+      "ok": true,
+      "what": "en HUD shows oxygen ('AIR 8.0s')"
+    },
+    {
+      "ok": true,
+      "what": "en HUD min actual font 14.4 px >= 14 (design 18, 'SHIFT   CONTROL: RABBIT')"
+    },
+    {
+      "ok": true,
+      "what": "en panel area 7.68% <= 8%"
+    },
+    {
+      "ok": true,
+      "what": "bird1 exists for combo probe"
+    },
+    {
+      "ok": true,
+      "what": "combo milestone feedback in HUD (got 'BRO COMBO！', combo=3)"
+    },
+    {
+      "ok": true,
+      "what": "beam1 encounter exists for rescue probe"
+    },
+    {
+      "ok": true,
+      "what": "real collision produces RABBIT_WATER"
+    },
+    {
+      "ok": true,
+      "what": "active rescue catch increments rescue_success_count (0 -> 1)"
+    },
+    {
+      "ok": true,
+      "what": "rescue feedback two beats (catch emitted=true, HUD last='兄弟回来了！右边这口气补上了')"
+    },
+    {
+      "ok": true,
+      "what": "result scene loads"
+    },
+    {
+      "ok": true,
+      "what": "zh result shows time"
+    },
+    {
+      "ok": true,
+      "what": "zh result shows clean passes"
+    },
+    {
+      "ok": true,
+      "what": "zh result shows combos"
+    },
+    {
+      "ok": true,
+      "what": "zh result shows rescue saves"
+    },
+    {
+      "ok": true,
+      "what": "zh result shows mistakes"
+    },
+    {
+      "ok": true,
+      "what": "zh result shows capsizes"
+    },
+    {
+      "ok": true,
+      "what": "zh result shows final grade"
+    },
+    {
+      "ok": true,
+      "what": "zh result hides fixed total score"
+    },
+    {
+      "ok": true,
+      "what": "zh result min actual font 14.4 px >= 14 (design 18, '最佳时间 296.63 s   最低事故 0   最长连')"
+    },
+    {
+      "ok": true,
+      "what": "en result shows time"
+    },
+    {
+      "ok": true,
+      "what": "en result shows clean passes"
+    },
+    {
+      "ok": true,
+      "what": "en result shows combos"
+    },
+    {
+      "ok": true,
+      "what": "en result shows rescue saves"
+    },
+    {
+      "ok": true,
+      "what": "en result shows mistakes"
+    },
+    {
+      "ok": true,
+      "what": "en result shows capsizes"
+    },
+    {
+      "ok": true,
+      "what": "en result hides fixed total score"
+    },
+    {
+      "ok": true,
+      "what": "en result min actual font 14.4 px >= 14 (design 18, 'BEST TIME  296.63 s   BEST A')"
+    }
+  ],
+  "combo_after": 3,
+  "combo_feedback": "BRO COMBO！",
+  "content_scale": 0.8,
+  "failures": [],
+  "font_en": {
+    "actual": 14.4,
+    "design": 18.0,
+    "text": "SHIFT   CONTROL: RABBIT"
+  },
+  "font_result_en": {
+    "actual": 14.4,
+    "design": 18.0,
+    "text": "BEST TIME  296.63 s   BEST A"
+  },
+  "font_result_zh": {
+    "actual": 14.4,
+    "design": 18.0,
+    "text": "最佳时间 296.63 s   最低事故 0   最长连"
+  },
+  "font_zh": {
+    "actual": 14.4,
+    "design": 18.0,
+    "text": "SHIFT   当前控制：兔子"
+  },
+  "generated_at": "2026-11-13T22:10:06",
+  "hud_shot_en": "res://screenshots/phase-t-hud-en-1280x720.png",
+  "hud_shot_zh": "res://screenshots/phase-t-hud-zh-1280x720.png",
+  "panel_area_en": 0.0768,
+  "panel_area_zh": 0.0644,
+  "rescue_crash": "RABBIT_WATER",
+  "rescue_feedback": "兄弟回来了！右边这口气补上了",
+  "rescue_feedback_events": [
+    "BRO COMBO！|bro",
+    "TURBO！亲手喂到！乌龟很满足！|pop",
+    "接住了！兄弟！|pop",
+    "兄弟回来了！右边这口气补上了|bro"
+  ],
+  "rescue_success_count": 1,
+  "result_shot_en": "res://screenshots/phase-t-result-en-1280x720.png",
+  "result_shot_zh": "res://screenshots/phase-t-result-zh-1280x720.png",
+  "result_zh_lines": [
+    "比赛完成",
+    "S   绝对好兄弟！",
+    "比赛时间               296.63 秒",
+    "干净通过                   55",
+    "连招                       11",
+    "救援成功                    4",
+    "亲手喂到                    1",
+    "失误                        2",
+    "翻船次数                    1",
+    "最佳时间 296.63 s   最低事故 0   最长连击 54",
+    "R  -  重开        M  -  主菜单        Enter  -  选中的按钮",
+    "再玩一次",
+    "返回主菜单"
+  ],
+  "score_log_last": {
+    "points": 50,
+    "reason": "probe_retained_2"
+  },
+  "turbo_text_en": "TURTLE TURBO!",
+  "turbo_text_zh": "乌龟 TURBO！加速中",
+  "viewport_design": [
+    1600.0,
+    900.0
+  ],
+  "window_size": [
+    1280,
+    720
+  ]
+}

@@ -1,0 +1,34 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+  ok  jump airtime ~1.24 s (1.23)
+  ok  jump apex ~174 px (169.6)
+  jump   -> airtime 1.23s apex 169.6px
+  ok  turtle cruises at zone base speed
+  ok  turtle reaches boost speed
+  ok  uncontrolled shell sinks ~25 px in the first second (28.5)
+  ok  buoyancy returns to cruise depth in 1.92 s (336.0)
+  ok  boost lane faster than boost
+  turtle -> base 220 boost 330(0.27s) sink1s 28px rise 1.92s
+  ok  pickup dx boundary 120
+  ok  pickup dy min boundary -60
+  ok  pickup dy max boundary 90
+  ok  pickup rejects rising rabbit
+  ok  pickup rejects turtle below surface
+  pickup -> dx 120, dy -60..90, snap 70
+  ok  oxygen LOW below max
+  ok  oxygen CRITICAL below LOW
+  oxygen -> 8.0s dive, 5.0s refill, empty->full 2.67s
+  ok  zone 1 gives >=1.6 s at base speed
+  ok  zone 2 gives >=1.6 s at base speed
+  ok  zone 3 gives >=1.6 s at base speed
+  react  -> Z1 1.95s .. Z3 1.65s at HUD warn range (base)
+  ok  turtle cooldown covers repair + grace
+  recover-> stun 0.8s rescue 1.6s repair 1.6s emergency 2.0s
+  ok  zone 1 longest empty stretch shrinks (17.8s -> 8.7s)
+  ok  zone 1 gains exactly 1 group
+  ok  zone 1 density still below zone 2 (10.56)
+  gaps   -> Z1 longest empty 17.8s -> 8.7s; density 10.56/min
+  ok  55 groups -> up to 18 Showtimes
+  show   -> 1.8s, every 3 clean passes, max 18 per run
+  file   -> d:/GAMESTUDIO/TURBBIT/docs/reports/stage4-metrics.json
+STAGE4 METRICS: PASS

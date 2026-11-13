@@ -1,0 +1,72 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+LEVEL SEED 20261112
+SNACK DRAW #1 group=beam1 zone=1 kind=LOW_BEAM (fixed)
+SNACK DRAW #2 group=rock3 zone=1 kind=SURFACE_ROCK (was SURFACE_ROCK)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SURFACE_ROCK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SURFACE_ROCK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=LOW_BEAM (was DIVE_GATE)
+LEVEL SEED 20261112
+SNACK DRAW #1 group=beam1 zone=1 kind=LOW_BEAM (fixed)
+SNACK DRAW #2 group=rock3 zone=1 kind=SURFACE_ROCK (was SURFACE_ROCK)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SURFACE_ROCK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SURFACE_ROCK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=LOW_BEAM (was DIVE_GATE)
+DIVE matrix logs=3 leads=5 delays=5 releases=4 hz=[30.0, 60.0, 120.0]
+CASE g=08 log1 z1 v=220
+  best lead=140 delay=0.0
+  CORE pass=8/100 fail={ "turtle_hit": 24, "rabbit_hit": 64, "rabbit_water": 4 }
+    snap_px 82..119  land_dx_end 67..107  parallel_frames>=54
+    hz= 30 release= -40 pass=false fail=rabbit_hit snap=96
+    hz= 30 release=  +0 pass=false fail=turtle_hit snap=63
+    hz= 30 release= +40 pass=true fail=pass snap=123
+    hz= 30 release= +80 pass=true fail=pass snap=96
+    hz= 60 release= -40 pass=false fail=turtle_hit snap=68
+    hz= 60 release=  +0 pass=false fail=turtle_hit snap=104
+    hz= 60 release= +40 pass=true fail=pass snap=118
+    hz= 60 release= +80 pass=true fail=pass snap=82
+    hz=120 release= -40 pass=false fail=turtle_hit snap=68
+    hz=120 release=  +0 pass=false fail=turtle_hit snap=66
+    hz=120 release= +40 pass=true fail=pass snap=122
+    hz=120 release= +80 pass=true fail=pass snap=87
+CASE g=24 log3 z2 v=240
+  best lead=140 delay=0.0
+  CORE pass=15/100 fail={ "rabbit_hit": 50, "turtle_hit": 30, "rabbit_water": 5 }
+    snap_px 109..128  land_dx_end 64..112  parallel_frames>=47
+    hz= 30 release= -40 pass=false fail=turtle_hit snap=70
+    hz= 30 release=  +0 pass=false fail=turtle_hit snap=64
+    hz= 30 release= +40 pass=true fail=pass snap=132
+    hz= 30 release= +80 pass=true fail=pass snap=125
+    hz= 60 release= -40 pass=false fail=rabbit_hit snap=109
+    hz= 60 release=  +0 pass=false fail=turtle_hit snap=67
+    hz= 60 release= +40 pass=true fail=pass snap=123
+    hz= 60 release= +80 pass=true fail=pass snap=128
+    hz=120 release= -40 pass=false fail=turtle_hit snap=64
+    hz=120 release=  +0 pass=false fail=turtle_hit snap=109
+    hz=120 release= +40 pass=true fail=pass snap=121
+    hz=120 release= +80 pass=true fail=pass snap=126
+CASE g=52 log8 z3 v=260
+  best lead=140 delay=0.0
+  CORE pass=22/100 fail={ "turtle_hit": 40, "rabbit_hit": 33, "rabbit_water": 5 }
+    snap_px 109..128  land_dx_end 51..131  parallel_frames>=47
+    hz= 30 release= -40 pass=false fail=turtle_hit snap=71
+    hz= 30 release=  +0 pass=false fail=turtle_hit snap=66
+    hz= 30 release= +40 pass=true fail=pass snap=117
+    hz= 30 release= +80 pass=true fail=pass snap=133
+    hz= 60 release= -40 pass=false fail=rabbit_hit snap=108
+    hz= 60 release=  +0 pass=false fail=turtle_hit snap=68
+    hz= 60 release= +40 pass=true fail=pass snap=121
+    hz= 60 release= +80 pass=true fail=pass snap=122
+    hz=120 release= -40 pass=false fail=turtle_hit snap=64
+    hz=120 release=  +0 pass=false fail=turtle_hit snap=108
+    hz=120 release= +40 pass=true fail=pass snap=119
+    hz=120 release= +80 pass=true fail=pass snap=125
+DIVE: DONE

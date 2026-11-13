@@ -1,0 +1,64 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+  encounters_9               PASS  encounters=9
+  same_seed_repro_424242     PASS  seed=424242
+DRAW seed=424242 LOW_BEAM,SURFACE_ROCK,SHARK,DIVE_GATE,SHARK,LOW_BEAM,SHARK,SURFACE_ROCK,LOW_BEAM
+  same_seed_repro_7          PASS  seed=7
+DRAW seed=7 LOW_BEAM,SURFACE_ROCK,SHARK,DIVE_GATE,SHARK,LOW_BEAM,SHARK,LOW_BEAM,SHARK
+  same_seed_repro_20261112   PASS  seed=20261112
+DRAW seed=20261112 LOW_BEAM,SURFACE_ROCK,SHARK,DIVE_GATE,SHARK,SURFACE_ROCK,LOW_BEAM,SURFACE_ROCK,LOW_BEAM
+  same_seed_repro_99         PASS  seed=99
+DRAW seed=99 LOW_BEAM,LOW_BIRD,DIVE_GATE,SHARK,DIVE_GATE,SHARK,SURFACE_ROCK,LOW_BEAM,SHARK
+  first_fixed                PASS  第一个遭遇固定为关卡原种类
+  pool_member                PASS  抽到的种类都在本区抽取池
+  taught_first               PASS  抽到的种类在该 x 之前已教学
+  no_consecutive_repeat      PASS  同区不连续抽到同一种
+  no_complex_in_snack        PASS  加速遭遇不抽高墙/浮木
+  seeds_vary                 PASS  不同种子出现不同序列
+  level_ok_424242            PASS  groups=55 names=true starts=true single=3.65s combo=5.13s
+  level_ok_7                 PASS  groups=55 names=true starts=true single=3.58s combo=5.13s
+  level_ok_20261112          PASS  groups=55 names=true starts=true single=3.65s combo=5.13s
+  level_ok_99                PASS  groups=55 names=true starts=true single=3.58s combo=5.13s
+LEVEL SEED 20261112
+SNACK DRAW #1 group=beam1 zone=1 kind=LOW_BEAM (fixed)
+SNACK DRAW #2 group=rock3 zone=1 kind=SURFACE_ROCK (was SURFACE_ROCK)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SURFACE_ROCK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SURFACE_ROCK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=LOW_BEAM (was DIVE_GATE)
+LEVEL SEED 424242
+SNACK DRAW #1 group=beam1 zone=1 kind=LOW_BEAM (fixed)
+SNACK DRAW #2 group=rock3 zone=1 kind=SURFACE_ROCK (was SURFACE_ROCK)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=LOW_BEAM (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=SHARK (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SURFACE_ROCK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=LOW_BEAM (was DIVE_GATE)
+SNACK eaten x=18950 obstacle=gate3 boost_until=19650 speed=276
+DRAW PHYSICS seed=424242 group=gate3 kind=SHARK eaten=true v=276.0 warn=4.30 hit=false acc=NONE riding=true
+  physics_s424242_e2_ate     PASS  操控乌龟经过食物（SHARK）
+  physics_s424242_e2_boost   PASS  到障碍时仍在加速
+  physics_s424242_e2_warning_ge_4s PASS  预警 4.30 s
+  physics_s424242_e2_passed  PASS  hit=false acc=NONE riding=true
+LEVEL SEED 99
+SNACK DRAW #1 group=beam1 zone=1 kind=LOW_BEAM (fixed)
+SNACK DRAW #2 group=rock3 zone=1 kind=LOW_BIRD (was SURFACE_ROCK)
+SNACK DRAW #3 group=gate3 zone=2 kind=DIVE_GATE (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=SHARK (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=DIVE_GATE (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=SURFACE_ROCK (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=LOW_BEAM (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=SHARK (was DIVE_GATE)
+SNACK eaten x=14100 obstacle=rock3 boost_until=14850 speed=253
+DRAW PHYSICS seed=99 group=rock3 kind=LOW_BIRD eaten=true v=253.0 warn=4.70 hit=false acc=NONE riding=true
+  physics_s99_e1_ate         PASS  操控乌龟经过食物（LOW_BIRD）
+  physics_s99_e1_boost       PASS  到障碍时仍在加速
+  physics_s99_e1_warning_ge_4s PASS  预警 4.70 s
+  physics_s99_e1_passed      PASS  hit=false acc=NONE riding=true
+SNACK DRAW: DONE checks=23 fails=0

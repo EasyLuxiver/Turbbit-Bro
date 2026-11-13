@@ -1,0 +1,55 @@
+{
+  "cases": {
+    "deep_but_not_diving": {
+      "accident_state": "RABBIT_WATER",
+      "accidents": 1,
+      "diving_frames": 0,
+      "got_specific_hint": false,
+      "hints": [],
+      "mount_state_at_trigger": "RESCUE_ACTIVE",
+      "trace": [
+        {
+          "accidents": 0,
+          "i": 0,
+          "mount": "AIRBORNE",
+          "pickup_window": false,
+          "rabbit_y": 297.3,
+          "vy": 437.5
+        },
+        {
+          "accidents": 0,
+          "i": 5,
+          "mount": "AIRBORNE",
+          "pickup_window": false,
+          "rabbit_y": 338.1,
+          "vy": 525.0
+        }
+      ],
+      "turtle_at_surface": true,
+      "turtle_rising": false
+    },
+    "diving_graze": {
+      "accident_state": "RABBIT_WATER",
+      "accidents": 1,
+      "diving_at_graze": true,
+      "got_specific_hint": true,
+      "graze_x_past_end": 127.0,
+      "hints": [
+        "壳停得太深 - 浮木组合请先 ↑ 起跳再 SHIFT，下潜和上浮会自动完成"
+      ],
+      "hud_fits": true,
+      "hud_fits_en": true,
+      "hud_text": "壳停得太深 - 浮木组合请先 ↑ 起跳再 SHIFT，下潜和上浮会自动完成",
+      "hud_text_en": "SHELL TOO DEEP - FOR LOGS: ↑ JUMP THEN SHIFT; DIVE AND SURFACE ARE AUTOMATIC",
+      "hud_visible": true
+    },
+    "knocked_into_water": {
+      "accident_state": "RABBIT_WATER",
+      "accidents": 1,
+      "diving_true_at_call": true,
+      "got_specific_hint": false,
+      "hints": []
+    }
+  },
+  "generated_at": "2026-11-13T20:25:11"
+}

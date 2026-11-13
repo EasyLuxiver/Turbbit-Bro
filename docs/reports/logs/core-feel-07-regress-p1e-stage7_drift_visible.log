@@ -1,0 +1,57 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+LEVEL SEED 20261112
+SNACK DRAW #1 group=gate1 zone=1 kind=DIVE_GATE (fixed)
+SNACK DRAW #2 group=beam1 zone=1 kind=LOW_BIRD (was LOW_BEAM)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=SURFACE_ROCK (was DIVE_GATE)
+LEVEL SEED 20261112
+SNACK DRAW #1 group=gate1 zone=1 kind=DIVE_GATE (fixed)
+SNACK DRAW #2 group=beam1 zone=1 kind=LOW_BIRD (was LOW_BEAM)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=SURFACE_ROCK (was DIVE_GATE)
+ok   1 rabbit 满值时 HUD 显示神游条（100%） [100.0]
+ok   1 rabbit 状态行点名“要惹麻烦”，条旁写明具体后果 [要惹麻烦 | 空中修正 55% · 身偏 29px]
+ok   1 兔子后果 = 空中修正 55% + 身偏 px（读控制器真实值） [air=55 off=29 text=空中修正 55% · 身偏 29px]
+ok   1 turtle 满值时 HUD 显示神游条（100%） [100.0]
+ok   1 turtle 状态行点名“要惹麻烦”，条旁写明具体后果 [要惹麻烦 | 巡航 90% · 壳晃 18px]
+ok   1 乌龟后果 = 巡航 90% + 壳晃 18px（读控制器真实值） [cruise=90 bob=18 text=巡航 90% · 壳晃 18px]
+ok   2 rabbit 6 s 阈值报警一次（6.00 s） [[{ "text": "兔子坐不住了：空中修正 100% · 身偏 9px", "kind": "pop", "t": 6.0 }, { "text": "兔子要惹麻烦了：空中修正 75% · 身偏 19px", "kind": "hit", "t": 8.98 }]]
+ok   2 rabbit 9 s 阈值报警一次（8.98 s） [[{ "text": "兔子坐不住了：空中修正 100% · 身偏 9px", "kind": "pop", "t": 6.0 }, { "text": "兔子要惹麻烦了：空中修正 75% · 身偏 19px", "kind": "hit", "t": 8.98 }]]
+ok   2 报警点名角色并写出代价（不是只说“要惹麻烦”） [兔子要惹麻烦了：空中修正 75% · 身偏 19px]
+ok   2 报告只有两条（升级才报，不刷屏） [2]
+ok   2 rabbit 12 s 到达满值 [12.00]
+ok   2 turtle 6 s 阈值报警一次（6.00 s） [[{ "text": "乌龟坐不住了：巡航 96% · 壳晃 11px", "kind": "pop", "t": 6.0 }, { "text": "乌龟要惹麻烦了：巡航 90% · 壳晃 18px", "kind": "hit", "t": 8.98 }]]
+ok   2 turtle 9 s 阈值报警一次（8.98 s） [[{ "text": "乌龟坐不住了：巡航 96% · 壳晃 11px", "kind": "pop", "t": 6.0 }, { "text": "乌龟要惹麻烦了：巡航 90% · 壳晃 18px", "kind": "hit", "t": 8.98 }]]
+ok   2 报警点名角色并写出代价（不是只说“要惹麻烦”） [乌龟要惹麻烦了：巡航 90% · 壳晃 18px]
+ok   2 报告只有两条（升级才报，不刷屏） [2]
+ok   2 turtle 12 s 到达满值 [12.00]
+ok   3 兔子满值：标记 !! + 耳朵下垂（>=1.1 rad） [mark=!! droop=1.15]
+ok   3 乌龟满值：标记 !! + 划水强度满（1.0） [mark=!! paddle=1.0]
+ok   3 两条神游条都满（100%） [100.0 / 100.0]
+ok   3 受控方状态也写出恢复中的代价（不隐瞒受控后的余波） [操控 · 骑乘 | 回神中 · 空中修正 55%]
+ok   3 满值仍属 MISCHIEF 档（没有新增第五段） [MISCHIEF / MISCHIEF]
+ok   4 受控后条开始缩（100 -> 83%) [{ "bar_before": 100.0, "bar_mid": 83.33, "text_before": "操控 · 骑乘", "text_mid": "操控 · 骑乘", "effect_before": "回神中 · 空中修正 55%", "effect_mid": "回神中 · 空中修正 68%", "drift_mid": 10.0, "bar_after": 83.33, "row_after": false, "status_after": "操控 · 骑乘", "recover_seconds": 5.0, "back_feedback": "兔子回过神了", "control": "rabbit" }]
+ok   4 受控后条旁写“回神中”且代价数字变好 [操控 · 骑乘 | 回神中 · 空中修正 55% -> 回神中 · 空中修正 68%]
+ok   4 回满后条消失、播一次“回过神了” [操控 · 骑乘 / row=false / back=兔子回过神了]
+ok   4 恢复时长在 2–7 s（渐变，不是瞬清） [5.0]
+ok   4 恢复过程没有强制换手 [rabbit]
+ok   5 24 s 神游不写 BRO、不产生事故（不是第二套生命值） [{ "bro_delta": 0, "accident_delta": 0, "state_after_idle": "NONE", "control_stayed": "rabbit", "toggled_to": "turtle", "toggled_back": "rabbit", "rabbit_drift": 0.0, "turtle_drift": 12.0 }]
+ok   5 神游不会强制换手/锁输入：SHIFT 仍可换人并换回 [rabbit -> turtle -> rabbit]
+ok   5 24 s 后两人仍可恢复（不是不可恢复状态） [{ "bro_delta": 0, "accident_delta": 0, "state_after_idle": "NONE", "control_stayed": "rabbit", "toggled_to": "turtle", "toggled_back": "rabbit", "rabbit_drift": 0.0, "turtle_drift": 12.0 }]
+ok   6 zh 满值 HUD 字号仍 >= 14 px（实际） [18.0 (SHIFT   当前控制：兔子)]
+ok   6 zh 满值 HUD 面积仍 <= 8% [6.41%]
+ok   6 en 满值 HUD 字号仍 >= 14 px（实际） [18.0 (SHIFT   CONTROL: RABBIT)]
+ok   6 en 满值 HUD 面积仍 <= 8% [7.88%]
+ok   7 满值动作/标记/阈值报警都接进真实画法与反馈 [{ "ears_droop": true, "turtle_paddle": true, "full_mark": true, "mark_used_by_draw": true, "threshold_feedback": true }]
+CORE-FEEL-07 P1-D: PASS

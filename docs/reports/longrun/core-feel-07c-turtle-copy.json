@@ -1,0 +1,104 @@
+{
+  "cases": {
+    "gate": {
+      "accident_count": 1,
+      "accident_count_after": 1,
+      "bro_meter": 1,
+      "bro_meter_after": 1,
+      "dunk_flip_t": 0.0,
+      "dunk_hud_action": "被浪压进水里",
+      "dunk_phase_text": "被浪压进水里",
+      "dunk_timer": 0.7,
+      "feedback": "没潜到位 - 壳撞上拱岩！",
+      "flip_dunk_timer": 1.45,
+      "flip_hud_action": "翻肚皮",
+      "flip_phase_text": "翻肚皮",
+      "flip_t": 0.55,
+      "group": "gate1",
+      "hint": "拱岩：按住 ↓ 潜到它下面再松",
+      "hit": true,
+      "hit_at": 0.98,
+      "kind": "DIVE_GATE",
+      "mistakes": [
+        "mistake:TURTLE_WAVE"
+      ],
+      "shoot": false
+    },
+    "log": {
+      "accident_count": 1,
+      "accident_count_after": 1,
+      "bro_meter": 1,
+      "bro_meter_after": 1,
+      "dunk_flip_t": 0.0,
+      "dunk_hud_action": "救援",
+      "dunk_phase_text": "被浪压进水里",
+      "dunk_timer": 0.7,
+      "feedback": "下潜太晚 - 壳撞上浮木！",
+      "flip_dunk_timer": 1.45,
+      "flip_hud_action": "翻肚皮",
+      "flip_phase_text": "翻肚皮",
+      "flip_t": 0.55,
+      "group": "log1",
+      "hint": "浮木：兔子起跳后 SHIFT 给乌龟，它会自动下潜、过木自动上浮",
+      "hit": true,
+      "hit_at": 0.35,
+      "kind": "FLOATING_LOG",
+      "mistakes": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "shoot": false
+    },
+    "shark": {
+      "accident_count": 1,
+      "accident_count_after": 1,
+      "bro_meter": 1,
+      "bro_meter_after": 1,
+      "dunk_flip_t": 0.0,
+      "dunk_hud_action": "被浪压进水里",
+      "dunk_phase_text": "被浪压进水里",
+      "dunk_timer": 0.7,
+      "feedback": "鲨鱼从下面来的 - 壳翻了！",
+      "flip_dunk_timer": 1.45,
+      "flip_hud_action": "翻肚皮",
+      "flip_phase_text": "翻肚皮",
+      "flip_t": 0.55,
+      "group": "shark1",
+      "hint": "鲨鱼只咬壳 - 按 ↑ 跃起躲开",
+      "hit": true,
+      "hit_at": 0.98,
+      "kind": "SHARK",
+      "mistakes": [
+        "mistake:TURTLE_WAVE"
+      ],
+      "shoot": true
+    },
+    "wall": {
+      "accident_count": 1,
+      "accident_count_after": 1,
+      "bro_meter": 1,
+      "bro_meter_after": 1,
+      "dunk_flip_t": 0.0,
+      "dunk_hud_action": "被浪压进水里",
+      "dunk_phase_text": "被浪压进水里",
+      "dunk_timer": 0.7,
+      "feedback": "没跃过墙 - 壳撞上去了！",
+      "flip_dunk_timer": 1.45,
+      "flip_hud_action": "翻肚皮",
+      "flip_phase_text": "翻肚皮",
+      "flip_t": 0.55,
+      "group": "wall1",
+      "hint": "高墙：乌龟先 ↑ 跃起，兔子再蹬一下",
+      "hit": true,
+      "hit_at": 0.98,
+      "kind": "HIGH_WALL",
+      "mistakes": [
+        "mistake:TURTLE_WAVE"
+      ],
+      "shoot": false
+    }
+  },
+  "dunk_time_s": 1.8,
+  "flip_time_s": 0.9,
+  "generated_at": "2026-11-13T22:09:58",
+  "joint_window_s": 1.5
+}

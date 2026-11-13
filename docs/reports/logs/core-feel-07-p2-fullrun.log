@@ -1,0 +1,21 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+LEVEL SEED 20261112
+SNACK DRAW #1 group=gate1 zone=1 kind=DIVE_GATE (fixed)
+SNACK DRAW #2 group=beam1 zone=1 kind=LOW_BIRD (was LOW_BEAM)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=SURFACE_ROCK (was DIVE_GATE)
+LEVEL SEED 20261112
+FULL RUN groups=55 start=400 end=67600
+FULL safe ended=67582.4 hits=[] acc=0 mount=RIDING sim=293.2s
+ok   P2 全程 safe 从起点跑到终点且无碰撞/无事故 [ended=67582.4 hits=[] acc=0 mount=RIDING sim=293.2s]
+FULL coop ended=67582.4 hits=[] acc=0 mount=RIDING sim=293.2s
+ok   P2 全程 coop 从起点跑到终点且无碰撞/无事故 [ended=67582.4 hits=[] acc=0 mount=RIDING sim=293.2s]
+FULL none ended=3755.0 hits=["bird1", "rock1", "gate1"] acc=3 mount=RIDING
+ok   P2 全程不操作必须失败（有命中或事故） [ended=3755.0 hits=["bird1", "rock1", "gate1"] acc=3 mount=RIDING]
+CORE-FEEL-07 P2 FULL RUN: PASS

@@ -1,0 +1,95 @@
+{
+  "cases": {
+    "drift_rabbit": {
+      "accident_state": "NONE",
+      "accidents": 0,
+      "bro_meter": 0,
+      "controlled": "turtle",
+      "drift_end": 12.0,
+      "drift_max": 12.0,
+      "drifted": "rabbit",
+      "score_negatives": [],
+      "states_seen": {
+        "CALM": 0.02,
+        "DISTRACTED": 3.02,
+        "MISCHIEF": 9.0,
+        "RESTLESS": 6.02
+      }
+    },
+    "drift_turtle": {
+      "accident_state": "NONE",
+      "accidents": 0,
+      "bro_meter": 0,
+      "controlled": "rabbit",
+      "drift_end": 12.0,
+      "drift_max": 12.0,
+      "drifted": "turtle",
+      "score_negatives": [],
+      "states_seen": {
+        "CALM": 0.02,
+        "DISTRACTED": 3.02,
+        "MISCHIEF": 9.0,
+        "RESTLESS": 6.02
+      }
+    },
+    "failed_combo_penalty": {
+      "accident_state": "NONE",
+      "accidents": 1,
+      "bro_meter": 1,
+      "jumped": true,
+      "score_delta": 0,
+      "score_negatives": [
+        "mistake:TURTLE_DIVE_LATE"
+      ]
+    },
+    "food_with_switch": {
+      "accidents": 0,
+      "boost_active": true,
+      "boost_speed": 253.0,
+      "control": "turtle",
+      "eaten": true,
+      "feedback": [
+        "TURBO！亲手喂到！乌龟很满足！"
+      ],
+      "food_x": 3250.0,
+      "negative_entries": [],
+      "rabbit_boost_until_x": -1.0,
+      "rabbit_jump_boost": 1.0,
+      "score_delta": 30
+    },
+    "food_without_switch": {
+      "accidents": 0,
+      "boost_active": false,
+      "boost_speed": 0.0,
+      "control": "rabbit",
+      "eaten": true,
+      "feedback": [
+        "兔子吃了！ 下一跳更高！"
+      ],
+      "food_x": 3250.0,
+      "negative_entries": [],
+      "rabbit_boost_until_x": 4160.0,
+      "rabbit_jump_boost": 1.15,
+      "score_delta": 0
+    },
+    "rescue_reward": {
+      "accidents": 1,
+      "caught_t": 0.22,
+      "dive_pressed": true,
+      "done_t": 0.38,
+      "feedback": [
+        "接住了！兄弟！",
+        "兄弟回来了！右边这口气补上了"
+      ],
+      "rabbit_drift_after": 0.0,
+      "rescue_count": 1,
+      "score_delta": 50,
+      "score_reasons": [
+        "mistake:RABBIT_WATER",
+        "rescue_switch"
+      ],
+      "turtle_drift_after": 0.0
+    }
+  },
+  "generated_at": "2026-11-13T16:10:04"
+}

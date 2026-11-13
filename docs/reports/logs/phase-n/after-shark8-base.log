@@ -1,0 +1,6 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+AUDIT groups=55 schemes=7 shard=-1..-1
+TOL   g=43 shark8    SHARK         pass_leads=[240.0, 235.0, 230.0, 225.0, 220.0, 215.0, 210.0, 205.0, 200.0, 195.0, 190.0, 185.0, 180.0, 175.0, 170.0, 165.0, 160.0, 155.0, 150.0, 145.0, 140.0, 135.0, 130.0, 125.0, 120.0, 115.0, 110.0]
+TOL wrote res://docs/reports/stage4-tolerance-scan-fine-shark8.json
+SOLUTION AUDIT: DONE

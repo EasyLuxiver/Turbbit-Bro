@@ -1,0 +1,16 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+  A ACCIDENT RABBIT_STUN t=8.3 x=23190 y=342 gear=CRUISE rabbit=3.2 turtle=0.0
+  done A {"accidents":1,"avg_states":1.13,"cleared":false,"down_presses":1,"frames":500,"gear_changes":0,"gear_oscillations":0,"gear_seconds":[0.0,8.33,0.0],"gear_waste":0,"mode":"A","seconds":8.33,"shifts":2,"sinks":1,"slips":0,"up_presses":0}
+  B ACCIDENT RABBIT_STUN t=8.3 x=23190 y=342 gear=CRUISE rabbit=3.2 turtle=0.0
+  done B {"accidents":1,"avg_states":1.13,"cleared":false,"down_presses":1,"frames":500,"gear_changes":0,"gear_oscillations":0,"gear_seconds":[0.0,8.33,0.0],"gear_waste":0,"mode":"B","seconds":8.33,"shifts":2,"sinks":1,"slips":0,"up_presses":0}
+  BS ACCIDENT RABBIT_STUN t=8.3 x=23190 y=342 gear=CRUISE rabbit=3.2 turtle=0.0
+  done BS {"accidents":1,"avg_states":1.13,"cleared":false,"down_presses":1,"frames":500,"gear_changes":0,"gear_oscillations":0,"gear_seconds":[0.0,8.33,0.0],"gear_waste":0,"mode":"BS","seconds":8.33,"shifts":2,"sinks":1,"slips":0,"up_presses":0}
+  BF ACCIDENT RABBIT_STUN t=6.3 x=23191 y=346 gear=FAST rabbit=3.2 turtle=0.0
+  done BF {"accidents":1,"avg_states":1.18,"cleared":false,"down_presses":1,"frames":378,"gear_changes":0,"gear_oscillations":0,"gear_seconds":[0.0,0.0,6.3],"gear_waste":0,"mode":"BF","seconds":6.3,"shifts":2,"sinks":1,"slips":0,"up_presses":0}
+  A 8.3s clear=false accidents=1 shifts=2 gears=0 waste=0 osc=0 states=1.13 gear_s=[0.0, 8.33, 0.0]
+  B 8.3s clear=false accidents=1 shifts=2 gears=0 waste=0 osc=0 states=1.13 gear_s=[0.0, 8.33, 0.0]
+  BS 8.3s clear=false accidents=1 shifts=2 gears=0 waste=0 osc=0 states=1.13 gear_s=[0.0, 8.33, 0.0]
+  BF 6.3s clear=false accidents=1 shifts=2 gears=0 waste=0 osc=0 states=1.18 gear_s=[0.0, 0.0, 6.3]
+STAGE4 GEAR AB: NO CONCLUSION (A 没有干净通过，灰盒先修好)
+  data: {"arms":{"A":{"accidents":1,"avg_states":1.13,"cleared":false,"down_presses":1,"frames":500,"gear_changes":0,"gear_oscillations":0,"gear_seconds":[0.0,8.33,0.0],"gear_waste":0,"mode":"A","seconds":8.33,"shifts":2,"sinks":1,"slips":0,"up_presses":0},"B":{"accidents":1,"avg_states":1.13,"cleared":false,"down_presses":1,"frames":500,"gear_changes":0,"gear_oscillations":0,"gear_seconds":[0.0,8.33,0.0],"gear_waste":0,"mode":"B","seconds":8.33,"shifts":2,"sinks":1,"slips":0,"up_presses":0},"BF":{"accidents":1,"avg_states":1.18,"cleared":false,"down_presses":1,"frames":378,"gear_changes":0,"gear_oscillations":0,"gear_seconds":[0.0,0.0,6.3],"gear_waste":0,"mode":"BF","seconds":6.3,"shifts":2,"sinks":1,"slips":0,"up_presses":0},"BS":{"accidents":1,"avg_states":1.13,"cleared":false,"down_presses":1,"frames":500,"gear_changes":0,"gear_oscillations":0,"gear_seconds":[0.0,8.33,0.0],"gear_waste":0,"mode":"BS","seconds":8.33,"shifts":2,"sinks":1,"slips":0,"up_presses":0}},"gear_speeds":{"cruise":240.0,"fast":320.0,"slow":190.0},"input_actions":["gear applied by harness; a real build would map left/right"],"section":{"end":28500.0,"start":21200.0}}

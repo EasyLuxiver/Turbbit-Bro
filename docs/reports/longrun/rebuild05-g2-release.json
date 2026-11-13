@@ -1,0 +1,58 @@
+{
+  "absence": {
+    "dive_gate": {
+      "frames": 120,
+      "frames_true": 0,
+      "predicate": false,
+      "turtle_row": ""
+    },
+    "rescue": {
+      "frames": 120,
+      "frames_true": 0,
+      "predicate": false,
+      "turtle_row": ""
+    }
+  },
+  "generated_at": "2026-11-13T20:25:12",
+  "group": "log1",
+  "trials": {
+    "follow_cue": {
+      "accident_state": "NONE",
+      "accidents": 0,
+      "cue_fits_en": true,
+      "cue_panels_pct": 8.0,
+      "cue_rabbit_row": "",
+      "cue_row": "松开 ↓ 上浮接人！",
+      "cue_row_en": "RELEASE ↓ - SURFACE & CATCH!",
+      "cue_seen": true,
+      "cue_true_frames_after_release": 0,
+      "cue_x_past_end": 42.7,
+      "end_x": 6735.0,
+      "hit": false,
+      "hold_steps_after_cue": 0,
+      "holding": false,
+      "release_on_cue": true,
+      "riding": true,
+      "state": "RIDING"
+    },
+    "hold_through": {
+      "accident_state": "NONE",
+      "accidents": 1,
+      "cue_fits_en": true,
+      "cue_panels_pct": 8.0,
+      "cue_rabbit_row": "",
+      "cue_row": "松开 ↓ 上浮接人！",
+      "cue_row_en": "RELEASE ↓ - SURFACE & CATCH!",
+      "cue_seen": true,
+      "cue_true_frames_after_release": -1,
+      "cue_x_past_end": 42.7,
+      "end_x": 6734.9,
+      "hit": false,
+      "hold_steps_after_cue": 71,
+      "holding": false,
+      "release_on_cue": false,
+      "riding": true,
+      "state": "RIDING"
+    }
+  }
+}

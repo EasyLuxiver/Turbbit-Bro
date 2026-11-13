@@ -1,0 +1,10 @@
+{
+  "capture_x": 5300.0,
+  "centers": [
+    "SHOWTIME！"
+  ],
+  "failures": [],
+  "note": "正式 race 场景内手动调 start_showtime/_tick_showtime；不是真人试玩。",
+  "rabbit_offset_px": 51.4,
+  "refused_in_accident": true
+}

@@ -1,0 +1,39 @@
+{
+  "emissions": [
+    {
+      "text": "↓ 趴低",
+      "x": 460.0
+    },
+    {
+      "text": "↑ 跳跃",
+      "x": 1760.0
+    },
+    {
+      "text": "SHIFT + ↓ 按住下潜",
+      "x": 2700.0
+    },
+    {
+      "text": "↑ 兔子跳 → SHIFT 乌龟 → ↓ 潜",
+      "x": 5320.0
+    },
+    {
+      "text": "SHIFT + ↑ 乌龟跃起",
+      "x": 6515.0
+    },
+    {
+      "text": "↓ 趴低",
+      "x": 8600.0
+    },
+    {
+      "text": "SHIFT + ↑ 乌龟跃起 → SHIFT 兔子 → ↑ 蹬踏",
+      "x": 12260.0
+    }
+  ],
+  "failures": [],
+  "forbidden_shark_in_bro_dive_window": [],
+  "log1_end": 6432.0,
+  "log1_start": 6400.0,
+  "note": "正式 race 场景内直接调 _update_lessons()，不是真人试玩。",
+  "shark1_start": 7250.0,
+  "shark_lesson_x": 6515.0
+}

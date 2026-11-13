@@ -1,0 +1,50 @@
+{
+  "during_accident": {
+    "after_accident": 1,
+    "during_accident": 0,
+    "group": "shark6"
+  },
+  "generated_at": "2026-11-13T05:26:55",
+  "hud": {
+    "fits": true,
+    "fits_en": true,
+    "text": "这组会动 - 看准空隙再上",
+    "text_en": "THIS ONE MOVES - GO THROUGH THE GAP",
+    "visible": true
+  },
+  "static": {
+    "count": 0,
+    "group": "bird1"
+  },
+  "zone1": {
+    "count": 1,
+    "first": {
+      "distance": 556.3,
+      "group": "rock3",
+      "text": "这组会动 - 看准空隙再上",
+      "x": 7843.7
+    },
+    "frames": 269,
+    "group": "rock3",
+    "motion": "tide_rock"
+  },
+  "zone2": {
+    "count": 1,
+    "first": {
+      "distance": 560.0,
+      "group": "rock4",
+      "text": "这组会动 - 看准空隙再上",
+      "x": 16440.0
+    },
+    "frames": 246,
+    "group": "rock4",
+    "motion": "tide_rock"
+  },
+  "zone2_second": {
+    "count": 1,
+    "first": "rock4",
+    "frames": 564,
+    "only_from_first": true,
+    "second": "shark3"
+  }
+}

@@ -1,0 +1,679 @@
+{
+  "by_kind": {
+    "SHARK": {
+      "design_correct": 1,
+      "groups": 1,
+      "pass_counts": {
+        "leap": 1
+      }
+    }
+  },
+  "generated_at": "2026-11-12T03:29:34",
+  "groups": 1,
+  "logs_falsification": [],
+  "matrix": [
+    {
+      "design_answer": "leap",
+      "end": 34270.0,
+      "index": 27,
+      "kind": "SHARK",
+      "passing_schemes": [
+        "leap"
+      ],
+      "schemes": {
+        "crouch": {
+          "best_lead": 160.0,
+          "final": {
+            "accident": "NONE",
+            "control": "rabbit",
+            "leap_active": false,
+            "mount": "RIDING",
+            "oxygen": 7.52,
+            "rabbit": "CROUCHING",
+            "second_jump": false,
+            "turtle": "DUNKED"
+          },
+          "oxygen_used": 0.48,
+          "pass": false,
+          "pickup_fail": false,
+          "rabbit_hit": false,
+          "seconds": 2.55,
+          "trials": [
+            {
+              "ended_x": 34473.8,
+              "final": {
+                "accident": "NONE",
+                "control": "rabbit",
+                "leap_active": false,
+                "mount": "RIDING",
+                "oxygen": 7.52,
+                "rabbit": "CROUCHING",
+                "second_jump": false,
+                "turtle": "DUNKED"
+              },
+              "first_accident": "NONE",
+              "hit_at_x": 34156.0,
+              "hit_channel": "turtle",
+              "lead": 160.0,
+              "max_depth": 440.8,
+              "min_depth": 334.0,
+              "oxygen_used": 0.48,
+              "passed": false,
+              "pickup_fail": false,
+              "rabbit_hit": false,
+              "seconds": 2.55,
+              "turtle_hit": true,
+              "water": false
+            }
+          ],
+          "turtle_hit": true,
+          "water": false
+        },
+        "dive": {
+          "best_lead": 320.0,
+          "final": {
+            "accident": "NONE",
+            "control": "turtle",
+            "leap_active": false,
+            "mount": "RIDING",
+            "oxygen": 5.75,
+            "rabbit": "RIDING",
+            "second_jump": false,
+            "turtle": "DUNKED"
+          },
+          "oxygen_used": 2.25,
+          "pass": false,
+          "pickup_fail": false,
+          "rabbit_hit": false,
+          "seconds": 2.52,
+          "trials": [
+            {
+              "ended_x": 34473.8,
+              "final": {
+                "accident": "NONE",
+                "control": "turtle",
+                "leap_active": false,
+                "mount": "RIDING",
+                "oxygen": 5.75,
+                "rabbit": "RIDING",
+                "second_jump": false,
+                "turtle": "DUNKED"
+              },
+              "first_accident": "NONE",
+              "hit_at_x": 34156.0,
+              "hit_channel": "turtle",
+              "lead": 320.0,
+              "max_depth": 479.2,
+              "min_depth": 335.7,
+              "oxygen_used": 2.25,
+              "passed": false,
+              "pickup_fail": false,
+              "rabbit_hit": false,
+              "seconds": 2.52,
+              "turtle_hit": true,
+              "water": false
+            }
+          ],
+          "turtle_hit": true,
+          "water": false
+        },
+        "dive_jump": {
+          "best_lead": 166.0,
+          "final": {
+            "accident": "BRO_BREAK",
+            "control": "turtle",
+            "leap_active": false,
+            "mount": "AIRBORNE",
+            "oxygen": 8.0,
+            "rabbit": "JUMPING",
+            "second_jump": false,
+            "turtle": "SINKING"
+          },
+          "oxygen_used": 0.0,
+          "pass": false,
+          "pickup_fail": true,
+          "rabbit_hit": false,
+          "seconds": 1.25,
+          "trials": [
+            {
+              "ended_x": 34473.8,
+              "final": {
+                "accident": "NONE",
+                "control": "turtle",
+                "leap_active": false,
+                "mount": "RIDING",
+                "oxygen": 7.23,
+                "rabbit": "RIDING",
+                "second_jump": false,
+                "turtle": "DUNKED"
+              },
+              "first_accident": "NONE",
+              "hit_at_x": 34156.0,
+              "hit_channel": "turtle",
+              "lead": 184.0,
+              "max_depth": 453.9,
+              "min_depth": 334.0,
+              "oxygen_used": 0.77,
+              "passed": false,
+              "pickup_fail": false,
+              "rabbit_hit": false,
+              "seconds": 1.95,
+              "turtle_hit": true,
+              "water": false
+            },
+            {
+              "ended_x": 34158.0,
+              "final": {
+                "accident": "BRO_BREAK",
+                "control": "turtle",
+                "leap_active": false,
+                "mount": "AIRBORNE",
+                "oxygen": 8.0,
+                "rabbit": "JUMPING",
+                "second_jump": false,
+                "turtle": "SINKING"
+              },
+              "first_accident": "BRO_BREAK",
+              "hit_at_x": 34158.0,
+              "hit_channel": "turtle",
+              "lead": 166.0,
+              "max_depth": 451.0,
+              "min_depth": 334.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "pickup_fail": true,
+              "rabbit_hit": false,
+              "seconds": 1.25,
+              "turtle_hit": true,
+              "water": false
+            },
+            {
+              "ended_x": 34473.8,
+              "final": {
+                "accident": "NONE",
+                "control": "rabbit",
+                "leap_active": false,
+                "mount": "RIDING",
+                "oxygen": 7.52,
+                "rabbit": "RIDING",
+                "second_jump": false,
+                "turtle": "DUNKED"
+              },
+              "first_accident": "NONE",
+              "hit_at_x": 34156.0,
+              "hit_channel": "turtle",
+              "lead": 148.0,
+              "max_depth": 451.0,
+              "min_depth": 334.0,
+              "oxygen_used": 0.48,
+              "passed": false,
+              "pickup_fail": false,
+              "rabbit_hit": false,
+              "seconds": 2.48,
+              "turtle_hit": true,
+              "water": false
+            },
+            {
+              "ended_x": 34471.8,
+              "final": {
+                "accident": "NONE",
+                "control": "turtle",
+                "leap_active": false,
+                "mount": "RIDING",
+                "oxygen": 7.55,
+                "rabbit": "RIDING",
+                "second_jump": false,
+                "turtle": "DUNKED"
+              },
+              "first_accident": "NONE",
+              "hit_at_x": 34158.0,
+              "hit_channel": "turtle",
+              "lead": 130.0,
+              "max_depth": 448.6,
+              "min_depth": 334.0,
+              "oxygen_used": 0.45,
+              "passed": false,
+              "pickup_fail": false,
+              "rabbit_hit": false,
+              "seconds": 1.72,
+              "turtle_hit": true,
+              "water": false
+            }
+          ],
+          "turtle_hit": true,
+          "water": false
+        },
+        "jump": {
+          "best_lead": 40.0,
+          "final": {
+            "accident": "BRO_BREAK",
+            "control": "rabbit",
+            "leap_active": false,
+            "mount": "RIDING",
+            "oxygen": 8.0,
+            "rabbit": "RIDING",
+            "second_jump": false,
+            "turtle": "SINKING"
+          },
+          "oxygen_used": 0.0,
+          "pass": false,
+          "pickup_fail": false,
+          "rabbit_hit": false,
+          "seconds": 0.73,
+          "trials": [
+            {
+              "ended_x": 34473.8,
+              "final": {
+                "accident": "NONE",
+                "control": "rabbit",
+                "leap_active": false,
+                "mount": "RIDING",
+                "oxygen": 7.52,
+                "rabbit": "RIDING",
+                "second_jump": false,
+                "turtle": "DUNKED"
+              },
+              "first_accident": "NONE",
+              "hit_at_x": 34156.0,
+              "hit_channel": "turtle",
+              "lead": 320.0,
+              "max_depth": 440.8,
+              "min_depth": 334.0,
+              "oxygen_used": 0.48,
+              "passed": false,
+              "pickup_fail": false,
+              "rabbit_hit": false,
+              "seconds": 2.52,
+              "turtle_hit": true,
+              "water": false
+            },
+            {
+              "ended_x": 34473.8,
+              "final": {
+                "accident": "NONE",
+                "control": "rabbit",
+                "leap_active": false,
+                "mount": "RIDING",
+                "oxygen": 7.52,
+                "rabbit": "RIDING",
+                "second_jump": false,
+                "turtle": "DUNKED"
+              },
+              "first_accident": "NONE",
+              "hit_at_x": 34156.0,
+              "hit_channel": "turtle",
+              "lead": 240.0,
+              "max_depth": 440.8,
+              "min_depth": 334.0,
+              "oxygen_used": 0.48,
+              "passed": false,
+              "pickup_fail": false,
+              "rabbit_hit": false,
+              "seconds": 2.18,
+              "turtle_hit": true,
+              "water": false
+            },
+            {
+              "ended_x": 34156.0,
+              "final": {
+                "accident": "BRO_BREAK",
+                "control": "rabbit",
+                "leap_active": false,
+                "mount": "AIRBORNE",
+                "oxygen": 8.0,
+                "rabbit": "JUMPING",
+                "second_jump": false,
+                "turtle": "SINKING"
+              },
+              "first_accident": "BRO_BREAK",
+              "hit_at_x": 34156.0,
+              "hit_channel": "turtle",
+              "lead": 160.0,
+              "max_depth": 338.0,
+              "min_depth": 334.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "pickup_fail": true,
+              "rabbit_hit": false,
+              "seconds": 1.22,
+              "turtle_hit": true,
+              "water": false
+            },
+            {
+              "ended_x": 34473.8,
+              "final": {
+                "accident": "NONE",
+                "control": "rabbit",
+                "leap_active": false,
+                "mount": "RIDING",
+                "oxygen": 7.52,
+                "rabbit": "RIDING",
+                "second_jump": false,
+                "turtle": "DUNKED"
+              },
+              "first_accident": "NONE",
+              "hit_at_x": 34156.0,
+              "hit_channel": "turtle",
+              "lead": 100.0,
+              "max_depth": 440.8,
+              "min_depth": 334.0,
+              "oxygen_used": 0.48,
+              "passed": false,
+              "pickup_fail": false,
+              "rabbit_hit": false,
+              "seconds": 2.28,
+              "turtle_hit": true,
+              "water": false
+            },
+            {
+              "ended_x": 34473.8,
+              "final": {
+                "accident": "NONE",
+                "control": "rabbit",
+                "leap_active": false,
+                "mount": "RIDING",
+                "oxygen": 7.82,
+                "rabbit": "RIDING",
+                "second_jump": false,
+                "turtle": "DUNKED"
+              },
+              "first_accident": "NONE",
+              "hit_at_x": 34156.0,
+              "hit_channel": "turtle",
+              "lead": 60.0,
+              "max_depth": 440.8,
+              "min_depth": 334.0,
+              "oxygen_used": 0.18,
+              "passed": false,
+              "pickup_fail": false,
+              "rabbit_hit": false,
+              "seconds": 1.43,
+              "turtle_hit": true,
+              "water": false
+            },
+            {
+              "ended_x": 34164.0,
+              "final": {
+                "accident": "BRO_BREAK",
+                "control": "rabbit",
+                "leap_active": false,
+                "mount": "RIDING",
+                "oxygen": 8.0,
+                "rabbit": "RIDING",
+                "second_jump": false,
+                "turtle": "SINKING"
+              },
+              "first_accident": "BRO_BREAK",
+              "hit_at_x": 34164.0,
+              "hit_channel": "turtle",
+              "lead": 40.0,
+              "max_depth": 338.0,
+              "min_depth": 334.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "pickup_fail": false,
+              "rabbit_hit": false,
+              "seconds": 0.73,
+              "turtle_hit": true,
+              "water": false
+            }
+          ],
+          "turtle_hit": true,
+          "water": false
+        },
+        "leap": {
+          "best_lead": 160.0,
+          "final": {
+            "accident": "NONE",
+            "control": "turtle",
+            "leap_active": false,
+            "mount": "RIDING",
+            "oxygen": 8.0,
+            "rabbit": "RIDING",
+            "second_jump": false,
+            "turtle": "CRUISING"
+          },
+          "oxygen_used": 0.0,
+          "pass": true,
+          "pickup_fail": false,
+          "rabbit_hit": false,
+          "seconds": 1.8,
+          "trials": [
+            {
+              "ended_x": 34200.0,
+              "final": {
+                "accident": "BRO_BREAK",
+                "control": "turtle",
+                "leap_active": true,
+                "mount": "RIDING",
+                "oxygen": 8.0,
+                "rabbit": "RIDING",
+                "second_jump": false,
+                "turtle": "SINKING"
+              },
+              "first_accident": "BRO_BREAK",
+              "hit_at_x": 34200.0,
+              "hit_channel": "turtle",
+              "lead": 320.0,
+              "max_depth": 334.0,
+              "min_depth": 174.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "pickup_fail": false,
+              "rabbit_hit": false,
+              "seconds": 2.07,
+              "turtle_hit": true,
+              "water": false
+            },
+            {
+              "ended_x": 34473.8,
+              "final": {
+                "accident": "NONE",
+                "control": "turtle",
+                "leap_active": false,
+                "mount": "RIDING",
+                "oxygen": 7.52,
+                "rabbit": "RIDING",
+                "second_jump": false,
+                "turtle": "DUNKED"
+              },
+              "first_accident": "NONE",
+              "hit_at_x": 34156.0,
+              "hit_channel": "turtle",
+              "lead": 240.0,
+              "max_depth": 440.8,
+              "min_depth": 249.5,
+              "oxygen_used": 0.48,
+              "passed": false,
+              "pickup_fail": false,
+              "rabbit_hit": false,
+              "seconds": 2.87,
+              "turtle_hit": true,
+              "water": false
+            },
+            {
+              "ended_x": 34472.0,
+              "final": {
+                "accident": "NONE",
+                "control": "turtle",
+                "leap_active": false,
+                "mount": "RIDING",
+                "oxygen": 8.0,
+                "rabbit": "RIDING",
+                "second_jump": false,
+                "turtle": "CRUISING"
+              },
+              "first_accident": "NONE",
+              "hit_at_x": -1.0,
+              "hit_channel": "",
+              "lead": 160.0,
+              "max_depth": 334.0,
+              "min_depth": 174.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "pickup_fail": false,
+              "rabbit_hit": false,
+              "seconds": 1.8,
+              "turtle_hit": false,
+              "water": false
+            }
+          ],
+          "turtle_hit": false,
+          "water": false
+        },
+        "leap_jump": {
+          "best_lead": 160.0,
+          "final": {
+            "accident": "RABBIT_WATER",
+            "control": "rabbit",
+            "leap_active": false,
+            "mount": "RESCUE_ACTIVE",
+            "oxygen": 8.0,
+            "rabbit": "FALLING_WATER",
+            "second_jump": false,
+            "turtle": "CRUISING"
+          },
+          "oxygen_used": 0.0,
+          "pass": false,
+          "pickup_fail": true,
+          "rabbit_hit": false,
+          "seconds": 1.8,
+          "trials": [
+            {
+              "ended_x": 34200.0,
+              "final": {
+                "accident": "BRO_BREAK",
+                "control": "rabbit",
+                "leap_active": true,
+                "mount": "AIRBORNE",
+                "oxygen": 8.0,
+                "rabbit": "FALLING",
+                "second_jump": false,
+                "turtle": "SINKING"
+              },
+              "first_accident": "BRO_BREAK",
+              "hit_at_x": 34200.0,
+              "hit_channel": "turtle",
+              "lead": 320.0,
+              "max_depth": 334.0,
+              "min_depth": 174.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "pickup_fail": true,
+              "rabbit_hit": false,
+              "seconds": 2.07,
+              "turtle_hit": true,
+              "water": false
+            },
+            {
+              "ended_x": 34473.8,
+              "final": {
+                "accident": "NONE",
+                "control": "turtle",
+                "leap_active": false,
+                "mount": "RIDING",
+                "oxygen": 7.52,
+                "rabbit": "RIDING",
+                "second_jump": false,
+                "turtle": "DUNKED"
+              },
+              "first_accident": "NONE",
+              "hit_at_x": 34156.0,
+              "hit_channel": "turtle",
+              "lead": 240.0,
+              "max_depth": 440.8,
+              "min_depth": 249.5,
+              "oxygen_used": 0.48,
+              "passed": false,
+              "pickup_fail": false,
+              "rabbit_hit": false,
+              "seconds": 2.87,
+              "turtle_hit": true,
+              "water": false
+            },
+            {
+              "ended_x": 34472.0,
+              "final": {
+                "accident": "RABBIT_WATER",
+                "control": "rabbit",
+                "leap_active": false,
+                "mount": "RESCUE_ACTIVE",
+                "oxygen": 8.0,
+                "rabbit": "FALLING_WATER",
+                "second_jump": false,
+                "turtle": "CRUISING"
+              },
+              "first_accident": "RABBIT_WATER",
+              "hit_at_x": -1.0,
+              "hit_channel": "",
+              "lead": 160.0,
+              "max_depth": 334.0,
+              "min_depth": 174.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "pickup_fail": true,
+              "rabbit_hit": false,
+              "seconds": 1.8,
+              "turtle_hit": false,
+              "water": true
+            }
+          ],
+          "turtle_hit": false,
+          "water": true
+        },
+        "none": {
+          "best_lead": 0.0,
+          "final": {
+            "accident": "BRO_BREAK",
+            "control": "turtle",
+            "leap_active": false,
+            "mount": "RIDING",
+            "oxygen": 8.0,
+            "rabbit": "RIDING",
+            "second_jump": false,
+            "turtle": "SINKING"
+          },
+          "oxygen_used": 0.0,
+          "pass": false,
+          "pickup_fail": false,
+          "rabbit_hit": true,
+          "seconds": 0.75,
+          "trials": [
+            {
+              "ended_x": 34204.0,
+              "final": {
+                "accident": "BRO_BREAK",
+                "control": "turtle",
+                "leap_active": false,
+                "mount": "RIDING",
+                "oxygen": 8.0,
+                "rabbit": "RIDING",
+                "second_jump": false,
+                "turtle": "SINKING"
+              },
+              "first_accident": "BRO_BREAK",
+              "hit_at_x": 34204.0,
+              "hit_channel": "both",
+              "lead": 0.0,
+              "max_depth": 338.0,
+              "min_depth": 334.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "pickup_fail": false,
+              "rabbit_hit": true,
+              "seconds": 0.75,
+              "turtle_hit": true,
+              "water": false
+            }
+          ],
+          "turtle_hit": true,
+          "water": false
+        }
+      },
+      "start": 34200.0,
+      "zone": 2
+    }
+  ],
+  "no_solution_groups": [],
+  "note": "真实输入探针，加速带关闭，基速；自动驾驶代理，不是真人。"
+}

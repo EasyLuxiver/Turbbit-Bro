@@ -1,0 +1,52 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+LEVEL SEED 20261112
+SNACK DRAW #1 group=gate1 zone=1 kind=DIVE_GATE (fixed)
+SNACK DRAW #2 group=beam1 zone=1 kind=LOW_BIRD (was LOW_BEAM)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=SURFACE_ROCK (was DIVE_GATE)
+LEVEL SEED 20261112
+A1 A 开场呼吸               groups= 4 空跑 5.27s 恢复 5.27s 单点 4 连招0 持续2.00s 高压 19.2s 重复0 | safe=PASS coop=PASS
+A2 A 先认单点               groups= 3 空跑 5.27s 恢复 4.91s 单点 3 连招0 持续1.50s 高压 12.1s 重复0 | safe=PASS coop=PASS
+C1 C 节奏突变               groups= 5 空跑 4.91s 恢复 4.91s 单点 3 连招1 持续9.68s 高压 25.8s 重复0 | safe=PASS coop=PASS
+A3 A 二区门口               groups= 1 空跑 4.50s 恢复 4.71s 单点 1 连招0 持续1.38s 高压  2.6s 重复0 | safe=PASS coop=PASS
+B1 B 趴低接跳               groups= 2 空跑 4.71s 恢复 6.29s 单点 0 连招1 持续1.79s 高压  6.0s 重复0 | safe=PASS coop=PASS
+A4 A 珊瑚单点               groups=14 空跑 6.29s 恢复 5.13s 单点14 连招0 持续1.83s 高压 69.5s 重复0 | safe=PASS coop=PASS
+B2 B 下潜连招               groups= 2 空跑 5.13s 恢复 6.42s 单点 0 连招1 持续1.83s 高压  6.1s 重复0 | safe=PASS coop=PASS
+A5 A 三区单点               groups= 9 空跑 5.92s 恢复 3.85s 单点 9 连招0 持续1.69s 高压 38.9s 重复0 | safe=PASS coop=PASS
+D1 D 长隧道                groups= 2 空跑 3.85s 恢复 4.30s 单点 0 连招1 持续3.92s 高压  8.2s 重复0 | safe=PASS coop=PASS
+A6 A 终段单点               groups=13 空跑 4.30s 恢复 2.92s 单点12 连招0 持续1.69s 高压 57.5s 重复0 | safe=PASS coop=PASS
+ok   P1-E 至少有 1 段 A 型节奏 [counts={ "A": 6, "C": 1, "B": 2, "D": 1 }]
+ok   P1-E 至少有 1 段 B 型节奏 [counts={ "A": 6, "C": 1, "B": 2, "D": 1 }]
+ok   P1-E 至少有 1 段 C 型节奏 [counts={ "A": 6, "C": 1, "B": 2, "D": 1 }]
+ok   P1-E 至少有 1 段 D 型节奏 [counts={ "A": 6, "C": 1, "B": 2, "D": 1 }]
+ok   A 段有孤立单点 + >= 3.5 s 空跑 
+ok   B 段有间隔 <= 3.2 s 的连招 
+ok   C 段间隔比 >= 1.5（有快有慢） 
+ok   D 段同一状态要维持 >= 2.5 s 
+ok   A1 safe 路线真实跑过该段且无碰撞 [ended=5460.3 hits=[] acc=0 mount=RIDING]
+ok   A1 coop 路线真实跑过该段且无碰撞 [ended=5460.3 hits=[] acc=0 mount=RIDING]
+ok   A2 safe 路线真实跑过该段且无碰撞 [ended=8742.3 hits=[] acc=0 mount=RIDING]
+ok   A2 coop 路线真实跑过该段且无碰撞 [ended=8742.3 hits=[] acc=0 mount=RIDING]
+ok   C1 safe 路线真实跑过该段且无碰撞 [ended=14941.1 hits=[] acc=0 mount=RIDING]
+ok   C1 coop 路线真实跑过该段且无碰撞 [ended=14941.1 hits=[] acc=0 mount=RIDING]
+ok   A3 safe 路线真实跑过该段且无碰撞 [ended=16092.0 hits=[] acc=0 mount=RIDING]
+ok   A3 coop 路线真实跑过该段且无碰撞 [ended=16092.0 hits=[] acc=0 mount=RIDING]
+ok   B1 safe 路线真实跑过该段且无碰撞 [ended=18110.9 hits=[] acc=0 mount=RIDING]
+ok   B1 coop 路线真实跑过该段且无碰撞 [ended=18110.9 hits=[] acc=0 mount=RIDING]
+ok   A4 safe 路线真实跑过该段且无碰撞 [ended=35741.0 hits=[] acc=0 mount=RIDING]
+ok   A4 coop 路线真实跑过该段且无碰撞 [ended=35741.0 hits=[] acc=0 mount=RIDING]
+ok   B2 safe 路线真实跑过该段且无碰撞 [ended=37882.0 hits=[] acc=0 mount=RIDING]
+ok   B2 coop 路线真实跑过该段且无碰撞 [ended=37882.0 hits=[] acc=0 mount=RIDING]
+ok   A5 safe 路线真实跑过该段且无碰撞 [ended=48970.3 hits=[] acc=0 mount=RIDING]
+ok   A5 coop 路线真实跑过该段且无碰撞 [ended=48970.3 hits=[] acc=0 mount=RIDING]
+ok   D1 safe 路线真实跑过该段且无碰撞 [ended=51545.0 hits=[] acc=0 mount=RIDING]
+ok   D1 coop 路线真实跑过该段且无碰撞 [ended=51545.0 hits=[] acc=0 mount=RIDING]
+ok   A6 safe 路线真实跑过该段且无碰撞 [ended=67062.0 hits=[] acc=0 mount=RIDING]
+ok   A6 coop 路线真实跑过该段且无碰撞 [ended=67062.0 hits=[] acc=0 mount=RIDING]
+CORE-FEEL-07 P1-E: PASS

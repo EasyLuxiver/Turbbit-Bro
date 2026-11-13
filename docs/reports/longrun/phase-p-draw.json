@@ -1,0 +1,146 @@
+{
+  "checks": {
+    "encounters_9": true,
+    "first_fixed": true,
+    "level_ok_20261112": true,
+    "level_ok_424242": true,
+    "level_ok_7": true,
+    "level_ok_99": true,
+    "no_complex_in_snack": true,
+    "no_consecutive_repeat": true,
+    "physics_s424242_e2_ate": true,
+    "physics_s424242_e2_boost": true,
+    "physics_s424242_e2_passed": true,
+    "physics_s424242_e2_warning_ge_4s": true,
+    "physics_s99_e1_ate": true,
+    "physics_s99_e1_boost": true,
+    "physics_s99_e1_passed": true,
+    "physics_s99_e1_warning_ge_4s": true,
+    "pool_member": true,
+    "same_seed_repro_20261112": true,
+    "same_seed_repro_424242": true,
+    "same_seed_repro_7": true,
+    "same_seed_repro_99": true,
+    "seeds_vary": true,
+    "taught_first": true
+  },
+  "generated_at": "2026-11-13T19:44:32",
+  "note": "Phase P 随机障碍抽取：结构 + 真实物理；引擎按键代理，不是真人试玩。",
+  "physics": [
+    {
+      "accident": "NONE",
+      "answer": {
+        "control": "turtle",
+        "lead": 190.0,
+        "press": [
+          "up"
+        ]
+      },
+      "boost_at_obstacle": true,
+      "eaten": true,
+      "encounter": 2,
+      "group": "gate3",
+      "hit": false,
+      "kind": "SHARK",
+      "max_speed": 276.0,
+      "riding": true,
+      "seed": 424242,
+      "warning_s": 4.083
+    },
+    {
+      "accident": "NONE",
+      "answer": {
+        "control": "rabbit",
+        "lead": 320.0,
+        "press": [
+          "down"
+        ]
+      },
+      "boost_at_obstacle": true,
+      "eaten": true,
+      "encounter": 1,
+      "group": "beam1",
+      "hit": false,
+      "kind": "LOW_BEAM",
+      "max_speed": 253.0,
+      "riding": true,
+      "seed": 99,
+      "warning_s": 4.617
+    }
+  ],
+  "pool": {
+    "1": [
+      "LOW_BIRD",
+      "LOW_BEAM",
+      "SURFACE_ROCK"
+    ],
+    "2": [
+      "DIVE_GATE",
+      "SHARK"
+    ],
+    "3": [
+      "SURFACE_ROCK",
+      "LOW_BEAM",
+      "SHARK"
+    ]
+  },
+  "seeds": [
+    {
+      "kinds": [
+        "DIVE_GATE",
+        "LOW_BEAM",
+        "SHARK",
+        "DIVE_GATE",
+        "SHARK",
+        "SHARK",
+        "SURFACE_ROCK",
+        "SHARK",
+        "LOW_BEAM"
+      ],
+      "seed": 424242
+    },
+    {
+      "kinds": [
+        "DIVE_GATE",
+        "SURFACE_ROCK",
+        "SHARK",
+        "DIVE_GATE",
+        "SHARK",
+        "SHARK",
+        "SURFACE_ROCK",
+        "SHARK",
+        "LOW_BEAM"
+      ],
+      "seed": 7
+    },
+    {
+      "kinds": [
+        "DIVE_GATE",
+        "LOW_BIRD",
+        "SHARK",
+        "DIVE_GATE",
+        "SHARK",
+        "SHARK",
+        "LOW_BEAM",
+        "SHARK",
+        "SURFACE_ROCK"
+      ],
+      "seed": 20261112
+    },
+    {
+      "kinds": [
+        "DIVE_GATE",
+        "LOW_BEAM",
+        "DIVE_GATE",
+        "SHARK",
+        "DIVE_GATE",
+        "SHARK",
+        "LOW_BEAM",
+        "SHARK",
+        "SURFACE_ROCK"
+      ],
+      "seed": 99
+    }
+  ],
+  "step_hz": 60.0
+}

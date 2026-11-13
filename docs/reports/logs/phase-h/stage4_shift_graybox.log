@@ -1,0 +1,4 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+STAGE4 SHIFT GRAYBOX: PASS
+  data: {"rabbit_handoff":{"after":{"daze":2.9,"offset_x":-11.43,"slide":0.163},"before":{"daze":2.9,"offset_x":-11.43,"slide":0.163},"offset_shift_px":0.0},"rabbit_recovery":{"accident":"NONE","frames":110,"partner_daze":0.0,"seconds":1.83,"settle_frames":0,"turtle_y":333.9},"rapid_switch":{"accident":"NONE","rabbit_after":{"daze":2.9,"offset_x":-11.43,"slide":0.163},"switches":10,"turtle_after":{"daze":2.9,"sink_speed":60.0,"vy":-28.23,"y":342.94}},"recover_delay":0.5,"recover_rate":2.5,"turtle_handoff":{"after":{"daze":2.9,"sink_speed":60.0,"vy":-110.0,"y":518.0},"before":{"daze":2.9,"sink_speed":60.0,"vy":-10.0,"y":519.83},"y_shift_px":1.83},"turtle_recovery":{"accident":"NONE","frames":110,"partner_daze":0.0,"seconds":1.83,"settle_frames":0,"turtle_y":334.8}}

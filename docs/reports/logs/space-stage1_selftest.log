@@ -1,0 +1,77 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+  ok  action exists: shift
+  ok  action exists: boost
+  ok  action exists: up
+  ok  action exists: down
+  ok  action exists: left
+  ok  action exists: right
+  ok  action exists: pause
+  ok  action exists: restart
+  ok  action exists: confirm
+  ok  start -> race scene
+  ok  state RUNNING
+  ok  initial control is rabbit
+  ok  no shift yet
+  ok  oxygen starts full
+  ok  rabbit mounted at start
+  boot   -> control=rabbit mount=RIDING turtle=220.0
+  ok  turtle auto-cruises before first SHIFT
+  ok  turtle CRUISING before first SHIFT
+  ok  rabbit does not slide before first SHIFT
+  ok  rabbit RIDING before first SHIFT
+  ok  SHIFT -> turtle control
+  ok  shift_count increments
+  ok  SHIFT does not reset turtle speed (220.0 -> 220.0)
+  ok  standby rabbit holds on (slide 0.00)
+  ok  standby rabbit accumulates no imbalance (0.00)
+  ok  standby rabbit stays RIDING (RIDING)
+  ok  turtle keeps cruising when controlled
+  ok  SHIFT -> rabbit control
+  ok  SHIFT does not instantly reset slide (0.00 -> 0.00)
+  ok  uncontrolled turtle keeps CRUISING (CRUISING)
+  ok  uncontrolled shell keeps its speed (220.0)
+  ok  uncontrolled shell holds cruise depth (334.00)
+  ok  controlled rabbit does not gain or lose slide on standby (0.00 -> 0.00)
+  ok  shell still at cruise depth 1.8 s later (334.00)
+  ok  10 s of standby causes no accident (NONE)
+  ok  standby does not change accident_count
+  ok  rabbit still mounted after 10 s standby
+  standby-> state=NONE mount=RIDING slide=0.00
+  ok  back on rabbit before jump
+  ok  jump -> mount AIRBORNE
+  ok  jump -> rabbit airborne
+  ok  mid-air SHIFT -> turtle
+  ok  rabbit still airborne after mid-air SHIFT
+  ok  turtle floats back to cruise depth (334.0)
+  ok  turtle is at pickup depth
+  ok  mid-air shift + auto float -> pickup (1)
+  pickup -> count=1 mount=RIDING accident=NONE
+  ok  rabbit air movement changes horizontal velocity (140.0)
+  ok  plain jump lands back on turtle (1)
+  ok  pickup window shown during landing
+  land   -> picked=true window=true accident=NONE
+  ok  DOWN reaches dive depth (473)
+  ok  a normal dive is not an accident
+  ok  released dive returns to cruise depth (335.6)
+  dive   -> y=335.6 accident=NONE
+  ok  surface rock -> RABBIT_STUN (RABBIT_STUN)
+  ok  jump clears surface rock
+  ok  standing under beam -> RABBIT_STUN
+  ok  crouch clears low beam
+  beam   -> NONE
+  ok  cruising shell is caught by the reef arch
+  ok  reef arch hit leaves visible imbalance (4.4)
+  ok  one arch hit is imbalance, not an instant accident
+  ok  diving turtle clears the reef arch
+  gate   -> NONE
+  ok  restart resets shift_count
+  ok  restart resets accident_count
+  ok  restart resets pickup_count
+  ok  restart resets control
+  ok  restart resets oxygen
+  ok  restart resets race time
+  ok  finish -> result scene
+  ok  result -> menu scene
+  ok  menu ENTER -> race scene
+STAGE1 SELFTEST: PASS

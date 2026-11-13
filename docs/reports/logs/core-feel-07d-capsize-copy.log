@@ -1,0 +1,38 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+LEVEL SEED 20261112
+SNACK DRAW #1 group=gate1 zone=1 kind=DIVE_GATE (fixed)
+SNACK DRAW #2 group=beam1 zone=1 kind=LOW_BIRD (was LOW_BEAM)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=SURFACE_ROCK (was DIVE_GATE)
+LEVEL SEED 20261112
+SNACK DRAW #1 group=gate1 zone=1 kind=DIVE_GATE (fixed)
+SNACK DRAW #2 group=beam1 zone=1 kind=LOW_BIRD (was LOW_BEAM)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=SURFACE_ROCK (was DIVE_GATE)
+ok   first slot costs 100 (100)
+ok   second slot costs 100 (100)
+ok   two slots after two mistakes (meter=2)
+ok   third mistake fills the meter (meter=3 pending=true)
+ok   third mistake costs 300 total (300)
+ok   joint show starts (frames=48)
+ok   center message is the new copy (BRO METER 满 —— 一起翻船！)
+ok   center message never says 联合/惩罚 (BRO METER 满 —— 一起翻船！)
+ok   show ends and clears the meter (meter=0 pending=false)
+ok   en center message names no culprit (BRO METER FULL - BOTH CAPSIZED!)
+ok   zh result names the stat 翻船次数
+ok   zh result has no leftover 联合
+ok   zh result shows the count (1)
+ok   en result names the stat CAPSIZES
+ok   en result has no leftover JOINT
+CORE-FEEL-07D: PASS

@@ -1,0 +1,743 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+  STAGE 3 FULL RUN  time_scale=3.0  capture=false
+  ok  race scene loaded
+  ok  state RUNNING
+  ---- RUN 1  (ENTER) ----
+  SETTLE[travel] t=2.40 x=1027 y=334 tur=0.00 rab=0.00 target=1245 room=218
+  CROUCH exit x=1445 y=334 tur=0.00 rab=0.00
+  t=   5.6  x=  1610 y=334 zone=1 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=1 show=0 passed=1
+  SETTLE[travel] t=6.65 x=1962 y=334 tur=0.00 rab=0.00 target=2260 room=298
+  JUMP  x=2369 rock=2400-2510 y=334 spd=220 ctl=rabbit show=false
+  JUMP  t=8.65 x=2402 rab_y=211 rab_vy=-630 tur=334 st=JUMPING
+  JUMP  t=8.80 x=2435 rab_y=127 rab_vy=-525 tur=334 st=JUMPING
+  JUMP  t=8.95 x=2468 rab_y=59 rab_vy=-420 tur=334 st=JUMPING
+  JUMP  t=9.10 x=2501 rab_y=7 rab_vy=-315 tur=334 st=JUMPING
+  JUMP  t=9.25 x=2534 rab_y=-30 rab_vy=-210 tur=334 st=JUMPING
+  JUMP  t=9.40 x=2567 rab_y=-51 rab_vy=-105 tur=334 st=JUMPING
+  JUMP  t=9.55 x=2600 rab_y=-57 rab_vy=0 tur=334 st=FALLING
+  JUMP  t=9.70 x=2633 rab_y=-46 rab_vy=105 tur=334 st=FALLING
+  JUMP  t=9.85 x=2666 rab_y=-20 rab_vy=210 tur=334 st=FALLING
+  JUMP  t=10.00 x=2699 rab_y=22 rab_vy=315 tur=334 st=FALLING
+  t=  10.6  x=  2710 y=334 zone=1 control=rabbit mount=AIRBORNE phase=travel rab=FALLING tur=CRUISING oxy=8.0 combo=2 show=0 passed=2
+  JUMP  t=10.15 x=2732 rab_y=80 rab_vy=420 tur=334 st=FALLING
+  JUMP  t=10.30 x=2765 rab_y=154 rab_vy=525 tur=334 st=FALLING
+  JUMP  t=10.45 x=2798 rab_y=276 rab_vy=0 tur=334 st=RIDING
+  SETTLE[travel] t=12.30 x=3425 y=334 tur=0.00 rab=0.00 target=3645 room=220
+  CROUCH exit x=3898 y=334 tur=0.00 rab=0.00
+  t=  15.7  x=  4052 y=334 zone=1 control=turtle mount=RIDING phase=travel rab=SHOWTIME tur=CRUISING oxy=8.0 combo=0 show=0 passed=3
+  SETTLE[travel] t=17.05 x=4470 y=334 tur=0.00 rab=0.00 target=4760 room=290
+  JUMP  x=4866 rock=4900-5040 y=334 spd=220 ctl=rabbit show=false
+  JUMP  t=19.00 x=4899 rab_y=211 rab_vy=-630 tur=334 st=JUMPING
+  JUMP  t=19.15 x=4932 rab_y=127 rab_vy=-525 tur=334 st=JUMPING
+  JUMP  t=19.30 x=4965 rab_y=59 rab_vy=-420 tur=334 st=JUMPING
+  JUMP  t=19.45 x=4998 rab_y=7 rab_vy=-315 tur=334 st=JUMPING
+  JUMP  t=19.60 x=5031 rab_y=-30 rab_vy=-210 tur=334 st=JUMPING
+  JUMP  t=19.75 x=5064 rab_y=-51 rab_vy=-105 tur=334 st=JUMPING
+  JUMP  t=19.90 x=5097 rab_y=-57 rab_vy=0 tur=334 st=FALLING
+  JUMP  t=20.05 x=5130 rab_y=-46 rab_vy=105 tur=334 st=FALLING
+  t=  20.7  x=  5152 y=334 zone=1 control=rabbit mount=AIRBORNE phase=travel rab=FALLING tur=CRUISING oxy=8.0 combo=1 show=1 passed=4
+  JUMP  t=20.20 x=5163 rab_y=-20 rab_vy=210 tur=334 st=FALLING
+  JUMP  t=20.35 x=5196 rab_y=22 rab_vy=315 tur=334 st=FALLING
+  JUMP  t=20.50 x=5229 rab_y=80 rab_vy=420 tur=334 st=FALLING
+  JUMP  t=20.65 x=5262 rab_y=154 rab_vy=525 tur=334 st=FALLING
+  JUMP  t=20.80 x=5295 rab_y=276 rab_vy=0 tur=334 st=RIDING
+  SETTLE[travel] t=22.80 x=5735 y=334 tur=0.00 rab=0.00 target=5945 room=210
+  CROUCH exit x=6142 y=334 tur=0.00 rab=0.00
+  t=  25.8  x=  6274 y=334 zone=1 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=2 show=1 passed=5
+  SETTLE[travel] t=27.50 x=6769 y=334 tur=0.00 rab=0.00 target=7060 room=291
+  WARN  leap did not start x=7077 y=334
+  t=  30.8  x=  7374 y=216 zone=1 control=turtle mount=RIDING phase=travel rab=SHOWTIME tur=LEAPING oxy=8.0 combo=0 show=1 passed=6
+  LEAP  exit x=7429 y=334 tur=0.00
+  SETTLE[travel] t=32.85 x=7946 y=334 tur=0.00 rab=0.00 target=8240 room=294
+  t=  35.9  x=  8496 y=478 zone=1 control=turtle mount=RIDING phase=travel rab=RIDING tur=DIVING oxy=7.2 combo=0 show=2 passed=6
+  DIVE  exit x=8903 y=336 tur=0.00
+  SETTLE[travel] t=39.15 x=9332 y=334 tur=0.00 rab=0.00 target=9545 room=213
+  t=  40.9  x=  9596 y=334 zone=1 control=rabbit mount=RIDING phase=travel rab=CROUCHING tur=CRUISING oxy=8.0 combo=1 show=2 passed=7
+  CROUCH exit x=9805 y=334 tur=0.00 rab=0.00
+  SETTLE[travel] t=43.85 x=10366 y=334 tur=0.00 rab=0.00 target=10660 room=294
+  WARN  leap did not start x=10674 y=334
+  t=  45.9  x= 10696 y=285 zone=1 control=turtle mount=RIDING phase=travel rab=RIDING tur=LEAPING oxy=8.0 combo=2 show=2 passed=8
+  LEAP  exit x=11026 y=334 tur=0.00
+  SETTLE[travel] t=49.20 x=11543 y=334 tur=0.00 rab=0.00 target=11840 room=297
+  t=  51.0  x= 11818 y=334 zone=1 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=0 show=3 passed=9
+  DIVE  exit x=12500 y=336 tur=0.00
+  SETTLE[travel] t=54.95 x=12808 y=334 tur=0.00 rab=0.00 target=13100 room=292
+  t=  56.0  x= 12918 y=334 zone=1 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=1 show=3 passed=10
+  t=  59.0  ACCIDENT RABBIT_WATER  control=turtle x=13571 zone=1 phase=travel
+          turtle=(13571,449) rabbit=(13589,348) rab=FALLING_WATER slide=0.00 showtime=false mount=RESCUING
+          hits=none down=true up=false daze_r=0.00 daze_t=1.03
+  COMBO exit x=13571 y=449 landed=false tur=1.03 rab=0.00
+  t=  60.6  RECOVERED  control=turtle x=14056
+  SETTLE[travel] t=60.20 x=14113 y=335 tur=0.00 rab=0.00 target=14410 room=297
+  t=  61.0  x= 14208 y=335 zone=1 control=turtle mount=RIDING phase=travel rab=RIDING tur=BOOSTING oxy=8.0 combo=0 show=3 passed=11
+  JUMP  x=14516 rock=14550-14670 y=334 spd=290 ctl=rabbit show=false
+  JUMP  t=61.45 x=14555 rab_y=211 rab_vy=-630 tur=334 st=JUMPING
+  JUMP  t=61.65 x=14599 rab_y=103 rab_vy=-490 tur=334 st=JUMPING
+  JUMP  t=61.85 x=14643 rab_y=22 rab_vy=-350 tur=334 st=JUMPING
+  JUMP  t=62.05 x=14687 rab_y=-30 rab_vy=-210 tur=334 st=JUMPING
+  JUMP  t=62.25 x=14731 rab_y=-55 rab_vy=-70 tur=334 st=JUMPING
+  JUMP  t=62.45 x=14775 rab_y=-51 rab_vy=70 tur=334 st=FALLING
+  JUMP  t=62.65 x=14819 rab_y=-20 rab_vy=210 tur=334 st=FALLING
+  JUMP  t=62.85 x=14863 rab_y=40 rab_vy=350 tur=334 st=FALLING
+  JUMP  t=63.05 x=14907 rab_y=127 rab_vy=490 tur=334 st=FALLING
+  JUMP  t=63.25 x=14951 rab_y=276 rab_vy=0 tur=334 st=RIDING
+  t=  64.1  ZONE 2 CORAL CHAOS  x=15018
+  t=  66.1  x= 15498 y=334 zone=2 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=1 show=3 passed=12
+  SETTLE[travel] t=65.70 x=15534 y=334 tur=0.00 rab=0.00 target=15745 room=211
+  CROUCH exit x=16002 y=334 tur=0.00 rab=0.00
+  SETTLE[travel] t=69.90 x=16542 y=334 tur=0.00 rab=0.00 target=16838 room=296
+  t=  71.1  x= 16698 y=334 zone=2 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=2 show=3 passed=13
+  JUMP  x=16938 rock=17000-17120 y=334 spd=240 ctl=rabbit show=false
+  JUMP  t=71.70 x=16974 rab_y=211 rab_vy=-630 tur=334 st=JUMPING
+  JUMP  t=71.90 x=17022 rab_y=103 rab_vy=-490 tur=334 st=JUMPING
+  JUMP  t=72.10 x=17070 rab_y=22 rab_vy=-350 tur=334 st=JUMPING
+  JUMP  t=72.30 x=17118 rab_y=-30 rab_vy=-210 tur=334 st=JUMPING
+  JUMP  t=72.50 x=17166 rab_y=-55 rab_vy=-70 tur=334 st=JUMPING
+  JUMP  t=72.70 x=17214 rab_y=-51 rab_vy=70 tur=334 st=FALLING
+  JUMP  t=72.90 x=17262 rab_y=-20 rab_vy=210 tur=334 st=FALLING
+  JUMP  t=73.10 x=17310 rab_y=40 rab_vy=350 tur=334 st=FALLING
+  JUMP  t=73.30 x=17358 rab_y=127 rab_vy=490 tur=334 st=FALLING
+  JUMP  t=73.50 x=17406 rab_y=276 rab_vy=0 tur=334 st=RIDING
+  SETTLE[travel] t=75.00 x=17766 y=334 tur=0.00 rab=0.00 target=18060 room=294
+  t=  76.2  x= 17922 y=334 zone=2 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=3 show=3 passed=14
+  WARN  leap did not start x=18078 y=334
+  LEAP  exit x=18462 y=334 tur=0.00
+  SETTLE[travel] t=79.25 x=18955 y=334 tur=0.00 rab=0.00 target=19240 room=285
+  t=  81.2  x= 19377 y=442 zone=2 control=turtle mount=RIDING phase=travel rab=RIDING tur=DIVING oxy=7.8 combo=0 show=4 passed=15
+  DIVE  exit x=19929 y=336 tur=0.00
+  SETTLE[travel] t=84.65 x=20337 y=334 tur=0.00 rab=0.00 target=20545 room=209
+  t=  86.3  x= 20601 y=334 zone=2 control=rabbit mount=RIDING phase=travel rab=CROUCHING tur=CRUISING oxy=8.0 combo=1 show=4 passed=16
+  CROUCH exit x=20745 y=334 tur=0.00 rab=0.00
+  SETTLE[travel] t=89.30 x=21453 y=334 tur=0.00 rab=0.00 target=21750 room=298
+  t=  91.3  x= 21801 y=334 zone=2 control=rabbit mount=AIRBORNE phase=travel rab=JUMPING tur=CRUISING oxy=8.0 combo=2 show=4 passed=17
+  COMBO exit x=22260 y=448 landed=false tur=1.03 rab=0.00
+  t=  93.3  ACCIDENT RABBIT_WATER  control=turtle x=22272 zone=2 phase=jump
+          turtle=(22272,449) rabbit=(22212,312) rab=FALLING_WATER slide=0.00 showtime=false mount=RESCUING
+          hits=none down=false up=false daze_r=0.00 daze_t=0.90
+  t=  94.9  RECOVERED  control=turtle x=22656
+  SETTLE[travel] t=94.70 x=22740 y=335 tur=0.00 rab=0.00 target=23038 room=298
+  t=  96.4  x= 23016 y=334 zone=2 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=0 show=4 passed=18
+  JUMP  x=23148 rock=23200-23330 y=334 spd=240 ctl=rabbit show=false
+  JUMP  t=96.55 x=23184 rab_y=211 rab_vy=-630 tur=334 st=JUMPING
+  JUMP  t=96.75 x=23232 rab_y=103 rab_vy=-490 tur=334 st=JUMPING
+  JUMP  t=96.95 x=23280 rab_y=22 rab_vy=-350 tur=334 st=JUMPING
+  JUMP  t=97.15 x=23328 rab_y=-30 rab_vy=-210 tur=334 st=JUMPING
+  JUMP  t=97.35 x=23376 rab_y=-55 rab_vy=-70 tur=334 st=JUMPING
+  JUMP  t=97.55 x=23424 rab_y=-51 rab_vy=70 tur=334 st=FALLING
+  JUMP  t=97.75 x=23472 rab_y=-20 rab_vy=210 tur=334 st=FALLING
+  JUMP  t=97.95 x=23520 rab_y=40 rab_vy=350 tur=334 st=FALLING
+  JUMP  t=98.15 x=23568 rab_y=127 rab_vy=490 tur=334 st=FALLING
+  JUMP  t=98.35 x=23616 rab_y=276 rab_vy=0 tur=334 st=RIDING
+  SETTLE[travel] t=100.50 x=24132 y=334 tur=0.00 rab=0.00 target=24345 room=213
+  t= 101.5  x= 24240 y=334 zone=2 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=1 show=4 passed=19
+  CROUCH exit x=24612 y=334 tur=0.00 rab=0.00
+  SETTLE[travel] t=104.80 x=25164 y=334 tur=0.00 rab=0.00 target=25460 room=296
+  t= 106.5  x= 25440 y=334 zone=2 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=2 show=4 passed=20
+  WARN  leap did not start x=25476 y=334
+  LEAP  exit x=25860 y=334 tur=0.00
+  SETTLE[travel] t=109.05 x=26353 y=334 tur=0.00 rab=0.00 target=26638 room=285
+  JUMP  x=26738 rock=26800-26940 y=334 spd=240 ctl=rabbit show=false
+  JUMP  t=110.45 x=26774 rab_y=211 rab_vy=-630 tur=334 st=JUMPING
+  JUMP  t=110.65 x=26822 rab_y=103 rab_vy=-490 tur=334 st=JUMPING
+  JUMP  t=110.85 x=26870 rab_y=22 rab_vy=-350 tur=334 st=JUMPING
+  t= 111.6  x= 26918 y=334 zone=2 control=rabbit mount=AIRBORNE phase=travel rab=JUMPING tur=CRUISING oxy=8.0 combo=0 show=5 passed=21
+  JUMP  t=111.05 x=26918 rab_y=-30 rab_vy=-210 tur=334 st=JUMPING
+  JUMP  t=111.25 x=26966 rab_y=-55 rab_vy=-70 tur=334 st=JUMPING
+  JUMP  t=111.45 x=27014 rab_y=-51 rab_vy=70 tur=334 st=FALLING
+  JUMP  t=111.65 x=27062 rab_y=-20 rab_vy=210 tur=334 st=FALLING
+  JUMP  t=111.85 x=27110 rab_y=40 rab_vy=350 tur=334 st=FALLING
+  JUMP  t=112.05 x=27158 rab_y=127 rab_vy=490 tur=334 st=FALLING
+  JUMP  t=112.25 x=27206 rab_y=276 rab_vy=0 tur=334 st=RIDING
+  SETTLE[travel] t=113.65 x=27542 y=334 tur=0.00 rab=0.00 target=27840 room=298
+  t= 116.6  x= 28118 y=478 zone=2 control=turtle mount=RIDING phase=travel rab=RIDING tur=DIVING oxy=7.2 combo=1 show=5 passed=22
+  DIVE  exit x=28538 y=336 tur=0.00
+  SETTLE[travel] t=119.45 x=28934 y=334 tur=0.00 rab=0.00 target=29145 room=211
+  t= 121.6  x= 29318 y=334 zone=2 control=rabbit mount=RIDING phase=travel rab=CROUCHING tur=CRUISING oxy=8.0 combo=2 show=5 passed=23
+  CROUCH exit x=29342 y=334 tur=0.00 rab=0.00
+  SETTLE[travel] t=124.10 x=30050 y=334 tur=0.00 rab=0.00 target=30350 room=300
+  t= 126.7  x= 30534 y=409 zone=2 control=turtle mount=AIRBORNE phase=travel rab=JUMPING tur=DUNKED oxy=8.0 combo=0 show=6 passed=24
+  COMBO exit x=30857 y=448 landed=false tur=1.03 rab=0.00
+  t= 128.1  ACCIDENT RABBIT_WATER  control=turtle x=30869 zone=2 phase=travel
+          turtle=(30869,449) rabbit=(30809,312) rab=FALLING_WATER slide=0.00 showtime=false mount=RESCUING
+          hits=none down=false up=false daze_r=0.00 daze_t=0.90
+  t= 129.7  RECOVERED  control=turtle x=31253
+  SETTLE[travel] t=129.55 x=31349 y=334 tur=0.00 rab=0.00 target=31638 room=288
+  t= 131.7  x= 31733 y=334 zone=2 control=rabbit mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=0 show=6 passed=25
+  JUMP  x=31745 rock=31800-31920 y=334 spd=240 ctl=rabbit show=false
+  JUMP  t=131.35 x=31781 rab_y=211 rab_vy=-630 tur=334 st=JUMPING
+  JUMP  t=131.50 x=31817 rab_y=127 rab_vy=-525 tur=334 st=JUMPING
+  JUMP  t=131.65 x=31853 rab_y=59 rab_vy=-420 tur=334 st=JUMPING
+  JUMP  t=131.80 x=31889 rab_y=7 rab_vy=-315 tur=334 st=JUMPING
+  JUMP  t=131.95 x=31925 rab_y=-30 rab_vy=-210 tur=334 st=JUMPING
+  JUMP  t=132.10 x=31961 rab_y=-51 rab_vy=-105 tur=334 st=JUMPING
+  JUMP  t=132.25 x=31997 rab_y=-56 rab_vy=0 tur=334 st=FALLING
+  JUMP  t=132.40 x=32033 rab_y=-46 rab_vy=105 tur=334 st=FALLING
+  JUMP  t=132.55 x=32069 rab_y=-20 rab_vy=210 tur=334 st=FALLING
+  JUMP  t=132.70 x=32105 rab_y=22 rab_vy=315 tur=334 st=FALLING
+  JUMP  t=132.85 x=32141 rab_y=80 rab_vy=420 tur=334 st=FALLING
+  JUMP  t=133.00 x=32177 rab_y=154 rab_vy=525 tur=334 st=FALLING
+  JUMP  t=133.15 x=32213 rab_y=276 rab_vy=0 tur=334 st=RIDING
+  SETTLE[travel] t=135.30 x=32729 y=334 tur=0.00 rab=0.00 target=32945 room=216
+  t= 136.7  x= 32933 y=334 zone=2 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=1 show=6 passed=26
+  CROUCH exit x=33197 y=334 tur=0.00 rab=0.00
+  SETTLE[travel] t=139.10 x=33761 y=334 tur=0.00 rab=0.00 target=34060 room=299
+  WARN  leap did not start x=34084 y=334
+  t= 141.8  x= 34396 y=195 zone=2 control=turtle mount=RIDING phase=travel rab=SHOWTIME tur=LEAPING oxy=8.0 combo=0 show=6 passed=28
+  LEAP  exit x=34468 y=334 tur=0.00
+  SETTLE[travel] t=144.30 x=35128 y=334 tur=0.00 rab=0.00 target=35345 room=217
+  CROUCH exit x=35548 y=334 tur=0.00 rab=0.00
+  t= 146.8  x= 35596 y=334 zone=2 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=0 show=7 passed=28
+  SETTLE[travel] t=149.00 x=36256 y=334 tur=0.00 rab=0.00 target=36550 room=294
+  t= 151.9  x= 36812 y=433 zone=2 control=turtle mount=AIRBORNE phase=travel rab=FALLING tur=DUNKED oxy=8.0 combo=1 show=7 passed=29
+  COMBO exit x=37064 y=448 landed=false tur=1.03 rab=0.00
+  t= 153.0  ACCIDENT RABBIT_WATER  control=turtle x=37076 zone=2 phase=dive
+          turtle=(37076,449) rabbit=(37016,312) rab=FALLING_WATER slide=0.00 showtime=false mount=RESCUING
+          hits=none down=false up=false daze_r=0.00 daze_t=0.90
+  t= 154.6  RECOVERED  control=turtle x=37460
+  SETTLE[travel] t=154.40 x=37544 y=335 tur=0.00 rab=0.00 target=37840 room=296
+  t= 156.9  x= 38012 y=458 zone=2 control=turtle mount=RIDING phase=travel rab=RIDING tur=DIVING oxy=7.7 combo=0 show=7 passed=30
+  DIVE  exit x=38540 y=336 tur=0.00
+  SETTLE[travel] t=159.50 x=38768 y=334 tur=0.00 rab=0.00 target=39060 room=292
+  t= 161.1  ZONE 3 MUSCLE MAYHEM  x=39021
+  WARN  leap did not start x=39086 y=334
+  t= 161.9  x= 39229 y=114 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=LEAPING oxy=8.0 combo=1 show=7 passed=31
+  LEAP  exit x=39502 y=334 tur=0.00
+  SETTLE[travel] t=164.30 x=39996 y=334 tur=0.00 rab=0.00 target=40215 room=219
+  CROUCH exit x=40477 y=334 tur=0.00 rab=0.00
+  t= 167.0  x= 40555 y=334 zone=3 control=turtle mount=RIDING phase=travel rab=SHOWTIME tur=CRUISING oxy=8.0 combo=0 show=7 passed=33
+  SETTLE[travel] t=168.05 x=40971 y=334 tur=0.00 rab=0.00 target=41265 room=294
+  JUMP  x=41374 rock=41450-41580 y=334 spd=260 ctl=rabbit show=false
+  JUMP  t=169.75 x=41413 rab_y=211 rab_vy=-630 tur=334 st=JUMPING
+  JUMP  t=169.90 x=41452 rab_y=127 rab_vy=-525 tur=334 st=JUMPING
+  JUMP  t=170.05 x=41491 rab_y=59 rab_vy=-420 tur=334 st=JUMPING
+  JUMP  t=170.20 x=41530 rab_y=7 rab_vy=-315 tur=334 st=JUMPING
+  JUMP  t=170.35 x=41569 rab_y=-30 rab_vy=-210 tur=334 st=JUMPING
+  JUMP  t=170.50 x=41608 rab_y=-51 rab_vy=-105 tur=334 st=JUMPING
+  JUMP  t=170.65 x=41647 rab_y=-57 rab_vy=0 tur=334 st=FALLING
+  JUMP  t=170.80 x=41686 rab_y=-46 rab_vy=105 tur=334 st=FALLING
+  JUMP  t=170.95 x=41725 rab_y=-20 rab_vy=210 tur=334 st=FALLING
+  JUMP  t=171.10 x=41764 rab_y=22 rab_vy=315 tur=334 st=FALLING
+  JUMP  t=171.25 x=41803 rab_y=80 rab_vy=420 tur=334 st=FALLING
+  JUMP  t=171.40 x=41842 rab_y=154 rab_vy=525 tur=334 st=FALLING
+  t= 172.1  x= 41881 y=334 zone=3 control=rabbit mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=1 show=8 passed=34
+  JUMP  t=171.55 x=41881 rab_y=276 rab_vy=0 tur=334 st=RIDING
+  SETTLE[travel] t=172.50 x=42128 y=334 tur=0.00 rab=0.00 target=42420 room=292
+  DIVE  exit x=43142 y=336 tur=0.00
+  t= 177.2  x= 43207 y=335 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=2 show=8 passed=35
+  SETTLE[travel] t=178.25 x=43623 y=334 tur=0.00 rab=0.00 target=43910 room=287
+  t= 182.1  ACCIDENT RABBIT_WATER  control=turtle x=44470 zone=3 phase=travel
+          turtle=(44470,448) rabbit=(44494,348) rab=FALLING_WATER slide=0.00 showtime=false mount=RESCUING
+          hits=none down=true up=false daze_r=0.00 daze_t=1.03
+  COMBO exit x=44470 y=448 landed=false tur=1.03 rab=0.00
+  t= 182.2  x= 44496 y=448 zone=3 control=turtle mount=RESCUING phase=crouch rab=FALLING_WATER tur=DUNKED oxy=8.0 combo=0 show=8 passed=36
+  t= 183.7  RECOVERED  control=turtle x=44886
+  SETTLE[travel] t=183.50 x=44977 y=335 tur=0.00 rab=0.00 target=45195 room=218
+  CROUCH exit x=45406 y=334 tur=0.00 rab=0.00
+  t= 187.3  x= 45822 y=334 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=1 show=8 passed=37
+  SETTLE[travel] t=187.20 x=45939 y=334 tur=0.00 rab=0.00 target=46230 room=291
+  WARN  leap did not start x=46251 y=334
+  LEAP  exit x=46667 y=334 tur=0.00
+  t= 192.3  x= 47122 y=334 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=2 show=8 passed=38
+  SETTLE[travel] t=191.95 x=47174 y=334 tur=0.00 rab=0.00 target=47385 room=211
+  CROUCH exit x=47642 y=334 tur=0.00 rab=0.00
+  SETTLE[travel] t=195.65 x=48136 y=334 tur=0.00 rab=0.00 target=48425 room=289
+  t= 197.4  x= 48448 y=334 zone=3 control=rabbit mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=0 show=9 passed=39
+  JUMP  x=48526 rock=48610-48750 y=334 spd=260 ctl=rabbit show=false
+  JUMP  t=197.30 x=48565 rab_y=211 rab_vy=-630 tur=334 st=JUMPING
+  JUMP  t=197.45 x=48604 rab_y=127 rab_vy=-525 tur=334 st=JUMPING
+  JUMP  t=197.60 x=48643 rab_y=59 rab_vy=-420 tur=334 st=JUMPING
+  JUMP  t=197.75 x=48682 rab_y=7 rab_vy=-315 tur=334 st=JUMPING
+  JUMP  t=197.90 x=48721 rab_y=-30 rab_vy=-210 tur=334 st=JUMPING
+  JUMP  t=198.05 x=48760 rab_y=-51 rab_vy=-105 tur=334 st=JUMPING
+  JUMP  t=198.20 x=48799 rab_y=-57 rab_vy=0 tur=334 st=FALLING
+  JUMP  t=198.35 x=48838 rab_y=-46 rab_vy=105 tur=334 st=FALLING
+  JUMP  t=198.50 x=48877 rab_y=-20 rab_vy=210 tur=334 st=FALLING
+  JUMP  t=198.65 x=48916 rab_y=22 rab_vy=315 tur=334 st=FALLING
+  JUMP  t=198.80 x=48955 rab_y=80 rab_vy=420 tur=334 st=FALLING
+  JUMP  t=198.95 x=48994 rab_y=154 rab_vy=525 tur=334 st=FALLING
+  JUMP  t=199.10 x=49033 rab_y=276 rab_vy=0 tur=334 st=RIDING
+  SETTLE[travel] t=200.10 x=49293 y=334 tur=0.00 rab=0.00 target=49590 room=297
+  t= 202.5  x= 49774 y=458 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=DIVING oxy=7.7 combo=1 show=9 passed=40
+  DIVE  exit x=50320 y=336 tur=0.00
+  SETTLE[travel] t=205.90 x=50801 y=334 tur=0.00 rab=0.00 target=51090 room=289
+  t= 207.5  x= 51074 y=334 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=2 show=9 passed=41
+  COMBO exit x=51649 y=448 landed=false tur=1.03 rab=0.00
+  t= 209.8  ACCIDENT RABBIT_WATER  control=turtle x=51662 zone=3 phase=crouch
+          turtle=(51662,448) rabbit=(51602,312) rab=FALLING_WATER slide=0.00 showtime=false mount=RESCUING
+          hits=none down=false up=false daze_r=0.00 daze_t=0.90
+  t= 211.4  RECOVERED  control=turtle x=52078
+  SETTLE[travel] t=211.20 x=52169 y=334 tur=0.00 rab=0.00 target=52385 room=216
+  t= 212.6  x= 52390 y=334 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=0 show=9 passed=42
+  CROUCH exit x=52585 y=334 tur=0.00 rab=0.00
+  SETTLE[travel] t=214.75 x=53120 y=334 tur=0.00 rab=0.00 target=53410 room=290
+  WARN  leap did not start x=53443 y=334
+  t= 217.6  x= 53820 y=261 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=LEAPING oxy=8.0 combo=2 show=9 passed=44
+  LEAP  exit x=53859 y=334 tur=0.00
+  SETTLE[travel] t=218.95 x=54348 y=334 tur=0.00 rab=0.00 target=54565 room=217
+  CROUCH exit x=54831 y=334 tur=0.00 rab=0.00
+  t= 222.6  x= 55278 y=334 zone=3 control=turtle mount=RIDING phase=travel rab=SHOWTIME tur=CRUISING oxy=8.0 combo=0 show=9 passed=45
+  SETTLE[travel] t=222.20 x=55317 y=334 tur=0.00 rab=0.00 target=55615 room=298
+  JUMP  x=55720 rock=55800-55920 y=334 spd=260 ctl=rabbit show=false
+  JUMP  t=223.90 x=55759 rab_y=211 rab_vy=-630 tur=334 st=JUMPING
+  JUMP  t=224.05 x=55798 rab_y=127 rab_vy=-525 tur=334 st=JUMPING
+  JUMP  t=224.20 x=55837 rab_y=59 rab_vy=-420 tur=334 st=JUMPING
+  JUMP  t=224.35 x=55876 rab_y=7 rab_vy=-315 tur=334 st=JUMPING
+  JUMP  t=224.50 x=55915 rab_y=-30 rab_vy=-210 tur=334 st=JUMPING
+  JUMP  t=224.65 x=55954 rab_y=-51 rab_vy=-105 tur=334 st=JUMPING
+  JUMP  t=224.80 x=55993 rab_y=-57 rab_vy=0 tur=334 st=FALLING
+  JUMP  t=224.95 x=56032 rab_y=-46 rab_vy=105 tur=334 st=FALLING
+  JUMP  t=225.10 x=56071 rab_y=-20 rab_vy=210 tur=334 st=FALLING
+  JUMP  t=225.25 x=56110 rab_y=22 rab_vy=315 tur=334 st=FALLING
+  JUMP  t=225.40 x=56149 rab_y=80 rab_vy=420 tur=334 st=FALLING
+  JUMP  t=225.55 x=56188 rab_y=154 rab_vy=525 tur=334 st=FALLING
+  JUMP  t=225.70 x=56227 rab_y=276 rab_vy=0 tur=334 st=RIDING
+  t= 227.7  x= 56604 y=334 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=1 show=10 passed=46
+  SETTLE[travel] t=227.80 x=56773 y=334 tur=0.00 rab=0.00 target=57070 room=297
+  COMBO exit x=57621 y=448 landed=false tur=1.03 rab=0.00
+  t= 231.7  ACCIDENT RABBIT_WATER  control=turtle x=57634 zone=3 phase=crouch
+          turtle=(57634,448) rabbit=(57574,312) rab=FALLING_WATER slide=0.00 showtime=false mount=RESCUING
+          hits=none down=false up=false daze_r=0.00 daze_t=0.90
+  t= 232.7  x= 57894 y=344 zone=3 control=turtle mount=RESCUING phase=crouch rab=FALLING_WATER tur=SURFACING oxy=8.0 combo=0 show=10 passed=47
+  t= 233.3  RECOVERED  control=turtle x=58050
+  SETTLE[travel] t=233.10 x=58141 y=334 tur=0.00 rab=0.00 target=58355 room=214
+  CROUCH exit x=58570 y=334 tur=0.00 rab=0.00
+  SETTLE[travel] t=236.60 x=59103 y=334 tur=0.00 rab=0.00 target=59400 room=297
+  t= 237.8  x= 59350 y=334 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=BOOSTING oxy=8.0 combo=1 show=10 passed=48
+  WARN  leap did not start x=59425 y=334
+  LEAP  exit x=59841 y=334 tur=0.00
+  SETTLE[travel] t=241.00 x=60348 y=334 tur=0.00 rab=0.00 target=60555 room=207
+  t= 242.8  x= 60673 y=334 zone=3 control=rabbit mount=RIDING phase=travel rab=CROUCHING tur=CRUISING oxy=8.0 combo=2 show=10 passed=49
+  CROUCH exit x=60816 y=334 tur=0.00 rab=0.00
+  SETTLE[travel] t=244.65 x=61297 y=334 tur=0.00 rab=0.00 target=61595 room=298
+  JUMP  x=61700 rock=61780-61930 y=334 spd=260 ctl=rabbit show=false
+  JUMP  t=246.35 x=61739 rab_y=211 rab_vy=-630 tur=334 st=JUMPING
+  JUMP  t=246.50 x=61778 rab_y=127 rab_vy=-525 tur=334 st=JUMPING
+  JUMP  t=246.65 x=61817 rab_y=59 rab_vy=-420 tur=334 st=JUMPING
+  JUMP  t=246.80 x=61856 rab_y=7 rab_vy=-315 tur=334 st=JUMPING
+  JUMP  t=246.95 x=61895 rab_y=-30 rab_vy=-210 tur=334 st=JUMPING
+  JUMP  t=247.10 x=61934 rab_y=-51 rab_vy=-105 tur=334 st=JUMPING
+  t= 247.8  x= 61973 y=334 zone=3 control=rabbit mount=AIRBORNE phase=travel rab=FALLING tur=CRUISING oxy=8.0 combo=0 show=11 passed=50
+  JUMP  t=247.25 x=61973 rab_y=-57 rab_vy=0 tur=334 st=FALLING
+  JUMP  t=247.40 x=62012 rab_y=-46 rab_vy=105 tur=334 st=FALLING
+  JUMP  t=247.55 x=62051 rab_y=-20 rab_vy=210 tur=334 st=FALLING
+  JUMP  t=247.70 x=62090 rab_y=22 rab_vy=315 tur=334 st=FALLING
+  JUMP  t=247.85 x=62129 rab_y=80 rab_vy=420 tur=334 st=FALLING
+  JUMP  t=248.00 x=62168 rab_y=154 rab_vy=525 tur=334 st=FALLING
+  JUMP  t=248.15 x=62207 rab_y=276 rab_vy=0 tur=334 st=RIDING
+  SETTLE[travel] t=248.90 x=62478 y=334 tur=0.00 rab=0.00 target=62770 room=292
+  t= 252.9  x= 63438 y=338 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=SURFACING oxy=8.0 combo=2 show=11 passed=52
+  DIVE  exit x=63490 y=336 tur=0.00
+  SETTLE[travel] t=254.40 x=63971 y=334 tur=0.00 rab=0.00 target=64260 room=289
+  t= 257.9  x= 64727 y=447 zone=3 control=turtle mount=AIRBORNE phase=travel rab=FALLING tur=DUNKED oxy=8.0 combo=0 show=11 passed=53
+  COMBO exit x=64818 y=448 landed=false tur=1.03 rab=0.00
+  t= 258.3  ACCIDENT RABBIT_WATER  control=turtle x=64831 zone=3 phase=crouch
+          turtle=(64831,448) rabbit=(64771,312) rab=FALLING_WATER slide=0.00 showtime=false mount=RESCUING
+          hits=none down=false up=false daze_r=0.00 daze_t=0.90
+  t= 259.9  RECOVERED  control=turtle x=65247
+  SETTLE[travel] t=259.65 x=65325 y=335 tur=0.00 rab=0.00 target=65545 room=220
+  CROUCH exit x=65754 y=334 tur=0.00 rab=0.00
+  t= 262.9  x= 66027 y=334 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=1 show=11 passed=54
+  SETTLE[travel] t=263.15 x=66235 y=334 tur=0.00 rab=0.00 target=66535 room=300
+  JUMP  x=66638 rock=66720-66840 y=334 spd=260 ctl=rabbit show=false
+  JUMP  t=264.85 x=66677 rab_y=211 rab_vy=-630 tur=334 st=JUMPING
+  JUMP  t=265.00 x=66716 rab_y=127 rab_vy=-525 tur=334 st=JUMPING
+  JUMP  t=265.15 x=66755 rab_y=59 rab_vy=-420 tur=334 st=JUMPING
+  JUMP  t=265.30 x=66794 rab_y=7 rab_vy=-315 tur=334 st=JUMPING
+  JUMP  t=265.45 x=66833 rab_y=-30 rab_vy=-210 tur=334 st=JUMPING
+  JUMP  t=265.60 x=66872 rab_y=-51 rab_vy=-105 tur=334 st=JUMPING
+  JUMP  t=265.75 x=66911 rab_y=-56 rab_vy=0 tur=334 st=FALLING
+  JUMP  t=265.90 x=66950 rab_y=-46 rab_vy=105 tur=334 st=FALLING
+  JUMP  t=266.05 x=66989 rab_y=-20 rab_vy=210 tur=334 st=FALLING
+  JUMP  t=266.20 x=67028 rab_y=22 rab_vy=315 tur=334 st=FALLING
+  JUMP  t=266.35 x=67067 rab_y=80 rab_vy=420 tur=334 st=FALLING
+  JUMP  t=266.50 x=67106 rab_y=154 rab_vy=525 tur=334 st=FALLING
+  JUMP  t=266.65 x=67145 rab_y=276 rab_vy=0 tur=334 st=RIDING
+  t= 268.0  x= 67353 y=334 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=2 show=11 passed=55
+  ok  run 1 finish captured
+  FINISH  run=1 time=268.9 score=6950 grade=B passed=55/55 casualties=8 engine=0 show=11 streak=10
+  ok  run 1 reached result screen
+  ok  run 1 state RESULT
+  ok  run 1 result shows score + streak
+  ok  run 1 result shows best records
+  ok  R on result starts the retry race
+  ok  retry state RUNNING
+  ok  retry clears finish state
+  ---- RUN 2  (RETRY) ----
+  SETTLE[travel] t=2.70 x=1027 y=334 tur=0.00 rab=0.00 target=1245 room=218
+  CROUCH exit x=1445 y=334 tur=0.00 rab=0.00
+  t=   5.2  x=  1544 y=334 zone=1 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=1 show=0 passed=1
+  SETTLE[travel] t=6.95 x=1962 y=334 tur=0.00 rab=0.00 target=2260 room=298
+  JUMP  x=2369 rock=2400-2510 y=334 spd=220 ctl=rabbit show=false
+  JUMP  t=8.95 x=2402 rab_y=211 rab_vy=-630 tur=334 st=JUMPING
+  JUMP  t=9.10 x=2435 rab_y=127 rab_vy=-525 tur=334 st=JUMPING
+  JUMP  t=9.25 x=2468 rab_y=59 rab_vy=-420 tur=334 st=JUMPING
+  JUMP  t=9.40 x=2501 rab_y=7 rab_vy=-315 tur=334 st=JUMPING
+  JUMP  t=9.55 x=2534 rab_y=-30 rab_vy=-210 tur=334 st=JUMPING
+  JUMP  t=9.70 x=2567 rab_y=-51 rab_vy=-105 tur=334 st=JUMPING
+  JUMP  t=9.85 x=2600 rab_y=-57 rab_vy=0 tur=334 st=FALLING
+  JUMP  t=10.00 x=2633 rab_y=-46 rab_vy=105 tur=334 st=FALLING
+  t=  10.3  x=  2666 y=334 zone=1 control=rabbit mount=AIRBORNE phase=travel rab=FALLING tur=CRUISING oxy=8.0 combo=2 show=0 passed=2
+  JUMP  t=10.15 x=2666 rab_y=-20 rab_vy=210 tur=334 st=FALLING
+  JUMP  t=10.30 x=2699 rab_y=22 rab_vy=315 tur=334 st=FALLING
+  JUMP  t=10.45 x=2732 rab_y=80 rab_vy=420 tur=334 st=FALLING
+  JUMP  t=10.60 x=2765 rab_y=154 rab_vy=525 tur=334 st=FALLING
+  JUMP  t=10.75 x=2798 rab_y=276 rab_vy=0 tur=334 st=RIDING
+  SETTLE[travel] t=12.60 x=3425 y=334 tur=0.00 rab=0.00 target=3645 room=220
+  CROUCH exit x=3898 y=334 tur=0.00 rab=0.00
+  t=  15.3  x=  3986 y=334 zone=1 control=turtle mount=RIDING phase=travel rab=SHOWTIME tur=CRUISING oxy=8.0 combo=0 show=0 passed=3
+  SETTLE[travel] t=17.35 x=4470 y=334 tur=0.00 rab=0.00 target=4760 room=290
+  JUMP  x=4866 rock=4900-5040 y=334 spd=220 ctl=rabbit show=false
+  JUMP  t=19.30 x=4899 rab_y=211 rab_vy=-630 tur=334 st=JUMPING
+  JUMP  t=19.45 x=4932 rab_y=127 rab_vy=-525 tur=334 st=JUMPING
+  JUMP  t=19.60 x=4965 rab_y=59 rab_vy=-420 tur=334 st=JUMPING
+  JUMP  t=19.75 x=4998 rab_y=7 rab_vy=-315 tur=334 st=JUMPING
+  JUMP  t=19.90 x=5031 rab_y=-30 rab_vy=-210 tur=334 st=JUMPING
+  JUMP  t=20.05 x=5064 rab_y=-51 rab_vy=-105 tur=334 st=JUMPING
+  t=  20.3  x=  5086 y=334 zone=1 control=rabbit mount=AIRBORNE phase=travel rab=JUMPING tur=CRUISING oxy=8.0 combo=0 show=1 passed=3
+  JUMP  t=20.20 x=5097 rab_y=-57 rab_vy=0 tur=334 st=FALLING
+  JUMP  t=20.35 x=5130 rab_y=-46 rab_vy=105 tur=334 st=FALLING
+  JUMP  t=20.50 x=5163 rab_y=-20 rab_vy=210 tur=334 st=FALLING
+  JUMP  t=20.65 x=5196 rab_y=22 rab_vy=315 tur=334 st=FALLING
+  JUMP  t=20.80 x=5229 rab_y=80 rab_vy=420 tur=334 st=FALLING
+  JUMP  t=20.95 x=5262 rab_y=154 rab_vy=525 tur=334 st=FALLING
+  JUMP  t=21.10 x=5295 rab_y=276 rab_vy=0 tur=334 st=RIDING
+  SETTLE[travel] t=23.10 x=5735 y=334 tur=0.00 rab=0.00 target=5945 room=210
+  CROUCH exit x=6142 y=334 tur=0.00 rab=0.00
+  t=  25.4  x=  6208 y=334 zone=1 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=2 show=1 passed=5
+  SETTLE[travel] t=27.80 x=6769 y=334 tur=0.00 rab=0.00 target=7060 room=291
+  WARN  leap did not start x=7077 y=334
+  t=  30.4  x=  7308 y=114 zone=1 control=turtle mount=RIDING phase=travel rab=RIDING tur=LEAPING oxy=8.0 combo=2 show=1 passed=5
+  LEAP  exit x=7429 y=334 tur=0.00
+  SETTLE[travel] t=33.15 x=7946 y=334 tur=0.00 rab=0.00 target=8240 room=294
+  t=  35.4  x=  8408 y=462 zone=1 control=turtle mount=RIDING phase=travel rab=RIDING tur=DIVING oxy=7.6 combo=0 show=2 passed=6
+  DIVE  exit x=8903 y=336 tur=0.00
+  SETTLE[travel] t=39.45 x=9332 y=334 tur=0.00 rab=0.00 target=9545 room=213
+  t=  40.5  x=  9530 y=334 zone=1 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=1 show=2 passed=7
+  CROUCH exit x=9805 y=334 tur=0.00 rab=0.00
+  SETTLE[travel] t=44.15 x=10366 y=334 tur=0.00 rab=0.00 target=10660 room=294
+  t=  45.5  x= 10630 y=334 zone=1 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=2 show=2 passed=8
+  WARN  leap did not start x=10674 y=334
+  LEAP  exit x=11026 y=334 tur=0.00
+  SETTLE[travel] t=49.50 x=11543 y=334 tur=0.00 rab=0.00 target=11840 room=297
+  t=  50.6  x= 11752 y=334 zone=1 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=0 show=3 passed=9
+  DIVE  exit x=12500 y=336 tur=0.00
+  SETTLE[travel] t=55.25 x=12808 y=334 tur=0.00 rab=0.00 target=13100 room=292
+  t=  55.6  x= 12852 y=334 zone=1 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=1 show=3 passed=10
+  t=  58.9  ACCIDENT RABBIT_WATER  control=turtle x=13571 zone=1 phase=travel
+          turtle=(13571,449) rabbit=(13589,348) rab=FALLING_WATER slide=0.00 showtime=false mount=RESCUING
+          hits=none down=true up=false daze_r=0.00 daze_t=1.03
+  COMBO exit x=13571 y=449 landed=false tur=1.03 rab=0.00
+  t=  60.5  RECOVERED  control=turtle x=14056
+  t=  60.6  x= 14094 y=336 zone=1 control=turtle mount=RIDING phase=travel rab=RIDING tur=BOOSTING oxy=8.0 combo=0 show=3 passed=11
+  SETTLE[travel] t=60.50 x=14113 y=335 tur=0.00 rab=0.00 target=14410 room=297
+  JUMP  x=14516 rock=14550-14670 y=334 spd=290 ctl=rabbit show=false
+  JUMP  t=61.75 x=14555 rab_y=211 rab_vy=-630 tur=334 st=JUMPING
+  JUMP  t=61.95 x=14599 rab_y=103 rab_vy=-490 tur=334 st=JUMPING
+  JUMP  t=62.15 x=14643 rab_y=22 rab_vy=-350 tur=334 st=JUMPING
+  JUMP  t=62.35 x=14687 rab_y=-30 rab_vy=-210 tur=334 st=JUMPING
+  JUMP  t=62.55 x=14731 rab_y=-55 rab_vy=-70 tur=334 st=JUMPING
+  JUMP  t=62.75 x=14775 rab_y=-51 rab_vy=70 tur=334 st=FALLING
+  JUMP  t=62.95 x=14819 rab_y=-20 rab_vy=210 tur=334 st=FALLING
+  JUMP  t=63.15 x=14863 rab_y=40 rab_vy=350 tur=334 st=FALLING
+  JUMP  t=63.35 x=14907 rab_y=127 rab_vy=490 tur=334 st=FALLING
+  JUMP  t=63.55 x=14951 rab_y=276 rab_vy=0 tur=334 st=RIDING
+  t=  64.0  ZONE 2 CORAL CHAOS  x=15018
+  t=  65.7  x= 15426 y=334 zone=2 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=1 show=3 passed=12
+  SETTLE[travel] t=66.00 x=15534 y=334 tur=0.00 rab=0.00 target=15745 room=211
+  CROUCH exit x=16002 y=334 tur=0.00 rab=0.00
+  SETTLE[travel] t=70.20 x=16542 y=334 tur=0.00 rab=0.00 target=16838 room=296
+  t=  70.8  x= 16650 y=334 zone=2 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=2 show=3 passed=13
+  JUMP  x=16938 rock=17000-17120 y=334 spd=240 ctl=rabbit show=false
+  JUMP  t=72.00 x=16974 rab_y=211 rab_vy=-630 tur=334 st=JUMPING
+  JUMP  t=72.20 x=17022 rab_y=103 rab_vy=-490 tur=334 st=JUMPING
+  JUMP  t=72.40 x=17070 rab_y=22 rab_vy=-350 tur=334 st=JUMPING
+  JUMP  t=72.60 x=17118 rab_y=-30 rab_vy=-210 tur=334 st=JUMPING
+  JUMP  t=72.80 x=17166 rab_y=-55 rab_vy=-70 tur=334 st=JUMPING
+  JUMP  t=73.00 x=17214 rab_y=-51 rab_vy=70 tur=334 st=FALLING
+  JUMP  t=73.20 x=17262 rab_y=-20 rab_vy=210 tur=334 st=FALLING
+  JUMP  t=73.40 x=17310 rab_y=40 rab_vy=350 tur=334 st=FALLING
+  JUMP  t=73.60 x=17358 rab_y=127 rab_vy=490 tur=334 st=FALLING
+  JUMP  t=73.80 x=17406 rab_y=276 rab_vy=0 tur=334 st=RIDING
+  SETTLE[travel] t=75.30 x=17766 y=334 tur=0.00 rab=0.00 target=18060 room=294
+  t=  75.9  x= 17874 y=334 zone=2 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=3 show=3 passed=14
+  WARN  leap did not start x=18078 y=334
+  LEAP  exit x=18462 y=334 tur=0.00
+  SETTLE[travel] t=79.55 x=18955 y=334 tur=0.00 rab=0.00 target=19240 room=285
+  t=  80.9  x= 19329 y=403 zone=2 control=turtle mount=RIDING phase=travel rab=RIDING tur=DIVING oxy=8.0 combo=0 show=4 passed=15
+  DIVE  exit x=19929 y=336 tur=0.00
+  SETTLE[travel] t=84.95 x=20337 y=334 tur=0.00 rab=0.00 target=20545 room=209
+  t=  85.9  x= 20529 y=334 zone=2 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=1 show=4 passed=16
+  CROUCH exit x=20745 y=334 tur=0.00 rab=0.00
+  SETTLE[travel] t=89.60 x=21453 y=334 tur=0.00 rab=0.00 target=21750 room=298
+  t=  91.0  x= 21753 y=334 zone=2 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=2 show=4 passed=17
+  COMBO exit x=22260 y=448 landed=false tur=1.03 rab=0.00
+  t=  93.2  ACCIDENT RABBIT_WATER  control=turtle x=22272 zone=2 phase=jump
+          turtle=(22272,449) rabbit=(22212,312) rab=FALLING_WATER slide=0.00 showtime=false mount=RESCUING
+          hits=none down=false up=false daze_r=0.00 daze_t=0.90
+  t=  94.8  RECOVERED  control=turtle x=22656
+  SETTLE[travel] t=95.00 x=22740 y=335 tur=0.00 rab=0.00 target=23038 room=298
+  t=  96.0  x= 22944 y=334 zone=2 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=0 show=4 passed=18
+  JUMP  x=23148 rock=23200-23330 y=334 spd=240 ctl=rabbit show=false
+  JUMP  t=96.85 x=23184 rab_y=211 rab_vy=-630 tur=334 st=JUMPING
+  JUMP  t=97.05 x=23232 rab_y=103 rab_vy=-490 tur=334 st=JUMPING
+  JUMP  t=97.25 x=23280 rab_y=22 rab_vy=-350 tur=334 st=JUMPING
+  JUMP  t=97.45 x=23328 rab_y=-30 rab_vy=-210 tur=334 st=JUMPING
+  JUMP  t=97.65 x=23376 rab_y=-55 rab_vy=-70 tur=334 st=JUMPING
+  JUMP  t=97.85 x=23424 rab_y=-51 rab_vy=70 tur=334 st=FALLING
+  JUMP  t=98.05 x=23472 rab_y=-20 rab_vy=210 tur=334 st=FALLING
+  JUMP  t=98.25 x=23520 rab_y=40 rab_vy=350 tur=334 st=FALLING
+  JUMP  t=98.45 x=23568 rab_y=127 rab_vy=490 tur=334 st=FALLING
+  JUMP  t=98.65 x=23616 rab_y=276 rab_vy=0 tur=334 st=RIDING
+  SETTLE[travel] t=100.80 x=24132 y=334 tur=0.00 rab=0.00 target=24345 room=213
+  t= 101.1  x= 24168 y=334 zone=2 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=1 show=4 passed=19
+  CROUCH exit x=24612 y=334 tur=0.00 rab=0.00
+  SETTLE[travel] t=105.10 x=25164 y=334 tur=0.00 rab=0.00 target=25460 room=296
+  t= 106.1  x= 25368 y=334 zone=2 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=2 show=4 passed=20
+  WARN  leap did not start x=25476 y=334
+  LEAP  exit x=25860 y=334 tur=0.00
+  SETTLE[travel] t=109.35 x=26353 y=334 tur=0.00 rab=0.00 target=26638 room=285
+  JUMP  x=26738 rock=26800-26940 y=334 spd=240 ctl=rabbit show=false
+  JUMP  t=110.75 x=26774 rab_y=211 rab_vy=-630 tur=334 st=JUMPING
+  t= 111.1  x= 26822 y=334 zone=2 control=rabbit mount=AIRBORNE phase=travel rab=JUMPING tur=CRUISING oxy=8.0 combo=0 show=5 passed=21
+  JUMP  t=110.95 x=26822 rab_y=103 rab_vy=-490 tur=334 st=JUMPING
+  JUMP  t=111.15 x=26870 rab_y=22 rab_vy=-350 tur=334 st=JUMPING
+  JUMP  t=111.35 x=26918 rab_y=-30 rab_vy=-210 tur=334 st=JUMPING
+  JUMP  t=111.55 x=26966 rab_y=-55 rab_vy=-70 tur=334 st=JUMPING
+  JUMP  t=111.75 x=27014 rab_y=-51 rab_vy=70 tur=334 st=FALLING
+  JUMP  t=111.95 x=27062 rab_y=-20 rab_vy=210 tur=334 st=FALLING
+  JUMP  t=112.15 x=27110 rab_y=40 rab_vy=350 tur=334 st=FALLING
+  JUMP  t=112.35 x=27158 rab_y=127 rab_vy=490 tur=334 st=FALLING
+  JUMP  t=112.55 x=27206 rab_y=276 rab_vy=0 tur=334 st=RIDING
+  SETTLE[travel] t=113.95 x=27542 y=334 tur=0.00 rab=0.00 target=27840 room=298
+  t= 116.2  x= 28046 y=468 zone=2 control=turtle mount=RIDING phase=travel rab=RIDING tur=DIVING oxy=7.5 combo=1 show=5 passed=22
+  DIVE  exit x=28538 y=336 tur=0.00
+  SETTLE[travel] t=119.75 x=28934 y=334 tur=0.00 rab=0.00 target=29145 room=211
+  t= 121.3  x= 29270 y=334 zone=2 control=rabbit mount=RIDING phase=travel rab=CROUCHING tur=CRUISING oxy=8.0 combo=2 show=5 passed=23
+  CROUCH exit x=29342 y=334 tur=0.00 rab=0.00
+  SETTLE[travel] t=124.40 x=30050 y=334 tur=0.00 rab=0.00 target=30350 room=300
+  t= 126.4  x= 30494 y=379 zone=2 control=turtle mount=AIRBORNE phase=travel rab=JUMPING tur=DIVING oxy=8.0 combo=0 show=6 passed=24
+  COMBO exit x=30857 y=448 landed=false tur=1.03 rab=0.00
+  t= 128.0  ACCIDENT RABBIT_WATER  control=turtle x=30869 zone=2 phase=travel
+          turtle=(30869,449) rabbit=(30809,312) rab=FALLING_WATER slide=0.00 showtime=false mount=RESCUING
+          hits=none down=false up=false daze_r=0.00 daze_t=0.90
+  t= 129.6  RECOVERED  control=turtle x=31253
+  SETTLE[travel] t=129.85 x=31349 y=334 tur=0.00 rab=0.00 target=31638 room=288
+  t= 131.4  x= 31685 y=334 zone=2 control=rabbit mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=0 show=6 passed=25
+  JUMP  x=31745 rock=31800-31920 y=334 spd=240 ctl=rabbit show=false
+  JUMP  t=131.65 x=31781 rab_y=211 rab_vy=-630 tur=334 st=JUMPING
+  JUMP  t=131.80 x=31817 rab_y=127 rab_vy=-525 tur=334 st=JUMPING
+  JUMP  t=131.95 x=31853 rab_y=59 rab_vy=-420 tur=334 st=JUMPING
+  JUMP  t=132.10 x=31889 rab_y=7 rab_vy=-315 tur=334 st=JUMPING
+  JUMP  t=132.25 x=31925 rab_y=-30 rab_vy=-210 tur=334 st=JUMPING
+  JUMP  t=132.40 x=31961 rab_y=-51 rab_vy=-105 tur=334 st=JUMPING
+  JUMP  t=132.55 x=31997 rab_y=-56 rab_vy=0 tur=334 st=FALLING
+  JUMP  t=132.70 x=32033 rab_y=-46 rab_vy=105 tur=334 st=FALLING
+  JUMP  t=132.85 x=32069 rab_y=-20 rab_vy=210 tur=334 st=FALLING
+  JUMP  t=133.00 x=32105 rab_y=22 rab_vy=315 tur=334 st=FALLING
+  JUMP  t=133.15 x=32141 rab_y=80 rab_vy=420 tur=334 st=FALLING
+  JUMP  t=133.30 x=32177 rab_y=154 rab_vy=525 tur=334 st=FALLING
+  JUMP  t=133.45 x=32213 rab_y=276 rab_vy=0 tur=334 st=RIDING
+  SETTLE[travel] t=135.60 x=32729 y=334 tur=0.00 rab=0.00 target=32945 room=216
+  t= 136.4  x= 32885 y=334 zone=2 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=1 show=6 passed=26
+  CROUCH exit x=33197 y=334 tur=0.00 rab=0.00
+  SETTLE[travel] t=139.40 x=33761 y=334 tur=0.00 rab=0.00 target=34060 room=299
+  WARN  leap did not start x=34084 y=334
+  t= 141.5  x= 34348 y=126 zone=2 control=turtle mount=RIDING phase=travel rab=RIDING tur=LEAPING oxy=8.0 combo=2 show=6 passed=27
+  LEAP  exit x=34468 y=334 tur=0.00
+  SETTLE[travel] t=144.60 x=35128 y=334 tur=0.00 rab=0.00 target=35345 room=217
+  t= 146.5  x= 35548 y=334 zone=2 control=rabbit mount=RIDING phase=travel rab=CROUCHING tur=CRUISING oxy=8.0 combo=0 show=7 passed=28
+  CROUCH exit x=35548 y=334 tur=0.00 rab=0.00
+  SETTLE[travel] t=149.30 x=36256 y=334 tur=0.00 rab=0.00 target=36550 room=294
+  t= 151.6  x= 36764 y=418 zone=2 control=turtle mount=AIRBORNE phase=travel rab=JUMPING tur=DUNKED oxy=8.0 combo=1 show=7 passed=29
+  COMBO exit x=37064 y=448 landed=false tur=1.03 rab=0.00
+  t= 152.9  ACCIDENT RABBIT_WATER  control=turtle x=37076 zone=2 phase=dive
+          turtle=(37076,449) rabbit=(37016,312) rab=FALLING_WATER slide=0.00 showtime=false mount=RESCUING
+          hits=none down=false up=false daze_r=0.00 daze_t=0.90
+  t= 154.5  RECOVERED  control=turtle x=37460
+  SETTLE[travel] t=154.70 x=37544 y=335 tur=0.00 rab=0.00 target=37840 room=296
+  t= 156.6  x= 37964 y=434 zone=2 control=turtle mount=RIDING phase=travel rab=RIDING tur=DIVING oxy=7.9 combo=0 show=7 passed=30
+  DIVE  exit x=38540 y=336 tur=0.00
+  SETTLE[travel] t=159.80 x=38768 y=334 tur=0.00 rab=0.00 target=39060 room=292
+  t= 161.0  ZONE 3 MUSCLE MAYHEM  x=39021
+  WARN  leap did not start x=39086 y=334
+  t= 161.6  x= 39177 y=175 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=LEAPING oxy=8.0 combo=1 show=7 passed=31
+  LEAP  exit x=39502 y=334 tur=0.00
+  SETTLE[travel] t=164.60 x=39996 y=334 tur=0.00 rab=0.00 target=40215 room=219
+  CROUCH exit x=40477 y=334 tur=0.00 rab=0.00
+  t= 166.7  x= 40503 y=334 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=2 show=7 passed=32
+  SETTLE[travel] t=168.35 x=40971 y=334 tur=0.00 rab=0.00 target=41265 room=294
+  JUMP  x=41374 rock=41450-41580 y=334 spd=260 ctl=rabbit show=false
+  JUMP  t=170.05 x=41413 rab_y=211 rab_vy=-630 tur=334 st=JUMPING
+  JUMP  t=170.20 x=41452 rab_y=127 rab_vy=-525 tur=334 st=JUMPING
+  JUMP  t=170.35 x=41491 rab_y=59 rab_vy=-420 tur=334 st=JUMPING
+  JUMP  t=170.50 x=41530 rab_y=7 rab_vy=-315 tur=334 st=JUMPING
+  JUMP  t=170.65 x=41569 rab_y=-30 rab_vy=-210 tur=334 st=JUMPING
+  JUMP  t=170.80 x=41608 rab_y=-51 rab_vy=-105 tur=334 st=JUMPING
+  JUMP  t=170.95 x=41647 rab_y=-57 rab_vy=0 tur=334 st=FALLING
+  JUMP  t=171.10 x=41686 rab_y=-46 rab_vy=105 tur=334 st=FALLING
+  JUMP  t=171.25 x=41725 rab_y=-20 rab_vy=210 tur=334 st=FALLING
+  JUMP  t=171.40 x=41764 rab_y=22 rab_vy=315 tur=334 st=FALLING
+  t= 171.7  x= 41803 y=334 zone=3 control=rabbit mount=AIRBORNE phase=travel rab=FALLING tur=CRUISING oxy=8.0 combo=1 show=8 passed=34
+  JUMP  t=171.55 x=41803 rab_y=80 rab_vy=420 tur=334 st=FALLING
+  JUMP  t=171.70 x=41842 rab_y=154 rab_vy=525 tur=334 st=FALLING
+  JUMP  t=171.85 x=41881 rab_y=276 rab_vy=0 tur=334 st=RIDING
+  SETTLE[travel] t=172.80 x=42128 y=334 tur=0.00 rab=0.00 target=42420 room=292
+  t= 176.7  x= 43103 y=337 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=SURFACING oxy=8.0 combo=2 show=8 passed=35
+  DIVE  exit x=43142 y=336 tur=0.00
+  SETTLE[travel] t=178.55 x=43623 y=334 tur=0.00 rab=0.00 target=43910 room=287
+  t= 181.8  x= 44418 y=448 zone=3 control=turtle mount=AIRBORNE phase=travel rab=FALLING tur=DUNKED oxy=8.0 combo=0 show=8 passed=36
+  t= 182.0  ACCIDENT RABBIT_WATER  control=turtle x=44470 zone=3 phase=travel
+          turtle=(44470,448) rabbit=(44494,348) rab=FALLING_WATER slide=0.00 showtime=false mount=RESCUING
+          hits=none down=true up=false daze_r=0.00 daze_t=1.03
+  COMBO exit x=44470 y=448 landed=false tur=1.03 rab=0.00
+  t= 183.6  RECOVERED  control=turtle x=44886
+  SETTLE[travel] t=183.80 x=44977 y=335 tur=0.00 rab=0.00 target=45195 room=218
+  CROUCH exit x=45406 y=334 tur=0.00 rab=0.00
+  t= 186.8  x= 45718 y=334 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=1 show=8 passed=37
+  SETTLE[travel] t=187.50 x=45939 y=334 tur=0.00 rab=0.00 target=46230 room=291
+  WARN  leap did not start x=46251 y=334
+  LEAP  exit x=46667 y=334 tur=0.00
+  t= 191.9  x= 47044 y=334 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=2 show=8 passed=38
+  SETTLE[travel] t=192.25 x=47174 y=334 tur=0.00 rab=0.00 target=47385 room=211
+  CROUCH exit x=47642 y=334 tur=0.00 rab=0.00
+  SETTLE[travel] t=195.95 x=48136 y=334 tur=0.00 rab=0.00 target=48425 room=289
+  t= 196.9  x= 48344 y=334 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=0 show=9 passed=39
+  JUMP  x=48526 rock=48610-48750 y=334 spd=260 ctl=rabbit show=false
+  JUMP  t=197.60 x=48565 rab_y=211 rab_vy=-630 tur=334 st=JUMPING
+  JUMP  t=197.75 x=48604 rab_y=127 rab_vy=-525 tur=334 st=JUMPING
+  JUMP  t=197.90 x=48643 rab_y=59 rab_vy=-420 tur=334 st=JUMPING
+  JUMP  t=198.05 x=48682 rab_y=7 rab_vy=-315 tur=334 st=JUMPING
+  JUMP  t=198.20 x=48721 rab_y=-30 rab_vy=-210 tur=334 st=JUMPING
+  JUMP  t=198.35 x=48760 rab_y=-51 rab_vy=-105 tur=334 st=JUMPING
+  JUMP  t=198.50 x=48799 rab_y=-57 rab_vy=0 tur=334 st=FALLING
+  JUMP  t=198.65 x=48838 rab_y=-46 rab_vy=105 tur=334 st=FALLING
+  JUMP  t=198.80 x=48877 rab_y=-20 rab_vy=210 tur=334 st=FALLING
+  JUMP  t=198.95 x=48916 rab_y=22 rab_vy=315 tur=334 st=FALLING
+  JUMP  t=199.10 x=48955 rab_y=80 rab_vy=420 tur=334 st=FALLING
+  JUMP  t=199.25 x=48994 rab_y=154 rab_vy=525 tur=334 st=FALLING
+  JUMP  t=199.40 x=49033 rab_y=276 rab_vy=0 tur=334 st=RIDING
+  SETTLE[travel] t=200.40 x=49293 y=334 tur=0.00 rab=0.00 target=49590 room=297
+  t= 201.9  x= 49644 y=367 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=DIVING oxy=8.0 combo=1 show=9 passed=40
+  DIVE  exit x=50320 y=336 tur=0.00
+  SETTLE[travel] t=206.20 x=50801 y=334 tur=0.00 rab=0.00 target=51090 room=289
+  t= 207.0  x= 50970 y=334 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=2 show=9 passed=41
+  COMBO exit x=51649 y=448 landed=false tur=1.03 rab=0.00
+  t= 209.7  ACCIDENT RABBIT_WATER  control=turtle x=51662 zone=3 phase=crouch
+          turtle=(51662,448) rabbit=(51602,312) rab=FALLING_WATER slide=0.00 showtime=false mount=RESCUING
+          hits=none down=false up=false daze_r=0.00 daze_t=0.90
+  t= 211.3  RECOVERED  control=turtle x=52078
+  SETTLE[travel] t=211.50 x=52169 y=334 tur=0.00 rab=0.00 target=52385 room=216
+  t= 212.0  x= 52260 y=334 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=0 show=9 passed=42
+  CROUCH exit x=52585 y=334 tur=0.00 rab=0.00
+  SETTLE[travel] t=215.05 x=53120 y=334 tur=0.00 rab=0.00 target=53410 room=290
+  WARN  leap did not start x=53443 y=334
+  t= 217.0  x= 53690 y=95 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=LEAPING oxy=8.0 combo=1 show=9 passed=43
+  LEAP  exit x=53859 y=334 tur=0.00
+  SETTLE[travel] t=219.25 x=54348 y=334 tur=0.00 rab=0.00 target=54565 room=217
+  CROUCH exit x=54831 y=334 tur=0.00 rab=0.00
+  t= 222.1  x= 55174 y=334 zone=3 control=turtle mount=RIDING phase=travel rab=SHOWTIME tur=CRUISING oxy=8.0 combo=0 show=9 passed=45
+  SETTLE[travel] t=222.50 x=55317 y=334 tur=0.00 rab=0.00 target=55615 room=298
+  JUMP  x=55720 rock=55800-55920 y=334 spd=260 ctl=rabbit show=false
+  JUMP  t=224.20 x=55759 rab_y=211 rab_vy=-630 tur=334 st=JUMPING
+  JUMP  t=224.35 x=55798 rab_y=127 rab_vy=-525 tur=334 st=JUMPING
+  JUMP  t=224.50 x=55837 rab_y=59 rab_vy=-420 tur=334 st=JUMPING
+  JUMP  t=224.65 x=55876 rab_y=7 rab_vy=-315 tur=334 st=JUMPING
+  JUMP  t=224.80 x=55915 rab_y=-30 rab_vy=-210 tur=334 st=JUMPING
+  JUMP  t=224.95 x=55954 rab_y=-51 rab_vy=-105 tur=334 st=JUMPING
+  JUMP  t=225.10 x=55993 rab_y=-57 rab_vy=0 tur=334 st=FALLING
+  JUMP  t=225.25 x=56032 rab_y=-46 rab_vy=105 tur=334 st=FALLING
+  JUMP  t=225.40 x=56071 rab_y=-20 rab_vy=210 tur=334 st=FALLING
+  JUMP  t=225.55 x=56110 rab_y=22 rab_vy=315 tur=334 st=FALLING
+  JUMP  t=225.70 x=56149 rab_y=80 rab_vy=420 tur=334 st=FALLING
+  JUMP  t=225.85 x=56188 rab_y=154 rab_vy=525 tur=334 st=FALLING
+  JUMP  t=226.00 x=56227 rab_y=276 rab_vy=0 tur=334 st=RIDING
+  t= 227.1  x= 56474 y=334 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=1 show=10 passed=46
+  SETTLE[travel] t=228.10 x=56773 y=334 tur=0.00 rab=0.00 target=57070 room=297
+  COMBO exit x=57621 y=448 landed=false tur=1.03 rab=0.00
+  t= 231.6  ACCIDENT RABBIT_WATER  control=turtle x=57634 zone=3 phase=crouch
+          turtle=(57634,448) rabbit=(57574,312) rab=FALLING_WATER slide=0.00 showtime=false mount=RESCUING
+          hits=none down=false up=false daze_r=0.00 daze_t=0.90
+  t= 232.2  x= 57790 y=369 zone=3 control=turtle mount=RESCUING phase=crouch rab=FALLING_WATER tur=SURFACING oxy=8.0 combo=0 show=10 passed=47
+  t= 233.2  RECOVERED  control=turtle x=58050
+  SETTLE[travel] t=233.40 x=58141 y=334 tur=0.00 rab=0.00 target=58355 room=214
+  CROUCH exit x=58570 y=334 tur=0.00 rab=0.00
+  SETTLE[travel] t=236.90 x=59103 y=334 tur=0.00 rab=0.00 target=59400 room=297
+  t= 237.2  x= 59160 y=334 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=BOOSTING oxy=8.0 combo=1 show=10 passed=48
+  WARN  leap did not start x=59425 y=334
+  LEAP  exit x=59841 y=334 tur=0.00
+  SETTLE[travel] t=241.30 x=60348 y=334 tur=0.00 rab=0.00 target=60555 room=207
+  t= 242.2  x= 60543 y=334 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=2 show=10 passed=49
+  CROUCH exit x=60816 y=334 tur=0.00 rab=0.00
+  SETTLE[travel] t=244.95 x=61297 y=334 tur=0.00 rab=0.00 target=61595 room=298
+  JUMP  x=61700 rock=61780-61930 y=334 spd=260 ctl=rabbit show=false
+  JUMP  t=246.65 x=61739 rab_y=211 rab_vy=-630 tur=334 st=JUMPING
+  JUMP  t=246.80 x=61778 rab_y=127 rab_vy=-525 tur=334 st=JUMPING
+  JUMP  t=246.95 x=61817 rab_y=59 rab_vy=-420 tur=334 st=JUMPING
+  JUMP  t=247.10 x=61856 rab_y=7 rab_vy=-315 tur=334 st=JUMPING
+  t= 247.3  x= 61869 y=334 zone=3 control=rabbit mount=AIRBORNE phase=travel rab=JUMPING tur=CRUISING oxy=8.0 combo=0 show=11 passed=50
+  JUMP  t=247.25 x=61895 rab_y=-30 rab_vy=-210 tur=334 st=JUMPING
+  JUMP  t=247.40 x=61934 rab_y=-51 rab_vy=-105 tur=334 st=JUMPING
+  JUMP  t=247.55 x=61973 rab_y=-57 rab_vy=0 tur=334 st=FALLING
+  JUMP  t=247.70 x=62012 rab_y=-46 rab_vy=105 tur=334 st=FALLING
+  JUMP  t=247.85 x=62051 rab_y=-20 rab_vy=210 tur=334 st=FALLING
+  JUMP  t=248.00 x=62090 rab_y=22 rab_vy=315 tur=334 st=FALLING
+  JUMP  t=248.15 x=62129 rab_y=80 rab_vy=420 tur=334 st=FALLING
+  JUMP  t=248.30 x=62168 rab_y=154 rab_vy=525 tur=334 st=FALLING
+  JUMP  t=248.45 x=62207 rab_y=276 rab_vy=0 tur=334 st=RIDING
+  SETTLE[travel] t=249.20 x=62478 y=334 tur=0.00 rab=0.00 target=62770 room=292
+  t= 252.3  x= 63308 y=353 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=SURFACING oxy=8.0 combo=2 show=11 passed=52
+  DIVE  exit x=63490 y=336 tur=0.00
+  SETTLE[travel] t=254.70 x=63971 y=334 tur=0.00 rab=0.00 target=64260 room=289
+  t= 257.3  x= 64597 y=438 zone=3 control=turtle mount=AIRBORNE phase=travel rab=FALLING tur=DUNKED oxy=8.0 combo=2 show=11 passed=52
+  COMBO exit x=64818 y=448 landed=false tur=1.03 rab=0.00
+  t= 258.2  ACCIDENT RABBIT_WATER  control=turtle x=64831 zone=3 phase=crouch
+          turtle=(64831,448) rabbit=(64771,312) rab=FALLING_WATER slide=0.00 showtime=false mount=RESCUING
+          hits=none down=false up=false daze_r=0.00 daze_t=0.90
+  t= 259.8  RECOVERED  control=turtle x=65247
+  SETTLE[travel] t=259.95 x=65325 y=335 tur=0.00 rab=0.00 target=65545 room=220
+  CROUCH exit x=65754 y=334 tur=0.00 rab=0.00
+  t= 262.4  x= 65923 y=334 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=1 show=11 passed=54
+  SETTLE[travel] t=263.45 x=66235 y=334 tur=0.00 rab=0.00 target=66535 room=300
+  JUMP  x=66638 rock=66720-66840 y=334 spd=260 ctl=rabbit show=false
+  JUMP  t=265.15 x=66677 rab_y=211 rab_vy=-630 tur=334 st=JUMPING
+  JUMP  t=265.30 x=66716 rab_y=127 rab_vy=-525 tur=334 st=JUMPING
+  JUMP  t=265.45 x=66755 rab_y=59 rab_vy=-420 tur=334 st=JUMPING
+  JUMP  t=265.60 x=66794 rab_y=7 rab_vy=-315 tur=334 st=JUMPING
+  JUMP  t=265.75 x=66833 rab_y=-30 rab_vy=-210 tur=334 st=JUMPING
+  JUMP  t=265.90 x=66872 rab_y=-51 rab_vy=-105 tur=334 st=JUMPING
+  JUMP  t=266.05 x=66911 rab_y=-56 rab_vy=0 tur=334 st=FALLING
+  JUMP  t=266.20 x=66950 rab_y=-46 rab_vy=105 tur=334 st=FALLING
+  JUMP  t=266.35 x=66989 rab_y=-20 rab_vy=210 tur=334 st=FALLING
+  JUMP  t=266.50 x=67028 rab_y=22 rab_vy=315 tur=334 st=FALLING
+  JUMP  t=266.65 x=67067 rab_y=80 rab_vy=420 tur=334 st=FALLING
+  JUMP  t=266.80 x=67106 rab_y=154 rab_vy=525 tur=334 st=FALLING
+  JUMP  t=266.95 x=67145 rab_y=276 rab_vy=0 tur=334 st=RIDING
+  t= 267.4  x= 67223 y=334 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=2 show=11 passed=55
+  ok  run 2 finish captured
+  FINISH  run=2 time=268.8 score=6950 grade=B passed=55/55 casualties=8 engine=0 show=11 streak=10
+  ok  run 2 reached result screen
+  ok  run 2 state RESULT
+  ok  run 2 result shows score + streak
+  ok  run 2 result shows best records
+  ok  run 1 simulated >= 240 s (268.9)
+  ok  run 2 simulated >= 240 s (268.8)
+  ok  run 1 visited all 3 zones
+  ok  run 1 passed >= 40 groups (55/55)
+  ok  run 1 grade in S-D (B)
+  ok  run 2 visited all 3 zones
+  ok  run 2 passed >= 40 groups (55/55)
+  ok  run 2 grade in S-D (B)
+  ok  run 2 started from result Retry
+  ok  no accident lasts >=5s (max 1.60s)
+  ok  no unrecoverable stall (max 0.0s)
+  ok  best.json exists
+  ok  best.json is valid JSON
+  ok  best.json stores 4 record fields
+  BEST  time=256.525396825463 accidents=0.0 score=12460.0 streak=55.0  -> C:/Users/26549/AppData/Roaming/Godot/app_userdata/Turbbit Bro!/best.json
+  
+  RESULT  run1 time=268.9 score=6950 grade=B passed=55 accidents=8
+  RESULT  run2 time=268.8 score=6950 grade=B passed=55 accidents=8  (Retry)
+  RESULT  zones=[1, 2, 3]  max_accident=1.60s  max_stuck=0.0s  failures=0
+  log -> D:/GAMESTUDIO/TURBBIT/docs/reports/stage3-run.log
+STAGE3 PLAYTEST: PASS

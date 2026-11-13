@@ -1,0 +1,85 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+  ok  3 zones declared (3)
+  ok  zone ids are 1, 2, 3
+  ok  zone names
+  ok  zone 1 starts at 0
+  ok  zone 1/2 boundary 15000
+  ok  zone 2/3 boundary 39000
+  ok  zone 3 ends at world end 66000
+  ok  base speed 220 / 240 / 260
+  ok  zone_at(0) = 1
+  ok  zone_at(14999) = 1
+  ok  zone_at(15000) = 2
+  ok  zone_at(38999) = 2
+  ok  zone_at(39000) = 3
+  ok  zone_at(65999) = 3
+  ok  55 hazard groups (55)
+  ok  groups per zone 12 / 19 / 24 ({ 1: 12, 2: 19, 3: 24 })
+  ok  every group lies inside its declared zone
+  ok  groups are sorted by start x
+  ok  every group has rects / hint / action
+  ok  all 5 obstacle kinds present (["SURFACE_ROCK", "LOW_BEAM", "UNDERWATER_REEF", "SURFACE_WALL", "AIR_BAR"])
+  ok  each zone contains all 5 kinds (5/5/5)
+  ok  9 boost lanes (9)
+  ok  boost lanes inside track
+  ok  boost lanes in all zones ({ 1: 2, 2: 3, 3: 4 })
+  ok  lane_at matches boost lane
+  ok  density rises 10.6 < 11.4 < 13.9 groups/min
+  ok  longest empty gap shrinks 2000 > 1400 > 1200 px
+  ok  zone 2 has 2+ group combos (largest 3)
+  ok  zone 3 has 3+ group combos (largest 24)
+  stats  -> Z1 10.6/min gap 2000 | Z2 11.4/min gap 1400 | Z3 13.9/min gap 1200
+  ok  score formula (300s, 10 passes, streak 8, 2 shows, 2 accidents) = 4720
+  ok  accident penalty is 250 each (5220)
+  ok  grade S at 10000
+  ok  grade A at 9999
+  ok  grade A at 7500
+  ok  grade B at 7499
+  ok  grade B at 5500
+  ok  grade D below 3500
+  ok  3 clean passes -> coop 3 / streak 3
+  ok  Showtime does not reset perfect streak
+  ok  rabbit slip -> Rabbit Casualties 1 / streak reset
+  ok  turtle reef -> Turtle Engine Failure 1 / streak reset
+  ok  stun resets streak but stays outside the two GDD categories
+  score  -> formula / grades / accident classes ok
+  ok  best.json written
+  ok  best.json is valid JSON
+  ok  best.json stores time / accidents / score / streak
+  ok  best.json reads back
+  best   -> best_time=123.45 best_accidents=3.0 best_score=8888.0 best_streak=9.0 (C:/Users/26549/AppData/Roaming/Godot/app_userdata/Turbbit Bro!/best.json)
+  ok  menu scene loads
+  ok  ENTER starts the race
+  ok  state RUNNING
+  ok  zone 2 entered at 16000
+  ok  zone 2 base speed 240 (240)
+  ok  HUD shows ZONE 2/3
+  ok  zone 3 entered at 40000
+  ok  zone 3 base speed 260 (260)
+  ok  HUD shows ZONE 3/3
+  ok  all three zones recorded
+  ok  finish captured
+  ok  finish time recorded (305.1)
+  ok  result scene loads after finish
+  ok  state RESULT
+  ok  result shows RACE TIME
+  ok  result shows RABBIT CASUALTIES
+  ok  result shows TURTLE ENGINE FAILURE
+  ok  result shows PERFECT COOPERATION
+  ok  result shows SHOWTIME
+  ok  result shows PERFECT STREAK
+  ok  result shows TOTAL SCORE
+  ok  result grade in S-D (C)
+  ok  result offers Retry / Main Menu
+  result -> grade=C score=3974 time=305.1
+  ok  R on result restarts the race
+  ok  restart clears finish state
+  ok  ESC pauses
+  ok  M from pause returns to menu
+  ok  ENTER starts a second race
+  ok  second finish reaches result
+  ok  M on result returns to menu
+  ok  menu shows best record after finishes
+  menu   -> TURBBIT BRO! | ONE MIND. TWO MUSCLES. ZERO BRAINCELLS. | STAGE 4 / FULL TRACK - 3 ZONES | BEST 123.45 s   SCORE 8888   STREAK 9 | ↑↓ SELECT   ENTER CONFIRM   L LANGUAGE
+STAGE3 SELFTEST: PASS

@@ -1,0 +1,32 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+LEVEL SEED 20261112
+SNACK DRAW #1 group=gate1 zone=1 kind=DIVE_GATE (fixed)
+SNACK DRAW #2 group=beam1 zone=1 kind=LOW_BIRD (was LOW_BEAM)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=SURFACE_ROCK (was DIVE_GATE)
+LEVEL SEED 20261112
+SNACK DRAW #1 group=gate1 zone=1 kind=DIVE_GATE (fixed)
+SNACK DRAW #2 group=beam1 zone=1 kind=LOW_BIRD (was LOW_BEAM)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=SURFACE_ROCK (was DIVE_GATE)
+LESSON kinds=7 groups=55
+LESSON LOW_BIRD      first=bird1    Z1 x=492 start=1560 d=1068 px (4.86 s) prompt="↓ 趴低" emitted=true
+LESSON SURFACE_ROCK  first=rock1    Z1 x=1763 start=2500 d=737 px (3.35 s) prompt="↑ 跳跃" emitted=true
+LESSON DIVE_GATE     first=gate1    Z1 x=2702 start=3800 d=1098 px (4.99 s) prompt="SHIFT + ↓ 按住下潜" emitted=true
+LESSON FLOATING_LOG  first=log1     Z1 x=5322 start=6400 d=1078 px (4.90 s) prompt="↑ 兔子跳 → SHIFT 乌龟 → ↓ 潜" emitted=true
+LESSON SHARK         first=shark1   Z1 x=6513 start=7250 d=737 px (3.35 s) prompt="SHIFT + ↑ 乌龟跃起" emitted=true
+LESSON LOW_BEAM      first=beam2    Z1 x=8602 start=9600 d=998 px (4.54 s) prompt="↓ 趴低" emitted=true
+LESSON HIGH_WALL     first=wall1    Z1 x=9863 start=10860 d=997 px (4.53 s) prompt="SHIFT + ↑ 乌龟跃起 → SHIFT 兔子 → ↑ 蹬踏" emitted=true
+LESSON wrote res://docs/reports/logs/phase-j/lesson-prompts.json
+LESSON: DONE kinds_taught=7/7 under_1s=0 accidents=0 (0.00 s)

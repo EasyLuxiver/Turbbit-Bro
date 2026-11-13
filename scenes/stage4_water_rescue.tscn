@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/test/stage4_water_rescue.gd" id="1_wres"]
+
+[node name="Stage4WaterRescue" type="Node"]
+script = ExtResource("1_wres")

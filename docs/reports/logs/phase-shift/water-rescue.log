@@ -1,0 +1,38 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+LEVEL SEED 20261112
+SNACK DRAW #1 group=beam1 zone=1 kind=LOW_BEAM (fixed)
+SNACK DRAW #2 group=rock3 zone=1 kind=SURFACE_ROCK (was SURFACE_ROCK)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SURFACE_ROCK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SURFACE_ROCK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=LOW_BEAM (was DIVE_GATE)
+WATER: delays=10 step_max=8.0
+RESCUE PROTO: missed reason=turtle_too_shallow mode=water
+proto    delay=-1.0 trigger_dx=0.7 entry_dx=159.0 fall=1.25 maxstep=12.6 result=missed reason=turtle_too_shallow catch_after=3.22 min_dy=67.4
+RESCUE PROTO: caught mode=water
+proto    delay=0.0 trigger_dx=0.7 entry_dx=159.0 fall=1.25 maxstep=12.6 result=caught reason=caught             catch_after=0.38 min_dy=-7.1
+RESCUE PROTO: caught mode=water
+proto    delay=0.2 trigger_dx=0.7 entry_dx=159.0 fall=1.25 maxstep=12.6 result=caught reason=caught             catch_after=0.43 min_dy=27.3
+RESCUE PROTO: caught mode=water
+proto    delay=0.4 trigger_dx=0.7 entry_dx=159.0 fall=1.25 maxstep=12.6 result=caught reason=caught             catch_after=0.63 min_dy=36.6
+RESCUE PROTO: caught mode=water
+proto    delay=0.6 trigger_dx=0.7 entry_dx=159.0 fall=1.25 maxstep=12.6 result=caught reason=caught             catch_after=0.87 min_dy=36.8
+RESCUE PROTO: caught mode=water
+proto    delay=0.8 trigger_dx=0.7 entry_dx=159.0 fall=1.25 maxstep=12.6 result=caught reason=caught             catch_after=1.10 min_dy=38.5
+RESCUE PROTO: caught mode=water
+proto    delay=1.0 trigger_dx=0.7 entry_dx=159.0 fall=1.25 maxstep=12.6 result=caught reason=caught             catch_after=1.37 min_dy=39.8
+RESCUE PROTO: caught mode=water
+proto    delay=1.2 trigger_dx=0.7 entry_dx=159.0 fall=1.25 maxstep=12.6 result=caught reason=caught             catch_after=1.63 min_dy=40.9
+RESCUE PROTO: missed reason=turtle_too_shallow mode=water
+proto    delay=1.6 trigger_dx=0.7 entry_dx=159.0 fall=1.25 maxstep=12.6 result=missed reason=turtle_too_shallow catch_after=3.22 min_dy=56.2
+RESCUE PROTO: missed reason=turtle_too_shallow mode=water
+proto    delay=2.0 trigger_dx=0.7 entry_dx=159.0 fall=1.25 maxstep=12.6 result=missed reason=turtle_too_shallow catch_after=3.22 min_dy=67.4
+natural  delay=-1.0 trigger_dx=5.3 entry_dx=113.5 fall=1.25 maxstep=12.6 result=missed reason=too_far_x          catch_after=3.22 min_dy=67.4
+natural  delay=0.0 trigger_dx=5.3 entry_dx=113.5 fall=1.25 maxstep=12.6 result=caught reason=caught             catch_after=0.18 min_dy=35.8
+natural  delay=0.4 trigger_dx=5.3 entry_dx=113.5 fall=1.25 maxstep=12.6 result=caught reason=caught             catch_after=0.65 min_dy=37.8
+natural  delay=0.8 trigger_dx=5.3 entry_dx=113.5 fall=1.25 maxstep=12.6 result=caught reason=caught             catch_after=1.12 min_dy=37.8
+WATER: DONE

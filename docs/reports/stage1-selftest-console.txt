@@ -1,0 +1,84 @@
+﻿Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+  ok  action exists: shift
+  ok  action exists: boost
+  ok  action exists: up
+  ok  action exists: down
+  ok  action exists: left
+  ok  action exists: right
+  ok  action exists: pause
+  ok  action exists: restart
+  ok  action exists: confirm
+  ok  start -> race scene
+  ok  state RUNNING
+  ok  initial control is rabbit
+  ok  no shift yet
+  ok  oxygen starts full
+  ok  rabbit mounted at start
+  boot   -> control=rabbit mount=RIDING turtle=220.0
+  ok  turtle auto-cruises before first SHIFT
+  ok  turtle CRUISING before first SHIFT
+  ok  rabbit does not slide before first SHIFT
+  ok  rabbit RIDING before first SHIFT
+  ok  SHIFT -> turtle control
+  ok  shift_count increments
+  ok  SHIFT does not reset turtle speed (220.0 -> 220.0)
+  ok  uncontrolled rabbit slides (0.23)
+  ok  uncontrolled rabbit state SLIDING
+  ok  turtle keeps cruising when controlled
+  ok  SHIFT -> rabbit control
+  ok  controlled rabbit recovers grip
+  ok  uncontrolled turtle is DAZED
+  ok  dazed turtle decelerates, not frozen (180.0)
+  ok  dazed turtle holds depth during warning (300.00)
+  ok  uncontrolled turtle starts SINKING after warning
+  ok  sinking turtle loses depth (301.01)
+  ok  slide threshold -> RABBIT_SLIP
+  ok  slip -> mount RESCUING
+  ok  accident_count increments
+  slip   -> state=RABBIT_SLIP mount=RESCUING control=turtle
+  ok  rescue restores mount
+  ok  rescue clears accident
+  ok  rescue resets slide
+  ok  back on rabbit before jump
+  ok  jump -> mount AIRBORNE
+  ok  jump -> rabbit airborne
+  ok  mid-air SHIFT -> turtle
+  ok  rabbit still airborne after mid-air SHIFT
+  ok  turtle dives under reef depth (364.0)
+  ok  turtle resurfaces
+  ok  mid-air shift + dive + surface -> pickup (1)
+  pickup -> count=1 mount=RIDING accident=NONE
+  ok  rabbit air movement changes horizontal velocity (130.0)
+  ok  plain jump lands back on turtle (1)
+  ok  pickup window shown during landing
+  land   -> picked=true window=true accident=NONE
+  ok  turtle dazed for depth test
+  ok  turtle sinking for depth test
+  ok  dazed turtle reaches danger depth -> TURTLE_REEF
+  depth  -> y=740.1 state=TURTLE_REEF
+  ok  turtle depth accident recovers
+  ok  recovered turtle returns to surface (300.0)
+  ok  surface rock -> RABBIT_STUN
+  rock   -> RABBIT_STUN
+  ok  jump clears surface rock
+  ok  turtle dive clears surface rock (y=435.0 state=NONE)
+  ok  crouch clears low beam
+  ok  standing under beam -> RABBIT_STUN
+  beam   -> RABBIT_STUN
+  ok  deep reef -> TURTLE_REEF
+  reef   -> TURTLE_REEF
+  ok  shallow pass clears underwater reef
+  ok  surface wall -> TURTLE_REEF
+  wall   -> TURTLE_REEF
+  ok  dive clears surface wall
+  ok  restart resets shift_count
+  ok  restart resets accident_count
+  ok  restart resets pickup_count
+  ok  restart resets control
+  ok  restart resets oxygen
+  ok  restart resets race time
+  ok  finish -> result scene
+  ok  result -> menu scene
+  ok  menu ENTER -> race scene
+STAGE1 SELFTEST: PASS

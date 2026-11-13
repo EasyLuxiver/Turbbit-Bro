@@ -1,0 +1,3132 @@
+{
+  "cases": [
+    {
+      "base_speed": 220.0,
+      "group": "bird1",
+      "index": 0,
+      "kind": "LOW_BIRD",
+      "schemes": {
+        "crouch": {
+          "lead_max": 410.0,
+          "lead_min": 10.0,
+          "pass_count": 21,
+          "trials": [
+            {
+              "lead": 10.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.52,
+              "seconds_before": 0.045
+            },
+            {
+              "lead": 30.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.6,
+              "seconds_before": 0.136
+            },
+            {
+              "lead": 50.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.72,
+              "seconds_before": 0.227
+            },
+            {
+              "lead": 70.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.85,
+              "seconds_before": 0.318
+            },
+            {
+              "lead": 90.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.02,
+              "seconds_before": 0.409
+            },
+            {
+              "lead": 110.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.18,
+              "seconds_before": 0.5
+            },
+            {
+              "lead": 130.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.28,
+              "seconds_before": 0.591
+            },
+            {
+              "lead": 150.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.38,
+              "seconds_before": 0.682
+            },
+            {
+              "lead": 170.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.48,
+              "seconds_before": 0.773
+            },
+            {
+              "lead": 190.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.58,
+              "seconds_before": 0.864
+            },
+            {
+              "lead": 210.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.68,
+              "seconds_before": 0.955
+            },
+            {
+              "lead": 230.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.78,
+              "seconds_before": 1.045
+            },
+            {
+              "lead": 250.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.88,
+              "seconds_before": 1.136
+            },
+            {
+              "lead": 270.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.98,
+              "seconds_before": 1.227
+            },
+            {
+              "lead": 290.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.08,
+              "seconds_before": 1.318
+            },
+            {
+              "lead": 310.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.18,
+              "seconds_before": 1.409
+            },
+            {
+              "lead": 330.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.28,
+              "seconds_before": 1.5
+            },
+            {
+              "lead": 350.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.38,
+              "seconds_before": 1.591
+            },
+            {
+              "lead": 370.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.48,
+              "seconds_before": 1.682
+            },
+            {
+              "lead": 390.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.58,
+              "seconds_before": 1.773
+            },
+            {
+              "lead": 410.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.7,
+              "seconds_before": 1.864
+            }
+          ],
+          "window_px": 400.0,
+          "window_s": 1.818
+        },
+        "dive": {
+          "lead_max": 610.0,
+          "lead_min": 30.0,
+          "pass_count": 30,
+          "trials": [
+            {
+              "lead": 30.0,
+              "oxygen_used": 1.42,
+              "seconds": 1.68,
+              "seconds_before": 0.136
+            },
+            {
+              "lead": 50.0,
+              "oxygen_used": 1.45,
+              "seconds": 1.72,
+              "seconds_before": 0.227
+            },
+            {
+              "lead": 70.0,
+              "oxygen_used": 1.52,
+              "seconds": 1.78,
+              "seconds_before": 0.318
+            },
+            {
+              "lead": 90.0,
+              "oxygen_used": 1.6,
+              "seconds": 1.87,
+              "seconds_before": 0.409
+            },
+            {
+              "lead": 110.0,
+              "oxygen_used": 1.7,
+              "seconds": 1.97,
+              "seconds_before": 0.5
+            },
+            {
+              "lead": 130.0,
+              "oxygen_used": 1.78,
+              "seconds": 2.05,
+              "seconds_before": 0.591
+            },
+            {
+              "lead": 150.0,
+              "oxygen_used": 1.88,
+              "seconds": 2.15,
+              "seconds_before": 0.682
+            },
+            {
+              "lead": 170.0,
+              "oxygen_used": 1.97,
+              "seconds": 2.23,
+              "seconds_before": 0.773
+            },
+            {
+              "lead": 190.0,
+              "oxygen_used": 2.07,
+              "seconds": 2.33,
+              "seconds_before": 0.864
+            },
+            {
+              "lead": 210.0,
+              "oxygen_used": 2.15,
+              "seconds": 2.42,
+              "seconds_before": 0.955
+            },
+            {
+              "lead": 230.0,
+              "oxygen_used": 2.25,
+              "seconds": 2.52,
+              "seconds_before": 1.045
+            },
+            {
+              "lead": 250.0,
+              "oxygen_used": 2.33,
+              "seconds": 2.6,
+              "seconds_before": 1.136
+            },
+            {
+              "lead": 270.0,
+              "oxygen_used": 2.42,
+              "seconds": 2.68,
+              "seconds_before": 1.227
+            },
+            {
+              "lead": 290.0,
+              "oxygen_used": 2.52,
+              "seconds": 2.78,
+              "seconds_before": 1.318
+            },
+            {
+              "lead": 310.0,
+              "oxygen_used": 2.6,
+              "seconds": 2.87,
+              "seconds_before": 1.409
+            },
+            {
+              "lead": 330.0,
+              "oxygen_used": 2.7,
+              "seconds": 2.97,
+              "seconds_before": 1.5
+            },
+            {
+              "lead": 350.0,
+              "oxygen_used": 2.78,
+              "seconds": 3.05,
+              "seconds_before": 1.591
+            },
+            {
+              "lead": 370.0,
+              "oxygen_used": 2.88,
+              "seconds": 3.15,
+              "seconds_before": 1.682
+            },
+            {
+              "lead": 390.0,
+              "oxygen_used": 2.97,
+              "seconds": 3.23,
+              "seconds_before": 1.773
+            },
+            {
+              "lead": 410.0,
+              "oxygen_used": 3.07,
+              "seconds": 3.33,
+              "seconds_before": 1.864
+            },
+            {
+              "lead": 430.0,
+              "oxygen_used": 3.15,
+              "seconds": 3.42,
+              "seconds_before": 1.955
+            },
+            {
+              "lead": 450.0,
+              "oxygen_used": 3.25,
+              "seconds": 3.52,
+              "seconds_before": 2.045
+            },
+            {
+              "lead": 470.0,
+              "oxygen_used": 3.33,
+              "seconds": 3.6,
+              "seconds_before": 2.136
+            },
+            {
+              "lead": 490.0,
+              "oxygen_used": 3.42,
+              "seconds": 3.68,
+              "seconds_before": 2.227
+            },
+            {
+              "lead": 510.0,
+              "oxygen_used": 3.52,
+              "seconds": 3.78,
+              "seconds_before": 2.318
+            },
+            {
+              "lead": 530.0,
+              "oxygen_used": 3.6,
+              "seconds": 3.87,
+              "seconds_before": 2.409
+            },
+            {
+              "lead": 550.0,
+              "oxygen_used": 3.7,
+              "seconds": 3.97,
+              "seconds_before": 2.5
+            },
+            {
+              "lead": 570.0,
+              "oxygen_used": 3.78,
+              "seconds": 4.05,
+              "seconds_before": 2.591
+            },
+            {
+              "lead": 590.0,
+              "oxygen_used": 3.88,
+              "seconds": 4.15,
+              "seconds_before": 2.682
+            },
+            {
+              "lead": 610.0,
+              "oxygen_used": 3.97,
+              "seconds": 4.23,
+              "seconds_before": 2.773
+            }
+          ],
+          "window_px": 580.0,
+          "window_s": 2.636
+        },
+        "jump": {
+          "lead_max": 0.0,
+          "lead_min": 0.0,
+          "pass_count": 0,
+          "trials": [],
+          "window_px": 0.0,
+          "window_s": 0.0
+        },
+        "leap": {
+          "lead_max": 0.0,
+          "lead_min": 0.0,
+          "pass_count": 0,
+          "trials": [],
+          "window_px": 0.0,
+          "window_s": 0.0
+        }
+      },
+      "sight_s": 5.0,
+      "width": 120.0,
+      "zone": 1
+    },
+    {
+      "base_speed": 240.0,
+      "group": "bird3",
+      "index": 16,
+      "kind": "LOW_BIRD",
+      "schemes": {
+        "crouch": {
+          "lead_max": 410.0,
+          "lead_min": 10.0,
+          "pass_count": 21,
+          "trials": [
+            {
+              "lead": 10.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.38,
+              "seconds_before": 0.042
+            },
+            {
+              "lead": 30.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.47,
+              "seconds_before": 0.125
+            },
+            {
+              "lead": 50.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.57,
+              "seconds_before": 0.208
+            },
+            {
+              "lead": 70.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.68,
+              "seconds_before": 0.292
+            },
+            {
+              "lead": 90.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.83,
+              "seconds_before": 0.375
+            },
+            {
+              "lead": 110.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.98,
+              "seconds_before": 0.458
+            },
+            {
+              "lead": 130.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.08,
+              "seconds_before": 0.542
+            },
+            {
+              "lead": 150.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.18,
+              "seconds_before": 0.625
+            },
+            {
+              "lead": 170.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.27,
+              "seconds_before": 0.708
+            },
+            {
+              "lead": 190.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.37,
+              "seconds_before": 0.792
+            },
+            {
+              "lead": 210.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.47,
+              "seconds_before": 0.875
+            },
+            {
+              "lead": 230.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.55,
+              "seconds_before": 0.958
+            },
+            {
+              "lead": 250.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.65,
+              "seconds_before": 1.042
+            },
+            {
+              "lead": 270.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.73,
+              "seconds_before": 1.125
+            },
+            {
+              "lead": 290.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.83,
+              "seconds_before": 1.208
+            },
+            {
+              "lead": 310.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.92,
+              "seconds_before": 1.292
+            },
+            {
+              "lead": 330.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.02,
+              "seconds_before": 1.375
+            },
+            {
+              "lead": 350.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.1,
+              "seconds_before": 1.458
+            },
+            {
+              "lead": 370.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.2,
+              "seconds_before": 1.542
+            },
+            {
+              "lead": 390.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.3,
+              "seconds_before": 1.625
+            },
+            {
+              "lead": 410.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.38,
+              "seconds_before": 1.708
+            }
+          ],
+          "window_px": 400.0,
+          "window_s": 1.667
+        },
+        "dive": {
+          "lead_max": 610.0,
+          "lead_min": 30.0,
+          "pass_count": 30,
+          "trials": [
+            {
+              "lead": 30.0,
+              "oxygen_used": 1.27,
+              "seconds": 1.53,
+              "seconds_before": 0.125
+            },
+            {
+              "lead": 50.0,
+              "oxygen_used": 1.32,
+              "seconds": 1.58,
+              "seconds_before": 0.208
+            },
+            {
+              "lead": 70.0,
+              "oxygen_used": 1.37,
+              "seconds": 1.63,
+              "seconds_before": 0.292
+            },
+            {
+              "lead": 90.0,
+              "oxygen_used": 1.45,
+              "seconds": 1.72,
+              "seconds_before": 0.375
+            },
+            {
+              "lead": 110.0,
+              "oxygen_used": 1.53,
+              "seconds": 1.8,
+              "seconds_before": 0.458
+            },
+            {
+              "lead": 130.0,
+              "oxygen_used": 1.62,
+              "seconds": 1.88,
+              "seconds_before": 0.542
+            },
+            {
+              "lead": 150.0,
+              "oxygen_used": 1.7,
+              "seconds": 1.97,
+              "seconds_before": 0.625
+            },
+            {
+              "lead": 170.0,
+              "oxygen_used": 1.78,
+              "seconds": 2.05,
+              "seconds_before": 0.708
+            },
+            {
+              "lead": 190.0,
+              "oxygen_used": 1.87,
+              "seconds": 2.13,
+              "seconds_before": 0.792
+            },
+            {
+              "lead": 210.0,
+              "oxygen_used": 1.95,
+              "seconds": 2.22,
+              "seconds_before": 0.875
+            },
+            {
+              "lead": 230.0,
+              "oxygen_used": 2.03,
+              "seconds": 2.3,
+              "seconds_before": 0.958
+            },
+            {
+              "lead": 250.0,
+              "oxygen_used": 2.12,
+              "seconds": 2.38,
+              "seconds_before": 1.042
+            },
+            {
+              "lead": 270.0,
+              "oxygen_used": 2.2,
+              "seconds": 2.47,
+              "seconds_before": 1.125
+            },
+            {
+              "lead": 290.0,
+              "oxygen_used": 2.28,
+              "seconds": 2.55,
+              "seconds_before": 1.208
+            },
+            {
+              "lead": 310.0,
+              "oxygen_used": 2.37,
+              "seconds": 2.63,
+              "seconds_before": 1.292
+            },
+            {
+              "lead": 330.0,
+              "oxygen_used": 2.45,
+              "seconds": 2.72,
+              "seconds_before": 1.375
+            },
+            {
+              "lead": 350.0,
+              "oxygen_used": 2.53,
+              "seconds": 2.8,
+              "seconds_before": 1.458
+            },
+            {
+              "lead": 370.0,
+              "oxygen_used": 2.62,
+              "seconds": 2.88,
+              "seconds_before": 1.542
+            },
+            {
+              "lead": 390.0,
+              "oxygen_used": 2.7,
+              "seconds": 2.97,
+              "seconds_before": 1.625
+            },
+            {
+              "lead": 410.0,
+              "oxygen_used": 2.78,
+              "seconds": 3.05,
+              "seconds_before": 1.708
+            },
+            {
+              "lead": 430.0,
+              "oxygen_used": 2.87,
+              "seconds": 3.13,
+              "seconds_before": 1.792
+            },
+            {
+              "lead": 450.0,
+              "oxygen_used": 2.95,
+              "seconds": 3.22,
+              "seconds_before": 1.875
+            },
+            {
+              "lead": 470.0,
+              "oxygen_used": 3.03,
+              "seconds": 3.3,
+              "seconds_before": 1.958
+            },
+            {
+              "lead": 490.0,
+              "oxygen_used": 3.12,
+              "seconds": 3.38,
+              "seconds_before": 2.042
+            },
+            {
+              "lead": 510.0,
+              "oxygen_used": 3.2,
+              "seconds": 3.47,
+              "seconds_before": 2.125
+            },
+            {
+              "lead": 530.0,
+              "oxygen_used": 3.28,
+              "seconds": 3.55,
+              "seconds_before": 2.208
+            },
+            {
+              "lead": 550.0,
+              "oxygen_used": 3.37,
+              "seconds": 3.63,
+              "seconds_before": 2.292
+            },
+            {
+              "lead": 570.0,
+              "oxygen_used": 3.45,
+              "seconds": 3.72,
+              "seconds_before": 2.375
+            },
+            {
+              "lead": 590.0,
+              "oxygen_used": 3.53,
+              "seconds": 3.8,
+              "seconds_before": 2.458
+            },
+            {
+              "lead": 610.0,
+              "oxygen_used": 3.62,
+              "seconds": 3.88,
+              "seconds_before": 2.542
+            }
+          ],
+          "window_px": 580.0,
+          "window_s": 2.417
+        },
+        "jump": {
+          "lead_max": 0.0,
+          "lead_min": 0.0,
+          "pass_count": 0,
+          "trials": [],
+          "window_px": 0.0,
+          "window_s": 0.0
+        },
+        "leap": {
+          "lead_max": 0.0,
+          "lead_min": 0.0,
+          "pass_count": 0,
+          "trials": [],
+          "window_px": 0.0,
+          "window_s": 0.0
+        }
+      },
+      "sight_s": 4.58,
+      "width": 120.0,
+      "zone": 2
+    },
+    {
+      "base_speed": 260.0,
+      "group": "bird6",
+      "index": 36,
+      "kind": "LOW_BIRD",
+      "schemes": {
+        "crouch": {
+          "lead_max": 410.0,
+          "lead_min": 10.0,
+          "pass_count": 21,
+          "trials": [
+            {
+              "lead": 10.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.28,
+              "seconds_before": 0.038
+            },
+            {
+              "lead": 30.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.35,
+              "seconds_before": 0.115
+            },
+            {
+              "lead": 50.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.43,
+              "seconds_before": 0.192
+            },
+            {
+              "lead": 70.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.55,
+              "seconds_before": 0.269
+            },
+            {
+              "lead": 90.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.67,
+              "seconds_before": 0.346
+            },
+            {
+              "lead": 110.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.82,
+              "seconds_before": 0.423
+            },
+            {
+              "lead": 130.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.93,
+              "seconds_before": 0.5
+            },
+            {
+              "lead": 150.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.02,
+              "seconds_before": 0.577
+            },
+            {
+              "lead": 170.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.1,
+              "seconds_before": 0.654
+            },
+            {
+              "lead": 190.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.18,
+              "seconds_before": 0.731
+            },
+            {
+              "lead": 210.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.27,
+              "seconds_before": 0.808
+            },
+            {
+              "lead": 230.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.35,
+              "seconds_before": 0.885
+            },
+            {
+              "lead": 250.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.43,
+              "seconds_before": 0.962
+            },
+            {
+              "lead": 270.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.53,
+              "seconds_before": 1.038
+            },
+            {
+              "lead": 290.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.62,
+              "seconds_before": 1.115
+            },
+            {
+              "lead": 310.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.7,
+              "seconds_before": 1.192
+            },
+            {
+              "lead": 330.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.78,
+              "seconds_before": 1.269
+            },
+            {
+              "lead": 350.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.87,
+              "seconds_before": 1.346
+            },
+            {
+              "lead": 370.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.95,
+              "seconds_before": 1.423
+            },
+            {
+              "lead": 390.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.03,
+              "seconds_before": 1.5
+            },
+            {
+              "lead": 410.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.13,
+              "seconds_before": 1.577
+            }
+          ],
+          "window_px": 400.0,
+          "window_s": 1.538
+        },
+        "dive": {
+          "lead_max": 610.0,
+          "lead_min": 30.0,
+          "pass_count": 30,
+          "trials": [
+            {
+              "lead": 30.0,
+              "oxygen_used": 1.15,
+              "seconds": 1.42,
+              "seconds_before": 0.115
+            },
+            {
+              "lead": 50.0,
+              "oxygen_used": 1.2,
+              "seconds": 1.47,
+              "seconds_before": 0.192
+            },
+            {
+              "lead": 70.0,
+              "oxygen_used": 1.25,
+              "seconds": 1.52,
+              "seconds_before": 0.269
+            },
+            {
+              "lead": 90.0,
+              "oxygen_used": 1.32,
+              "seconds": 1.58,
+              "seconds_before": 0.346
+            },
+            {
+              "lead": 110.0,
+              "oxygen_used": 1.4,
+              "seconds": 1.67,
+              "seconds_before": 0.423
+            },
+            {
+              "lead": 130.0,
+              "oxygen_used": 1.47,
+              "seconds": 1.73,
+              "seconds_before": 0.5
+            },
+            {
+              "lead": 150.0,
+              "oxygen_used": 1.55,
+              "seconds": 1.82,
+              "seconds_before": 0.577
+            },
+            {
+              "lead": 170.0,
+              "oxygen_used": 1.63,
+              "seconds": 1.9,
+              "seconds_before": 0.654
+            },
+            {
+              "lead": 190.0,
+              "oxygen_used": 1.7,
+              "seconds": 1.97,
+              "seconds_before": 0.731
+            },
+            {
+              "lead": 210.0,
+              "oxygen_used": 1.78,
+              "seconds": 2.05,
+              "seconds_before": 0.808
+            },
+            {
+              "lead": 230.0,
+              "oxygen_used": 1.85,
+              "seconds": 2.12,
+              "seconds_before": 0.885
+            },
+            {
+              "lead": 250.0,
+              "oxygen_used": 1.93,
+              "seconds": 2.2,
+              "seconds_before": 0.962
+            },
+            {
+              "lead": 270.0,
+              "oxygen_used": 2.02,
+              "seconds": 2.28,
+              "seconds_before": 1.038
+            },
+            {
+              "lead": 290.0,
+              "oxygen_used": 2.08,
+              "seconds": 2.35,
+              "seconds_before": 1.115
+            },
+            {
+              "lead": 310.0,
+              "oxygen_used": 2.17,
+              "seconds": 2.43,
+              "seconds_before": 1.192
+            },
+            {
+              "lead": 330.0,
+              "oxygen_used": 2.25,
+              "seconds": 2.52,
+              "seconds_before": 1.269
+            },
+            {
+              "lead": 350.0,
+              "oxygen_used": 2.32,
+              "seconds": 2.58,
+              "seconds_before": 1.346
+            },
+            {
+              "lead": 370.0,
+              "oxygen_used": 2.4,
+              "seconds": 2.67,
+              "seconds_before": 1.423
+            },
+            {
+              "lead": 390.0,
+              "oxygen_used": 2.47,
+              "seconds": 2.73,
+              "seconds_before": 1.5
+            },
+            {
+              "lead": 410.0,
+              "oxygen_used": 2.55,
+              "seconds": 2.82,
+              "seconds_before": 1.577
+            },
+            {
+              "lead": 430.0,
+              "oxygen_used": 2.63,
+              "seconds": 2.9,
+              "seconds_before": 1.654
+            },
+            {
+              "lead": 450.0,
+              "oxygen_used": 2.7,
+              "seconds": 2.97,
+              "seconds_before": 1.731
+            },
+            {
+              "lead": 470.0,
+              "oxygen_used": 2.78,
+              "seconds": 3.05,
+              "seconds_before": 1.808
+            },
+            {
+              "lead": 490.0,
+              "oxygen_used": 2.85,
+              "seconds": 3.12,
+              "seconds_before": 1.885
+            },
+            {
+              "lead": 510.0,
+              "oxygen_used": 2.93,
+              "seconds": 3.2,
+              "seconds_before": 1.962
+            },
+            {
+              "lead": 530.0,
+              "oxygen_used": 3.02,
+              "seconds": 3.28,
+              "seconds_before": 2.038
+            },
+            {
+              "lead": 550.0,
+              "oxygen_used": 3.08,
+              "seconds": 3.35,
+              "seconds_before": 2.115
+            },
+            {
+              "lead": 570.0,
+              "oxygen_used": 3.17,
+              "seconds": 3.43,
+              "seconds_before": 2.192
+            },
+            {
+              "lead": 590.0,
+              "oxygen_used": 3.25,
+              "seconds": 3.52,
+              "seconds_before": 2.269
+            },
+            {
+              "lead": 610.0,
+              "oxygen_used": 3.32,
+              "seconds": 3.58,
+              "seconds_before": 2.346
+            }
+          ],
+          "window_px": 580.0,
+          "window_s": 2.231
+        },
+        "jump": {
+          "lead_max": 0.0,
+          "lead_min": 0.0,
+          "pass_count": 0,
+          "trials": [],
+          "window_px": 0.0,
+          "window_s": 0.0
+        },
+        "leap": {
+          "lead_max": 0.0,
+          "lead_min": 0.0,
+          "pass_count": 0,
+          "trials": [],
+          "window_px": 0.0,
+          "window_s": 0.0
+        }
+      },
+      "sight_s": 4.23,
+      "width": 120.0,
+      "zone": 3
+    },
+    {
+      "base_speed": 220.0,
+      "group": "rock1",
+      "index": 1,
+      "kind": "SURFACE_ROCK",
+      "schemes": {
+        "dive": {
+          "lead_max": 0.0,
+          "lead_min": 0.0,
+          "pass_count": 0,
+          "trials": [],
+          "window_px": 0.0,
+          "window_s": 0.0
+        },
+        "jump": {
+          "lead_max": 70.0,
+          "lead_min": 10.0,
+          "pass_count": 4,
+          "trials": [
+            {
+              "lead": 10.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.47,
+              "seconds_before": 0.045
+            },
+            {
+              "lead": 30.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.55,
+              "seconds_before": 0.136
+            },
+            {
+              "lead": 50.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.67,
+              "seconds_before": 0.227
+            },
+            {
+              "lead": 70.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.8,
+              "seconds_before": 0.318
+            }
+          ],
+          "window_px": 60.0,
+          "window_s": 0.273
+        },
+        "leap": {
+          "lead_max": 170.0,
+          "lead_min": 30.0,
+          "pass_count": 8,
+          "trials": [
+            {
+              "lead": 30.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.55,
+              "seconds_before": 0.136
+            },
+            {
+              "lead": 50.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.65,
+              "seconds_before": 0.227
+            },
+            {
+              "lead": 70.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.73,
+              "seconds_before": 0.318
+            },
+            {
+              "lead": 90.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.83,
+              "seconds_before": 0.409
+            },
+            {
+              "lead": 110.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.92,
+              "seconds_before": 0.5
+            },
+            {
+              "lead": 130.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.0,
+              "seconds_before": 0.591
+            },
+            {
+              "lead": 150.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.1,
+              "seconds_before": 0.682
+            },
+            {
+              "lead": 170.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.18,
+              "seconds_before": 0.773
+            }
+          ],
+          "window_px": 140.0,
+          "window_s": 0.636
+        }
+      },
+      "sight_s": 5.0,
+      "width": 110.0,
+      "zone": 1
+    },
+    {
+      "base_speed": 240.0,
+      "group": "rock4",
+      "index": 13,
+      "kind": "SURFACE_ROCK",
+      "schemes": {
+        "dive": {
+          "lead_max": 0.0,
+          "lead_min": 0.0,
+          "pass_count": 0,
+          "trials": [],
+          "window_px": 0.0,
+          "window_s": 0.0
+        },
+        "jump": {
+          "lead_max": 110.0,
+          "lead_min": 10.0,
+          "pass_count": 5,
+          "trials": [
+            {
+              "lead": 10.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.38,
+              "seconds_before": 0.042
+            },
+            {
+              "lead": 30.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.47,
+              "seconds_before": 0.125
+            },
+            {
+              "lead": 50.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.57,
+              "seconds_before": 0.208
+            },
+            {
+              "lead": 70.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.68,
+              "seconds_before": 0.292
+            },
+            {
+              "lead": 110.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.97,
+              "seconds_before": 0.458
+            }
+          ],
+          "window_px": 100.0,
+          "window_s": 0.417
+        },
+        "leap": {
+          "lead_max": 190.0,
+          "lead_min": 30.0,
+          "pass_count": 9,
+          "trials": [
+            {
+              "lead": 30.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.47,
+              "seconds_before": 0.125
+            },
+            {
+              "lead": 50.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.55,
+              "seconds_before": 0.208
+            },
+            {
+              "lead": 70.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.63,
+              "seconds_before": 0.292
+            },
+            {
+              "lead": 90.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.72,
+              "seconds_before": 0.375
+            },
+            {
+              "lead": 110.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.8,
+              "seconds_before": 0.458
+            },
+            {
+              "lead": 130.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.88,
+              "seconds_before": 0.542
+            },
+            {
+              "lead": 150.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.97,
+              "seconds_before": 0.625
+            },
+            {
+              "lead": 170.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.05,
+              "seconds_before": 0.708
+            },
+            {
+              "lead": 190.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.13,
+              "seconds_before": 0.792
+            }
+          ],
+          "window_px": 160.0,
+          "window_s": 0.667
+        }
+      },
+      "sight_s": 4.58,
+      "width": 120.0,
+      "zone": 2
+    },
+    {
+      "base_speed": 260.0,
+      "group": "rock8",
+      "index": 33,
+      "kind": "SURFACE_ROCK",
+      "schemes": {
+        "dive": {
+          "lead_max": 0.0,
+          "lead_min": 0.0,
+          "pass_count": 0,
+          "trials": [],
+          "window_px": 0.0,
+          "window_s": 0.0
+        },
+        "jump": {
+          "lead_max": 110.0,
+          "lead_min": 10.0,
+          "pass_count": 6,
+          "trials": [
+            {
+              "lead": 10.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.32,
+              "seconds_before": 0.038
+            },
+            {
+              "lead": 30.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.4,
+              "seconds_before": 0.115
+            },
+            {
+              "lead": 50.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.48,
+              "seconds_before": 0.192
+            },
+            {
+              "lead": 70.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.58,
+              "seconds_before": 0.269
+            },
+            {
+              "lead": 90.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.72,
+              "seconds_before": 0.346
+            },
+            {
+              "lead": 110.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.87,
+              "seconds_before": 0.423
+            }
+          ],
+          "window_px": 100.0,
+          "window_s": 0.385
+        },
+        "leap": {
+          "lead_max": 210.0,
+          "lead_min": 30.0,
+          "pass_count": 10,
+          "trials": [
+            {
+              "lead": 30.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.4,
+              "seconds_before": 0.115
+            },
+            {
+              "lead": 50.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.47,
+              "seconds_before": 0.192
+            },
+            {
+              "lead": 70.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.55,
+              "seconds_before": 0.269
+            },
+            {
+              "lead": 90.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.62,
+              "seconds_before": 0.346
+            },
+            {
+              "lead": 110.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.7,
+              "seconds_before": 0.423
+            },
+            {
+              "lead": 130.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.78,
+              "seconds_before": 0.5
+            },
+            {
+              "lead": 150.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.85,
+              "seconds_before": 0.577
+            },
+            {
+              "lead": 170.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.93,
+              "seconds_before": 0.654
+            },
+            {
+              "lead": 190.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.02,
+              "seconds_before": 0.731
+            },
+            {
+              "lead": 210.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.08,
+              "seconds_before": 0.808
+            }
+          ],
+          "window_px": 180.0,
+          "window_s": 0.692
+        }
+      },
+      "sight_s": 4.23,
+      "width": 130.0,
+      "zone": 3
+    },
+    {
+      "base_speed": 220.0,
+      "group": "beam1",
+      "index": 2,
+      "kind": "LOW_BEAM",
+      "schemes": {
+        "crouch": {
+          "lead_max": 410.0,
+          "lead_min": 10.0,
+          "pass_count": 21,
+          "trials": [
+            {
+              "lead": 10.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.73,
+              "seconds_before": 0.045
+            },
+            {
+              "lead": 30.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.83,
+              "seconds_before": 0.136
+            },
+            {
+              "lead": 50.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.95,
+              "seconds_before": 0.227
+            },
+            {
+              "lead": 70.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.12,
+              "seconds_before": 0.318
+            },
+            {
+              "lead": 90.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.32,
+              "seconds_before": 0.409
+            },
+            {
+              "lead": 110.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.43,
+              "seconds_before": 0.5
+            },
+            {
+              "lead": 130.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.53,
+              "seconds_before": 0.591
+            },
+            {
+              "lead": 150.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.63,
+              "seconds_before": 0.682
+            },
+            {
+              "lead": 170.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.73,
+              "seconds_before": 0.773
+            },
+            {
+              "lead": 190.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.83,
+              "seconds_before": 0.864
+            },
+            {
+              "lead": 210.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.93,
+              "seconds_before": 0.955
+            },
+            {
+              "lead": 230.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.03,
+              "seconds_before": 1.045
+            },
+            {
+              "lead": 250.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.13,
+              "seconds_before": 1.136
+            },
+            {
+              "lead": 270.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.23,
+              "seconds_before": 1.227
+            },
+            {
+              "lead": 290.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.33,
+              "seconds_before": 1.318
+            },
+            {
+              "lead": 310.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.43,
+              "seconds_before": 1.409
+            },
+            {
+              "lead": 330.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.53,
+              "seconds_before": 1.5
+            },
+            {
+              "lead": 350.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.63,
+              "seconds_before": 1.591
+            },
+            {
+              "lead": 370.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.75,
+              "seconds_before": 1.682
+            },
+            {
+              "lead": 390.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.85,
+              "seconds_before": 1.773
+            },
+            {
+              "lead": 410.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.95,
+              "seconds_before": 1.864
+            }
+          ],
+          "window_px": 400.0,
+          "window_s": 1.818
+        },
+        "dive": {
+          "lead_max": 0.0,
+          "lead_min": 0.0,
+          "pass_count": 0,
+          "trials": [],
+          "window_px": 0.0,
+          "window_s": 0.0
+        }
+      },
+      "sight_s": 5.0,
+      "width": 170.0,
+      "zone": 1
+    },
+    {
+      "base_speed": 240.0,
+      "group": "beam4",
+      "index": 19,
+      "kind": "LOW_BEAM",
+      "schemes": {
+        "crouch": {
+          "lead_max": 410.0,
+          "lead_min": 10.0,
+          "pass_count": 21,
+          "trials": [
+            {
+              "lead": 10.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.63,
+              "seconds_before": 0.042
+            },
+            {
+              "lead": 30.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.72,
+              "seconds_before": 0.125
+            },
+            {
+              "lead": 50.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.83,
+              "seconds_before": 0.208
+            },
+            {
+              "lead": 70.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.97,
+              "seconds_before": 0.292
+            },
+            {
+              "lead": 90.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.15,
+              "seconds_before": 0.375
+            },
+            {
+              "lead": 110.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.27,
+              "seconds_before": 0.458
+            },
+            {
+              "lead": 130.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.37,
+              "seconds_before": 0.542
+            },
+            {
+              "lead": 150.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.47,
+              "seconds_before": 0.625
+            },
+            {
+              "lead": 170.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.55,
+              "seconds_before": 0.708
+            },
+            {
+              "lead": 190.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.65,
+              "seconds_before": 0.792
+            },
+            {
+              "lead": 210.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.73,
+              "seconds_before": 0.875
+            },
+            {
+              "lead": 230.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.83,
+              "seconds_before": 0.958
+            },
+            {
+              "lead": 250.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.92,
+              "seconds_before": 1.042
+            },
+            {
+              "lead": 270.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.02,
+              "seconds_before": 1.125
+            },
+            {
+              "lead": 290.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.1,
+              "seconds_before": 1.208
+            },
+            {
+              "lead": 310.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.2,
+              "seconds_before": 1.292
+            },
+            {
+              "lead": 330.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.3,
+              "seconds_before": 1.375
+            },
+            {
+              "lead": 350.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.38,
+              "seconds_before": 1.458
+            },
+            {
+              "lead": 370.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.48,
+              "seconds_before": 1.542
+            },
+            {
+              "lead": 390.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.57,
+              "seconds_before": 1.625
+            },
+            {
+              "lead": 410.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.67,
+              "seconds_before": 1.708
+            }
+          ],
+          "window_px": 400.0,
+          "window_s": 1.667
+        },
+        "dive": {
+          "lead_max": 0.0,
+          "lead_min": 0.0,
+          "pass_count": 0,
+          "trials": [],
+          "window_px": 0.0,
+          "window_s": 0.0
+        }
+      },
+      "sight_s": 4.58,
+      "width": 180.0,
+      "zone": 2
+    },
+    {
+      "base_speed": 260.0,
+      "group": "beam6",
+      "index": 32,
+      "kind": "LOW_BEAM",
+      "schemes": {
+        "crouch": {
+          "lead_max": 410.0,
+          "lead_min": 10.0,
+          "pass_count": 21,
+          "trials": [
+            {
+              "lead": 10.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.52,
+              "seconds_before": 0.038
+            },
+            {
+              "lead": 30.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.58,
+              "seconds_before": 0.115
+            },
+            {
+              "lead": 50.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.68,
+              "seconds_before": 0.192
+            },
+            {
+              "lead": 70.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.8,
+              "seconds_before": 0.269
+            },
+            {
+              "lead": 90.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.95,
+              "seconds_before": 0.346
+            },
+            {
+              "lead": 110.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.1,
+              "seconds_before": 0.423
+            },
+            {
+              "lead": 130.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.18,
+              "seconds_before": 0.5
+            },
+            {
+              "lead": 150.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.27,
+              "seconds_before": 0.577
+            },
+            {
+              "lead": 170.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.35,
+              "seconds_before": 0.654
+            },
+            {
+              "lead": 190.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.43,
+              "seconds_before": 0.731
+            },
+            {
+              "lead": 210.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.53,
+              "seconds_before": 0.808
+            },
+            {
+              "lead": 230.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.62,
+              "seconds_before": 0.885
+            },
+            {
+              "lead": 250.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.7,
+              "seconds_before": 0.962
+            },
+            {
+              "lead": 270.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.78,
+              "seconds_before": 1.038
+            },
+            {
+              "lead": 290.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.87,
+              "seconds_before": 1.115
+            },
+            {
+              "lead": 310.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.95,
+              "seconds_before": 1.192
+            },
+            {
+              "lead": 330.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.03,
+              "seconds_before": 1.269
+            },
+            {
+              "lead": 350.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.13,
+              "seconds_before": 1.346
+            },
+            {
+              "lead": 370.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.22,
+              "seconds_before": 1.423
+            },
+            {
+              "lead": 390.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.3,
+              "seconds_before": 1.5
+            },
+            {
+              "lead": 410.0,
+              "oxygen_used": 0.0,
+              "seconds": 3.38,
+              "seconds_before": 1.577
+            }
+          ],
+          "window_px": 400.0,
+          "window_s": 1.538
+        },
+        "dive": {
+          "lead_max": 0.0,
+          "lead_min": 0.0,
+          "pass_count": 0,
+          "trials": [],
+          "window_px": 0.0,
+          "window_s": 0.0
+        }
+      },
+      "sight_s": 4.23,
+      "width": 180.0,
+      "zone": 3
+    },
+    {
+      "base_speed": 220.0,
+      "group": "shark1",
+      "index": 5,
+      "kind": "SHARK",
+      "schemes": {
+        "dive": {
+          "lead_max": 0.0,
+          "lead_min": 0.0,
+          "pass_count": 0,
+          "trials": [],
+          "window_px": 0.0,
+          "window_s": 0.0
+        },
+        "leap": {
+          "lead_max": 170.0,
+          "lead_min": 110.0,
+          "pass_count": 4,
+          "trials": [
+            {
+              "lead": 110.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.73,
+              "seconds_before": 0.5
+            },
+            {
+              "lead": 130.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.83,
+              "seconds_before": 0.591
+            },
+            {
+              "lead": 150.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.92,
+              "seconds_before": 0.682
+            },
+            {
+              "lead": 170.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.02,
+              "seconds_before": 0.773
+            }
+          ],
+          "window_px": 60.0,
+          "window_s": 0.273
+        }
+      },
+      "sight_s": 5.0,
+      "width": 70.0,
+      "zone": 1
+    },
+    {
+      "base_speed": 240.0,
+      "group": "shark3",
+      "index": 14,
+      "kind": "SHARK",
+      "schemes": {
+        "dive": {
+          "lead_max": 0.0,
+          "lead_min": 0.0,
+          "pass_count": 0,
+          "trials": [],
+          "window_px": 0.0,
+          "window_s": 0.0
+        },
+        "leap": {
+          "lead_max": 210.0,
+          "lead_min": 110.0,
+          "pass_count": 6,
+          "trials": [
+            {
+              "lead": 110.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.6,
+              "seconds_before": 0.458
+            },
+            {
+              "lead": 130.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.68,
+              "seconds_before": 0.542
+            },
+            {
+              "lead": 150.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.77,
+              "seconds_before": 0.625
+            },
+            {
+              "lead": 170.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.85,
+              "seconds_before": 0.708
+            },
+            {
+              "lead": 190.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.93,
+              "seconds_before": 0.792
+            },
+            {
+              "lead": 210.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.02,
+              "seconds_before": 0.875
+            }
+          ],
+          "window_px": 100.0,
+          "window_s": 0.417
+        }
+      },
+      "sight_s": 4.58,
+      "width": 70.0,
+      "zone": 2
+    },
+    {
+      "base_speed": 260.0,
+      "group": "shark6",
+      "index": 31,
+      "kind": "SHARK",
+      "schemes": {
+        "dive": {
+          "lead_max": 0.0,
+          "lead_min": 0.0,
+          "pass_count": 0,
+          "trials": [],
+          "window_px": 0.0,
+          "window_s": 0.0
+        },
+        "leap": {
+          "lead_max": 230.0,
+          "lead_min": 110.0,
+          "pass_count": 7,
+          "trials": [
+            {
+              "lead": 110.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.47,
+              "seconds_before": 0.423
+            },
+            {
+              "lead": 130.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.55,
+              "seconds_before": 0.5
+            },
+            {
+              "lead": 150.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.62,
+              "seconds_before": 0.577
+            },
+            {
+              "lead": 170.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.7,
+              "seconds_before": 0.654
+            },
+            {
+              "lead": 190.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.78,
+              "seconds_before": 0.731
+            },
+            {
+              "lead": 210.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.85,
+              "seconds_before": 0.808
+            },
+            {
+              "lead": 230.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.93,
+              "seconds_before": 0.885
+            }
+          ],
+          "window_px": 120.0,
+          "window_s": 0.462
+        }
+      },
+      "sight_s": 4.23,
+      "width": 70.0,
+      "zone": 3
+    },
+    {
+      "base_speed": 220.0,
+      "group": "gate1",
+      "index": 6,
+      "kind": "DIVE_GATE",
+      "schemes": {
+        "dive": {
+          "lead_max": 610.0,
+          "lead_min": 110.0,
+          "pass_count": 26,
+          "trials": [
+            {
+              "lead": 110.0,
+              "oxygen_used": 1.97,
+              "seconds": 2.23,
+              "seconds_before": 0.5
+            },
+            {
+              "lead": 130.0,
+              "oxygen_used": 2.07,
+              "seconds": 2.33,
+              "seconds_before": 0.591
+            },
+            {
+              "lead": 150.0,
+              "oxygen_used": 2.15,
+              "seconds": 2.42,
+              "seconds_before": 0.682
+            },
+            {
+              "lead": 170.0,
+              "oxygen_used": 2.23,
+              "seconds": 2.5,
+              "seconds_before": 0.773
+            },
+            {
+              "lead": 190.0,
+              "oxygen_used": 2.33,
+              "seconds": 2.6,
+              "seconds_before": 0.864
+            },
+            {
+              "lead": 210.0,
+              "oxygen_used": 2.42,
+              "seconds": 2.68,
+              "seconds_before": 0.955
+            },
+            {
+              "lead": 230.0,
+              "oxygen_used": 2.52,
+              "seconds": 2.78,
+              "seconds_before": 1.045
+            },
+            {
+              "lead": 250.0,
+              "oxygen_used": 2.6,
+              "seconds": 2.87,
+              "seconds_before": 1.136
+            },
+            {
+              "lead": 270.0,
+              "oxygen_used": 2.7,
+              "seconds": 2.97,
+              "seconds_before": 1.227
+            },
+            {
+              "lead": 290.0,
+              "oxygen_used": 2.78,
+              "seconds": 3.05,
+              "seconds_before": 1.318
+            },
+            {
+              "lead": 310.0,
+              "oxygen_used": 2.88,
+              "seconds": 3.15,
+              "seconds_before": 1.409
+            },
+            {
+              "lead": 330.0,
+              "oxygen_used": 2.97,
+              "seconds": 3.23,
+              "seconds_before": 1.5
+            },
+            {
+              "lead": 350.0,
+              "oxygen_used": 3.07,
+              "seconds": 3.33,
+              "seconds_before": 1.591
+            },
+            {
+              "lead": 370.0,
+              "oxygen_used": 3.15,
+              "seconds": 3.42,
+              "seconds_before": 1.682
+            },
+            {
+              "lead": 390.0,
+              "oxygen_used": 3.23,
+              "seconds": 3.5,
+              "seconds_before": 1.773
+            },
+            {
+              "lead": 410.0,
+              "oxygen_used": 3.33,
+              "seconds": 3.6,
+              "seconds_before": 1.864
+            },
+            {
+              "lead": 430.0,
+              "oxygen_used": 3.42,
+              "seconds": 3.68,
+              "seconds_before": 1.955
+            },
+            {
+              "lead": 450.0,
+              "oxygen_used": 3.52,
+              "seconds": 3.78,
+              "seconds_before": 2.045
+            },
+            {
+              "lead": 470.0,
+              "oxygen_used": 3.6,
+              "seconds": 3.87,
+              "seconds_before": 2.136
+            },
+            {
+              "lead": 490.0,
+              "oxygen_used": 3.7,
+              "seconds": 3.97,
+              "seconds_before": 2.227
+            },
+            {
+              "lead": 510.0,
+              "oxygen_used": 3.78,
+              "seconds": 4.05,
+              "seconds_before": 2.318
+            },
+            {
+              "lead": 530.0,
+              "oxygen_used": 3.88,
+              "seconds": 4.15,
+              "seconds_before": 2.409
+            },
+            {
+              "lead": 550.0,
+              "oxygen_used": 3.97,
+              "seconds": 4.23,
+              "seconds_before": 2.5
+            },
+            {
+              "lead": 570.0,
+              "oxygen_used": 4.07,
+              "seconds": 4.33,
+              "seconds_before": 2.591
+            },
+            {
+              "lead": 590.0,
+              "oxygen_used": 4.15,
+              "seconds": 4.42,
+              "seconds_before": 2.682
+            },
+            {
+              "lead": 610.0,
+              "oxygen_used": 4.23,
+              "seconds": 4.5,
+              "seconds_before": 2.773
+            }
+          ],
+          "window_px": 500.0,
+          "window_s": 2.273
+        }
+      },
+      "sight_s": 5.0,
+      "width": 180.0,
+      "zone": 1
+    },
+    {
+      "base_speed": 240.0,
+      "group": "gate4",
+      "index": 22,
+      "kind": "DIVE_GATE",
+      "schemes": {
+        "dive": {
+          "lead_max": 610.0,
+          "lead_min": 110.0,
+          "pass_count": 26,
+          "trials": [
+            {
+              "lead": 110.0,
+              "oxygen_used": 1.78,
+              "seconds": 2.05,
+              "seconds_before": 0.458
+            },
+            {
+              "lead": 130.0,
+              "oxygen_used": 1.87,
+              "seconds": 2.13,
+              "seconds_before": 0.542
+            },
+            {
+              "lead": 150.0,
+              "oxygen_used": 1.95,
+              "seconds": 2.22,
+              "seconds_before": 0.625
+            },
+            {
+              "lead": 170.0,
+              "oxygen_used": 2.03,
+              "seconds": 2.3,
+              "seconds_before": 0.708
+            },
+            {
+              "lead": 190.0,
+              "oxygen_used": 2.12,
+              "seconds": 2.38,
+              "seconds_before": 0.792
+            },
+            {
+              "lead": 210.0,
+              "oxygen_used": 2.2,
+              "seconds": 2.47,
+              "seconds_before": 0.875
+            },
+            {
+              "lead": 230.0,
+              "oxygen_used": 2.28,
+              "seconds": 2.55,
+              "seconds_before": 0.958
+            },
+            {
+              "lead": 250.0,
+              "oxygen_used": 2.37,
+              "seconds": 2.63,
+              "seconds_before": 1.042
+            },
+            {
+              "lead": 270.0,
+              "oxygen_used": 2.45,
+              "seconds": 2.72,
+              "seconds_before": 1.125
+            },
+            {
+              "lead": 290.0,
+              "oxygen_used": 2.53,
+              "seconds": 2.8,
+              "seconds_before": 1.208
+            },
+            {
+              "lead": 310.0,
+              "oxygen_used": 2.62,
+              "seconds": 2.88,
+              "seconds_before": 1.292
+            },
+            {
+              "lead": 330.0,
+              "oxygen_used": 2.7,
+              "seconds": 2.97,
+              "seconds_before": 1.375
+            },
+            {
+              "lead": 350.0,
+              "oxygen_used": 2.78,
+              "seconds": 3.05,
+              "seconds_before": 1.458
+            },
+            {
+              "lead": 370.0,
+              "oxygen_used": 2.87,
+              "seconds": 3.13,
+              "seconds_before": 1.542
+            },
+            {
+              "lead": 390.0,
+              "oxygen_used": 2.95,
+              "seconds": 3.22,
+              "seconds_before": 1.625
+            },
+            {
+              "lead": 410.0,
+              "oxygen_used": 3.03,
+              "seconds": 3.3,
+              "seconds_before": 1.708
+            },
+            {
+              "lead": 430.0,
+              "oxygen_used": 3.12,
+              "seconds": 3.38,
+              "seconds_before": 1.792
+            },
+            {
+              "lead": 450.0,
+              "oxygen_used": 3.2,
+              "seconds": 3.47,
+              "seconds_before": 1.875
+            },
+            {
+              "lead": 470.0,
+              "oxygen_used": 3.28,
+              "seconds": 3.55,
+              "seconds_before": 1.958
+            },
+            {
+              "lead": 490.0,
+              "oxygen_used": 3.37,
+              "seconds": 3.63,
+              "seconds_before": 2.042
+            },
+            {
+              "lead": 510.0,
+              "oxygen_used": 3.45,
+              "seconds": 3.72,
+              "seconds_before": 2.125
+            },
+            {
+              "lead": 530.0,
+              "oxygen_used": 3.53,
+              "seconds": 3.8,
+              "seconds_before": 2.208
+            },
+            {
+              "lead": 550.0,
+              "oxygen_used": 3.62,
+              "seconds": 3.88,
+              "seconds_before": 2.292
+            },
+            {
+              "lead": 570.0,
+              "oxygen_used": 3.7,
+              "seconds": 3.97,
+              "seconds_before": 2.375
+            },
+            {
+              "lead": 590.0,
+              "oxygen_used": 3.78,
+              "seconds": 4.05,
+              "seconds_before": 2.458
+            },
+            {
+              "lead": 610.0,
+              "oxygen_used": 3.87,
+              "seconds": 4.13,
+              "seconds_before": 2.542
+            }
+          ],
+          "window_px": 500.0,
+          "window_s": 2.083
+        }
+      },
+      "sight_s": 4.58,
+      "width": 180.0,
+      "zone": 2
+    },
+    {
+      "base_speed": 260.0,
+      "group": "gate6",
+      "index": 34,
+      "kind": "DIVE_GATE",
+      "schemes": {
+        "dive": {
+          "lead_max": 610.0,
+          "lead_min": 110.0,
+          "pass_count": 26,
+          "trials": [
+            {
+              "lead": 110.0,
+              "oxygen_used": 1.63,
+              "seconds": 1.9,
+              "seconds_before": 0.423
+            },
+            {
+              "lead": 130.0,
+              "oxygen_used": 1.7,
+              "seconds": 1.97,
+              "seconds_before": 0.5
+            },
+            {
+              "lead": 150.0,
+              "oxygen_used": 1.78,
+              "seconds": 2.05,
+              "seconds_before": 0.577
+            },
+            {
+              "lead": 170.0,
+              "oxygen_used": 1.85,
+              "seconds": 2.12,
+              "seconds_before": 0.654
+            },
+            {
+              "lead": 190.0,
+              "oxygen_used": 1.93,
+              "seconds": 2.2,
+              "seconds_before": 0.731
+            },
+            {
+              "lead": 210.0,
+              "oxygen_used": 2.02,
+              "seconds": 2.28,
+              "seconds_before": 0.808
+            },
+            {
+              "lead": 230.0,
+              "oxygen_used": 2.08,
+              "seconds": 2.35,
+              "seconds_before": 0.885
+            },
+            {
+              "lead": 250.0,
+              "oxygen_used": 2.17,
+              "seconds": 2.43,
+              "seconds_before": 0.962
+            },
+            {
+              "lead": 270.0,
+              "oxygen_used": 2.25,
+              "seconds": 2.52,
+              "seconds_before": 1.038
+            },
+            {
+              "lead": 290.0,
+              "oxygen_used": 2.32,
+              "seconds": 2.58,
+              "seconds_before": 1.115
+            },
+            {
+              "lead": 310.0,
+              "oxygen_used": 2.4,
+              "seconds": 2.67,
+              "seconds_before": 1.192
+            },
+            {
+              "lead": 330.0,
+              "oxygen_used": 2.47,
+              "seconds": 2.73,
+              "seconds_before": 1.269
+            },
+            {
+              "lead": 350.0,
+              "oxygen_used": 2.55,
+              "seconds": 2.82,
+              "seconds_before": 1.346
+            },
+            {
+              "lead": 370.0,
+              "oxygen_used": 2.63,
+              "seconds": 2.9,
+              "seconds_before": 1.423
+            },
+            {
+              "lead": 390.0,
+              "oxygen_used": 2.7,
+              "seconds": 2.97,
+              "seconds_before": 1.5
+            },
+            {
+              "lead": 410.0,
+              "oxygen_used": 2.78,
+              "seconds": 3.05,
+              "seconds_before": 1.577
+            },
+            {
+              "lead": 430.0,
+              "oxygen_used": 2.85,
+              "seconds": 3.12,
+              "seconds_before": 1.654
+            },
+            {
+              "lead": 450.0,
+              "oxygen_used": 2.93,
+              "seconds": 3.2,
+              "seconds_before": 1.731
+            },
+            {
+              "lead": 470.0,
+              "oxygen_used": 3.02,
+              "seconds": 3.28,
+              "seconds_before": 1.808
+            },
+            {
+              "lead": 490.0,
+              "oxygen_used": 3.08,
+              "seconds": 3.35,
+              "seconds_before": 1.885
+            },
+            {
+              "lead": 510.0,
+              "oxygen_used": 3.17,
+              "seconds": 3.43,
+              "seconds_before": 1.962
+            },
+            {
+              "lead": 530.0,
+              "oxygen_used": 3.25,
+              "seconds": 3.52,
+              "seconds_before": 2.038
+            },
+            {
+              "lead": 550.0,
+              "oxygen_used": 3.32,
+              "seconds": 3.58,
+              "seconds_before": 2.115
+            },
+            {
+              "lead": 570.0,
+              "oxygen_used": 3.4,
+              "seconds": 3.67,
+              "seconds_before": 2.192
+            },
+            {
+              "lead": 590.0,
+              "oxygen_used": 3.47,
+              "seconds": 3.73,
+              "seconds_before": 2.269
+            },
+            {
+              "lead": 610.0,
+              "oxygen_used": 3.55,
+              "seconds": 3.82,
+              "seconds_before": 2.346
+            }
+          ],
+          "window_px": 500.0,
+          "window_s": 1.923
+        }
+      },
+      "sight_s": 4.23,
+      "width": 180.0,
+      "zone": 3
+    },
+    {
+      "base_speed": 220.0,
+      "group": "log1",
+      "index": 8,
+      "kind": "FLOATING_LOG",
+      "schemes": {
+        "dive_jump": {
+          "lead_max": 165.0,
+          "lead_min": 140.0,
+          "pass_count": 6,
+          "trials": [
+            {
+              "lead": 140.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.7,
+              "seconds_before": 0.636
+            },
+            {
+              "lead": 145.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.72,
+              "seconds_before": 0.659
+            },
+            {
+              "lead": 150.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.75,
+              "seconds_before": 0.682
+            },
+            {
+              "lead": 155.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.77,
+              "seconds_before": 0.705
+            },
+            {
+              "lead": 160.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.78,
+              "seconds_before": 0.727
+            },
+            {
+              "lead": 165.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.82,
+              "seconds_before": 0.75
+            }
+          ],
+          "window_px": 25.0,
+          "window_s": 0.114
+        }
+      },
+      "sight_s": 5.0,
+      "width": 32.0,
+      "zone": 1
+    },
+    {
+      "base_speed": 240.0,
+      "group": "log3",
+      "index": 24,
+      "kind": "FLOATING_LOG",
+      "schemes": {
+        "dive_jump": {
+          "lead_max": 185.0,
+          "lead_min": 145.0,
+          "pass_count": 9,
+          "trials": [
+            {
+              "lead": 145.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.58,
+              "seconds_before": 0.604
+            },
+            {
+              "lead": 150.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.6,
+              "seconds_before": 0.625
+            },
+            {
+              "lead": 155.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.62,
+              "seconds_before": 0.646
+            },
+            {
+              "lead": 160.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.65,
+              "seconds_before": 0.667
+            },
+            {
+              "lead": 165.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.67,
+              "seconds_before": 0.688
+            },
+            {
+              "lead": 170.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.68,
+              "seconds_before": 0.708
+            },
+            {
+              "lead": 175.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.7,
+              "seconds_before": 0.729
+            },
+            {
+              "lead": 180.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.73,
+              "seconds_before": 0.75
+            },
+            {
+              "lead": 185.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.75,
+              "seconds_before": 0.771
+            }
+          ],
+          "window_px": 40.0,
+          "window_s": 0.167
+        }
+      },
+      "sight_s": 4.58,
+      "width": 32.0,
+      "zone": 2
+    },
+    {
+      "base_speed": 260.0,
+      "group": "log8",
+      "index": 52,
+      "kind": "FLOATING_LOG",
+      "schemes": {
+        "dive_jump": {
+          "lead_max": 205.0,
+          "lead_min": 155.0,
+          "pass_count": 11,
+          "trials": [
+            {
+              "lead": 155.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.5,
+              "seconds_before": 0.596
+            },
+            {
+              "lead": 160.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.52,
+              "seconds_before": 0.615
+            },
+            {
+              "lead": 165.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.53,
+              "seconds_before": 0.635
+            },
+            {
+              "lead": 170.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.55,
+              "seconds_before": 0.654
+            },
+            {
+              "lead": 175.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.57,
+              "seconds_before": 0.673
+            },
+            {
+              "lead": 180.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.6,
+              "seconds_before": 0.692
+            },
+            {
+              "lead": 185.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.62,
+              "seconds_before": 0.712
+            },
+            {
+              "lead": 190.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.63,
+              "seconds_before": 0.731
+            },
+            {
+              "lead": 195.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.65,
+              "seconds_before": 0.75
+            },
+            {
+              "lead": 200.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.67,
+              "seconds_before": 0.769
+            },
+            {
+              "lead": 205.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.68,
+              "seconds_before": 0.788
+            }
+          ],
+          "window_px": 50.0,
+          "window_s": 0.192
+        }
+      },
+      "sight_s": 4.23,
+      "width": 32.0,
+      "zone": 3
+    },
+    {
+      "base_speed": 220.0,
+      "group": "wall1",
+      "index": 10,
+      "kind": "HIGH_WALL",
+      "schemes": {
+        "leap_jump": {
+          "lead_max": 210.0,
+          "lead_min": 155.0,
+          "pass_count": 12,
+          "trials": [
+            {
+              "lead": 155.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.77,
+              "seconds_before": 0.705
+            },
+            {
+              "lead": 160.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.8,
+              "seconds_before": 0.727
+            },
+            {
+              "lead": 165.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.82,
+              "seconds_before": 0.75
+            },
+            {
+              "lead": 170.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.85,
+              "seconds_before": 0.773
+            },
+            {
+              "lead": 175.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.87,
+              "seconds_before": 0.795
+            },
+            {
+              "lead": 180.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.9,
+              "seconds_before": 0.818
+            },
+            {
+              "lead": 185.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.92,
+              "seconds_before": 0.841
+            },
+            {
+              "lead": 190.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.95,
+              "seconds_before": 0.864
+            },
+            {
+              "lead": 195.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.97,
+              "seconds_before": 0.886
+            },
+            {
+              "lead": 200.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.0,
+              "seconds_before": 0.909
+            },
+            {
+              "lead": 205.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.02,
+              "seconds_before": 0.932
+            },
+            {
+              "lead": 210.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.05,
+              "seconds_before": 0.955
+            }
+          ],
+          "window_px": 55.0,
+          "window_s": 0.25
+        }
+      },
+      "sight_s": 5.0,
+      "width": 30.0,
+      "zone": 1
+    },
+    {
+      "base_speed": 240.0,
+      "group": "wall2",
+      "index": 20,
+      "kind": "HIGH_WALL",
+      "schemes": {
+        "leap_jump": {
+          "lead_max": 240.0,
+          "lead_min": 165.0,
+          "pass_count": 16,
+          "trials": [
+            {
+              "lead": 165.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.65,
+              "seconds_before": 0.688
+            },
+            {
+              "lead": 170.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.68,
+              "seconds_before": 0.708
+            },
+            {
+              "lead": 175.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.7,
+              "seconds_before": 0.729
+            },
+            {
+              "lead": 180.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.72,
+              "seconds_before": 0.75
+            },
+            {
+              "lead": 185.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.75,
+              "seconds_before": 0.771
+            },
+            {
+              "lead": 190.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.77,
+              "seconds_before": 0.792
+            },
+            {
+              "lead": 195.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.78,
+              "seconds_before": 0.813
+            },
+            {
+              "lead": 200.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.82,
+              "seconds_before": 0.833
+            },
+            {
+              "lead": 205.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.83,
+              "seconds_before": 0.854
+            },
+            {
+              "lead": 210.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.87,
+              "seconds_before": 0.875
+            },
+            {
+              "lead": 215.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.88,
+              "seconds_before": 0.896
+            },
+            {
+              "lead": 220.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.9,
+              "seconds_before": 0.917
+            },
+            {
+              "lead": 225.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.93,
+              "seconds_before": 0.938
+            },
+            {
+              "lead": 230.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.95,
+              "seconds_before": 0.958
+            },
+            {
+              "lead": 235.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.98,
+              "seconds_before": 0.979
+            },
+            {
+              "lead": 240.0,
+              "oxygen_used": 0.0,
+              "seconds": 2.0,
+              "seconds_before": 1.0
+            }
+          ],
+          "window_px": 75.0,
+          "window_s": 0.313
+        }
+      },
+      "sight_s": 4.58,
+      "width": 30.0,
+      "zone": 2
+    },
+    {
+      "base_speed": 260.0,
+      "group": "wall3",
+      "index": 37,
+      "kind": "HIGH_WALL",
+      "schemes": {
+        "leap_jump": {
+          "lead_max": 265.0,
+          "lead_min": 195.0,
+          "pass_count": 15,
+          "trials": [
+            {
+              "lead": 195.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.65,
+              "seconds_before": 0.75
+            },
+            {
+              "lead": 200.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.67,
+              "seconds_before": 0.769
+            },
+            {
+              "lead": 205.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.68,
+              "seconds_before": 0.788
+            },
+            {
+              "lead": 210.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.7,
+              "seconds_before": 0.808
+            },
+            {
+              "lead": 215.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.73,
+              "seconds_before": 0.827
+            },
+            {
+              "lead": 220.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.75,
+              "seconds_before": 0.846
+            },
+            {
+              "lead": 225.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.77,
+              "seconds_before": 0.865
+            },
+            {
+              "lead": 230.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.78,
+              "seconds_before": 0.885
+            },
+            {
+              "lead": 235.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.82,
+              "seconds_before": 0.904
+            },
+            {
+              "lead": 240.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.83,
+              "seconds_before": 0.923
+            },
+            {
+              "lead": 245.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.85,
+              "seconds_before": 0.942
+            },
+            {
+              "lead": 250.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.88,
+              "seconds_before": 0.962
+            },
+            {
+              "lead": 255.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.9,
+              "seconds_before": 0.981
+            },
+            {
+              "lead": 260.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.92,
+              "seconds_before": 1.0
+            },
+            {
+              "lead": 265.0,
+              "oxygen_used": 0.0,
+              "seconds": 1.93,
+              "seconds_before": 1.019
+            }
+          ],
+          "window_px": 70.0,
+          "window_s": 0.269
+        }
+      },
+      "sight_s": 4.23,
+      "width": 30.0,
+      "zone": 3
+    }
+  ],
+  "generated_at": "2026-11-12T21:32:49",
+  "note": "细窗审计：真实按键、加速带关闭、基速；自动驾驶代理，不是真人。"
+}

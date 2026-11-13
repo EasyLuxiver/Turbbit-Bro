@@ -1,0 +1,99 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+  ok  action exists: shift
+  ok  action exists: boost
+  ok  action exists: up
+  ok  action exists: down
+  ok  action exists: left
+  ok  action exists: right
+  ok  action exists: pause
+  ok  action exists: restart
+  ok  action exists: confirm
+  ok  state RUNNING
+  ok  initial control rabbit
+  ok  oxygen starts at max
+  ok  HUD lives in main race scene
+  ok  HUD control field
+  ok  HUD oxygen field
+  ok  HUD brotherhood field
+  ok  HUD time field
+  ok  F1 debug overlay exists
+  hud    -> CONTROL   RABBIT | RABBIT    RIDING   GRIP 0% | TURTLE    CRUISING   Y 300
+  ok  rabbit phase 1 RELAXED (0.4 s)
+  ok  no slide during warning window
+  ok  rabbit phase 2 SLIDING (1.3 s)
+  ok  slide progresses (0.22)
+  ok  rabbit phase 3 EDGE (2.5 s)
+  ok  near-edge grip (0.72)
+  ok  rabbit slips after full window
+  slip   -> 3.60s accident=RABBIT_SLIP
+  ok  slip rescue restores mount
+  ok  turtle phase 1 DAZED
+  ok  turtle holds depth in warning window
+  ok  turtle phase 2 SINKING
+  ok  turtle starts sinking (y=305.9)
+  ok  turtle phase 3 DEEP
+  ok  turtle danger after full window
+  sink   -> y=448.8 accident=TURTLE_REEF
+  ok  turtle recovers
+  ok  turtle back at surface
+  ok  oxygen recovers at surface (6.50)
+  ok  turtle underwater for oxygen test
+  ok  oxygen drains underwater (3.38)
+  ok  airborne does not drain oxygen (4.00)
+  ok  switching control does not refill oxygen
+  oxygen -> 3.85 (LOW)
+  ok  oxygen empty -> emergency
+  ok  emergency recovers
+  ok  emergency surfaces turtle
+  ok  emergency refills to safe level (6.4)
+  air out-> y=300.0 oxygen=6.4
+  ok  rock contact -> RABBIT_STUN
+  ok  stun timer active
+  ok  stun hands control to turtle
+  ok  stun keeps rabbit on shell
+  ok  stun clears without rescue
+  stun   -> 0.8 s, mount=RIDING
+  ok  jump clears surface rock (NONE)
+  ok  crouch clears low beam
+  ok  standing under beam -> stun
+  beam   -> RABBIT_STUN
+  ok  shallow pass clears reef
+  ok  surface wall -> TURTLE_REEF
+  ok  dive clears surface wall
+  wall   -> surface hit / dive clear
+  ok  air bar safe while not jumping
+  ok  air bar while jumping -> water
+  airbar -> RABBIT_WATER
+  ok  boost lane speed gain (380)
+  ok  boost released -> speed recovers (220)
+  ok  boosting speeds up rabbit slip (0.37 > 0.18)
+  boost  -> slide boost=0.37 normal=0.18
+  ok  pickup tolerance 110 px
+  ok  pickup rejects 130 px
+  ok  pickup rejects rising rabbit
+  ok  clean pass 1 -> combo 1
+  ok  clean pass 2 -> combo 2
+  ok  3 clean passes -> Showtime
+  ok  Showtime hands steering to turtle
+  ok  rabbit performs automatically
+  show   -> active=true combo=0
+  ok  SHIFT aborts Showtime
+  ok  abort keeps control on turtle
+  ok  aborted rabbit starts sliding immediately
+  ok  abort skips warning window
+  ok  Showtime starts for completion test
+  ok  Showtime completes
+  ok  showtime_count increments
+  ok  Showtime refills oxygen
+  show   -> count=1 oxygen=8.0
+  ok  collision during Showtime ends performance
+  ok  Showtime collision -> rabbit in water (RABBIT_WATER)
+  ok  accident clears combo
+  show   -> collision=RABBIT_WATER
+  ok  restart resets control
+  ok  restart resets oxygen
+  ok  restart resets combo / showtime count
+  ok  restart resets counters
+  ok  restart resets race time
+STAGE2 SELFTEST: PASS

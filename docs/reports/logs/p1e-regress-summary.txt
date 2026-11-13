@@ -1,0 +1,26 @@
+stage5_g3_hint EXIT=1 | G3 HINT: FAIL
+stage5_g8_corridor EXIT=0 | G8 CORRIDOR: PASS
+stage5_g5_carry EXIT=0 | G5 CARRY: PASS
+stage5_g9_shell_dip EXIT=0 | G9 SHELL DIP: PASS
+stage5_g2_release EXIT=1 | G2 RELEASE: FAIL
+stage5_e3_ollie EXIT=0 | E3 OLLIE: PASS
+stage6_p0_collision EXIT=0 | REFINE06 P0 PROBE: PASS
+stage6_bro_dive_robust EXIT=0 | P2 BRO DIVE: PASS
+stage6_shark_ambush EXIT=0 | P3 SHARK AMBUSH: PASS
+stage7_bro_dive_assist EXIT=0 | CORE-FEEL-07 P0-A: PASS
+stage7_drift_visible EXIT=0 | CORE-FEEL-07 P1-D: PASS
+stage7_joint_penalty EXIT=0 | CORE-FEEL-07 P0-B: PASS
+stage4_level_audit EXIT=0 | 
+stage4_solution_audit EXIT=124 | 
+stage4_window_audit EXIT=124 | 
+stage4_z1_rhythm EXIT=0 | STAGE4 Z1 RHYTHM: PASS
+stage4_z3_warning EXIT=0 | STAGE4 Z3 WARNING: PASS
+stage4_proto EXIT=0 | STAGE4 PROTO: PASS
+stage4_rescue_boost EXIT=0 | RESCUE-BOOST z3_dive_2.2       beam8  boost=true crash=RABBIT_WATER speed=299 result=caught  catch=2.58 recover=2.78 step=0.0 acc+1/1 PASS
+stage4_combo_windows EXIT=124 |   SUMMARY pass=0/273 lead_with_pass=0 best_delay=0.00 s at lead 0
+stage4_snack_contact EXIT=0 | STAGE4 SNACK CONTACT: PASS
+stage4_snack_zones EXIT=0 | ZONE SNACK #9 skip z3 gate8       SURFACE_ROCK w=3.08 v=260/260 hit=false acc=NONE ride=true PASS
+stage4_playful_joint_verdict EXIT=0 | JOINT VERDICT: PASS
+stage4_playful_rescue_continuity EXIT=0 | RESCUE CONTINUITY: PASS
+stage4_water_rescue EXIT=0 | 
+DONE

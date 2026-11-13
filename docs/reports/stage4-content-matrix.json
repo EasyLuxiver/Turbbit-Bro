@@ -1,0 +1,1113 @@
+{
+  "definitions": {
+    "gap": "previous group end -> next group start",
+    "options_from_collision": true,
+    "threat_window_px": 430.0
+  },
+  "totals": {
+    "boost_lanes": 9,
+    "groups": 55,
+    "kinds": {
+      "DIVE_GATE": 8,
+      "FLOATING_LOG": 8,
+      "HIGH_WALL": 3,
+      "LOW_BEAM": 9,
+      "LOW_BIRD": 9,
+      "SHARK": 6,
+      "SURFACE_ROCK": 12
+    },
+    "must_both": 8,
+    "must_crouch": 18,
+    "must_dive": 8,
+    "must_jump": 12,
+    "must_leap": 6,
+    "must_ollie": 3,
+    "no_solution_groups": 0
+  },
+  "zones": {
+    "1": {
+      "base_speed": 220.0,
+      "boost_lanes": [
+        {
+          "end": 3250.0,
+          "length": 700.0,
+          "seconds": 3.18,
+          "start": 2550.0
+        },
+        {
+          "end": 14400.0,
+          "length": 700.0,
+          "seconds": 3.18,
+          "start": 13700.0
+        }
+      ],
+      "clusters": 6,
+      "end": 15000.0,
+      "entries": [
+        {
+          "cluster": 0,
+          "end": 1680.0,
+          "gap_px": 0.0,
+          "gap_s": 0.0,
+          "group": "bird1",
+          "i": 1,
+          "kind": "LOW_BIRD",
+          "options": [
+            "crouch"
+          ],
+          "start": 1560.0,
+          "width": 120.0
+        },
+        {
+          "cluster": 0,
+          "end": 2610.0,
+          "gap_px": 820.0,
+          "gap_s": 3.73,
+          "group": "rock1",
+          "i": 2,
+          "kind": "SURFACE_ROCK",
+          "options": [
+            "jump"
+          ],
+          "start": 2500.0,
+          "width": 110.0
+        },
+        {
+          "cluster": 1,
+          "end": 3980.0,
+          "gap_px": 1190.0,
+          "gap_s": 5.41,
+          "group": "gate1",
+          "i": 3,
+          "kind": "DIVE_GATE",
+          "options": [
+            "dive"
+          ],
+          "start": 3800.0,
+          "width": 180.0
+        },
+        {
+          "cluster": 2,
+          "end": 5240.0,
+          "gap_px": 1120.0,
+          "gap_s": 5.09,
+          "group": "rock2",
+          "i": 4,
+          "kind": "SURFACE_ROCK",
+          "options": [
+            "jump"
+          ],
+          "start": 5100.0,
+          "width": 140.0
+        },
+        {
+          "cluster": 3,
+          "end": 6432.0,
+          "gap_px": 1160.0,
+          "gap_s": 5.27,
+          "group": "log1",
+          "i": 5,
+          "kind": "FLOATING_LOG",
+          "options": [
+            "jump",
+            "dive"
+          ],
+          "start": 6400.0,
+          "width": 32.0
+        },
+        {
+          "cluster": 3,
+          "end": 7320.0,
+          "gap_px": 818.0,
+          "gap_s": 3.72,
+          "group": "shark1",
+          "i": 6,
+          "kind": "SHARK",
+          "options": [
+            "leap"
+          ],
+          "start": 7250.0,
+          "width": 70.0
+        },
+        {
+          "cluster": 3,
+          "end": 8520.0,
+          "gap_px": 1080.0,
+          "gap_s": 4.91,
+          "group": "rock3",
+          "i": 7,
+          "kind": "SURFACE_ROCK",
+          "options": [
+            "jump"
+          ],
+          "start": 8400.0,
+          "width": 120.0
+        },
+        {
+          "cluster": 3,
+          "end": 9780.0,
+          "gap_px": 1080.0,
+          "gap_s": 4.91,
+          "group": "beam2",
+          "i": 8,
+          "kind": "LOW_BEAM",
+          "options": [
+            "crouch"
+          ],
+          "start": 9600.0,
+          "width": 180.0
+        },
+        {
+          "cluster": 4,
+          "end": 10890.0,
+          "gap_px": 1080.0,
+          "gap_s": 4.91,
+          "group": "wall1",
+          "i": 9,
+          "kind": "HIGH_WALL",
+          "options": [
+            "leap",
+            "jump"
+          ],
+          "start": 10860.0,
+          "width": 30.0
+        },
+        {
+          "cluster": 4,
+          "end": 12180.0,
+          "gap_px": 1110.0,
+          "gap_s": 5.05,
+          "group": "gate2",
+          "i": 10,
+          "kind": "DIVE_GATE",
+          "options": [
+            "dive"
+          ],
+          "start": 12000.0,
+          "width": 180.0
+        },
+        {
+          "cluster": 4,
+          "end": 12960.0,
+          "gap_px": 670.0,
+          "gap_s": 3.05,
+          "group": "bird2",
+          "i": 11,
+          "kind": "LOW_BIRD",
+          "options": [
+            "crouch"
+          ],
+          "start": 12850.0,
+          "width": 110.0
+        },
+        {
+          "cluster": 5,
+          "end": 14720.0,
+          "gap_px": 1590.0,
+          "gap_s": 7.23,
+          "group": "beam1",
+          "i": 12,
+          "kind": "LOW_BEAM",
+          "options": [
+            "crouch"
+          ],
+          "start": 14550.0,
+          "width": 170.0
+        }
+      ],
+      "groups": 12,
+      "kinds": {
+        "DIVE_GATE": 2,
+        "FLOATING_LOG": 1,
+        "HIGH_WALL": 1,
+        "LOW_BEAM": 2,
+        "LOW_BIRD": 2,
+        "SHARK": 1,
+        "SURFACE_ROCK": 3
+      },
+      "length_px": 15000.0,
+      "must_crouch_groups": 4,
+      "must_dive_groups": 3,
+      "must_jump_groups": 5,
+      "must_leap_groups": 2,
+      "name": "SUNNY COAST",
+      "no_input_fraction": 0.0,
+      "no_input_groups": 0,
+      "nominal_seconds": 68.18,
+      "options": {
+        "crouch": 4,
+        "dive": 3,
+        "jump": 5,
+        "leap": 2
+      },
+      "start": 0.0,
+      "threat_fraction": 0.44,
+      "threat_seconds": 30.01,
+      "top_bigrams": [
+        {
+          "count": 1,
+          "pattern": "DIVE_GATE/LOW_BIRD"
+        },
+        {
+          "count": 1,
+          "pattern": "DIVE_GATE/SURFACE_ROCK"
+        },
+        {
+          "count": 1,
+          "pattern": "FLOATING_LOG/SHARK"
+        },
+        {
+          "count": 1,
+          "pattern": "HIGH_WALL/DIVE_GATE"
+        },
+        {
+          "count": 1,
+          "pattern": "LOW_BEAM/HIGH_WALL"
+        }
+      ],
+      "top_trigrams": [
+        {
+          "count": 1,
+          "pattern": "DIVE_GATE/LOW_BIRD/LOW_BEAM"
+        },
+        {
+          "count": 1,
+          "pattern": "DIVE_GATE/SURFACE_ROCK/FLOATING_LOG"
+        },
+        {
+          "count": 1,
+          "pattern": "FLOATING_LOG/SHARK/SURFACE_ROCK"
+        },
+        {
+          "count": 1,
+          "pattern": "HIGH_WALL/DIVE_GATE/LOW_BIRD"
+        },
+        {
+          "count": 1,
+          "pattern": "LOW_BEAM/HIGH_WALL/DIVE_GATE"
+        }
+      ],
+      "unique_bigrams": 11,
+      "unique_trigrams": 10
+    },
+    "2": {
+      "base_speed": 240.0,
+      "boost_lanes": [
+        {
+          "end": 19100.0,
+          "length": 700.0,
+          "seconds": 2.92,
+          "start": 18400.0
+        },
+        {
+          "end": 26500.0,
+          "length": 700.0,
+          "seconds": 2.92,
+          "start": 25800.0
+        },
+        {
+          "end": 34100.0,
+          "length": 700.0,
+          "seconds": 2.92,
+          "start": 33400.0
+        }
+      ],
+      "clusters": 7,
+      "end": 39000.0,
+      "entries": [
+        {
+          "cluster": 0,
+          "end": 15870.0,
+          "gap_px": 0.0,
+          "gap_s": 0.0,
+          "group": "shark3",
+          "i": 1,
+          "kind": "SHARK",
+          "options": [
+            "leap"
+          ],
+          "start": 15800.0,
+          "width": 70.0
+        },
+        {
+          "cluster": 0,
+          "end": 17170.0,
+          "gap_px": 1130.0,
+          "gap_s": 4.71,
+          "group": "beam3",
+          "i": 2,
+          "kind": "LOW_BEAM",
+          "options": [
+            "crouch"
+          ],
+          "start": 17000.0,
+          "width": 170.0
+        },
+        {
+          "cluster": 0,
+          "end": 17890.0,
+          "gap_px": 600.0,
+          "gap_s": 2.5,
+          "group": "rock4",
+          "i": 3,
+          "kind": "SURFACE_ROCK",
+          "options": [
+            "jump"
+          ],
+          "start": 17770.0,
+          "width": 120.0
+        },
+        {
+          "cluster": 1,
+          "end": 19580.0,
+          "gap_px": 1510.0,
+          "gap_s": 6.29,
+          "group": "gate3",
+          "i": 4,
+          "kind": "DIVE_GATE",
+          "options": [
+            "dive"
+          ],
+          "start": 19400.0,
+          "width": 180.0
+        },
+        {
+          "cluster": 1,
+          "end": 20720.0,
+          "gap_px": 1020.0,
+          "gap_s": 4.25,
+          "group": "bird3",
+          "i": 5,
+          "kind": "LOW_BIRD",
+          "options": [
+            "crouch"
+          ],
+          "start": 20600.0,
+          "width": 120.0
+        },
+        {
+          "cluster": 2,
+          "end": 21982.0,
+          "gap_px": 1230.0,
+          "gap_s": 5.13,
+          "group": "log2",
+          "i": 6,
+          "kind": "FLOATING_LOG",
+          "options": [
+            "jump",
+            "dive"
+          ],
+          "start": 21950.0,
+          "width": 32.0
+        },
+        {
+          "cluster": 3,
+          "end": 23330.0,
+          "gap_px": 1218.0,
+          "gap_s": 5.08,
+          "group": "rock5",
+          "i": 7,
+          "kind": "SURFACE_ROCK",
+          "options": [
+            "jump"
+          ],
+          "start": 23200.0,
+          "width": 130.0
+        },
+        {
+          "cluster": 3,
+          "end": 24580.0,
+          "gap_px": 1070.0,
+          "gap_s": 4.46,
+          "group": "beam4",
+          "i": 8,
+          "kind": "LOW_BEAM",
+          "options": [
+            "crouch"
+          ],
+          "start": 24400.0,
+          "width": 180.0
+        },
+        {
+          "cluster": 3,
+          "end": 25630.0,
+          "gap_px": 1020.0,
+          "gap_s": 4.25,
+          "group": "wall2",
+          "i": 9,
+          "kind": "HIGH_WALL",
+          "options": [
+            "leap",
+            "jump"
+          ],
+          "start": 25600.0,
+          "width": 30.0
+        },
+        {
+          "cluster": 3,
+          "end": 26940.0,
+          "gap_px": 1170.0,
+          "gap_s": 4.88,
+          "group": "rock6",
+          "i": 10,
+          "kind": "SURFACE_ROCK",
+          "options": [
+            "jump"
+          ],
+          "start": 26800.0,
+          "width": 140.0
+        },
+        {
+          "cluster": 3,
+          "end": 28180.0,
+          "gap_px": 1060.0,
+          "gap_s": 4.42,
+          "group": "gate4",
+          "i": 11,
+          "kind": "DIVE_GATE",
+          "options": [
+            "dive"
+          ],
+          "start": 28000.0,
+          "width": 180.0
+        },
+        {
+          "cluster": 3,
+          "end": 29310.0,
+          "gap_px": 1020.0,
+          "gap_s": 4.25,
+          "group": "bird4",
+          "i": 12,
+          "kind": "LOW_BIRD",
+          "options": [
+            "crouch"
+          ],
+          "start": 29200.0,
+          "width": 110.0
+        },
+        {
+          "cluster": 4,
+          "end": 30582.0,
+          "gap_px": 1240.0,
+          "gap_s": 5.17,
+          "group": "log3",
+          "i": 13,
+          "kind": "FLOATING_LOG",
+          "options": [
+            "jump",
+            "dive"
+          ],
+          "start": 30550.0,
+          "width": 32.0
+        },
+        {
+          "cluster": 5,
+          "end": 31920.0,
+          "gap_px": 1218.0,
+          "gap_s": 5.08,
+          "group": "rock7",
+          "i": 14,
+          "kind": "SURFACE_ROCK",
+          "options": [
+            "jump"
+          ],
+          "start": 31800.0,
+          "width": 120.0
+        },
+        {
+          "cluster": 5,
+          "end": 33170.0,
+          "gap_px": 1080.0,
+          "gap_s": 4.5,
+          "group": "beam5",
+          "i": 15,
+          "kind": "LOW_BEAM",
+          "options": [
+            "crouch"
+          ],
+          "start": 33000.0,
+          "width": 170.0
+        },
+        {
+          "cluster": 5,
+          "end": 34270.0,
+          "gap_px": 1030.0,
+          "gap_s": 4.29,
+          "group": "shark5",
+          "i": 16,
+          "kind": "SHARK",
+          "options": [
+            "leap"
+          ],
+          "start": 34200.0,
+          "width": 70.0
+        },
+        {
+          "cluster": 5,
+          "end": 35520.0,
+          "gap_px": 1130.0,
+          "gap_s": 4.71,
+          "group": "bird5",
+          "i": 17,
+          "kind": "LOW_BIRD",
+          "options": [
+            "crouch"
+          ],
+          "start": 35400.0,
+          "width": 120.0
+        },
+        {
+          "cluster": 6,
+          "end": 36782.0,
+          "gap_px": 1230.0,
+          "gap_s": 5.13,
+          "group": "log4",
+          "i": 18,
+          "kind": "FLOATING_LOG",
+          "options": [
+            "jump",
+            "dive"
+          ],
+          "start": 36750.0,
+          "width": 32.0
+        },
+        {
+          "cluster": 6,
+          "end": 37660.0,
+          "gap_px": 698.0,
+          "gap_s": 2.91,
+          "group": "gate5",
+          "i": 19,
+          "kind": "DIVE_GATE",
+          "options": [
+            "dive"
+          ],
+          "start": 37480.0,
+          "width": 180.0
+        }
+      ],
+      "groups": 19,
+      "kinds": {
+        "DIVE_GATE": 3,
+        "FLOATING_LOG": 3,
+        "HIGH_WALL": 1,
+        "LOW_BEAM": 3,
+        "LOW_BIRD": 3,
+        "SHARK": 2,
+        "SURFACE_ROCK": 4
+      },
+      "length_px": 24000.0,
+      "must_crouch_groups": 6,
+      "must_dive_groups": 6,
+      "must_jump_groups": 8,
+      "must_leap_groups": 3,
+      "name": "CORAL CHAOS",
+      "no_input_fraction": 0.0,
+      "no_input_groups": 0,
+      "nominal_seconds": 100.0,
+      "options": {
+        "crouch": 6,
+        "dive": 6,
+        "jump": 8,
+        "leap": 3
+      },
+      "start": 15000.0,
+      "threat_fraction": 0.432,
+      "threat_seconds": 43.15,
+      "top_bigrams": [
+        {
+          "count": 3,
+          "pattern": "LOW_BIRD/FLOATING_LOG"
+        },
+        {
+          "count": 2,
+          "pattern": "DIVE_GATE/LOW_BIRD"
+        },
+        {
+          "count": 2,
+          "pattern": "FLOATING_LOG/SURFACE_ROCK"
+        },
+        {
+          "count": 2,
+          "pattern": "SURFACE_ROCK/DIVE_GATE"
+        },
+        {
+          "count": 2,
+          "pattern": "SURFACE_ROCK/LOW_BEAM"
+        }
+      ],
+      "top_trigrams": [
+        {
+          "count": 2,
+          "pattern": "DIVE_GATE/LOW_BIRD/FLOATING_LOG"
+        },
+        {
+          "count": 2,
+          "pattern": "FLOATING_LOG/SURFACE_ROCK/LOW_BEAM"
+        },
+        {
+          "count": 2,
+          "pattern": "LOW_BIRD/FLOATING_LOG/SURFACE_ROCK"
+        },
+        {
+          "count": 2,
+          "pattern": "SURFACE_ROCK/DIVE_GATE/LOW_BIRD"
+        },
+        {
+          "count": 1,
+          "pattern": "HIGH_WALL/SURFACE_ROCK/DIVE_GATE"
+        }
+      ],
+      "unique_bigrams": 12,
+      "unique_trigrams": 13
+    },
+    "3": {
+      "base_speed": 260.0,
+      "boost_lanes": [
+        {
+          "end": 53500.0,
+          "length": 500.0,
+          "seconds": 1.92,
+          "start": 53000.0
+        },
+        {
+          "end": 54900.0,
+          "length": 700.0,
+          "seconds": 2.69,
+          "start": 54200.0
+        },
+        {
+          "end": 59400.0,
+          "length": 500.0,
+          "seconds": 1.92,
+          "start": 58900.0
+        },
+        {
+          "end": 62600.0,
+          "length": 500.0,
+          "seconds": 1.92,
+          "start": 62100.0
+        }
+      ],
+      "clusters": 6,
+      "end": 67600.0,
+      "entries": [
+        {
+          "cluster": 0,
+          "end": 39270.0,
+          "gap_px": 0.0,
+          "gap_s": 0.0,
+          "group": "shark6",
+          "i": 1,
+          "kind": "SHARK",
+          "options": [
+            "leap"
+          ],
+          "start": 39200.0,
+          "width": 70.0
+        },
+        {
+          "cluster": 0,
+          "end": 40450.0,
+          "gap_px": 1000.0,
+          "gap_s": 3.85,
+          "group": "beam6",
+          "i": 2,
+          "kind": "LOW_BEAM",
+          "options": [
+            "crouch"
+          ],
+          "start": 40270.0,
+          "width": 180.0
+        },
+        {
+          "cluster": 0,
+          "end": 41580.0,
+          "gap_px": 1000.0,
+          "gap_s": 3.85,
+          "group": "rock8",
+          "i": 3,
+          "kind": "SURFACE_ROCK",
+          "options": [
+            "jump"
+          ],
+          "start": 41450.0,
+          "width": 130.0
+        },
+        {
+          "cluster": 0,
+          "end": 42760.0,
+          "gap_px": 1000.0,
+          "gap_s": 3.85,
+          "group": "gate6",
+          "i": 4,
+          "kind": "DIVE_GATE",
+          "options": [
+            "dive"
+          ],
+          "start": 42580.0,
+          "width": 180.0
+        },
+        {
+          "cluster": 1,
+          "end": 44142.0,
+          "gap_px": 1350.0,
+          "gap_s": 5.19,
+          "group": "log5",
+          "i": 5,
+          "kind": "FLOATING_LOG",
+          "options": [
+            "jump",
+            "dive"
+          ],
+          "start": 44110.0,
+          "width": 32.0
+        },
+        {
+          "cluster": 1,
+          "end": 45370.0,
+          "gap_px": 1108.0,
+          "gap_s": 4.26,
+          "group": "bird6",
+          "i": 6,
+          "kind": "LOW_BIRD",
+          "options": [
+            "crouch"
+          ],
+          "start": 45250.0,
+          "width": 120.0
+        },
+        {
+          "cluster": 1,
+          "end": 46400.0,
+          "gap_px": 1000.0,
+          "gap_s": 3.85,
+          "group": "wall3",
+          "i": 7,
+          "kind": "HIGH_WALL",
+          "options": [
+            "leap",
+            "jump"
+          ],
+          "start": 46370.0,
+          "width": 30.0
+        },
+        {
+          "cluster": 1,
+          "end": 47610.0,
+          "gap_px": 1040.0,
+          "gap_s": 4.0,
+          "group": "beam7",
+          "i": 8,
+          "kind": "LOW_BEAM",
+          "options": [
+            "crouch"
+          ],
+          "start": 47440.0,
+          "width": 170.0
+        },
+        {
+          "cluster": 1,
+          "end": 48750.0,
+          "gap_px": 1000.0,
+          "gap_s": 3.85,
+          "group": "rock9",
+          "i": 9,
+          "kind": "SURFACE_ROCK",
+          "options": [
+            "jump"
+          ],
+          "start": 48610.0,
+          "width": 140.0
+        },
+        {
+          "cluster": 1,
+          "end": 50510.0,
+          "gap_px": 1000.0,
+          "gap_s": 3.85,
+          "group": "gate7",
+          "i": 10,
+          "kind": "DIVE_GATE",
+          "options": [
+            "dive"
+          ],
+          "start": 49750.0,
+          "width": 760.0
+        },
+        {
+          "cluster": 2,
+          "end": 51322.0,
+          "gap_px": 780.0,
+          "gap_s": 3.0,
+          "group": "log6",
+          "i": 11,
+          "kind": "FLOATING_LOG",
+          "options": [
+            "jump",
+            "dive"
+          ],
+          "start": 51290.0,
+          "width": 32.0
+        },
+        {
+          "cluster": 2,
+          "end": 52550.0,
+          "gap_px": 1118.0,
+          "gap_s": 4.3,
+          "group": "bird7",
+          "i": 12,
+          "kind": "LOW_BIRD",
+          "options": [
+            "crouch"
+          ],
+          "start": 52440.0,
+          "width": 110.0
+        },
+        {
+          "cluster": 2,
+          "end": 53620.0,
+          "gap_px": 1000.0,
+          "gap_s": 3.85,
+          "group": "shark8",
+          "i": 13,
+          "kind": "SHARK",
+          "options": [
+            "leap"
+          ],
+          "start": 53550.0,
+          "width": 70.0
+        },
+        {
+          "cluster": 3,
+          "end": 55220.0,
+          "gap_px": 1420.0,
+          "gap_s": 5.46,
+          "group": "beam8",
+          "i": 14,
+          "kind": "LOW_BEAM",
+          "options": [
+            "crouch"
+          ],
+          "start": 55040.0,
+          "width": 180.0
+        },
+        {
+          "cluster": 3,
+          "end": 56300.0,
+          "gap_px": 960.0,
+          "gap_s": 3.69,
+          "group": "rock10",
+          "i": 15,
+          "kind": "SURFACE_ROCK",
+          "options": [
+            "jump"
+          ],
+          "start": 56180.0,
+          "width": 120.0
+        },
+        {
+          "cluster": 4,
+          "end": 57672.0,
+          "gap_px": 1340.0,
+          "gap_s": 5.15,
+          "group": "log7",
+          "i": 16,
+          "kind": "FLOATING_LOG",
+          "options": [
+            "jump",
+            "dive"
+          ],
+          "start": 57640.0,
+          "width": 32.0
+        },
+        {
+          "cluster": 4,
+          "end": 58770.0,
+          "gap_px": 968.0,
+          "gap_s": 3.72,
+          "group": "bird8",
+          "i": 17,
+          "kind": "LOW_BIRD",
+          "options": [
+            "crouch"
+          ],
+          "start": 58640.0,
+          "width": 130.0
+        },
+        {
+          "cluster": 4,
+          "end": 59790.0,
+          "gap_px": 950.0,
+          "gap_s": 3.65,
+          "group": "shark9",
+          "i": 18,
+          "kind": "SHARK",
+          "options": [
+            "leap"
+          ],
+          "start": 59720.0,
+          "width": 70.0
+        },
+        {
+          "cluster": 4,
+          "end": 60990.0,
+          "gap_px": 1030.0,
+          "gap_s": 3.96,
+          "group": "beam9",
+          "i": 19,
+          "kind": "LOW_BEAM",
+          "options": [
+            "crouch"
+          ],
+          "start": 60820.0,
+          "width": 170.0
+        },
+        {
+          "cluster": 4,
+          "end": 62090.0,
+          "gap_px": 950.0,
+          "gap_s": 3.65,
+          "group": "rock11",
+          "i": 20,
+          "kind": "SURFACE_ROCK",
+          "options": [
+            "jump"
+          ],
+          "start": 61940.0,
+          "width": 150.0
+        },
+        {
+          "cluster": 4,
+          "end": 63220.0,
+          "gap_px": 950.0,
+          "gap_s": 3.65,
+          "group": "gate8",
+          "i": 21,
+          "kind": "DIVE_GATE",
+          "options": [
+            "dive"
+          ],
+          "start": 63040.0,
+          "width": 180.0
+        },
+        {
+          "cluster": 5,
+          "end": 64592.0,
+          "gap_px": 1340.0,
+          "gap_s": 5.15,
+          "group": "log8",
+          "i": 22,
+          "kind": "FLOATING_LOG",
+          "options": [
+            "jump",
+            "dive"
+          ],
+          "start": 64560.0,
+          "width": 32.0
+        },
+        {
+          "cluster": 5,
+          "end": 65720.0,
+          "gap_px": 1008.0,
+          "gap_s": 3.88,
+          "group": "bird9",
+          "i": 23,
+          "kind": "LOW_BIRD",
+          "options": [
+            "crouch"
+          ],
+          "start": 65600.0,
+          "width": 120.0
+        },
+        {
+          "cluster": 5,
+          "end": 66840.0,
+          "gap_px": 1000.0,
+          "gap_s": 3.85,
+          "group": "rock12",
+          "i": 24,
+          "kind": "SURFACE_ROCK",
+          "options": [
+            "jump"
+          ],
+          "start": 66720.0,
+          "width": 120.0
+        }
+      ],
+      "groups": 24,
+      "kinds": {
+        "DIVE_GATE": 3,
+        "FLOATING_LOG": 4,
+        "HIGH_WALL": 1,
+        "LOW_BEAM": 4,
+        "LOW_BIRD": 4,
+        "SHARK": 3,
+        "SURFACE_ROCK": 5
+      },
+      "length_px": 28600.0,
+      "must_crouch_groups": 8,
+      "must_dive_groups": 7,
+      "must_jump_groups": 10,
+      "must_leap_groups": 4,
+      "name": "MUSCLE MAYHEM",
+      "no_input_fraction": 0.0,
+      "no_input_groups": 0,
+      "nominal_seconds": 110.0,
+      "options": {
+        "crouch": 8,
+        "dive": 7,
+        "jump": 10,
+        "leap": 4
+      },
+      "start": 39000.0,
+      "threat_fraction": 0.477,
+      "threat_seconds": 52.49,
+      "top_bigrams": [
+        {
+          "count": 4,
+          "pattern": "FLOATING_LOG/LOW_BIRD"
+        },
+        {
+          "count": 4,
+          "pattern": "LOW_BEAM/SURFACE_ROCK"
+        },
+        {
+          "count": 3,
+          "pattern": "DIVE_GATE/FLOATING_LOG"
+        },
+        {
+          "count": 3,
+          "pattern": "SHARK/LOW_BEAM"
+        },
+        {
+          "count": 3,
+          "pattern": "SURFACE_ROCK/DIVE_GATE"
+        }
+      ],
+      "top_trigrams": [
+        {
+          "count": 3,
+          "pattern": "DIVE_GATE/FLOATING_LOG/LOW_BIRD"
+        },
+        {
+          "count": 3,
+          "pattern": "LOW_BEAM/SURFACE_ROCK/DIVE_GATE"
+        },
+        {
+          "count": 3,
+          "pattern": "SHARK/LOW_BEAM/SURFACE_ROCK"
+        },
+        {
+          "count": 3,
+          "pattern": "SURFACE_ROCK/DIVE_GATE/FLOATING_LOG"
+        },
+        {
+          "count": 2,
+          "pattern": "FLOATING_LOG/LOW_BIRD/SHARK"
+        }
+      ],
+      "unique_bigrams": 10,
+      "unique_trigrams": 12
+    }
+  }
+}

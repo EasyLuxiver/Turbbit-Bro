@@ -1,0 +1,480 @@
+{
+  "gaps": {
+    "min_combo_gap_s": 5.13,
+    "min_single_gap_s": 3.65,
+    "zones": {
+      "1": {
+        "duration_s": 68.2,
+        "gaps": [
+          {
+            "from": "ZONE_START",
+            "px": 1160.0,
+            "seconds": 5.27,
+            "to": "bird1"
+          },
+          {
+            "from": "bird1",
+            "px": 820.0,
+            "seconds": 3.73,
+            "to": "rock1"
+          },
+          {
+            "from": "rock1",
+            "px": 1190.0,
+            "seconds": 5.41,
+            "to": "gate1"
+          },
+          {
+            "from": "gate1",
+            "px": 1120.0,
+            "seconds": 5.09,
+            "to": "rock2"
+          },
+          {
+            "from": "rock2",
+            "px": 1160.0,
+            "seconds": 5.27,
+            "to": "log1"
+          },
+          {
+            "from": "log1",
+            "px": 818.0,
+            "seconds": 3.72,
+            "to": "shark1"
+          },
+          {
+            "from": "shark1",
+            "px": 1080.0,
+            "seconds": 4.91,
+            "to": "rock3"
+          },
+          {
+            "from": "rock3",
+            "px": 1080.0,
+            "seconds": 4.91,
+            "to": "beam2"
+          },
+          {
+            "from": "beam2",
+            "px": 1080.0,
+            "seconds": 4.91,
+            "to": "bird2"
+          },
+          {
+            "from": "bird2",
+            "px": 1030.0,
+            "seconds": 4.68,
+            "to": "gate2"
+          },
+          {
+            "from": "gate2",
+            "px": 1120.0,
+            "seconds": 5.09,
+            "to": "wall1"
+          },
+          {
+            "from": "wall1",
+            "px": 1220.0,
+            "seconds": 5.55,
+            "to": "beam1"
+          },
+          {
+            "from": "beam1",
+            "px": 280.0,
+            "seconds": 1.27,
+            "to": "ZONE_END"
+          }
+        ],
+        "groups": 12,
+        "groups_per_min": 10.56,
+        "longest_empty_at": "wall1 -> beam1",
+        "longest_empty_s": 5.55
+      },
+      "2": {
+        "duration_s": 100.0,
+        "gaps": [
+          {
+            "from": "ZONE_START",
+            "px": 800.0,
+            "seconds": 3.33,
+            "to": "beam3"
+          },
+          {
+            "from": "beam3",
+            "px": 1030.0,
+            "seconds": 4.29,
+            "to": "rock4"
+          },
+          {
+            "from": "rock4",
+            "px": 1080.0,
+            "seconds": 4.5,
+            "to": "shark3"
+          },
+          {
+            "from": "shark3",
+            "px": 1130.0,
+            "seconds": 4.71,
+            "to": "gate3"
+          },
+          {
+            "from": "gate3",
+            "px": 1020.0,
+            "seconds": 4.25,
+            "to": "bird3"
+          },
+          {
+            "from": "bird3",
+            "px": 1230.0,
+            "seconds": 5.13,
+            "to": "log2"
+          },
+          {
+            "from": "log2",
+            "px": 1218.0,
+            "seconds": 5.08,
+            "to": "rock5"
+          },
+          {
+            "from": "rock5",
+            "px": 1070.0,
+            "seconds": 4.46,
+            "to": "beam4"
+          },
+          {
+            "from": "beam4",
+            "px": 1020.0,
+            "seconds": 4.25,
+            "to": "wall2"
+          },
+          {
+            "from": "wall2",
+            "px": 1170.0,
+            "seconds": 4.88,
+            "to": "rock6"
+          },
+          {
+            "from": "rock6",
+            "px": 1060.0,
+            "seconds": 4.42,
+            "to": "gate4"
+          },
+          {
+            "from": "gate4",
+            "px": 1020.0,
+            "seconds": 4.25,
+            "to": "bird4"
+          },
+          {
+            "from": "bird4",
+            "px": 1240.0,
+            "seconds": 5.17,
+            "to": "log3"
+          },
+          {
+            "from": "log3",
+            "px": 1218.0,
+            "seconds": 5.08,
+            "to": "rock7"
+          },
+          {
+            "from": "rock7",
+            "px": 1080.0,
+            "seconds": 4.5,
+            "to": "beam5"
+          },
+          {
+            "from": "beam5",
+            "px": 1030.0,
+            "seconds": 4.29,
+            "to": "shark5"
+          },
+          {
+            "from": "shark5",
+            "px": 1130.0,
+            "seconds": 4.71,
+            "to": "bird5"
+          },
+          {
+            "from": "bird5",
+            "px": 1230.0,
+            "seconds": 5.13,
+            "to": "log4"
+          },
+          {
+            "from": "log4",
+            "px": 1218.0,
+            "seconds": 5.08,
+            "to": "gate5"
+          },
+          {
+            "from": "gate5",
+            "px": 820.0,
+            "seconds": 3.42,
+            "to": "ZONE_END"
+          }
+        ],
+        "groups": 19,
+        "groups_per_min": 11.4,
+        "longest_empty_at": "bird4 -> log3",
+        "longest_empty_s": 5.17
+      },
+      "3": {
+        "duration_s": 110.0,
+        "gaps": [
+          {
+            "from": "ZONE_START",
+            "px": 200.0,
+            "seconds": 0.77,
+            "to": "shark6"
+          },
+          {
+            "from": "shark6",
+            "px": 1000.0,
+            "seconds": 3.85,
+            "to": "beam6"
+          },
+          {
+            "from": "beam6",
+            "px": 1000.0,
+            "seconds": 3.85,
+            "to": "rock8"
+          },
+          {
+            "from": "rock8",
+            "px": 1000.0,
+            "seconds": 3.85,
+            "to": "gate6"
+          },
+          {
+            "from": "gate6",
+            "px": 1350.0,
+            "seconds": 5.19,
+            "to": "log5"
+          },
+          {
+            "from": "log5",
+            "px": 1108.0,
+            "seconds": 4.26,
+            "to": "bird6"
+          },
+          {
+            "from": "bird6",
+            "px": 1000.0,
+            "seconds": 3.85,
+            "to": "wall3"
+          },
+          {
+            "from": "wall3",
+            "px": 1040.0,
+            "seconds": 4.0,
+            "to": "beam7"
+          },
+          {
+            "from": "beam7",
+            "px": 1000.0,
+            "seconds": 3.85,
+            "to": "rock9"
+          },
+          {
+            "from": "rock9",
+            "px": 1000.0,
+            "seconds": 3.85,
+            "to": "gate7"
+          },
+          {
+            "from": "gate7",
+            "px": 1350.0,
+            "seconds": 5.19,
+            "to": "log6"
+          },
+          {
+            "from": "log6",
+            "px": 1118.0,
+            "seconds": 4.3,
+            "to": "bird7"
+          },
+          {
+            "from": "bird7",
+            "px": 1000.0,
+            "seconds": 3.85,
+            "to": "shark8"
+          },
+          {
+            "from": "shark8",
+            "px": 1420.0,
+            "seconds": 5.46,
+            "to": "beam8"
+          },
+          {
+            "from": "beam8",
+            "px": 960.0,
+            "seconds": 3.69,
+            "to": "rock10"
+          },
+          {
+            "from": "rock10",
+            "px": 1340.0,
+            "seconds": 5.15,
+            "to": "log7"
+          },
+          {
+            "from": "log7",
+            "px": 968.0,
+            "seconds": 3.72,
+            "to": "bird8"
+          },
+          {
+            "from": "bird8",
+            "px": 950.0,
+            "seconds": 3.65,
+            "to": "shark9"
+          },
+          {
+            "from": "shark9",
+            "px": 1030.0,
+            "seconds": 3.96,
+            "to": "beam9"
+          },
+          {
+            "from": "beam9",
+            "px": 950.0,
+            "seconds": 3.65,
+            "to": "rock11"
+          },
+          {
+            "from": "rock11",
+            "px": 950.0,
+            "seconds": 3.65,
+            "to": "gate8"
+          },
+          {
+            "from": "gate8",
+            "px": 1340.0,
+            "seconds": 5.15,
+            "to": "log8"
+          },
+          {
+            "from": "log8",
+            "px": 1008.0,
+            "seconds": 3.88,
+            "to": "bird9"
+          },
+          {
+            "from": "bird9",
+            "px": 1000.0,
+            "seconds": 3.85,
+            "to": "rock12"
+          },
+          {
+            "from": "rock12",
+            "px": 760.0,
+            "seconds": 2.92,
+            "to": "ZONE_END"
+          }
+        ],
+        "groups": 24,
+        "groups_per_min": 13.09,
+        "longest_empty_at": "shark8 -> beam8",
+        "longest_empty_s": 5.46
+      }
+    }
+  },
+  "jump": {
+    "air_forward_at_220": 260.0,
+    "air_forward_at_330": 391.0,
+    "airtime_s": 1.18,
+    "apex_px": 183.8,
+    "gravity": 1050.0,
+    "jump_velocity": 630.0
+  },
+  "measured_at": "2026-11-13T13:10:15",
+  "oxygen": {
+    "critical_s": 2.5,
+    "drain_per_s": 1.0,
+    "full_drain_s": 8.0,
+    "full_recover_s": 2.67,
+    "low_s": 5.0,
+    "max_dive_time_with_recovery": 13.0,
+    "max_s": 8.0,
+    "recover_per_s": 3.0,
+    "recovered_after_accident_s": 5.0
+  },
+  "pickup": {
+    "dx": 120.0,
+    "dy_max": 90.0,
+    "dy_min": -60.0,
+    "snap_dx": 70.0,
+    "window_time_at_220_s": 1.09
+  },
+  "reaction": {
+    "hud_warn_px": 430.0,
+    "rows": [
+      {
+        "base_reaction_s_270": 1.23,
+        "base_reaction_s_430": 1.95,
+        "base_speed": 220.0,
+        "boost_reaction_s_270": 0.82,
+        "boost_reaction_s_430": 1.3,
+        "snack_reaction_s_430": 1.7,
+        "zone": 1
+      },
+      {
+        "base_reaction_s_270": 1.13,
+        "base_reaction_s_430": 1.79,
+        "base_speed": 240.0,
+        "boost_reaction_s_270": 0.82,
+        "boost_reaction_s_430": 1.3,
+        "snack_reaction_s_430": 1.56,
+        "zone": 2
+      },
+      {
+        "base_reaction_s_270": 1.04,
+        "base_reaction_s_430": 1.65,
+        "base_speed": 260.0,
+        "boost_reaction_s_270": 0.82,
+        "boost_reaction_s_430": 1.3,
+        "snack_reaction_s_430": 1.44,
+        "zone": 3
+      }
+    ],
+    "world_board_px": 270.0
+  },
+  "recovery": {
+    "emergency_s": 2.0,
+    "grace_s": 2.0,
+    "hazard_cooldown_s": 3.0,
+    "repair_s": 1.6,
+    "rescue_s": 1.6,
+    "stun_s": 0.8,
+    "turtle_cooldown_s": 4.0
+  },
+  "showtime": {
+    "combo_required": 3,
+    "max_triggers_clean_run": 18,
+    "measured_per_min": 4.0,
+    "measured_stage3_time_s": 296.63,
+    "measured_stage3_triggers": 18,
+    "showtime_duration_s": 1.8
+  },
+  "turtle": {
+    "accel_down": 300.0,
+    "accel_up": 420.0,
+    "base_speed_z1": 220.0,
+    "base_speed_z2": 240.0,
+    "base_speed_z3": 260.0,
+    "boost_reach_time_s": 0.27,
+    "boost_speed": 330.0,
+    "buoyancy_return_s": 1.53,
+    "buoyancy_return_y": 335.9,
+    "dive_1s_px": 149.0,
+    "neutral_depth": 334.0,
+    "sink_relax_slow_fast": [
+      35.0,
+      40.0,
+      55.0
+    ],
+    "snack_boost_scale": 1.15,
+    "standby_drift_px": 0.0
+  }
+}

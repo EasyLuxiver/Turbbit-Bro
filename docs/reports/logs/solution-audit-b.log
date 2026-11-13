@@ -1,0 +1,28 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+AUDIT groups=55 schemes=7 shard=14..27
+AUDIT g=14 SHARK         design=leap      pass=["dive", "leap", "leap_jump"]
+AUDIT g=15 DIVE_GATE     design=dive      pass=["dive", "dive_jump"]
+AUDIT g=16 LOW_BIRD      design=crouch    pass=["jump", "crouch", "dive", "leap", "leap_jump"]
+AUDIT g=17 FLOATING_LOG  design=dive_jump pass=["dive", "dive_jump"]
+AUDIT g=18 SURFACE_ROCK  design=jump      pass=["jump", "dive", "leap", "leap_jump"]
+AUDIT g=19 LOW_BEAM      design=crouch    pass=["jump", "crouch", "dive"]
+AUDIT g=20 SHARK         design=leap      pass=["dive", "leap", "leap_jump"]
+AUDIT g=21 SURFACE_ROCK  design=jump      pass=["jump", "dive", "leap", "leap_jump"]
+AUDIT g=22 DIVE_GATE     design=dive      pass=["dive", "dive_jump"]
+AUDIT g=23 LOW_BIRD      design=crouch    pass=["jump", "crouch", "dive", "leap", "leap_jump"]
+AUDIT g=24 FLOATING_LOG  design=dive_jump pass=["dive", "dive_jump"]
+AUDIT g=25 SURFACE_ROCK  design=jump      pass=["jump", "dive", "leap", "leap_jump"]
+AUDIT g=26 LOW_BEAM      design=crouch    pass=["jump", "crouch", "dive"]
+AUDIT g=27 SHARK         design=leap      pass=["dive", "leap", "leap_jump"]
+AUDIT wrote res://docs/reports/stage4-solution-matrix-14-27.json
+AUDIT no_solution=[]
+AUDIT kind=SHARK         groups=3 design_correct=3 pass_counts={ "dive": 3, "leap": 3, "leap_jump": 3 }
+AUDIT kind=DIVE_GATE     groups=2 design_correct=2 pass_counts={ "dive": 2, "dive_jump": 2 }
+AUDIT kind=LOW_BIRD      groups=2 design_correct=2 pass_counts={ "jump": 2, "crouch": 2, "dive": 2, "leap": 2, "leap_jump": 2 }
+AUDIT kind=FLOATING_LOG  groups=2 design_correct=2 pass_counts={ "dive": 2, "dive_jump": 2 }
+AUDIT kind=SURFACE_ROCK  groups=3 design_correct=3 pass_counts={ "jump": 3, "dive": 3, "leap": 3, "leap_jump": 3 }
+AUDIT kind=LOW_BEAM      groups=2 design_correct=2 pass_counts={ "jump": 2, "crouch": 2, "dive": 2 }
+AUDIT log g=17 dive_only=true jump_only=false combo=true leap_only=false passing=["dive", "dive_jump"]
+AUDIT log g=24 dive_only=true jump_only=false combo=true leap_only=false passing=["dive", "dive_jump"]
+SOLUTION AUDIT: DONE

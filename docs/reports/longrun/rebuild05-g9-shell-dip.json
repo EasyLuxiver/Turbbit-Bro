@@ -1,0 +1,61 @@
+{
+  "controls": {
+    "gate_dive": {
+      "accident_state": "NONE",
+      "passed_start": true,
+      "peak_dip_px": 0.0
+    },
+    "plain_ride": {
+      "frames_nonzero": 0,
+      "peak_dip_px": 0.0
+    }
+  },
+  "draw_only": {
+    "peak_dip_px": 9.8,
+    "positions_unchanged": true,
+    "rabbit_position_unchanged": true,
+    "rabbit_rect_unchanged": true,
+    "rects_unchanged": true,
+    "turtle_position_unchanged": true,
+    "turtle_rect_unchanged": true
+  },
+  "generated_at": "2026-11-13T20:23:40",
+  "pickup": {
+    "accident_state": "NONE",
+    "accidents": 0,
+    "carry_frames": 25,
+    "cleared_after_frames": 16,
+    "frames_nonzero": 16,
+    "kind": "pickup",
+    "mount": "RIDING",
+    "peak_dip_px": 11.0,
+    "pickup_count_delta": 1,
+    "rebound": true,
+    "rescue_count_delta": 0
+  },
+  "plain_jump": {
+    "accidents": 0,
+    "cleared_after_frames": 16,
+    "dip_at_land_frame": 7.0,
+    "jumped": true,
+    "land_frame": 64,
+    "landed": true,
+    "peak_dip_px": 7.0,
+    "pickup_count_delta": 1,
+    "quiet_after_cleared": 0.0,
+    "rebound_frame": 6
+  },
+  "rescue": {
+    "accident_state": "NONE",
+    "accidents": 0,
+    "carry_frames": 25,
+    "cleared_after_frames": 16,
+    "frames_nonzero": 16,
+    "kind": "rescue",
+    "mount": "RIDING",
+    "peak_dip_px": 14.0,
+    "pickup_count_delta": 0,
+    "rebound": true,
+    "rescue_count_delta": 1
+  }
+}

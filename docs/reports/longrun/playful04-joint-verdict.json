@@ -1,0 +1,538 @@
+{
+  "data": {
+    "cases": {
+      "after_window": {
+        "again": {
+          "accident_count": 2,
+          "accident_state": "NONE",
+          "bro_meter": 2,
+          "feedback": "下潜太晚 - 壳撞上浮木！",
+          "group": "log1",
+          "hint": "浮木：兔子起跳后 SHIFT 给乌龟，它会自动下潜、过木自动上浮",
+          "hit_groups": [
+            "log1"
+          ],
+          "hud_bro": "BRO METER 2/3",
+          "hud_status": "氧气 8.0s",
+          "last_score": {
+            "points": -100,
+            "reason": "mistake:TURTLE_DIVE_LATE"
+          },
+          "mistake_entries": [
+            {
+              "points": -100,
+              "reason": "mistake:TURTLE_DIVE_LATE"
+            },
+            {
+              "points": -100,
+              "reason": "mistake:TURTLE_DIVE_LATE"
+            }
+          ],
+          "pickup_count": 0,
+          "rabbit_casualties": 0,
+          "score": 0,
+          "turtle_failures": 0
+        },
+        "expect": {
+          "second_hit_recorded": true
+        },
+        "first": {
+          "accident_count": 1,
+          "accident_state": "NONE",
+          "bro_meter": 1,
+          "feedback": "下潜太晚 - 壳撞上浮木！",
+          "group": "log1",
+          "hint": "浮木：兔子起跳后 SHIFT 给乌龟，它会自动下潜、过木自动上浮",
+          "hit_groups": [
+            "log1"
+          ],
+          "hud_bro": "BRO METER 1/3",
+          "hud_status": "氧气 8.0s",
+          "last_score": {
+            "points": -100,
+            "reason": "mistake:TURTLE_DIVE_LATE"
+          },
+          "mistake_entries": [
+            {
+              "points": -100,
+              "reason": "mistake:TURTLE_DIVE_LATE"
+            }
+          ],
+          "pickup_count": 0,
+          "rabbit_casualties": 0,
+          "score": 0,
+          "turtle_failures": 0
+        }
+      },
+      "both_same_obstacle": {
+        "first": {
+          "accident_count": 1,
+          "accident_state": "RABBIT_WATER",
+          "bro_meter": 1,
+          "expect": {
+            "accident": "RABBIT_WATER",
+            "bro": 1,
+            "hit_groups": 1,
+            "role": "rabbit first",
+            "score_delta": -100
+          },
+          "feedback": "下潜太晚 - 壳撞上浮木！",
+          "group": "log1",
+          "hint": "浮木：兔子起跳后 SHIFT 给乌龟，它会自动下潜、过木自动上浮",
+          "hit_groups": [
+            "log1"
+          ],
+          "hud_bro": "BRO METER 1/3",
+          "hud_status": "氧气 8.0s",
+          "last_score": {
+            "points": -100,
+            "reason": "mistake:RABBIT_WATER"
+          },
+          "mistake_entries": [
+            {
+              "points": -100,
+              "reason": "mistake:RABBIT_WATER"
+            }
+          ],
+          "pickup_count": 0,
+          "rabbit_casualties": 1,
+          "score": 0,
+          "turtle_failures": 0
+        },
+        "second": {
+          "accident_count": 1,
+          "accident_state": "RABBIT_WATER",
+          "bro_meter": 1,
+          "feedback": "下潜太晚 - 壳撞上浮木！",
+          "group": "log1",
+          "hint": "浮木：兔子起跳后 SHIFT 给乌龟，它会自动下潜、过木自动上浮",
+          "hit_groups": [
+            "log1"
+          ],
+          "hud_bro": "BRO METER 1/3",
+          "hud_status": "氧气 8.0s",
+          "last_score": {
+            "points": -100,
+            "reason": "mistake:RABBIT_WATER"
+          },
+          "mistake_entries": [
+            {
+              "points": -100,
+              "reason": "mistake:RABBIT_WATER"
+            }
+          ],
+          "pickup_count": 0,
+          "rabbit_casualties": 1,
+          "score": 0,
+          "turtle_failures": 0
+        }
+      },
+      "different_obstacle_in_window": {
+        "after": {
+          "accident_count": 2,
+          "accident_state": "RABBIT_WATER",
+          "bro_meter": 2,
+          "feedback": "跳跃高度不对 - 撞上浮木！",
+          "group": "log3",
+          "hint": "浮木：先按 ↑ 让兔子起跳，再 SHIFT 给乌龟",
+          "hit_groups": [
+            "log1",
+            "log3"
+          ],
+          "hud_bro": "BRO METER 2/3",
+          "hud_status": "氧气 8.0s",
+          "last_score": {
+            "points": -100,
+            "reason": "mistake:RABBIT_WATER"
+          },
+          "mistake_entries": [
+            {
+              "points": -100,
+              "reason": "mistake:RABBIT_WATER"
+            },
+            {
+              "points": -100,
+              "reason": "mistake:RABBIT_WATER"
+            }
+          ],
+          "pickup_count": 0,
+          "rabbit_casualties": 2,
+          "score": 0,
+          "turtle_failures": 0
+        },
+        "expect": {
+          "merged_in_window": true,
+          "recorded_after_window": true
+        },
+        "first": {
+          "accident_count": 1,
+          "accident_state": "RABBIT_WATER",
+          "bro_meter": 1,
+          "feedback": "跳跃高度不对 - 撞上浮木！",
+          "group": "log1",
+          "hint": "浮木：先按 ↑ 让兔子起跳，再 SHIFT 给乌龟",
+          "hit_groups": [
+            "log1"
+          ],
+          "hud_bro": "BRO METER 1/3",
+          "hud_status": "氧气 8.0s",
+          "last_score": {
+            "points": -100,
+            "reason": "mistake:RABBIT_WATER"
+          },
+          "mistake_entries": [
+            {
+              "points": -100,
+              "reason": "mistake:RABBIT_WATER"
+            }
+          ],
+          "pickup_count": 0,
+          "rabbit_casualties": 1,
+          "score": 0,
+          "turtle_failures": 0
+        },
+        "in_window": {
+          "accident_count": 1,
+          "accident_state": "RABBIT_STUN",
+          "bro_meter": 1,
+          "feedback": "跳跃高度不对 - 撞上浮木！",
+          "group": "log2",
+          "hint": "区域 2 珊瑚乱流 - 障碍换方向来，判断该换谁",
+          "hit_groups": [
+            "log1"
+          ],
+          "hud_bro": "BRO METER 1/3",
+          "hud_status": "氧气 8.0s",
+          "last_score": {
+            "points": -100,
+            "reason": "mistake:RABBIT_WATER"
+          },
+          "mistake_entries": [
+            {
+              "points": -100,
+              "reason": "mistake:RABBIT_WATER"
+            }
+          ],
+          "pickup_count": 0,
+          "rabbit_casualties": 1,
+          "score": 0,
+          "turtle_failures": 0
+        }
+      },
+      "hud_and_records": {
+        "accident_count": 1,
+        "accident_state": "NONE",
+        "bro_meter": 1,
+        "expect": {
+          "en_text": true,
+          "hud_bro_contains": "1/3",
+          "zh_text": true
+        },
+        "feedback": "下潜太晚 - 壳撞上浮木！",
+        "group": "log1",
+        "hint": "浮木：兔子起跳后 SHIFT 给乌龟，它会自动下潜、过木自动上浮",
+        "hit_groups": [
+          "log1"
+        ],
+        "hud_bro": "BRO METER 1/3",
+        "hud_status": "氧气 8.0s",
+        "last_score": {
+          "points": -100,
+          "reason": "mistake:TURTLE_DIVE_LATE"
+        },
+        "mistake_entries": [
+          {
+            "points": -100,
+            "reason": "mistake:TURTLE_DIVE_LATE"
+          }
+        ],
+        "pickup_count": 0,
+        "rabbit_casualties": 0,
+        "score": 0,
+        "turtle_failures": 0
+      },
+      "joint_escalation": {
+        "expect": {
+          "bro_max": 3,
+          "joint_once": true,
+          "joint_points": -200,
+          "overflow_absorbed": true
+        },
+        "joint_accident_count": 1,
+        "joint_entries": 1,
+        "joint_points": -200,
+        "overflow": {
+          "accident_count": 4,
+          "accident_state": "NONE",
+          "bro_meter": 3,
+          "feedback": "下潜太晚 - 壳撞上浮木！",
+          "group": "log4",
+          "hint": "浮木：兔子起跳后 SHIFT 给乌龟，它会自动下潜、过木自动上浮",
+          "hit_groups": [
+            "log4"
+          ],
+          "hud_bro": "BRO METER 3/3",
+          "hud_status": "氧气 8.0s",
+          "last_score": {
+            "points": -100,
+            "reason": "mistake:TURTLE_DIVE_LATE"
+          },
+          "mistake_entries": [
+            {
+              "points": -100,
+              "reason": "mistake:TURTLE_DIVE_LATE"
+            },
+            {
+              "points": -100,
+              "reason": "mistake:TURTLE_DIVE_LATE"
+            },
+            {
+              "points": -100,
+              "reason": "mistake:TURTLE_DIVE_LATE"
+            },
+            {
+              "points": -100,
+              "reason": "mistake:TURTLE_DIVE_LATE"
+            }
+          ],
+          "pickup_count": 0,
+          "rabbit_casualties": 0,
+          "score": 0,
+          "turtle_failures": 0
+        },
+        "steps": [
+          {
+            "accident_count": 1,
+            "accident_state": "NONE",
+            "bro_meter": 1,
+            "feedback": "下潜太晚 - 壳撞上浮木！",
+            "group": "log1",
+            "hint": "浮木：兔子起跳后 SHIFT 给乌龟，它会自动下潜、过木自动上浮",
+            "hit_groups": [
+              "log1"
+            ],
+            "hud_bro": "BRO METER 1/3",
+            "hud_status": "氧气 8.0s",
+            "last_score": {
+              "points": -100,
+              "reason": "mistake:TURTLE_DIVE_LATE"
+            },
+            "mistake_entries": [
+              {
+                "points": -100,
+                "reason": "mistake:TURTLE_DIVE_LATE"
+              }
+            ],
+            "pickup_count": 0,
+            "rabbit_casualties": 0,
+            "score": 0,
+            "turtle_failures": 0
+          },
+          {
+            "accident_count": 2,
+            "accident_state": "NONE",
+            "bro_meter": 2,
+            "feedback": "下潜太晚 - 壳撞上浮木！",
+            "group": "log2",
+            "hint": "浮木：兔子起跳后 SHIFT 给乌龟，它会自动下潜、过木自动上浮",
+            "hit_groups": [
+              "log2"
+            ],
+            "hud_bro": "BRO METER 2/3",
+            "hud_status": "氧气 8.0s",
+            "last_score": {
+              "points": -100,
+              "reason": "mistake:TURTLE_DIVE_LATE"
+            },
+            "mistake_entries": [
+              {
+                "points": -100,
+                "reason": "mistake:TURTLE_DIVE_LATE"
+              },
+              {
+                "points": -100,
+                "reason": "mistake:TURTLE_DIVE_LATE"
+              }
+            ],
+            "pickup_count": 0,
+            "rabbit_casualties": 0,
+            "score": 0,
+            "turtle_failures": 0
+          },
+          {
+            "accident_count": 3,
+            "accident_state": "NONE",
+            "bro_meter": 3,
+            "feedback": "下潜太晚 - 壳撞上浮木！",
+            "group": "log3",
+            "hint": "浮木：兔子起跳后 SHIFT 给乌龟，它会自动下潜、过木自动上浮",
+            "hit_groups": [
+              "log3"
+            ],
+            "hud_bro": "BRO METER 3/3",
+            "hud_status": "氧气 8.0s",
+            "last_score": {
+              "points": -200,
+              "reason": "joint"
+            },
+            "mistake_entries": [
+              {
+                "points": -100,
+                "reason": "mistake:TURTLE_DIVE_LATE"
+              },
+              {
+                "points": -100,
+                "reason": "mistake:TURTLE_DIVE_LATE"
+              },
+              {
+                "points": -100,
+                "reason": "mistake:TURTLE_DIVE_LATE"
+              }
+            ],
+            "pickup_count": 0,
+            "rabbit_casualties": 0,
+            "score": 0,
+            "turtle_failures": 0
+          }
+        ]
+      },
+      "rabbit_only": {
+        "accident_count": 1,
+        "accident_state": "RABBIT_WATER",
+        "bro_meter": 1,
+        "expect": {
+          "accident": "RABBIT_WATER",
+          "bro": 1,
+          "role": "rabbit",
+          "score_delta": -100,
+          "text": "撞浮木 = 跳跃弧线提示，不是浪"
+        },
+        "feedback": "跳跃高度不对 - 撞上浮木！",
+        "group": "log1",
+        "hint": "浮木：先按 ↑ 让兔子起跳，再 SHIFT 给乌龟",
+        "hit_groups": [
+          "log1"
+        ],
+        "hud_bro": "BRO METER 1/3",
+        "hud_status": "氧气 8.0s",
+        "last_score": {
+          "points": -100,
+          "reason": "mistake:RABBIT_WATER"
+        },
+        "mistake_entries": [
+          {
+            "points": -100,
+            "reason": "mistake:RABBIT_WATER"
+          }
+        ],
+        "pickup_count": 0,
+        "rabbit_casualties": 1,
+        "score": 0,
+        "turtle_failures": 0
+      },
+      "repeat_same_group": {
+        "accident_count": 1,
+        "accident_state": "NONE",
+        "bro_meter": 1,
+        "expect": {
+          "bro": 1,
+          "score_log_entries": 1
+        },
+        "feedback": "下潜太晚 - 壳撞上浮木！",
+        "group": "log1",
+        "hint": "浮木：兔子起跳后 SHIFT 给乌龟，它会自动下潜、过木自动上浮",
+        "hit_groups": [
+          "log1"
+        ],
+        "hud_bro": "BRO METER 1/3",
+        "hud_status": "氧气 8.0s",
+        "last_score": {
+          "points": -100,
+          "reason": "mistake:TURTLE_DIVE_LATE"
+        },
+        "mistake_entries": [
+          {
+            "points": -100,
+            "reason": "mistake:TURTLE_DIVE_LATE"
+          }
+        ],
+        "pickup_count": 0,
+        "rabbit_casualties": 0,
+        "score": 0,
+        "turtle_failures": 0
+      },
+      "turtle_only": {
+        "accident_count": 1,
+        "accident_state": "NONE",
+        "bro_meter": 1,
+        "expect": {
+          "accident": "none (wave mistake)",
+          "bro": 1,
+          "role": "turtle",
+          "score_delta": -100,
+          "text": "下潜太晚，且原因是浮木"
+        },
+        "feedback": "下潜太晚 - 壳撞上浮木！",
+        "group": "log1",
+        "hint": "浮木：兔子起跳后 SHIFT 给乌龟，它会自动下潜、过木自动上浮",
+        "hit_groups": [
+          "log1"
+        ],
+        "hud_bro": "BRO METER 1/3",
+        "hud_status": "氧气 8.0s",
+        "last_score": {
+          "points": -100,
+          "reason": "mistake:TURTLE_DIVE_LATE"
+        },
+        "mistake_entries": [
+          {
+            "points": -100,
+            "reason": "mistake:TURTLE_DIVE_LATE"
+          }
+        ],
+        "pickup_count": 0,
+        "rabbit_casualties": 0,
+        "score": 0,
+        "turtle_failures": 0
+      },
+      "while_dazed": {
+        "accident_count": 0,
+        "accident_state": "RABBIT_STUN",
+        "bro_meter": 0,
+        "expect": {
+          "bro": 0,
+          "record": false
+        },
+        "feedback": "",
+        "group": "log1",
+        "hint": "区域 1 阳光海岸 - 学会跳、趴低、乌龟跃起和下潜",
+        "hit_groups": [],
+        "hud_bro": "BRO METER 0/3",
+        "hud_status": "氧气 8.0s",
+        "last_score": {},
+        "mistake_entries": [],
+        "pickup_count": 0,
+        "rabbit_casualties": 0,
+        "score": 0,
+        "turtle_failures": 0
+      }
+    },
+    "english": {
+      "dive_late": "DIVE TOO LATE - SHELL HIT THE LOG!",
+      "hint_dive_late": "LOG: JUMP, THEN SHIFT - THE SHELL DIVES AND SURFACES BY ITSELF",
+      "hint_log_jump": "LOG: PRESS ↑ TO JUMP FIRST, THEN SHIFT TO THE TURTLE",
+      "log_jump": "BAD JUMP ARC - HIT THE LOG!",
+      "wave_hit": "WAVE HIT - SHELL FLIPPED!"
+    },
+    "merge_window": {
+      "hazard_cooldown": 3.0,
+      "rabbit_stun": 0.8,
+      "rescue_active": 3.2,
+      "rule": "同一组障碍 hit_groups 只记一次；事故状态未结束前 _physics_process 不判新碰撞（合并）；状态结束 + 冷却结束后新碰撞才再记。",
+      "turtle_cooldown": 4.0
+    }
+  },
+  "failures": [],
+  "generated_at": "2026-11-13T22:09:45",
+  "note": "联合判定审查：直接调用正式 race.gd 的 _check_hazards / _physics_process；不是真人试玩。"
+}

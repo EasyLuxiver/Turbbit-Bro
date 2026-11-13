@@ -1,0 +1,2406 @@
+{
+  "cases": [
+    {
+      "base_speed": 299.0,
+      "cells": [
+        {
+          "delay": 0.0,
+          "lead": 120.0,
+          "oxygen_used": 0.03,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.05,
+          "lead": 120.0,
+          "oxygen_used": 0.03,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.1,
+          "lead": 120.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.15,
+          "lead": 120.0,
+          "oxygen_used": 0.03,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.2,
+          "lead": 120.0,
+          "oxygen_used": 0.05,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.25,
+          "lead": 120.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.3,
+          "lead": 120.0,
+          "oxygen_used": 0.07,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.35,
+          "lead": 120.0,
+          "oxygen_used": 0.07,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.4,
+          "lead": 120.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.45,
+          "lead": 120.0,
+          "oxygen_used": 0.07,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.5,
+          "lead": 120.0,
+          "oxygen_used": 0.07,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.55,
+          "lead": 120.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.6,
+          "lead": 120.0,
+          "oxygen_used": 0.07,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.0,
+          "lead": 130.0,
+          "oxygen_used": 0.07,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.05,
+          "lead": 130.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.1,
+          "lead": 130.0,
+          "oxygen_used": 0.07,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.15,
+          "lead": 130.0,
+          "oxygen_used": 0.07,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.2,
+          "lead": 130.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.25,
+          "lead": 130.0,
+          "oxygen_used": 0.08,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.3,
+          "lead": 130.0,
+          "oxygen_used": 0.1,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.35,
+          "lead": 130.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.4,
+          "lead": 130.0,
+          "oxygen_used": 0.1,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.45,
+          "lead": 130.0,
+          "oxygen_used": 0.1,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.5,
+          "lead": 130.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.55,
+          "lead": 130.0,
+          "oxygen_used": 0.1,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.6,
+          "lead": 130.0,
+          "oxygen_used": 0.1,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.0,
+          "lead": 140.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.05,
+          "lead": 140.0,
+          "oxygen_used": 0.1,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.1,
+          "lead": 140.0,
+          "oxygen_used": 0.1,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.15,
+          "lead": 140.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.2,
+          "lead": 140.0,
+          "oxygen_used": 0.1,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.25,
+          "lead": 140.0,
+          "oxygen_used": 0.12,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.3,
+          "lead": 140.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.35,
+          "lead": 140.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.4,
+          "lead": 140.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.45,
+          "lead": 140.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.5,
+          "lead": 140.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.55,
+          "lead": 140.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.6,
+          "lead": 140.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.0,
+          "lead": 150.0,
+          "oxygen_used": 0.13,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.05,
+          "lead": 150.0,
+          "oxygen_used": 0.13,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.1,
+          "lead": 150.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.15,
+          "lead": 150.0,
+          "oxygen_used": 0.13,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.2,
+          "lead": 150.0,
+          "oxygen_used": 0.13,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.25,
+          "lead": 150.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.3,
+          "lead": 150.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.35,
+          "lead": 150.0,
+          "oxygen_used": 0.17,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.4,
+          "lead": 150.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.45,
+          "lead": 150.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.5,
+          "lead": 150.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.55,
+          "lead": 150.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.6,
+          "lead": 150.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.0,
+          "lead": 160.0,
+          "oxygen_used": 0.17,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.05,
+          "lead": 160.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.1,
+          "lead": 160.0,
+          "oxygen_used": 0.17,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.15,
+          "lead": 160.0,
+          "oxygen_used": 0.17,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.2,
+          "lead": 160.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.25,
+          "lead": 160.0,
+          "oxygen_used": 0.17,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.3,
+          "lead": 160.0,
+          "oxygen_used": 0.18,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.35,
+          "lead": 160.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.4,
+          "lead": 160.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.45,
+          "lead": 160.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.5,
+          "lead": 160.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.55,
+          "lead": 160.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.6,
+          "lead": 160.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.0,
+          "lead": 170.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.05,
+          "lead": 170.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.1,
+          "lead": 170.0,
+          "oxygen_used": 0.2,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.15,
+          "lead": 170.0,
+          "oxygen_used": 0.2,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.2,
+          "lead": 170.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.25,
+          "lead": 170.0,
+          "oxygen_used": 0.2,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.3,
+          "lead": 170.0,
+          "oxygen_used": 0.2,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.35,
+          "lead": 170.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.4,
+          "lead": 170.0,
+          "oxygen_used": 0.22,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.45,
+          "lead": 170.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.5,
+          "lead": 170.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.55,
+          "lead": 170.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.6,
+          "lead": 170.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.0,
+          "lead": 180.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.05,
+          "lead": 180.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.1,
+          "lead": 180.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.15,
+          "lead": 180.0,
+          "oxygen_used": 0.23,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.2,
+          "lead": 180.0,
+          "oxygen_used": 0.23,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.25,
+          "lead": 180.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.3,
+          "lead": 180.0,
+          "oxygen_used": 0.23,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.35,
+          "lead": 180.0,
+          "oxygen_used": 0.25,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.4,
+          "lead": 180.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.45,
+          "lead": 180.0,
+          "oxygen_used": 0.17,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.5,
+          "lead": 180.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.55,
+          "lead": 180.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.6,
+          "lead": 180.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.0,
+          "lead": 190.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.05,
+          "lead": 190.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.1,
+          "lead": 190.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.15,
+          "lead": 190.0,
+          "oxygen_used": 0.27,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.2,
+          "lead": 190.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.25,
+          "lead": 190.0,
+          "oxygen_used": 0.27,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.3,
+          "lead": 190.0,
+          "oxygen_used": 0.27,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.35,
+          "lead": 190.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.4,
+          "lead": 190.0,
+          "oxygen_used": 0.28,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.45,
+          "lead": 190.0,
+          "oxygen_used": 0.28,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.5,
+          "lead": 190.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.55,
+          "lead": 190.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.6,
+          "lead": 190.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.0,
+          "lead": 200.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.05,
+          "lead": 200.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.1,
+          "lead": 200.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.15,
+          "lead": 200.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.2,
+          "lead": 200.0,
+          "oxygen_used": 0.3,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.25,
+          "lead": 200.0,
+          "oxygen_used": 0.3,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.3,
+          "lead": 200.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.35,
+          "lead": 200.0,
+          "oxygen_used": 0.3,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.4,
+          "lead": 200.0,
+          "oxygen_used": 0.32,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.45,
+          "lead": 200.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.5,
+          "lead": 200.0,
+          "oxygen_used": 0.22,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.55,
+          "lead": 200.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.6,
+          "lead": 200.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.0,
+          "lead": 210.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.05,
+          "lead": 210.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.1,
+          "lead": 210.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.15,
+          "lead": 210.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.2,
+          "lead": 210.0,
+          "oxygen_used": 0.33,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.25,
+          "lead": 210.0,
+          "oxygen_used": 0.33,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.3,
+          "lead": 210.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.35,
+          "lead": 210.0,
+          "oxygen_used": 0.33,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.4,
+          "lead": 210.0,
+          "oxygen_used": 0.33,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.45,
+          "lead": 210.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.5,
+          "lead": 210.0,
+          "oxygen_used": 0.37,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.55,
+          "lead": 210.0,
+          "oxygen_used": 0.17,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.6,
+          "lead": 210.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.0,
+          "lead": 220.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.05,
+          "lead": 220.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.1,
+          "lead": 220.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.15,
+          "lead": 220.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.2,
+          "lead": 220.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.25,
+          "lead": 220.0,
+          "oxygen_used": 0.37,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.3,
+          "lead": 220.0,
+          "oxygen_used": 0.37,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.35,
+          "lead": 220.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.4,
+          "lead": 220.0,
+          "oxygen_used": 0.37,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.45,
+          "lead": 220.0,
+          "oxygen_used": 0.38,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.5,
+          "lead": 220.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.55,
+          "lead": 220.0,
+          "oxygen_used": 0.28,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.6,
+          "lead": 220.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.0,
+          "lead": 230.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.05,
+          "lead": 230.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.1,
+          "lead": 230.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.15,
+          "lead": 230.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.2,
+          "lead": 230.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.25,
+          "lead": 230.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.3,
+          "lead": 230.0,
+          "oxygen_used": 0.4,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.35,
+          "lead": 230.0,
+          "oxygen_used": 0.4,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.4,
+          "lead": 230.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.45,
+          "lead": 230.0,
+          "oxygen_used": 0.4,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.5,
+          "lead": 230.0,
+          "oxygen_used": 0.42,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.55,
+          "lead": 230.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.6,
+          "lead": 230.0,
+          "oxygen_used": 0.22,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.0,
+          "lead": 240.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.05,
+          "lead": 240.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.1,
+          "lead": 240.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.15,
+          "lead": 240.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.2,
+          "lead": 240.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.25,
+          "lead": 240.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.3,
+          "lead": 240.0,
+          "oxygen_used": 0.43,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.35,
+          "lead": 240.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.4,
+          "lead": 240.0,
+          "oxygen_used": 0.43,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.45,
+          "lead": 240.0,
+          "oxygen_used": 0.43,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.5,
+          "lead": 240.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.55,
+          "lead": 240.0,
+          "oxygen_used": 0.47,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.6,
+          "lead": 240.0,
+          "oxygen_used": 0.4,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.0,
+          "lead": 250.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.05,
+          "lead": 250.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.1,
+          "lead": 250.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.15,
+          "lead": 250.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.2,
+          "lead": 250.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.25,
+          "lead": 250.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.3,
+          "lead": 250.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.35,
+          "lead": 250.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.4,
+          "lead": 250.0,
+          "oxygen_used": 0.47,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.45,
+          "lead": 250.0,
+          "oxygen_used": 0.47,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.5,
+          "lead": 250.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.55,
+          "lead": 250.0,
+          "oxygen_used": 0.48,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.6,
+          "lead": 250.0,
+          "oxygen_used": 0.5,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.0,
+          "lead": 260.0,
+          "oxygen_used": 0.0,
+          "passed": true,
+          "why": "pass"
+        },
+        {
+          "delay": 0.05,
+          "lead": 260.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.1,
+          "lead": 260.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.15,
+          "lead": 260.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.2,
+          "lead": 260.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.25,
+          "lead": 260.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.3,
+          "lead": 260.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.35,
+          "lead": 260.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.4,
+          "lead": 260.0,
+          "oxygen_used": 0.5,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.45,
+          "lead": 260.0,
+          "oxygen_used": 0.5,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.5,
+          "lead": 260.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.55,
+          "lead": 260.0,
+          "oxygen_used": 0.52,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.6,
+          "lead": 260.0,
+          "oxygen_used": 0.53,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.0,
+          "lead": 270.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.05,
+          "lead": 270.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.1,
+          "lead": 270.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.15,
+          "lead": 270.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.2,
+          "lead": 270.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.25,
+          "lead": 270.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.3,
+          "lead": 270.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.35,
+          "lead": 270.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.4,
+          "lead": 270.0,
+          "oxygen_used": 0.53,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.45,
+          "lead": 270.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.5,
+          "lead": 270.0,
+          "oxygen_used": 0.53,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.55,
+          "lead": 270.0,
+          "oxygen_used": 0.55,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.6,
+          "lead": 270.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.0,
+          "lead": 280.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.05,
+          "lead": 280.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.1,
+          "lead": 280.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.15,
+          "lead": 280.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.2,
+          "lead": 280.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.25,
+          "lead": 280.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.3,
+          "lead": 280.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.35,
+          "lead": 280.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.4,
+          "lead": 280.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.45,
+          "lead": 280.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.5,
+          "lead": 280.0,
+          "oxygen_used": 0.57,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.55,
+          "lead": 280.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.6,
+          "lead": 280.0,
+          "oxygen_used": 0.58,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.0,
+          "lead": 290.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.05,
+          "lead": 290.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.1,
+          "lead": 290.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.15,
+          "lead": 290.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.2,
+          "lead": 290.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.25,
+          "lead": 290.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.3,
+          "lead": 290.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.35,
+          "lead": 290.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.4,
+          "lead": 290.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.45,
+          "lead": 290.0,
+          "oxygen_used": 0.6,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.5,
+          "lead": 290.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.55,
+          "lead": 290.0,
+          "oxygen_used": 0.6,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.6,
+          "lead": 290.0,
+          "oxygen_used": 0.62,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.0,
+          "lead": 300.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.05,
+          "lead": 300.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.1,
+          "lead": 300.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.15,
+          "lead": 300.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.2,
+          "lead": 300.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.25,
+          "lead": 300.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.3,
+          "lead": 300.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.35,
+          "lead": 300.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.4,
+          "lead": 300.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.45,
+          "lead": 300.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.5,
+          "lead": 300.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.55,
+          "lead": 300.0,
+          "oxygen_used": 0.63,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.6,
+          "lead": 300.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.0,
+          "lead": 310.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.05,
+          "lead": 310.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.1,
+          "lead": 310.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.15,
+          "lead": 310.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.2,
+          "lead": 310.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.25,
+          "lead": 310.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.3,
+          "lead": 310.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.35,
+          "lead": 310.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.4,
+          "lead": 310.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.45,
+          "lead": 310.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.5,
+          "lead": 310.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.55,
+          "lead": 310.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.6,
+          "lead": 310.0,
+          "oxygen_used": 0.67,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.0,
+          "lead": 320.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.05,
+          "lead": 320.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.1,
+          "lead": 320.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.15,
+          "lead": 320.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.2,
+          "lead": 320.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.25,
+          "lead": 320.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.3,
+          "lead": 320.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.35,
+          "lead": 320.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.4,
+          "lead": 320.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.45,
+          "lead": 320.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.5,
+          "lead": 320.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.55,
+          "lead": 320.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.6,
+          "lead": 320.0,
+          "oxygen_used": 0.7,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.0,
+          "lead": 330.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.05,
+          "lead": 330.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.1,
+          "lead": 330.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.15,
+          "lead": 330.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.2,
+          "lead": 330.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.25,
+          "lead": 330.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.3,
+          "lead": 330.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.35,
+          "lead": 330.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.4,
+          "lead": 330.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.45,
+          "lead": 330.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.5,
+          "lead": 330.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.55,
+          "lead": 330.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.6,
+          "lead": 330.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "turtle_hit"
+        },
+        {
+          "delay": 0.0,
+          "lead": 340.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.05,
+          "lead": 340.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.1,
+          "lead": 340.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.15,
+          "lead": 340.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.2,
+          "lead": 340.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.25,
+          "lead": 340.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.3,
+          "lead": 340.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.35,
+          "lead": 340.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.4,
+          "lead": 340.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.45,
+          "lead": 340.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        },
+        {
+          "delay": 0.5,
+          "lead": 340.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.55,
+          "lead": 340.0,
+          "oxygen_used": 0.0,
+          "passed": false,
+          "why": "rabbit_water"
+        },
+        {
+          "delay": 0.6,
+          "lead": 340.0,
+          "oxygen_used": 0.15,
+          "passed": false,
+          "why": "input_missed"
+        }
+      ],
+      "delay_range": [
+        0.0,
+        0.6,
+        0.05
+      ],
+      "group": "log8",
+      "index": 52,
+      "kind": "FLOATING_LOG",
+      "lead_range": [
+        120.0,
+        340.0,
+        10.0
+      ],
+      "leads": [
+        {
+          "delay_max": 0.0,
+          "delay_min": 0.0,
+          "delay_runs": 0,
+          "delay_window_s": 0.0,
+          "fail": {
+            "turtle_hit": 13
+          },
+          "lead": 120.0,
+          "pass_count": 0
+        },
+        {
+          "delay_max": 0.0,
+          "delay_min": 0.0,
+          "delay_runs": 0,
+          "delay_window_s": 0.0,
+          "fail": {
+            "turtle_hit": 13
+          },
+          "lead": 130.0,
+          "pass_count": 0
+        },
+        {
+          "delay_max": 0.0,
+          "delay_min": 0.0,
+          "delay_runs": 0,
+          "delay_window_s": 0.0,
+          "fail": {
+            "turtle_hit": 13
+          },
+          "lead": 140.0,
+          "pass_count": 0
+        },
+        {
+          "delay_max": 0.0,
+          "delay_min": 0.0,
+          "delay_runs": 0,
+          "delay_window_s": 0.0,
+          "fail": {
+            "turtle_hit": 13
+          },
+          "lead": 150.0,
+          "pass_count": 0
+        },
+        {
+          "delay_max": 0.0,
+          "delay_min": 0.0,
+          "delay_runs": 0,
+          "delay_window_s": 0.0,
+          "fail": {
+            "turtle_hit": 13
+          },
+          "lead": 160.0,
+          "pass_count": 0
+        },
+        {
+          "delay_max": 0.0,
+          "delay_min": 0.0,
+          "delay_runs": 1,
+          "delay_window_s": 0.0,
+          "fail": {
+            "turtle_hit": 12
+          },
+          "lead": 170.0,
+          "pass_count": 1
+        },
+        {
+          "delay_max": 0.05,
+          "delay_min": 0.0,
+          "delay_runs": 1,
+          "delay_window_s": 0.05,
+          "fail": {
+            "turtle_hit": 11
+          },
+          "lead": 180.0,
+          "pass_count": 2
+        },
+        {
+          "delay_max": 0.1,
+          "delay_min": 0.0,
+          "delay_runs": 1,
+          "delay_window_s": 0.1,
+          "fail": {
+            "turtle_hit": 10
+          },
+          "lead": 190.0,
+          "pass_count": 3
+        },
+        {
+          "delay_max": 0.1,
+          "delay_min": 0.0,
+          "delay_runs": 1,
+          "delay_window_s": 0.1,
+          "fail": {
+            "turtle_hit": 10
+          },
+          "lead": 200.0,
+          "pass_count": 3
+        },
+        {
+          "delay_max": 0.15,
+          "delay_min": 0.0,
+          "delay_runs": 1,
+          "delay_window_s": 0.15,
+          "fail": {
+            "turtle_hit": 9
+          },
+          "lead": 210.0,
+          "pass_count": 4
+        },
+        {
+          "delay_max": 0.2,
+          "delay_min": 0.0,
+          "delay_runs": 1,
+          "delay_window_s": 0.2,
+          "fail": {
+            "turtle_hit": 8
+          },
+          "lead": 220.0,
+          "pass_count": 5
+        },
+        {
+          "delay_max": 0.2,
+          "delay_min": 0.0,
+          "delay_runs": 1,
+          "delay_window_s": 0.2,
+          "fail": {
+            "turtle_hit": 8
+          },
+          "lead": 230.0,
+          "pass_count": 5
+        },
+        {
+          "delay_max": 0.25,
+          "delay_min": 0.0,
+          "delay_runs": 1,
+          "delay_window_s": 0.25,
+          "fail": {
+            "turtle_hit": 7
+          },
+          "lead": 240.0,
+          "pass_count": 6
+        },
+        {
+          "delay_max": 0.3,
+          "delay_min": 0.0,
+          "delay_runs": 1,
+          "delay_window_s": 0.3,
+          "fail": {
+            "turtle_hit": 6
+          },
+          "lead": 250.0,
+          "pass_count": 7
+        },
+        {
+          "delay_max": 0.0,
+          "delay_min": 0.0,
+          "delay_runs": 1,
+          "delay_window_s": 0.0,
+          "fail": {
+            "input_missed": 2,
+            "rabbit_water": 4,
+            "turtle_hit": 6
+          },
+          "lead": 260.0,
+          "pass_count": 1
+        },
+        {
+          "delay_max": 0.0,
+          "delay_min": 0.0,
+          "delay_runs": 0,
+          "delay_window_s": 0.0,
+          "fail": {
+            "input_missed": 3,
+            "rabbit_water": 5,
+            "turtle_hit": 5
+          },
+          "lead": 270.0,
+          "pass_count": 0
+        },
+        {
+          "delay_max": 0.0,
+          "delay_min": 0.0,
+          "delay_runs": 0,
+          "delay_window_s": 0.0,
+          "fail": {
+            "input_missed": 3,
+            "rabbit_water": 7,
+            "turtle_hit": 3
+          },
+          "lead": 280.0,
+          "pass_count": 0
+        },
+        {
+          "delay_max": 0.0,
+          "delay_min": 0.0,
+          "delay_runs": 0,
+          "delay_window_s": 0.0,
+          "fail": {
+            "input_missed": 3,
+            "rabbit_water": 6,
+            "turtle_hit": 4
+          },
+          "lead": 290.0,
+          "pass_count": 0
+        },
+        {
+          "delay_max": 0.0,
+          "delay_min": 0.0,
+          "delay_runs": 0,
+          "delay_window_s": 0.0,
+          "fail": {
+            "input_missed": 4,
+            "rabbit_water": 7,
+            "turtle_hit": 2
+          },
+          "lead": 300.0,
+          "pass_count": 0
+        },
+        {
+          "delay_max": 0.0,
+          "delay_min": 0.0,
+          "delay_runs": 0,
+          "delay_window_s": 0.0,
+          "fail": {
+            "input_missed": 3,
+            "rabbit_water": 8,
+            "turtle_hit": 2
+          },
+          "lead": 310.0,
+          "pass_count": 0
+        },
+        {
+          "delay_max": 0.0,
+          "delay_min": 0.0,
+          "delay_runs": 0,
+          "delay_window_s": 0.0,
+          "fail": {
+            "input_missed": 4,
+            "rabbit_water": 8,
+            "turtle_hit": 1
+          },
+          "lead": 320.0,
+          "pass_count": 0
+        },
+        {
+          "delay_max": 0.0,
+          "delay_min": 0.0,
+          "delay_runs": 0,
+          "delay_window_s": 0.0,
+          "fail": {
+            "input_missed": 4,
+            "rabbit_water": 8,
+            "turtle_hit": 1
+          },
+          "lead": 330.0,
+          "pass_count": 0
+        },
+        {
+          "delay_max": 0.0,
+          "delay_min": 0.0,
+          "delay_runs": 0,
+          "delay_window_s": 0.0,
+          "fail": {
+            "input_missed": 4,
+            "rabbit_water": 9
+          },
+          "lead": 340.0,
+          "pass_count": 0
+        }
+      ],
+      "scheme": "dive_jump",
+      "speed_scale": 1.15,
+      "step_hz": 60.0,
+      "summary": {
+        "best_delay_max": 0.3,
+        "best_delay_min": 0.0,
+        "best_delay_window_s": 0.3,
+        "best_lead": 250.0,
+        "cells": 299,
+        "lead_first": 170.0,
+        "lead_last": 260.0,
+        "lead_window_s": 0.301,
+        "leads_with_pass": 10,
+        "pass_cells": 37
+      },
+      "width": 32.0,
+      "zone": 3
+    }
+  ],
+  "generated_at": "2026-11-12T17:08:45",
+  "note": "连招第二段二维扫描：真实按键、加速带关闭、基速、自动驾驶代理，不是真人。"
+}

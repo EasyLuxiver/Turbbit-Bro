@@ -1,0 +1,118 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+Vulkan 1.4.341 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 4060 Laptop GPU
+
+MENU-INPUT window=(1280, 720) scale=0.800
+  ok  main menu min font 18 design = 14.4 actual (阶段 4 / 完整赛道 - 3 个区域)
+  ok  main menu exposes 3 native buttons (3)
+  ok  start button visible
+  ok  settings button visible
+  ok  quit button visible
+  ok  start button has a real on-screen rect
+  ok  mouse hover reaches the start button (hover style applies)
+    click '开始游戏' at (639.6, 382.4) (viewport (1600.0, 900.0))
+LEVEL SEED 20261112
+SNACK DRAW #1 group=beam1 zone=1 kind=LOW_BEAM (fixed)
+SNACK DRAW #2 group=rock3 zone=1 kind=SURFACE_ROCK (was SURFACE_ROCK)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SURFACE_ROCK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SURFACE_ROCK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=LOW_BEAM (was DIVE_GATE)
+  ok  mouse click on START GAME enters the race
+  ok  race state RUNNING
+    click '退出游戏' at (639.6, 500.8) (viewport (1600.0, 900.0))
+  ok  quit confirm min font 18 design = 14.4 actual (阶段 4 / 完整赛道 - 3 个区域)
+  ok  quit confirmation offers cancel + confirm
+  ok  quit confirmation defaults focus to CANCEL
+  ok  confirm does not change state
+    click '取消' at (448.0, 401.6) (viewport (1600.0, 900.0))
+  ok  cancel closes the confirmation and returns to the menu
+  ok  still in MENU after cancel
+    click '设置' at (639.6, 443.2) (viewport (1600.0, 900.0))
+  ok  settings min font 18 design = 14.4 actual (语言只改变文字，不影响玩法、物理参数和比赛纪录。)
+  ok  settings shows a language button
+    click '语言：简体中文   [L]' at (640.0, 324.0) (viewport (1600.0, 900.0))
+  ok  mouse click on language button switches language
+  ok  language choice persisted after menu click
+  ok  settings has a back button
+    click '返回' at (640.0, 432.8) (viewport (1600.0, 900.0))
+  ok  back returns to main menu
+LEVEL SEED 20261112
+SNACK DRAW #1 group=beam1 zone=1 kind=LOW_BEAM (fixed)
+SNACK DRAW #2 group=rock3 zone=1 kind=SURFACE_ROCK (was SURFACE_ROCK)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SURFACE_ROCK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SURFACE_ROCK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=LOW_BEAM (was DIVE_GATE)
+  ok  pause min font 18 design = 14.4 actual (SHIFT   当前控制：兔子)
+  ok  pause menu shows CONTINUE
+  ok  pause menu shows RESTART
+  ok  pause menu shows MAIN MENU
+    click '继续游戏' at (640.0, 322.4) (viewport (1600.0, 900.0))
+  ok  mouse click on CONTINUE resumes the race
+    click '重新开始' at (640.0, 383.2) (viewport (1600.0, 900.0))
+LEVEL SEED 20261112
+SNACK DRAW #1 group=beam1 zone=1 kind=LOW_BEAM (fixed)
+SNACK DRAW #2 group=rock3 zone=1 kind=SURFACE_ROCK (was SURFACE_ROCK)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SURFACE_ROCK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SURFACE_ROCK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=LOW_BEAM (was DIVE_GATE)
+  ok  restart reloads the race
+  ok  restart resets the run
+    click '返回主菜单' at (640.0, 440.8) (viewport (1600.0, 900.0))
+  ok  mouse click on MAIN MENU returns to the menu
+  ok  state MENU after leaving
+  ok  result min font 18 design = 14.4 actual (最佳时间 296.63 s   最低事故 0   最长连)
+  ok  result shows PLAY AGAIN + MAIN MENU buttons
+    click '再玩一次' at (448.0, 556.8) (viewport (1600.0, 900.0))
+LEVEL SEED 20261112
+SNACK DRAW #1 group=beam1 zone=1 kind=LOW_BEAM (fixed)
+SNACK DRAW #2 group=rock3 zone=1 kind=SURFACE_ROCK (was SURFACE_ROCK)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SURFACE_ROCK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SURFACE_ROCK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=LOW_BEAM (was DIVE_GATE)
+  ok  mouse click on PLAY AGAIN starts a race
+    click '返回主菜单' at (640.0, 440.8) (viewport (1600.0, 900.0))
+    click '返回主菜单' at (832.0, 556.8) (viewport (1600.0, 900.0))
+  ok  mouse click on MAIN MENU from result returns to menu
+  ok  a button holds keyboard focus on entry
+  ok  DOWN moves focus to another button
+  ok  UP returns focus (开始游戏)
+LEVEL SEED 20261112
+SNACK DRAW #1 group=beam1 zone=1 kind=LOW_BEAM (fixed)
+SNACK DRAW #2 group=rock3 zone=1 kind=SURFACE_ROCK (was SURFACE_ROCK)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SURFACE_ROCK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SURFACE_ROCK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=LOW_BEAM (was DIVE_GATE)
+  ok  SPACE activates the focused button
+  ok  race scene is live after keyboard start
+LEVEL SEED 20261112
+SNACK DRAW #1 group=beam1 zone=1 kind=LOW_BEAM (fixed)
+SNACK DRAW #2 group=rock3 zone=1 kind=SURFACE_ROCK (was SURFACE_ROCK)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SURFACE_ROCK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SURFACE_ROCK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=LOW_BEAM (was DIVE_GATE)
+  ok  ENTER activates the focused button
+  ok  menu tests do not touch best.json
+STAGE4 MENU INPUT: PASS

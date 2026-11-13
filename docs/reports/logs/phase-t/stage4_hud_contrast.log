@@ -1,0 +1,89 @@
+﻿Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+Vulkan 1.4.341 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 4060 Laptop GPU
+
+LEVEL SEED 20261112
+SNACK DRAW #1 group=beam1 zone=1 kind=LOW_BEAM (fixed)
+SNACK DRAW #2 group=rock3 zone=1 kind=SURFACE_ROCK (was SURFACE_ROCK)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SURFACE_ROCK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SURFACE_ROCK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=LOW_BEAM (was DIVE_GATE)
+HUD CONTRAST 1600x900/zh (image 1600x900, viewport 1600x900)
+  1600x900/zh (image 1600x900, viewport 1600x900) [tl] 'SHIFT   当前控制：兔子' fg=(1.00,0.86,0.35) bg=(0.23,0.36,0.43) ratio=5.30 ok
+  1600x900/zh (image 1600x900, viewport 1600x900) [tl] '兔子' fg=(0.92,0.97,1.00) bg=(0.23,0.36,0.43) ratio=6.57 ok
+  1600x900/zh (image 1600x900, viewport 1600x900) [tl] '操控 · 骑乘' fg=(1.00,0.86,0.35) bg=(0.23,0.36,0.43) ratio=5.30 ok
+  1600x900/zh (image 1600x900, viewport 1600x900) [tl] '乌龟' fg=(0.92,0.97,1.00) bg=(0.23,0.36,0.43) ratio=6.57 ok
+  1600x900/zh (image 1600x900, viewport 1600x900) [tl] '待命 · 稳定' fg=(0.45,0.95,0.60) bg=(0.23,0.36,0.43) ratio=5.08 ok
+  1600x900/zh (image 1600x900, viewport 1600x900) [tr] '00:00.5' fg=(0.92,0.97,1.00) bg=(0.23,0.36,0.43) ratio=6.57 ok
+  1600x900/zh (image 1600x900, viewport 1600x900) [tr] '区域 1/3  阳光海岸' fg=(0.78,0.88,0.95) bg=(0.23,0.36,0.43) ratio=5.25 ok
+  1600x900/zh (image 1600x900, viewport 1600x900) [tr] '进度 5%   0/55 组' fg=(0.78,0.88,0.95) bg=(0.23,0.36,0.43) ratio=5.25 ok
+  1600x900/zh (image 1600x900, viewport 1600x900) [bl] '氧气 8.0s' fg=(0.92,0.97,1.00) bg=(0.02,0.15,0.22) ratio=14.25 ok
+  1600x900/zh (image 1600x900, viewport 1600x900) [bl] '水面恢复中' fg=(0.45,0.95,0.60) bg=(0.02,0.15,0.22) ratio=11.01 ok
+  1600x900/zh (image 1600x900, viewport 1600x900) [br] 'BRO METER 0/3' fg=(1.00,0.80,0.72) bg=(0.02,0.15,0.22) ratio=10.76 ok
+  1600x900/zh (image 1600x900, viewport 1600x900) [br] '默契 0/3' fg=(1.00,0.86,0.35) bg=(0.02,0.15,0.22) ratio=11.48 ok
+  1600x900/zh (image 1600x900, viewport 1600x900) [bc] 'BRO COMBO！' fg=(1.00,0.86,0.35) bg=(0.34,0.28,0.20) ratio=6.61 ok
+  1600x900/zh (image 1600x900, viewport 1600x900) [bc] '下沉门 - 兔子掌权时龟壳会自己沉下去' fg=(0.78,0.88,0.95) bg=(0.34,0.28,0.20) ratio=6.55 ok
+  1600x900/zh (image 1600x900, viewport 1600x900) [bc] 'SHIFT + ↑ 乌龟跃起 → SHIFT 兔子 → ' fg=(0.45,0.95,1.00) bg=(0.34,0.28,0.20) ratio=6.75 ok
+HUD CONTRAST 1600x900/zh (image 1600x900, viewport 1600x900) worst=5.08
+HUD CONTRAST 1600x900/en (image 1600x900, viewport 1600x900)
+  1600x900/en (image 1600x900, viewport 1600x900) [tl] 'SHIFT   CONTROL: RABBIT' fg=(1.00,0.86,0.35) bg=(0.23,0.36,0.43) ratio=5.30 ok
+  1600x900/en (image 1600x900, viewport 1600x900) [tl] 'RABBIT' fg=(0.92,0.97,1.00) bg=(0.23,0.36,0.43) ratio=6.57 ok
+  1600x900/en (image 1600x900, viewport 1600x900) [tl] 'DRIVING · RIDING' fg=(1.00,0.86,0.35) bg=(0.23,0.36,0.43) ratio=5.30 ok
+  1600x900/en (image 1600x900, viewport 1600x900) [tl] 'TURTLE' fg=(0.92,0.97,1.00) bg=(0.23,0.36,0.43) ratio=6.57 ok
+  1600x900/en (image 1600x900, viewport 1600x900) [tl] 'STANDBY · STABLE' fg=(0.45,0.95,0.60) bg=(0.23,0.36,0.43) ratio=5.08 ok
+  1600x900/en (image 1600x900, viewport 1600x900) [tr] '00:00.7' fg=(0.92,0.97,1.00) bg=(0.23,0.36,0.43) ratio=6.57 ok
+  1600x900/en (image 1600x900, viewport 1600x900) [tr] 'ZONE 1/3  SUNNY COAST' fg=(0.78,0.88,0.95) bg=(0.23,0.36,0.43) ratio=5.25 ok
+  1600x900/en (image 1600x900, viewport 1600x900) [tr] 'PROGRESS 5%   0/55 GROUPS' fg=(0.78,0.88,0.95) bg=(0.23,0.36,0.43) ratio=5.25 ok
+  1600x900/en (image 1600x900, viewport 1600x900) [bl] 'AIR 8.0s' fg=(0.92,0.97,1.00) bg=(0.02,0.15,0.22) ratio=14.25 ok
+  1600x900/en (image 1600x900, viewport 1600x900) [bl] 'SURFACE - RECOVERING' fg=(0.45,0.95,0.60) bg=(0.02,0.15,0.22) ratio=11.01 ok
+  1600x900/en (image 1600x900, viewport 1600x900) [br] 'BRO METER 0/3' fg=(1.00,0.80,0.72) bg=(0.02,0.15,0.22) ratio=10.76 ok
+  1600x900/en (image 1600x900, viewport 1600x900) [br] 'BRO PASS 0/3' fg=(1.00,0.86,0.35) bg=(0.02,0.15,0.22) ratio=11.48 ok
+  1600x900/en (image 1600x900, viewport 1600x900) [bc] 'BRO COMBO!' fg=(1.00,0.86,0.35) bg=(0.34,0.28,0.20) ratio=6.61 ok
+  1600x900/en (image 1600x900, viewport 1600x900) [bc] 'SINK GATE - THE SHELL SINKS ' fg=(0.78,0.88,0.95) bg=(0.34,0.28,0.20) ratio=6.55 ok
+  1600x900/en (image 1600x900, viewport 1600x900) [bc] 'SHIFT + ↑ LEAP → SHIFT RABBI' fg=(0.45,0.95,1.00) bg=(0.34,0.28,0.20) ratio=6.75 ok
+HUD CONTRAST 1600x900/en (image 1600x900, viewport 1600x900) worst=5.08
+HUD CONTRAST 1280x720/zh (image 1280x720, viewport 1600x900)
+  1280x720/zh (image 1280x720, viewport 1600x900) [tl] 'SHIFT   当前控制：兔子' fg=(1.00,0.86,0.35) bg=(0.23,0.36,0.43) ratio=5.30 ok
+  1280x720/zh (image 1280x720, viewport 1600x900) [tl] '兔子' fg=(0.92,0.97,1.00) bg=(0.23,0.36,0.43) ratio=6.57 ok
+  1280x720/zh (image 1280x720, viewport 1600x900) [tl] '操控 · 骑乘' fg=(1.00,0.86,0.35) bg=(0.23,0.36,0.43) ratio=5.30 ok
+  1280x720/zh (image 1280x720, viewport 1600x900) [tl] '乌龟' fg=(0.92,0.97,1.00) bg=(0.23,0.36,0.43) ratio=6.57 ok
+  1280x720/zh (image 1280x720, viewport 1600x900) [tl] '待命 · 稳定' fg=(0.45,0.95,0.60) bg=(0.23,0.36,0.43) ratio=5.08 ok
+  1280x720/zh (image 1280x720, viewport 1600x900) [tr] '00:01.0' fg=(0.92,0.97,1.00) bg=(0.23,0.36,0.43) ratio=6.57 ok
+  1280x720/zh (image 1280x720, viewport 1600x900) [tr] '区域 1/3  阳光海岸' fg=(0.78,0.88,0.95) bg=(0.23,0.36,0.43) ratio=5.25 ok
+  1280x720/zh (image 1280x720, viewport 1600x900) [tr] '进度 5%   0/55 组' fg=(0.78,0.88,0.95) bg=(0.23,0.36,0.43) ratio=5.25 ok
+  1280x720/zh (image 1280x720, viewport 1600x900) [bl] '氧气 8.0s' fg=(0.92,0.97,1.00) bg=(0.02,0.15,0.22) ratio=14.25 ok
+  1280x720/zh (image 1280x720, viewport 1600x900) [bl] '水面恢复中' fg=(0.45,0.95,0.60) bg=(0.02,0.15,0.22) ratio=11.01 ok
+  1280x720/zh (image 1280x720, viewport 1600x900) [br] 'BRO METER 0/3' fg=(1.00,0.80,0.72) bg=(0.02,0.15,0.22) ratio=10.76 ok
+  1280x720/zh (image 1280x720, viewport 1600x900) [br] '默契 0/3' fg=(1.00,0.86,0.35) bg=(0.02,0.15,0.22) ratio=11.48 ok
+  1280x720/zh (image 1280x720, viewport 1600x900) [bc] 'BRO COMBO！' fg=(1.00,0.86,0.35) bg=(0.34,0.28,0.20) ratio=6.61 ok
+  1280x720/zh (image 1280x720, viewport 1600x900) [bc] '下沉门 - 兔子掌权时龟壳会自己沉下去' fg=(0.78,0.88,0.95) bg=(0.34,0.28,0.20) ratio=6.55 ok
+  1280x720/zh (image 1280x720, viewport 1600x900) [bc] 'SHIFT + ↑ 乌龟跃起 → SHIFT 兔子 → ' fg=(0.45,0.95,1.00) bg=(0.34,0.28,0.20) ratio=6.75 ok
+HUD CONTRAST 1280x720/zh (image 1280x720, viewport 1600x900) worst=5.08
+HUD CONTRAST 1280x720/en (image 1280x720, viewport 1600x900)
+  1280x720/en (image 1280x720, viewport 1600x900) [tl] 'SHIFT   CONTROL: RABBIT' fg=(1.00,0.86,0.35) bg=(0.23,0.36,0.43) ratio=5.30 ok
+  1280x720/en (image 1280x720, viewport 1600x900) [tl] 'RABBIT' fg=(0.92,0.97,1.00) bg=(0.23,0.36,0.43) ratio=6.57 ok
+  1280x720/en (image 1280x720, viewport 1600x900) [tl] 'DRIVING · RIDING' fg=(1.00,0.86,0.35) bg=(0.23,0.36,0.43) ratio=5.30 ok
+  1280x720/en (image 1280x720, viewport 1600x900) [tl] 'TURTLE' fg=(0.92,0.97,1.00) bg=(0.23,0.36,0.43) ratio=6.57 ok
+  1280x720/en (image 1280x720, viewport 1600x900) [tl] 'STANDBY · STABLE' fg=(0.45,0.95,0.60) bg=(0.23,0.36,0.43) ratio=5.08 ok
+  1280x720/en (image 1280x720, viewport 1600x900) [tr] '00:01.1' fg=(0.92,0.97,1.00) bg=(0.23,0.36,0.43) ratio=6.57 ok
+  1280x720/en (image 1280x720, viewport 1600x900) [tr] 'ZONE 1/3  SUNNY COAST' fg=(0.78,0.88,0.95) bg=(0.23,0.36,0.43) ratio=5.25 ok
+  1280x720/en (image 1280x720, viewport 1600x900) [tr] 'PROGRESS 5%   0/55 GROUPS' fg=(0.78,0.88,0.95) bg=(0.23,0.36,0.43) ratio=5.25 ok
+  1280x720/en (image 1280x720, viewport 1600x900) [bl] 'AIR 8.0s' fg=(0.92,0.97,1.00) bg=(0.02,0.15,0.22) ratio=14.25 ok
+  1280x720/en (image 1280x720, viewport 1600x900) [bl] 'SURFACE - RECOVERING' fg=(0.45,0.95,0.60) bg=(0.02,0.15,0.22) ratio=11.01 ok
+  1280x720/en (image 1280x720, viewport 1600x900) [br] 'BRO METER 0/3' fg=(1.00,0.80,0.72) bg=(0.02,0.15,0.22) ratio=10.76 ok
+  1280x720/en (image 1280x720, viewport 1600x900) [br] 'BRO PASS 0/3' fg=(1.00,0.86,0.35) bg=(0.02,0.15,0.22) ratio=11.48 ok
+  1280x720/en (image 1280x720, viewport 1600x900) [bc] 'BRO COMBO!' fg=(1.00,0.86,0.35) bg=(0.34,0.28,0.20) ratio=6.61 ok
+  1280x720/en (image 1280x720, viewport 1600x900) [bc] 'SINK GATE - THE SHELL SINKS ' fg=(0.78,0.88,0.95) bg=(0.34,0.28,0.20) ratio=6.55 ok
+  1280x720/en (image 1280x720, viewport 1600x900) [bc] 'SHIFT + ↑ LEAP → SHIFT RABBI' fg=(0.45,0.95,1.00) bg=(0.34,0.28,0.20) ratio=6.75 ok
+HUD CONTRAST 1280x720/en (image 1280x720, viewport 1600x900) worst=5.08
+HUD CONTRAST forced/zh
+  forced/zh [tl/risk10] '兔子失衡 10%' fg=(0.66,0.86,1.00) bg=(0.23,0.36,0.43) ratio=4.86 ok
+  forced/zh [tl/risk30] '兔子失衡 30%' fg=(1.00,0.80,0.30) bg=(0.23,0.36,0.43) ratio=4.76 ok
+  forced/zh [tl/risk60] '兔子失衡 60%' fg=(1.00,0.80,0.55) bg=(0.23,0.36,0.43) ratio=4.86 ok
+  forced/zh [tl/risk90] '兔子失衡 90%' fg=(1.00,0.80,0.72) bg=(0.23,0.36,0.43) ratio=4.96 ok
+  forced/zh [bl] '缺氧' fg=(1.00,0.80,0.72) bg=(0.02,0.15,0.22) ratio=10.76 ok
+HUD CONTRAST LINES 65
+STAGE4 HUD CONTRAST: PASS

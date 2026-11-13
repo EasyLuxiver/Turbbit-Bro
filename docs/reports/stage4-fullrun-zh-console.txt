@@ -1,0 +1,166 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+  STAGE 3 FULL RUN  time_scale=3.0  capture=false
+  ok  race scene loaded
+  ok  state RUNNING
+  ---- RUN 1  (ENTER) ----
+  t=   5.6  x=  1595 y=300 zone=1 control=rabbit mount=RIDING rab=RIDING tur=DAZED oxy=7.9 combo=1 show=0 passed=1
+  t=  10.6  x=  2577 y=300 zone=1 control=rabbit mount=RIDING rab=RIDING tur=SINKING oxy=8.0 combo=2 show=0 passed=2
+  t=  15.7  x=  3526 y=300 zone=1 control=rabbit mount=RIDING rab=RIDING tur=SINKING oxy=8.0 combo=2 show=0 passed=2
+  t=  20.7  x=  4574 y=345 zone=1 control=turtle mount=RIDING rab=SLIDING tur=DIVING oxy=6.1 combo=1 show=1 passed=4
+  t=  25.8  x=  5615 y=350 zone=1 control=turtle mount=RIDING rab=RIDING tur=DIVING oxy=7.7 combo=1 show=2 passed=7
+  t=  30.8  x=  6580 y=303 zone=1 control=rabbit mount=RIDING rab=RIDING tur=SINKING oxy=8.0 combo=2 show=2 passed=8
+  t=  35.9  x=  7652 y=300 zone=1 control=rabbit mount=RIDING rab=RIDING tur=CRUISING oxy=8.0 combo=0 show=3 passed=9
+  t=  40.9  x=  8651 y=300 zone=1 control=rabbit mount=RIDING rab=RIDING tur=DAZED oxy=8.0 combo=0 show=3 passed=9
+  t=  45.9  x=  9567 y=300 zone=1 control=turtle mount=RIDING rab=RELAXED tur=CRUISING oxy=8.0 combo=1 show=3 passed=10
+  t=  51.0  x= 10515 y=307 zone=1 control=rabbit mount=RIDING rab=RIDING tur=SINKING oxy=8.0 combo=1 show=3 passed=10
+  t=  56.0  x= 11510 y=300 zone=1 control=turtle mount=RIDING rab=RELAXED tur=CRUISING oxy=8.0 combo=2 show=3 passed=11
+  t=  61.0  x= 12436 y=307 zone=1 control=rabbit mount=RIDING rab=RIDING tur=SINKING oxy=8.0 combo=2 show=3 passed=11
+  t=  66.1  x= 13541 y=300 zone=1 control=turtle mount=RIDING rab=SHOWTIME tur=CRUISING oxy=8.0 combo=0 show=3 passed=12
+  t=  71.1  x= 14541 y=300 zone=1 control=turtle mount=RIDING rab=SLIDING tur=CRUISING oxy=8.0 combo=0 show=4 passed=12
+  t=  73.7  ZONE 2 CORAL CHAOS  x=15022
+  t=  76.2  x= 15529 y=300 zone=2 control=turtle mount=RIDING rab=RELAXED tur=CRUISING oxy=8.0 combo=0 show=4 passed=12
+  t=  81.2  x= 16488 y=304 zone=2 control=rabbit mount=RIDING rab=RIDING tur=DAZED oxy=8.0 combo=1 show=4 passed=13
+  t=  86.2  x= 17526 y=300 zone=2 control=turtle mount=RIDING rab=RELAXED tur=CRUISING oxy=8.0 combo=2 show=4 passed=14
+  t=  91.3  x= 18750 y=300 zone=2 control=turtle mount=RIDING rab=SHOWTIME tur=CRUISING oxy=8.0 combo=0 show=4 passed=15
+  t=  96.3  x= 19857 y=300 zone=2 control=turtle mount=RIDING rab=RELAXED tur=CRUISING oxy=8.0 combo=1 show=5 passed=16
+  t= 101.3  x= 20959 y=300 zone=2 control=rabbit mount=RIDING rab=RIDING tur=DAZED oxy=8.0 combo=2 show=5 passed=17
+  t= 106.4  x= 22006 y=300 zone=2 control=rabbit mount=RIDING rab=RIDING tur=DAZED oxy=8.0 combo=2 show=5 passed=17
+  t= 111.4  x= 23110 y=300 zone=2 control=turtle mount=RIDING rab=RELAXED tur=CRUISING oxy=8.0 combo=0 show=6 passed=18
+  t= 116.5  x= 24181 y=303 zone=2 control=rabbit mount=RIDING rab=RIDING tur=SINKING oxy=8.0 combo=1 show=6 passed=19
+  t= 121.5  x= 25330 y=345 zone=2 control=turtle mount=RIDING rab=EDGE tur=DIVING oxy=5.3 combo=1 show=6 passed=19
+  t= 126.5  x= 26437 y=300 zone=2 control=turtle mount=RIDING rab=SHOWTIME tur=CRUISING oxy=7.1 combo=0 show=6 passed=21
+  t= 131.6  x= 27652 y=345 zone=2 control=turtle mount=RIDING rab=SLIDING tur=DIVING oxy=7.3 combo=0 show=7 passed=21
+  t= 136.6  x= 28694 y=304 zone=2 control=rabbit mount=RIDING rab=RIDING tur=SINKING oxy=8.0 combo=1 show=7 passed=22
+  t= 141.7  x= 29757 y=301 zone=2 control=rabbit mount=RIDING rab=RIDING tur=SINKING oxy=8.0 combo=2 show=7 passed=23
+  t= 146.7  x= 30876 y=300 zone=2 control=turtle mount=RIDING rab=RIDING tur=CRUISING oxy=8.0 combo=0 show=8 passed=24
+  t= 151.7  x= 31840 y=323 zone=2 control=rabbit mount=RIDING rab=RIDING tur=SINKING oxy=7.9 combo=1 show=8 passed=25
+  t= 156.8  x= 32952 y=345 zone=2 control=turtle mount=RIDING rab=SLIDING tur=DIVING oxy=6.9 combo=1 show=8 passed=25
+  t= 161.8  x= 34059 y=309 zone=2 control=turtle mount=RIDING rab=RELAXED tur=DIVING oxy=8.0 combo=2 show=8 passed=26
+  t= 166.8  x= 35259 y=345 zone=2 control=turtle mount=RIDING rab=SLIDING tur=DIVING oxy=6.4 combo=1 show=9 passed=28
+  t= 171.9  x= 36304 y=300 zone=2 control=turtle mount=RIDING rab=SLIDING tur=CRUISING oxy=8.0 combo=1 show=9 passed=28
+  t= 176.9  x= 37319 y=300 zone=2 control=turtle mount=RIDING rab=RELAXED tur=CRUISING oxy=8.0 combo=2 show=9 passed=29
+  t= 182.0  x= 38451 y=300 zone=2 control=rabbit mount=RIDING rab=RIDING tur=CRUISING oxy=8.0 combo=1 show=10 passed=31
+  t= 184.7  ZONE 3 MUSCLE MAYHEM  x=39031
+  t= 187.0  x= 39540 y=300 zone=3 control=turtle mount=RIDING rab=RELAXED tur=CRUISING oxy=8.0 combo=2 show=10 passed=32
+  t= 192.0  x= 40797 y=301 zone=3 control=turtle mount=RIDING rab=SHOWTIME tur=CRUISING oxy=8.0 combo=0 show=10 passed=33
+  t= 197.1  x= 41990 y=300 zone=3 control=turtle mount=RIDING rab=RELAXED tur=CRUISING oxy=8.0 combo=1 show=11 passed=34
+  t= 202.1  x= 43237 y=310 zone=3 control=turtle mount=RIDING rab=EDGE tur=SURFACING oxy=5.5 combo=2 show=11 passed=35
+  t= 207.1  x= 44444 y=309 zone=3 control=turtle mount=RIDING rab=RIDING tur=DIVING oxy=8.0 combo=0 show=12 passed=36
+  t= 212.2  x= 45664 y=300 zone=3 control=rabbit mount=RIDING rab=RIDING tur=DAZED oxy=8.0 combo=1 show=12 passed=37
+  t= 217.2  x= 46792 y=300 zone=3 control=turtle mount=RIDING rab=RELAXED tur=CRUISING oxy=8.0 combo=2 show=12 passed=38
+  t= 222.3  x= 48102 y=300 zone=3 control=rabbit mount=RIDING rab=RIDING tur=DAZED oxy=8.0 combo=1 show=13 passed=40
+  t= 227.3  x= 49234 y=350 zone=3 control=turtle mount=RIDING rab=SLIDING tur=DIVING oxy=6.6 combo=1 show=13 passed=40
+  t= 232.3  x= 50441 y=302 zone=3 control=turtle mount=RIDING rab=SHOWTIME tur=SURFACING oxy=7.0 combo=0 show=13 passed=42
+  t= 237.4  x= 51758 y=302 zone=3 control=rabbit mount=RIDING rab=RIDING tur=DAZED oxy=7.2 combo=1 show=14 passed=43
+  t= 242.4  x= 52874 y=300 zone=3 control=turtle mount=RIDING rab=SLIDING tur=CRUISING oxy=8.0 combo=2 show=14 passed=44
+  t= 247.4  x= 54081 y=345 zone=3 control=turtle mount=RIDING rab=SLIDING tur=DIVING oxy=6.5 combo=2 show=14 passed=44
+  t= 252.5  x= 55390 y=300 zone=3 control=rabbit mount=RIDING rab=RIDING tur=DAZED oxy=8.0 combo=1 show=15 passed=46
+  t= 257.5  x= 56522 y=300 zone=3 control=turtle mount=RIDING rab=RELAXED tur=CRUISING oxy=8.0 combo=2 show=15 passed=47
+  t= 262.6  x= 57755 y=300 zone=3 control=rabbit mount=RIDING rab=RIDING tur=CRUISING oxy=8.0 combo=0 show=16 passed=48
+  t= 267.6  x= 58955 y=300 zone=3 control=turtle mount=RIDING rab=SLIDING tur=CRUISING oxy=8.0 combo=1 show=16 passed=49
+  t= 272.6  x= 59939 y=300 zone=3 control=rabbit mount=RIDING rab=RIDING tur=DAZED oxy=8.0 combo=2 show=16 passed=50
+  t= 277.7  x= 61210 y=304 zone=3 control=turtle mount=RIDING rab=SHOWTIME tur=DIVING oxy=8.0 combo=0 show=16 passed=51
+  t= 282.7  x= 62417 y=346 zone=3 control=turtle mount=RIDING rab=SLIDING tur=DIVING oxy=6.8 combo=1 show=17 passed=52
+  t= 287.7  x= 63532 y=300 zone=3 control=turtle mount=RIDING rab=RELAXED tur=CRUISING oxy=8.0 combo=2 show=17 passed=53
+  t= 292.8  x= 64854 y=345 zone=3 control=turtle mount=RIDING rab=SLIDING tur=DIVING oxy=6.6 combo=0 show=18 passed=54
+  ok  run 1 finish captured
+  FINISH  run=1 time=297.6 score=12550 grade=S passed=55/55 casualties=0 engine=0 show=18 streak=55
+  t= 297.8  x= 66050 y=300 zone=3 control=rabbit mount=RIDING rab=RIDING tur=CRUISING oxy=8.0 combo=1 show=18 passed=55
+  ok  run 1 reached result screen
+  ok  run 1 state RESULT
+  ok  run 1 result shows score + streak (zh)
+  ok  run 1 result shows best records (zh)
+  ok  R on result starts the retry race
+  ok  retry state RUNNING
+  ok  retry clears finish state
+  ---- RUN 2  (RETRY) ----
+  t=   5.3  x=  1491 y=337 zone=1 control=turtle mount=RIDING rab=SLIDING tur=SURFACING oxy=6.5 combo=1 show=0 passed=1
+  t=  10.3  x=  2492 y=300 zone=1 control=rabbit mount=RIDING rab=RIDING tur=DAZED oxy=7.9 combo=2 show=0 passed=2
+  t=  15.3  x=  3413 y=300 zone=1 control=turtle mount=RIDING rab=SLIDING tur=CRUISING oxy=8.0 combo=2 show=0 passed=2
+  t=  20.4  x=  4442 y=345 zone=1 control=turtle mount=RIDING rab=RELAXED tur=DIVING oxy=6.7 combo=1 show=1 passed=4
+  t=  25.4  x=  5462 y=350 zone=1 control=turtle mount=RIDING rab=SHOWTIME tur=DIVING oxy=6.7 combo=0 show=1 passed=6
+  t=  30.4  x=  6466 y=302 zone=1 control=rabbit mount=RIDING rab=RIDING tur=DAZED oxy=8.0 combo=2 show=2 passed=8
+  t=  35.5  x=  7498 y=300 zone=1 control=turtle mount=RIDING rab=SHOWTIME tur=CRUISING oxy=8.0 combo=0 show=2 passed=9
+  t=  40.5  x=  8498 y=300 zone=1 control=turtle mount=RIDING rab=SLIDING tur=CRUISING oxy=8.0 combo=0 show=3 passed=9
+  t=  45.6  x=  9487 y=300 zone=1 control=rabbit mount=RIDING rab=RIDING tur=SINKING oxy=8.0 combo=1 show=3 passed=10
+  t=  50.6  x= 10423 y=300 zone=1 control=rabbit mount=RIDING rab=RIDING tur=DAZED oxy=8.0 combo=1 show=3 passed=10
+  t=  55.6  x= 11404 y=301 zone=1 control=rabbit mount=RIDING rab=RIDING tur=SINKING oxy=8.0 combo=2 show=3 passed=11
+  t=  60.7  x= 12357 y=300 zone=1 control=rabbit mount=RIDING rab=RIDING tur=DAZED oxy=8.0 combo=2 show=3 passed=11
+  t=  65.7  x= 13385 y=300 zone=1 control=turtle mount=RIDING rab=SHOWTIME tur=CRUISING oxy=8.0 combo=0 show=3 passed=12
+  t=  70.7  x= 14389 y=300 zone=1 control=turtle mount=RIDING rab=RELAXED tur=CRUISING oxy=8.0 combo=0 show=4 passed=12
+  t=  74.0  ZONE 2 CORAL CHAOS  x=15027
+  t=  75.8  x= 15374 y=307 zone=2 control=turtle mount=RIDING rab=RELAXED tur=DIVING oxy=8.0 combo=0 show=4 passed=12
+  t=  80.8  x= 16326 y=303 zone=2 control=turtle mount=RIDING rab=SLIDING tur=DIVING oxy=8.0 combo=1 show=4 passed=13
+  t=  85.9  x= 17392 y=304 zone=2 control=rabbit mount=RIDING rab=RIDING tur=SINKING oxy=8.0 combo=2 show=4 passed=14
+  t=  90.9  x= 18565 y=300 zone=2 control=turtle mount=RIDING rab=SHOWTIME tur=CRUISING oxy=7.0 combo=0 show=4 passed=15
+  t=  95.9  x= 19718 y=301 zone=2 control=rabbit mount=RIDING rab=RIDING tur=SINKING oxy=8.0 combo=1 show=5 passed=16
+  t= 101.0  x= 20804 y=327 zone=2 control=turtle mount=RIDING rab=SLIDING tur=SURFACING oxy=6.7 combo=2 show=5 passed=17
+  t= 106.0  x= 21819 y=300 zone=2 control=turtle mount=RIDING rab=SLIDING tur=CRUISING oxy=8.0 combo=2 show=5 passed=17
+  t= 111.1  x= 22949 y=300 zone=2 control=rabbit mount=RIDING rab=RIDING tur=DAZED oxy=8.0 combo=0 show=6 passed=18
+  t= 116.1  x= 24051 y=300 zone=2 control=rabbit mount=RIDING rab=RIDING tur=DAZED oxy=8.0 combo=1 show=6 passed=19
+  t= 121.1  x= 25147 y=345 zone=2 control=turtle mount=RIDING rab=SLIDING tur=DIVING oxy=6.0 combo=1 show=6 passed=19
+  t= 126.2  x= 26278 y=345 zone=2 control=turtle mount=RIDING rab=SLIDING tur=DIVING oxy=7.2 combo=2 show=6 passed=20
+  t= 131.2  x= 27469 y=309 zone=2 control=turtle mount=RIDING rab=RELAXED tur=DIVING oxy=8.0 combo=0 show=7 passed=21
+  t= 136.2  x= 28568 y=300 zone=2 control=rabbit mount=RIDING rab=RIDING tur=DAZED oxy=8.0 combo=1 show=7 passed=22
+  t= 141.3  x= 29614 y=300 zone=2 control=rabbit mount=RIDING rab=RIDING tur=DAZED oxy=8.0 combo=2 show=7 passed=23
+  t= 146.3  x= 30693 y=300 zone=2 control=rabbit mount=RIDING rab=RIDING tur=CRUISING oxy=8.0 combo=0 show=8 passed=24
+  t= 151.3  x= 31745 y=302 zone=2 control=rabbit mount=RIDING rab=RIDING tur=SINKING oxy=8.0 combo=1 show=8 passed=25
+  t= 156.4  x= 32777 y=346 zone=2 control=turtle mount=RIDING rab=RELAXED tur=DIVING oxy=7.6 combo=1 show=8 passed=25
+  t= 161.4  x= 33884 y=300 zone=2 control=turtle mount=RIDING rab=SLIDING tur=CRUISING oxy=8.0 combo=2 show=8 passed=26
+  t= 166.5  x= 35108 y=345 zone=2 control=turtle mount=RIDING rab=RELAXED tur=DIVING oxy=7.0 combo=0 show=9 passed=27
+  t= 171.5  x= 36126 y=300 zone=2 control=turtle mount=RIDING rab=RELAXED tur=CRUISING oxy=8.0 combo=1 show=9 passed=28
+  t= 176.5  x= 37174 y=302 zone=2 control=rabbit mount=RIDING rab=RIDING tur=SINKING oxy=8.0 combo=2 show=9 passed=29
+  t= 181.6  x= 38269 y=345 zone=2 control=turtle mount=RIDING rab=SHOWTIME tur=DIVING oxy=7.2 combo=0 show=9 passed=30
+  t= 185.0  ZONE 3 MUSCLE MAYHEM  x=39022
+  t= 186.6  x= 39415 y=302 zone=3 control=rabbit mount=RIDING rab=RIDING tur=DAZED oxy=8.0 combo=2 show=10 passed=32
+  t= 191.7  x= 40637 y=300 zone=3 control=turtle mount=RIDING rab=SHOWTIME tur=CRUISING oxy=8.0 combo=0 show=10 passed=33
+  t= 196.7  x= 41848 y=307 zone=3 control=rabbit mount=RIDING rab=RIDING tur=SINKING oxy=8.0 combo=1 show=11 passed=34
+  t= 201.7  x= 43040 y=345 zone=3 control=turtle mount=RIDING rab=SLIDING tur=DIVING oxy=5.9 combo=1 show=11 passed=34
+  t= 206.8  x= 44273 y=300 zone=3 control=turtle mount=RIDING rab=SHOWTIME tur=CRUISING oxy=8.0 combo=0 show=11 passed=36
+  t= 211.8  x= 45480 y=300 zone=3 control=turtle mount=RIDING rab=SLIDING tur=CRUISING oxy=8.0 combo=1 show=12 passed=37
+  t= 216.8  x= 46624 y=305 zone=3 control=rabbit mount=RIDING rab=RIDING tur=SINKING oxy=8.0 combo=2 show=12 passed=38
+  t= 221.9  x= 47920 y=300 zone=3 control=turtle mount=RIDING rab=SLIDING tur=CRUISING oxy=8.0 combo=0 show=13 passed=39
+  t= 226.9  x= 49036 y=345 zone=3 control=turtle mount=RIDING rab=SLIDING tur=DIVING oxy=7.4 combo=1 show=13 passed=40
+  t= 232.0  x= 50269 y=345 zone=3 control=turtle mount=RIDING rab=SLIDING tur=DIVING oxy=7.3 combo=2 show=13 passed=41
+  t= 237.0  x= 51561 y=345 zone=3 control=turtle mount=RIDING rab=SLIDING tur=DIVING oxy=7.0 combo=0 show=14 passed=42
+  t= 242.0  x= 52676 y=300 zone=3 control=turtle mount=RIDING rab=RELAXED tur=CRUISING oxy=8.0 combo=1 show=14 passed=43
+  t= 247.1  x= 53910 y=345 zone=3 control=turtle mount=RIDING rab=SLIDING tur=DIVING oxy=7.2 combo=2 show=14 passed=44
+  t= 252.1  x= 55210 y=318 zone=3 control=turtle mount=RIDING rab=RELAXED tur=SURFACING oxy=6.9 combo=1 show=15 passed=46
+  t= 257.1  x= 56367 y=302 zone=3 control=rabbit mount=RIDING rab=RIDING tur=SINKING oxy=8.0 combo=2 show=15 passed=47
+  t= 262.2  x= 57564 y=300 zone=3 control=turtle mount=RIDING rab=SHOWTIME tur=CRUISING oxy=8.0 combo=0 show=15 passed=48
+  t= 267.2  x= 58764 y=300 zone=3 control=turtle mount=RIDING rab=RELAXED tur=CRUISING oxy=8.0 combo=1 show=16 passed=49
+  t= 272.3  x= 59793 y=300 zone=3 control=turtle mount=RIDING rab=SLIDING tur=CRUISING oxy=8.0 combo=2 show=16 passed=50
+  t= 277.3  x= 61024 y=303 zone=3 control=turtle mount=RIDING rab=SHOWTIME tur=DIVING oxy=7.3 combo=0 show=16 passed=51
+  t= 282.3  x= 62231 y=345 zone=3 control=turtle mount=RIDING rab=RELAXED tur=DIVING oxy=7.5 combo=1 show=17 passed=52
+  t= 287.4  x= 63389 y=306 zone=3 control=rabbit mount=RIDING rab=RIDING tur=SINKING oxy=8.0 combo=2 show=17 passed=53
+  t= 292.4  x= 64673 y=345 zone=3 control=turtle mount=RIDING rab=SLIDING tur=DIVING oxy=7.3 combo=0 show=18 passed=54
+  t= 297.4  x= 65880 y=300 zone=3 control=turtle mount=RIDING rab=SLIDING tur=CRUISING oxy=8.0 combo=1 show=18 passed=55
+  ok  run 2 finish captured
+  FINISH  run=2 time=297.8 score=12550 grade=S passed=55/55 casualties=0 engine=0 show=18 streak=55
+  ok  run 2 reached result screen
+  ok  run 2 state RESULT
+  ok  run 2 result shows score + streak (zh)
+  ok  run 2 result shows best records (zh)
+  ok  run 1 simulated >= 240 s (297.6)
+  ok  run 2 simulated >= 240 s (297.8)
+  ok  run 1 visited all 3 zones
+  ok  run 1 passed >= 40 groups (55/55)
+  ok  run 1 grade in S-D (S)
+  ok  run 2 visited all 3 zones
+  ok  run 2 passed >= 40 groups (55/55)
+  ok  run 2 grade in S-D (S)
+  ok  run 2 started from result Retry
+  ok  no accident lasts >=5s (max 0.00s)
+  ok  no unrecoverable stall (max 0.0s)
+  ok  best.json exists
+  ok  best.json is valid JSON
+  ok  best.json stores 4 record fields
+  BEST  time=296.63 accidents=0.0 score=12550.0 streak=55.0  -> C:/Users/26549/AppData/Roaming/Godot/app_userdata/Turbbit Bro!/best.json
+  
+  RESULT  run1 time=297.6 score=12550 grade=S passed=55 accidents=0
+  RESULT  run2 time=297.8 score=12550 grade=S passed=55 accidents=0  (Retry)
+  RESULT  zones=[1, 2, 3]  max_accident=0.00s  max_stuck=0.0s  failures=0
+  log -> D:/GAMESTUDIO/TURBBIT/docs/reports/stage4-fullrun-zh.log
+STAGE3 PLAYTEST: PASS
+BEST_SHA 6af317c2f5170548f86ae9117b651b4b338a9204b838d157d98e04f7da1a7ba6

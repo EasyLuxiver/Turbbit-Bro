@@ -1,0 +1,67 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+  ok  main menu exposes 3 native buttons (3)
+  ok  start button visible
+  ok  settings button visible
+  ok  quit button visible
+  ok  start button has a real on-screen rect
+  FAIL mouse hover reaches the start button (hover style applies)
+    click '开始游戏' at (799.5, 477.0) (viewport (1600.0, 900.0))
+  FAIL mouse click on START GAME enters the race
+  FAIL race state RUNNING
+    click '退出游戏' at (799.5, 625.0) (viewport (1600.0, 900.0))
+  FAIL quit confirmation offers cancel + confirm
+  FAIL quit confirmation defaults focus to CANCEL
+  ok  confirm does not change state
+  FAIL click target missing
+  ok  cancel closes the confirmation and returns to the menu
+  ok  still in MENU after cancel
+    click '设置' at (799.5, 553.0) (viewport (1600.0, 900.0))
+  FAIL settings shows a language button
+  FAIL click target missing
+  FAIL mouse click on language button switches language
+  ok  language choice persisted after menu click
+  FAIL settings has a back button
+  FAIL click target missing
+  ok  back returns to main menu
+  ok  pause menu shows CONTINUE
+  ok  pause menu shows RESTART
+  ok  pause menu shows MAIN MENU
+    click '继续游戏' at (800.0, 406.0) (viewport (1600.0, 900.0))
+  FAIL mouse click on CONTINUE resumes the race
+    click '重新开始' at (800.0, 482.0) (viewport (1600.0, 900.0))
+  ok  restart reloads the race
+  ok  restart resets the run
+    click '返回主菜单' at (800.0, 554.0) (viewport (1600.0, 900.0))
+  FAIL mouse click on MAIN MENU returns to the menu
+  FAIL state MENU after leaving
+  ok  result shows PLAY AGAIN + MAIN MENU buttons
+    click '再玩一次' at (560.0, 702.0) (viewport (1600.0, 900.0))
+  FAIL mouse click on PLAY AGAIN starts a race
+SCRIPT ERROR: Invalid assignment of property or key 'test_disable_hazards' with value of type 'bool' on a base object of type 'Control (result.gd)'.
+   at: _test_result_mouse (res://scripts/test/stage4_menu_input.gd:203)
+   GDScript backtrace (most recent call first):
+       [0] _test_result_mouse (res://scripts/test/stage4_menu_input.gd:203)
+       [1] _frames (res://scripts/test/stage4_menu_input.gd:311)
+  ok  a button holds keyboard focus on entry
+  ok  DOWN moves focus to another button
+  ok  UP returns focus (开始游戏)
+  ok  SPACE activates the focused button
+  ok  race scene is live after keyboard start
+  ok  menu tests do not touch best.json
+STAGE4 MENU INPUT: FAIL
+  - mouse hover reaches the start button (hover style applies)
+  - mouse click on START GAME enters the race
+  - race state RUNNING
+  - quit confirmation offers cancel + confirm
+  - quit confirmation defaults focus to CANCEL
+  - click target missing
+  - settings shows a language button
+  - click target missing
+  - mouse click on language button switches language
+  - settings has a back button
+  - click target missing
+  - mouse click on CONTINUE resumes the race
+  - mouse click on MAIN MENU returns to the menu
+  - state MENU after leaving
+  - mouse click on PLAY AGAIN starts a race

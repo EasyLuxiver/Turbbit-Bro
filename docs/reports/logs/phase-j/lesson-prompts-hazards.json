@@ -1,0 +1,488 @@
+{
+  "accident_episodes": 38,
+  "accident_seconds": 49.2,
+  "emissions": [
+    {
+      "kind": "prompt",
+      "sim": 0.0,
+      "text": "↓ CROUCH"
+    },
+    {
+      "kind": "prompt",
+      "sim": 4.47,
+      "text": "↑ JUMP"
+    },
+    {
+      "kind": "prompt",
+      "sim": 10.23,
+      "text": "↓ CROUCH"
+    },
+    {
+      "kind": "prompt",
+      "sim": 15.97,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 15.97,
+      "text": ""
+    },
+    {
+      "kind": "prompt",
+      "sim": 28.38,
+      "text": "SHIFT + ↑ TURTLE LEAP"
+    },
+    {
+      "kind": "hint",
+      "sim": 33.2,
+      "text": "WAVE HIT - TAKE THE TURTLE TO STEADY"
+    },
+    {
+      "kind": "prompt",
+      "sim": 33.22,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 33.22,
+      "text": ""
+    },
+    {
+      "kind": "prompt",
+      "sim": 35.27,
+      "text": "SHIFT + HOLD ↓ TURTLE DIVE"
+    },
+    {
+      "kind": "hint",
+      "sim": 40.07,
+      "text": "WAVE HIT - TAKE THE TURTLE TO STEADY"
+    },
+    {
+      "kind": "prompt",
+      "sim": 47.05,
+      "text": "↑ RABBIT JUMP → SHIFT → ↓ TURTLE DIVE"
+    },
+    {
+      "kind": "hint",
+      "sim": 51.85,
+      "text": "WAVE HIT - TAKE THE TURTLE TO STEADY"
+    },
+    {
+      "kind": "prompt",
+      "sim": 51.87,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 51.87,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 58.17,
+      "text": "WAVE HIT - TAKE THE TURTLE TO STEADY"
+    },
+    {
+      "kind": "prompt",
+      "sim": 59.33,
+      "text": "SHIFT + ↑ LEAP → SHIFT RABBIT → ↑ KICK"
+    },
+    {
+      "kind": "hint",
+      "sim": 64.12,
+      "text": "WAVE HIT - TAKE THE TURTLE TO STEADY"
+    },
+    {
+      "kind": "prompt",
+      "sim": 70.78,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 70.78,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 73.78,
+      "text": "ZONE 2  CORAL CHAOS - READ THE DIRECTION, PICK THE BRO"
+    },
+    {
+      "kind": "hint",
+      "sim": 87.62,
+      "text": "WAVE HIT - TAKE THE TURTLE TO STEADY"
+    },
+    {
+      "kind": "prompt",
+      "sim": 87.63,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 87.63,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 94.03,
+      "text": "WAVE HIT - TAKE THE TURTLE TO STEADY"
+    },
+    {
+      "kind": "hint",
+      "sim": 105.05,
+      "text": "WAVE HIT - TAKE THE TURTLE TO STEADY"
+    },
+    {
+      "kind": "prompt",
+      "sim": 105.07,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 105.07,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 122.37,
+      "text": "WAVE HIT - TAKE THE TURTLE TO STEADY"
+    },
+    {
+      "kind": "prompt",
+      "sim": 122.38,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 122.38,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 134.13,
+      "text": "WAVE HIT - TAKE THE TURTLE TO STEADY"
+    },
+    {
+      "kind": "prompt",
+      "sim": 140.12,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 140.12,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 146.53,
+      "text": "WAVE HIT - TAKE THE TURTLE TO STEADY"
+    },
+    {
+      "kind": "prompt",
+      "sim": 158.07,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 158.07,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 163.85,
+      "text": "WAVE HIT - TAKE THE TURTLE TO STEADY"
+    },
+    {
+      "kind": "hint",
+      "sim": 174.87,
+      "text": "WAVE HIT - TAKE THE TURTLE TO STEADY"
+    },
+    {
+      "kind": "prompt",
+      "sim": 174.88,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 174.88,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 181.5,
+      "text": "WAVE HIT - TAKE THE TURTLE TO STEADY"
+    },
+    {
+      "kind": "hint",
+      "sim": 185.9,
+      "text": "ZONE 3  MUSCLE MAYHEM - TWO ROUTES, NO MASHING"
+    },
+    {
+      "kind": "hint",
+      "sim": 186.48,
+      "text": "WAVE HIT - TAKE THE TURTLE TO STEADY"
+    },
+    {
+      "kind": "prompt",
+      "sim": 191.57,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 191.57,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 201.7,
+      "text": "WAVE HIT - TAKE THE TURTLE TO STEADY"
+    },
+    {
+      "kind": "hint",
+      "sim": 207.63,
+      "text": "WAVE HIT - TAKE THE TURTLE TO STEADY"
+    },
+    {
+      "kind": "prompt",
+      "sim": 207.65,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 207.65,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 218.15,
+      "text": "WAVE HIT - TAKE THE TURTLE TO STEADY"
+    },
+    {
+      "kind": "prompt",
+      "sim": 223.23,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 223.23,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 233.35,
+      "text": "WAVE HIT - TAKE THE TURTLE TO STEADY"
+    },
+    {
+      "kind": "hint",
+      "sim": 239.32,
+      "text": "WAVE HIT - TAKE THE TURTLE TO STEADY"
+    },
+    {
+      "kind": "prompt",
+      "sim": 239.33,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 239.33,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 249.83,
+      "text": "WAVE HIT - TAKE THE TURTLE TO STEADY"
+    },
+    {
+      "kind": "prompt",
+      "sim": 254.92,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 254.92,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 266.35,
+      "text": "WAVE HIT - TAKE THE TURTLE TO STEADY"
+    },
+    {
+      "kind": "prompt",
+      "sim": 271.72,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 271.72,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 276.9,
+      "text": "WAVE HIT - TAKE THE TURTLE TO STEADY"
+    },
+    {
+      "kind": "prompt",
+      "sim": 286.88,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 286.88,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 292.13,
+      "text": "WAVE HIT - TAKE THE TURTLE TO STEADY"
+    },
+    {
+      "kind": "hint",
+      "sim": 298.07,
+      "text": "WAVE HIT - TAKE THE TURTLE TO STEADY"
+    },
+    {
+      "kind": "prompt",
+      "sim": 303.43,
+      "text": ""
+    },
+    {
+      "kind": "hint",
+      "sim": 303.43,
+      "text": ""
+    }
+  ],
+  "first_of_kind": {
+    "DIVE_GATE": {
+      "group": "gate1",
+      "start": 8400.0,
+      "zone": 1
+    },
+    "FLOATING_LOG": {
+      "group": "log1",
+      "start": 10920.0,
+      "zone": 1
+    },
+    "HIGH_WALL": {
+      "group": "wall1",
+      "start": 13300.0,
+      "zone": 1
+    },
+    "LOW_BEAM": {
+      "group": "beam1",
+      "start": 3700.0,
+      "zone": 1
+    },
+    "LOW_BIRD": {
+      "group": "bird1",
+      "start": 1300.0,
+      "zone": 1
+    },
+    "SHARK": {
+      "group": "shark1",
+      "start": 7200.0,
+      "zone": 1
+    },
+    "SURFACE_ROCK": {
+      "group": "rock1",
+      "start": 2400.0,
+      "zone": 1
+    }
+  },
+  "generated_at": "2026-11-12T12:57:24",
+  "note": "零输入、碰撞开启的自动跑；只证明提示触发距离，不是真人试玩。",
+  "records": [
+    {
+      "base_speed": 220.0,
+      "distance_px": 819.3,
+      "group": "bird1",
+      "group_start_x": 1300.0,
+      "kind": "LOW_BIRD",
+      "prompt_emitted_within_0_1s": true,
+      "prompt_text": "↓ CROUCH",
+      "seconds_to_obstacle": 3.72,
+      "sim": 0.02,
+      "turtle_x": 480.7,
+      "zone": 1
+    },
+    {
+      "base_speed": 220.0,
+      "distance_px": 995.2,
+      "group": "rock1",
+      "group_start_x": 2400.0,
+      "kind": "SURFACE_ROCK",
+      "prompt_emitted_within_0_1s": true,
+      "prompt_text": "↑ JUMP",
+      "seconds_to_obstacle": 4.52,
+      "sim": 4.48,
+      "turtle_x": 1404.8,
+      "zone": 1
+    },
+    {
+      "base_speed": 220.0,
+      "distance_px": 1096.6,
+      "group": "beam1",
+      "group_start_x": 3700.0,
+      "kind": "LOW_BEAM",
+      "prompt_emitted_within_0_1s": true,
+      "prompt_text": "↓ CROUCH",
+      "seconds_to_obstacle": 4.98,
+      "sim": 10.25,
+      "turtle_x": 2603.4,
+      "zone": 1
+    },
+    {
+      "base_speed": 220.0,
+      "distance_px": 1095.5,
+      "group": "shark1",
+      "group_start_x": 7200.0,
+      "kind": "SHARK",
+      "prompt_emitted_within_0_1s": true,
+      "prompt_text": "SHIFT + ↑ TURTLE LEAP",
+      "seconds_to_obstacle": 4.98,
+      "sim": 28.4,
+      "turtle_x": 6104.5,
+      "zone": 1
+    },
+    {
+      "base_speed": 220.0,
+      "distance_px": 1098.6,
+      "group": "gate1",
+      "group_start_x": 8400.0,
+      "kind": "DIVE_GATE",
+      "prompt_emitted_within_0_1s": true,
+      "prompt_text": "SHIFT + HOLD ↓ TURTLE DIVE",
+      "seconds_to_obstacle": 4.99,
+      "sim": 35.28,
+      "turtle_x": 7301.4,
+      "zone": 1
+    },
+    {
+      "base_speed": 220.0,
+      "distance_px": 1099.0,
+      "group": "log1",
+      "group_start_x": 10920.0,
+      "kind": "FLOATING_LOG",
+      "prompt_emitted_within_0_1s": true,
+      "prompt_text": "↑ RABBIT JUMP → SHIFT → ↓ TURTLE DIVE",
+      "seconds_to_obstacle": 5.0,
+      "sim": 47.07,
+      "turtle_x": 9821.0,
+      "zone": 1
+    },
+    {
+      "base_speed": 220.0,
+      "distance_px": 1096.6,
+      "group": "wall1",
+      "group_start_x": 13300.0,
+      "kind": "HIGH_WALL",
+      "prompt_emitted_within_0_1s": true,
+      "prompt_text": "SHIFT + ↑ LEAP → SHIFT RABBIT → ↑ KICK",
+      "seconds_to_obstacle": 4.98,
+      "sim": 59.35,
+      "turtle_x": 12203.4,
+      "zone": 1
+    }
+  ]
+}

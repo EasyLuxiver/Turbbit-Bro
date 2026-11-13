@@ -1,0 +1,198 @@
+{
+  "accident_episodes": 0,
+  "accident_seconds": 0.0,
+  "emissions": [
+    {
+      "kind": "prompt",
+      "sim": 0.0,
+      "text": "↓ 趴低"
+    },
+    {
+      "kind": "prompt",
+      "sim": 5.83,
+      "text": "↑ 跳跃"
+    },
+    {
+      "kind": "prompt",
+      "sim": 10.47,
+      "text": "SHIFT + ↓ 按住下潜"
+    },
+    {
+      "kind": "prompt",
+      "sim": 23.7,
+      "text": "↑ 兔子跳 → SHIFT 乌龟 → ↓ 潜"
+    },
+    {
+      "kind": "prompt",
+      "sim": 29.72,
+      "text": "SHIFT + ↑ 乌龟跃起"
+    },
+    {
+      "kind": "hint",
+      "sim": 30.62,
+      "text": "这组会动 - 看准空隙再上"
+    },
+    {
+      "kind": "prompt",
+      "sim": 40.27,
+      "text": "↓ 趴低"
+    },
+    {
+      "kind": "prompt",
+      "sim": 46.63,
+      "text": "SHIFT + ↑ 乌龟跃起 → SHIFT 兔子 → ↑ 蹬踏"
+    },
+    {
+      "kind": "hint",
+      "sim": 72.6,
+      "text": "区域 2 珊瑚乱流 - 障碍换方向来，判断该换谁"
+    },
+    {
+      "kind": "hint",
+      "sim": 73.7,
+      "text": "这组会动 - 看准空隙再上"
+    },
+    {
+      "kind": "hint",
+      "sim": 182.03,
+      "text": "这组会动 - 看准空隙再上"
+    },
+    {
+      "kind": "hint",
+      "sim": 183.72,
+      "text": "区域 3 肌肉狂潮 - 龟兔各走一条路，别靠连点"
+    }
+  ],
+  "first_of_kind": {
+    "DIVE_GATE": {
+      "group": "gate1",
+      "start": 3800.0,
+      "zone": 1
+    },
+    "FLOATING_LOG": {
+      "group": "log1",
+      "start": 6400.0,
+      "zone": 1
+    },
+    "HIGH_WALL": {
+      "group": "wall1",
+      "start": 10860.0,
+      "zone": 1
+    },
+    "LOW_BEAM": {
+      "group": "beam2",
+      "start": 9600.0,
+      "zone": 1
+    },
+    "LOW_BIRD": {
+      "group": "bird1",
+      "start": 1560.0,
+      "zone": 1
+    },
+    "SHARK": {
+      "group": "shark1",
+      "start": 7250.0,
+      "zone": 1
+    },
+    "SURFACE_ROCK": {
+      "group": "rock1",
+      "start": 2500.0,
+      "zone": 1
+    }
+  },
+  "generated_at": "2026-11-13T19:45:32",
+  "note": "关碰撞、零输入的自动跑；只证明提示触发距离，不是真人试玩。",
+  "records": [
+    {
+      "base_speed": 220.0,
+      "distance_px": 1068.3,
+      "group": "bird1",
+      "group_start_x": 1560.0,
+      "kind": "LOW_BIRD",
+      "prompt_emitted_within_0_1s": true,
+      "prompt_text": "↓ 趴低",
+      "seconds_to_obstacle": 4.86,
+      "sim": 0.02,
+      "turtle_x": 491.7,
+      "zone": 1
+    },
+    {
+      "base_speed": 220.0,
+      "distance_px": 737.0,
+      "group": "rock1",
+      "group_start_x": 2500.0,
+      "kind": "SURFACE_ROCK",
+      "prompt_emitted_within_0_1s": true,
+      "prompt_text": "↑ 跳跃",
+      "seconds_to_obstacle": 3.35,
+      "sim": 5.85,
+      "turtle_x": 1763.0,
+      "zone": 1
+    },
+    {
+      "base_speed": 220.0,
+      "distance_px": 1097.9,
+      "group": "gate1",
+      "group_start_x": 3800.0,
+      "kind": "DIVE_GATE",
+      "prompt_emitted_within_0_1s": true,
+      "prompt_text": "SHIFT + ↓ 按住下潜",
+      "seconds_to_obstacle": 4.99,
+      "sim": 10.48,
+      "turtle_x": 2702.1,
+      "zone": 1
+    },
+    {
+      "base_speed": 220.0,
+      "distance_px": 1077.7,
+      "group": "log1",
+      "group_start_x": 6400.0,
+      "kind": "FLOATING_LOG",
+      "prompt_emitted_within_0_1s": true,
+      "prompt_text": "↑ 兔子跳 → SHIFT 乌龟 → ↓ 潜",
+      "seconds_to_obstacle": 4.9,
+      "sim": 23.72,
+      "turtle_x": 5322.3,
+      "zone": 1
+    },
+    {
+      "base_speed": 220.0,
+      "distance_px": 736.5,
+      "group": "shark1",
+      "group_start_x": 7250.0,
+      "kind": "SHARK",
+      "prompt_emitted_within_0_1s": true,
+      "prompt_text": "SHIFT + ↑ 乌龟跃起",
+      "seconds_to_obstacle": 3.35,
+      "sim": 29.73,
+      "turtle_x": 6513.5,
+      "zone": 1
+    },
+    {
+      "base_speed": 220.0,
+      "distance_px": 997.7,
+      "group": "beam2",
+      "group_start_x": 9600.0,
+      "kind": "LOW_BEAM",
+      "prompt_emitted_within_0_1s": true,
+      "prompt_text": "↓ 趴低",
+      "seconds_to_obstacle": 4.54,
+      "sim": 40.28,
+      "turtle_x": 8602.3,
+      "zone": 1
+    },
+    {
+      "base_speed": 220.0,
+      "distance_px": 997.2,
+      "group": "wall1",
+      "group_start_x": 10860.0,
+      "kind": "HIGH_WALL",
+      "prompt_emitted_within_0_1s": true,
+      "prompt_text": "SHIFT + ↑ 乌龟跃起 → SHIFT 兔子 → ↑ 蹬踏",
+      "seconds_to_obstacle": 4.53,
+      "sim": 46.65,
+      "turtle_x": 9862.8,
+      "zone": 1
+    }
+  ]
+}

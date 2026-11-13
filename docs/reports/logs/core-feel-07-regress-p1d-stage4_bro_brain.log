@@ -1,0 +1,16 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+LEVEL SEED 20261112
+SNACK DRAW #1 group=gate1 zone=1 kind=DIVE_GATE (fixed)
+SNACK DRAW #2 group=beam1 zone=1 kind=LOW_BIRD (was LOW_BEAM)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=SURFACE_ROCK (was DIVE_GATE)
+BRAIN STAGES rabbit: {"CALM":0.02,"DISTRACTED":3.02,"MISCHIEF":9.0,"RESTLESS":6.02}
+BRAIN STAGES turtle: {"CALM":0.02,"DISTRACTED":3.02,"MISCHIEF":9.0,"RESTLESS":6.02}
+STAGE4 BRO BRAIN: PASS
+BRO BRAIN data: {"no_second_health_system":{"accident_count":0,"accident_state":"NONE","bro_meter":0},"rabbit_air_control":{"calm_dx":170.9,"mischief_dx":144.9},"rabbit_stages":{"air_scale_min":0.55,"daze_max":0.0,"offset_max_px":25.7,"role":"rabbit","samples":{"12.0s":{"air_scale":0.55,"drift":12.0,"offset_x":-24.9,"offset_y":-1.0,"state":"MISCHIEF"},"3.0s":{"air_scale":1.0,"drift":3.0,"offset_x":0.0,"offset_y":0.0,"state":"CALM"},"6.0s":{"air_scale":1.0,"drift":6.0,"offset_x":-7.3,"offset_y":0.0,"state":"DISTRACTED"},"9.0s":{"air_scale":0.75,"drift":9.0,"offset_x":-12.5,"offset_y":1.0,"state":"MISCHIEF"}},"transitions":{"CALM":0.02,"DISTRACTED":3.02,"MISCHIEF":9.0,"RESTLESS":6.02}},"rapid_shift":{"after":10.5,"before":10.0,"switches":10},"switch_recovery":{"after_0_4s":10.0,"after_1_0s":9.0,"after_shift":10.0,"before_shift":10.0,"kept_after_switch_away":9.5,"remaining_recovery_seconds":5.25},"turtle_settle":{"drift_at_takeover":10.0,"idle_range_px":14.5,"settled_drift":0.0,"settled_speed":240.0,"settled_y":334.0,"takeover_range_px":10.5},"turtle_stages":{"role":"turtle","samples":{"12.0s":{"drift":12.0,"speed":198.0,"state":"MISCHIEF","y":327.5},"3.0s":{"drift":3.0,"speed":220.0,"state":"CALM","y":334.0},"6.0s":{"drift":6.0,"speed":211.2,"state":"DISTRACTED","y":336.0},"9.0s":{"drift":9.0,"speed":198.0,"state":"MISCHIEF","y":335.9}},"speed_min":198.0,"transitions":{"CALM":0.02,"DISTRACTED":3.02,"MISCHIEF":9.0,"RESTLESS":6.02},"y_max":341.3,"y_min":325.4}}

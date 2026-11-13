@@ -1,0 +1,119 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+  STAGE 1 SCRIPTED RUN  duration=60s  time_scale=2.0
+  ok  race scene loaded
+  ok  state RUNNING
+  t= 1.01  state=NONE control=rabbit rabbit=RIDING turtle=CRUISING mount=RIDING slide=0 pickup=0 x=605
+  t= 2.05  state=NONE control=rabbit rabbit=JUMPING turtle=CRUISING mount=AIRBORNE slide=0 pickup=0 x=833
+  t= 2.94  PICKUP #1  mount=RIDING
+  t= 3.01  PLANNED SHIFT -> turtle
+  t= 3.08  state=NONE control=turtle rabbit=RIDING turtle=CRUISING mount=RIDING slide=0 pickup=1 x=1060
+  t= 4.12  state=NONE control=turtle rabbit=RIDING turtle=SURFACING mount=RIDING slide=0 pickup=1 x=1287
+  t= 5.16  state=NONE control=turtle rabbit=RIDING turtle=DIVING mount=RIDING slide=0 pickup=1 x=1515
+  t= 6.01  PLANNED SHIFT -> rabbit
+  t= 6.18  state=NONE control=rabbit rabbit=JUMPING turtle=SURFACING mount=AIRBORNE slide=0 pickup=1 x=1742
+  t= 7.19  state=NONE control=rabbit rabbit=FALLING turtle=CRUISING mount=AIRBORNE slide=0 pickup=1 x=1962
+  t= 7.85  PICKUP #2  mount=RIDING
+  t= 8.22  state=NONE control=rabbit rabbit=JUMPING turtle=CRUISING mount=AIRBORNE slide=0 pickup=2 x=2189
+  t= 9.02  PLANNED SHIFT -> turtle
+  t= 9.26  state=NONE control=turtle rabbit=FALLING turtle=CRUISING mount=AIRBORNE slide=0 pickup=2 x=2417
+  t=10.11  ACCIDENT RABBIT_WATER  control=turtle
+  t=10.29  state=RABBIT_WATER control=turtle rabbit=FALLING_WATER turtle=DIVING mount=RESCUING slide=0 pickup=2 x=2646
+  t=11.31  state=RABBIT_WATER control=turtle rabbit=FALLING_WATER turtle=DIVING mount=RESCUING slide=0 pickup=2 x=2920
+  t=11.71  RECOVERED  control=turtle
+  t=12.02  PLANNED SHIFT -> rabbit
+  t=12.32  state=NONE control=rabbit rabbit=RIDING turtle=SURFACING mount=RIDING slide=0 pickup=2 x=3212
+  t=13.35  state=NONE control=rabbit rabbit=JUMPING turtle=SURFACING mount=AIRBORNE slide=0 pickup=2 x=3440
+  t=14.22  PICKUP #3  mount=RIDING
+  t=14.39  state=NONE control=rabbit rabbit=RIDING turtle=CRUISING mount=RIDING slide=0 pickup=3 x=3667
+  t=14.44  ACCIDENT RABBIT_WATER  control=turtle
+  t=15.02  PLANNED SHIFT -> turtle
+  t=15.42  state=RABBIT_WATER control=turtle rabbit=FALLING_WATER turtle=SURFACING mount=RESCUING slide=0 pickup=3 x=3894
+  t=16.04  RECOVERED  control=turtle
+  t=16.44  state=NONE control=turtle rabbit=RIDING turtle=DIVING mount=RIDING slide=0 pickup=3 x=4122
+  t=17.45  state=NONE control=turtle rabbit=RIDING turtle=SURFACING mount=RIDING slide=0 pickup=3 x=4342
+  t=18.02  PLANNED SHIFT -> rabbit
+  t=18.49  state=NONE control=rabbit rabbit=JUMPING turtle=SURFACING mount=AIRBORNE slide=0 pickup=3 x=4569
+  t=19.52  state=NONE control=rabbit rabbit=FALLING turtle=CRUISING mount=AIRBORNE slide=0 pickup=3 x=4796
+  t=20.21  ACCIDENT RABBIT_STUN  control=rabbit
+  t=20.21  PICKUP #4  mount=RIDING
+  t=20.56  state=RABBIT_STUN control=rabbit rabbit=STUNNED turtle=CRUISING mount=RIDING slide=20 pickup=4 x=5001
+  t=21.01  PLANNED SHIFT -> rabbit
+  t=21.05  RECOVERED  control=rabbit
+  t=21.59  state=NONE control=rabbit rabbit=RIDING turtle=CRUISING mount=RIDING slide=18 pickup=4 x=5192
+  t=22.61  state=NONE control=rabbit rabbit=JUMPING turtle=CRUISING mount=AIRBORNE slide=0 pickup=4 x=5419
+  t=23.62  state=NONE control=rabbit rabbit=FALLING turtle=CRUISING mount=AIRBORNE slide=0 pickup=4 x=5639
+  t=24.02  PLANNED SHIFT -> turtle
+  t=24.55  ACCIDENT RABBIT_WATER  control=turtle
+  t=24.62  state=RABBIT_WATER control=turtle rabbit=FALLING_WATER turtle=DIVING mount=RESCUING slide=0 pickup=4 x=5859
+  t=25.64  state=RABBIT_WATER control=turtle rabbit=FALLING_WATER turtle=SURFACING mount=RESCUING slide=0 pickup=4 x=6086
+  t=26.15  RECOVERED  control=turtle
+  t=26.65  state=NONE control=turtle rabbit=RIDING turtle=SURFACING mount=RIDING slide=0 pickup=4 x=6306
+  t=27.02  PLANNED SHIFT -> rabbit
+  t=27.69  state=NONE control=rabbit rabbit=JUMPING turtle=SURFACING mount=AIRBORNE slide=0 pickup=4 x=6534
+  t=28.72  state=NONE control=rabbit rabbit=FALLING turtle=CRUISING mount=AIRBORNE slide=0 pickup=4 x=6761
+  t=28.89  PICKUP #5  mount=RIDING
+  t=29.75  state=NONE control=rabbit rabbit=JUMPING turtle=CRUISING mount=AIRBORNE slide=0 pickup=5 x=6988
+  t=30.02  PLANNED SHIFT -> turtle
+  t=30.79  state=NONE control=turtle rabbit=FALLING turtle=DUNKED mount=AIRBORNE slide=0 pickup=5 x=7208
+  t=31.05  PICKUP #6  mount=RIDING
+  t=31.82  state=NONE control=turtle rabbit=RIDING turtle=DUNKED mount=RIDING slide=0 pickup=6 x=7435
+  t=32.84  state=NONE control=turtle rabbit=RIDING turtle=SURFACING mount=RIDING slide=0 pickup=6 x=7663
+  t=33.02  PLANNED SHIFT -> rabbit
+  t=33.85  state=NONE control=rabbit rabbit=JUMPING turtle=SURFACING mount=AIRBORNE slide=0 pickup=6 x=7883
+  t=34.89  state=NONE control=rabbit rabbit=FALLING turtle=CRUISING mount=AIRBORNE slide=0 pickup=6 x=8110
+  t=35.02  PICKUP #7  mount=RIDING
+  t=35.92  state=NONE control=rabbit rabbit=JUMPING turtle=CRUISING mount=AIRBORNE slide=0 pickup=7 x=8337
+  t=36.02  PLANNED SHIFT -> turtle
+  t=36.95  state=NONE control=turtle rabbit=FALLING turtle=DUNKED mount=AIRBORNE slide=0 pickup=7 x=8557
+  t=37.32  ACCIDENT RABBIT_WATER  control=turtle
+  t=37.99  state=RABBIT_WATER control=turtle rabbit=FALLING_WATER turtle=RECOVERING mount=RESCUING slide=0 pickup=7 x=8784
+  t=38.91  RECOVERED  control=turtle
+  t=39.02  PLANNED SHIFT -> rabbit
+  t=39.02  state=NONE control=rabbit rabbit=RIDING turtle=SURFACING mount=RIDING slide=0 pickup=7 x=9011
+  t=40.06  state=NONE control=rabbit rabbit=JUMPING turtle=CRUISING mount=AIRBORNE slide=0 pickup=7 x=9239
+  t=40.95  PICKUP #8  mount=RIDING
+  t=41.08  state=NONE control=rabbit rabbit=RIDING turtle=CRUISING mount=RIDING slide=0 pickup=8 x=9466
+  t=42.02  PLANNED SHIFT -> turtle
+  t=42.08  state=NONE control=turtle rabbit=JUMPING turtle=DIVING mount=AIRBORNE slide=0 pickup=8 x=9686
+  t=43.02  PICKUP #9  mount=RIDING
+  t=43.12  state=NONE control=turtle rabbit=RIDING turtle=SURFACING mount=RIDING slide=0 pickup=9 x=9913
+  t=44.15  state=NONE control=turtle rabbit=RIDING turtle=SURFACING mount=RIDING slide=0 pickup=9 x=10141
+  t=45.02  PLANNED SHIFT -> rabbit
+  t=45.19  state=NONE control=rabbit rabbit=JUMPING turtle=SURFACING mount=AIRBORNE slide=0 pickup=9 x=10368
+  t=46.22  state=NONE control=rabbit rabbit=FALLING turtle=SURFACING mount=AIRBORNE slide=0 pickup=9 x=10595
+  t=46.86  PICKUP #10  mount=RIDING
+  t=47.26  state=NONE control=rabbit rabbit=JUMPING turtle=DUNKED mount=AIRBORNE slide=0 pickup=10 x=10815
+  t=48.01  PLANNED SHIFT -> turtle
+  t=48.28  state=NONE control=turtle rabbit=FALLING turtle=DUNKED mount=AIRBORNE slide=0 pickup=10 x=11042
+  t=49.15  ACCIDENT RABBIT_WATER  control=turtle
+  t=49.28  state=RABBIT_WATER control=turtle rabbit=FALLING_WATER turtle=RECOVERING mount=RESCUING slide=0 pickup=10 x=11262
+  t=50.32  state=RABBIT_WATER control=turtle rabbit=FALLING_WATER turtle=DIVING mount=RESCUING slide=0 pickup=10 x=11490
+  t=50.75  RECOVERED  control=turtle
+  t=51.02  PLANNED SHIFT -> rabbit
+  t=51.35  state=NONE control=rabbit rabbit=JUMPING turtle=SURFACING mount=AIRBORNE slide=0 pickup=10 x=11717
+  t=52.39  state=NONE control=rabbit rabbit=FALLING turtle=CRUISING mount=AIRBORNE slide=0 pickup=10 x=11944
+  t=52.98  PICKUP #11  mount=RIDING
+  t=53.42  state=NONE control=rabbit rabbit=JUMPING turtle=DUNKED mount=AIRBORNE slide=0 pickup=11 x=12164
+  t=54.01  PLANNED SHIFT -> turtle
+  t=54.46  state=NONE control=turtle rabbit=FALLING turtle=RECOVERING mount=AIRBORNE slide=0 pickup=11 x=12391
+  t=54.91  PICKUP #12  mount=RIDING
+  t=55.49  state=NONE control=turtle rabbit=RIDING turtle=RECOVERING mount=RIDING slide=0 pickup=12 x=12618
+  t=56.51  state=NONE control=turtle rabbit=RIDING turtle=DIVING mount=RIDING slide=0 pickup=12 x=12846
+  t=57.02  PLANNED SHIFT -> rabbit
+  t=57.52  state=NONE control=rabbit rabbit=JUMPING turtle=SURFACING mount=AIRBORNE slide=0 pickup=12 x=13066
+  t=58.55  state=NONE control=rabbit rabbit=FALLING turtle=DUNKED mount=AIRBORNE slide=0 pickup=12 x=13285
+  t=59.12  PICKUP #13  mount=RIDING
+  t=59.59  state=NONE control=rabbit rabbit=RIDING turtle=DUNKED mount=RIDING slide=0 pickup=13 x=13513
+  t=60.02  PLANNED SHIFT -> turtle
+  ok  at least one planned SHIFT (20)
+  ok  at least one successful pickup (13)
+  ok  no accident lasts >=5s (max 1.60s)
+  ok  no >6s unrecoverable stall
+  ok  control remains valid
+  ok  ran full duration (60.02s)
+  
+  RESULT  simulated=60.02s  shifts=20  pickups=13  accidents=6
+  RESULT  max_accident=1.60s  stuck=0.00s  failures=0
+  log -> D:/GAMESTUDIO/TURBBIT/docs/reports/stage1-run.log
+STAGE1 PLAYTEST: PASS

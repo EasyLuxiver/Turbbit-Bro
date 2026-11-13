@@ -1,0 +1,1299 @@
+{
+  "cases": {
+    "c1_failed_brodive": {
+      "accident_count": 1,
+      "accident_signals": [
+        "RABBIT_WATER"
+      ],
+      "accident_state": "NONE",
+      "at_fall": {
+        "accident_count": 1,
+        "accident_signals": [
+          "RABBIT_WATER"
+        ],
+        "accident_state": "RABBIT_WATER",
+        "bro_meter": 1,
+        "events": [
+          {
+            "followups": [
+              {
+                "reason": "RABBIT_WATER",
+                "role": "rabbit",
+                "t": 1.45
+              }
+            ],
+            "group": "log1",
+            "id": 1,
+            "kind": "FLOATING_LOG",
+            "penalty_role": "turtle",
+            "rabbit_air": true,
+            "rescue": "NONE",
+            "roles": [
+              "turtle"
+            ],
+            "settled": true,
+            "settled_t": 0.35,
+            "t": 0.35
+          }
+        ],
+        "feedback": [
+          "下潜太晚 - 壳撞上浮木！"
+        ],
+        "hints": [
+          "浮木：兔子起跳后 SHIFT 给乌龟，它会自动下潜、过木自动上浮"
+        ],
+        "hit_at": 1.45,
+        "joint_count": 0,
+        "joint_pending": false,
+        "mistakes": [
+          "mistake:TURTLE_DIVE_LATE"
+        ]
+      },
+      "bro_meter": 1,
+      "dive_delay": 0.1,
+      "events": [
+        {
+          "followups": [
+            {
+              "reason": "RABBIT_WATER",
+              "role": "rabbit",
+              "t": 1.45
+            }
+          ],
+          "group": "log1",
+          "id": 1,
+          "kind": "FLOATING_LOG",
+          "penalty_role": "turtle",
+          "rabbit_air": true,
+          "rescue": "NONE",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "settled_t": 0.35,
+          "t": 0.35
+        }
+      ],
+      "feedback": [
+        "下潜太晚 - 壳撞上浮木！",
+        "接住了！兄弟！",
+        "兄弟回来了！右边这口气补上了"
+      ],
+      "hints": [
+        "浮木：兔子起跳后 SHIFT 给乌龟，它会自动下潜、过木自动上浮"
+      ],
+      "hit_at": 1.45,
+      "joint_count": 0,
+      "joint_pending": false,
+      "lead": 120.0,
+      "mistakes": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "mount_state": "RIDING",
+      "preload_meter": 0,
+      "rescue_reason": "caught",
+      "rescue_result": "caught",
+      "timeline": [
+        {
+          "group": "log1",
+          "id": 1,
+          "kind": "event",
+          "penalty_role": "turtle",
+          "rabbit_air": true,
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.35
+        },
+        {
+          "ahead_of_log": true,
+          "bro_meter": 1,
+          "kind": "mistake",
+          "reason": "mistake:TURTLE_DIVE_LATE",
+          "turtle_x": 6355.0,
+          "turtle_y": 334.0
+        }
+      ],
+      "water_at": 1.45
+    },
+    "c2_failed_brodive_at_2slots": {
+      "accident_count": 1,
+      "accident_signals": [],
+      "accident_state": "BRO_BREAK",
+      "at_fall": {
+        "accident_count": 1,
+        "accident_signals": [],
+        "accident_state": "BRO_BREAK",
+        "bro_meter": 3,
+        "events": [
+          {
+            "followups": [],
+            "group": "log1",
+            "id": 1,
+            "kind": "FLOATING_LOG",
+            "penalty_role": "turtle",
+            "rabbit_air": true,
+            "rescue": "NONE",
+            "roles": [
+              "turtle"
+            ],
+            "settled": true,
+            "settled_t": 0.35,
+            "t": 0.35
+          }
+        ],
+        "feedback": [
+          "下潜太晚 - 壳撞上浮木！"
+        ],
+        "hints": [
+          "浮木：兔子起跳后 SHIFT 给乌龟，它会自动下潜、过木自动上浮",
+          ""
+        ],
+        "hit_at": -1.0,
+        "joint_count": 1,
+        "joint_pending": true,
+        "mistakes": [
+          "mistake:TURTLE_DIVE_LATE"
+        ]
+      },
+      "bro_meter": 3,
+      "dive_delay": 0.1,
+      "events": [
+        {
+          "followups": [],
+          "group": "log1",
+          "id": 1,
+          "kind": "FLOATING_LOG",
+          "penalty_role": "turtle",
+          "rabbit_air": true,
+          "rescue": "NONE",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "settled_t": 0.35,
+          "t": 0.35
+        }
+      ],
+      "feedback": [
+        "下潜太晚 - 壳撞上浮木！"
+      ],
+      "hints": [
+        "浮木：兔子起跳后 SHIFT 给乌龟，它会自动下潜、过木自动上浮",
+        ""
+      ],
+      "hit_at": -1.0,
+      "joint_count": 1,
+      "joint_pending": true,
+      "lead": 120.0,
+      "mistakes": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "mount_state": "AIRBORNE",
+      "preload_meter": 2,
+      "rescue_reason": "",
+      "rescue_result": "",
+      "timeline": [
+        {
+          "group": "log1",
+          "id": 1,
+          "kind": "event",
+          "penalty_role": "turtle",
+          "rabbit_air": true,
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.35
+        },
+        {
+          "ahead_of_log": true,
+          "bro_meter": 3,
+          "kind": "mistake",
+          "reason": "mistake:TURTLE_DIVE_LATE",
+          "turtle_x": 6355.0,
+          "turtle_y": 334.0
+        },
+        {
+          "bro_meter": 3,
+          "kind": "joint_armed"
+        },
+        {
+          "kind": "joint_show_started"
+        }
+      ],
+      "water_at": -1.0
+    },
+    "c3_rabbit_water_alone": {
+      "accident_count": 1,
+      "accident_signals": [
+        "RABBIT_WATER"
+      ],
+      "accident_state": "RABBIT_WATER",
+      "bro_meter": 1,
+      "case": "rabbit_water_alone",
+      "events": [],
+      "feedback": [],
+      "hints": [
+        "壳停得太深 - 浮木组合请先 ↑ 起跳再 SHIFT，下潜和上浮会自动完成"
+      ],
+      "joint_count": 0,
+      "joint_pending": false,
+      "mistakes": [
+        "mistake:RABBIT_WATER"
+      ],
+      "timeline": [
+        {
+          "ahead_of_log": true,
+          "bro_meter": 1,
+          "kind": "mistake",
+          "reason": "mistake:RABBIT_WATER",
+          "turtle_x": 1182.3,
+          "turtle_y": 468.5
+        }
+      ],
+      "water_at": 1.28
+    },
+    "c4_independent_obstacle": {
+      "accident_count": 2,
+      "accident_signals": [
+        "RABBIT_WATER"
+      ],
+      "accident_state": "NONE",
+      "at_fall": {
+        "accident_count": 1,
+        "accident_signals": [
+          "RABBIT_WATER"
+        ],
+        "accident_state": "RABBIT_WATER",
+        "bro_meter": 1,
+        "events": [
+          {
+            "followups": [
+              {
+                "reason": "RABBIT_WATER",
+                "role": "rabbit",
+                "t": 1.45
+              }
+            ],
+            "group": "log1",
+            "id": 1,
+            "kind": "FLOATING_LOG",
+            "penalty_role": "turtle",
+            "rabbit_air": true,
+            "rescue": "NONE",
+            "roles": [
+              "turtle"
+            ],
+            "settled": true,
+            "settled_t": 0.35,
+            "t": 0.35
+          }
+        ],
+        "feedback": [
+          "下潜太晚 - 壳撞上浮木！"
+        ],
+        "hints": [
+          "浮木：兔子起跳后 SHIFT 给乌龟，它会自动下潜、过木自动上浮"
+        ],
+        "hit_at": 1.45,
+        "joint_count": 0,
+        "joint_pending": false,
+        "mistakes": [
+          "mistake:TURTLE_DIVE_LATE"
+        ]
+      },
+      "bro_meter": 2,
+      "dive_delay": 1.6,
+      "events": [
+        {
+          "followups": [
+            {
+              "reason": "RABBIT_WATER",
+              "role": "rabbit",
+              "t": 1.45
+            }
+          ],
+          "group": "log1",
+          "id": 1,
+          "kind": "FLOATING_LOG",
+          "penalty_role": "turtle",
+          "rabbit_air": true,
+          "rescue": "NONE",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "settled_t": 0.35,
+          "t": 0.35
+        },
+        {
+          "followups": [],
+          "group": "shark1",
+          "id": 2,
+          "kind": "SHARK",
+          "penalty_role": "turtle",
+          "rabbit_air": false,
+          "rescue": "NONE",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "settled_t": 7.27,
+          "t": 7.27
+        }
+      ],
+      "feedback": [
+        "下潜太晚 - 壳撞上浮木！",
+        "没接住……兔子被冲回壳上",
+        "鲨鱼从下面来的 - 壳翻了！"
+      ],
+      "hints": [
+        "浮木：兔子起跳后 SHIFT 给乌龟，它会自动下潜、过木自动上浮",
+        "这组会动 - 看准空隙再上",
+        "鲨鱼只咬壳 - 按 ↑ 跃起躲开",
+        "氧气偏低 - 换回乌龟就上浮"
+      ],
+      "hit_at": 1.45,
+      "joint_count": 0,
+      "joint_pending": false,
+      "lead": 120.0,
+      "mistakes": [
+        "mistake:TURTLE_DIVE_LATE",
+        "mistake:TURTLE_WAVE"
+      ],
+      "mount_state": "RIDING",
+      "preload_meter": 0,
+      "rescue_reason": "turtle_too_shallow",
+      "rescue_result": "missed",
+      "timeline": [
+        {
+          "group": "log1",
+          "id": 1,
+          "kind": "event",
+          "penalty_role": "turtle",
+          "rabbit_air": true,
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.35
+        },
+        {
+          "ahead_of_log": true,
+          "bro_meter": 1,
+          "kind": "mistake",
+          "reason": "mistake:TURTLE_DIVE_LATE",
+          "turtle_x": 6355.0,
+          "turtle_y": 334.0
+        },
+        {
+          "group": "shark1",
+          "id": 2,
+          "kind": "event",
+          "penalty_role": "turtle",
+          "rabbit_air": false,
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 7.27
+        },
+        {
+          "ahead_of_log": false,
+          "bro_meter": 2,
+          "kind": "mistake",
+          "reason": "mistake:TURTLE_WAVE",
+          "turtle_x": 7205.0,
+          "turtle_y": 484.0
+        }
+      ],
+      "water_at": 1.45
+    },
+    "c5_same_log_after": {
+      "accident_count": 1,
+      "accident_signals": [
+        "RABBIT_WATER"
+      ],
+      "accident_state": "NONE",
+      "at_fall": {
+        "accident_count": 1,
+        "accident_signals": [
+          "RABBIT_WATER"
+        ],
+        "accident_state": "RABBIT_WATER",
+        "bro_meter": 1,
+        "events": [
+          {
+            "followups": [],
+            "group": "log1",
+            "id": 1,
+            "kind": "FLOATING_LOG",
+            "penalty_role": "joint",
+            "rabbit_air": true,
+            "rescue": "NONE",
+            "roles": [
+              "rabbit",
+              "turtle"
+            ],
+            "settled": true,
+            "settled_t": 0.93,
+            "t": 0.93
+          }
+        ],
+        "feedback": [
+          "下潜太晚 - 壳撞上浮木！",
+          "跳跃高度不对 - 撞上浮木！"
+        ],
+        "hints": [
+          "浮木：兔子起跳后 SHIFT 给乌龟，它会自动下潜、过木自动上浮",
+          "浮木：先按 ↑ 让兔子起跳，再 SHIFT 给乌龟"
+        ],
+        "hit_at": 1.2,
+        "joint_count": 0,
+        "joint_pending": false,
+        "mistakes": [
+          "mistake:TURTLE_DIVE_LATE"
+        ]
+      },
+      "bro_meter": 1,
+      "dive_delay": 0.1,
+      "events": [
+        {
+          "followups": [],
+          "group": "log1",
+          "id": 1,
+          "kind": "FLOATING_LOG",
+          "penalty_role": "joint",
+          "rabbit_air": true,
+          "rescue": "NONE",
+          "roles": [
+            "rabbit",
+            "turtle"
+          ],
+          "settled": true,
+          "settled_t": 0.93,
+          "t": 0.93
+        }
+      ],
+      "feedback": [
+        "下潜太晚 - 壳撞上浮木！",
+        "跳跃高度不对 - 撞上浮木！",
+        "接住了！兄弟！",
+        "兄弟回来了！右边这口气补上了"
+      ],
+      "hints": [
+        "浮木：兔子起跳后 SHIFT 给乌龟，它会自动下潜、过木自动上浮",
+        "浮木：先按 ↑ 让兔子起跳，再 SHIFT 给乌龟"
+      ],
+      "hit_at": 1.2,
+      "joint_count": 0,
+      "joint_pending": false,
+      "lead": 250.0,
+      "mistakes": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "mount_state": "RIDING",
+      "preload_meter": 0,
+      "rescue_reason": "caught",
+      "rescue_result": "caught",
+      "timeline": [
+        {
+          "group": "log1",
+          "id": 1,
+          "kind": "event",
+          "penalty_role": "turtle",
+          "rabbit_air": true,
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.93
+        },
+        {
+          "ahead_of_log": true,
+          "bro_meter": 1,
+          "kind": "mistake",
+          "reason": "mistake:TURTLE_DIVE_LATE",
+          "turtle_x": 6355.0,
+          "turtle_y": 334.0
+        }
+      ],
+      "water_at": 1.2
+    },
+    "c6_second_fall_after_window": {
+      "accident_count": 2,
+      "accident_signals": [
+        "RABBIT_WATER",
+        "RABBIT_WATER"
+      ],
+      "accident_state": "RABBIT_WATER",
+      "bro_meter": 2,
+      "case": "second_fall_after_window",
+      "events": [
+        {
+          "followups": [
+            {
+              "reason": "RABBIT_WATER",
+              "role": "rabbit",
+              "t": 1.45
+            }
+          ],
+          "group": "log1",
+          "id": 1,
+          "kind": "FLOATING_LOG",
+          "penalty_role": "turtle",
+          "rabbit_air": true,
+          "rescue": "NONE",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "settled_t": 0.35,
+          "t": 0.35
+        }
+      ],
+      "feedback": [
+        "下潜太晚 - 壳撞上浮木！",
+        "接住了！兄弟！",
+        "兄弟回来了！右边这口气补上了"
+      ],
+      "first_mistakes": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "hints": [
+        "浮木：兔子起跳后 SHIFT 给乌龟，它会自动下潜、过木自动上浮",
+        "壳停得太深 - 浮木组合请先 ↑ 起跳再 SHIFT，下潜和上浮会自动完成",
+        "壳停得太深 - 浮木组合请先 ↑ 起跳再 SHIFT，下潜和上浮会自动完成"
+      ],
+      "joint_count": 0,
+      "joint_pending": false,
+      "mistakes": [
+        "mistake:TURTLE_DIVE_LATE",
+        "mistake:RABBIT_WATER"
+      ],
+      "second_fall_gap_s": 3.77,
+      "second_fall_t": 1.2,
+      "settled_t": 0.35,
+      "timeline": [
+        {
+          "ahead_of_log": false,
+          "bro_meter": 2,
+          "kind": "mistake",
+          "reason": "mistake:RABBIT_WATER",
+          "turtle_x": 6774.4,
+          "turtle_y": 462.0
+        }
+      ]
+    }
+  },
+  "generated_at": "2026-11-13T22:09:52",
+  "group": "log1",
+  "hazard_cooldown_s": 3.0,
+  "joint_window_s": 1.5,
+  "rescue_slow_speed": 90.0,
+  "sweep": [
+    {
+      "dive_delay": 0.1,
+      "event_penalty": [
+        "joint"
+      ],
+      "event_roles": [
+        {
+          "group": "log1",
+          "roles": [
+            "rabbit",
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.02
+        }
+      ],
+      "joint": 0,
+      "lead": 40.0,
+      "meter": 1,
+      "mistakes": 1,
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "rescue": "caught",
+      "water_at": 0.12
+    },
+    {
+      "dive_delay": 0.6,
+      "event_penalty": [
+        "joint"
+      ],
+      "event_roles": [
+        {
+          "group": "log1",
+          "roles": [
+            "rabbit",
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.02
+        }
+      ],
+      "joint": 0,
+      "lead": 40.0,
+      "meter": 1,
+      "mistakes": 1,
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "rescue": "caught",
+      "water_at": 0.12
+    },
+    {
+      "dive_delay": 1.2,
+      "event_penalty": [
+        "joint"
+      ],
+      "event_roles": [
+        {
+          "group": "log1",
+          "roles": [
+            "rabbit",
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.02
+        }
+      ],
+      "joint": 0,
+      "lead": 40.0,
+      "meter": 1,
+      "mistakes": 1,
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "rescue": "caught",
+      "water_at": 0.12
+    },
+    {
+      "dive_delay": 0.1,
+      "event_penalty": [
+        "turtle"
+      ],
+      "event_roles": [
+        {
+          "group": "log1",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.08
+        }
+      ],
+      "joint": 0,
+      "lead": 60.0,
+      "meter": 1,
+      "mistakes": 1,
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "rescue": "caught",
+      "water_at": 1.45
+    },
+    {
+      "dive_delay": 0.6,
+      "event_penalty": [
+        "turtle"
+      ],
+      "event_roles": [
+        {
+          "group": "log1",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.08
+        }
+      ],
+      "joint": 0,
+      "lead": 60.0,
+      "meter": 1,
+      "mistakes": 1,
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "rescue": "caught",
+      "water_at": 1.45
+    },
+    {
+      "dive_delay": 1.2,
+      "event_penalty": [
+        "turtle"
+      ],
+      "event_roles": [
+        {
+          "group": "log1",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.08
+        }
+      ],
+      "joint": 0,
+      "lead": 60.0,
+      "meter": 1,
+      "mistakes": 1,
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "rescue": "caught",
+      "water_at": 1.45
+    },
+    {
+      "dive_delay": 0.1,
+      "event_penalty": [
+        "turtle"
+      ],
+      "event_roles": [
+        {
+          "group": "log1",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.17
+        }
+      ],
+      "joint": 0,
+      "lead": 80.0,
+      "meter": 1,
+      "mistakes": 1,
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "rescue": "caught",
+      "water_at": 1.45
+    },
+    {
+      "dive_delay": 0.6,
+      "event_penalty": [
+        "turtle"
+      ],
+      "event_roles": [
+        {
+          "group": "log1",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.17
+        }
+      ],
+      "joint": 0,
+      "lead": 80.0,
+      "meter": 1,
+      "mistakes": 1,
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "rescue": "caught",
+      "water_at": 1.45
+    },
+    {
+      "dive_delay": 1.2,
+      "event_penalty": [
+        "turtle"
+      ],
+      "event_roles": [
+        {
+          "group": "log1",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.17
+        }
+      ],
+      "joint": 0,
+      "lead": 80.0,
+      "meter": 1,
+      "mistakes": 1,
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "rescue": "caught",
+      "water_at": 1.45
+    },
+    {
+      "dive_delay": 0.1,
+      "event_penalty": [
+        "turtle"
+      ],
+      "event_roles": [
+        {
+          "group": "log1",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.27
+        }
+      ],
+      "joint": 0,
+      "lead": 100.0,
+      "meter": 1,
+      "mistakes": 1,
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "rescue": "caught",
+      "water_at": 1.45
+    },
+    {
+      "dive_delay": 0.6,
+      "event_penalty": [
+        "turtle"
+      ],
+      "event_roles": [
+        {
+          "group": "log1",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.27
+        }
+      ],
+      "joint": 0,
+      "lead": 100.0,
+      "meter": 1,
+      "mistakes": 1,
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "rescue": "caught",
+      "water_at": 1.45
+    },
+    {
+      "dive_delay": 1.2,
+      "event_penalty": [
+        "turtle"
+      ],
+      "event_roles": [
+        {
+          "group": "log1",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.27
+        }
+      ],
+      "joint": 0,
+      "lead": 100.0,
+      "meter": 1,
+      "mistakes": 1,
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "rescue": "caught",
+      "water_at": 1.45
+    },
+    {
+      "dive_delay": 0.1,
+      "event_penalty": [
+        "turtle"
+      ],
+      "event_roles": [
+        {
+          "group": "log1",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.35
+        }
+      ],
+      "joint": 0,
+      "lead": 120.0,
+      "meter": 1,
+      "mistakes": 1,
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "rescue": "caught",
+      "water_at": 1.45
+    },
+    {
+      "dive_delay": 0.6,
+      "event_penalty": [
+        "turtle"
+      ],
+      "event_roles": [
+        {
+          "group": "log1",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.35
+        }
+      ],
+      "joint": 0,
+      "lead": 120.0,
+      "meter": 1,
+      "mistakes": 1,
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "rescue": "caught",
+      "water_at": 1.45
+    },
+    {
+      "dive_delay": 1.2,
+      "event_penalty": [
+        "turtle"
+      ],
+      "event_roles": [
+        {
+          "group": "log1",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.35
+        }
+      ],
+      "joint": 0,
+      "lead": 120.0,
+      "meter": 1,
+      "mistakes": 1,
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "rescue": "caught",
+      "water_at": 1.45
+    },
+    {
+      "dive_delay": 0.1,
+      "event_penalty": [
+        "turtle"
+      ],
+      "event_roles": [
+        {
+          "group": "log1",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.43
+        }
+      ],
+      "joint": 0,
+      "lead": 140.0,
+      "meter": 1,
+      "mistakes": 1,
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "rescue": "caught",
+      "water_at": 1.45
+    },
+    {
+      "dive_delay": 0.6,
+      "event_penalty": [
+        "turtle"
+      ],
+      "event_roles": [
+        {
+          "group": "log1",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.43
+        }
+      ],
+      "joint": 0,
+      "lead": 140.0,
+      "meter": 1,
+      "mistakes": 1,
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "rescue": "caught",
+      "water_at": 1.45
+    },
+    {
+      "dive_delay": 1.2,
+      "event_penalty": [
+        "turtle",
+        "turtle"
+      ],
+      "event_roles": [
+        {
+          "group": "log1",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.43
+        },
+        {
+          "group": "shark1",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 7.88
+        }
+      ],
+      "joint": 0,
+      "lead": 140.0,
+      "meter": 2,
+      "mistakes": 2,
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE",
+        "mistake:TURTLE_WAVE"
+      ],
+      "rescue": "missed",
+      "water_at": 1.45
+    },
+    {
+      "dive_delay": 0.1,
+      "event_penalty": [
+        "turtle"
+      ],
+      "event_roles": [
+        {
+          "group": "log1",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.53
+        }
+      ],
+      "joint": 0,
+      "lead": 160.0,
+      "meter": 1,
+      "mistakes": 1,
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "rescue": "caught",
+      "water_at": 1.45
+    },
+    {
+      "dive_delay": 0.6,
+      "event_penalty": [
+        "turtle"
+      ],
+      "event_roles": [
+        {
+          "group": "log1",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.53
+        }
+      ],
+      "joint": 0,
+      "lead": 160.0,
+      "meter": 1,
+      "mistakes": 1,
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "rescue": "caught",
+      "water_at": 1.45
+    },
+    {
+      "dive_delay": 1.2,
+      "event_penalty": [
+        "turtle",
+        "turtle"
+      ],
+      "event_roles": [
+        {
+          "group": "log1",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.53
+        },
+        {
+          "group": "shark1",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 7.88
+        }
+      ],
+      "joint": 0,
+      "lead": 160.0,
+      "meter": 2,
+      "mistakes": 2,
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE",
+        "mistake:TURTLE_WAVE"
+      ],
+      "rescue": "missed",
+      "water_at": 1.45
+    },
+    {
+      "dive_delay": 0.1,
+      "event_penalty": [
+        "turtle"
+      ],
+      "event_roles": [
+        {
+          "group": "log1",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.72
+        }
+      ],
+      "joint": 0,
+      "lead": 200.0,
+      "meter": 1,
+      "mistakes": 1,
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "rescue": "caught",
+      "water_at": 1.45
+    },
+    {
+      "dive_delay": 0.6,
+      "event_penalty": [
+        "turtle"
+      ],
+      "event_roles": [
+        {
+          "group": "log1",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.72
+        }
+      ],
+      "joint": 0,
+      "lead": 200.0,
+      "meter": 1,
+      "mistakes": 1,
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "rescue": "caught",
+      "water_at": 1.45
+    },
+    {
+      "dive_delay": 1.2,
+      "event_penalty": [
+        "turtle"
+      ],
+      "event_roles": [
+        {
+          "group": "log1",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.72
+        }
+      ],
+      "joint": 0,
+      "lead": 200.0,
+      "meter": 1,
+      "mistakes": 1,
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "rescue": "caught",
+      "water_at": 1.45
+    },
+    {
+      "dive_delay": 0.1,
+      "event_penalty": [
+        "joint"
+      ],
+      "event_roles": [
+        {
+          "group": "log1",
+          "roles": [
+            "rabbit",
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.9
+        }
+      ],
+      "joint": 0,
+      "lead": 240.0,
+      "meter": 1,
+      "mistakes": 1,
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "rescue": "caught",
+      "water_at": 1.2
+    },
+    {
+      "dive_delay": 0.6,
+      "event_penalty": [
+        "joint"
+      ],
+      "event_roles": [
+        {
+          "group": "log1",
+          "roles": [
+            "rabbit",
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.9
+        }
+      ],
+      "joint": 0,
+      "lead": 240.0,
+      "meter": 1,
+      "mistakes": 1,
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "rescue": "caught",
+      "water_at": 1.2
+    },
+    {
+      "dive_delay": 1.2,
+      "event_penalty": [
+        "joint"
+      ],
+      "event_roles": [
+        {
+          "group": "log1",
+          "roles": [
+            "rabbit",
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.9
+        }
+      ],
+      "joint": 0,
+      "lead": 240.0,
+      "meter": 1,
+      "mistakes": 1,
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "rescue": "caught",
+      "water_at": 1.2
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+AUDIT groups=55 schemes=7 shard=37..37
+AUDIT g=37 HIGH_WALL     design=leap_jump pass=["leap_jump"]
+AUDIT wrote res://docs/reports/stage4-solution-matrix-37-37.json
+AUDIT no_solution=[]
+AUDIT kind=HIGH_WALL     groups=1 design_correct=1 pass_counts={ "leap_jump": 1 }
+SOLUTION AUDIT: DONE

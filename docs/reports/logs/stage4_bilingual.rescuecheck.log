@@ -1,0 +1,99 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+  ok  first launch defaults to zh without settings file
+  ok  zh menu string loaded
+  ok  zh zone name
+  ok  every text id has zh (226 ids)
+  ok  every text id has en
+  ok  hazard label mapped
+  ok  action label mapped
+  ok  unmapped hazard text passes through
+  ok  grade title S
+  ok  grade title A
+  ok  grade title B
+  ok  grade title C
+  ok  grade title D
+  ok  state name mapped: RIDING
+  ok  state name mapped: SLIDING
+  ok  state name mapped: STUNNED
+  ok  state name mapped: DAZED
+  ok  state name mapped: DANGER
+  ok  state name mapped: EMERGENCY
+  ok  zone lesson localized
+  ok  menu scene loads
+  ok  menu title
+  ok  zh start button
+  ok  zh settings button
+  ok  zh quit button
+  ok  zh menu key hint
+  menu zh -> TURBBIT BRO! | 一个脑子。两身肌肉。零个脑细胞。 | 阶段 4 / 完整赛道 - 3 个区域 | 最佳 296.63 秒   得分 -1   连击 54 | 开始游戏 | 设置 | 退出游戏 | ↑↓ 选择   Enter 确认   L 语言
+  ok  L switches language in place
+  ok  menu refreshes to English instantly
+  ok  quit button in English
+  ok  no zh/en stacked in one menu
+  ok  language choice persisted to settings.json
+  menu en -> TURBBIT BRO! | ONE MIND. TWO MUSCLES. ZERO BRAINCELLS. | STAGE 4 / FULL TRACK - 3 ZONES | BEST 296.63 s   SCORE -1   STREAK 54 | START GAME | SETTINGS | QUIT | ↑↓ SELECT   ENTER CONFIRM   L LANGUAGE
+  ok  S opens settings
+  ok  settings shows language option
+  ok  settings refreshes to Chinese instantly
+  ok  ESC in settings does not quit
+  ok  ESC returns to main menu
+  ok  ENTER in settings does not start the race
+  ok  ENTER in settings activates the focused language button
+  ok  fresh locale instance loads persisted English
+  ok  race scene loads
+  ok  zh HUD control
+  ok  zh HUD rabbit
+  ok  zh HUD time
+  ok  zh HUD zone
+  ok  zh HUD oxygen
+  ok  zh HUD brotherhood
+  ok  zh HUD score
+  ok  zh HUD bro meter label
+  ok  zh HUD idle hint line is empty
+  hud zh -> SHIFT   当前控制：兔子
+  ok  en HUD control updates live
+  ok  en HUD time updates live
+  ok  en HUD zone updates live
+  ok  en HUD oxygen updates live
+  ok  en HUD brotherhood updates live
+  ok  en HUD score updates live
+  ok  en HUD bro meter label is language-neutral
+  ok  en HUD idle hint line stays empty
+  ok  language does not change speed
+  ok  language does not rewind position
+  ok  language does not change control
+  ok  language does not change oxygen rules
+  ok  language does not change level data
+  ok  language does not add accidents
+  ok  banner layer exists
+  ok  zh accident banner
+  ok  en accident banner
+  ok  zh pickup banner
+  ok  en rescue banner
+  ok  zh pause title
+  ok  zh pause hint
+  ok  en pause title
+  ok  en pause hint
+  ok  zh danger depth
+  ok  zh finish marker
+  ok  zh boost lane
+  ok  en danger depth
+  ok  en finish marker
+  ok  pause state set
+  ok  resume state set
+  ok  result scene loads
+  ok  zh result title
+  ok  zh result score
+  ok  zh result time
+  ok  zh result stats (clean/combos/mistakes/joint)
+  ok  zh result prompt
+  result zh -> 比赛完成 | S   绝对好兄弟！ | 总分   12460 | 比赛时间               296.63 秒 | 干净通过                    0 | 连招                        0 | 失误                        0 | 联合事故                    0 | 最佳时间 296.63 s   最低事故 0   最高分 --   最长连击 54 | R  -  重开        M  -  主菜单        Enter  -  选中的按钮 | 再玩一次 | 返回主菜单
+  ok  en result updates live
+  ok  en result keeps score
+  ok  en result stats (clean/combos/mistakes/joint)
+  ok  en result prompt
+  ok  result has no leftover Chinese
+  ok  result switches back live
+  ok  best.json unchanged by bilingual test
+STAGE4 BILINGUAL: PASS

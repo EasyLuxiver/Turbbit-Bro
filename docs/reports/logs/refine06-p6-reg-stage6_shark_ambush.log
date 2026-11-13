@@ -1,0 +1,145 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+LEVEL SEED 20261112
+SNACK DRAW #1 group=gate1 zone=1 kind=DIVE_GATE (fixed)
+SNACK DRAW #2 group=beam1 zone=1 kind=LOW_BIRD (was LOW_BEAM)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=SURFACE_ROCK (was DIVE_GATE)
+LEVEL SEED 20261112
+SNACK DRAW #1 group=gate1 zone=1 kind=DIVE_GATE (fixed)
+SNACK DRAW #2 group=beam1 zone=1 kind=LOW_BIRD (was LOW_BEAM)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=SURFACE_ROCK (was DIVE_GATE)
+ok  drawn SHARK shark1 is an ambush group with state
+ok  drawn SHARK shark3 is an ambush group with state
+ok  drawn SHARK gate3 is an ambush group with state
+ok  drawn SHARK shark5 is an ambush group with state
+ok  drawn SHARK shark6 is an ambush group with state
+ok  drawn SHARK shark8 is an ambush group with state
+ok  drawn SHARK shark9 is an ambush group with state
+P3 SHARK shark1 ...
+P3 SHARK shark3 ...
+P3 SHARK shark5 ...
+P3 SHARK shark6 ...
+P3 SHARK shark8 ...
+P3 SHARK shark9 ...
+P3 drawn shark1: lunge starts=3 order=["DOWN", "TELEGRAPH", "LUNGE", "RETREAT", "DOWN", "TELEGRAPH", "LUNGE", "RETREAT", "DOWN", "TELEGRAPH", "LUNGE", "RETREAT"]
+P3 drawn shark3: lunge starts=3 order=["DOWN", "TELEGRAPH", "LUNGE", "RETREAT", "DOWN", "TELEGRAPH", "LUNGE", "RETREAT", "DOWN", "TELEGRAPH", "LUNGE", "RETREAT"]
+P3 drawn gate3: lunge starts=3 order=["DOWN", "TELEGRAPH", "LUNGE", "RETREAT", "DOWN", "TELEGRAPH", "LUNGE", "RETREAT", "DOWN", "TELEGRAPH", "LUNGE", "RETREAT"]
+P3 drawn shark5: lunge starts=3 order=["DOWN", "TELEGRAPH", "LUNGE", "RETREAT", "DOWN", "TELEGRAPH", "LUNGE", "RETREAT", "DOWN", "TELEGRAPH", "LUNGE", "RETREAT"]
+P3 drawn shark6: lunge starts=3 order=["DOWN", "TELEGRAPH", "LUNGE", "RETREAT", "DOWN", "TELEGRAPH", "LUNGE", "RETREAT", "DOWN", "TELEGRAPH", "LUNGE", "RETREAT"]
+P3 drawn shark8: lunge starts=3 order=["DOWN", "TELEGRAPH", "LUNGE", "RETREAT", "DOWN", "TELEGRAPH", "LUNGE", "RETREAT", "DOWN", "TELEGRAPH", "LUNGE", "RETREAT"]
+P3 drawn shark9: lunge starts=3 order=["DOWN", "TELEGRAPH", "LUNGE", "RETREAT", "DOWN", "TELEGRAPH", "LUNGE", "RETREAT", "DOWN", "TELEGRAPH", "LUNGE", "RETREAT"]
+ok  source: _check_hazards reads hazard_rect_live
+ok  source: _draw_hazard reads hazard_rect_live
+ok  source: _resolve_turtle_solid reads hazard_rect_live
+ok  shark1: at least 2 complete ambush cycles (lunge starts=3, order=["DOWN", "TELEGRAPH", "LUNGE", "RETREAT", "DOWN", "TELEGRAPH", "LUNGE", "RETREAT", "DOWN", "TELEGRAPH", "LUNGE", "RETREAT"])
+ok  shark1: telegraph/lunge/retreat durations match tuning
+ok  shark1: DOWN/TELEGRAPH hold the down offset, LUNGE/RETREAT span it
+ok  shark1: hazard_rect_live == base + offset every sampled frame (576/576)
+ok  shark1: 10/10 no-leap runs hit the turtle (daze>=3.6, accidents=10)
+ok  shark1: pinned shell frees itself in <=2.0 s without input (worst pin 1.27 s)
+ok  shark1: shell advances 100 px without input after retreat (worst 1.88 s, missing 0)
+ok  shark1: leap 0.30s -> 10/10 clean, 0 accidents, 10 still riding
+ok  shark1: leap 0.60s -> 10/10 clean, 0 accidents, 10 still riding
+P3 note shark1: leap 0.90s -> 0/10 clean (late, by design)
+P3 window shark1: 0.30..0.65 s (0.35 s wide), criterion3-literal=false
+ok  shark1: contiguous safe leap window >= 0.30 s (got 0.30..0.65)
+ok  shark1: DOWN/TELEGRAPH never touches the deepest reachable shell (min gap 19.0 px)
+ok  shark1: base-rect position is safe while DOWN, solid/hit while LUNGE
+ok  shark3: at least 2 complete ambush cycles (lunge starts=3, order=["DOWN", "TELEGRAPH", "LUNGE", "RETREAT", "DOWN", "TELEGRAPH", "LUNGE", "RETREAT", "DOWN", "TELEGRAPH", "LUNGE", "RETREAT"])
+ok  shark3: telegraph/lunge/retreat durations match tuning
+ok  shark3: DOWN/TELEGRAPH hold the down offset, LUNGE/RETREAT span it
+ok  shark3: hazard_rect_live == base + offset every sampled frame (576/576)
+ok  shark3: 10/10 no-leap runs hit the turtle (daze>=3.6, accidents=10)
+ok  shark3: pinned shell frees itself in <=2.0 s without input (worst pin 1.27 s)
+ok  shark3: shell advances 100 px without input after retreat (worst 1.83 s, missing 0)
+ok  shark3: leap 0.30s -> 10/10 clean, 0 accidents, 10 still riding
+ok  shark3: leap 0.60s -> 10/10 clean, 0 accidents, 10 still riding
+P3 note shark3: leap 0.90s -> 0/10 clean (late, by design)
+P3 window shark3: 0.25..0.65 s (0.40 s wide), criterion3-literal=false
+ok  shark3: contiguous safe leap window >= 0.30 s (got 0.25..0.65)
+ok  shark3: DOWN/TELEGRAPH never touches the deepest reachable shell (min gap 19.0 px)
+ok  shark3: base-rect position is safe while DOWN, solid/hit while LUNGE
+ok  shark5: at least 2 complete ambush cycles (lunge starts=3, order=["DOWN", "TELEGRAPH", "LUNGE", "RETREAT", "DOWN", "TELEGRAPH", "LUNGE", "RETREAT", "DOWN", "TELEGRAPH", "LUNGE", "RETREAT"])
+ok  shark5: telegraph/lunge/retreat durations match tuning
+ok  shark5: DOWN/TELEGRAPH hold the down offset, LUNGE/RETREAT span it
+ok  shark5: hazard_rect_live == base + offset every sampled frame (576/576)
+ok  shark5: 10/10 no-leap runs hit the turtle (daze>=3.6, accidents=10)
+ok  shark5: pinned shell frees itself in <=2.0 s without input (worst pin 1.27 s)
+ok  shark5: shell advances 100 px without input after retreat (worst 1.83 s, missing 0)
+ok  shark5: leap 0.30s -> 10/10 clean, 0 accidents, 10 still riding
+ok  shark5: leap 0.60s -> 10/10 clean, 0 accidents, 10 still riding
+P3 note shark5: leap 0.90s -> 0/10 clean (late, by design)
+P3 window shark5: 0.25..0.65 s (0.40 s wide), criterion3-literal=false
+ok  shark5: contiguous safe leap window >= 0.30 s (got 0.25..0.65)
+ok  shark5: DOWN/TELEGRAPH never touches the deepest reachable shell (min gap 19.0 px)
+ok  shark5: base-rect position is safe while DOWN, solid/hit while LUNGE
+ok  shark6: at least 2 complete ambush cycles (lunge starts=3, order=["DOWN", "TELEGRAPH", "LUNGE", "RETREAT", "DOWN", "TELEGRAPH", "LUNGE", "RETREAT", "DOWN", "TELEGRAPH", "LUNGE", "RETREAT"])
+ok  shark6: telegraph/lunge/retreat durations match tuning
+ok  shark6: DOWN/TELEGRAPH hold the down offset, LUNGE/RETREAT span it
+ok  shark6: hazard_rect_live == base + offset every sampled frame (576/576)
+ok  shark6: 10/10 no-leap runs hit the turtle (daze>=3.6, accidents=10)
+ok  shark6: pinned shell frees itself in <=2.0 s without input (worst pin 1.30 s)
+ok  shark6: shell advances 100 px without input after retreat (worst 1.85 s, missing 0)
+ok  shark6: leap 0.30s -> 10/10 clean, 0 accidents, 10 still riding
+ok  shark6: leap 0.60s -> 10/10 clean, 0 accidents, 10 still riding
+P3 note shark6: leap 0.90s -> 0/10 clean (late, by design)
+P3 window shark6: 0.15..0.65 s (0.50 s wide), criterion3-literal=false
+ok  shark6: contiguous safe leap window >= 0.30 s (got 0.15..0.65)
+ok  shark6: DOWN/TELEGRAPH never touches the deepest reachable shell (min gap 19.0 px)
+ok  shark6: base-rect position is safe while DOWN, solid/hit while LUNGE
+ok  shark8: at least 2 complete ambush cycles (lunge starts=3, order=["DOWN", "TELEGRAPH", "LUNGE", "RETREAT", "DOWN", "TELEGRAPH", "LUNGE", "RETREAT", "DOWN", "TELEGRAPH", "LUNGE", "RETREAT"])
+ok  shark8: telegraph/lunge/retreat durations match tuning
+ok  shark8: DOWN/TELEGRAPH hold the down offset, LUNGE/RETREAT span it
+ok  shark8: hazard_rect_live == base + offset every sampled frame (576/576)
+ok  shark8: 10/10 no-leap runs hit the turtle (daze>=3.6, accidents=10)
+ok  shark8: pinned shell frees itself in <=2.0 s without input (worst pin 1.27 s)
+ok  shark8: shell advances 100 px without input after retreat (worst 1.82 s, missing 0)
+ok  shark8: leap 0.30s -> 10/10 clean, 0 accidents, 10 still riding
+ok  shark8: leap 0.60s -> 10/10 clean, 0 accidents, 10 still riding
+P3 note shark8: leap 0.90s -> 0/10 clean (late, by design)
+P3 window shark8: 0.20..0.65 s (0.45 s wide), criterion3-literal=false
+ok  shark8: contiguous safe leap window >= 0.30 s (got 0.20..0.65)
+ok  shark8: DOWN/TELEGRAPH never touches the deepest reachable shell (min gap 19.0 px)
+ok  shark8: base-rect position is safe while DOWN, solid/hit while LUNGE
+ok  shark9: at least 2 complete ambush cycles (lunge starts=3, order=["DOWN", "TELEGRAPH", "LUNGE", "RETREAT", "DOWN", "TELEGRAPH", "LUNGE", "RETREAT", "DOWN", "TELEGRAPH", "LUNGE", "RETREAT"])
+ok  shark9: telegraph/lunge/retreat durations match tuning
+ok  shark9: DOWN/TELEGRAPH hold the down offset, LUNGE/RETREAT span it
+ok  shark9: hazard_rect_live == base + offset every sampled frame (576/576)
+ok  shark9: 10/10 no-leap runs hit the turtle (daze>=3.6, accidents=10)
+ok  shark9: pinned shell frees itself in <=2.0 s without input (worst pin 1.27 s)
+ok  shark9: shell advances 100 px without input after retreat (worst 1.82 s, missing 0)
+ok  shark9: leap 0.30s -> 10/10 clean, 0 accidents, 10 still riding
+ok  shark9: leap 0.60s -> 10/10 clean, 0 accidents, 10 still riding
+P3 note shark9: leap 0.90s -> 0/10 clean (late, by design)
+P3 window shark9: 0.20..0.65 s (0.45 s wide), criterion3-literal=false
+ok  shark9: contiguous safe leap window >= 0.30 s (got 0.20..0.65)
+ok  shark9: DOWN/TELEGRAPH never touches the deepest reachable shell (min gap 19.0 px)
+ok  shark9: base-rect position is safe while DOWN, solid/hit while LUNGE
+ok  drawn layout keeps >=4 ambush sharks (got 7: ["shark1", "shark3", "gate3", "shark5", "shark6", "shark8", "shark9"])
+ok  drawn shark1: at least 2 ambush cycles (lunge starts=3)
+ok  drawn shark1: hazard_rect_live == base + offset (576/576)
+ok  drawn shark3: at least 2 ambush cycles (lunge starts=3)
+ok  drawn shark3: hazard_rect_live == base + offset (576/576)
+ok  drawn gate3: at least 2 ambush cycles (lunge starts=3)
+ok  drawn gate3: hazard_rect_live == base + offset (576/576)
+ok  drawn shark5: at least 2 ambush cycles (lunge starts=3)
+ok  drawn shark5: hazard_rect_live == base + offset (576/576)
+ok  drawn shark6: at least 2 ambush cycles (lunge starts=3)
+ok  drawn shark6: hazard_rect_live == base + offset (576/576)
+ok  drawn shark8: at least 2 ambush cycles (lunge starts=3)
+ok  drawn shark8: hazard_rect_live == base + offset (576/576)
+ok  drawn shark9: at least 2 ambush cycles (lunge starts=3)
+ok  drawn shark9: hazard_rect_live == base + offset (576/576)
+P3 SHARK AMBUSH: PASS

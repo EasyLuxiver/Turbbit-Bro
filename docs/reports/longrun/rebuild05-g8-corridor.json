@@ -1,0 +1,32 @@
+{
+  "deep_catch": {
+    "carry_frames": 11,
+    "carry_started_frame": 0,
+    "distance_after": 0.0,
+    "distance_before": 100.0,
+    "drop_dy": -100.0,
+    "mount": "RIDING",
+    "pickup_count_delta": 1,
+    "rising_wait_frames": 1,
+    "turtle_at_surface": false,
+    "turtle_rising": true
+  },
+  "diving_water": {
+    "accident": "RABBIT_WATER",
+    "accident_frame": 13,
+    "turtle_at_surface": false,
+    "turtle_rising": false,
+    "window_true_frames": 0
+  },
+  "generated_at": "2026-11-13T20:23:38",
+  "plain_jump": {
+    "first_true_dy": -148.8,
+    "jumped": true,
+    "landed": true,
+    "landing_dy": 0.0,
+    "landing_window": false,
+    "max_consecutive_window_frames": 14,
+    "pickup_count_delta": 1,
+    "window_frames_while_rising": 0
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "failures": [],
+  "generated_at": "2026-11-13 13:10:46",
+  "rows": [
+    {
+      "case": "no_combo",
+      "key": "result.try_combo",
+      "pass": true,
+      "text": "下次试试：兔子跳起来后按 SHIFT 让乌龟下潜（BRO DIVE）",
+      "visible": true
+    },
+    {
+      "case": "combo_no_snack",
+      "key": "result.try_snack",
+      "pass": true,
+      "text": "下次试试：按 SHIFT 换到乌龟，亲手把海藻喂给它",
+      "visible": true
+    },
+    {
+      "case": "missed_rescue",
+      "key": "result.try_rescue",
+      "pass": true,
+      "text": "下次试试：兔子落水时按 SHIFT 换乌龟，按住 ↓ 追下去接它",
+      "visible": true
+    },
+    {
+      "case": "clean_run",
+      "key": "",
+      "pass": true,
+      "text": "",
+      "visible": false
+    },
+    {
+      "case": "did_rescue",
+      "key": "",
+      "pass": true,
+      "text": "",
+      "visible": false
+    }
+  ],
+  "state_first_case": {
+    "accident_count": 0,
+    "combo_dive_count": 0,
+    "combo_ollie_count": 0,
+    "finish_time": 0.0,
+    "grade": "",
+    "rescue_success_count": 0,
+    "score_log_size": 0,
+    "snack_switch_count": 0,
+    "total_score": 0
+  },
+  "state_last_case": {
+    "accident_count": 1,
+    "combo_dive_count": 5,
+    "combo_ollie_count": 1,
+    "finish_time": 0.0,
+    "grade": "",
+    "rescue_success_count": 1,
+    "score_log_size": 0,
+    "snack_switch_count": 3,
+    "total_score": 0
+  },
+  "trynext_label_count": 1
+}

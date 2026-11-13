@@ -1,0 +1,3840 @@
+{
+  "checks": [
+    {
+      "label": "A 连续兔子专属：rock3/beam2 都通过（[\"rock3\", \"beam2\", \"wall1\", \"gate2\"]）",
+      "ok": true
+    },
+    {
+      "label": "A 两连没有撞（hits=0）",
+      "ok": true
+    },
+    {
+      "label": "A 不切乌龟时它的神游确实在升级（[\"DISTRACTED\", \"RESTLESS\", \"MISCHIEF\"]，末段 drift=9.10）",
+      "ok": true
+    },
+    {
+      "label": "A 受控兔子保持 CALM（drift=0.00）",
+      "ok": true
+    },
+    {
+      "label": "B 连续乌龟专属：wall1/gate2 都通过（[\"rock3\", \"beam2\", \"wall1\", \"gate2\"]）",
+      "ok": true
+    },
+    {
+      "label": "B 整段没有撞（hits=0, mistakes=0）",
+      "ok": true
+    },
+    {
+      "label": "B 切手时乌龟带着 A 留下的神游（MISCHIEF drift=9.10）",
+      "ok": true
+    },
+    {
+      "label": "B 切手后到 gate2 已在恢复（乌龟 drift 9.10→0.00）",
+      "ok": true
+    },
+    {
+      "label": "B 及时切换的回报：到墙前乌龟已回到 CALM（drift=1.32）",
+      "ok": true
+    },
+    {
+      "label": "B 伙伴失控中仍完成组合：墙前兔子是 DISTRACTED（drift=4.42）且墙过了",
+      "ok": true
+    },
+    {
+      "label": "B 全程无事故（accidents=0）",
+      "ok": true
+    },
+    {
+      "label": "C 交替：gate1/rock2/log1/shark1 都通过（[\"gate1\", \"rock2\", \"log1\", \"shark1\"]）",
+      "ok": true
+    },
+    {
+      "label": "C 整段没有撞（hits=0, mistakes=0）",
+      "ok": true
+    },
+    {
+      "label": "C 交替：龟→兔、兔→龟两次换手都发生（2 次）",
+      "ok": true
+    },
+    {
+      "label": "C 浮木组合：进组时控兔子起跳（control=rabbit, rabbit=JUMPING）",
+      "ok": true
+    },
+    {
+      "label": "C 浮木组合：起跳后在浮木前切到乌龟（记录到 shift）",
+      "ok": true
+    },
+    {
+      "label": "C 全程无事故（accidents=0）",
+      "ok": true
+    },
+    {
+      "label": "D 伙伴失控中组合：beam2/wall1/gate2 都通过（[\"rock3\", \"beam2\", \"wall1\", \"gate2\"]）",
+      "ok": true
+    },
+    {
+      "label": "D 整段没有撞（hits=0, mistakes=0）",
+      "ok": true
+    },
+    {
+      "label": "D 接手时乌龟正处于 MISCHIEF（MISCHIEF drift=12.00）",
+      "ok": true
+    },
+    {
+      "label": "D 在龟神游时下潜仍过 gate2（进组：控制=turtle 乌龟=MISCHIEF drift=10.50）",
+      "ok": true
+    },
+    {
+      "label": "D 全程无事故（accidents=0）",
+      "ok": true
+    },
+    {
+      "label": "E 压后恢复：乌龟在 9 s 内回到 CALM（1.58 s）",
+      "ok": true
+    },
+    {
+      "label": "E 再切兔子也能恢复（1.52 s，true）",
+      "ok": true
+    },
+    {
+      "label": "E 恢复过程中确实发生了状态回落（记录到事件）",
+      "ok": true
+    },
+    {
+      "label": "SHIFT 接手后前 0.45 s 不回落（逐帧轨迹 5 条，异常 []）",
+      "ok": true
+    },
+    {
+      "label": "连续受控 0.5 s 后才开始回落（0.9–1.2 s 内至少降 0.5，异常 []）",
+      "ok": true
+    },
+    {
+      "label": "SHIFT 接手正在神游的角色：立刻有反馈（AB 2 条 / DE 3 条）",
+      "ok": true
+    },
+    {
+      "label": "恢复完成时再报一次（DE 2 条，[{ \"t\": 23.22, \"text\": \"乌龟回过神了\", \"kind\": \"bro\" }, { \"t\": 24.73, \"text\": \"兔子回过神了\", \"kind\": \"bro\" }]）",
+      "ok": true
+    },
+    {
+      "label": "接手反馈在 0.75 s 内出现（实测 0.00 s）",
+      "ok": true
+    },
+    {
+      "label": "矩阵结论：没有发现无解组合（所有必做动作在伙伴神游/恢复中都完成）",
+      "ok": true
+    }
+  ],
+  "generated_at": "2026-11-13T16:10:01",
+  "note": "动态平衡矩阵：真实 race.tscn、真实按键、固定提前量；自动驾驶代理，不是真人试玩。",
+  "runs": {
+    "ab": {
+      "accidents": [],
+      "entries": {
+        "beam2": {
+          "control": "rabbit",
+          "entry_lead_px": 57.6,
+          "group": "beam2",
+          "kind": "LOW_BEAM",
+          "partner_drift": 7.62,
+          "partner_state": "RESTLESS",
+          "rabbit": {
+            "brain": "CALM",
+            "drift": 0.0,
+            "state": "CROUCHING",
+            "x": 9542.4,
+            "y": 295.6
+          },
+          "required": "crouch",
+          "start": 9600.0,
+          "t": 7.62,
+          "turtle": {
+            "brain": "RESTLESS",
+            "drift": 7.62,
+            "speed": 204.1,
+            "speed_scale": 0.93,
+            "state": "CRUISING",
+            "x": 9542.4,
+            "y": 333.6
+          }
+        },
+        "gate2": {
+          "control": "turtle",
+          "entry_lead_px": 57.5,
+          "group": "gate2",
+          "kind": "DIVE_GATE",
+          "partner_drift": 6.63,
+          "partner_state": "RESTLESS",
+          "rabbit": {
+            "brain": "RESTLESS",
+            "drift": 6.63,
+            "state": "RIDING",
+            "x": 11932.4,
+            "y": 425.6
+          },
+          "required": "dive",
+          "start": 12000.0,
+          "t": 18.75,
+          "turtle": {
+            "brain": "CALM",
+            "drift": 0.0,
+            "speed": 220.0,
+            "speed_scale": 1.0,
+            "state": "DIVING",
+            "x": 11942.5,
+            "y": 483.6
+          }
+        },
+        "rock3": {
+          "control": "rabbit",
+          "entry_lead_px": 60.0,
+          "group": "rock3",
+          "kind": "SURFACE_ROCK",
+          "partner_drift": 2.0,
+          "partner_state": "CALM",
+          "rabbit": {
+            "brain": "CALM",
+            "drift": 0.0,
+            "state": "RIDING",
+            "x": 8340.0,
+            "y": 276.0
+          },
+          "required": "jump",
+          "start": 8400.0,
+          "t": 2.0,
+          "turtle": {
+            "brain": "CALM",
+            "drift": 2.0,
+            "speed": 220.0,
+            "speed_scale": 1.0,
+            "state": "CRUISING",
+            "x": 8340.0,
+            "y": 334.0
+          }
+        },
+        "wall1": {
+          "control": "rabbit",
+          "entry_lead_px": 58.0,
+          "group": "wall1",
+          "kind": "HIGH_WALL",
+          "partner_drift": 1.32,
+          "partner_state": "CALM",
+          "rabbit": {
+            "brain": "DISTRACTED",
+            "drift": 4.42,
+            "state": "JUMPING",
+            "x": 10802.3,
+            "y": 124.3
+          },
+          "required": "leap+stomp",
+          "start": 10860.0,
+          "t": 13.57,
+          "turtle": {
+            "brain": "CALM",
+            "drift": 1.32,
+            "speed": 220.0,
+            "speed_scale": 1.0,
+            "state": "LEAPING",
+            "x": 10802.0,
+            "y": 195.4
+          }
+        }
+      },
+      "events": [
+        {
+          "control": "rabbit",
+          "drift": 3.02,
+          "from": "CALM",
+          "t": 3.02,
+          "to": "DISTRACTED",
+          "who": "turtle"
+        },
+        {
+          "control": "rabbit",
+          "drift": 6.02,
+          "from": "DISTRACTED",
+          "t": 6.02,
+          "to": "RESTLESS",
+          "who": "turtle"
+        },
+        {
+          "control": "rabbit",
+          "drift": 9.0,
+          "from": "RESTLESS",
+          "t": 9.0,
+          "to": "MISCHIEF",
+          "who": "turtle"
+        },
+        {
+          "control": "turtle",
+          "drift": 8.97,
+          "from": "MISCHIEF",
+          "t": 9.67,
+          "to": "RESTLESS",
+          "who": "turtle"
+        },
+        {
+          "control": "turtle",
+          "drift": 5.97,
+          "from": "RESTLESS",
+          "t": 11.17,
+          "to": "DISTRACTED",
+          "who": "turtle"
+        },
+        {
+          "control": "turtle",
+          "drift": 3.02,
+          "from": "CALM",
+          "t": 12.12,
+          "to": "DISTRACTED",
+          "who": "rabbit"
+        },
+        {
+          "control": "turtle",
+          "drift": 2.97,
+          "from": "DISTRACTED",
+          "t": 12.67,
+          "to": "CALM",
+          "who": "turtle"
+        },
+        {
+          "control": "turtle",
+          "drift": 6.02,
+          "from": "DISTRACTED",
+          "t": 18.13,
+          "to": "RESTLESS",
+          "who": "rabbit"
+        }
+      ],
+      "feedback": [
+        {
+          "kind": "clean",
+          "t": 3.17,
+          "text": "干净通过！"
+        },
+        {
+          "kind": "bro",
+          "t": 9.1,
+          "text": "换手 - 乌龟开始收心"
+        },
+        {
+          "kind": "clean",
+          "t": 9.18,
+          "text": "干净通过！"
+        },
+        {
+          "kind": "bro",
+          "t": 12.65,
+          "text": "乌龟回过神了"
+        },
+        {
+          "kind": "pop",
+          "t": 13.03,
+          "text": "跃起！"
+        },
+        {
+          "kind": "bro",
+          "t": 13.52,
+          "text": "换手 - 兔子开始收心"
+        },
+        {
+          "kind": "bro",
+          "t": 14.32,
+          "text": "BRO OLLIE！"
+        },
+        {
+          "kind": "bro",
+          "t": 14.32,
+          "text": "BRO COMBO！"
+        },
+        {
+          "kind": "clean",
+          "t": 20.18,
+          "text": "干净通过！"
+        }
+      ],
+      "hits": [],
+      "mistakes": [],
+      "score_log": [
+        {
+          "points": 150,
+          "reason": "precise:SURFACE_ROCK",
+          "t": 3.18,
+          "x": 8600.3
+        },
+        {
+          "points": 150,
+          "reason": "precise:LOW_BEAM",
+          "t": 9.2,
+          "x": 9861.1
+        },
+        {
+          "points": 300,
+          "reason": "bro_ollie",
+          "t": 14.33,
+          "x": 10970.7
+        },
+        {
+          "points": 150,
+          "reason": "precise:DIVE_GATE",
+          "t": 20.2,
+          "x": 12261.5
+        }
+      ],
+      "segments": {
+        "A_rabbit_only": {
+          "accident_count": 0,
+          "bro_meter": 0,
+          "control": "rabbit",
+          "end_drift": {
+            "rabbit": 0.0,
+            "turtle": 9.1
+          },
+          "groups": [
+            "rock3",
+            "beam2"
+          ],
+          "name": "A_rabbit_only",
+          "rabbit": {
+            "brain": "CALM",
+            "drift": 0.0,
+            "state": "RIDING",
+            "x": 9840.2,
+            "y": 275.4
+          },
+          "t": 9.1,
+          "turtle": {
+            "brain": "MISCHIEF",
+            "drift": 9.1,
+            "speed": 198.0,
+            "speed_scale": 0.9,
+            "state": "CRUISING",
+            "x": 9840.2,
+            "y": 333.4
+          },
+          "x": 9840.2
+        },
+        "B_start_drift": {
+          "rabbit": {
+            "brain": "CALM",
+            "drift": 0.0,
+            "state": "RIDING",
+            "x": 9840.2,
+            "y": 275.4
+          },
+          "t": 9.1,
+          "turtle": {
+            "brain": "MISCHIEF",
+            "drift": 9.1,
+            "speed": 198.0,
+            "speed_scale": 0.95,
+            "state": "CRUISING",
+            "x": 9840.2,
+            "y": 333.4
+          }
+        },
+        "B_turtle_only": {
+          "accident_count": 0,
+          "bro_meter": 0,
+          "control": "turtle",
+          "end_drift": {
+            "rabbit": 8.72,
+            "turtle": 0.0
+          },
+          "groups": [
+            "wall1",
+            "gate2"
+          ],
+          "name": "B_turtle_only",
+          "rabbit": {
+            "brain": "RESTLESS",
+            "drift": 8.72,
+            "state": "RIDING",
+            "x": 12390.5,
+            "y": 299.3
+          },
+          "t": 20.83,
+          "turtle": {
+            "brain": "CALM",
+            "drift": 0.0,
+            "speed": 220.0,
+            "speed_scale": 1.0,
+            "state": "SURFACING",
+            "x": 12400.8,
+            "y": 357.3
+          },
+          "x": 12400.8
+        }
+      },
+      "shift_traces": [
+        {
+          "drift0": 9.1,
+          "samples": [
+            [
+              0.02,
+              9.1
+            ],
+            [
+              0.03,
+              9.1
+            ],
+            [
+              0.05,
+              9.1
+            ],
+            [
+              0.07,
+              9.1
+            ],
+            [
+              0.08,
+              9.1
+            ],
+            [
+              0.1,
+              9.1
+            ],
+            [
+              0.12,
+              9.1
+            ],
+            [
+              0.13,
+              9.1
+            ],
+            [
+              0.15,
+              9.1
+            ],
+            [
+              0.17,
+              9.1
+            ],
+            [
+              0.18,
+              9.1
+            ],
+            [
+              0.2,
+              9.1
+            ],
+            [
+              0.22,
+              9.1
+            ],
+            [
+              0.23,
+              9.1
+            ],
+            [
+              0.25,
+              9.1
+            ],
+            [
+              0.27,
+              9.1
+            ],
+            [
+              0.28,
+              9.1
+            ],
+            [
+              0.3,
+              9.1
+            ],
+            [
+              0.32,
+              9.1
+            ],
+            [
+              0.33,
+              9.1
+            ],
+            [
+              0.35,
+              9.1
+            ],
+            [
+              0.37,
+              9.1
+            ],
+            [
+              0.38,
+              9.1
+            ],
+            [
+              0.4,
+              9.1
+            ],
+            [
+              0.42,
+              9.1
+            ],
+            [
+              0.43,
+              9.1
+            ],
+            [
+              0.45,
+              9.1
+            ],
+            [
+              0.47,
+              9.1
+            ],
+            [
+              0.48,
+              9.1
+            ],
+            [
+              0.5,
+              9.1
+            ],
+            [
+              0.52,
+              9.07
+            ],
+            [
+              0.53,
+              9.03
+            ],
+            [
+              0.55,
+              9.0
+            ],
+            [
+              0.57,
+              8.97
+            ],
+            [
+              0.58,
+              8.93
+            ],
+            [
+              0.6,
+              8.9
+            ],
+            [
+              0.62,
+              8.87
+            ],
+            [
+              0.63,
+              8.83
+            ],
+            [
+              0.65,
+              8.8
+            ],
+            [
+              0.67,
+              8.77
+            ],
+            [
+              0.68,
+              8.73
+            ],
+            [
+              0.7,
+              8.7
+            ],
+            [
+              0.72,
+              8.67
+            ],
+            [
+              0.73,
+              8.63
+            ],
+            [
+              0.75,
+              8.6
+            ],
+            [
+              0.77,
+              8.57
+            ],
+            [
+              0.78,
+              8.53
+            ],
+            [
+              0.8,
+              8.5
+            ],
+            [
+              0.82,
+              8.47
+            ],
+            [
+              0.83,
+              8.43
+            ],
+            [
+              0.85,
+              8.4
+            ],
+            [
+              0.87,
+              8.37
+            ],
+            [
+              0.88,
+              8.33
+            ],
+            [
+              0.9,
+              8.3
+            ],
+            [
+              0.92,
+              8.27
+            ],
+            [
+              0.93,
+              8.23
+            ],
+            [
+              0.95,
+              8.2
+            ],
+            [
+              0.97,
+              8.17
+            ],
+            [
+              0.98,
+              8.13
+            ],
+            [
+              1.0,
+              8.1
+            ],
+            [
+              1.02,
+              8.07
+            ],
+            [
+              1.03,
+              8.03
+            ],
+            [
+              1.05,
+              8.0
+            ],
+            [
+              1.07,
+              7.97
+            ],
+            [
+              1.08,
+              7.93
+            ],
+            [
+              1.1,
+              7.9
+            ],
+            [
+              1.12,
+              7.87
+            ],
+            [
+              1.13,
+              7.83
+            ],
+            [
+              1.15,
+              7.8
+            ],
+            [
+              1.17,
+              7.77
+            ],
+            [
+              1.18,
+              7.73
+            ],
+            [
+              1.2,
+              7.7
+            ],
+            [
+              1.22,
+              7.67
+            ],
+            [
+              1.23,
+              7.63
+            ],
+            [
+              1.25,
+              7.6
+            ]
+          ],
+          "t0": 9.10000000000003,
+          "who": "turtle"
+        },
+        {
+          "drift0": 4.42,
+          "samples": [
+            [
+              0.02,
+              4.42
+            ],
+            [
+              0.03,
+              4.42
+            ],
+            [
+              0.05,
+              4.42
+            ],
+            [
+              0.07,
+              4.42
+            ],
+            [
+              0.08,
+              4.42
+            ],
+            [
+              0.1,
+              4.42
+            ],
+            [
+              0.12,
+              4.42
+            ],
+            [
+              0.13,
+              4.42
+            ],
+            [
+              0.15,
+              4.42
+            ],
+            [
+              0.17,
+              4.42
+            ],
+            [
+              0.18,
+              4.42
+            ],
+            [
+              0.2,
+              4.42
+            ],
+            [
+              0.22,
+              4.42
+            ],
+            [
+              0.23,
+              4.42
+            ],
+            [
+              0.25,
+              4.42
+            ],
+            [
+              0.27,
+              4.42
+            ],
+            [
+              0.28,
+              4.42
+            ],
+            [
+              0.3,
+              4.42
+            ],
+            [
+              0.32,
+              4.42
+            ],
+            [
+              0.33,
+              4.42
+            ],
+            [
+              0.35,
+              4.42
+            ],
+            [
+              0.37,
+              4.42
+            ],
+            [
+              0.38,
+              4.42
+            ],
+            [
+              0.4,
+              4.42
+            ],
+            [
+              0.42,
+              4.42
+            ],
+            [
+              0.43,
+              4.42
+            ],
+            [
+              0.45,
+              4.42
+            ],
+            [
+              0.47,
+              4.42
+            ],
+            [
+              0.48,
+              4.42
+            ],
+            [
+              0.5,
+              4.42
+            ],
+            [
+              0.52,
+              4.38
+            ],
+            [
+              0.53,
+              4.35
+            ],
+            [
+              0.55,
+              4.32
+            ],
+            [
+              0.57,
+              4.28
+            ],
+            [
+              0.58,
+              4.25
+            ],
+            [
+              0.6,
+              4.22
+            ],
+            [
+              0.62,
+              4.18
+            ],
+            [
+              0.63,
+              4.15
+            ],
+            [
+              0.65,
+              4.12
+            ],
+            [
+              0.67,
+              4.08
+            ],
+            [
+              0.68,
+              4.05
+            ],
+            [
+              0.7,
+              4.02
+            ],
+            [
+              0.72,
+              3.98
+            ],
+            [
+              0.73,
+              3.95
+            ]
+          ],
+          "t0": 13.5166666666669,
+          "truncated": true,
+          "who": "rabbit"
+        },
+        {
+          "drift0": 2.0,
+          "samples": [
+            [
+              0.02,
+              2.0
+            ],
+            [
+              0.03,
+              2.0
+            ],
+            [
+              0.05,
+              2.0
+            ],
+            [
+              0.07,
+              2.0
+            ],
+            [
+              0.08,
+              2.0
+            ],
+            [
+              0.1,
+              2.0
+            ],
+            [
+              0.12,
+              2.0
+            ],
+            [
+              0.13,
+              2.0
+            ],
+            [
+              0.15,
+              2.0
+            ],
+            [
+              0.17,
+              2.0
+            ],
+            [
+              0.18,
+              2.0
+            ],
+            [
+              0.2,
+              2.0
+            ],
+            [
+              0.22,
+              2.0
+            ],
+            [
+              0.23,
+              2.0
+            ],
+            [
+              0.25,
+              2.0
+            ],
+            [
+              0.27,
+              2.0
+            ],
+            [
+              0.28,
+              2.0
+            ],
+            [
+              0.3,
+              2.0
+            ],
+            [
+              0.32,
+              2.0
+            ],
+            [
+              0.33,
+              2.0
+            ],
+            [
+              0.35,
+              2.0
+            ],
+            [
+              0.37,
+              2.0
+            ],
+            [
+              0.38,
+              2.0
+            ],
+            [
+              0.4,
+              2.0
+            ],
+            [
+              0.42,
+              2.0
+            ],
+            [
+              0.43,
+              2.0
+            ],
+            [
+              0.45,
+              2.0
+            ],
+            [
+              0.47,
+              2.0
+            ],
+            [
+              0.48,
+              2.0
+            ],
+            [
+              0.5,
+              2.0
+            ],
+            [
+              0.52,
+              2.0
+            ],
+            [
+              0.53,
+              2.0
+            ],
+            [
+              0.55,
+              2.0
+            ],
+            [
+              0.57,
+              2.0
+            ],
+            [
+              0.58,
+              2.0
+            ],
+            [
+              0.6,
+              2.0
+            ],
+            [
+              0.62,
+              2.0
+            ],
+            [
+              0.63,
+              2.0
+            ],
+            [
+              0.65,
+              2.0
+            ],
+            [
+              0.67,
+              2.0
+            ],
+            [
+              0.68,
+              2.0
+            ],
+            [
+              0.7,
+              2.0
+            ],
+            [
+              0.72,
+              2.0
+            ],
+            [
+              0.73,
+              2.0
+            ],
+            [
+              0.75,
+              2.0
+            ],
+            [
+              0.77,
+              2.0
+            ],
+            [
+              0.78,
+              2.0
+            ],
+            [
+              0.8,
+              2.0
+            ],
+            [
+              0.82,
+              2.0
+            ],
+            [
+              0.83,
+              2.0
+            ],
+            [
+              0.85,
+              2.0
+            ],
+            [
+              0.87,
+              2.0
+            ],
+            [
+              0.88,
+              2.0
+            ],
+            [
+              0.9,
+              2.0
+            ],
+            [
+              0.92,
+              2.0
+            ],
+            [
+              0.93,
+              2.0
+            ],
+            [
+              0.95,
+              2.0
+            ],
+            [
+              0.97,
+              2.0
+            ],
+            [
+              0.98,
+              2.0
+            ],
+            [
+              1.0,
+              2.0
+            ],
+            [
+              1.02,
+              2.0
+            ],
+            [
+              1.03,
+              2.0
+            ],
+            [
+              1.05,
+              2.0
+            ],
+            [
+              1.07,
+              2.0
+            ],
+            [
+              1.08,
+              2.0
+            ],
+            [
+              1.1,
+              2.0
+            ],
+            [
+              1.12,
+              2.0
+            ],
+            [
+              1.13,
+              2.0
+            ],
+            [
+              1.15,
+              2.0
+            ],
+            [
+              1.17,
+              2.0
+            ],
+            [
+              1.18,
+              2.0
+            ],
+            [
+              1.2,
+              2.0
+            ],
+            [
+              1.22,
+              2.0
+            ],
+            [
+              1.23,
+              2.0
+            ],
+            [
+              1.25,
+              2.0
+            ]
+          ],
+          "showtime_from": 0.4,
+          "t0": 14.2500000000003,
+          "who": "turtle"
+        }
+      ],
+      "shifts": [
+        {
+          "before": {
+            "control": "turtle",
+            "rabbit": {
+              "brain": "CALM",
+              "drift": 0.0,
+              "state": "RIDING",
+              "x": 9840.2,
+              "y": 275.4
+            },
+            "t": 9.1,
+            "turtle": {
+              "brain": "MISCHIEF",
+              "drift": 9.1,
+              "speed": 198.0,
+              "speed_scale": 0.95,
+              "state": "CRUISING",
+              "x": 9840.2,
+              "y": 333.4
+            }
+          },
+          "from": "rabbit",
+          "t": 9.1,
+          "to": "turtle",
+          "x": 9840.2
+        },
+        {
+          "before": {
+            "control": "rabbit",
+            "rabbit": {
+              "brain": "DISTRACTED",
+              "drift": 4.42,
+              "state": "RIDING",
+              "x": 10787.6,
+              "y": 145.9
+            },
+            "t": 13.52,
+            "turtle": {
+              "brain": "CALM",
+              "drift": 1.27,
+              "speed": 220.0,
+              "speed_scale": 1.0,
+              "state": "LEAPING",
+              "x": 10791.0,
+              "y": 203.9
+            }
+          },
+          "from": "turtle",
+          "t": 13.52,
+          "to": "rabbit",
+          "x": 10791.0
+        },
+        {
+          "before": {
+            "control": "turtle",
+            "rabbit": {
+              "brain": "DISTRACTED",
+              "drift": 3.95,
+              "state": "FALLING",
+              "x": 10952.7,
+              "y": 57.7
+            },
+            "t": 14.25,
+            "turtle": {
+              "brain": "CALM",
+              "drift": 2.0,
+              "speed": 220.0,
+              "speed_scale": 1.0,
+              "state": "LEAPING",
+              "x": 10952.4,
+              "y": 224.6
+            }
+          },
+          "from": "rabbit",
+          "t": 14.25,
+          "to": "turtle",
+          "x": 10952.4
+        }
+      ],
+      "tail": {
+        "accident_detail": [],
+        "accidents": 0,
+        "hits": 0,
+        "hits_detail": [],
+        "mistakes": 0,
+        "passed_groups": [
+          "rock3",
+          "beam2",
+          "wall1",
+          "gate2"
+        ]
+      }
+    },
+    "c": {
+      "accidents": [],
+      "entries": {
+        "gate1": {
+          "control": "turtle",
+          "entry_lead_px": 59.7,
+          "group": "gate1",
+          "kind": "DIVE_GATE",
+          "partner_drift": 1.18,
+          "partner_state": "CALM",
+          "rabbit": {
+            "brain": "CALM",
+            "drift": 1.18,
+            "state": "RIDING",
+            "x": 3740.3,
+            "y": 425.5
+          },
+          "required": "dive",
+          "start": 3800.0,
+          "t": 1.18,
+          "turtle": {
+            "brain": "CALM",
+            "drift": 0.0,
+            "speed": 220.0,
+            "speed_scale": 1.0,
+            "state": "DIVING",
+            "x": 3740.3,
+            "y": 483.5
+          }
+        },
+        "log1": {
+          "control": "rabbit",
+          "entry_lead_px": 135.3,
+          "group": "log1",
+          "kind": "FLOATING_LOG",
+          "partner_drift": 7.72,
+          "partner_state": "RESTLESS",
+          "rabbit": {
+            "brain": "CALM",
+            "drift": 0.0,
+            "state": "JUMPING",
+            "x": 6268.2,
+            "y": 266.0
+          },
+          "required": "jump+shift+dive",
+          "start": 6400.0,
+          "t": 12.82,
+          "turtle": {
+            "brain": "RESTLESS",
+            "drift": 7.72,
+            "speed": 203.6,
+            "speed_scale": 0.93,
+            "state": "CRUISING",
+            "x": 6264.7,
+            "y": 334.2
+          }
+        },
+        "rock2": {
+          "control": "rabbit",
+          "entry_lead_px": 58.0,
+          "group": "rock2",
+          "kind": "SURFACE_ROCK",
+          "partner_drift": 2.0,
+          "partner_state": "CALM",
+          "rabbit": {
+            "brain": "CALM",
+            "drift": 2.1,
+            "state": "RIDING",
+            "x": 5042.0,
+            "y": 276.0
+          },
+          "required": "jump",
+          "start": 5100.0,
+          "t": 7.1,
+          "turtle": {
+            "brain": "CALM",
+            "drift": 2.0,
+            "speed": 220.0,
+            "speed_scale": 1.0,
+            "state": "CRUISING",
+            "x": 5042.0,
+            "y": 334.0
+          }
+        },
+        "shark1": {
+          "control": "turtle",
+          "entry_lead_px": 59.4,
+          "group": "shark1",
+          "kind": "SHARK",
+          "partner_drift": 4.27,
+          "partner_state": "DISTRACTED",
+          "rabbit": {
+            "brain": "DISTRACTED",
+            "drift": 4.27,
+            "state": "RIDING",
+            "x": 7187.5,
+            "y": 152.3
+          },
+          "required": "leap",
+          "start": 7250.0,
+          "t": 17.08,
+          "turtle": {
+            "brain": "CALM",
+            "drift": 0.18,
+            "speed": 220.0,
+            "speed_scale": 1.0,
+            "state": "LEAPING",
+            "x": 7190.6,
+            "y": 210.3
+          }
+        }
+      },
+      "events": [
+        {
+          "control": "turtle",
+          "drift": 3.02,
+          "from": "CALM",
+          "t": 3.02,
+          "to": "DISTRACTED",
+          "who": "rabbit"
+        },
+        {
+          "control": "rabbit",
+          "drift": 3.0,
+          "from": "DISTRACTED",
+          "t": 6.65,
+          "to": "CALM",
+          "who": "rabbit"
+        },
+        {
+          "control": "rabbit",
+          "drift": 3.02,
+          "from": "CALM",
+          "t": 8.12,
+          "to": "DISTRACTED",
+          "who": "turtle"
+        },
+        {
+          "control": "rabbit",
+          "drift": 6.02,
+          "from": "DISTRACTED",
+          "t": 11.12,
+          "to": "RESTLESS",
+          "who": "turtle"
+        },
+        {
+          "control": "turtle",
+          "drift": 5.98,
+          "from": "RESTLESS",
+          "t": 14.18,
+          "to": "DISTRACTED",
+          "who": "turtle"
+        },
+        {
+          "control": "turtle",
+          "drift": 2.98,
+          "from": "DISTRACTED",
+          "t": 15.68,
+          "to": "CALM",
+          "who": "turtle"
+        },
+        {
+          "control": "turtle",
+          "drift": 3.02,
+          "from": "CALM",
+          "t": 15.83,
+          "to": "DISTRACTED",
+          "who": "rabbit"
+        }
+      ],
+      "feedback": [
+        {
+          "kind": "clean",
+          "t": 2.63,
+          "text": "干净通过！"
+        },
+        {
+          "kind": "bro",
+          "t": 5.1,
+          "text": "换手 - 兔子开始收心"
+        },
+        {
+          "kind": "bro",
+          "t": 6.63,
+          "text": "兔子回过神了"
+        },
+        {
+          "kind": "clean",
+          "t": 8.35,
+          "text": "干净通过！"
+        },
+        {
+          "kind": "bro",
+          "t": 12.82,
+          "text": "换手 - 乌龟开始收心"
+        },
+        {
+          "kind": "bro",
+          "t": 13.97,
+          "text": "BRO DIVE！"
+        },
+        {
+          "kind": "bro",
+          "t": 13.97,
+          "text": "BRO COMBO！"
+        },
+        {
+          "kind": "bro",
+          "t": 15.67,
+          "text": "乌龟回过神了"
+        },
+        {
+          "kind": "pop",
+          "t": 16.63,
+          "text": "跃起！"
+        },
+        {
+          "kind": "clean",
+          "t": 18.03,
+          "text": "干净通过！"
+        },
+        {
+          "kind": "bro",
+          "t": 18.03,
+          "text": "BRO COMBO！"
+        }
+      ],
+      "hits": [],
+      "mistakes": [],
+      "score_log": [
+        {
+          "points": 150,
+          "reason": "precise:DIVE_GATE",
+          "t": 2.65,
+          "x": 4063.0
+        },
+        {
+          "points": 150,
+          "reason": "precise:SURFACE_ROCK",
+          "t": 8.37,
+          "x": 5320.5
+        },
+        {
+          "points": 250,
+          "reason": "bro_dive",
+          "t": 13.98,
+          "x": 6512.8
+        },
+        {
+          "points": 150,
+          "reason": "precise:SHARK",
+          "t": 18.05,
+          "x": 7403.3
+        }
+      ],
+      "segments": {
+        "C_alternating": {
+          "accident_count": 0,
+          "bro_meter": 0,
+          "control": "turtle",
+          "groups": [
+            "gate1",
+            "rock2",
+            "log1",
+            "shark1"
+          ],
+          "name": "C_alternating",
+          "rabbit": {
+            "brain": "DISTRACTED",
+            "drift": 5.23,
+            "state": "SHOWTIME",
+            "x": 7480.3,
+            "y": 193.1
+          },
+          "t": 18.4,
+          "turtle": {
+            "brain": "CALM",
+            "drift": 0.0,
+            "speed": 220.0,
+            "speed_scale": 1.0,
+            "state": "CRUISING",
+            "x": 7480.3,
+            "y": 334.0
+          },
+          "x": 7480.3
+        }
+      },
+      "shift_traces": [
+        {
+          "drift0": 5.1,
+          "samples": [
+            [
+              0.02,
+              5.1
+            ],
+            [
+              0.03,
+              5.1
+            ],
+            [
+              0.05,
+              5.1
+            ],
+            [
+              0.07,
+              5.1
+            ],
+            [
+              0.08,
+              5.1
+            ],
+            [
+              0.1,
+              5.1
+            ],
+            [
+              0.12,
+              5.1
+            ],
+            [
+              0.13,
+              5.1
+            ],
+            [
+              0.15,
+              5.1
+            ],
+            [
+              0.17,
+              5.1
+            ],
+            [
+              0.18,
+              5.1
+            ],
+            [
+              0.2,
+              5.1
+            ],
+            [
+              0.22,
+              5.1
+            ],
+            [
+              0.23,
+              5.1
+            ],
+            [
+              0.25,
+              5.1
+            ],
+            [
+              0.27,
+              5.1
+            ],
+            [
+              0.28,
+              5.1
+            ],
+            [
+              0.3,
+              5.1
+            ],
+            [
+              0.32,
+              5.1
+            ],
+            [
+              0.33,
+              5.1
+            ],
+            [
+              0.35,
+              5.1
+            ],
+            [
+              0.37,
+              5.1
+            ],
+            [
+              0.38,
+              5.1
+            ],
+            [
+              0.4,
+              5.1
+            ],
+            [
+              0.42,
+              5.1
+            ],
+            [
+              0.43,
+              5.1
+            ],
+            [
+              0.45,
+              5.1
+            ],
+            [
+              0.47,
+              5.1
+            ],
+            [
+              0.48,
+              5.1
+            ],
+            [
+              0.5,
+              5.1
+            ],
+            [
+              0.52,
+              5.07
+            ],
+            [
+              0.53,
+              5.03
+            ],
+            [
+              0.55,
+              5.0
+            ],
+            [
+              0.57,
+              4.97
+            ],
+            [
+              0.58,
+              4.93
+            ],
+            [
+              0.6,
+              4.9
+            ],
+            [
+              0.62,
+              4.87
+            ],
+            [
+              0.63,
+              4.83
+            ],
+            [
+              0.65,
+              4.8
+            ],
+            [
+              0.67,
+              4.77
+            ],
+            [
+              0.68,
+              4.73
+            ],
+            [
+              0.7,
+              4.7
+            ],
+            [
+              0.72,
+              4.67
+            ],
+            [
+              0.73,
+              4.63
+            ],
+            [
+              0.75,
+              4.6
+            ],
+            [
+              0.77,
+              4.57
+            ],
+            [
+              0.78,
+              4.53
+            ],
+            [
+              0.8,
+              4.5
+            ],
+            [
+              0.82,
+              4.47
+            ],
+            [
+              0.83,
+              4.43
+            ],
+            [
+              0.85,
+              4.4
+            ],
+            [
+              0.87,
+              4.37
+            ],
+            [
+              0.88,
+              4.33
+            ],
+            [
+              0.9,
+              4.3
+            ],
+            [
+              0.92,
+              4.27
+            ],
+            [
+              0.93,
+              4.23
+            ],
+            [
+              0.95,
+              4.2
+            ],
+            [
+              0.97,
+              4.17
+            ],
+            [
+              0.98,
+              4.13
+            ],
+            [
+              1.0,
+              4.1
+            ],
+            [
+              1.02,
+              4.07
+            ],
+            [
+              1.03,
+              4.03
+            ],
+            [
+              1.05,
+              4.0
+            ],
+            [
+              1.07,
+              3.97
+            ],
+            [
+              1.08,
+              3.93
+            ],
+            [
+              1.1,
+              3.9
+            ],
+            [
+              1.12,
+              3.87
+            ],
+            [
+              1.13,
+              3.83
+            ],
+            [
+              1.15,
+              3.8
+            ],
+            [
+              1.17,
+              3.77
+            ],
+            [
+              1.18,
+              3.73
+            ],
+            [
+              1.2,
+              3.7
+            ],
+            [
+              1.22,
+              3.67
+            ],
+            [
+              1.23,
+              3.63
+            ],
+            [
+              1.25,
+              3.6
+            ]
+          ],
+          "t0": 5.09999999999999,
+          "who": "rabbit"
+        },
+        {
+          "drift0": 7.72,
+          "samples": [
+            [
+              0.02,
+              7.72
+            ],
+            [
+              0.03,
+              7.72
+            ],
+            [
+              0.05,
+              7.72
+            ],
+            [
+              0.07,
+              7.72
+            ],
+            [
+              0.08,
+              7.72
+            ],
+            [
+              0.1,
+              7.72
+            ],
+            [
+              0.12,
+              7.72
+            ],
+            [
+              0.13,
+              7.72
+            ],
+            [
+              0.15,
+              7.72
+            ],
+            [
+              0.17,
+              7.72
+            ],
+            [
+              0.18,
+              7.72
+            ],
+            [
+              0.2,
+              7.72
+            ],
+            [
+              0.22,
+              7.72
+            ],
+            [
+              0.23,
+              7.72
+            ],
+            [
+              0.25,
+              7.72
+            ],
+            [
+              0.27,
+              7.72
+            ],
+            [
+              0.28,
+              7.72
+            ],
+            [
+              0.3,
+              7.72
+            ],
+            [
+              0.32,
+              7.72
+            ],
+            [
+              0.33,
+              7.72
+            ],
+            [
+              0.35,
+              7.72
+            ],
+            [
+              0.37,
+              7.72
+            ],
+            [
+              0.38,
+              7.72
+            ],
+            [
+              0.4,
+              7.72
+            ],
+            [
+              0.42,
+              7.72
+            ],
+            [
+              0.43,
+              7.72
+            ],
+            [
+              0.45,
+              7.72
+            ],
+            [
+              0.47,
+              7.72
+            ],
+            [
+              0.48,
+              7.72
+            ],
+            [
+              0.5,
+              7.72
+            ],
+            [
+              0.52,
+              7.68
+            ],
+            [
+              0.53,
+              7.65
+            ],
+            [
+              0.55,
+              7.62
+            ],
+            [
+              0.57,
+              7.58
+            ],
+            [
+              0.58,
+              7.55
+            ],
+            [
+              0.6,
+              7.52
+            ],
+            [
+              0.62,
+              7.48
+            ],
+            [
+              0.63,
+              7.45
+            ],
+            [
+              0.65,
+              7.42
+            ],
+            [
+              0.67,
+              7.38
+            ],
+            [
+              0.68,
+              7.35
+            ],
+            [
+              0.7,
+              7.32
+            ],
+            [
+              0.72,
+              7.28
+            ],
+            [
+              0.73,
+              7.25
+            ],
+            [
+              0.75,
+              7.22
+            ],
+            [
+              0.77,
+              7.18
+            ],
+            [
+              0.78,
+              7.15
+            ],
+            [
+              0.8,
+              7.12
+            ],
+            [
+              0.82,
+              7.08
+            ],
+            [
+              0.83,
+              7.05
+            ],
+            [
+              0.85,
+              7.02
+            ],
+            [
+              0.87,
+              6.98
+            ],
+            [
+              0.88,
+              6.95
+            ],
+            [
+              0.9,
+              6.92
+            ],
+            [
+              0.92,
+              6.88
+            ],
+            [
+              0.93,
+              6.85
+            ],
+            [
+              0.95,
+              6.82
+            ],
+            [
+              0.97,
+              6.78
+            ],
+            [
+              0.98,
+              6.75
+            ],
+            [
+              1.0,
+              6.72
+            ],
+            [
+              1.02,
+              6.68
+            ],
+            [
+              1.03,
+              6.65
+            ],
+            [
+              1.05,
+              6.62
+            ],
+            [
+              1.07,
+              6.58
+            ],
+            [
+              1.08,
+              6.55
+            ],
+            [
+              1.1,
+              6.52
+            ],
+            [
+              1.12,
+              6.48
+            ],
+            [
+              1.13,
+              6.45
+            ],
+            [
+              1.15,
+              6.42
+            ],
+            [
+              1.17,
+              6.38
+            ],
+            [
+              1.18,
+              6.35
+            ],
+            [
+              1.2,
+              6.32
+            ],
+            [
+              1.22,
+              6.28
+            ],
+            [
+              1.23,
+              6.25
+            ],
+            [
+              1.25,
+              6.22
+            ]
+          ],
+          "t0": 12.8166666666669,
+          "who": "turtle"
+        }
+      ],
+      "shifts": [
+        {
+          "before": {
+            "control": "rabbit",
+            "rabbit": {
+              "brain": "DISTRACTED",
+              "drift": 5.1,
+              "state": "RIDING",
+              "x": 4596.9,
+              "y": 276.1
+            },
+            "t": 5.1,
+            "turtle": {
+              "brain": "CALM",
+              "drift": 0.0,
+              "speed": 220.0,
+              "speed_scale": 1.0,
+              "state": "CRUISING",
+              "x": 4602.0,
+              "y": 334.1
+            }
+          },
+          "from": "turtle",
+          "t": 5.1,
+          "to": "rabbit",
+          "x": 4602.0
+        },
+        {
+          "before": {
+            "control": "turtle",
+            "rabbit": {
+              "brain": "CALM",
+              "drift": 0.0,
+              "state": "JUMPING",
+              "x": 6268.2,
+              "y": 266.0
+            },
+            "t": 12.82,
+            "turtle": {
+              "brain": "RESTLESS",
+              "drift": 7.72,
+              "speed": 203.6,
+              "speed_scale": 0.96,
+              "state": "CRUISING",
+              "x": 6264.7,
+              "y": 334.2
+            }
+          },
+          "from": "rabbit",
+          "t": 12.82,
+          "to": "turtle",
+          "x": 6264.7
+        }
+      ],
+      "tail": {
+        "accident_detail": [],
+        "accidents": 0,
+        "hits": 0,
+        "hits_detail": [],
+        "mistakes": 0,
+        "passed_groups": [
+          "gate1",
+          "rock2",
+          "log1",
+          "shark1"
+        ]
+      }
+    },
+    "de": {
+      "accidents": [],
+      "entries": {
+        "beam2": {
+          "control": "rabbit",
+          "entry_lead_px": 57.6,
+          "group": "beam2",
+          "kind": "LOW_BEAM",
+          "partner_drift": 7.62,
+          "partner_state": "RESTLESS",
+          "rabbit": {
+            "brain": "CALM",
+            "drift": 0.0,
+            "state": "CROUCHING",
+            "x": 9542.4,
+            "y": 295.6
+          },
+          "required": "crouch",
+          "start": 9600.0,
+          "t": 7.62,
+          "turtle": {
+            "brain": "RESTLESS",
+            "drift": 7.62,
+            "speed": 204.1,
+            "speed_scale": 0.93,
+            "state": "CRUISING",
+            "x": 9542.4,
+            "y": 333.6
+          }
+        },
+        "gate2": {
+          "control": "turtle",
+          "entry_lead_px": 57.3,
+          "group": "gate2",
+          "kind": "DIVE_GATE",
+          "partner_drift": 1.25,
+          "partner_state": "CALM",
+          "rabbit": {
+            "brain": "CALM",
+            "drift": 1.25,
+            "state": "RIDING",
+            "x": 11942.7,
+            "y": 425.7
+          },
+          "required": "dive",
+          "start": 12000.0,
+          "t": 19.47,
+          "turtle": {
+            "brain": "MISCHIEF",
+            "drift": 10.5,
+            "speed": 209.0,
+            "speed_scale": 0.95,
+            "state": "DIVING",
+            "x": 11942.7,
+            "y": 483.7
+          }
+        },
+        "wall1": {
+          "control": "rabbit",
+          "entry_lead_px": 57.7,
+          "group": "wall1",
+          "kind": "HIGH_WALL",
+          "partner_drift": 12.0,
+          "partner_state": "MISCHIEF",
+          "rabbit": {
+            "brain": "CALM",
+            "drift": 0.48,
+            "state": "JUMPING",
+            "x": 10806.1,
+            "y": 124.3
+          },
+          "required": "leap+stomp",
+          "start": 10860.0,
+          "t": 13.9,
+          "turtle": {
+            "brain": "MISCHIEF",
+            "drift": 12.0,
+            "speed": 220.0,
+            "speed_scale": 0.9,
+            "state": "LEAPING",
+            "x": 10802.3,
+            "y": 195.4
+          }
+        }
+      },
+      "events": [
+        {
+          "control": "rabbit",
+          "drift": 3.02,
+          "from": "CALM",
+          "t": 3.02,
+          "to": "DISTRACTED",
+          "who": "turtle"
+        },
+        {
+          "control": "rabbit",
+          "drift": 6.02,
+          "from": "DISTRACTED",
+          "t": 6.02,
+          "to": "RESTLESS",
+          "who": "turtle"
+        },
+        {
+          "control": "rabbit",
+          "drift": 9.0,
+          "from": "RESTLESS",
+          "t": 9.0,
+          "to": "MISCHIEF",
+          "who": "turtle"
+        },
+        {
+          "control": "turtle",
+          "drift": 8.97,
+          "from": "MISCHIEF",
+          "t": 20.23,
+          "to": "RESTLESS",
+          "who": "turtle"
+        },
+        {
+          "control": "turtle",
+          "drift": 3.02,
+          "from": "CALM",
+          "t": 21.23,
+          "to": "DISTRACTED",
+          "who": "rabbit"
+        },
+        {
+          "control": "turtle",
+          "drift": 5.97,
+          "from": "RESTLESS",
+          "t": 21.73,
+          "to": "DISTRACTED",
+          "who": "turtle"
+        },
+        {
+          "control": "turtle",
+          "drift": 2.97,
+          "from": "DISTRACTED",
+          "t": 23.23,
+          "to": "CALM",
+          "who": "turtle"
+        },
+        {
+          "control": "rabbit",
+          "drift": 3.0,
+          "from": "CALM",
+          "t": 23.27,
+          "to": "DISTRACTED",
+          "who": "turtle"
+        },
+        {
+          "control": "rabbit",
+          "drift": 2.98,
+          "from": "DISTRACTED",
+          "t": 24.75,
+          "to": "CALM",
+          "who": "rabbit"
+        }
+      ],
+      "feedback": [
+        {
+          "kind": "clean",
+          "t": 3.17,
+          "text": "干净通过！"
+        },
+        {
+          "kind": "clean",
+          "t": 9.18,
+          "text": "干净通过！"
+        },
+        {
+          "kind": "bro",
+          "t": 13.37,
+          "text": "换手 - 乌龟开始收心"
+        },
+        {
+          "kind": "pop",
+          "t": 13.37,
+          "text": "跃起！"
+        },
+        {
+          "kind": "bro",
+          "t": 14.65,
+          "text": "BRO OLLIE！"
+        },
+        {
+          "kind": "bro",
+          "t": 14.65,
+          "text": "BRO COMBO！"
+        },
+        {
+          "kind": "bro",
+          "t": 18.22,
+          "text": "换手 - 乌龟开始收心"
+        },
+        {
+          "kind": "clean",
+          "t": 20.97,
+          "text": "干净通过！"
+        },
+        {
+          "kind": "bro",
+          "t": 23.22,
+          "text": "乌龟回过神了"
+        },
+        {
+          "kind": "bro",
+          "t": 23.23,
+          "text": "换手 - 兔子开始收心"
+        },
+        {
+          "kind": "bro",
+          "t": 24.73,
+          "text": "兔子回过神了"
+        }
+      ],
+      "hits": [],
+      "mistakes": [],
+      "score_log": [
+        {
+          "points": 150,
+          "reason": "precise:SURFACE_ROCK",
+          "t": 3.18,
+          "x": 8600.3
+        },
+        {
+          "points": 150,
+          "reason": "precise:LOW_BEAM",
+          "t": 9.2,
+          "x": 9860.0
+        },
+        {
+          "points": 300,
+          "reason": "bro_ollie",
+          "t": 14.67,
+          "x": 10971.0
+        },
+        {
+          "points": 150,
+          "reason": "precise:DIVE_GATE",
+          "t": 20.98,
+          "x": 12261.0
+        }
+      ],
+      "segments": {
+        "D_dazed_combo": {
+          "accident_count": 0,
+          "bro_meter": 0,
+          "control": "turtle",
+          "groups": [
+            "beam2",
+            "wall1",
+            "gate2"
+          ],
+          "name": "D_dazed_combo",
+          "rabbit": {
+            "brain": "DISTRACTED",
+            "drift": 3.43,
+            "state": "RIDING",
+            "x": 12402.5,
+            "y": 295.8
+          },
+          "t": 21.65,
+          "turtle": {
+            "brain": "RESTLESS",
+            "drift": 6.13,
+            "speed": 215.3,
+            "speed_scale": 0.98,
+            "state": "SURFACING",
+            "x": 12403.6,
+            "y": 353.8
+          },
+          "x": 12403.6
+        },
+        "D_shift": {
+          "control": "turtle",
+          "rabbit": {
+            "brain": "CALM",
+            "drift": 0.0,
+            "state": "RIDING",
+            "x": 10685.0,
+            "y": 269.5
+          },
+          "t": 13.37,
+          "turtle": {
+            "brain": "MISCHIEF",
+            "drift": 12.0,
+            "speed": 198.0,
+            "speed_scale": 0.95,
+            "state": "SURFACING",
+            "x": 10685.0,
+            "y": 327.5
+          }
+        },
+        "E_recovery": {
+          "accident_count": 0,
+          "bro_meter": 0,
+          "control": "rabbit",
+          "name": "E_recovery",
+          "rabbit": {
+            "brain": "CALM",
+            "drift": 2.98,
+            "state": "RIDING",
+            "x": 67796.4,
+            "y": 277.2
+          },
+          "rabbit_recover_s": 1.52,
+          "rabbit_recovered": true,
+          "t": 24.75,
+          "turtle": {
+            "brain": "DISTRACTED",
+            "drift": 4.48,
+            "speed": 254.9,
+            "speed_scale": 0.98,
+            "state": "CRUISING",
+            "x": 67796.4,
+            "y": 335.2
+          },
+          "turtle_before": "DISTRACTED",
+          "turtle_recover_s": 1.58,
+          "turtle_recovered": true,
+          "x": 67796.4
+        }
+      },
+      "shift_traces": [
+        {
+          "drift0": 12.0,
+          "samples": [
+            [
+              0.02,
+              12.0
+            ],
+            [
+              0.03,
+              12.0
+            ],
+            [
+              0.05,
+              12.0
+            ],
+            [
+              0.07,
+              12.0
+            ],
+            [
+              0.08,
+              12.0
+            ],
+            [
+              0.1,
+              12.0
+            ],
+            [
+              0.12,
+              12.0
+            ],
+            [
+              0.13,
+              12.0
+            ],
+            [
+              0.15,
+              12.0
+            ],
+            [
+              0.17,
+              12.0
+            ],
+            [
+              0.18,
+              12.0
+            ],
+            [
+              0.2,
+              12.0
+            ],
+            [
+              0.22,
+              12.0
+            ],
+            [
+              0.23,
+              12.0
+            ],
+            [
+              0.25,
+              12.0
+            ],
+            [
+              0.27,
+              12.0
+            ],
+            [
+              0.28,
+              12.0
+            ],
+            [
+              0.3,
+              12.0
+            ],
+            [
+              0.32,
+              12.0
+            ],
+            [
+              0.33,
+              12.0
+            ],
+            [
+              0.35,
+              12.0
+            ],
+            [
+              0.37,
+              12.0
+            ],
+            [
+              0.38,
+              12.0
+            ],
+            [
+              0.4,
+              12.0
+            ],
+            [
+              0.42,
+              12.0
+            ],
+            [
+              0.43,
+              12.0
+            ],
+            [
+              0.45,
+              12.0
+            ],
+            [
+              0.47,
+              12.0
+            ],
+            [
+              0.48,
+              12.0
+            ]
+          ],
+          "t0": 13.3666666666669,
+          "truncated": true,
+          "who": "turtle"
+        },
+        {
+          "drift0": 0.48,
+          "samples": [
+            [
+              0.02,
+              0.48
+            ],
+            [
+              0.03,
+              0.48
+            ],
+            [
+              0.05,
+              0.48
+            ],
+            [
+              0.07,
+              0.48
+            ],
+            [
+              0.08,
+              0.48
+            ],
+            [
+              0.1,
+              0.48
+            ],
+            [
+              0.12,
+              0.48
+            ],
+            [
+              0.13,
+              0.48
+            ],
+            [
+              0.15,
+              0.48
+            ],
+            [
+              0.17,
+              0.48
+            ],
+            [
+              0.18,
+              0.48
+            ],
+            [
+              0.2,
+              0.48
+            ],
+            [
+              0.22,
+              0.48
+            ],
+            [
+              0.23,
+              0.48
+            ],
+            [
+              0.25,
+              0.48
+            ],
+            [
+              0.27,
+              0.48
+            ],
+            [
+              0.28,
+              0.48
+            ],
+            [
+              0.3,
+              0.48
+            ],
+            [
+              0.32,
+              0.48
+            ],
+            [
+              0.33,
+              0.48
+            ],
+            [
+              0.35,
+              0.48
+            ],
+            [
+              0.37,
+              0.48
+            ],
+            [
+              0.38,
+              0.48
+            ],
+            [
+              0.4,
+              0.48
+            ],
+            [
+              0.42,
+              0.48
+            ],
+            [
+              0.43,
+              0.48
+            ],
+            [
+              0.45,
+              0.48
+            ],
+            [
+              0.47,
+              0.48
+            ],
+            [
+              0.48,
+              0.48
+            ],
+            [
+              0.5,
+              0.48
+            ],
+            [
+              0.52,
+              0.45
+            ],
+            [
+              0.53,
+              0.42
+            ],
+            [
+              0.55,
+              0.38
+            ],
+            [
+              0.57,
+              0.35
+            ],
+            [
+              0.58,
+              0.32
+            ],
+            [
+              0.6,
+              0.28
+            ],
+            [
+              0.62,
+              0.25
+            ],
+            [
+              0.63,
+              0.22
+            ],
+            [
+              0.65,
+              0.18
+            ],
+            [
+              0.67,
+              0.15
+            ],
+            [
+              0.68,
+              0.12
+            ],
+            [
+              0.7,
+              0.08
+            ],
+            [
+              0.72,
+              0.05
+            ],
+            [
+              0.73,
+              0.02
+            ],
+            [
+              0.75,
+              0.0
+            ],
+            [
+              0.77,
+              0.0
+            ],
+            [
+              0.78,
+              0.0
+            ],
+            [
+              0.8,
+              0.0
+            ],
+            [
+              0.82,
+              0.0
+            ],
+            [
+              0.83,
+              0.0
+            ],
+            [
+              0.85,
+              0.0
+            ],
+            [
+              0.87,
+              0.0
+            ],
+            [
+              0.88,
+              0.0
+            ],
+            [
+              0.9,
+              0.0
+            ],
+            [
+              0.92,
+              0.0
+            ],
+            [
+              0.93,
+              0.0
+            ],
+            [
+              0.95,
+              0.0
+            ],
+            [
+              0.97,
+              0.0
+            ],
+            [
+              0.98,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.02,
+              0.0
+            ],
+            [
+              1.03,
+              0.0
+            ],
+            [
+              1.05,
+              0.0
+            ],
+            [
+              1.07,
+              0.0
+            ],
+            [
+              1.08,
+              0.0
+            ],
+            [
+              1.1,
+              0.0
+            ],
+            [
+              1.12,
+              0.0
+            ],
+            [
+              1.13,
+              0.0
+            ],
+            [
+              1.15,
+              0.0
+            ],
+            [
+              1.17,
+              0.0
+            ],
+            [
+              1.18,
+              0.0
+            ],
+            [
+              1.2,
+              0.0
+            ],
+            [
+              1.22,
+              0.0
+            ],
+            [
+              1.23,
+              0.0
+            ],
+            [
+              1.25,
+              0.0
+            ]
+          ],
+          "showtime_from": 1.13,
+          "t0": 13.8500000000003,
+          "who": "rabbit"
+        },
+        {
+          "drift0": 12.0,
+          "samples": [
+            [
+              0.02,
+              12.0
+            ],
+            [
+              0.03,
+              12.0
+            ],
+            [
+              0.05,
+              12.0
+            ],
+            [
+              0.07,
+              12.0
+            ],
+            [
+              0.08,
+              12.0
+            ],
+            [
+              0.1,
+              12.0
+            ],
+            [
+              0.12,
+              12.0
+            ],
+            [
+              0.13,
+              12.0
+            ],
+            [
+              0.15,
+              12.0
+            ],
+            [
+              0.17,
+              12.0
+            ],
+            [
+              0.18,
+              12.0
+            ],
+            [
+              0.2,
+              12.0
+            ],
+            [
+              0.22,
+              12.0
+            ],
+            [
+              0.23,
+              12.0
+            ],
+            [
+              0.25,
+              12.0
+            ],
+            [
+              0.27,
+              12.0
+            ],
+            [
+              0.28,
+              12.0
+            ],
+            [
+              0.3,
+              12.0
+            ],
+            [
+              0.32,
+              12.0
+            ],
+            [
+              0.33,
+              12.0
+            ],
+            [
+              0.35,
+              12.0
+            ],
+            [
+              0.37,
+              12.0
+            ],
+            [
+              0.38,
+              12.0
+            ],
+            [
+              0.4,
+              12.0
+            ],
+            [
+              0.42,
+              12.0
+            ],
+            [
+              0.43,
+              12.0
+            ],
+            [
+              0.45,
+              12.0
+            ],
+            [
+              0.47,
+              12.0
+            ],
+            [
+              0.48,
+              12.0
+            ],
+            [
+              0.5,
+              12.0
+            ],
+            [
+              0.52,
+              11.97
+            ],
+            [
+              0.53,
+              11.93
+            ],
+            [
+              0.55,
+              11.9
+            ],
+            [
+              0.57,
+              11.87
+            ],
+            [
+              0.58,
+              11.83
+            ],
+            [
+              0.6,
+              11.8
+            ],
+            [
+              0.62,
+              11.77
+            ],
+            [
+              0.63,
+              11.73
+            ],
+            [
+              0.65,
+              11.7
+            ],
+            [
+              0.67,
+              11.67
+            ],
+            [
+              0.68,
+              11.63
+            ],
+            [
+              0.7,
+              11.6
+            ],
+            [
+              0.72,
+              11.57
+            ],
+            [
+              0.73,
+              11.53
+            ],
+            [
+              0.75,
+              11.5
+            ],
+            [
+              0.77,
+              11.47
+            ],
+            [
+              0.78,
+              11.43
+            ],
+            [
+              0.8,
+              11.4
+            ],
+            [
+              0.82,
+              11.37
+            ],
+            [
+              0.83,
+              11.33
+            ],
+            [
+              0.85,
+              11.3
+            ],
+            [
+              0.87,
+              11.27
+            ],
+            [
+              0.88,
+              11.23
+            ],
+            [
+              0.9,
+              11.2
+            ],
+            [
+              0.92,
+              11.17
+            ],
+            [
+              0.93,
+              11.13
+            ],
+            [
+              0.95,
+              11.1
+            ],
+            [
+              0.97,
+              11.07
+            ],
+            [
+              0.98,
+              11.03
+            ],
+            [
+              1.0,
+              11.0
+            ],
+            [
+              1.02,
+              10.97
+            ],
+            [
+              1.03,
+              10.93
+            ],
+            [
+              1.05,
+              10.9
+            ],
+            [
+              1.07,
+              10.87
+            ],
+            [
+              1.08,
+              10.83
+            ],
+            [
+              1.1,
+              10.8
+            ],
+            [
+              1.12,
+              10.77
+            ],
+            [
+              1.13,
+              10.73
+            ],
+            [
+              1.15,
+              10.7
+            ],
+            [
+              1.17,
+              10.67
+            ],
+            [
+              1.18,
+              10.63
+            ],
+            [
+              1.2,
+              10.6
+            ],
+            [
+              1.22,
+              10.57
+            ],
+            [
+              1.23,
+              10.53
+            ],
+            [
+              1.25,
+              10.5
+            ]
+          ],
+          "t0": 18.2166666666669,
+          "who": "turtle"
+        },
+        {
+          "drift0": 5.02,
+          "samples": [
+            [
+              0.02,
+              5.02
+            ],
+            [
+              0.03,
+              5.02
+            ],
+            [
+              0.05,
+              5.02
+            ],
+            [
+              0.07,
+              5.02
+            ],
+            [
+              0.08,
+              5.02
+            ],
+            [
+              0.1,
+              5.02
+            ],
+            [
+              0.12,
+              5.02
+            ],
+            [
+              0.13,
+              5.02
+            ],
+            [
+              0.15,
+              5.02
+            ],
+            [
+              0.17,
+              5.02
+            ],
+            [
+              0.18,
+              5.02
+            ],
+            [
+              0.2,
+              5.02
+            ],
+            [
+              0.22,
+              5.02
+            ],
+            [
+              0.23,
+              5.02
+            ],
+            [
+              0.25,
+              5.02
+            ],
+            [
+              0.27,
+              5.02
+            ],
+            [
+              0.28,
+              5.02
+            ],
+            [
+              0.3,
+              5.02
+            ],
+            [
+              0.32,
+              5.02
+            ],
+            [
+              0.33,
+              5.02
+            ],
+            [
+              0.35,
+              5.02
+            ],
+            [
+              0.37,
+              5.02
+            ],
+            [
+              0.38,
+              5.02
+            ],
+            [
+              0.4,
+              5.02
+            ],
+            [
+              0.42,
+              5.02
+            ],
+            [
+              0.43,
+              5.02
+            ],
+            [
+              0.45,
+              5.02
+            ],
+            [
+              0.47,
+              5.02
+            ],
+            [
+              0.48,
+              5.02
+            ],
+            [
+              0.5,
+              5.02
+            ],
+            [
+              0.52,
+              4.98
+            ],
+            [
+              0.53,
+              4.95
+            ],
+            [
+              0.55,
+              4.92
+            ],
+            [
+              0.57,
+              4.88
+            ],
+            [
+              0.58,
+              4.85
+            ],
+            [
+              0.6,
+              4.82
+            ],
+            [
+              0.62,
+              4.78
+            ],
+            [
+              0.63,
+              4.75
+            ],
+            [
+              0.65,
+              4.72
+            ],
+            [
+              0.67,
+              4.68
+            ],
+            [
+              0.68,
+              4.65
+            ],
+            [
+              0.7,
+              4.62
+            ],
+            [
+              0.72,
+              4.58
+            ],
+            [
+              0.73,
+              4.55
+            ],
+            [
+              0.75,
+              4.52
+            ],
+            [
+              0.77,
+              4.48
+            ],
+            [
+              0.78,
+              4.45
+            ],
+            [
+              0.8,
+              4.42
+            ],
+            [
+              0.82,
+              4.38
+            ],
+            [
+              0.83,
+              4.35
+            ],
+            [
+              0.85,
+              4.32
+            ],
+            [
+              0.87,
+              4.28
+            ],
+            [
+              0.88,
+              4.25
+            ],
+            [
+              0.9,
+              4.22
+            ],
+            [
+              0.92,
+              4.18
+            ],
+            [
+              0.93,
+              4.15
+            ],
+            [
+              0.95,
+              4.12
+            ],
+            [
+              0.97,
+              4.08
+            ],
+            [
+              0.98,
+              4.05
+            ],
+            [
+              1.0,
+              4.02
+            ],
+            [
+              1.02,
+              3.98
+            ],
+            [
+              1.03,
+              3.95
+            ],
+            [
+              1.05,
+              3.92
+            ],
+            [
+              1.07,
+              3.88
+            ],
+            [
+              1.08,
+              3.85
+            ],
+            [
+              1.1,
+              3.82
+            ],
+            [
+              1.12,
+              3.78
+            ],
+            [
+              1.13,
+              3.75
+            ],
+            [
+              1.15,
+              3.72
+            ],
+            [
+              1.17,
+              3.68
+            ],
+            [
+              1.18,
+              3.65
+            ],
+            [
+              1.2,
+              3.62
+            ],
+            [
+              1.22,
+              3.58
+            ],
+            [
+              1.23,
+              3.55
+            ],
+            [
+              1.25,
+              3.52
+            ]
+          ],
+          "t0": 23.2333333333333,
+          "who": "rabbit"
+        }
+      ],
+      "shifts": [
+        {
+          "before": {
+            "control": "turtle",
+            "rabbit": {
+              "brain": "CALM",
+              "drift": 0.0,
+              "state": "RIDING",
+              "x": 10685.0,
+              "y": 269.5
+            },
+            "t": 13.37,
+            "turtle": {
+              "brain": "MISCHIEF",
+              "drift": 12.0,
+              "speed": 198.0,
+              "speed_scale": 0.95,
+              "state": "SURFACING",
+              "x": 10685.0,
+              "y": 327.5
+            }
+          },
+          "from": "rabbit",
+          "t": 13.37,
+          "to": "turtle",
+          "x": 10685.0
+        },
+        {
+          "before": {
+            "control": "rabbit",
+            "rabbit": {
+              "brain": "CALM",
+              "drift": 0.48,
+              "state": "RIDING",
+              "x": 10791.3,
+              "y": 145.9
+            },
+            "t": 13.85,
+            "turtle": {
+              "brain": "MISCHIEF",
+              "drift": 12.0,
+              "speed": 220.0,
+              "speed_scale": 0.9,
+              "state": "LEAPING",
+              "x": 10791.3,
+              "y": 203.9
+            }
+          },
+          "from": "turtle",
+          "t": 13.85,
+          "to": "rabbit",
+          "x": 10791.3
+        },
+        {
+          "before": {
+            "control": "turtle",
+            "rabbit": {
+              "brain": "CALM",
+              "drift": 0.0,
+              "state": "RIDING",
+              "x": 11681.5,
+              "y": 278.9
+            },
+            "t": 18.22,
+            "turtle": {
+              "brain": "MISCHIEF",
+              "drift": 12.0,
+              "speed": 198.0,
+              "speed_scale": 0.95,
+              "state": "DIVING",
+              "x": 11681.5,
+              "y": 336.9
+            }
+          },
+          "from": "rabbit",
+          "t": 18.22,
+          "to": "turtle",
+          "x": 11681.5
+        },
+        {
+          "before": {
+            "control": "rabbit",
+            "rabbit": {
+              "brain": "DISTRACTED",
+              "drift": 5.02,
+              "state": "RIDING",
+              "x": 67401.0,
+              "y": 275.7
+            },
+            "t": 23.23,
+            "turtle": {
+              "brain": "CALM",
+              "drift": 2.97,
+              "speed": 260.0,
+              "speed_scale": 1.0,
+              "state": "CRUISING",
+              "x": 67405.9,
+              "y": 333.7
+            }
+          },
+          "from": "turtle",
+          "t": 23.23,
+          "to": "rabbit",
+          "x": 67405.9
+        }
+      ],
+      "tail": {
+        "accident_detail": [],
+        "accidents": 0,
+        "hits": 0,
+        "hits_detail": [],
+        "mistakes": 0,
+        "passed_groups": [
+          "rock3",
+          "beam2",
+          "wall1",
+          "gate2"
+        ]
+      }
+    }
+  },
+  "step_hz": 60,
+  "summary": {
+    "checks": 31,
+    "failed": 0,
+    "failures": []
+  },
+  "verdict": {
+    "all_required_groups_passed": true,
+    "no_accidents": true,
+    "no_hits": true,
+    "unwinnable_found": false
+  }
+}

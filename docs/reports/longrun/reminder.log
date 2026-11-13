@@ -1,0 +1,4 @@
+﻿2026-11-12 02:06:56 TEST=True status=READY lock=none head=No live worker; task is stopped or not started.
+2026-11-12 02:07:00 popup dismissed
+2026-11-12 07:00:02 TEST=False status=RUNNING lock=RUNNING pid=7972 head=Task may already be RUNNING.
+2026-11-12 07:01:03 popup dismissed

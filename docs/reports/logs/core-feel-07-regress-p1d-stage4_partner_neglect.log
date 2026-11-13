@@ -1,0 +1,14 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+LEVEL SEED 20261112
+SNACK DRAW #1 group=gate1 zone=1 kind=DIVE_GATE (fixed)
+SNACK DRAW #2 group=beam1 zone=1 kind=LOW_BIRD (was LOW_BEAM)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=SURFACE_ROCK (was DIVE_GATE)
+STAGE4 PARTNER NEGLECT: PASS
+  data: {"care":{"accident_at_contact":"","accident_end":"NONE","bro_meter_delta":0,"combo_after":1,"contact_x":-1.0,"hit":false,"pose_after_takeover":0,"pose_frames":0,"take_over":true,"ticks":364,"was_crouching":true,"water_fall":false},"drift_only":{"accident":"NONE","accident_delta":0,"bro_meter_delta":0,"drift":12.0,"mount":"RIDING","state":"MISCHIEF"},"neglect":{"accident_at_contact":"RABBIT_STUN","accident_end":"NONE","bro_meter_delta":1,"combo_after":0,"contact_x":14553.4,"hit":true,"pose_after_takeover":0,"pose_frames":70,"take_over":false,"ticks":381,"was_crouching":false,"water_fall":false}}

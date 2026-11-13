@@ -1,0 +1,23 @@
+{
+  "center_en_locale": "BRO METER FULL - BOTH CAPSIZED!",
+  "center_msgs": [
+    "BRO METER 满 —— 一起翻船！"
+  ],
+  "center_zh": "BRO METER 满 —— 一起翻船！",
+  "center_zh_locale": "BRO METER 满 —— 一起翻船！",
+  "joint_pending": true,
+  "joint_pending_after_show": false,
+  "meter_after_first": 1,
+  "meter_after_second": 2,
+  "meter_after_show": 0,
+  "meter_after_third": 3,
+  "result_en": "RACE TIME                 0.00 s\nCLEAN PASSES                 5\nBRO COMBOS                   3\nRESCUE SAVES                 1\nHAND-FED SNACKS              0\nMISTAKES                     3\nCAPSIZES                     1",
+  "result_zh": "比赛时间                 0.00 秒\n干净通过                    5\n连招                        3\n救援成功                    1\n亲手喂到                    0\n失误                        3\n翻船次数                    1",
+  "score_before_third": 9800,
+  "score_cost_first": 100,
+  "score_cost_second": 100,
+  "score_cost_third": 300,
+  "show_ended": true,
+  "show_start_frames": 48,
+  "show_started": true
+}

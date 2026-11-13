@@ -1,0 +1,40 @@
+{
+ "before": {
+  "coverage": {
+   "jump": 21,
+   "crouch": 18,
+   "dive": 38,
+   "leap": 27,
+   "dive_jump": 22,
+   "leap_jump": 3
+  },
+  "max_scheme": 38
+ },
+ "after": {
+  "coverage": {
+   "jump": 21,
+   "crouch": 18,
+   "dive": 17,
+   "leap": 27,
+   "dive_jump": 22,
+   "leap_jump": 3
+  },
+  "max_scheme": 27
+ },
+ "after_no_solution": [],
+ "after_design_correct": 55,
+ "after_adjacent_same_kind": [],
+ "kinds": [
+  "DIVE_GATE",
+  "FLOATING_LOG",
+  "HIGH_WALL",
+  "LOW_BEAM",
+  "LOW_BIRD",
+  "SHARK",
+  "SURFACE_ROCK"
+ ],
+ "dive_pass_by_kind": {
+  "LOW_BIRD": 9,
+  "DIVE_GATE": 8
+ }
+}

@@ -1,0 +1,100 @@
+{
+  "arms": {
+    "A": {
+      "accidents": 1,
+      "avg_states": 1.13,
+      "cleared": false,
+      "down_presses": 1,
+      "frames": 502,
+      "gear_changes": 0,
+      "gear_oscillations": 0,
+      "gear_seconds": [
+        0.0,
+        8.37,
+        0.0
+      ],
+      "gear_waste": 0,
+      "mode": "A",
+      "seconds": 8.37,
+      "shifts": 2,
+      "sinks": 1,
+      "slips": 0,
+      "up_presses": 0
+    },
+    "B": {
+      "accidents": 1,
+      "avg_states": 1.13,
+      "cleared": false,
+      "down_presses": 1,
+      "frames": 502,
+      "gear_changes": 0,
+      "gear_oscillations": 0,
+      "gear_seconds": [
+        0.0,
+        8.37,
+        0.0
+      ],
+      "gear_waste": 0,
+      "mode": "B",
+      "seconds": 8.37,
+      "shifts": 2,
+      "sinks": 1,
+      "slips": 0,
+      "up_presses": 0
+    },
+    "BF": {
+      "accidents": 1,
+      "avg_states": 1.18,
+      "cleared": false,
+      "down_presses": 1,
+      "frames": 379,
+      "gear_changes": 0,
+      "gear_oscillations": 0,
+      "gear_seconds": [
+        0.0,
+        0.0,
+        6.32
+      ],
+      "gear_waste": 0,
+      "mode": "BF",
+      "seconds": 6.32,
+      "shifts": 2,
+      "sinks": 1,
+      "slips": 0,
+      "up_presses": 0
+    },
+    "BS": {
+      "accidents": 1,
+      "avg_states": 1.13,
+      "cleared": false,
+      "down_presses": 1,
+      "frames": 502,
+      "gear_changes": 0,
+      "gear_oscillations": 0,
+      "gear_seconds": [
+        0.0,
+        8.37,
+        0.0
+      ],
+      "gear_waste": 0,
+      "mode": "BS",
+      "seconds": 8.37,
+      "shifts": 2,
+      "sinks": 1,
+      "slips": 0,
+      "up_presses": 0
+    }
+  },
+  "gear_speeds": {
+    "cruise": 240.0,
+    "fast": 320.0,
+    "slow": 190.0
+  },
+  "input_actions": [
+    "gear applied by harness; a real build would map left/right"
+  ],
+  "section": {
+    "end": 28500.0,
+    "start": 21200.0
+  }
+}

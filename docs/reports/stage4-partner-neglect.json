@@ -1,0 +1,38 @@
+{
+  "care": {
+    "accident_at_contact": "",
+    "accident_end": "NONE",
+    "bro_meter_delta": 0,
+    "combo_after": 1,
+    "contact_x": -1.0,
+    "hit": false,
+    "pose_after_takeover": 0,
+    "pose_frames": 0,
+    "take_over": true,
+    "ticks": 364,
+    "was_crouching": true,
+    "water_fall": false
+  },
+  "drift_only": {
+    "accident": "NONE",
+    "accident_delta": 0,
+    "bro_meter_delta": 0,
+    "drift": 12.0,
+    "mount": "RIDING",
+    "state": "MISCHIEF"
+  },
+  "neglect": {
+    "accident_at_contact": "RABBIT_STUN",
+    "accident_end": "NONE",
+    "bro_meter_delta": 1,
+    "combo_after": 0,
+    "contact_x": 14553.4,
+    "hit": true,
+    "pose_after_takeover": 0,
+    "pose_frames": 70,
+    "take_over": false,
+    "ticks": 381,
+    "was_crouching": false,
+    "water_fall": false
+  }
+}

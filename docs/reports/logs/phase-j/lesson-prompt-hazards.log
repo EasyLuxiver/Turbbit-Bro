@@ -1,0 +1,12 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+LESSON kinds=7 groups=55
+LESSON LOW_BIRD      first=bird1    Z1 x=481 start=1300 d=819 px (3.72 s) prompt="↓ CROUCH" emitted=true
+LESSON SURFACE_ROCK  first=rock1    Z1 x=1405 start=2400 d=995 px (4.52 s) prompt="↑ JUMP" emitted=true
+LESSON LOW_BEAM      first=beam1    Z1 x=2603 start=3700 d=1097 px (4.98 s) prompt="↓ CROUCH" emitted=true
+LESSON SHARK         first=shark1   Z1 x=6105 start=7200 d=1095 px (4.98 s) prompt="SHIFT + ↑ TURTLE LEAP" emitted=true
+LESSON DIVE_GATE     first=gate1    Z1 x=7301 start=8400 d=1099 px (4.99 s) prompt="SHIFT + HOLD ↓ TURTLE DIVE" emitted=true
+LESSON FLOATING_LOG  first=log1     Z1 x=9821 start=10920 d=1099 px (5.00 s) prompt="↑ RABBIT JUMP → SHIFT → ↓ TURTLE DIVE" emitted=true
+LESSON HIGH_WALL     first=wall1    Z1 x=12203 start=13300 d=1097 px (4.98 s) prompt="SHIFT + ↑ LEAP → SHIFT RABBIT → ↑ KICK" emitted=true
+LESSON wrote res://docs/reports/logs/phase-j/lesson-prompts-hazards.json
+LESSON: DONE kinds_taught=7/7 under_1s=0 accidents=38 (49.20 s)

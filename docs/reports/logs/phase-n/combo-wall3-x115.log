@@ -1,0 +1,13 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+COMBO groups=55 cases=1 out=res://docs/reports/longrun/phase-n-wall3-x115.json
+CASE g=37 HIGH_WALL    z3 w=30 v=299 leap_jump
+  lead=240 pass= 3 delay 0.45..0.55 (0.10 s, runs=1)
+  lead=250 pass= 3 delay 0.45..0.55 (0.10 s, runs=1)
+  lead=260 pass= 5 delay 0.40..0.60 (0.20 s, runs=1)
+  lead=270 pass= 5 delay 0.40..0.60 (0.20 s, runs=1)
+  lead=280 pass= 6 delay 0.40..0.65 (0.25 s, runs=1)
+  lead=290 pass= 6 delay 0.40..0.65 (0.25 s, runs=1)
+  lead=300 pass= 7 delay 0.40..0.70 (0.30 s, runs=1)
+  SUMMARY pass=35/380 lead_with_pass=7 best_delay=0.30 s at lead 300
+COMBO: DONE

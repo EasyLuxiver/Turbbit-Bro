@@ -1,0 +1,74 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+==== OLD (manual up/down) ====
+-- A1
+-- A2
+-- B1
+-- B2_1.5
+-- B2_2.5
+-- C1_neutral
+-- C2_sinking_0.9s
+-- C3_sunk_40px
+G  hold down 1 s  y 300.0 -> 483.0  (dy +183.0)
+G  hold up   1 s  y 300.0 -> 300.0  (dy +0.0)
+-- D_dive_w120_lead200
+-- D_dive_w160_lead200
+-- D_dive_w200_lead200
+-- D_dive_w240_lead200
+-- D_dive_w300_lead200
+-- D_dive_w500_lead200
+==== NEW (surfboard) ====
+-- A1
+-- A2
+-- B1
+-- B2_1.5
+-- B2_2.5
+-- C1_neutral
+-- C2_sinking_0.9s
+-- C3_sunk_40px
+G  hold down 1 s  y 334.0 -> 476.8  (dy +142.8)
+G  hold up   1 s  y 334.0 -> 188.3  (dy -145.7)
+-- D_sink_w100_lead180
+-- D_sink_w100_lead200
+-- D_sink_w100_lead220
+-- D_sink_w100_lead240
+-- D_sink_w120_lead180
+-- D_sink_w120_lead200
+-- D_sink_w120_lead220
+-- D_sink_w120_lead240
+-- D_sink_w140_lead180
+-- D_sink_w140_lead200
+-- D_sink_w140_lead220
+-- D_sink_w140_lead240
+-- D_none_w160_lead0
+-- D_jumpoff_w160_lead160
+-- E1_sunk_0
+-- E1_sunk_30
+-- E1_sunk_45
+-- E1_sunk_60
+-- E1_sunk_75
+-- E1_sunk_90
+-- E2_recontrol_0.0
+-- E2_recontrol_0.2
+-- E2_recontrol_0.4
+-- E2_recontrol_0.6
+-- E2_recontrol_1.0
+-- F1
+-- F2
+-- D_sink_w80_lead180
+-- D_sink_w80_lead200
+-- D_sink_w80_lead220
+-- D_sink_w80_lead240
+-- D_sink_w100_lead180
+-- D_sink_w100_lead200
+-- D_sink_w100_lead220
+-- D_sink_w100_lead240
+-- D_sink_w80_lead180
+-- D_sink_w80_lead200
+-- D_sink_w80_lead220
+-- D_sink_w80_lead240
+-- D_sink_w100_lead180
+-- D_sink_w100_lead200
+-- D_sink_w100_lead220
+-- D_sink_w100_lead240
+STAGE4 SURFBOARD: auto-cruise=1.85, sink-accident=-1.00s, max wall passable via sink=140 px

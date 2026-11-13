@@ -1,0 +1,131 @@
+STAGE 2 SCRIPTED RUN  duration=90s  time_scale=3.0
+t= 1.03  lap=1 x=598 y=334 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t= 2.12  lap=1 x=840 y=238 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t= 3.12  lap=1 x=1060 y=157 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t= 4.12  lap=1 x=1280 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t= 4.22  ACCIDENT RABBIT_STUN  control=turtle x=1299
+t= 5.03  RECOVERED  control=turtle x=1429
+t= 5.14  lap=1 x=1450 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t= 6.23  lap=1 x=1692 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t= 7.33  lap=1 x=1934 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t= 8.43  lap=1 x=2176 y=95 state=NONE control=rabbit mount=AIRBORNE rabbit=JUMPING turtle=LEAPING oxy=8.0 combo=0 show=0
+t= 9.53  ACCIDENT RABBIT_STUN  control=rabbit x=2418
+t= 9.53  lap=1 x=2418 y=334 state=RABBIT_STUN control=rabbit mount=RIDING rabbit=STUNNED turtle=CRUISING oxy=8.0 combo=0 show=0
+t=10.33  RECOVERED  control=rabbit x=2546
+t=10.62  lap=1 x=2609 y=238 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t=11.64  lap=1 x=2829 y=157 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t=12.73  lap=1 x=3157 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=BOOSTING oxy=8.0 combo=0 show=0
+t=13.83  lap=1 x=3477 y=285 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t=14.93  lap=1 x=3719 y=157 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t=15.13  ACCIDENT RABBIT_STUN  control=turtle x=3763
+t=15.92  RECOVERED  control=turtle x=3905
+t=16.03  lap=1 x=3926 y=337 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=SURFACING oxy=8.0 combo=0 show=0
+t=17.12  lap=1 x=4168 y=95 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t=18.14  lap=1 x=4388 y=334 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=19.23  lap=1 x=4630 y=334 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=20.34  lap=1 x=4872 y=334 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=20.42  ACCIDENT RABBIT_STUN  control=rabbit x=4894
+t=21.23  RECOVERED  control=rabbit x=5023
+t=21.34  lap=1 x=5042 y=334 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=22.42  lap=1 x=5284 y=334 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+WARN  accident TURTLE_REEF not seen (state=NONE)
+t=23.46  WALL begin control=rabbit x=5504 y=334 grace=0.0
+t=23.52  lap=1 x=5526 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=23.65  WALL prepared control=turtle x=5548 y=285 grace=0.0
+t=24.62  lap=1 x=5768 y=126 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t=25.31  WALL dived control=turtle x=5911 y=355
+t=25.64  ACCIDENT RABBIT_STUN  control=turtle x=5988
+t=25.64  lap=1 x=5988 y=351 state=RABBIT_STUN control=turtle mount=RIDING rabbit=STUNNED turtle=SURFACING oxy=8.0 combo=0 show=0
+t=26.42  RECOVERED  control=turtle x=6116
+t=26.73  lap=1 x=6180 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=27.83  lap=1 x=6422 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=28.93  lap=1 x=6664 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=30.02  lap=1 x=6906 y=114 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t=31.04  lap=1 x=7126 y=309 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t=32.13  lap=1 x=7360 y=429 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=DUNKED oxy=7.8 combo=0 show=0
+t=33.23  lap=1 x=7602 y=391 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=SURFACING oxy=7.3 combo=0 show=0
+t=34.33  lap=1 x=7844 y=336 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=35.42  lap=1 x=8086 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=35.75  LAP 1 done x=8152 -> back to start
+t=36.44  lap=2 x=554 y=85 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t=37.53  lap=2 x=796 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=38.63  lap=2 x=1038 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=39.73  lap=2 x=1280 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=40.82  lap=2 x=1522 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=41.84  lap=2 x=1742 y=141 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t=42.93  lap=2 x=1984 y=309 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t=44.03  lap=2 x=2226 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=45.13  lap=2 x=2468 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=46.22  lap=2 x=2795 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=BOOSTING oxy=8.0 combo=0 show=0
+t=47.24  lap=2 x=3175 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=BOOSTING oxy=8.0 combo=0 show=0
+t=48.33  lap=2 x=3425 y=114 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t=49.43  lap=2 x=3667 y=334 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=50.53  lap=2 x=3909 y=334 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+WARN  accident RABBIT_STUN not seen (state=NONE)
+t=51.62  lap=2 x=4151 y=103 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t=52.64  lap=2 x=4371 y=341 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=SURFACING oxy=8.0 combo=0 show=0
+t=53.73  lap=2 x=4613 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=54.83  lap=2 x=4855 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=55.92  lap=2 x=5097 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=57.02  lap=2 x=5339 y=126 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t=58.02  lap=2 x=5559 y=285 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t=59.02  lap=2 x=5779 y=334 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=60.12  lap=2 x=6021 y=334 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=61.22  lap=2 x=6263 y=334 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=62.23  lap=2 x=6483 y=334 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+WARN  accident TURTLE_REEF not seen (state=NONE)
+t=62.75  WALL begin control=rabbit x=6593 y=334 grace=0.0
+t=62.96  WALL prepared control=turtle x=6637 y=285 grace=0.0
+t=63.33  lap=2 x=6725 y=126 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t=64.43  lap=2 x=6967 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=64.61  WALL dived control=turtle x=7000 y=355
+t=65.52  lap=2 x=7209 y=336 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=SURFACING oxy=8.0 combo=0 show=0
+t=66.62  lap=2 x=7451 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=67.63  lap=2 x=7671 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=68.73  lap=2 x=7913 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=69.83  lap=2 x=8155 y=114 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t=70.92  lap=2 x=8390 y=391 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=DUNKED oxy=8.0 combo=0 show=0
+t=71.94  lap=2 x=8610 y=446 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=DUNKED oxy=7.3 combo=0 show=0
+t=73.03  lap=2 x=8852 y=364 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=SURFACING oxy=7.6 combo=0 show=0
+t=74.13  lap=2 x=9094 y=335 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=74.96  LAP 2 done x=9270 -> back to start
+t=75.23  lap=3 x=466 y=141 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t=76.32  lap=3 x=708 y=309 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t=77.34  lap=3 x=928 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=78.43  lap=3 x=1170 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=79.53  lap=3 x=1412 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=80.63  lap=3 x=1654 y=309 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t=81.72  lap=3 x=1896 y=141 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t=82.74  lap=3 x=2116 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=83.83  lap=3 x=2358 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=84.93  lap=3 x=2611 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=BOOSTING oxy=8.0 combo=0 show=0
+t=86.03  lap=3 x=3023 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=BOOSTING oxy=8.0 combo=0 show=0
+t=87.12  lap=3 x=3313 y=84 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t=88.14  lap=3 x=3533 y=348 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=DIVING oxy=8.0 combo=0 show=0
+t=89.23  lap=3 x=3775 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=90.33  lap=3 x=4017 y=216 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t=91.33  lap=3 x=4237 y=175 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t=92.43  lap=3 x=4479 y=334 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=93.54  lap=3 x=4721 y=334 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=94.63  lap=3 x=4963 y=334 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=95.73  lap=3 x=5205 y=334 state=NONE control=rabbit mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+WARN  accident TURTLE_REEF not seen (state=NONE)
+t=96.41  WALL begin control=rabbit x=5348 y=334 grace=0.0
+t=96.60  WALL prepared control=turtle x=5392 y=285 grace=0.0
+t=96.82  lap=3 x=5447 y=175 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t=97.92  lap=3 x=5689 y=261 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t=98.25  WALL dived control=turtle x=5755 y=355
+t=98.94  lap=3 x=5909 y=340 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=SURFACING oxy=8.0 combo=0 show=0
+t=100.03  lap=3 x=6151 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=101.13  lap=3 x=6393 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=102.22  lap=3 x=6635 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=103.32  lap=3 x=6877 y=95 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=LEAPING oxy=8.0 combo=0 show=0
+t=104.33  lap=3 x=7097 y=382 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=DIVING oxy=8.0 combo=0 show=0
+t=105.43  lap=3 x=7339 y=336 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=106.53  lap=3 x=7581 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+t=107.62  lap=3 x=7823 y=334 state=NONE control=turtle mount=RIDING rabbit=RIDING turtle=CRUISING oxy=8.0 combo=0 show=0
+
+RESULT  simulated=108.31s  laps=2  shifts=82  showtime=0  accidents=5
+RESULT  classes=RABBIT_STUN  max_accident=0.80s  stuck=0.00s  failures=2
+FAIL  at least one Showtime (0)
+FAIL  two accident classes observed (RABBIT_STUN)

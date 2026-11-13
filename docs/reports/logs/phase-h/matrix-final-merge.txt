@@ -1,0 +1,7 @@
+﻿merged groups: 55 (baseline 55, missing [])
+no_solution_groups: []
+design answer missing: []
+passing_schemes diffs vs Phase C baseline: 0
+coverage: {'jump': 21, 'crouch': 18, 'dive': 38, 'leap': 27, 'dive_jump': 22, 'leap_jump': 3}
+must SHIFT (only combos pass): 11 -> [8, 10, 17, 20, 24, 29, 35, 37, 41, 46, 52]
+solutions/group: {4: 7, 2: 9, 3: 6, 5: 8, 1: 25}

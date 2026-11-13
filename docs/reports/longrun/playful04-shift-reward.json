@@ -1,0 +1,86 @@
+{
+  "data": {
+    "autonomous_rabbit": {
+      "accident_count": 0,
+      "max_offset_from_mount": 7.33,
+      "mischief_frames": 0,
+      "mount_states": {
+        "RIDING": 360
+      },
+      "rabbit_state": "RIDING",
+      "seconds": 6.0
+    },
+    "english": {
+      "hint_snack": "SNACK - WHOEVER YOU DRIVE EATS IT: TURTLE = TURBO, RABBIT = HIGHER JUMP; SKIPPING COSTS NOTHING",
+      "turbo": "TURBO! GULP!",
+      "turbo_switch": "TURBO! HAND-FED! TURTLE LOVES IT!",
+      "world_snack": "SNACK"
+    },
+    "feed_as_rabbit": {
+      "accident_count": 0,
+      "boost_speed": 0.0,
+      "boost_until_x": -1.0,
+      "bro_meter": 0,
+      "control": "rabbit",
+      "drift_after": 0.8,
+      "drift_before": 0.8,
+      "eaten": true,
+      "eaten_by": "rabbit",
+      "feedback": "兔子吃了！ 下一跳更高！",
+      "gulp_by_player": false,
+      "interest_before": 3250.0,
+      "rabbit_boost_active": true,
+      "rabbit_boost_until_x": 4160.0,
+      "rabbit_jump_boost": 1.15,
+      "score": 0,
+      "switch_bonus_entries": [],
+      "turtle_boost_active": false
+    },
+    "feed_as_turtle": {
+      "accident_count": 0,
+      "boost_speed": 253.0,
+      "boost_until_x": 4160.0,
+      "bro_meter": 0,
+      "control": "turtle",
+      "drift_after": 0.0,
+      "drift_before": 0.8,
+      "eaten": true,
+      "eaten_by": "turtle",
+      "feedback": "TURBO！亲手喂到！乌龟很满足！",
+      "gulp_by_player": true,
+      "interest_before": 3250.0,
+      "rabbit_boost_active": false,
+      "rabbit_boost_until_x": -1.0,
+      "rabbit_jump_boost": 1.0,
+      "score": 30,
+      "switch_bonus_entries": [
+        30
+      ],
+      "turtle_boost_active": true
+    },
+    "readability": {
+      "ahead_40": 40.0,
+      "ahead_900": 900.0,
+      "drift_state": "MISCHIEF",
+      "eaten_false": true,
+      "encounter_x": 3250.0,
+      "lean_toward_food": [
+        7.0,
+        7.0
+      ]
+    },
+    "skip_food": {
+      "accident_count": 0,
+      "boost_active": false,
+      "bro_meter": 0,
+      "drift_after": 0.3,
+      "drift_before": 0.3,
+      "eaten": false,
+      "score": 0,
+      "score_log_size": 0
+    }
+  },
+  "failures": [],
+  "generated_at": "2026-11-13T16:05:09",
+  "note": "SHIFT 正向反馈审查：直接调用正式 race.gd 的食物/物理逻辑；自动探针，不是真人试玩。"
+}

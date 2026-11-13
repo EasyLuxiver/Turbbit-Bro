@@ -1,0 +1,129 @@
+{
+  "cases": [
+    {
+      "case": "dive_window",
+      "group": "log1",
+      "rows": [
+        {
+          "label": "",
+          "pct": 0.0,
+          "phase": "",
+          "rabbit": "",
+          "tag": "600 outside",
+          "turtle": "",
+          "visible": false
+        },
+        {
+          "label": "BRO DIVE  准备",
+          "pct": 4.55,
+          "phase": "prepare",
+          "rabbit": "   BRO DIVE  准备",
+          "tag": "500 prepare",
+          "turtle": "",
+          "visible": true
+        },
+        {
+          "label": "BRO DIVE  现在！",
+          "pct": 50.0,
+          "phase": "now",
+          "rabbit": "   BRO DIVE  现在！",
+          "tag": "300 open",
+          "turtle": "   配合",
+          "visible": true
+        },
+        {
+          "label": "BRO DIVE  现在！",
+          "pct": 72.73,
+          "phase": "now",
+          "rabbit": "   BRO DIVE  现在！",
+          "tag": "200 now",
+          "turtle": "   配合",
+          "visible": true
+        },
+        {
+          "label": "BRO DIVE  现在！",
+          "pct": 100.0,
+          "phase": "now",
+          "rabbit": "   BRO DIVE  现在！",
+          "tag": "80 close",
+          "turtle": "   配合",
+          "visible": true
+        },
+        {
+          "label": "BRO DIVE  已错过",
+          "pct": 100.0,
+          "phase": "missed",
+          "rabbit": "   BRO DIVE  已错过",
+          "tag": "60 missed",
+          "turtle": "",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "case": "ollie_window",
+      "group": "wall1",
+      "rows": [
+        {
+          "label": "BRO OLLIE  现在！",
+          "pct": 86.49,
+          "phase": "now",
+          "rabbit": "   配合",
+          "tag": "200 now",
+          "turtle": "   BRO OLLIE  现在！",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "case": "control_and_rescue",
+      "rows": {
+        "rabbit_control": {
+          "rabbit": "操控 · 骑乘",
+          "turtle": "待命 · 稳定"
+        },
+        "rabbit_water": {
+          "coop": false,
+          "rabbit": "落水 · 等接应",
+          "turtle": "操控 · 救援"
+        },
+        "turtle_control": {
+          "rabbit": "待命 · 稳定",
+          "turtle": "操控 · 巡航"
+        }
+      }
+    },
+    {
+      "case": "language",
+      "rows": {
+        "en": {
+          "label": "BRO DIVE  NOW!",
+          "min": [
+            305.0,
+            156.0
+          ],
+          "panel": [
+            305.0,
+            156.0
+          ],
+          "rabbit": "   BRO DIVE  NOW!",
+          "turtle": "   ASSIST"
+        },
+        "zh": {
+          "label": "BRO DIVE  现在！",
+          "min": [
+            213.0,
+            156.0
+          ],
+          "panel": [
+            213.0,
+            156.0
+          ],
+          "rabbit": "   BRO DIVE  现在！",
+          "turtle": "   配合"
+        }
+      }
+    }
+  ],
+  "generated_at": "2026-11-13T19:44:21"
+}

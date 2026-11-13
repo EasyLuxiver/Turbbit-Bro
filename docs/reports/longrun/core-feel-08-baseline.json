@@ -1,0 +1,13 @@
+{
+  "task": "TBB-CORE-FEEL-08",
+  "started_at": "2026-11-13T22:15:00",
+  "stage_md": "STAGE=4",
+  "git_head": "4448151",
+  "best_json": "C:/Users/26549/AppData/Roaming/Godot/app_userdata/Turbbit Bro!/best.json",
+  "best_json_md5_before": "c322f9a20321c5b618f98db7e4120969",
+  "notes": [
+    "基线取在 07D 文案修复全部回归通过之后、08 任何代码改动之前。",
+    "stage3_playtest 会在跑完后按快照还原 best.json；本次基线 MD5 即还原后的值。",
+    "STAGE 保持 4，不推进 5。"
+  ]
+}

@@ -1,0 +1,13 @@
+SEED-INDEPENDENT / design audit (worst-case drawn widths)
+id group      zone_v  warning_s  verdict
+ 1 beam1       220   4.750     PASS
+ 2 rock3       220   4.750     PASS
+ 3 gate3       240   4.350     PASS
+ 4 rock6       240   4.350     PASS
+ 5 shark5      240   4.350     PASS
+ 6 shark8      260   4.017     PASS
+ 7 beam8       260   4.017     PASS
+ 8 shark9      260   4.017     PASS
+ 9 gate8       260   4.017     PASS
+MIN 4.017 s   FAILS 0
+complex>=5s at Z3 ceiling: 4.231 s (1100 px / 260 px/s)

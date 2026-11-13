@@ -1,0 +1,98 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+  ok  action exists: shift
+  ok  action exists: boost
+  ok  action exists: up
+  ok  action exists: down
+  ok  action exists: left
+  ok  action exists: right
+  ok  action exists: pause
+  ok  action exists: restart
+  ok  action exists: confirm
+  ok  state RUNNING
+  ok  initial control rabbit
+  ok  oxygen starts at max
+  ok  HUD lives in main race scene
+  ok  HUD control field
+  ok  HUD oxygen field
+  ok  HUD brotherhood field
+  ok  HUD time field
+  ok  F1 debug overlay exists
+  hud    -> SHIFT   CONTROL: RABBIT
+  ok  standby rabbit accumulates no imbalance (0.00)
+  ok  1 hit -> SLIDING (SLIDING)
+  ok  slide becomes visible (0.20)
+  ok  2 hits -> EDGE (EDGE)
+  ok  3 hits reach the fall threshold (9.5)
+  ok  critical imbalance -> RABBIT_SLIP (RABBIT_SLIP)
+  ok  slip rescue restores mount
+  slip   -> accident=NONE mount=RIDING
+  ok  one shell hit is imbalance, not an accident (NONE)
+  ok  shell hit leaves visible imbalance (4.4)
+  ok  shell hit dunks the group briefly
+  ok  8.8 s imbalance -> CRITICAL (CRITICAL)
+  ok  critical imbalance + hit -> TURTLE_REEF (TURTLE_REEF)
+  ok  turtle repairs and recovers
+  ok  repaired shell back at cruise depth (334.0)
+  sink   -> accident=NONE y=334.0
+  ok  oxygen recovers at surface (6.50)
+  ok  turtle underwater for oxygen test (474.2)
+  ok  oxygen drains underwater (3.40)
+  ok  jump leaves the shell for the air test
+  ok  airborne does not drain oxygen (4.00)
+  ok  switching control does not refill oxygen
+  oxygen -> 3.97 (LOW)
+  ok  oxygen empty -> emergency
+  ok  emergency recovers
+  ok  emergency surfaces turtle
+  ok  emergency refills to safe level (6.4)
+  air out-> y=333.1 oxygen=6.4
+  ok  rock contact -> RABBIT_STUN
+  ok  stun timer active
+  ok  stun does not force a control swap (rabbit)
+  ok  stun keeps rabbit on shell
+  ok  stun clears without rescue
+  stun   -> 0.8 s, mount=RIDING
+  ok  standing under low bird -> stun
+  ok  crouch clears low bird
+  bird   -> NONE
+  ok  cruising shell hits the shark (hit=true daze 4.4)
+  ok  one shark hit is imbalance
+  ok  turtle leap clears the shark
+  ok  rabbit is carried by the leap, not asked to jump
+  ok  leap causes no accident
+  shark  -> NONE
+  ok  jumping alone leaves the shell in the log's lower route
+  ok  one log hit is imbalance
+  log    -> hit=true
+  ok  boost lane accelerates automatically (380)
+  ok  leaving the lane sheds the boost (220)
+  boost  -> speed=220
+  ok  pickup tolerance 110 px
+  ok  pickup rejects 130 px
+  ok  pickup rejects rising rabbit
+  ok  clean pass 1 -> combo 1
+  ok  clean pass 2 -> combo 2
+  ok  3 clean passes -> Showtime
+  ok  Showtime does not steal control (rabbit)
+  ok  rabbit performs automatically
+  show   -> active=true combo=0
+  ok  SHIFT aborts Showtime
+  ok  abort keeps control where it was (rabbit)
+  ok  abort skips the warning window (daze 1.50)
+  ok  Showtime starts for completion test
+  ok  Showtime completes
+  ok  showtime_count increments
+  ok  Showtime consumes the combo
+  show   -> count=1 oxygen=8.0
+  ok  manual Showtime starts for collision test
+  ok  collision during Showtime ends performance
+  ok  Showtime collision -> stun (RABBIT_STUN)
+  ok  accident clears combo
+  show   -> collision=RABBIT_STUN
+  ok  restart resets control
+  ok  restart resets oxygen
+  ok  restart resets combo / showtime count
+  ok  restart resets counters
+  ok  restart resets race time
+STAGE2 SELFTEST: PASS

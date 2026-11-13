@@ -1,0 +1,1076 @@
+{
+  "neutral": 334.0,
+  "runs": {
+    "new": {
+      "a_auto_cruise": {
+        "from_deep": {
+          "accident": "NONE",
+          "end_y": 334.6,
+          "max_rise_speed": 0.0,
+          "settle_s": 1.85,
+          "start_y": 514.0
+        },
+        "from_surface": {
+          "end_y": 333.4,
+          "max_sink_speed": 0.0,
+          "settle_s": 1.28,
+          "start_y": 300.0
+        },
+        "short_handoff": {
+          "daze_after": 0.0,
+          "daze_before": 0.0,
+          "y_after": 334.0,
+          "y_before": 334.0
+        }
+      },
+      "b_sink_rise": {
+        "recover": [
+          {
+            "accident": "NONE",
+            "daze_after": 0.0,
+            "daze_at_switch": 0.0,
+            "hold_s": 1.5,
+            "rise_s": 0.02,
+            "y_after_6s": 334.0,
+            "y_at_switch": 334.0
+          },
+          {
+            "accident": "NONE",
+            "daze_after": 0.0,
+            "daze_at_switch": 0.0,
+            "hold_s": 2.5,
+            "rise_s": 0.02,
+            "y_after_6s": 334.0,
+            "y_at_switch": 334.0
+          }
+        ],
+        "sink_curve": {
+          "accident": "NONE",
+          "accident_t": -1.0,
+          "deltas": {
+            "t0.8": 0.0,
+            "t1.6": 0.0,
+            "t2.4": 0.0,
+            "t3.2": 0.9,
+            "t3.6": -2.0
+          },
+          "max_sink_speed": 21.0,
+          "start_y": 334.0
+        }
+      },
+      "c_jump": {
+        "arms": [
+          {
+            "accident": "NONE",
+            "air_s": 1.08,
+            "jump_locked": false,
+            "jumped_at_y": 334.0,
+            "name": "C1_neutral",
+            "picked_back": true,
+            "separation_max_px": 183.8,
+            "turtle_y_after": 334.0,
+            "water": false
+          },
+          {
+            "accident": "NONE",
+            "air_s": 1.08,
+            "jump_locked": false,
+            "jumped_at_y": 334.0,
+            "name": "C2_sinking_0.9s",
+            "picked_back": true,
+            "separation_max_px": 183.8,
+            "turtle_y_after": 334.0,
+            "water": false
+          },
+          {
+            "accident": "NONE",
+            "air_s": 0.83,
+            "jump_locked": false,
+            "jumped_at_y": 374.0,
+            "name": "C3_sunk_40px",
+            "picked_back": false,
+            "separation_max_px": 152.2,
+            "turtle_y_after": 337.1,
+            "water": false
+          }
+        ]
+      },
+      "d_wall_sink": {
+        "arms": [
+          {
+            "accident": "NONE",
+            "base_x": 2200.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 180.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "sink",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 100.0,
+            "x_at_exit": 2155.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 338.9,
+            "y_at_wall": -1.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 2200.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 200.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "sink",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 100.0,
+            "x_at_exit": 2155.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 327.5,
+            "y_at_wall": -1.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 2200.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 220.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "sink",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 100.0,
+            "x_at_exit": 2155.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 339.6,
+            "y_at_wall": -1.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 2200.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 240.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "sink",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 100.0,
+            "x_at_exit": 2155.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 338.9,
+            "y_at_wall": -1.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 2200.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 180.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "sink",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 120.0,
+            "x_at_exit": 2155.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 329.7,
+            "y_at_wall": -1.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 2200.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 200.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "sink",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 120.0,
+            "x_at_exit": 2155.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 340.0,
+            "y_at_wall": -1.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 2200.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 220.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "sink",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 120.0,
+            "x_at_exit": 2155.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 327.9,
+            "y_at_wall": -1.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 2200.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 240.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "sink",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 120.0,
+            "x_at_exit": 2155.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 329.7,
+            "y_at_wall": -1.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 2200.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 180.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "sink",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 140.0,
+            "x_at_exit": 2155.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 337.6,
+            "y_at_wall": -1.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 2200.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 200.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "sink",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 140.0,
+            "x_at_exit": 2155.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 328.5,
+            "y_at_wall": -1.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 2200.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 220.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "sink",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 140.0,
+            "x_at_exit": 2155.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 340.5,
+            "y_at_wall": -1.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 2200.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 240.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "sink",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 140.0,
+            "x_at_exit": 2155.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 337.6,
+            "y_at_wall": -1.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 2200.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 0.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "none",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 160.0,
+            "x_at_exit": 2155.0,
+            "y_at_entry": 335.5,
+            "y_at_exit": 334.0,
+            "y_at_wall": -1.0
+          },
+          {
+            "accident": "RABBIT_WATER",
+            "base_x": 2200.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 160.0,
+            "pass": false,
+            "rehit_after_recontrol": false,
+            "route": "jumpoff",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 160.0,
+            "x_at_exit": 2155.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 334.0,
+            "y_at_wall": -1.0
+          }
+        ],
+        "route": "sink"
+      },
+      "d_wall_zone": {
+        "arms": [
+          {
+            "accident": "NONE",
+            "base_x": 20000.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 180.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "sink",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 80.0,
+            "x_at_exit": 19955.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 338.9,
+            "y_at_wall": -1.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 20000.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 200.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "sink",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 80.0,
+            "x_at_exit": 19955.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 327.5,
+            "y_at_wall": -1.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 20000.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 220.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "sink",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 80.0,
+            "x_at_exit": 19955.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 329.1,
+            "y_at_wall": -1.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 20000.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 240.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "sink",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 80.0,
+            "x_at_exit": 19955.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 333.6,
+            "y_at_wall": -1.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 20000.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 180.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "sink",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 100.0,
+            "x_at_exit": 19955.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 338.9,
+            "y_at_wall": -1.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 20000.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 200.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "sink",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 100.0,
+            "x_at_exit": 19955.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 327.5,
+            "y_at_wall": -1.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 20000.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 220.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "sink",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 100.0,
+            "x_at_exit": 19955.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 329.1,
+            "y_at_wall": -1.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 20000.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 240.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "sink",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 100.0,
+            "x_at_exit": 19955.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 333.6,
+            "y_at_wall": -1.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 42000.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 180.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "sink",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 80.0,
+            "x_at_exit": 41955.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 341.2,
+            "y_at_wall": -1.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 42000.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 200.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "sink",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 80.0,
+            "x_at_exit": 41955.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 335.2,
+            "y_at_wall": -1.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 42000.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 220.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "sink",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 80.0,
+            "x_at_exit": 41955.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 330.3,
+            "y_at_wall": -1.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 42000.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 240.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "sink",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 80.0,
+            "x_at_exit": 41955.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 329.6,
+            "y_at_wall": -1.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 42000.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 180.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "sink",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 100.0,
+            "x_at_exit": 41955.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 329.1,
+            "y_at_wall": -1.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 42000.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 200.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "sink",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 100.0,
+            "x_at_exit": 41955.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 337.7,
+            "y_at_wall": -1.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 42000.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 220.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "sink",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 100.0,
+            "x_at_exit": 41955.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 340.8,
+            "y_at_wall": -1.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 42000.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": -1.0,
+            "lead": 240.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "sink",
+            "t_to_wall": -1.0,
+            "turtle_repair": false,
+            "width": 100.0,
+            "x_at_exit": 41955.0,
+            "y_at_entry": 334.0,
+            "y_at_exit": 341.1,
+            "y_at_wall": -1.0
+          }
+        ]
+      },
+      "e_tolerance": {
+        "pickup": [
+          {
+            "accident": "NONE",
+            "air_s": 1.08,
+            "jump_locked": false,
+            "jumped_at_y": 334.0,
+            "name": "E1_sunk_0",
+            "picked_back": true,
+            "separation_max_px": 183.8,
+            "sunk_at_jump": 0.0,
+            "turtle_y_after": 334.0,
+            "water": false
+          },
+          {
+            "accident": "NONE",
+            "air_s": 0.87,
+            "jump_locked": false,
+            "jumped_at_y": 364.0,
+            "name": "E1_sunk_30",
+            "picked_back": false,
+            "separation_max_px": 160.2,
+            "sunk_at_jump": 30.0,
+            "turtle_y_after": 336.1,
+            "water": false
+          },
+          {
+            "accident": "NONE",
+            "air_s": 0.82,
+            "jump_locked": false,
+            "jumped_at_y": 379.0,
+            "name": "E1_sunk_45",
+            "picked_back": false,
+            "separation_max_px": 148.1,
+            "sunk_at_jump": 45.0,
+            "turtle_y_after": 337.7,
+            "water": false
+          },
+          {
+            "accident": "NONE",
+            "air_s": 0.75,
+            "jump_locked": false,
+            "jumped_at_y": 394.0,
+            "name": "E1_sunk_60",
+            "picked_back": false,
+            "separation_max_px": 135.9,
+            "sunk_at_jump": 60.0,
+            "turtle_y_after": 340.1,
+            "water": false
+          },
+          {
+            "accident": "NONE",
+            "air_s": 0.65,
+            "jump_locked": false,
+            "jumped_at_y": 409.0,
+            "name": "E1_sunk_75",
+            "picked_back": false,
+            "separation_max_px": 123.8,
+            "sunk_at_jump": 75.0,
+            "turtle_y_after": 344.5,
+            "water": false
+          },
+          {
+            "accident": "NONE",
+            "air_s": 0.6,
+            "jump_locked": false,
+            "jumped_at_y": 424.0,
+            "name": "E1_sunk_90",
+            "picked_back": false,
+            "separation_max_px": 111.9,
+            "sunk_at_jump": 90.0,
+            "turtle_y_after": 348.9,
+            "water": false
+          }
+        ],
+        "recontrol": [
+          {
+            "accident": "NONE",
+            "daze_at_clear": 0.0,
+            "delay": 0.0,
+            "pass": true,
+            "rehit": false,
+            "y_at_clear": 335.3,
+            "y_at_recontrol": 336.0
+          },
+          {
+            "accident": "NONE",
+            "daze_at_clear": 0.0,
+            "delay": 0.2,
+            "pass": true,
+            "rehit": false,
+            "y_at_clear": 336.0,
+            "y_at_recontrol": 336.3
+          },
+          {
+            "accident": "NONE",
+            "daze_at_clear": 0.0,
+            "delay": 0.4,
+            "pass": true,
+            "rehit": false,
+            "y_at_clear": 339.0,
+            "y_at_recontrol": 335.6
+          },
+          {
+            "accident": "NONE",
+            "daze_at_clear": 0.0,
+            "delay": 0.6,
+            "pass": true,
+            "rehit": false,
+            "y_at_clear": 334.5,
+            "y_at_recontrol": 333.6
+          },
+          {
+            "accident": "NONE",
+            "daze_at_clear": 0.0,
+            "delay": 1.0,
+            "pass": true,
+            "rehit": false,
+            "y_at_clear": 339.0,
+            "y_at_recontrol": 334.0
+          }
+        ]
+      },
+      "f_bro_ollie": {
+        "real_pop": {
+          "return_s": 0.62,
+          "rise_px": 3.7
+        },
+        "visual_pop": {
+          "dy_limit": [
+            -60.0,
+            90.0
+          ],
+          "mount_offset_if_pop_24px": 24.0,
+          "pickup_dy_with_pop": -13.8,
+          "pickup_dy_without_pop": 10.2
+        }
+      },
+      "g_manual_depth": {
+        "down": {
+          "control": "turtle",
+          "dy": 149.0,
+          "mount": "RIDING",
+          "y0": 334.0,
+          "y1": 483.0
+        },
+        "up": {
+          "control": "turtle",
+          "dy": -145.7,
+          "mount": "RIDING",
+          "y0": 334.0,
+          "y1": 188.3
+        }
+      }
+    },
+    "old": {
+      "a_auto_cruise": {
+        "from_deep": {
+          "accident": "NONE",
+          "end_y": 480.0,
+          "max_rise_speed": 0.0,
+          "settle_s": -1.0,
+          "start_y": 480.0
+        },
+        "from_surface": {
+          "end_y": 300.0,
+          "max_sink_speed": 0.0,
+          "settle_s": -1.0,
+          "start_y": 300.0
+        },
+        "short_handoff": {
+          "daze_after": 0.0,
+          "daze_before": 0.0,
+          "y_after": 300.0,
+          "y_before": 300.0
+        }
+      },
+      "b_sink_rise": {
+        "recover": [
+          {
+            "accident": "NONE",
+            "daze_after": 0.0,
+            "daze_at_switch": 0.0,
+            "hold_s": 1.5,
+            "rise_s": -1.0,
+            "y_after_6s": 300.0,
+            "y_at_switch": 300.0
+          },
+          {
+            "accident": "NONE",
+            "daze_after": 0.0,
+            "daze_at_switch": 0.0,
+            "hold_s": 2.5,
+            "rise_s": -1.0,
+            "y_after_6s": 300.0,
+            "y_at_switch": 300.0
+          }
+        ],
+        "sink_curve": {
+          "accident": "NONE",
+          "accident_t": -1.0,
+          "deltas": {
+            "t0.8": 0.0,
+            "t1.6": 0.0,
+            "t2.4": 0.0,
+            "t3.2": 0.0,
+            "t3.6": 0.0
+          },
+          "max_sink_speed": 0.0,
+          "start_y": 300.0
+        }
+      },
+      "c_jump": {
+        "arms": [
+          {
+            "accident": "NONE",
+            "air_s": 1.08,
+            "jump_locked": false,
+            "jumped_at_y": 300.0,
+            "name": "C1_neutral",
+            "picked_back": true,
+            "separation_max_px": 183.7,
+            "turtle_y_after": 300.0,
+            "water": false
+          },
+          {
+            "accident": "NONE",
+            "air_s": 1.08,
+            "jump_locked": false,
+            "jumped_at_y": 300.0,
+            "name": "C2_sinking_0.9s",
+            "picked_back": true,
+            "separation_max_px": 183.7,
+            "turtle_y_after": 300.0,
+            "water": false
+          },
+          {
+            "accident": "RABBIT_WATER",
+            "air_s": 1.23,
+            "jump_locked": false,
+            "jumped_at_y": 374.0,
+            "name": "C3_sunk_40px",
+            "picked_back": false,
+            "separation_max_px": 183.8,
+            "turtle_y_after": 374.0,
+            "water": true
+          }
+        ]
+      },
+      "d_wall_dive": {
+        "arms": [
+          {
+            "accident": "NONE",
+            "base_x": 2200.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": 0.0,
+            "lead": 200.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "dive",
+            "t_to_wall": 0.73,
+            "turtle_repair": false,
+            "width": 120.0,
+            "x_at_exit": 2580.0,
+            "y_at_entry": 345.0,
+            "y_at_exit": 345.0,
+            "y_at_wall": 345.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 2200.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": 0.0,
+            "lead": 200.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "dive",
+            "t_to_wall": 0.73,
+            "turtle_repair": false,
+            "width": 160.0,
+            "x_at_exit": 2620.3,
+            "y_at_entry": 345.0,
+            "y_at_exit": 345.0,
+            "y_at_wall": 345.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 2200.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": 0.0,
+            "lead": 200.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "dive",
+            "t_to_wall": 0.73,
+            "turtle_repair": false,
+            "width": 200.0,
+            "x_at_exit": 2660.7,
+            "y_at_entry": 345.0,
+            "y_at_exit": 345.0,
+            "y_at_wall": 345.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 2200.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": 0.0,
+            "lead": 200.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "dive",
+            "t_to_wall": 0.73,
+            "turtle_repair": false,
+            "width": 240.0,
+            "x_at_exit": 2701.0,
+            "y_at_entry": 345.0,
+            "y_at_exit": 345.0,
+            "y_at_wall": 345.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 2200.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": 0.0,
+            "lead": 200.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "dive",
+            "t_to_wall": 0.73,
+            "turtle_repair": false,
+            "width": 300.0,
+            "x_at_exit": 2763.3,
+            "y_at_entry": 345.0,
+            "y_at_exit": 345.0,
+            "y_at_wall": 345.0
+          },
+          {
+            "accident": "NONE",
+            "base_x": 2200.0,
+            "daze_at_entry": 0.0,
+            "daze_at_exit": 0.0,
+            "daze_at_wall": 0.0,
+            "lead": 200.0,
+            "pass": true,
+            "rehit_after_recontrol": false,
+            "route": "dive",
+            "t_to_wall": 0.73,
+            "turtle_repair": false,
+            "width": 500.0,
+            "x_at_exit": 2961.3,
+            "y_at_entry": 345.0,
+            "y_at_exit": 345.0,
+            "y_at_wall": 345.0
+          }
+        ],
+        "route": "dive"
+      },
+      "g_manual_depth": {
+        "down": {
+          "control": "turtle",
+          "dy": 183.0,
+          "mount": "RIDING",
+          "y0": 300.0,
+          "y1": 483.0
+        },
+        "up": {
+          "control": "turtle",
+          "dy": 0.0,
+          "mount": "RIDING",
+          "y0": 300.0,
+          "y1": 300.0
+        }
+      }
+    }
+  },
+  "stage": 4,
+  "step": 0.0166666666666667,
+  "verdict": {
+    "a_new_settle": 1.85,
+    "a_old_settle": -1.0,
+    "b_new_rise": 0.02,
+    "b_old_rise": -1.0,
+    "c_new_pickup": true,
+    "d_sink_pass": {
+      "100": true,
+      "120": true,
+      "140": true
+    },
+    "g_manual_new": {
+      "down": {
+        "control": "turtle",
+        "dy": 149.0,
+        "mount": "RIDING",
+        "y0": 334.0,
+        "y1": 483.0
+      },
+      "up": {
+        "control": "turtle",
+        "dy": -145.7,
+        "mount": "RIDING",
+        "y0": 334.0,
+        "y1": 188.3
+      }
+    },
+    "g_manual_old": {
+      "down": {
+        "control": "turtle",
+        "dy": 183.0,
+        "mount": "RIDING",
+        "y0": 300.0,
+        "y1": 483.0
+      },
+      "up": {
+        "control": "turtle",
+        "dy": 0.0,
+        "mount": "RIDING",
+        "y0": 300.0,
+        "y1": 300.0
+      }
+    },
+    "headline": "auto-cruise=1.85, sink-accident=-1.00s, max wall passable via sink=140 px",
+    "playtest": "NOT TESTED"
+  },
+  "world_shift": 34.0
+}

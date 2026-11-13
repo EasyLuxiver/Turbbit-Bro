@@ -1,0 +1,1340 @@
+{
+ "generated_at": "2026-11-12",
+ "note": "PHASE S 三区难度曲线重算；只读 level_data.gd 与已测扫描文件，不跑游戏。",
+ "visible_px": 1100.0,
+ "zone_speed": {
+  "1": 220.0,
+  "2": 240.0,
+  "3": 260.0
+ },
+ "groups_total": 55,
+ "zones": {
+  "1": {
+   "id": 1,
+   "start": 0.0,
+   "end": 15000.0,
+   "base_speed": 220.0,
+   "groups": 12,
+   "kinds": {
+    "LOW_BIRD": 2,
+    "SURFACE_ROCK": 3,
+    "LOW_BEAM": 2,
+    "SHARK": 1,
+    "DIVE_GATE": 2,
+    "FLOATING_LOG": 1,
+    "HIGH_WALL": 1
+   },
+   "combo_groups": [
+    "log1",
+    "wall1"
+   ],
+   "combo_count": 2,
+   "combo_share": 0.167,
+   "switch_groups": [
+    "shark1",
+    "gate1",
+    "log1",
+    "gate2",
+    "wall1"
+   ],
+   "switch_count": 5,
+   "switch_share": 0.417,
+   "density_groups_per_min": 10.6,
+   "gap_s": {
+    "min": 4.36,
+    "median": 4.95,
+    "max": 5.55,
+    "min_pair": "rock2->bird2",
+    "max_pair": "wall1->rock3"
+   },
+   "combo_prep_gap_s": [
+    {
+     "group": "log1",
+     "kind": "FLOATING_LOG",
+     "px": 1140.0,
+     "s": 5.18
+    },
+    {
+     "group": "wall1",
+     "kind": "HIGH_WALL",
+     "px": 1120.0,
+     "s": 5.09
+    }
+   ],
+   "longest_empty": {
+    "s": 5.91,
+    "at": "ZONE_START->bird1",
+    "px": 1300.0
+   },
+   "empty_stretches": [
+    {
+     "from": "ZONE_START",
+     "to": "bird1",
+     "px": 1300.0,
+     "s": 5.91
+    },
+    {
+     "from": "bird1",
+     "to": "rock1",
+     "px": 980.0,
+     "s": 4.45
+    },
+    {
+     "from": "rock1",
+     "to": "beam1",
+     "px": 1190.0,
+     "s": 5.41
+    },
+    {
+     "from": "beam1",
+     "to": "rock2",
+     "px": 1030.0,
+     "s": 4.68
+    },
+    {
+     "from": "rock2",
+     "to": "bird2",
+     "px": 960.0,
+     "s": 4.36
+    },
+    {
+     "from": "bird2",
+     "to": "shark1",
+     "px": 1090.0,
+     "s": 4.95
+    },
+    {
+     "from": "shark1",
+     "to": "gate1",
+     "px": 1130.0,
+     "s": 5.14
+    },
+    {
+     "from": "gate1",
+     "to": "beam2",
+     "px": 1020.0,
+     "s": 4.64
+    },
+    {
+     "from": "beam2",
+     "to": "log1",
+     "px": 1140.0,
+     "s": 5.18
+    },
+    {
+     "from": "log1",
+     "to": "gate2",
+     "px": 1048.0,
+     "s": 4.76
+    },
+    {
+     "from": "gate2",
+     "to": "wall1",
+     "px": 1120.0,
+     "s": 5.09
+    },
+    {
+     "from": "wall1",
+     "to": "rock3",
+     "px": 1220.0,
+     "s": 5.55
+    },
+    {
+     "from": "rock3",
+     "to": "ZONE_END",
+     "px": 330.0,
+     "s": 1.5
+    }
+   ],
+   "visibility_s": 5.0,
+   "gaps": [
+    {
+     "from": "bird1",
+     "to": "rock1",
+     "px": 980.0,
+     "s": 4.45
+    },
+    {
+     "from": "rock1",
+     "to": "beam1",
+     "px": 1190.0,
+     "s": 5.41
+    },
+    {
+     "from": "beam1",
+     "to": "rock2",
+     "px": 1030.0,
+     "s": 4.68
+    },
+    {
+     "from": "rock2",
+     "to": "bird2",
+     "px": 960.0,
+     "s": 4.36
+    },
+    {
+     "from": "bird2",
+     "to": "shark1",
+     "px": 1090.0,
+     "s": 4.95
+    },
+    {
+     "from": "shark1",
+     "to": "gate1",
+     "px": 1130.0,
+     "s": 5.14
+    },
+    {
+     "from": "gate1",
+     "to": "beam2",
+     "px": 1020.0,
+     "s": 4.64
+    },
+    {
+     "from": "beam2",
+     "to": "log1",
+     "px": 1140.0,
+     "s": 5.18
+    },
+    {
+     "from": "log1",
+     "to": "gate2",
+     "px": 1048.0,
+     "s": 4.76
+    },
+    {
+     "from": "gate2",
+     "to": "wall1",
+     "px": 1120.0,
+     "s": 5.09
+    },
+    {
+     "from": "wall1",
+     "to": "rock3",
+     "px": 1220.0,
+     "s": 5.55
+    }
+   ]
+  },
+  "2": {
+   "id": 2,
+   "start": 15000.0,
+   "end": 39000.0,
+   "base_speed": 240.0,
+   "groups": 19,
+   "kinds": {
+    "LOW_BEAM": 3,
+    "SURFACE_ROCK": 4,
+    "SHARK": 2,
+    "DIVE_GATE": 3,
+    "LOW_BIRD": 3,
+    "FLOATING_LOG": 3,
+    "HIGH_WALL": 1
+   },
+   "combo_groups": [
+    "log2",
+    "wall2",
+    "log3",
+    "log4"
+   ],
+   "combo_count": 4,
+   "combo_share": 0.211,
+   "switch_groups": [
+    "shark3",
+    "gate3",
+    "log2",
+    "wall2",
+    "gate4",
+    "log3",
+    "shark5",
+    "log4",
+    "gate5"
+   ],
+   "switch_count": 9,
+   "switch_share": 0.474,
+   "density_groups_per_min": 11.4,
+   "gap_s": {
+    "min": 4.25,
+    "median": 4.61,
+    "max": 5.17,
+    "min_pair": "gate3->bird3",
+    "max_pair": "bird4->log3"
+   },
+   "combo_prep_gap_s": [
+    {
+     "group": "log2",
+     "kind": "FLOATING_LOG",
+     "px": 1230.0,
+     "s": 5.12
+    },
+    {
+     "group": "wall2",
+     "kind": "HIGH_WALL",
+     "px": 1020.0,
+     "s": 4.25
+    },
+    {
+     "group": "log3",
+     "kind": "FLOATING_LOG",
+     "px": 1240.0,
+     "s": 5.17
+    },
+    {
+     "group": "log4",
+     "kind": "FLOATING_LOG",
+     "px": 1230.0,
+     "s": 5.12
+    }
+   ],
+   "longest_empty": {
+    "s": 5.17,
+    "at": "bird4->log3",
+    "px": 1240.0
+   },
+   "empty_stretches": [
+    {
+     "from": "ZONE_START",
+     "to": "beam3",
+     "px": 800.0,
+     "s": 3.33
+    },
+    {
+     "from": "beam3",
+     "to": "rock4",
+     "px": 1030.0,
+     "s": 4.29
+    },
+    {
+     "from": "rock4",
+     "to": "shark3",
+     "px": 1080.0,
+     "s": 4.5
+    },
+    {
+     "from": "shark3",
+     "to": "gate3",
+     "px": 1130.0,
+     "s": 4.71
+    },
+    {
+     "from": "gate3",
+     "to": "bird3",
+     "px": 1020.0,
+     "s": 4.25
+    },
+    {
+     "from": "bird3",
+     "to": "log2",
+     "px": 1230.0,
+     "s": 5.12
+    },
+    {
+     "from": "log2",
+     "to": "rock5",
+     "px": 1218.0,
+     "s": 5.08
+    },
+    {
+     "from": "rock5",
+     "to": "beam4",
+     "px": 1070.0,
+     "s": 4.46
+    },
+    {
+     "from": "beam4",
+     "to": "wall2",
+     "px": 1020.0,
+     "s": 4.25
+    },
+    {
+     "from": "wall2",
+     "to": "rock6",
+     "px": 1170.0,
+     "s": 4.88
+    },
+    {
+     "from": "rock6",
+     "to": "gate4",
+     "px": 1060.0,
+     "s": 4.42
+    },
+    {
+     "from": "gate4",
+     "to": "bird4",
+     "px": 1020.0,
+     "s": 4.25
+    },
+    {
+     "from": "bird4",
+     "to": "log3",
+     "px": 1240.0,
+     "s": 5.17
+    },
+    {
+     "from": "log3",
+     "to": "rock7",
+     "px": 1218.0,
+     "s": 5.08
+    },
+    {
+     "from": "rock7",
+     "to": "beam5",
+     "px": 1080.0,
+     "s": 4.5
+    },
+    {
+     "from": "beam5",
+     "to": "shark5",
+     "px": 1030.0,
+     "s": 4.29
+    },
+    {
+     "from": "shark5",
+     "to": "bird5",
+     "px": 1130.0,
+     "s": 4.71
+    },
+    {
+     "from": "bird5",
+     "to": "log4",
+     "px": 1230.0,
+     "s": 5.12
+    },
+    {
+     "from": "log4",
+     "to": "gate5",
+     "px": 1218.0,
+     "s": 5.08
+    },
+    {
+     "from": "gate5",
+     "to": "ZONE_END",
+     "px": 820.0,
+     "s": 3.42
+    }
+   ],
+   "visibility_s": 4.58,
+   "gaps": [
+    {
+     "from": "beam3",
+     "to": "rock4",
+     "px": 1030.0,
+     "s": 4.29
+    },
+    {
+     "from": "rock4",
+     "to": "shark3",
+     "px": 1080.0,
+     "s": 4.5
+    },
+    {
+     "from": "shark3",
+     "to": "gate3",
+     "px": 1130.0,
+     "s": 4.71
+    },
+    {
+     "from": "gate3",
+     "to": "bird3",
+     "px": 1020.0,
+     "s": 4.25
+    },
+    {
+     "from": "bird3",
+     "to": "log2",
+     "px": 1230.0,
+     "s": 5.12
+    },
+    {
+     "from": "log2",
+     "to": "rock5",
+     "px": 1218.0,
+     "s": 5.08
+    },
+    {
+     "from": "rock5",
+     "to": "beam4",
+     "px": 1070.0,
+     "s": 4.46
+    },
+    {
+     "from": "beam4",
+     "to": "wall2",
+     "px": 1020.0,
+     "s": 4.25
+    },
+    {
+     "from": "wall2",
+     "to": "rock6",
+     "px": 1170.0,
+     "s": 4.88
+    },
+    {
+     "from": "rock6",
+     "to": "gate4",
+     "px": 1060.0,
+     "s": 4.42
+    },
+    {
+     "from": "gate4",
+     "to": "bird4",
+     "px": 1020.0,
+     "s": 4.25
+    },
+    {
+     "from": "bird4",
+     "to": "log3",
+     "px": 1240.0,
+     "s": 5.17
+    },
+    {
+     "from": "log3",
+     "to": "rock7",
+     "px": 1218.0,
+     "s": 5.08
+    },
+    {
+     "from": "rock7",
+     "to": "beam5",
+     "px": 1080.0,
+     "s": 4.5
+    },
+    {
+     "from": "beam5",
+     "to": "shark5",
+     "px": 1030.0,
+     "s": 4.29
+    },
+    {
+     "from": "shark5",
+     "to": "bird5",
+     "px": 1130.0,
+     "s": 4.71
+    },
+    {
+     "from": "bird5",
+     "to": "log4",
+     "px": 1230.0,
+     "s": 5.12
+    },
+    {
+     "from": "log4",
+     "to": "gate5",
+     "px": 1218.0,
+     "s": 5.08
+    }
+   ]
+  },
+  "3": {
+   "id": 3,
+   "start": 39000.0,
+   "end": 67600.0,
+   "base_speed": 260.0,
+   "groups": 24,
+   "kinds": {
+    "SHARK": 3,
+    "LOW_BEAM": 4,
+    "SURFACE_ROCK": 5,
+    "DIVE_GATE": 3,
+    "FLOATING_LOG": 4,
+    "LOW_BIRD": 4,
+    "HIGH_WALL": 1
+   },
+   "combo_groups": [
+    "log5",
+    "wall3",
+    "log6",
+    "log7",
+    "log8"
+   ],
+   "combo_count": 5,
+   "combo_share": 0.208,
+   "switch_groups": [
+    "shark6",
+    "gate6",
+    "log5",
+    "wall3",
+    "gate7",
+    "log6",
+    "shark8",
+    "log7",
+    "shark9",
+    "gate8",
+    "log8"
+   ],
+   "switch_count": 11,
+   "switch_share": 0.458,
+   "density_groups_per_min": 13.1,
+   "gap_s": {
+    "min": 3.65,
+    "median": 3.85,
+    "max": 5.46,
+    "min_pair": "bird8->shark9",
+    "max_pair": "shark8->beam8"
+   },
+   "combo_prep_gap_s": [
+    {
+     "group": "log5",
+     "kind": "FLOATING_LOG",
+     "px": 1350.0,
+     "s": 5.19
+    },
+    {
+     "group": "wall3",
+     "kind": "HIGH_WALL",
+     "px": 1000.0,
+     "s": 3.85
+    },
+    {
+     "group": "log6",
+     "kind": "FLOATING_LOG",
+     "px": 1350.0,
+     "s": 5.19
+    },
+    {
+     "group": "log7",
+     "kind": "FLOATING_LOG",
+     "px": 1340.0,
+     "s": 5.15
+    },
+    {
+     "group": "log8",
+     "kind": "FLOATING_LOG",
+     "px": 1340.0,
+     "s": 5.15
+    }
+   ],
+   "longest_empty": {
+    "s": 5.46,
+    "at": "shark8->beam8",
+    "px": 1420.0
+   },
+   "empty_stretches": [
+    {
+     "from": "ZONE_START",
+     "to": "shark6",
+     "px": 200.0,
+     "s": 0.77
+    },
+    {
+     "from": "shark6",
+     "to": "beam6",
+     "px": 1000.0,
+     "s": 3.85
+    },
+    {
+     "from": "beam6",
+     "to": "rock8",
+     "px": 1000.0,
+     "s": 3.85
+    },
+    {
+     "from": "rock8",
+     "to": "gate6",
+     "px": 1000.0,
+     "s": 3.85
+    },
+    {
+     "from": "gate6",
+     "to": "log5",
+     "px": 1350.0,
+     "s": 5.19
+    },
+    {
+     "from": "log5",
+     "to": "bird6",
+     "px": 1108.0,
+     "s": 4.26
+    },
+    {
+     "from": "bird6",
+     "to": "wall3",
+     "px": 1000.0,
+     "s": 3.85
+    },
+    {
+     "from": "wall3",
+     "to": "beam7",
+     "px": 1040.0,
+     "s": 4.0
+    },
+    {
+     "from": "beam7",
+     "to": "rock9",
+     "px": 1000.0,
+     "s": 3.85
+    },
+    {
+     "from": "rock9",
+     "to": "gate7",
+     "px": 1000.0,
+     "s": 3.85
+    },
+    {
+     "from": "gate7",
+     "to": "log6",
+     "px": 1350.0,
+     "s": 5.19
+    },
+    {
+     "from": "log6",
+     "to": "bird7",
+     "px": 1118.0,
+     "s": 4.3
+    },
+    {
+     "from": "bird7",
+     "to": "shark8",
+     "px": 1000.0,
+     "s": 3.85
+    },
+    {
+     "from": "shark8",
+     "to": "beam8",
+     "px": 1420.0,
+     "s": 5.46
+    },
+    {
+     "from": "beam8",
+     "to": "rock10",
+     "px": 960.0,
+     "s": 3.69
+    },
+    {
+     "from": "rock10",
+     "to": "log7",
+     "px": 1340.0,
+     "s": 5.15
+    },
+    {
+     "from": "log7",
+     "to": "bird8",
+     "px": 968.0,
+     "s": 3.72
+    },
+    {
+     "from": "bird8",
+     "to": "shark9",
+     "px": 950.0,
+     "s": 3.65
+    },
+    {
+     "from": "shark9",
+     "to": "beam9",
+     "px": 1030.0,
+     "s": 3.96
+    },
+    {
+     "from": "beam9",
+     "to": "rock11",
+     "px": 950.0,
+     "s": 3.65
+    },
+    {
+     "from": "rock11",
+     "to": "gate8",
+     "px": 950.0,
+     "s": 3.65
+    },
+    {
+     "from": "gate8",
+     "to": "log8",
+     "px": 1340.0,
+     "s": 5.15
+    },
+    {
+     "from": "log8",
+     "to": "bird9",
+     "px": 1008.0,
+     "s": 3.88
+    },
+    {
+     "from": "bird9",
+     "to": "rock12",
+     "px": 1000.0,
+     "s": 3.85
+    },
+    {
+     "from": "rock12",
+     "to": "ZONE_END",
+     "px": 760.0,
+     "s": 2.92
+    }
+   ],
+   "visibility_s": 4.23,
+   "gaps": [
+    {
+     "from": "shark6",
+     "to": "beam6",
+     "px": 1000.0,
+     "s": 3.85
+    },
+    {
+     "from": "beam6",
+     "to": "rock8",
+     "px": 1000.0,
+     "s": 3.85
+    },
+    {
+     "from": "rock8",
+     "to": "gate6",
+     "px": 1000.0,
+     "s": 3.85
+    },
+    {
+     "from": "gate6",
+     "to": "log5",
+     "px": 1350.0,
+     "s": 5.19
+    },
+    {
+     "from": "log5",
+     "to": "bird6",
+     "px": 1108.0,
+     "s": 4.26
+    },
+    {
+     "from": "bird6",
+     "to": "wall3",
+     "px": 1000.0,
+     "s": 3.85
+    },
+    {
+     "from": "wall3",
+     "to": "beam7",
+     "px": 1040.0,
+     "s": 4.0
+    },
+    {
+     "from": "beam7",
+     "to": "rock9",
+     "px": 1000.0,
+     "s": 3.85
+    },
+    {
+     "from": "rock9",
+     "to": "gate7",
+     "px": 1000.0,
+     "s": 3.85
+    },
+    {
+     "from": "gate7",
+     "to": "log6",
+     "px": 1350.0,
+     "s": 5.19
+    },
+    {
+     "from": "log6",
+     "to": "bird7",
+     "px": 1118.0,
+     "s": 4.3
+    },
+    {
+     "from": "bird7",
+     "to": "shark8",
+     "px": 1000.0,
+     "s": 3.85
+    },
+    {
+     "from": "shark8",
+     "to": "beam8",
+     "px": 1420.0,
+     "s": 5.46
+    },
+    {
+     "from": "beam8",
+     "to": "rock10",
+     "px": 960.0,
+     "s": 3.69
+    },
+    {
+     "from": "rock10",
+     "to": "log7",
+     "px": 1340.0,
+     "s": 5.15
+    },
+    {
+     "from": "log7",
+     "to": "bird8",
+     "px": 968.0,
+     "s": 3.72
+    },
+    {
+     "from": "bird8",
+     "to": "shark9",
+     "px": 950.0,
+     "s": 3.65
+    },
+    {
+     "from": "shark9",
+     "to": "beam9",
+     "px": 1030.0,
+     "s": 3.96
+    },
+    {
+     "from": "beam9",
+     "to": "rock11",
+     "px": 950.0,
+     "s": 3.65
+    },
+    {
+     "from": "rock11",
+     "to": "gate8",
+     "px": 950.0,
+     "s": 3.65
+    },
+    {
+     "from": "gate8",
+     "to": "log8",
+     "px": 1340.0,
+     "s": 5.15
+    },
+    {
+     "from": "log8",
+     "to": "bird9",
+     "px": 1008.0,
+     "s": 3.88
+    },
+    {
+     "from": "bird9",
+     "to": "rock12",
+     "px": 1000.0,
+     "s": 3.85
+    }
+   ]
+  }
+ },
+ "windows_base": {
+  "1": {
+   "beam1": {
+    "file": "docs/reports/stage4-tolerance-scan-fine-beam1.json",
+    "group": "beam1",
+    "kind": "LOW_BEAM",
+    "zone": 1,
+    "lead_px": [
+     0.0,
+     300.0
+    ],
+    "window_px": 300.0,
+    "speed": 220.0,
+    "window_s": 1.364,
+    "scan_cap": true
+   },
+   "bird1": {
+    "file": "docs/reports/stage4-tolerance-scan-fine-bird1.json",
+    "group": "bird1",
+    "kind": "LOW_BIRD",
+    "zone": 1,
+    "lead_px": [
+     0.0,
+     300.0
+    ],
+    "window_px": 300.0,
+    "speed": 220.0,
+    "window_s": 1.364,
+    "scan_cap": true
+   },
+   "gate1": {
+    "file": "docs/reports/stage4-tolerance-scan-fine-gate1.json",
+    "group": "gate1",
+    "kind": "DIVE_GATE",
+    "zone": 1,
+    "lead_px": [
+     105.0,
+     300.0
+    ],
+    "window_px": 195.0,
+    "speed": 220.0,
+    "window_s": 0.886,
+    "scan_cap": true
+   },
+   "rock1": {
+    "file": "docs/reports/stage4-tolerance-scan-fine-rock1.json",
+    "group": "rock1",
+    "kind": "SURFACE_ROCK",
+    "zone": 1,
+    "lead_px": [
+     20.0,
+     115.0
+    ],
+    "window_px": 95.0,
+    "speed": 220.0,
+    "window_s": 0.432,
+    "scan_cap": false
+   },
+   "shark1": {
+    "file": "docs/reports/stage4-tolerance-scan-fine-shark1.json",
+    "group": "shark1",
+    "kind": "SHARK",
+    "zone": 1,
+    "lead_px": [
+     100.0,
+     185.0
+    ],
+    "window_px": 85.0,
+    "speed": 220.0,
+    "window_s": 0.386,
+    "scan_cap": false
+   }
+  },
+  "2": {
+   "rock4": {
+    "file": "docs/reports/stage4-tolerance-scan-fine-rock4.json",
+    "group": "rock4",
+    "kind": "SURFACE_ROCK",
+    "zone": 2,
+    "lead_px": [
+     20.0,
+     130.0
+    ],
+    "window_px": 110.0,
+    "speed": 240.0,
+    "window_s": 0.458,
+    "scan_cap": false
+   },
+   "shark3": {
+    "file": "docs/reports/stage4-tolerance-scan-fine-shark3.json",
+    "group": "shark3",
+    "kind": "SHARK",
+    "zone": 2,
+    "lead_px": [
+     105.0,
+     215.0
+    ],
+    "window_px": 110.0,
+    "speed": 240.0,
+    "window_s": 0.458,
+    "scan_cap": false
+   }
+  },
+  "3": {
+   "rock8": {
+    "file": "docs/reports/stage4-tolerance-scan-fine-rock8.json",
+    "group": "rock8",
+    "kind": "SURFACE_ROCK",
+    "zone": 3,
+    "lead_px": [
+     20.0,
+     140.0
+    ],
+    "window_px": 120.0,
+    "speed": 260.0,
+    "window_s": 0.462,
+    "scan_cap": false
+   },
+   "shark8": {
+    "file": "docs/reports/stage4-tolerance-scan-fine-shark8.json",
+    "group": "shark8",
+    "kind": "SHARK",
+    "zone": 3,
+    "lead_px": [
+     110.0,
+     240.0
+    ],
+    "window_px": 130.0,
+    "speed": 260.0,
+    "window_s": 0.5,
+    "scan_cap": false
+   }
+  }
+ },
+ "windows_boost": {
+  "1": {
+   "beam1": {
+    "file": "docs/reports/stage4-tolerance-scan-fine-beam1-x1.15.json",
+    "group": "beam1",
+    "kind": "LOW_BEAM",
+    "zone": 1,
+    "lead_px": [
+     0.0,
+     300.0
+    ],
+    "window_px": 300.0,
+    "speed": 252.99999999999997,
+    "window_s": 1.186,
+    "scan_cap": true
+   },
+   "bird1": {
+    "file": "docs/reports/stage4-tolerance-scan-fine-bird1-x1.15.json",
+    "group": "bird1",
+    "kind": "LOW_BIRD",
+    "zone": 1,
+    "lead_px": [
+     0.0,
+     300.0
+    ],
+    "window_px": 300.0,
+    "speed": 252.99999999999997,
+    "window_s": 1.186,
+    "scan_cap": true
+   },
+   "gate1": {
+    "file": "docs/reports/stage4-tolerance-scan-fine-gate1-x1.15.json",
+    "group": "gate1",
+    "kind": "DIVE_GATE",
+    "zone": 1,
+    "lead_px": [
+     110.0,
+     300.0
+    ],
+    "window_px": 190.0,
+    "speed": 252.99999999999997,
+    "window_s": 0.751,
+    "scan_cap": true
+   },
+   "rock1": {
+    "file": "docs/reports/stage4-tolerance-scan-fine-rock1-x1.15.json",
+    "group": "rock1",
+    "kind": "SURFACE_ROCK",
+    "zone": 1,
+    "lead_px": [
+     20.0,
+     155.0
+    ],
+    "window_px": 135.0,
+    "speed": 252.99999999999997,
+    "window_s": 0.534,
+    "scan_cap": false
+   }
+  },
+  "2": {
+   "rock4": {
+    "file": "docs/reports/stage4-tolerance-scan-fine-rock4-x1.15.json",
+    "group": "rock4",
+    "kind": "SURFACE_ROCK",
+    "zone": 2,
+    "lead_px": [
+     20.0,
+     170.0
+    ],
+    "window_px": 150.0,
+    "speed": 276.0,
+    "window_s": 0.543,
+    "scan_cap": false
+   }
+  },
+  "3": {
+   "rock8": {
+    "file": "docs/reports/stage4-tolerance-scan-fine-rock8-x1.15.json",
+    "group": "rock8",
+    "kind": "SURFACE_ROCK",
+    "zone": 3,
+    "lead_px": [
+     20.0,
+     185.0
+    ],
+    "window_px": 165.0,
+    "speed": 299.0,
+    "window_s": 0.552,
+    "scan_cap": false
+   },
+   "shark8": {
+    "file": "docs/reports/stage4-tolerance-scan-fine-shark8-x1.15.json",
+    "group": "shark8",
+    "kind": "SHARK",
+    "zone": 3,
+    "lead_px": [
+     120.0,
+     295.0
+    ],
+    "window_px": 175.0,
+    "speed": 299.0,
+    "window_s": 0.585,
+    "scan_cap": false
+   }
+  }
+ },
+ "combo_base": {
+  "1": [
+   {
+    "group": "log1",
+    "kind": "FLOATING_LOG",
+    "speed": 220.0,
+    "lead_px": [
+     140.0,
+     180.0
+    ],
+    "first_stage_s": 0.182,
+    "delay_s": [
+     0.0,
+     0.15
+    ],
+    "best_delay_lead": 170.0,
+    "passes": 11,
+    "cells": 273
+   },
+   {
+    "group": "wall1",
+    "kind": "HIGH_WALL",
+    "speed": 220.0,
+    "lead_px": [
+     140.0,
+     210.0
+    ],
+    "first_stage_s": 0.318,
+    "delay_s": [
+     0.4,
+     0.8
+    ],
+    "best_delay_lead": 210.0,
+    "passes": 43,
+    "cells": 285
+   }
+  ],
+  "2": [
+   {
+    "group": "log3",
+    "kind": "FLOATING_LOG",
+    "speed": 240.0,
+    "lead_px": [
+     150.0,
+     200.0
+    ],
+    "first_stage_s": 0.208,
+    "delay_s": [
+     0.0,
+     0.2
+    ],
+    "best_delay_lead": 190.0,
+    "passes": 17,
+    "cells": 273
+   },
+   {
+    "group": "wall2",
+    "kind": "HIGH_WALL",
+    "speed": 240.0,
+    "lead_px": [
+     150.0,
+     240.0
+    ],
+    "first_stage_s": 0.375,
+    "delay_s": [
+     0.4,
+     0.85
+    ],
+    "best_delay_lead": 240.0,
+    "passes": 57,
+    "cells": 323
+   }
+  ],
+  "3": [
+   {
+    "group": "log8",
+    "kind": "FLOATING_LOG",
+    "speed": 260.0,
+    "lead_px": [
+     160.0,
+     220.0
+    ],
+    "first_stage_s": 0.231,
+    "delay_s": [
+     0.0,
+     0.25
+    ],
+    "best_delay_lead": 210.0,
+    "passes": 23,
+    "cells": 273
+   },
+   {
+    "group": "wall3",
+    "kind": "HIGH_WALL",
+    "speed": 260.0,
+    "lead_px": [
+     180.0,
+     260.0
+    ],
+    "first_stage_s": 0.308,
+    "delay_s": [
+     0.4,
+     0.8
+    ],
+    "best_delay_lead": 250.0,
+    "passes": 54,
+    "cells": 285
+   }
+  ]
+ },
+ "combo_boost": {
+  "log8": [
+   {
+    "group": "log8",
+    "kind": "FLOATING_LOG",
+    "speed": 299.0,
+    "lead_px": [
+     170.0,
+     260.0
+    ],
+    "first_stage_s": 0.301,
+    "delay_s": [
+     0.0,
+     0.3
+    ],
+    "best_delay_lead": 250.0,
+    "passes": 37,
+    "cells": 299
+   }
+  ],
+  "wall3": [
+   {
+    "group": "wall3",
+    "kind": "HIGH_WALL",
+    "speed": 299.0,
+    "lead_px": [
+     240.0,
+     310.0
+    ],
+    "first_stage_s": 0.234,
+    "delay_s": [
+     0.45,
+     0.75
+    ],
+    "best_delay_lead": 310.0,
+    "passes": 42,
+    "cells": 560
+   }
+  ]
+ },
+ "first_food": {
+  "encounter": 1,
+  "group": "beam1",
+  "kind": "LOW_BEAM",
+  "answer": "crouch（按住 ↓，整段接近都能过）",
+  "fixed": true,
+  "boost_speed": 253.0,
+  "warning_s": 4.75,
+  "base_window": 1.364,
+  "boost_window": 1.186,
+  "draw_log": "docs/reports/logs/phase-p/draw-after-q.log",
+  "zone_probe": "docs/reports/logs/phase-p/zones-after-q.log"
+ },
+ "random_pool": {
+  "Z1": [
+   "LOW_BIRD",
+   "LOW_BEAM",
+   "SURFACE_ROCK"
+  ],
+  "Z2": [
+   "DIVE_GATE",
+   "SHARK"
+  ],
+  "Z3": [
+   "SURFACE_ROCK",
+   "LOW_BEAM",
+   "SHARK"
+  ],
+  "excluded_complex": [
+   "FLOATING_LOG",
+   "HIGH_WALL"
+  ],
+  "seeds": {
+   "20261112": "docs/reports/logs/phase-p/zones-after-q.log",
+   "424242": "docs/reports/logs/phase-p/zones-seed424242-after-q.log"
+  }
+ },
+ "warning": {
+  "min_boost_s": 4.017,
+  "min_boost_at": "shark8/beam8/shark9/gate8 (Z3)",
+  "z3_sight_cap_s": 4.231,
+  "log": "docs/reports/logs/phase-p/warning-audit-after-q.log"
+ }
+}

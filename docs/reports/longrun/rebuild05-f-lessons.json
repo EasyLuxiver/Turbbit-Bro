@@ -1,0 +1,55 @@
+{
+  "failures": [],
+  "generated_at": "2026-11-13T19:45:33",
+  "note": "正式 race 场景内直接调 _update_lessons()，不是真人试玩。",
+  "rows": [
+    {
+      "base": "↑ 跳跃",
+      "kind": "SURFACE_ROCK",
+      "rabbit": "↑ 跳跃",
+      "turtle": "SHIFT 回兔子 → ↑ 跳跃"
+    },
+    {
+      "base": "↓ 趴低",
+      "kind": "LOW_BEAM",
+      "rabbit": "↓ 趴低",
+      "turtle": "SHIFT 回兔子 → ↓ 趴低"
+    },
+    {
+      "base": "↓ 趴低",
+      "kind": "LOW_BIRD",
+      "rabbit": "↓ 趴低",
+      "turtle": "SHIFT 回兔子 → ↓ 趴低"
+    },
+    {
+      "base": "SHIFT + ↑ 乌龟跃起",
+      "kind": "SHARK",
+      "rabbit": "SHIFT + ↑ 乌龟跃起",
+      "turtle": "按 ↑ 乌龟跃起"
+    },
+    {
+      "base": "SHIFT + ↓ 按住下潜",
+      "kind": "DIVE_GATE",
+      "rabbit": "SHIFT + ↓ 按住下潜",
+      "turtle": "按住 ↓ 下潜"
+    },
+    {
+      "base": "↑ 兔子跳 → SHIFT 乌龟 → ↓ 潜",
+      "kind": "FLOATING_LOG",
+      "rabbit": "↑ 兔子跳 → SHIFT 乌龟 → ↓ 潜",
+      "turtle": "SHIFT 兔子 → ↑ 跳 → SHIFT 乌龟 → ↓ 潜"
+    },
+    {
+      "base": "SHIFT + ↑ 乌龟跃起 → SHIFT 兔子 → ↑ 蹬踏",
+      "kind": "HIGH_WALL",
+      "rabbit": "SHIFT + ↑ 乌龟跃起 → SHIFT 兔子 → ↑ 蹬踏",
+      "turtle": "↑ 跃起 → SHIFT 兔子 → ↑ 蹬踏"
+    },
+    {
+      "kind": "SURFACE_ROCK",
+      "lang": "en",
+      "rabbit": "↑ JUMP",
+      "turtle": "SHIFT TO RABBIT → ↑ JUMP"
+    }
+  ]
+}

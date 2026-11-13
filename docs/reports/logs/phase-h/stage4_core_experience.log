@@ -1,0 +1,74 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+  ok  turtle standby 10 s keeps cruise depth (y=334.0)
+  ok  turtle standby 30 s keeps cruise depth (y=334.0)
+  ok  turtle standby never accumulates imbalance (0.00)
+  ok  turtle standby 30 s has no accident
+  ok  control stays on rabbit
+  standby turtle -> y10 334.0 y30 334.0 daze 0.00
+  ok  rabbit standby 10 s does not slide (0.000)
+  ok  rabbit standby 30 s does not slide (0.000)
+  ok  rabbit standby never accumulates imbalance (0.00)
+  ok  rabbit stays attached while on standby
+  ok  rabbit standby 30 s has no accident
+  standby rabbit -> slide10 0.000 slide30 0.000 daze 0.00
+  ok  six rapid SHIFTs all register (6)
+  ok  rapid SHIFT keeps existing rabbit risk (3.60 -> 3.60)
+  ok  rapid SHIFT adds no turtle risk (0.00)
+  ok  rapid SHIFT causes no accident
+  ok  controlled side still recovers after settling (3.60 -> 0.00)
+  rapid shift -> 3.60 -> 0.00
+  ok  rabbit jump clears rock1
+  ok  rock1 not marked as hit
+  ok  jump landing causes no accident
+  ok  clean jump counts as a clean pass (combo=1)
+  jump -> passed=true combo=1
+  ok  rabbit crouch crosses beam1
+  ok  beam1 is counted as passed
+  ok  beam1 not marked as hit
+  ok  crouch causes no accident
+  crouch -> passed=true combo=1
+  ok  turtle ↓ actually dives under the gate
+  ok  diving turtle clears gate1
+  ok  gate1 not marked as hit
+  ok  dive causes no accident
+  ok  released dive returns to the surface (y=336)
+  dive -> passed=true surfaced=true
+  ok  running into a rock without jumping has a consequence
+  ok  wrong jump reads as RABBIT_STUN (RABBIT_STUN)
+  ok  wrong action leaves visible imbalance (3.2)
+  ok  wrong action causes a short stun
+  wrong action -> RABBIT_STUN daze 3.2
+  ok  collision run 1 registers
+  ok  collision run 2 registers
+  ok  same collision gives the same state (RABBIT_STUN)
+  ok  same collision gives the same timing (0.20 vs 0.22)
+  ok  same collision gives the same imbalance (3.20 vs 3.20)
+  ok  same collision gives the same stun duration
+  repeatable hit -> [{ "seconds": 0.2, "state": "RABBIT_STUN", "daze": 3.2, "stun": 0.8 }, { "seconds": 0.21666666666667, "state": "RABBIT_STUN", "daze": 3.2, "stun": 0.8 }]
+  ok  holding ↓ puts the shell actually underwater (y=422)
+  ok  oxygen drains while actually underwater (6.8 -> 5.6)
+  ok  releasing ↓ returns the shell to the surface (y=336)
+  ok  oxygen recovers at the surface (5.6 -> 8.0)
+  ok  no oxygen accident in 4.5 s
+  oxygen -> 6.8 -> 5.6 -> 8.0
+  ok  three clean passes trigger Showtime
+  ok  Showtime keeps the player's control (rabbit)
+  ok  Showtime counts once
+  ok  Showtime ends by itself
+  ok  Showtime end keeps the player's control
+  ok  Showtime gives only a small oxygen refill (3.7)
+  showtime -> oxygen 3.7 control rabbit
+  ok  track has 55 groups (55)
+  ok  12 surface rocks (12)
+  ok  9 dock beams (9)
+  ok  bird/shark/wall/gate/log counts 9/6/3/8/8 ({ "LOW_BIRD": 9, "SURFACE_ROCK": 12, "LOW_BEAM": 9, "SHARK": 6, "DIVE_GATE": 8, "FLOATING_LOG": 8, "HIGH_WALL": 3 })
+  ok  seven space classes incl. high wall (7)
+  ok  zone 1 uses all seven obstacle classes
+  ok  zone 2 uses all seven obstacle classes
+  ok  zone 3 uses all seven obstacle classes
+  ok  each obstacle gives >= 3.5 s reaction at its zone speed (min 3.85 s)
+  ok  no judgement-free stretch longer than 6 s (max 5.55 s)
+  rhythm -> 55 groups { "LOW_BIRD": 9, "SURFACE_ROCK": 12, "LOW_BEAM": 9, "SHARK": 6, "DIVE_GATE": 8, "FLOATING_LOG": 8, "HIGH_WALL": 3 } gap 960..1350 px, reaction 3.85..5.55 s
+  report -> d:/GAMESTUDIO/TURBBIT/docs/reports/stage4-core-experience.json
+STAGE4 CORE EXPERIENCE: PASS

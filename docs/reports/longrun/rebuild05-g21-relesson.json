@@ -1,0 +1,99 @@
+{
+  "cases": [
+    {
+      "accidents": 1,
+      "case": "A",
+      "reasons": [
+        "RABBIT_STUN"
+      ],
+      "seen_after_hit": [
+        "SURFACE_ROCK",
+        "LOW_BIRD",
+        "SHARK",
+        "DIVE_GATE",
+        "FLOATING_LOG",
+        "HIGH_WALL"
+      ]
+    },
+    {
+      "accidents": 0,
+      "case": "B",
+      "prompts_at_bird4": [],
+      "seen_after_clean": [
+        "SURFACE_ROCK",
+        "LOW_BEAM",
+        "SHARK",
+        "DIVE_GATE",
+        "FLOATING_LOG",
+        "HIGH_WALL",
+        "LOW_BIRD"
+      ]
+    },
+    {
+      "accidents": 0,
+      "case": "C",
+      "seen_after_blocked": [
+        "SURFACE_ROCK",
+        "LOW_BEAM",
+        "LOW_BIRD",
+        "SHARK",
+        "DIVE_GATE",
+        "FLOATING_LOG",
+        "HIGH_WALL"
+      ]
+    },
+    {
+      "case": "D",
+      "prompts": [
+        {
+          "control": "rabbit",
+          "text": "SHIFT + ↓ 按住下潜",
+          "x": 27103.8
+        }
+      ]
+    },
+    {
+      "case": "E",
+      "prompts": [
+        {
+          "control": "rabbit",
+          "text": "SHIFT + ↑ 乌龟跃起",
+          "x": 14903.7
+        },
+        {
+          "control": "rabbit",
+          "text": "SHIFT + ↑ 乌龟跃起",
+          "x": 33503.8
+        }
+      ],
+      "seen_after_hit": [
+        "SURFACE_ROCK",
+        "LOW_BEAM",
+        "LOW_BIRD",
+        "DIVE_GATE",
+        "FLOATING_LOG",
+        "HIGH_WALL",
+        "SHARK"
+      ]
+    },
+    {
+      "accidents": 2,
+      "case": "F",
+      "prompts_at_beam5": [],
+      "retaught": [
+        "LOW_BEAM"
+      ],
+      "seen_after_second_hit": [
+        "SURFACE_ROCK",
+        "LOW_BIRD",
+        "SHARK",
+        "DIVE_GATE",
+        "FLOATING_LOG",
+        "HIGH_WALL",
+        "LOW_BEAM"
+      ]
+    }
+  ],
+  "failures": [],
+  "note": "正式 race 场景内用 _physics_process 驱动，不是真人试玩。"
+}

@@ -1,0 +1,409 @@
+{
+  "groups": [
+    {
+      "end": 1680.0,
+      "group": "bird1",
+      "kind": "LOW_BIRD",
+      "start": 1560.0,
+      "zone": 1
+    },
+    {
+      "end": 2610.0,
+      "group": "rock1",
+      "kind": "SURFACE_ROCK",
+      "start": 2500.0,
+      "zone": 1
+    },
+    {
+      "end": 3980.0,
+      "group": "gate1",
+      "kind": "DIVE_GATE",
+      "start": 3800.0,
+      "zone": 1
+    },
+    {
+      "end": 5240.0,
+      "group": "rock2",
+      "kind": "SURFACE_ROCK",
+      "start": 5100.0,
+      "zone": 1
+    },
+    {
+      "end": 6432.0,
+      "group": "log1",
+      "kind": "FLOATING_LOG",
+      "start": 6400.0,
+      "zone": 1
+    },
+    {
+      "end": 7320.0,
+      "group": "shark1",
+      "kind": "SHARK",
+      "start": 7250.0,
+      "zone": 1
+    },
+    {
+      "end": 8520.0,
+      "group": "rock3",
+      "kind": "SURFACE_ROCK",
+      "start": 8400.0,
+      "zone": 1
+    },
+    {
+      "end": 9780.0,
+      "group": "beam2",
+      "kind": "LOW_BEAM",
+      "start": 9600.0,
+      "zone": 1
+    },
+    {
+      "end": 10890.0,
+      "group": "wall1",
+      "kind": "HIGH_WALL",
+      "start": 10860.0,
+      "zone": 1
+    },
+    {
+      "end": 12180.0,
+      "group": "gate2",
+      "kind": "DIVE_GATE",
+      "start": 12000.0,
+      "zone": 1
+    },
+    {
+      "end": 12960.0,
+      "group": "bird2",
+      "kind": "LOW_BIRD",
+      "start": 12850.0,
+      "zone": 1
+    },
+    {
+      "end": 14720.0,
+      "group": "beam1",
+      "kind": "LOW_BEAM",
+      "start": 14550.0,
+      "zone": 1
+    },
+    {
+      "end": 15870.0,
+      "group": "shark3",
+      "kind": "SHARK",
+      "start": 15800.0,
+      "zone": 2
+    },
+    {
+      "end": 17170.0,
+      "group": "beam3",
+      "kind": "LOW_BEAM",
+      "start": 17000.0,
+      "zone": 2
+    },
+    {
+      "end": 17890.0,
+      "group": "rock4",
+      "kind": "SURFACE_ROCK",
+      "start": 17770.0,
+      "zone": 2
+    },
+    {
+      "end": 19580.0,
+      "group": "gate3",
+      "kind": "DIVE_GATE",
+      "start": 19400.0,
+      "zone": 2
+    },
+    {
+      "end": 20720.0,
+      "group": "bird3",
+      "kind": "LOW_BIRD",
+      "start": 20600.0,
+      "zone": 2
+    },
+    {
+      "end": 21982.0,
+      "group": "log2",
+      "kind": "FLOATING_LOG",
+      "start": 21950.0,
+      "zone": 2
+    },
+    {
+      "end": 23330.0,
+      "group": "rock5",
+      "kind": "SURFACE_ROCK",
+      "start": 23200.0,
+      "zone": 2
+    },
+    {
+      "end": 24580.0,
+      "group": "beam4",
+      "kind": "LOW_BEAM",
+      "start": 24400.0,
+      "zone": 2
+    },
+    {
+      "end": 25630.0,
+      "group": "wall2",
+      "kind": "HIGH_WALL",
+      "start": 25600.0,
+      "zone": 2
+    },
+    {
+      "end": 26940.0,
+      "group": "rock6",
+      "kind": "SURFACE_ROCK",
+      "start": 26800.0,
+      "zone": 2
+    },
+    {
+      "end": 28180.0,
+      "group": "gate4",
+      "kind": "DIVE_GATE",
+      "start": 28000.0,
+      "zone": 2
+    },
+    {
+      "end": 29310.0,
+      "group": "bird4",
+      "kind": "LOW_BIRD",
+      "start": 29200.0,
+      "zone": 2
+    },
+    {
+      "end": 30582.0,
+      "group": "log3",
+      "kind": "FLOATING_LOG",
+      "start": 30550.0,
+      "zone": 2
+    },
+    {
+      "end": 31920.0,
+      "group": "rock7",
+      "kind": "SURFACE_ROCK",
+      "start": 31800.0,
+      "zone": 2
+    },
+    {
+      "end": 33170.0,
+      "group": "beam5",
+      "kind": "LOW_BEAM",
+      "start": 33000.0,
+      "zone": 2
+    },
+    {
+      "end": 34270.0,
+      "group": "shark5",
+      "kind": "SHARK",
+      "start": 34200.0,
+      "zone": 2
+    },
+    {
+      "end": 35520.0,
+      "group": "bird5",
+      "kind": "LOW_BIRD",
+      "start": 35400.0,
+      "zone": 2
+    },
+    {
+      "end": 36782.0,
+      "group": "log4",
+      "kind": "FLOATING_LOG",
+      "start": 36750.0,
+      "zone": 2
+    },
+    {
+      "end": 37660.0,
+      "group": "gate5",
+      "kind": "DIVE_GATE",
+      "start": 37480.0,
+      "zone": 2
+    },
+    {
+      "end": 39270.0,
+      "group": "shark6",
+      "kind": "SHARK",
+      "start": 39200.0,
+      "zone": 3
+    },
+    {
+      "end": 40450.0,
+      "group": "beam6",
+      "kind": "LOW_BEAM",
+      "start": 40270.0,
+      "zone": 3
+    },
+    {
+      "end": 41580.0,
+      "group": "rock8",
+      "kind": "SURFACE_ROCK",
+      "start": 41450.0,
+      "zone": 3
+    },
+    {
+      "end": 42760.0,
+      "group": "gate6",
+      "kind": "DIVE_GATE",
+      "start": 42580.0,
+      "zone": 3
+    },
+    {
+      "end": 44142.0,
+      "group": "log5",
+      "kind": "FLOATING_LOG",
+      "start": 44110.0,
+      "zone": 3
+    },
+    {
+      "end": 45370.0,
+      "group": "bird6",
+      "kind": "LOW_BIRD",
+      "start": 45250.0,
+      "zone": 3
+    },
+    {
+      "end": 46400.0,
+      "group": "wall3",
+      "kind": "HIGH_WALL",
+      "start": 46370.0,
+      "zone": 3
+    },
+    {
+      "end": 47610.0,
+      "group": "beam7",
+      "kind": "LOW_BEAM",
+      "start": 47440.0,
+      "zone": 3
+    },
+    {
+      "end": 48750.0,
+      "group": "rock9",
+      "kind": "SURFACE_ROCK",
+      "start": 48610.0,
+      "zone": 3
+    },
+    {
+      "end": 50510.0,
+      "group": "gate7",
+      "kind": "DIVE_GATE",
+      "start": 49750.0,
+      "zone": 3
+    },
+    {
+      "end": 51322.0,
+      "group": "log6",
+      "kind": "FLOATING_LOG",
+      "start": 51290.0,
+      "zone": 3
+    },
+    {
+      "end": 52550.0,
+      "group": "bird7",
+      "kind": "LOW_BIRD",
+      "start": 52440.0,
+      "zone": 3
+    },
+    {
+      "end": 53620.0,
+      "group": "shark8",
+      "kind": "SHARK",
+      "start": 53550.0,
+      "zone": 3
+    },
+    {
+      "end": 55220.0,
+      "group": "beam8",
+      "kind": "LOW_BEAM",
+      "start": 55040.0,
+      "zone": 3
+    },
+    {
+      "end": 56300.0,
+      "group": "rock10",
+      "kind": "SURFACE_ROCK",
+      "start": 56180.0,
+      "zone": 3
+    },
+    {
+      "end": 57672.0,
+      "group": "log7",
+      "kind": "FLOATING_LOG",
+      "start": 57640.0,
+      "zone": 3
+    },
+    {
+      "end": 58770.0,
+      "group": "bird8",
+      "kind": "LOW_BIRD",
+      "start": 58640.0,
+      "zone": 3
+    },
+    {
+      "end": 59790.0,
+      "group": "shark9",
+      "kind": "SHARK",
+      "start": 59720.0,
+      "zone": 3
+    },
+    {
+      "end": 60990.0,
+      "group": "beam9",
+      "kind": "LOW_BEAM",
+      "start": 60820.0,
+      "zone": 3
+    },
+    {
+      "end": 62090.0,
+      "group": "rock11",
+      "kind": "SURFACE_ROCK",
+      "start": 61940.0,
+      "zone": 3
+    },
+    {
+      "end": 63220.0,
+      "group": "gate8",
+      "kind": "DIVE_GATE",
+      "start": 63040.0,
+      "zone": 3
+    },
+    {
+      "end": 64592.0,
+      "group": "log8",
+      "kind": "FLOATING_LOG",
+      "start": 64560.0,
+      "zone": 3
+    },
+    {
+      "end": 65720.0,
+      "group": "bird9",
+      "kind": "LOW_BIRD",
+      "start": 65600.0,
+      "zone": 3
+    },
+    {
+      "end": 66840.0,
+      "group": "rock12",
+      "kind": "SURFACE_ROCK",
+      "start": 66720.0,
+      "zone": 3
+    }
+  ],
+  "zones": [
+    {
+      "base_speed": 220.0,
+      "end": 15000.0,
+      "id": 1,
+      "start": 0.0
+    },
+    {
+      "base_speed": 240.0,
+      "end": 39000.0,
+      "id": 2,
+      "start": 15000.0
+    },
+    {
+      "base_speed": 260.0,
+      "end": 67600.0,
+      "id": 3,
+      "start": 39000.0
+    }
+  ]
+}

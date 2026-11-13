@@ -1,0 +1,47 @@
+{
+  "cases": {
+    "rabbit_hit_first": {
+      "accident_state": "RABBIT_WATER",
+      "accidents": 1,
+      "control": "rabbit",
+      "got_hint": false,
+      "group": "bird1",
+      "hints": [],
+      "hud_text": "",
+      "hud_visible": false
+    },
+    "turtle_hit": {
+      "accident_state": "RABBIT_STUN",
+      "accidents": 1,
+      "control": "turtle",
+      "got_hint": true,
+      "group": "bird1",
+      "hints": [
+        "按 SHIFT 换兔子 - 这个只有兔子能躲"
+      ],
+      "hud_text": "按 SHIFT 换兔子 - 这个只有兔子能躲",
+      "hud_visible": true
+    },
+    "turtle_hit_again": {
+      "accident_state": "RABBIT_STUN",
+      "accidents": 1,
+      "control": "turtle",
+      "got_hint": false,
+      "group": "bird1",
+      "hints": [],
+      "hud_text": "按 SHIFT 换兔子 - 这个只有兔子能躲",
+      "hud_visible": true
+    }
+  },
+  "failures": [],
+  "generated_at": "2026-11-13T13:10:47",
+  "hint_text_en": "PRESS SHIFT FOR THE RABBIT - ONLY IT CAN DODGE THIS",
+  "hint_text_zh": "按 SHIFT 换兔子 - 这个只有兔子能躲",
+  "language": "zh",
+  "widest_lesson": {
+    "key": "lesson.dock_beam",
+    "lang": "en",
+    "limit": 1568.0,
+    "px": 668.0
+  }
+}

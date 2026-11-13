@@ -1,0 +1,34 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+  ok  action exists: shift
+  ok  action exists: boost
+  ok  action exists: up
+  ok  action exists: down
+  ok  action exists: pause
+  ok  action exists: restart
+  ok  action exists: confirm
+  ok  Enter -> race scene loaded
+  scene  -> res://scenes/race.tscn
+  ok  state RUNNING after start
+  ok  initial control is rabbit
+  ok  race time reset on start
+  ok  oxygen reset on start
+  ok  debug overlay exists in race scene
+  overlay -> STAGE 2 DEBUG  (F1) | state:     RUNNING | control:   RABBIT | rabbit:    RIDING  (RIDING) | turtle:    CRUISING  (CRUISING) | mount:     RIDING | slide:     0% | pickup:    - | oxygen:    8.00  (SAFE) | speed:     220 px/s | time:      0.22 s | combo:     0 / best 0 | showtime:  -  x0 | shifts:    0 | pickups:   0 | accidents: 0  (NONE)
+  ok  debug overlay shows state fields
+  ok  race time advances while running
+  ok  Shift event swaps control to turtle
+  ok  debug overlay follows control change
+  ok  Shift event swaps control back to rabbit
+  ok  oxygen drops when the turtle dives below the air line
+  ok  restart resets time
+  ok  restart resets oxygen
+  ok  restart resets control
+  ok  Esc pauses
+  ok  M from pause -> menu scene
+  scene  -> res://scenes/menu.tscn
+  ok  finish -> result scene
+  scene  -> res://scenes/result.tscn
+  ok  result -> menu scene
+  scene  -> res://scenes/menu.tscn
+STAGE0 SELFTEST: PASS

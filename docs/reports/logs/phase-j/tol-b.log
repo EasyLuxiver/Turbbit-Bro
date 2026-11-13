@@ -1,0 +1,23 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+AUDIT groups=55 schemes=7 shard=19..36
+TOL   g=19 beam4     LOW_BEAM      pass_leads=[400.0, 340.0, 280.0, 240.0, 200.0, 160.0, 120.0, 80.0, 40.0]
+TOL   g=20 wall2     HIGH_WALL     pass_leads=[240.0, 216.0, 192.0, 180.0]
+TOL   g=21 rock6     SURFACE_ROCK  pass_leads=[80.0, 40.0]
+TOL   g=22 gate4     DIVE_GATE     pass_leads=[400.0, 340.0, 280.0, 240.0, 200.0, 160.0, 120.0]
+TOL   g=23 bird4     LOW_BIRD      pass_leads=[400.0, 340.0, 280.0, 240.0, 200.0, 160.0, 120.0, 80.0, 40.0]
+TOL   g=24 log3      FLOATING_LOG  pass_leads=[180.0, 168.0, 156.0]
+TOL   g=25 rock7     SURFACE_ROCK  pass_leads=[120.0, 80.0, 40.0]
+TOL   g=26 beam5     LOW_BEAM      pass_leads=[400.0, 340.0, 280.0, 240.0, 200.0, 160.0, 120.0, 80.0, 40.0]
+TOL   g=27 shark5    SHARK         pass_leads=[200.0, 160.0, 120.0]
+TOL   g=28 bird5     LOW_BIRD      pass_leads=[400.0, 340.0, 280.0, 240.0, 200.0, 160.0, 120.0, 80.0, 40.0]
+TOL   g=29 log4      FLOATING_LOG  pass_leads=[180.0, 168.0, 156.0]
+TOL   g=30 gate5     DIVE_GATE     pass_leads=[400.0, 340.0, 280.0, 240.0, 200.0, 160.0, 120.0]
+TOL   g=31 shark6    SHARK         pass_leads=[200.0, 160.0]
+TOL   g=32 beam6     LOW_BEAM      pass_leads=[400.0, 340.0, 280.0, 240.0, 200.0, 160.0, 120.0, 80.0, 40.0]
+TOL   g=33 rock8     SURFACE_ROCK  pass_leads=[120.0, 80.0, 40.0]
+TOL   g=34 gate6     DIVE_GATE     pass_leads=[400.0, 340.0, 280.0, 240.0, 200.0, 160.0, 120.0]
+TOL   g=35 log5      FLOATING_LOG  pass_leads=[221.0, 195.0, 182.0, 169.0]
+TOL   g=36 bird6     LOW_BIRD      pass_leads=[400.0, 340.0, 280.0, 240.0, 200.0, 160.0, 120.0, 80.0, 40.0]
+TOL wrote res://docs/reports/stage4-tolerance-scan-19-36.json
+SOLUTION AUDIT: DONE

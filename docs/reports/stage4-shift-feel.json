@@ -1,0 +1,258 @@
+{
+  "coyote": {
+    "early": {
+      "coyote_before": 0.083,
+      "jumped": true,
+      "still_riding": false,
+      "turtle_y": 515.0
+    },
+    "late": {
+      "coyote_before": 0.0,
+      "jumped": false,
+      "still_riding": true,
+      "turtle_y": 440.0
+    }
+  },
+  "fx": {
+    "audio_players": 0,
+    "camera_pulse": 0.11,
+    "frames_per_burst": 0,
+    "fx_delta": 2,
+    "hud_text": "SHIFT   CONTROL: TURTLE",
+    "jolt_who": "rabbit",
+    "sfx_delta": 0,
+    "sfx_muted": true,
+    "subscribed": true
+  },
+  "jump_buffer": {
+    "before": {
+      "age": 0.1,
+      "jumped": false,
+      "log": []
+    },
+    "far": {
+      "age": 0.133,
+      "jumped": false,
+      "log": [
+        {
+          "action": "up",
+          "age": 0.0166666666666667,
+          "by": "jump",
+          "shifts": 0
+        }
+      ]
+    },
+    "land_ticks": 65,
+    "near": {
+      "age": 0.1,
+      "jumped": true,
+      "log": [
+        {
+          "action": "up",
+          "age": 0.0166666666666667,
+          "by": "jump",
+          "shifts": 0
+        },
+        {
+          "action": "up",
+          "age": 0.1,
+          "by": "buffered_jump",
+          "shifts": 0
+        }
+      ]
+    }
+  },
+  "rapid_shift": {
+    "fired": false,
+    "late_fired": false,
+    "log": [],
+    "shifts": 3
+  },
+  "rates": {
+    "120": {
+      "coyote": {
+        "early": {
+          "coyote_before": 0.092,
+          "jumped": true,
+          "still_riding": false,
+          "turtle_y": 518.8
+        },
+        "late": {
+          "coyote_before": 0.0,
+          "jumped": false,
+          "still_riding": true,
+          "turtle_y": 478.0
+        }
+      },
+      "jump_buffer": {
+        "before": {
+          "age": 0.1,
+          "jumped": false,
+          "log": []
+        },
+        "far": {
+          "age": 0.133,
+          "jumped": false,
+          "log": [
+            {
+              "action": "up",
+              "age": 0.00833333333333333,
+              "by": "jump",
+              "shifts": 0
+            }
+          ]
+        },
+        "land_ticks": 131,
+        "near": {
+          "age": 0.1,
+          "jumped": true,
+          "log": [
+            {
+              "action": "up",
+              "age": 0.00833333333333333,
+              "by": "jump",
+              "shifts": 0
+            },
+            {
+              "action": "up",
+              "age": 0.1,
+              "by": "buffered_jump",
+              "shifts": 0
+            }
+          ]
+        }
+      },
+      "same_frame": {
+        "leap": true,
+        "old_jumped": false
+      }
+    },
+    "30": {
+      "coyote": {
+        "early": {
+          "coyote_before": 0.067,
+          "jumped": true,
+          "still_riding": false,
+          "turtle_y": 500.0
+        },
+        "late": {
+          "coyote_before": 0.0,
+          "jumped": false,
+          "still_riding": true,
+          "turtle_y": 390.0
+        }
+      },
+      "jump_buffer": {
+        "before": {
+          "age": 0.1,
+          "jumped": false,
+          "log": []
+        },
+        "far": {
+          "age": 0.133,
+          "jumped": false,
+          "log": [
+            {
+              "action": "up",
+              "age": 0.0333333333333333,
+              "by": "jump",
+              "shifts": 0
+            }
+          ]
+        },
+        "land_ticks": 32,
+        "near": {
+          "age": 0.1,
+          "jumped": true,
+          "log": [
+            {
+              "action": "up",
+              "age": 0.0333333333333333,
+              "by": "jump",
+              "shifts": 0
+            },
+            {
+              "action": "up",
+              "age": 0.1,
+              "by": "buffered_jump",
+              "shifts": 0
+            }
+          ]
+        }
+      },
+      "same_frame": {
+        "leap": true,
+        "old_jumped": false
+      }
+    },
+    "60": {
+      "coyote": {
+        "early": {
+          "coyote_before": 0.083,
+          "jumped": true,
+          "still_riding": false,
+          "turtle_y": 515.0
+        },
+        "late": {
+          "coyote_before": 0.0,
+          "jumped": false,
+          "still_riding": true,
+          "turtle_y": 440.0
+        }
+      },
+      "jump_buffer": {
+        "before": {
+          "age": 0.1,
+          "jumped": false,
+          "log": []
+        },
+        "far": {
+          "age": 0.133,
+          "jumped": false,
+          "log": [
+            {
+              "action": "up",
+              "age": 0.0166666666666667,
+              "by": "jump",
+              "shifts": 0
+            }
+          ]
+        },
+        "land_ticks": 65,
+        "near": {
+          "age": 0.1,
+          "jumped": true,
+          "log": [
+            {
+              "action": "up",
+              "age": 0.0166666666666667,
+              "by": "jump",
+              "shifts": 0
+            },
+            {
+              "action": "up",
+              "age": 0.1,
+              "by": "buffered_jump",
+              "shifts": 0
+            }
+          ]
+        }
+      },
+      "same_frame": {
+        "leap": true,
+        "old_jumped": false
+      }
+    }
+  },
+  "shift_action": {
+    "mid_air_log": 1,
+    "rabbit_to_turtle": {
+      "leap": true,
+      "old_jumped": false
+    },
+    "turtle_to_rabbit": {
+      "jump": true,
+      "old_leaped": false
+    }
+  }
+}

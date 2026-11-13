@@ -1,0 +1,18 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+LEVEL SEED 20261112
+SNACK DRAW #1 group=gate1 zone=1 kind=DIVE_GATE (fixed)
+SNACK DRAW #2 group=beam1 zone=1 kind=LOW_BIRD (was LOW_BEAM)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=SURFACE_ROCK (was DIVE_GATE)
+SNACK eaten by=rabbit x=3337 obstacle=TEST_BITE jump_boost=1.15 until=3817
+SNACK eaten by=turtle x=3337 obstacle=TEST_BITE boost_until=3817 speed=253
+SNACK eaten by=turtle x=3866 obstacle=TEST_BITE boost_until=4346 speed=253
+SNACK eaten by=turtle x=3870 obstacle=TEST_BITE boost_until=4350 speed=253
+STAGE4 SNACK CONTACT: PASS
+SNACK CONTACT data: {"boost_window":{"boost_seconds":2.02,"settle_seconds":0.12,"settled_speed":220.0,"speed_max":253.0,"want_speed":253.0},"dive_avoids":{"deepest_y":484.0,"eaten":false,"returned_y":334.0},"eat_while_controlling_rabbit":{"by":"rabbit","clean_pass_after":0,"clean_pass_before":0,"control":"rabbit","drift_after":6.02,"drift_before":6.0,"eaten":true,"jump_boost":1.15,"state_before":"DISTRACTED"},"eat_while_controlling_turtle":{"by":"turtle","control":"turtle","drift_after":0.0,"drift_before":6.0,"eaten":true},"no_stacking":{"first_boost_speed":253.0,"limit":253.0,"second_boost_speed":253.0,"speed_max":253.0}}

@@ -1,0 +1,63 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+  ok  rabbit shows all 5-stage feedback (["RELAXED", "SLIDING", "EDGE", "CRITICAL"])
+  ok  rabbit EDGE stage starts after 4.5 s (4.53)
+  ok  rabbit CRITICAL stage starts after 7.5 s (7.53)
+  ok  no rabbit accident before 8 s (early=false)
+  ok  rabbit accident window 8-10.5 s (9.53)
+  ok  rabbit accident is RABBIT_SLIP (RABBIT_SLIP)
+  ok  rabbit accident recovers to RIDING
+  ok  recovery resets rabbit slide
+  rabbit window -> accident 9.53s phases { "RELAXED": 0.0, "SLIDING": 1.5, "EDGE": 4.53333333333333, "CRITICAL": 7.53333333333332 }
+  ok  turtle shows all 5-stage feedback (["RELAXED", "SINKING", "DEEP", "CRITICAL"])
+  ok  no turtle accident before 8 s
+  ok  turtle accident window 8-10.5 s (8.47)
+  ok  turtle accident is depth-driven (y=741.3)
+  ok  turtle accident recovers
+  ok  recovered turtle returns to cruise depth (335.3)
+  turtle window -> accident 8.47s phases { "RELAXED": 0.0, "SINKING": 1.46666666666667, "DEEP": 4.49999999999999, "CRITICAL": 7.49999999999998 } y=741
+  ok  rabbit risk built to 4 s
+  ok  SHIFT takes effect immediately
+  ok  SHIFT neither clears nor adds risk (4.03 -> 4.07)
+  ok  other character is not frozen after SHIFT
+  ok  no instant recovery inside the 0.5 s settle
+  ok  controlled rabbit recovers after settling (4.03 -> 0.65)
+  shift -> 4.03 -> 4.07 -> 0.65
+  ok  rabbit risk built to 6 s
+  ok  five presses all register, no switching restriction
+  ok  5 fast switches keep rabbit risk (6.03 -> 6.40)
+  ok  5 presses end on rabbit
+  ok  uncontrolled rabbit keeps sliding right after the spam
+  five shifts -> 6.03 -> 7.43
+  ok  balanced rabbit stands upright
+  ok  balanced turtle sits level
+  ok  early imbalance is a small wobble (0.04 rad)
+  ok  lean and wobble grow through the stages [0.04, 0.1, 0.26, 0.42] / [1.5, 2.5, 5.0, 8.0]
+  ok  turtle starts with a slight tilt (0.02 rad)
+  ok  turtle tilt grows through the stages [0.02, 0.05, 0.12, 0.22]
+  pose -> rabbit lean [0.04, 0.1, 0.26, 0.42] wobble [1.5, 2.5, 5.0, 8.0] turtle tilt [0.02, 0.05, 0.12, 0.22]
+  ok  rabbit risk reached 8.8 s (critical)
+  ok  taking back just before critical rescues it
+  ok  rescued rabbit recovers instead of falling
+  ok  24 s of alternating control produces no accident
+  ok  alternating control keeps both risks below critical (1.2)
+  balance -> rescue 8.83->6.03, alternating peak 1.23
+  ok  undertow flag on with deep shell + rabbit control
+  ok  deep shell in open water is not a hit
+  ok  deep shell cannot ghost through a rabbit-layer obstacle
+  ok  undertow hit reads as RABBIT_WATER (RABBIT_WATER)
+  ok  handing back to the turtle clears undertow
+  ok  no accident when the turtle is in control (deep)
+  ok  shallow shell keeps undertow off
+  ok  shallow shell passes under the air bar
+  ok  every rabbit-layer rect audited (34 rects)
+  ok  every rabbit-layer underwater column reaches y=740 (worst gap 0.00 px)
+  undertow -> line y=410 (A flag, B hit, C/D clear, E 34 rects gap 0.00)
+  ok  every rabbit-layer obstacle <= 217 px (34 groups, widest 170)
+  widths -> 34 rabbit-layer groups, widest 170 px (limit 217)
+  ok  first rock hit registers
+  ok  no same-source accident inside 3 s (count 1)
+  ok  after the 3 s guard the same hazard hits again
+  chained -> guard 3.0s, hits 1 -> 2
+  report -> d:/GAMESTUDIO/TURBBIT/docs/reports/stage4-core-experience.json
+STAGE4 CORE EXPERIENCE: PASS

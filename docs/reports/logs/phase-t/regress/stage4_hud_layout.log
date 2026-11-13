@@ -1,0 +1,21 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+LEVEL SEED 20261112
+SNACK DRAW #1 group=beam1 zone=1 kind=LOW_BEAM (fixed)
+SNACK DRAW #2 group=rock3 zone=1 kind=SURFACE_ROCK (was SURFACE_ROCK)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SURFACE_ROCK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SURFACE_ROCK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=LOW_BEAM (was DIVE_GATE)
+HUD LAYOUT 1600x900/zh (viewport 1600x900) area=4.523% panels={ "tl": [P: (14.0, 14.0), S: (213.0, 98.0)], "tr": [P: (1412.0, 14.0), S: (174.0, 107.0)], "bl": [P: (14.0, 806.0), S: (140.0, 80.0)], "br": [P: (1429.0, 794.0), S: (157.0, 92.0)] } bottom_center=[P: (587.0, 783.0), S: (426.0, 101.0)]
+HUD LAYOUT 1600x900/zh (viewport 1600x900) labels_checked=15
+HUD LAYOUT 1600x900/en (viewport 1600x900) area=6.101% panels={ "tl": [P: (14.0, 14.0), S: (260.0, 98.0)], "tr": [P: (1310.0, 14.0), S: (276.0, 107.0)], "bl": [P: (14.0, 806.0), S: (230.0, 80.0)], "br": [P: (1429.0, 794.0), S: (157.0, 92.0)] } bottom_center=[P: (530.0, 783.0), S: (540.0, 101.0)]
+HUD LAYOUT 1600x900/en (viewport 1600x900) labels_checked=15
+HUD LAYOUT 1280x720/zh (viewport 1600x900) area=4.523% panels={ "tl": [P: (14.0, 14.0), S: (213.0, 98.0)], "tr": [P: (1412.0, 14.0), S: (174.0, 107.0)], "bl": [P: (14.0, 806.0), S: (140.0, 80.0)], "br": [P: (1429.0, 794.0), S: (157.0, 92.0)] } bottom_center=[P: (587.0, 783.0), S: (426.0, 101.0)]
+HUD LAYOUT 1280x720/zh (viewport 1600x900) labels_checked=15
+HUD LAYOUT 1280x720/en (viewport 1600x900) area=6.101% panels={ "tl": [P: (14.0, 14.0), S: (260.0, 98.0)], "tr": [P: (1310.0, 14.0), S: (276.0, 107.0)], "bl": [P: (14.0, 806.0), S: (230.0, 80.0)], "br": [P: (1429.0, 794.0), S: (157.0, 92.0)] } bottom_center=[P: (530.0, 783.0), S: (540.0, 101.0)]
+HUD LAYOUT 1280x720/en (viewport 1600x900) labels_checked=15
+STAGE4 HUD LAYOUT: PASS

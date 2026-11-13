@@ -1,0 +1,46 @@
+{
+  "controls": {
+    "gate_dive": {
+      "accident_state": "NONE",
+      "celebrate_t": -1.0,
+      "peak_hop_px": 0.0
+    },
+    "plain_jump": {
+      "celebrate_t": -1.0,
+      "peak_hop_px": 0.0
+    },
+    "retrigger": {
+      "after_second": 0.0,
+      "before_second": 0.1,
+      "first": 0.0,
+      "reset": true
+    }
+  },
+  "dive": {
+    "accidents": 0,
+    "celebrate_kind": "dive",
+    "celebrate_t_at_success": 0.0,
+    "cleared_after_frames": 32,
+    "expected_kind": "dive",
+    "frames_nonzero": 29,
+    "group": "log1",
+    "mount": "RIDING",
+    "peak_hop_px": 12.0,
+    "position_unchanged_by_offset": true,
+    "riding": true
+  },
+  "generated_at": "2026-11-13T15:57:14",
+  "ollie": {
+    "accidents": 0,
+    "celebrate_kind": "ollie",
+    "celebrate_t_at_success": 0.0,
+    "cleared_after_frames": 21,
+    "expected_kind": "ollie",
+    "frames_nonzero": 19,
+    "group": "wall1",
+    "mount": "RIDING",
+    "peak_hop_px": 12.0,
+    "position_unchanged_by_offset": true,
+    "riding": true
+  }
+}

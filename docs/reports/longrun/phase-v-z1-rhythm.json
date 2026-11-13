@@ -1,0 +1,62 @@
+{
+  "accidents": 0,
+  "first": {
+    "combo": 26.1500000000002,
+    "combo_x": 6250.68310546875,
+    "crouch": 5.14999999999999,
+    "crouch_x": 1515.37805175781,
+    "jump": 9.45,
+    "jump_x": 2449.19067382813,
+    "shift": 14.6500000000001,
+    "shift_x": 3651.9873046875
+  },
+  "generated_at": "2026-11-13T20:32:54",
+  "hits": [],
+  "note": "Zone 1 opening rhythm: real physics + engine input proxy; not a human playtest.",
+  "race_start_x": 400.0,
+  "reached_x": 6779.0,
+  "sim_s": 28.55,
+  "timeline": [
+    {
+      "accident": "NONE",
+      "group": "bird1",
+      "handler_s": 5.6,
+      "kind": "LOW_BIRD",
+      "t_handler": 0.5,
+      "x_handler": 510.0
+    },
+    {
+      "accident": "NONE",
+      "group": "rock1",
+      "handler_s": 4.45,
+      "kind": "SURFACE_ROCK",
+      "t_handler": 6.1,
+      "x_handler": 1717.0
+    },
+    {
+      "accident": "NONE",
+      "group": "gate1",
+      "handler_s": 5.8,
+      "kind": "DIVE_GATE",
+      "t_handler": 10.55,
+      "x_handler": 2691.0
+    },
+    {
+      "accident": "NONE",
+      "group": "rock2",
+      "handler_s": 5.45,
+      "kind": "SURFACE_ROCK",
+      "t_handler": 16.35,
+      "x_handler": 4082.0
+    },
+    {
+      "accident": "NONE",
+      "group": "log1",
+      "handler_s": 6.75,
+      "kind": "FLOATING_LOG",
+      "t_handler": 21.8,
+      "x_handler": 5294.0
+    }
+  ],
+  "z1_base_speed": 220.0
+}

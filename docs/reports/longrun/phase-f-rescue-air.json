@@ -1,0 +1,160 @@
+{
+  "generated_at": "2026-11-12T22:02:17",
+  "note": "方案 2 空中救援对比探针：真实按键、自动驾驶代理，不是真人。",
+  "trials": [
+    {
+      "accident_count": 1,
+      "bro_meter": 1,
+      "catch_s": 1.27,
+      "delay": -1.0,
+      "dive_first": false,
+      "label": "none",
+      "min_dy": 0.0,
+      "recover_s": 2.05,
+      "result": "missed"
+    },
+    {
+      "accident_count": 1,
+      "bro_meter": 1,
+      "catch_s": 1.27,
+      "delay": -1.0,
+      "dive_first": true,
+      "label": "dive_only",
+      "min_dy": 0.0,
+      "recover_s": 2.05,
+      "result": "missed"
+    },
+    {
+      "accident_count": 1,
+      "bro_meter": 1,
+      "catch_s": 0.53,
+      "delay": 0.0,
+      "dive_first": false,
+      "label": "leap_0.0",
+      "min_dy": 0.0,
+      "recover_s": 0.53,
+      "result": "caught"
+    },
+    {
+      "accident_count": 1,
+      "bro_meter": 1,
+      "catch_s": 0.55,
+      "delay": 0.2,
+      "dive_first": false,
+      "label": "leap_0.2",
+      "min_dy": 0.0,
+      "recover_s": 0.55,
+      "result": "caught"
+    },
+    {
+      "accident_count": 1,
+      "bro_meter": 1,
+      "catch_s": 0.65,
+      "delay": 0.4,
+      "dive_first": false,
+      "label": "leap_0.4",
+      "min_dy": 0.0,
+      "recover_s": 0.65,
+      "result": "caught"
+    },
+    {
+      "accident_count": 1,
+      "bro_meter": 1,
+      "catch_s": 0.73,
+      "delay": 0.6,
+      "dive_first": false,
+      "label": "leap_0.6",
+      "min_dy": 0.0,
+      "recover_s": 0.73,
+      "result": "caught"
+    },
+    {
+      "accident_count": 1,
+      "bro_meter": 1,
+      "catch_s": 0.85,
+      "delay": 0.8,
+      "dive_first": false,
+      "label": "leap_0.8",
+      "min_dy": 0.0,
+      "recover_s": 0.85,
+      "result": "caught"
+    },
+    {
+      "accident_count": 1,
+      "bro_meter": 1,
+      "catch_s": 1.05,
+      "delay": 1.0,
+      "dive_first": false,
+      "label": "leap_1.0",
+      "min_dy": 0.0,
+      "recover_s": 1.05,
+      "result": "caught"
+    },
+    {
+      "accident_count": 1,
+      "bro_meter": 1,
+      "catch_s": 1.27,
+      "delay": 1.2,
+      "dive_first": false,
+      "label": "leap_1.2",
+      "min_dy": 0.0,
+      "recover_s": 2.05,
+      "result": "missed"
+    },
+    {
+      "accident_count": 1,
+      "bro_meter": 1,
+      "catch_s": 1.27,
+      "delay": 1.4,
+      "dive_first": false,
+      "label": "leap_1.4",
+      "min_dy": 0.0,
+      "recover_s": 2.05,
+      "result": "missed"
+    },
+    {
+      "accident_count": 1,
+      "bro_meter": 1,
+      "catch_s": 1.27,
+      "delay": 1.6,
+      "dive_first": false,
+      "label": "leap_1.6",
+      "min_dy": 0.0,
+      "recover_s": 2.05,
+      "result": "missed"
+    },
+    {
+      "accident_count": 1,
+      "bro_meter": 1,
+      "catch_s": 1.27,
+      "delay": 1.8,
+      "dive_first": false,
+      "label": "leap_1.8",
+      "min_dy": 0.0,
+      "recover_s": 2.05,
+      "result": "missed"
+    },
+    {
+      "accident_count": 1,
+      "bro_meter": 1,
+      "catch_s": 1.27,
+      "delay": 2.0,
+      "dive_first": false,
+      "label": "leap_2.0",
+      "min_dy": 0.0,
+      "recover_s": 2.05,
+      "result": "missed"
+    },
+    {
+      "accident_count": 1,
+      "bro_meter": 1,
+      "catch_s": 1.27,
+      "delay": 2.2,
+      "dive_first": false,
+      "label": "leap_2.2",
+      "min_dy": 0.0,
+      "recover_s": 2.05,
+      "result": "missed"
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "generated_at": "2026-11-13T16:10:10",
+  "hitstop_rabbit_s": 0.05,
+  "hitstop_turtle_s": 0.09,
+  "note": "P1-5 collision/action feedback: real physics + engine input proxy; not a human playtest.",
+  "rows": [
+    {
+      "accident": "RABBIT_STUN",
+      "base_speed": 220.0,
+      "case": "rabbit_stun",
+      "checks": {
+        "accident_rabbit_stun": true,
+        "hit_rock1": true,
+        "hitstop_40_60ms": true,
+        "rabbit_stunned": true,
+        "shake_amp_2_3px": true,
+        "shake_peak_2_3px": true,
+        "stun_time_unchanged": true,
+        "turtle_speed_x06": true
+      },
+      "hitstop": {
+        "accident": "NONE",
+        "s": 0.05,
+        "who": "rabbit",
+        "x": 2491.0
+      },
+      "pass": true,
+      "shake": {
+        "amp": 2.5,
+        "major": false,
+        "s": 0.18,
+        "x": 2491.0
+      },
+      "shake_peak_px": 2.5,
+      "sim_s": 1.85,
+      "start_x": 2150.0,
+      "stun": 0.8,
+      "turtle_speed": 132.0
+    },
+    {
+      "accident": "NONE",
+      "base_speed": 220.0,
+      "bro_meter": 1,
+      "case": "turtle_wave",
+      "checks": {
+        "accident_none": true,
+        "bro_meter_1": true,
+        "hit_gate1": true,
+        "hitstop_80_100ms": true,
+        "shake_amp_5_8px": true,
+        "shake_peak_5_8px": true,
+        "turtle_dunked": true,
+        "turtle_speed_x06": true
+      },
+      "dunk": 1.8,
+      "hitstop": {
+        "accident": "NONE",
+        "s": 0.09,
+        "who": "turtle",
+        "x": 3757.0
+      },
+      "pass": true,
+      "shake": {
+        "amp": 6.5,
+        "major": true,
+        "s": 0.26,
+        "x": 3757.0
+      },
+      "shake_peak_px": 6.5,
+      "sim_s": 2.15,
+      "start_x": 3350.0,
+      "turtle_speed": 132.0
+    },
+    {
+      "case": "landing",
+      "checks": {
+        "clean": true,
+        "jumped": true,
+        "landed": true,
+        "pickup_counted": true,
+        "splash_at_real_landing": true,
+        "splash_expires": true,
+        "splash_started": true
+      },
+      "pass": true,
+      "pickup_count": 1,
+      "sim_s": 2.05,
+      "splash_dx_from_rabbit": 0.0,
+      "splash_t": 0.0,
+      "start_x": 4300.0
+    },
+    {
+      "case": "dive_fx",
+      "checks": {
+        "clean": true,
+        "dive_fx": true,
+        "no_contact": true,
+        "passed_log1": true
+      },
+      "combo": 1,
+      "fx": {
+        "kind": "dive",
+        "x": 6516.0
+      },
+      "fx_log": [
+        {
+          "kind": "ollie",
+          "x": 10980.0
+        }
+      ],
+      "hit_groups": [],
+      "pass": true,
+      "sim_s": 2.8,
+      "start_x": 5900.0
+    },
+    {
+      "case": "ollie_fx",
+      "checks": {
+        "clean": true,
+        "distinct_from_dive": true,
+        "leaped": true,
+        "no_contact": true,
+        "ollie_fx": true,
+        "passed_wall1": true
+      },
+      "combo": 1,
+      "fx": {
+        "kind": "ollie",
+        "x": 10980.0
+      },
+      "fx_log": [
+        {
+          "kind": "ollie",
+          "x": 10980.0
+        }
+      ],
+      "hit_groups": [],
+      "pass": true,
+      "sim_s": 4.0,
+      "start_x": 12600.0
+    }
+  ],
+  "shake_major_px": 6.5,
+  "shake_normal_px": 2.5
+}

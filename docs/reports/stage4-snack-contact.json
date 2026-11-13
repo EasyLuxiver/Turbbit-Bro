@@ -1,0 +1,38 @@
+{
+  "boost_window": {
+    "boost_seconds": 2.02,
+    "settle_seconds": 0.12,
+    "settled_speed": 220.0,
+    "speed_max": 253.0,
+    "want_speed": 253.0
+  },
+  "dive_avoids": {
+    "deepest_y": 484.0,
+    "eaten": false,
+    "returned_y": 334.0
+  },
+  "eat_while_controlling_rabbit": {
+    "by": "rabbit",
+    "clean_pass_after": 0,
+    "clean_pass_before": 0,
+    "control": "rabbit",
+    "drift_after": 6.02,
+    "drift_before": 6.0,
+    "eaten": true,
+    "jump_boost": 1.15,
+    "state_before": "DISTRACTED"
+  },
+  "eat_while_controlling_turtle": {
+    "by": "turtle",
+    "control": "turtle",
+    "drift_after": 0.0,
+    "drift_before": 6.0,
+    "eaten": true
+  },
+  "no_stacking": {
+    "first_boost_speed": 253.0,
+    "limit": 253.0,
+    "second_boost_speed": 253.0,
+    "speed_max": 253.0
+  }
+}

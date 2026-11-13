@@ -1,0 +1,694 @@
+{
+ "min_tolerance": {
+  "group": "shark6",
+  "zone": 3,
+  "kind": "SHARK",
+  "scheme": "leap",
+  "source": "dense 1D (40 px step)",
+  "tolerance_s": 0.154,
+  "reaction_s": 3.62,
+  "window": "160..200 px"
+ },
+ "groups_under_0_15": [],
+ "min_reaction": {
+  "group": "wall3",
+  "zone": 3,
+  "kind": "HIGH_WALL",
+  "scheme": "leap_jump",
+  "source": "2D lead x delay",
+  "tolerance_s": 0.308,
+  "reaction_s": 3.54,
+  "window": "lead 180..260 px (step 10), delay<=0.40 s"
+ },
+ "groups_under_0_35": [],
+ "min_recovery": {
+  "gap_s": 3.85,
+  "from": "shark6",
+  "to": "beam6",
+  "zone": 3
+ },
+ "max_gap": {
+  "gap_s": 5.55,
+  "from": "wall1",
+  "to": "rock3",
+  "zone": 1
+ },
+ "pairs_under_1_0": [],
+ "lessons": [
+  {
+   "base_speed": 220.0,
+   "distance_px": 823.0,
+   "group": "bird1",
+   "group_start_x": 1300.0,
+   "kind": "LOW_BIRD",
+   "prompt_emitted_within_0_1s": true,
+   "prompt_text": "↓ CROUCH",
+   "seconds_to_obstacle": 3.74,
+   "sim": 0.02,
+   "turtle_x": 477.0,
+   "zone": 1
+  },
+  {
+   "base_speed": 220.0,
+   "distance_px": 1098.0,
+   "group": "rock1",
+   "group_start_x": 2400.0,
+   "kind": "SURFACE_ROCK",
+   "prompt_emitted_within_0_1s": true,
+   "prompt_text": "↑ JUMP",
+   "seconds_to_obstacle": 4.99,
+   "sim": 3.77,
+   "turtle_x": 1302.0,
+   "zone": 1
+  },
+  {
+   "base_speed": 220.0,
+   "distance_px": 1100.0,
+   "group": "beam1",
+   "group_start_x": 3700.0,
+   "kind": "LOW_BEAM",
+   "prompt_emitted_within_0_1s": true,
+   "prompt_text": "↓ CROUCH",
+   "seconds_to_obstacle": 5.0,
+   "sim": 9.67,
+   "turtle_x": 2600.0,
+   "zone": 1
+  },
+  {
+   "base_speed": 220.0,
+   "distance_px": 1098.4,
+   "group": "shark1",
+   "group_start_x": 7200.0,
+   "kind": "SHARK",
+   "prompt_emitted_within_0_1s": true,
+   "prompt_text": "SHIFT + ↑ TURTLE LEAP",
+   "seconds_to_obstacle": 4.99,
+   "sim": 25.58,
+   "turtle_x": 6101.6,
+   "zone": 1
+  },
+  {
+   "base_speed": 220.0,
+   "distance_px": 1099.4,
+   "group": "gate1",
+   "group_start_x": 8400.0,
+   "kind": "DIVE_GATE",
+   "prompt_emitted_within_0_1s": true,
+   "prompt_text": "SHIFT + HOLD ↓ TURTLE DIVE",
+   "seconds_to_obstacle": 5.0,
+   "sim": 31.03,
+   "turtle_x": 7300.6,
+   "zone": 1
+  },
+  {
+   "base_speed": 220.0,
+   "distance_px": 1096.7,
+   "group": "log1",
+   "group_start_x": 10920.0,
+   "kind": "FLOATING_LOG",
+   "prompt_emitted_within_0_1s": true,
+   "prompt_text": "↑ RABBIT JUMP → SHIFT → ↓ TURTLE DIVE",
+   "seconds_to_obstacle": 4.98,
+   "sim": 42.5,
+   "turtle_x": 9823.3,
+   "zone": 1
+  },
+  {
+   "base_speed": 220.0,
+   "distance_px": 1096.8,
+   "group": "wall1",
+   "group_start_x": 13300.0,
+   "kind": "HIGH_WALL",
+   "prompt_emitted_within_0_1s": true,
+   "prompt_text": "SHIFT + ↑ LEAP → SHIFT RABBIT → ↑ KICK",
+   "seconds_to_obstacle": 4.99,
+   "sim": 53.32,
+   "turtle_x": 12203.2,
+   "zone": 1
+  }
+ ],
+ "lessons_under_1_0": [],
+ "kinds_taught": 7,
+ "kinds_total": 7,
+ "coverage": {
+  "crouch": 18,
+  "jump": 21,
+  "dive": 38,
+  "leap": 27,
+  "dive_jump": 22,
+  "leap_jump": 3
+ },
+ "max_scheme_coverage": 38,
+ "per_group": [
+  {
+   "group": "bird1",
+   "zone": 1,
+   "kind": "LOW_BIRD",
+   "scheme": "crouch",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 1.091,
+   "reaction_s": 4.82,
+   "window": "40..280 px"
+  },
+  {
+   "group": "rock1",
+   "zone": 1,
+   "kind": "SURFACE_ROCK",
+   "scheme": "jump",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.182,
+   "reaction_s": 4.82,
+   "window": "40..80 px"
+  },
+  {
+   "group": "beam1",
+   "zone": 1,
+   "kind": "LOW_BEAM",
+   "scheme": "crouch",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 1.091,
+   "reaction_s": 4.82,
+   "window": "40..280 px"
+  },
+  {
+   "group": "rock2",
+   "zone": 1,
+   "kind": "SURFACE_ROCK",
+   "scheme": "jump",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.182,
+   "reaction_s": 4.82,
+   "window": "40..80 px"
+  },
+  {
+   "group": "bird2",
+   "zone": 1,
+   "kind": "LOW_BIRD",
+   "scheme": "crouch",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 1.091,
+   "reaction_s": 4.82,
+   "window": "40..280 px"
+  },
+  {
+   "group": "shark1",
+   "zone": 1,
+   "kind": "SHARK",
+   "scheme": "leap",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.182,
+   "reaction_s": 4.45,
+   "window": "120..160 px"
+  },
+  {
+   "group": "gate1",
+   "zone": 1,
+   "kind": "DIVE_GATE",
+   "scheme": "dive",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.727,
+   "reaction_s": 4.45,
+   "window": "120..280 px"
+  },
+  {
+   "group": "beam2",
+   "zone": 1,
+   "kind": "LOW_BEAM",
+   "scheme": "crouch",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 1.091,
+   "reaction_s": 4.82,
+   "window": "40..280 px"
+  },
+  {
+   "group": "log1",
+   "zone": 1,
+   "kind": "FLOATING_LOG",
+   "scheme": "dive_jump",
+   "source": "2D lead x delay",
+   "tolerance_s": 0.182,
+   "reaction_s": 4.36,
+   "window": "lead 140..180 px (step 10), delay<=0.15 s"
+  },
+  {
+   "group": "gate2",
+   "zone": 1,
+   "kind": "DIVE_GATE",
+   "scheme": "dive",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.727,
+   "reaction_s": 4.45,
+   "window": "120..280 px"
+  },
+  {
+   "group": "wall1",
+   "zone": 1,
+   "kind": "HIGH_WALL",
+   "scheme": "leap_jump",
+   "source": "2D lead x delay",
+   "tolerance_s": 0.318,
+   "reaction_s": 4.36,
+   "window": "lead 140..210 px (step 10), delay<=0.40 s"
+  },
+  {
+   "group": "rock3",
+   "zone": 1,
+   "kind": "SURFACE_ROCK",
+   "scheme": "jump",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.182,
+   "reaction_s": 4.82,
+   "window": "40..80 px"
+  },
+  {
+   "group": "beam3",
+   "zone": 2,
+   "kind": "LOW_BEAM",
+   "scheme": "crouch",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 1.0,
+   "reaction_s": 4.42,
+   "window": "40..280 px"
+  },
+  {
+   "group": "rock4",
+   "zone": 2,
+   "kind": "SURFACE_ROCK",
+   "scheme": "jump",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.333,
+   "reaction_s": 4.42,
+   "window": "40..120 px"
+  },
+  {
+   "group": "shark3",
+   "zone": 2,
+   "kind": "SHARK",
+   "scheme": "leap",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.333,
+   "reaction_s": 4.08,
+   "window": "120..200 px"
+  },
+  {
+   "group": "gate3",
+   "zone": 2,
+   "kind": "DIVE_GATE",
+   "scheme": "dive",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.667,
+   "reaction_s": 4.08,
+   "window": "120..280 px"
+  },
+  {
+   "group": "bird3",
+   "zone": 2,
+   "kind": "LOW_BIRD",
+   "scheme": "crouch",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 1.0,
+   "reaction_s": 4.42,
+   "window": "40..280 px"
+  },
+  {
+   "group": "log2",
+   "zone": 2,
+   "kind": "FLOATING_LOG",
+   "scheme": "dive_jump",
+   "source": "2D lead x delay",
+   "tolerance_s": 0.208,
+   "reaction_s": 3.96,
+   "window": "lead 150..200 px (step 10), delay<=0.20 s"
+  },
+  {
+   "group": "rock5",
+   "zone": 2,
+   "kind": "SURFACE_ROCK",
+   "scheme": "jump",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.333,
+   "reaction_s": 4.42,
+   "window": "40..120 px"
+  },
+  {
+   "group": "beam4",
+   "zone": 2,
+   "kind": "LOW_BEAM",
+   "scheme": "crouch",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 1.0,
+   "reaction_s": 4.42,
+   "window": "40..280 px"
+  },
+  {
+   "group": "wall2",
+   "zone": 2,
+   "kind": "HIGH_WALL",
+   "scheme": "leap_jump",
+   "source": "2D lead x delay",
+   "tolerance_s": 0.375,
+   "reaction_s": 3.96,
+   "window": "lead 150..240 px (step 10), delay<=0.45 s"
+  },
+  {
+   "group": "rock6",
+   "zone": 2,
+   "kind": "SURFACE_ROCK",
+   "scheme": "jump",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.167,
+   "reaction_s": 4.42,
+   "window": "40..80 px"
+  },
+  {
+   "group": "gate4",
+   "zone": 2,
+   "kind": "DIVE_GATE",
+   "scheme": "dive",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.667,
+   "reaction_s": 4.08,
+   "window": "120..280 px"
+  },
+  {
+   "group": "bird4",
+   "zone": 2,
+   "kind": "LOW_BIRD",
+   "scheme": "crouch",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 1.0,
+   "reaction_s": 4.42,
+   "window": "40..280 px"
+  },
+  {
+   "group": "log3",
+   "zone": 2,
+   "kind": "FLOATING_LOG",
+   "scheme": "dive_jump",
+   "source": "2D lead x delay",
+   "tolerance_s": 0.208,
+   "reaction_s": 3.96,
+   "window": "lead 150..200 px (step 10), delay<=0.20 s"
+  },
+  {
+   "group": "rock7",
+   "zone": 2,
+   "kind": "SURFACE_ROCK",
+   "scheme": "jump",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.333,
+   "reaction_s": 4.42,
+   "window": "40..120 px"
+  },
+  {
+   "group": "beam5",
+   "zone": 2,
+   "kind": "LOW_BEAM",
+   "scheme": "crouch",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 1.0,
+   "reaction_s": 4.42,
+   "window": "40..280 px"
+  },
+  {
+   "group": "shark5",
+   "zone": 2,
+   "kind": "SHARK",
+   "scheme": "leap",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.333,
+   "reaction_s": 4.08,
+   "window": "120..200 px"
+  },
+  {
+   "group": "bird5",
+   "zone": 2,
+   "kind": "LOW_BIRD",
+   "scheme": "crouch",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 1.0,
+   "reaction_s": 4.42,
+   "window": "40..280 px"
+  },
+  {
+   "group": "log4",
+   "zone": 2,
+   "kind": "FLOATING_LOG",
+   "scheme": "dive_jump",
+   "source": "2D lead x delay",
+   "tolerance_s": 0.208,
+   "reaction_s": 3.96,
+   "window": "lead 150..200 px (step 10), delay<=0.20 s"
+  },
+  {
+   "group": "gate5",
+   "zone": 2,
+   "kind": "DIVE_GATE",
+   "scheme": "dive",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.667,
+   "reaction_s": 4.08,
+   "window": "120..280 px"
+  },
+  {
+   "group": "shark6",
+   "zone": 3,
+   "kind": "SHARK",
+   "scheme": "leap",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.154,
+   "reaction_s": 3.62,
+   "window": "160..200 px"
+  },
+  {
+   "group": "beam6",
+   "zone": 3,
+   "kind": "LOW_BEAM",
+   "scheme": "crouch",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.923,
+   "reaction_s": 4.08,
+   "window": "40..280 px"
+  },
+  {
+   "group": "rock8",
+   "zone": 3,
+   "kind": "SURFACE_ROCK",
+   "scheme": "jump",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.308,
+   "reaction_s": 4.08,
+   "window": "40..120 px"
+  },
+  {
+   "group": "gate6",
+   "zone": 3,
+   "kind": "DIVE_GATE",
+   "scheme": "dive",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.615,
+   "reaction_s": 3.77,
+   "window": "120..280 px"
+  },
+  {
+   "group": "log5",
+   "zone": 3,
+   "kind": "FLOATING_LOG",
+   "scheme": "dive_jump",
+   "source": "2D lead x delay",
+   "tolerance_s": 0.231,
+   "reaction_s": 3.62,
+   "window": "lead 160..220 px (step 10), delay<=0.25 s"
+  },
+  {
+   "group": "bird6",
+   "zone": 3,
+   "kind": "LOW_BIRD",
+   "scheme": "crouch",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.923,
+   "reaction_s": 4.08,
+   "window": "40..280 px"
+  },
+  {
+   "group": "wall3",
+   "zone": 3,
+   "kind": "HIGH_WALL",
+   "scheme": "leap_jump",
+   "source": "2D lead x delay",
+   "tolerance_s": 0.308,
+   "reaction_s": 3.54,
+   "window": "lead 180..260 px (step 10), delay<=0.40 s"
+  },
+  {
+   "group": "beam7",
+   "zone": 3,
+   "kind": "LOW_BEAM",
+   "scheme": "crouch",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.923,
+   "reaction_s": 4.08,
+   "window": "40..280 px"
+  },
+  {
+   "group": "rock9",
+   "zone": 3,
+   "kind": "SURFACE_ROCK",
+   "scheme": "jump",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.308,
+   "reaction_s": 4.08,
+   "window": "40..120 px"
+  },
+  {
+   "group": "gate7",
+   "zone": 3,
+   "kind": "DIVE_GATE",
+   "scheme": "dive",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.615,
+   "reaction_s": 3.77,
+   "window": "120..280 px"
+  },
+  {
+   "group": "log6",
+   "zone": 3,
+   "kind": "FLOATING_LOG",
+   "scheme": "dive_jump",
+   "source": "2D lead x delay",
+   "tolerance_s": 0.231,
+   "reaction_s": 3.62,
+   "window": "lead 160..220 px (step 10), delay<=0.25 s"
+  },
+  {
+   "group": "bird7",
+   "zone": 3,
+   "kind": "LOW_BIRD",
+   "scheme": "crouch",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.923,
+   "reaction_s": 4.08,
+   "window": "40..280 px"
+  },
+  {
+   "group": "shark8",
+   "zone": 3,
+   "kind": "SHARK",
+   "scheme": "leap",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.154,
+   "reaction_s": 3.62,
+   "window": "160..200 px"
+  },
+  {
+   "group": "beam8",
+   "zone": 3,
+   "kind": "LOW_BEAM",
+   "scheme": "crouch",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.923,
+   "reaction_s": 4.08,
+   "window": "40..280 px"
+  },
+  {
+   "group": "rock10",
+   "zone": 3,
+   "kind": "SURFACE_ROCK",
+   "scheme": "jump",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.308,
+   "reaction_s": 4.08,
+   "window": "40..120 px"
+  },
+  {
+   "group": "log7",
+   "zone": 3,
+   "kind": "FLOATING_LOG",
+   "scheme": "dive_jump",
+   "source": "2D lead x delay",
+   "tolerance_s": 0.231,
+   "reaction_s": 3.62,
+   "window": "lead 160..220 px (step 10), delay<=0.25 s"
+  },
+  {
+   "group": "bird8",
+   "zone": 3,
+   "kind": "LOW_BIRD",
+   "scheme": "crouch",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.923,
+   "reaction_s": 4.08,
+   "window": "40..280 px"
+  },
+  {
+   "group": "shark9",
+   "zone": 3,
+   "kind": "SHARK",
+   "scheme": "leap",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.154,
+   "reaction_s": 3.62,
+   "window": "160..200 px"
+  },
+  {
+   "group": "beam9",
+   "zone": 3,
+   "kind": "LOW_BEAM",
+   "scheme": "crouch",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.923,
+   "reaction_s": 4.08,
+   "window": "40..280 px"
+  },
+  {
+   "group": "rock11",
+   "zone": 3,
+   "kind": "SURFACE_ROCK",
+   "scheme": "jump",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.308,
+   "reaction_s": 4.08,
+   "window": "40..120 px"
+  },
+  {
+   "group": "gate8",
+   "zone": 3,
+   "kind": "DIVE_GATE",
+   "scheme": "dive",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.615,
+   "reaction_s": 3.77,
+   "window": "120..280 px"
+  },
+  {
+   "group": "log8",
+   "zone": 3,
+   "kind": "FLOATING_LOG",
+   "scheme": "dive_jump",
+   "source": "2D lead x delay",
+   "tolerance_s": 0.231,
+   "reaction_s": 3.62,
+   "window": "lead 160..220 px (step 10), delay<=0.25 s"
+  },
+  {
+   "group": "bird9",
+   "zone": 3,
+   "kind": "LOW_BIRD",
+   "scheme": "crouch",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.923,
+   "reaction_s": 4.08,
+   "window": "40..280 px"
+  },
+  {
+   "group": "rock12",
+   "zone": 3,
+   "kind": "SURFACE_ROCK",
+   "scheme": "jump",
+   "source": "dense 1D (40 px step)",
+   "tolerance_s": 0.308,
+   "reaction_s": 4.08,
+   "window": "40..120 px"
+  }
+ ]
+}

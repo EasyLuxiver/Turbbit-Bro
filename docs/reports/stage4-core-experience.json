@@ -1,0 +1,73 @@
+{
+  "crouch": {
+    "combo": 1,
+    "passed": true
+  },
+  "dive": {
+    "passed": true,
+    "surfaced": true
+  },
+  "jump": {
+    "combo": 1,
+    "passed": true
+  },
+  "oxygen": {
+    "before": 6.56666666666666,
+    "recovered": 8.0,
+    "underwater": 5.35
+  },
+  "rapid_shift": {
+    "after": 0.0,
+    "after_settle": 0.0,
+    "before": 3.6
+  },
+  "repeatable_hit": [
+    {
+      "daze": 3.2,
+      "seconds": 1.38333333333333,
+      "state": "RABBIT_STUN",
+      "stun": 0.8
+    },
+    {
+      "daze": 3.2,
+      "seconds": 1.4,
+      "state": "RABBIT_STUN",
+      "stun": 0.8
+    }
+  ],
+  "rhythm": {
+    "counts": {
+      "DIVE_GATE": 8,
+      "FLOATING_LOG": 8,
+      "HIGH_WALL": 3,
+      "LOW_BEAM": 9,
+      "LOW_BIRD": 9,
+      "SHARK": 6,
+      "SURFACE_ROCK": 12
+    },
+    "groups": 55,
+    "max_gap_px": 1420.0,
+    "max_reaction_s": 5.54545454545455,
+    "min_gap_px": 818.0,
+    "min_reaction_s": 3.65384615384615
+  },
+  "showtime": {
+    "control": "rabbit",
+    "oxygen_after": 3.70000000000001
+  },
+  "standby_rabbit": {
+    "max_daze": 0.0,
+    "slide_10s": 0.0,
+    "slide_30s": 0.0
+  },
+  "standby_turtle": {
+    "max_daze": 0.0,
+    "y_10s": 341.151550292969,
+    "y_30s": 337.974029541016
+  },
+  "wrong_action": {
+    "daze": 3.2,
+    "state": "RABBIT_STUN",
+    "wait": 0.0
+  }
+}

@@ -1,0 +1,9 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+STAGE4 SHIFT GRAYBOX: FAIL
+  - rabbit handoff keeps daze/slide/offset (0.000/0.820 off 0.6)
+  - turtle handoff keeps depth/daze/sink speed (y 521.0 daze 0.000 sink 0.0)
+  - rapid SHIFT cannot clear both risks (rabbit 0.100 turtle 0.000)
+  - rabbit controlled recovery takes 0.02 s (not instant)
+  - turtle controlled recovery takes 0.02 s (not instant)
+  data: {"rabbit_handoff":{"after":{"daze":0.0,"offset_x":-57.4,"slide":0.82},"before":{"daze":2.917,"offset_x":-58.04,"slide":0.829},"offset_shift_px":0.64},"rabbit_recovery":{"accident":"NONE","frames":1,"seconds":0.02,"turtle_y":520.0},"rapid_switch":{"accident":"NONE","rabbit_after":{"daze":0.1,"offset_x":0.0,"slide":0.0},"switches":10,"turtle_after":{"daze":0.0,"sink_speed":0.0,"y":520.0}},"recover_rate":1.0,"turtle_handoff":{"after":{"daze":0.0,"sink_speed":0.0,"y":521.01},"before":{"daze":2.917,"sink_speed":60.83,"y":521.01},"y_shift_px":0.0},"turtle_recovery":{"accident":"NONE","frames":1,"seconds":0.02,"turtle_y":517.0}}

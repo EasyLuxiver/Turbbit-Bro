@@ -1,0 +1,28 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+AUDIT groups=55 schemes=7 shard=0..13
+AUDIT g=00 LOW_BIRD      design=crouch    pass=["jump", "crouch", "dive", "leap"]
+AUDIT g=01 SURFACE_ROCK  design=jump      pass=["jump", "dive", "leap", "dive_jump"]
+AUDIT g=02 LOW_BEAM      design=crouch    pass=["crouch", "dive"]
+AUDIT g=03 SURFACE_ROCK  design=jump      pass=["jump", "dive", "leap"]
+AUDIT g=04 LOW_BIRD      design=crouch    pass=["jump", "crouch", "dive", "leap", "dive_jump"]
+AUDIT g=05 SHARK         design=leap      pass=["leap"]
+AUDIT g=06 DIVE_GATE     design=dive      pass=["dive"]
+AUDIT g=07 LOW_BEAM      design=crouch    pass=["crouch", "dive"]
+AUDIT g=08 HIGH_WALL     design=leap_jump pass=["leap_jump"]
+AUDIT g=09 DIVE_GATE     design=dive      pass=["dive"]
+AUDIT g=10 FLOATING_LOG  design=dive_jump pass=["dive_jump"]
+AUDIT g=11 SURFACE_ROCK  design=jump      pass=["jump", "dive", "leap"]
+AUDIT g=12 LOW_BEAM      design=crouch    pass=["crouch", "dive"]
+AUDIT g=13 SURFACE_ROCK  design=jump      pass=["jump", "dive", "leap", "dive_jump"]
+AUDIT wrote res://docs/reports/stage4-solution-matrix-00-13.json
+AUDIT no_solution=[]
+AUDIT kind=LOW_BIRD      groups=2 design_correct=2 pass_counts={ "jump": 2, "crouch": 2, "dive": 2, "leap": 2, "dive_jump": 1 }
+AUDIT kind=SURFACE_ROCK  groups=4 design_correct=4 pass_counts={ "jump": 4, "dive": 4, "leap": 4, "dive_jump": 2 }
+AUDIT kind=LOW_BEAM      groups=3 design_correct=3 pass_counts={ "crouch": 3, "dive": 3 }
+AUDIT kind=SHARK         groups=1 design_correct=1 pass_counts={ "leap": 1 }
+AUDIT kind=DIVE_GATE     groups=2 design_correct=2 pass_counts={ "dive": 2 }
+AUDIT kind=HIGH_WALL     groups=1 design_correct=1 pass_counts={ "leap_jump": 1 }
+AUDIT kind=FLOATING_LOG  groups=1 design_correct=1 pass_counts={ "dive_jump": 1 }
+AUDIT log g=10 dive_only=false jump_only=false combo=true leap_only=false passing=["dive_jump"]
+SOLUTION AUDIT: DONE

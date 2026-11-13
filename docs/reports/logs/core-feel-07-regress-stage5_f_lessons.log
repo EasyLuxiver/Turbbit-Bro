@@ -1,0 +1,49 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+LEVEL SEED 20261112
+SNACK DRAW #1 group=gate1 zone=1 kind=DIVE_GATE (fixed)
+SNACK DRAW #2 group=beam1 zone=1 kind=LOW_BIRD (was LOW_BEAM)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=SURFACE_ROCK (was DIVE_GATE)
+LEVEL SEED 20261112
+SNACK DRAW #1 group=gate1 zone=1 kind=DIVE_GATE (fixed)
+SNACK DRAW #2 group=beam1 zone=1 kind=LOW_BIRD (was LOW_BEAM)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=SURFACE_ROCK (was DIVE_GATE)
+  ok  SURFACE_ROCK / rabbit keeps the original wording
+  ok  SURFACE_ROCK / turtle wording differs from rabbit
+  ok  SURFACE_ROCK / turtle wording tells the player to SHIFT back
+  ok  LOW_BEAM / rabbit keeps the original wording
+  ok  LOW_BEAM / turtle wording differs from rabbit
+  ok  LOW_BEAM / turtle wording tells the player to SHIFT back
+  ok  LOW_BIRD / rabbit keeps the original wording
+  ok  LOW_BIRD / turtle wording differs from rabbit
+  ok  LOW_BIRD / turtle wording tells the player to SHIFT back
+  ok  SHARK / rabbit keeps the original wording
+  ok  SHARK / turtle wording differs from rabbit
+  ok  SHARK / turtle wording has no redundant SHIFT + action
+  ok  DIVE_GATE / rabbit keeps the original wording
+  ok  DIVE_GATE / turtle wording differs from rabbit
+  ok  DIVE_GATE / turtle wording has no redundant SHIFT + action
+  ok  FLOATING_LOG / rabbit keeps the original wording
+  ok  FLOATING_LOG / turtle wording differs from rabbit
+  ok  FLOATING_LOG / turtle wording tells the player to SHIFT back
+  ok  HIGH_WALL / rabbit keeps the original wording
+  ok  HIGH_WALL / turtle wording differs from rabbit
+  ok  HIGH_WALL / turtle wording has no redundant SHIFT + action
+  ok  en / rabbit wording is non-empty
+  ok  en / turtle wording is non-empty
+  ok  en / turtle wording differs from rabbit
+  ok  en / turtle wording tells the player to SHIFT back
+WROTE res://docs/reports/longrun/rebuild05-f-lessons.json
+F LESSONS: PASS

@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/race.gd" id="1_race"]
+[ext_resource type="Script" path="res://scripts/ui/debug_overlay.gd" id="2_debug"]
+[ext_resource type="Script" path="res://scripts/ui/banner.gd" id="3_banner"]
+
+[node name="Race" type="Node2D"]
+script = ExtResource("1_race")
+
+[node name="DebugOverlay" type="CanvasLayer" parent="."]
+script = ExtResource("2_debug")
+
+[node name="Banner" type="CanvasLayer" parent="."]
+script = ExtResource("3_banner")

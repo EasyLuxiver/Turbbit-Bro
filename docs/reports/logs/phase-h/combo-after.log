@@ -1,0 +1,47 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+COMBO groups=55 cases=6
+CASE g=08 FLOATING_LOG z1 w=32 v=220 dive_jump
+  lead=140 pass= 1 delay 0.00..0.00 (0.00 s, runs=1)
+  lead=150 pass= 2 delay 0.00..0.05 (0.05 s, runs=1)
+  lead=160 pass= 3 delay 0.00..0.10 (0.10 s, runs=1)
+  lead=170 pass= 4 delay 0.00..0.15 (0.15 s, runs=1)
+  lead=180 pass= 1 delay 0.00..0.00 (0.00 s, runs=1)
+  SUMMARY pass=11/273 lead_with_pass=5 best_delay=0.15 s at lead 170
+CASE g=24 FLOATING_LOG z2 w=32 v=240 dive_jump
+  lead=150 pass= 2 delay 0.00..0.05 (0.05 s, runs=1)
+  lead=160 pass= 2 delay 0.00..0.05 (0.05 s, runs=1)
+  lead=170 pass= 3 delay 0.00..0.10 (0.10 s, runs=1)
+  lead=180 pass= 4 delay 0.00..0.15 (0.15 s, runs=1)
+  lead=190 pass= 5 delay 0.00..0.20 (0.20 s, runs=1)
+  lead=200 pass= 1 delay 0.00..0.00 (0.00 s, runs=1)
+  SUMMARY pass=17/273 lead_with_pass=6 best_delay=0.20 s at lead 190
+CASE g=52 FLOATING_LOG z3 w=32 v=260 dive_jump
+  lead=160 pass= 2 delay 0.00..0.05 (0.05 s, runs=1)
+  lead=170 pass= 2 delay 0.00..0.05 (0.05 s, runs=1)
+  lead=180 pass= 3 delay 0.00..0.10 (0.10 s, runs=1)
+  lead=190 pass= 4 delay 0.00..0.15 (0.15 s, runs=1)
+  lead=200 pass= 5 delay 0.00..0.20 (0.20 s, runs=1)
+  lead=210 pass= 6 delay 0.00..0.25 (0.25 s, runs=1)
+  lead=220 pass= 1 delay 0.00..0.00 (0.00 s, runs=1)
+  SUMMARY pass=23/273 lead_with_pass=7 best_delay=0.25 s at lead 210
+CASE g=10 HIGH_WALL    z1 w=30 v=220 leap_jump
+  lead=160 pass= 2 delay 0.45..0.50 (0.05 s, runs=1)
+  lead=170 pass= 4 delay 0.40..0.55 (0.15 s, runs=1)
+  lead=180 pass= 5 delay 0.40..0.60 (0.20 s, runs=1)
+  SUMMARY pass=11/285 lead_with_pass=3 best_delay=0.20 s at lead 180
+CASE g=20 HIGH_WALL    z2 w=30 v=240 leap_jump
+  lead=170 pass= 2 delay 0.40..0.45 (0.05 s, runs=1)
+  lead=180 pass= 3 delay 0.40..0.50 (0.10 s, runs=1)
+  lead=190 pass= 5 delay 0.40..0.60 (0.20 s, runs=1)
+  lead=200 pass= 6 delay 0.40..0.65 (0.25 s, runs=1)
+  lead=210 pass= 7 delay 0.40..0.70 (0.30 s, runs=1)
+  SUMMARY pass=23/323 lead_with_pass=5 best_delay=0.30 s at lead 210
+CASE g=37 HIGH_WALL    z3 w=30 v=260 leap_jump
+  lead=190 pass= 3 delay 0.40..0.50 (0.10 s, runs=1)
+  lead=200 pass= 4 delay 0.40..0.55 (0.15 s, runs=1)
+  lead=210 pass= 5 delay 0.40..0.60 (0.20 s, runs=1)
+  lead=220 pass= 6 delay 0.40..0.65 (0.25 s, runs=1)
+  lead=230 pass= 7 delay 0.40..0.70 (0.30 s, runs=1)
+  SUMMARY pass=25/285 lead_with_pass=5 best_delay=0.30 s at lead 230
+COMBO: DONE

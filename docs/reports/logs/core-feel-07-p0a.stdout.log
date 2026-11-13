@@ -1,0 +1,63 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+LEVEL SEED 20261112
+SNACK DRAW #1 group=gate1 zone=1 kind=DIVE_GATE (fixed)
+SNACK DRAW #2 group=beam1 zone=1 kind=LOW_BIRD (was LOW_BEAM)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=SURFACE_ROCK (was DIVE_GATE)
+LEVEL SEED 20261112
+SNACK DRAW #1 group=gate1 zone=1 kind=DIVE_GATE (fixed)
+SNACK DRAW #2 group=beam1 zone=1 kind=LOW_BIRD (was LOW_BEAM)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=SURFACE_ROCK (was DIVE_GATE)
+ok   log rect unchanged (32 x 218)
+ok   turtle body not shrunk (96 x 56)
+ok   rabbit body not shrunk (32 x 48)
+ok   log1: 10/10 two-key runs pass, accidents=0
+ok   log1: rabbit clearance min 164.7 px > 0
+ok   log1: turtle stays under the log (min clearance 42.9 px)
+ok   log1: auto-surface observed in 10/10 runs
+P0-A window log1: lead 100..240 (140 px, standard 161), shift delay 0.10..0.35 (0.25 s)
+ok   log1: jump lead window >= 40 px and contains the standard 161 px (got 100..240)
+ok   log1: shift window >= 0.25 s (got 0.25 s)
+ok   log1: jump 209 px early + SHIFT after 0.5 s: 10/10 pass, accidents=0
+ok   log1 @30 Hz: pass, 0 accidents
+ok   log1 @120 Hz: pass, 0 accidents
+ok   log3: 10/10 two-key runs pass, accidents=0
+ok   log3: rabbit clearance min 167.6 px > 0
+ok   log3: turtle stays under the log (min clearance 43.4 px)
+ok   log3: auto-surface observed in 10/10 runs
+P0-A window log3: lead 120..280 (160 px, standard 175), shift delay 0.10..0.35 (0.25 s)
+ok   log3: jump lead window >= 40 px and contains the standard 175 px (got 120..280)
+ok   log3: shift window >= 0.25 s (got 0.25 s)
+ok   log3: jump 228 px early + SHIFT after 0.5 s: 10/10 pass, accidents=0
+ok   log3 @30 Hz: pass, 0 accidents
+ok   log3 @120 Hz: pass, 0 accidents
+ok   log8: 10/10 two-key runs pass, accidents=0
+ok   log8: rabbit clearance min 170.3 px > 0
+ok   log8: turtle stays under the log (min clearance 43.9 px)
+ok   log8: auto-surface observed in 10/10 runs
+P0-A window log8: lead 120..280 (160 px, standard 190), shift delay 0.10..0.40 (0.30 s)
+ok   log8: jump lead window >= 40 px and contains the standard 190 px (got 120..280)
+ok   log8: shift window >= 0.25 s (got 0.30 s)
+ok   log8: jump 247 px early + SHIFT after 0.5 s: 10/10 pass, accidents=0
+ok   log8 @30 Hz: pass, 0 accidents
+ok   log8 @120 Hz: pass, 0 accidents
+ok   control no_input must fail (got hit, hit=turtle)
+ok   control jump_only must fail (got hit, hit=turtle)
+ok   control shift_only must fail (got hit, hit=turtle)
+ok   control late_shift must fail (got hit, hit=turtle)
+ok   control shift_then_jump must fail (got hit, hit=turtle)
+ok   control late_shift must not hit the rabbit (turtle-only failure)
+ok   beam1 jump does not arm dive assist (got OFF)
+CORE-FEEL-07 P0-A: PASS

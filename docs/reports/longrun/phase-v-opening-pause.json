@@ -1,0 +1,103 @@
+{
+  "generated_at": "2026-11-13T13:25:39",
+  "note": "P2-7 opening/pause: native Controls only, real time, real scene changes.",
+  "opening_time_s": 6.0,
+  "rows": [
+    {
+      "case": "boot",
+      "checks": {
+        "duration_in_5_to_8": true,
+        "native_controls_only": true,
+        "opening_auto_hooked": true,
+        "skip_hint_visible": true,
+        "state_running": true,
+        "title_visible": true
+      },
+      "opening_time": 6.0,
+      "pass": true,
+      "scene": "res://scenes/race.tscn"
+    },
+    {
+      "case": "freeze",
+      "checks": {
+        "no_input_buffered": true,
+        "still_open": true,
+        "turtle_frozen": true,
+        "waited_at_least_1s": true
+      },
+      "elapsed_s": 1.21,
+      "pass": true,
+      "x_after": 400.0,
+      "x_before": 400.0
+    },
+    {
+      "case": "skip",
+      "checks": {
+        "closes_in_under_0_5s": true,
+        "one_key_closes": true,
+        "race_resumes": true
+      },
+      "pass": true,
+      "x_after": 491.7,
+      "x_at_close": 403.7,
+      "x_before": 400.0
+    },
+    {
+      "case": "auto",
+      "checks": {
+        "auto_closed": true,
+        "closed_between_5_and_8s": true,
+        "frozen_while_open": true,
+        "reopened": true,
+        "still_open_after_5_2s": true
+      },
+      "elapsed_s": 6.0,
+      "pass": true
+    },
+    {
+      "buttons": [
+        "继续游戏",
+        "重新开始",
+        "返回主菜单"
+      ],
+      "case": "pause",
+      "checks": {
+        "breath_text": true,
+        "buttons_labeled": true,
+        "menu_visible": true,
+        "native_controls_only": true,
+        "paused": true,
+        "resume_works": true,
+        "three_buttons": true,
+        "title_text": true
+      },
+      "labels": [
+        "已暂停",
+        "Take a breath, bro.",
+        "SHIFT 换人    ↑ 兔子跳 / 乌龟跃起    ↓ 兔子趴低 / 乌龟下潜",
+        "ESC 继续   R 重开   M 主菜单"
+      ],
+      "pass": true
+    },
+    {
+      "case": "restart",
+      "checks": {
+        "is_race_scene": true,
+        "opening_skip_again": true,
+        "scene_reloaded": true,
+        "state_running": true
+      },
+      "pass": true,
+      "scene": "res://scenes/race.tscn"
+    },
+    {
+      "case": "menu",
+      "checks": {
+        "menu_scene_loaded": true,
+        "state_menu": true
+      },
+      "pass": true,
+      "scene": "res://scenes/menu.tscn"
+    }
+  ]
+}

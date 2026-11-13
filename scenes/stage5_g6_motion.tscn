@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6g6motion0001"]
+
+[ext_resource type="Script" path="res://scripts/test/stage5_g6_motion.gd" id="1"]
+
+[node name="Stage5G6Motion" type="Node"]
+script = ExtResource("1")

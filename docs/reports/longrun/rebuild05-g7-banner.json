@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-11-13T13:10:53",
+  "plain_jump": {
+    "banner_at_landing": "",
+    "expected_banner": "好接！",
+    "jumped": true,
+    "landed": true,
+    "pickup_count_delta": 1,
+    "pickup_events": 0,
+    "pickup_events_total": 0
+  },
+  "real_catch": {
+    "banner": "好接！",
+    "caught": true,
+    "pickup_count_delta": 1,
+    "pickup_events": 1
+  },
+  "rescue_banner": {
+    "banner": "获救",
+    "rescue_events": 1
+  }
+}

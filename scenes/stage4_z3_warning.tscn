@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/test/stage4_z3_warning.gd" id="1_z3warn"]
+
+[node name="Stage4Z3Warning" type="Node"]
+script = ExtResource("1_z3warn")

@@ -1,0 +1,10 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+WROTE d:/GAMESTUDIO/TURBBIT/docs/reports/stage4-content-matrix.json
+ZONE 1 SUNNY COAST  groups=12  68.2s  threat=44.0%  max_gap=5.41s
+        kinds={ "LOW_BIRD": 2, "SURFACE_ROCK": 3, "DIVE_GATE": 2, "FLOATING_LOG": 1, "SHARK": 1, "LOW_BEAM": 2, "HIGH_WALL": 1 }  options={ "crouch": 4, "jump": 5, "leap": 2, "dive": 3 }  unique bi/tri=11/10
+ZONE 2 CORAL CHAOS  groups=19  100.0s  threat=43.2%  max_gap=5.17s
+        kinds={ "SHARK": 2, "LOW_BEAM": 3, "SURFACE_ROCK": 4, "DIVE_GATE": 3, "LOW_BIRD": 3, "FLOATING_LOG": 3, "HIGH_WALL": 1 }  options={ "crouch": 6, "jump": 8, "leap": 3, "dive": 6 }  unique bi/tri=12/13
+ZONE 3 MUSCLE MAYHEM  groups=24  110.0s  threat=45.7%  max_gap=5.46s
+        kinds={ "SHARK": 3, "LOW_BEAM": 4, "SURFACE_ROCK": 5, "DIVE_GATE": 3, "FLOATING_LOG": 4, "LOW_BIRD": 4, "HIGH_WALL": 1 }  options={ "crouch": 8, "jump": 10, "leap": 4, "dive": 7 }  unique bi/tri=10/12
+TOTALS  { "groups": 55, "must_crouch": 18, "must_jump": 12, "must_leap": 6, "must_dive": 8, "must_both": 8, "no_solution_groups": 0, "boost_lanes": 9, "must_ollie": 3, "kinds": { "LOW_BIRD": 9, "SURFACE_ROCK": 12, "DIVE_GATE": 8, "FLOATING_LOG": 8, "SHARK": 6, "LOW_BEAM": 9, "HIGH_WALL": 3 } }

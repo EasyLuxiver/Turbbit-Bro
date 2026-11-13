@@ -1,0 +1,5937 @@
+{
+  "cases": [
+    {
+      "base_speed": 220.0,
+      "group": "bird1",
+      "index": 0,
+      "kind": "LOW_BIRD",
+      "rects": [
+        [
+          1560.0,
+          234.0,
+          120.0,
+          40.0
+        ],
+        [
+          1560.0,
+          130.0,
+          120.0,
+          104.0
+        ]
+      ],
+      "routes": {
+        "crouch": {
+          "dy_max": 0.8,
+          "dy_min": -0.4,
+          "fail_channels": {},
+          "lead_max": 420.0,
+          "lead_min": 10.0,
+          "oxygen_max": 0.0,
+          "oxygen_min": 0.0,
+          "pass_count": 42,
+          "precise_count": 42,
+          "scheme": "crouch",
+          "success_rate": 1.0,
+          "trials": 42,
+          "trials_data": [
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 10.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 20.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 30.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 40.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 50.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 60.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 70.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 80.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 90.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 100.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 110.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 120.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 130.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 140.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 150.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 160.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 170.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 180.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 190.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 200.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 210.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 220.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 230.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 240.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 250.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 260.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 270.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 280.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 290.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 300.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 310.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 320.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 330.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": -0.1,
+              "fail": "pass",
+              "lead": 340.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": -0.3,
+              "fail": "pass",
+              "lead": 350.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": -0.4,
+              "fail": "pass",
+              "lead": 360.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": -0.4,
+              "fail": "pass",
+              "lead": 370.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": -0.3,
+              "fail": "pass",
+              "lead": 380.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": -0.2,
+              "fail": "pass",
+              "lead": 390.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.1,
+              "fail": "pass",
+              "lead": 400.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.5,
+              "fail": "pass",
+              "lead": 410.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.8,
+              "fail": "pass",
+              "lead": 420.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            }
+          ],
+          "window_s": 1.864
+        },
+        "dive": {
+          "dy_max": 150.0,
+          "dy_min": 150.0,
+          "fail_channels": {
+            "rabbit_hit": 2
+          },
+          "lead_max": 620.0,
+          "lead_min": 30.0,
+          "oxygen_max": 4.1,
+          "oxygen_min": 1.42,
+          "pass_count": 60,
+          "precise_count": 0,
+          "scheme": "dive",
+          "success_rate": 0.968,
+          "trials": 62,
+          "trials_data": [
+            {
+              "dy": 150.0,
+              "fail": "rabbit_hit",
+              "lead": 10.0,
+              "oxygen_used": 1.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "rabbit_hit",
+              "lead": 20.0,
+              "oxygen_used": 1.03,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 30.0,
+              "oxygen_used": 1.42,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 40.0,
+              "oxygen_used": 1.47,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 50.0,
+              "oxygen_used": 1.5,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 60.0,
+              "oxygen_used": 1.55,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 70.0,
+              "oxygen_used": 1.6,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 80.0,
+              "oxygen_used": 1.65,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 90.0,
+              "oxygen_used": 1.68,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 100.0,
+              "oxygen_used": 1.73,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 110.0,
+              "oxygen_used": 1.78,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 120.0,
+              "oxygen_used": 1.83,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 130.0,
+              "oxygen_used": 1.87,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 140.0,
+              "oxygen_used": 1.92,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 150.0,
+              "oxygen_used": 1.97,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 160.0,
+              "oxygen_used": 2.0,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 170.0,
+              "oxygen_used": 2.05,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 180.0,
+              "oxygen_used": 2.1,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 190.0,
+              "oxygen_used": 2.15,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 200.0,
+              "oxygen_used": 2.18,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 210.0,
+              "oxygen_used": 2.23,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 220.0,
+              "oxygen_used": 2.28,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 230.0,
+              "oxygen_used": 2.33,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 240.0,
+              "oxygen_used": 2.37,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 250.0,
+              "oxygen_used": 2.42,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 260.0,
+              "oxygen_used": 2.47,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 270.0,
+              "oxygen_used": 2.5,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 280.0,
+              "oxygen_used": 2.55,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 290.0,
+              "oxygen_used": 2.6,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 300.0,
+              "oxygen_used": 2.65,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 310.0,
+              "oxygen_used": 2.68,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 320.0,
+              "oxygen_used": 2.73,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 330.0,
+              "oxygen_used": 2.78,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 340.0,
+              "oxygen_used": 2.83,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 350.0,
+              "oxygen_used": 2.87,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 360.0,
+              "oxygen_used": 2.92,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 370.0,
+              "oxygen_used": 2.97,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 380.0,
+              "oxygen_used": 3.0,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 390.0,
+              "oxygen_used": 3.05,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 400.0,
+              "oxygen_used": 3.1,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 410.0,
+              "oxygen_used": 3.15,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 420.0,
+              "oxygen_used": 3.18,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 430.0,
+              "oxygen_used": 3.23,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 440.0,
+              "oxygen_used": 3.28,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 450.0,
+              "oxygen_used": 3.33,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 460.0,
+              "oxygen_used": 3.37,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 470.0,
+              "oxygen_used": 3.42,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 480.0,
+              "oxygen_used": 3.47,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 490.0,
+              "oxygen_used": 3.5,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 500.0,
+              "oxygen_used": 3.55,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 510.0,
+              "oxygen_used": 3.6,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 520.0,
+              "oxygen_used": 3.65,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 530.0,
+              "oxygen_used": 3.68,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 540.0,
+              "oxygen_used": 3.73,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 550.0,
+              "oxygen_used": 3.78,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 560.0,
+              "oxygen_used": 3.83,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 570.0,
+              "oxygen_used": 3.87,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 580.0,
+              "oxygen_used": 3.92,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 590.0,
+              "oxygen_used": 3.97,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 600.0,
+              "oxygen_used": 4.0,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 610.0,
+              "oxygen_used": 4.05,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 620.0,
+              "oxygen_used": 4.1,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            }
+          ],
+          "window_s": 2.682
+        },
+        "jump": {
+          "dy_max": 0.0,
+          "dy_min": 0.0,
+          "fail_channels": {
+            "rabbit_hit": 42
+          },
+          "lead_max": 0.0,
+          "lead_min": 0.0,
+          "oxygen_max": 0.0,
+          "oxygen_min": 0.0,
+          "pass_count": 0,
+          "precise_count": 0,
+          "scheme": "jump",
+          "success_rate": 0.0,
+          "trials": 42,
+          "trials_data": [
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 10.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": false,
+              "speed_ratio": 0.41
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 20.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 30.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 40.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 50.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 60.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 70.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 80.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 90.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 100.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 110.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 120.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 130.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 140.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 150.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 160.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 170.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 180.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 190.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 200.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 210.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 220.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 230.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 240.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 250.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 260.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 270.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 280.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 290.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 300.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 310.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 320.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 330.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 340.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 350.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 360.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 370.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 380.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 390.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 400.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 410.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 420.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            }
+          ],
+          "window_s": 0.0
+        },
+        "leap": {
+          "dy_max": 0.0,
+          "dy_min": 0.0,
+          "fail_channels": {
+            "rabbit_hit": 42
+          },
+          "lead_max": 0.0,
+          "lead_min": 0.0,
+          "oxygen_max": 0.0,
+          "oxygen_min": 0.0,
+          "pass_count": 0,
+          "precise_count": 0,
+          "scheme": "leap",
+          "success_rate": 0.0,
+          "trials": 42,
+          "trials_data": [
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 10.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 20.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 30.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 40.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 50.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 60.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 70.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 80.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 90.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 100.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 110.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 120.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 130.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 140.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 150.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 160.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 170.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 180.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 190.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 200.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 210.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 220.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 230.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 240.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 250.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 260.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 270.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 280.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 290.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 300.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 310.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 320.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 330.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 340.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 350.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 360.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 370.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 380.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 390.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 400.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 410.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 420.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            }
+          ],
+          "window_s": 0.0
+        }
+      },
+      "zone": 1
+    },
+    {
+      "base_speed": 240.0,
+      "group": "bird3",
+      "index": 16,
+      "kind": "LOW_BIRD",
+      "rects": [
+        [
+          20600.0,
+          234.0,
+          120.0,
+          40.0
+        ],
+        [
+          20600.0,
+          130.0,
+          120.0,
+          104.0
+        ]
+      ],
+      "routes": {
+        "crouch": {
+          "dy_max": 0.0,
+          "dy_min": -0.4,
+          "fail_channels": {},
+          "lead_max": 420.0,
+          "lead_min": 10.0,
+          "oxygen_max": 0.0,
+          "oxygen_min": 0.0,
+          "pass_count": 42,
+          "precise_count": 42,
+          "scheme": "crouch",
+          "success_rate": 1.0,
+          "trials": 42,
+          "trials_data": [
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 10.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 20.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 30.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 40.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 50.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 60.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 70.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 80.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 90.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 100.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 110.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 120.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 130.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 140.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 150.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 160.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 170.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 180.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 190.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 200.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 210.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 220.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 230.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 240.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 250.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 260.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 270.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 280.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 290.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 300.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 310.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 320.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 330.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 340.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 350.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 360.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 370.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 380.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 390.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": -0.1,
+              "fail": "pass",
+              "lead": 400.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": -0.3,
+              "fail": "pass",
+              "lead": 410.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": -0.4,
+              "fail": "pass",
+              "lead": 420.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            }
+          ],
+          "window_s": 1.708
+        },
+        "dive": {
+          "dy_max": 150.0,
+          "dy_min": 149.9,
+          "fail_channels": {
+            "rabbit_hit": 2
+          },
+          "lead_max": 620.0,
+          "lead_min": 30.0,
+          "oxygen_max": 3.75,
+          "oxygen_min": 1.28,
+          "pass_count": 60,
+          "precise_count": 0,
+          "scheme": "dive",
+          "success_rate": 0.968,
+          "trials": 62,
+          "trials_data": [
+            {
+              "dy": 150.0,
+              "fail": "rabbit_hit",
+              "lead": 10.0,
+              "oxygen_used": 0.93,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 148.4,
+              "fail": "rabbit_hit",
+              "lead": 20.0,
+              "oxygen_used": 0.73,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 149.9,
+              "fail": "pass",
+              "lead": 30.0,
+              "oxygen_used": 1.28,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 149.9,
+              "fail": "pass",
+              "lead": 40.0,
+              "oxygen_used": 1.33,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 149.9,
+              "fail": "pass",
+              "lead": 50.0,
+              "oxygen_used": 1.37,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 60.0,
+              "oxygen_used": 1.42,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 70.0,
+              "oxygen_used": 1.45,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 80.0,
+              "oxygen_used": 1.5,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 90.0,
+              "oxygen_used": 1.53,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 100.0,
+              "oxygen_used": 1.58,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 110.0,
+              "oxygen_used": 1.62,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 120.0,
+              "oxygen_used": 1.67,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 130.0,
+              "oxygen_used": 1.7,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 140.0,
+              "oxygen_used": 1.75,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 150.0,
+              "oxygen_used": 1.78,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 160.0,
+              "oxygen_used": 1.83,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 170.0,
+              "oxygen_used": 1.87,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 180.0,
+              "oxygen_used": 1.92,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 190.0,
+              "oxygen_used": 1.95,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 200.0,
+              "oxygen_used": 2.0,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 210.0,
+              "oxygen_used": 2.03,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 220.0,
+              "oxygen_used": 2.08,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 230.0,
+              "oxygen_used": 2.12,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 240.0,
+              "oxygen_used": 2.17,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 250.0,
+              "oxygen_used": 2.2,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 260.0,
+              "oxygen_used": 2.25,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 270.0,
+              "oxygen_used": 2.28,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 280.0,
+              "oxygen_used": 2.33,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 290.0,
+              "oxygen_used": 2.37,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 300.0,
+              "oxygen_used": 2.42,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 310.0,
+              "oxygen_used": 2.45,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 320.0,
+              "oxygen_used": 2.5,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 330.0,
+              "oxygen_used": 2.53,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 340.0,
+              "oxygen_used": 2.58,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 350.0,
+              "oxygen_used": 2.62,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 360.0,
+              "oxygen_used": 2.67,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 370.0,
+              "oxygen_used": 2.7,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 380.0,
+              "oxygen_used": 2.75,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 390.0,
+              "oxygen_used": 2.78,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 400.0,
+              "oxygen_used": 2.83,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 410.0,
+              "oxygen_used": 2.87,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 420.0,
+              "oxygen_used": 2.92,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 430.0,
+              "oxygen_used": 2.95,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 440.0,
+              "oxygen_used": 3.0,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 450.0,
+              "oxygen_used": 3.03,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 460.0,
+              "oxygen_used": 3.08,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 470.0,
+              "oxygen_used": 3.12,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 480.0,
+              "oxygen_used": 3.17,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 490.0,
+              "oxygen_used": 3.2,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 500.0,
+              "oxygen_used": 3.25,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 510.0,
+              "oxygen_used": 3.28,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 520.0,
+              "oxygen_used": 3.33,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 530.0,
+              "oxygen_used": 3.37,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 540.0,
+              "oxygen_used": 3.42,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 550.0,
+              "oxygen_used": 3.45,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 560.0,
+              "oxygen_used": 3.5,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 570.0,
+              "oxygen_used": 3.53,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 580.0,
+              "oxygen_used": 3.58,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 590.0,
+              "oxygen_used": 3.62,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 600.0,
+              "oxygen_used": 3.67,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 610.0,
+              "oxygen_used": 3.7,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 620.0,
+              "oxygen_used": 3.75,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            }
+          ],
+          "window_s": 2.458
+        },
+        "jump": {
+          "dy_max": 0.0,
+          "dy_min": 0.0,
+          "fail_channels": {
+            "rabbit_hit": 41
+          },
+          "lead_max": 20.0,
+          "lead_min": 20.0,
+          "oxygen_max": 0.0,
+          "oxygen_min": 0.0,
+          "pass_count": 1,
+          "precise_count": 0,
+          "scheme": "jump",
+          "success_rate": 0.024,
+          "trials": 42,
+          "trials_data": [
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 10.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": false,
+              "speed_ratio": 0.38
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 20.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 30.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 40.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 50.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 60.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 70.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 80.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 90.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 100.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 110.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 120.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 130.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 140.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 150.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 160.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 170.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 180.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 190.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 200.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 210.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 220.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 230.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 240.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 250.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 260.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 270.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 280.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 290.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 300.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 310.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 320.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 330.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 340.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 350.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 360.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 370.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 380.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 390.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 400.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 410.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 420.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            }
+          ],
+          "window_s": 0.0
+        },
+        "leap": {
+          "dy_max": 0.0,
+          "dy_min": 0.0,
+          "fail_channels": {
+            "rabbit_hit": 42
+          },
+          "lead_max": 0.0,
+          "lead_min": 0.0,
+          "oxygen_max": 0.0,
+          "oxygen_min": 0.0,
+          "pass_count": 0,
+          "precise_count": 0,
+          "scheme": "leap",
+          "success_rate": 0.0,
+          "trials": 42,
+          "trials_data": [
+            {
+              "dy": -66.0,
+              "fail": "rabbit_hit",
+              "lead": 10.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 20.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 30.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 40.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 50.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 60.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 70.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 80.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 90.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 100.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 110.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 120.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 130.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 140.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 150.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 160.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 170.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 180.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 190.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 200.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 210.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 220.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 230.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 240.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 250.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 260.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 270.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 280.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 290.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 300.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 310.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 320.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 330.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 340.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 350.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 360.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 370.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 380.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 390.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 400.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 410.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 420.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            }
+          ],
+          "window_s": 0.0
+        }
+      },
+      "zone": 2
+    },
+    {
+      "base_speed": 260.0,
+      "group": "bird6",
+      "index": 36,
+      "kind": "LOW_BIRD",
+      "rects": [
+        [
+          45250.0,
+          234.0,
+          120.0,
+          40.0
+        ],
+        [
+          45250.0,
+          130.0,
+          120.0,
+          104.0
+        ]
+      ],
+      "routes": {
+        "crouch": {
+          "dy_max": 0.0,
+          "dy_min": 0.0,
+          "fail_channels": {},
+          "lead_max": 420.0,
+          "lead_min": 10.0,
+          "oxygen_max": 0.0,
+          "oxygen_min": 0.0,
+          "pass_count": 42,
+          "precise_count": 42,
+          "scheme": "crouch",
+          "success_rate": 1.0,
+          "trials": 42,
+          "trials_data": [
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 10.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 20.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 30.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 40.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 50.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 60.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 70.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 80.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 90.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 100.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 110.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 120.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 130.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 140.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 150.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 160.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 170.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 180.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 190.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 200.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 210.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 220.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 230.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 240.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 250.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 260.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 270.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 280.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 290.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 300.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 310.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 320.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 330.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 340.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 350.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 360.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 370.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 380.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 390.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 400.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 410.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "pass",
+              "lead": 420.0,
+              "oxygen_used": 0.0,
+              "passed": true,
+              "precise": true,
+              "riding": true,
+              "speed_ratio": 1.0
+            }
+          ],
+          "window_s": 1.577
+        },
+        "dive": {
+          "dy_max": 150.0,
+          "dy_min": 149.9,
+          "fail_channels": {
+            "rabbit_hit": 3
+          },
+          "lead_max": 620.0,
+          "lead_min": 40.0,
+          "oxygen_max": 3.43,
+          "oxygen_min": 1.22,
+          "pass_count": 59,
+          "precise_count": 0,
+          "scheme": "dive",
+          "success_rate": 0.952,
+          "trials": 62,
+          "trials_data": [
+            {
+              "dy": 150.0,
+              "fail": "rabbit_hit",
+              "lead": 10.0,
+              "oxygen_used": 0.88,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "rabbit_hit",
+              "lead": 20.0,
+              "oxygen_used": 0.9,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 147.7,
+              "fail": "rabbit_hit",
+              "lead": 30.0,
+              "oxygen_used": 0.67,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 149.9,
+              "fail": "pass",
+              "lead": 40.0,
+              "oxygen_used": 1.22,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 149.9,
+              "fail": "pass",
+              "lead": 50.0,
+              "oxygen_used": 1.25,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 149.9,
+              "fail": "pass",
+              "lead": 60.0,
+              "oxygen_used": 1.28,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 149.9,
+              "fail": "pass",
+              "lead": 70.0,
+              "oxygen_used": 1.33,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 149.9,
+              "fail": "pass",
+              "lead": 80.0,
+              "oxygen_used": 1.37,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 90.0,
+              "oxygen_used": 1.4,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 100.0,
+              "oxygen_used": 1.43,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 110.0,
+              "oxygen_used": 1.48,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 120.0,
+              "oxygen_used": 1.52,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 130.0,
+              "oxygen_used": 1.55,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 140.0,
+              "oxygen_used": 1.6,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 150.0,
+              "oxygen_used": 1.63,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 160.0,
+              "oxygen_used": 1.67,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 170.0,
+              "oxygen_used": 1.72,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 180.0,
+              "oxygen_used": 1.75,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 190.0,
+              "oxygen_used": 1.78,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 200.0,
+              "oxygen_used": 1.83,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 210.0,
+              "oxygen_used": 1.87,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 220.0,
+              "oxygen_used": 1.9,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 230.0,
+              "oxygen_used": 1.93,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 240.0,
+              "oxygen_used": 1.98,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 250.0,
+              "oxygen_used": 2.02,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 260.0,
+              "oxygen_used": 2.05,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 270.0,
+              "oxygen_used": 2.1,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 280.0,
+              "oxygen_used": 2.13,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 290.0,
+              "oxygen_used": 2.17,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 300.0,
+              "oxygen_used": 2.22,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 310.0,
+              "oxygen_used": 2.25,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 320.0,
+              "oxygen_used": 2.28,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 330.0,
+              "oxygen_used": 2.33,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 340.0,
+              "oxygen_used": 2.37,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 350.0,
+              "oxygen_used": 2.4,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 360.0,
+              "oxygen_used": 2.43,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 370.0,
+              "oxygen_used": 2.48,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 380.0,
+              "oxygen_used": 2.52,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 390.0,
+              "oxygen_used": 2.55,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 400.0,
+              "oxygen_used": 2.6,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 410.0,
+              "oxygen_used": 2.63,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 420.0,
+              "oxygen_used": 2.67,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 430.0,
+              "oxygen_used": 2.72,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 440.0,
+              "oxygen_used": 2.75,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 450.0,
+              "oxygen_used": 2.78,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 460.0,
+              "oxygen_used": 2.83,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 470.0,
+              "oxygen_used": 2.87,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 480.0,
+              "oxygen_used": 2.9,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 490.0,
+              "oxygen_used": 2.93,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 500.0,
+              "oxygen_used": 2.98,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 510.0,
+              "oxygen_used": 3.02,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 520.0,
+              "oxygen_used": 3.05,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 530.0,
+              "oxygen_used": 3.1,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 540.0,
+              "oxygen_used": 3.13,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 550.0,
+              "oxygen_used": 3.17,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 560.0,
+              "oxygen_used": 3.22,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 570.0,
+              "oxygen_used": 3.25,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 580.0,
+              "oxygen_used": 3.28,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 590.0,
+              "oxygen_used": 3.33,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 600.0,
+              "oxygen_used": 3.37,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 610.0,
+              "oxygen_used": 3.4,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 150.0,
+              "fail": "pass",
+              "lead": 620.0,
+              "oxygen_used": 3.43,
+              "passed": true,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            }
+          ],
+          "window_s": 2.231
+        },
+        "jump": {
+          "dy_max": 0.0,
+          "dy_min": 0.0,
+          "fail_channels": {
+            "rabbit_hit": 42
+          },
+          "lead_max": 0.0,
+          "lead_min": 0.0,
+          "oxygen_max": 0.0,
+          "oxygen_min": 0.0,
+          "pass_count": 0,
+          "precise_count": 0,
+          "scheme": "jump",
+          "success_rate": 0.0,
+          "trials": 42,
+          "trials_data": [
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 10.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": false,
+              "speed_ratio": 0.35
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 20.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 30.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 40.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 50.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 60.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 70.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 80.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 90.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 100.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 110.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 120.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 130.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 140.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 150.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 160.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 170.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 180.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 190.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 200.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 210.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 220.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 230.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 240.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 250.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 260.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 270.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 280.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 290.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 300.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 310.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 320.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 330.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 340.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 350.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 360.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 370.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 380.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 390.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 400.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 410.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 420.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            }
+          ],
+          "window_s": 0.0
+        },
+        "leap": {
+          "dy_max": 0.0,
+          "dy_min": 0.0,
+          "fail_channels": {
+            "rabbit_hit": 42
+          },
+          "lead_max": 0.0,
+          "lead_min": 0.0,
+          "oxygen_max": 0.0,
+          "oxygen_min": 0.0,
+          "pass_count": 0,
+          "precise_count": 0,
+          "scheme": "leap",
+          "success_rate": 0.0,
+          "trials": 42,
+          "trials_data": [
+            {
+              "dy": -93.2,
+              "fail": "rabbit_hit",
+              "lead": 10.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 20.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 30.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 40.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 50.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 60.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 70.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 80.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 90.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 100.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 110.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 120.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 130.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 140.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 150.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 160.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 170.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 180.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 190.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 200.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 210.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 220.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 230.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 240.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 250.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 260.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 270.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 280.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 290.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 300.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 310.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 320.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 330.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 340.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 350.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 360.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 370.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 380.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 390.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 400.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 410.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            },
+            {
+              "dy": 0.0,
+              "fail": "rabbit_hit",
+              "lead": 420.0,
+              "oxygen_used": 0.0,
+              "passed": false,
+              "precise": false,
+              "riding": true,
+              "speed_ratio": 1.0
+            }
+          ],
+          "window_s": 0.0
+        }
+      },
+      "zone": 3
+    }
+  ],
+  "generated_at": "2026-11-13T06:45:24",
+  "note": "海鸟四路线：真实按键、加速带关闭、基速；自动驾驶代理，不是真人。"
+}

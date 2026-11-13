@@ -1,0 +1,538 @@
+{
+  "cases": {
+    "b1_rescue_after_face_fall": {
+      "after": {
+        "accident": "NONE",
+        "accident_count": 1,
+        "bro": 1,
+        "casualties": 1,
+        "control": "turtle",
+        "cooldown": 0.0,
+        "hit_roles": {},
+        "mount": "RIDING",
+        "oxygen": 5.47,
+        "rabbit_state": "RIDING",
+        "rescue_ok": 1,
+        "score": 50,
+        "score_log": [
+          {
+            "points": -100,
+            "reason": "mistake:RABBIT_WATER"
+          },
+          {
+            "points": 50,
+            "reason": "rescue_switch"
+          }
+        ],
+        "t": 2.9,
+        "turtle_dunk": 0.0,
+        "turtle_failures": 0,
+        "turtle_speed": 220.0
+      },
+      "catch": {
+        "accident": "RABBIT_WATER",
+        "accident_count": 1,
+        "bro": 1,
+        "casualties": 1,
+        "control": "turtle",
+        "cooldown": 2.8,
+        "hit_roles": {},
+        "mount": "CARRYING",
+        "oxygen": 8.0,
+        "rabbit_state": "FALLING_WATER",
+        "rescue_ok": 0,
+        "score": 0,
+        "score_log": [
+          {
+            "points": -100,
+            "reason": "mistake:RABBIT_WATER"
+          }
+        ],
+        "t": 0.217,
+        "turtle_dunk": 0.0,
+        "turtle_failures": 0,
+        "turtle_speed": 160.0
+      },
+      "catch_t": 0.217,
+      "done": {
+        "accident": "NONE",
+        "accident_count": 1,
+        "bro": 1,
+        "casualties": 1,
+        "control": "turtle",
+        "cooldown": 1.2,
+        "hit_roles": {},
+        "mount": "RIDING",
+        "oxygen": 7.98,
+        "rabbit_state": "RIDING",
+        "rescue_ok": 1,
+        "score": 50,
+        "score_log": [
+          {
+            "points": -100,
+            "reason": "mistake:RABBIT_WATER"
+          },
+          {
+            "points": 50,
+            "reason": "rescue_switch"
+          }
+        ],
+        "t": 0.383,
+        "turtle_dunk": 0.0,
+        "turtle_failures": 0,
+        "turtle_speed": 220.0
+      },
+      "done_t": 0.383,
+      "trigger": {
+        "accident": "RABBIT_WATER",
+        "accident_count": 1,
+        "bro": 1,
+        "casualties": 1,
+        "control": "turtle",
+        "cooldown": 3.0,
+        "hit_roles": {},
+        "mount": "RESCUE_ACTIVE",
+        "oxygen": 8.0,
+        "rabbit_state": "FALLING_WATER",
+        "rabbit_x": 7874.0,
+        "rescue_ok": 0,
+        "score": 0,
+        "score_log": [
+          {
+            "points": -100,
+            "reason": "mistake:RABBIT_WATER"
+          }
+        ],
+        "t": 0.017,
+        "turtle_dunk": 0.0,
+        "turtle_failures": 0,
+        "turtle_speed": 220.0
+      },
+      "trigger_t": 0.017,
+      "turtle_intersected_groups": [],
+      "turtle_overlap_unrecorded_ticks": 0,
+      "x0": 7920.0
+    },
+    "b1b_hazard_during_rescue": {
+      "end": {
+        "accident": "RABBIT_WATER",
+        "accident_count": 2,
+        "bro": 2,
+        "casualties": 1,
+        "control": "turtle",
+        "cooldown": 1.05,
+        "hit_roles": {
+          "log1": {
+            "turtle": true
+          }
+        },
+        "mount": "RESCUE_ACTIVE",
+        "oxygen": 5.47,
+        "rabbit_state": "FALLING_WATER",
+        "rescue_ok": 0,
+        "score": 0,
+        "score_log": [
+          {
+            "points": -100,
+            "reason": "mistake:RABBIT_WATER"
+          },
+          {
+            "points": -100,
+            "reason": "mistake:TURTLE_DIVE_LATE"
+          }
+        ],
+        "t": 1.967,
+        "turtle_dunk": 1.8,
+        "turtle_failures": 0,
+        "turtle_speed": 54.0
+      },
+      "hit": {
+        "accident": "RABBIT_WATER",
+        "accident_count": 2,
+        "bro": 2,
+        "casualties": 1,
+        "control": "turtle",
+        "cooldown": 1.05,
+        "hit_roles": {
+          "log1": {
+            "turtle": true
+          }
+        },
+        "mount": "RESCUE_ACTIVE",
+        "oxygen": 5.47,
+        "rabbit_state": "FALLING_WATER",
+        "rescue_ok": 0,
+        "score": 0,
+        "score_log": [
+          {
+            "points": -100,
+            "reason": "mistake:RABBIT_WATER"
+          },
+          {
+            "points": -100,
+            "reason": "mistake:TURTLE_DIVE_LATE"
+          }
+        ],
+        "t": 1.967,
+        "turtle_dunk": 1.8,
+        "turtle_failures": 0,
+        "turtle_speed": 54.0
+      },
+      "reasons": [
+        "mistake:RABBIT_WATER",
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "roles": [
+        "turtle"
+      ],
+      "trigger": {
+        "accident": "RABBIT_WATER",
+        "accident_count": 1,
+        "bro": 1,
+        "casualties": 1,
+        "control": "turtle",
+        "cooldown": 3.0,
+        "hit_roles": {},
+        "mount": "RESCUE_ACTIVE",
+        "oxygen": 5.47,
+        "rabbit_state": "FALLING_WATER",
+        "rescue_ok": 0,
+        "score": 0,
+        "score_log": [
+          {
+            "points": -100,
+            "reason": "mistake:RABBIT_WATER"
+          }
+        ],
+        "t": 0.017,
+        "turtle_dunk": 0.0,
+        "turtle_failures": 0,
+        "turtle_speed": 220.0
+      }
+    },
+    "s1_rabbit_only": {
+      "end": {
+        "accident": "NONE",
+        "accident_count": 1,
+        "bro": 1,
+        "casualties": 0,
+        "control": "turtle",
+        "cooldown": 0.6,
+        "hit_roles": {
+          "beam2": {
+            "rabbit": true
+          }
+        },
+        "mount": "RIDING",
+        "oxygen": 8.0,
+        "rabbit_state": "RIDING",
+        "rescue_ok": 0,
+        "score": 0,
+        "score_log": [
+          {
+            "points": -100,
+            "reason": "mistake:RABBIT_STUN"
+          }
+        ],
+        "t": 3.217,
+        "turtle_dunk": 0.0,
+        "turtle_failures": 0,
+        "turtle_speed": 220.0
+      },
+      "first_hit_t": {
+        "rabbit": 0.817
+      },
+      "reasons": [
+        "mistake:RABBIT_STUN"
+      ],
+      "roles": [
+        "rabbit"
+      ],
+      "target": "beam2",
+      "x0": 9410.0
+    },
+    "s2_turtle_only": {
+      "end": {
+        "accident": "NONE",
+        "accident_count": 1,
+        "bro": 1,
+        "casualties": 0,
+        "control": "turtle",
+        "cooldown": 0.0,
+        "hit_roles": {
+          "shark1": {
+            "turtle": true
+          }
+        },
+        "mount": "RIDING",
+        "oxygen": 8.0,
+        "rabbit_state": "RIDING",
+        "rescue_ok": 0,
+        "score": 0,
+        "score_log": [
+          {
+            "points": -100,
+            "reason": "mistake:TURTLE_WAVE"
+          }
+        ],
+        "t": 3.217,
+        "turtle_dunk": 0.0,
+        "turtle_failures": 0,
+        "turtle_speed": 220.0
+      },
+      "first_hit_t": {
+        "turtle": 0.667
+      },
+      "reasons": [
+        "mistake:TURTLE_WAVE"
+      ],
+      "roles": [
+        "turtle"
+      ],
+      "target": "shark1",
+      "x0": 7060.0
+    },
+    "s3_both_same_log": {
+      "end": {
+        "accident": "NONE",
+        "accident_count": 1,
+        "bro": 1,
+        "casualties": 0,
+        "control": "turtle",
+        "cooldown": 1.78,
+        "hit_roles": {
+          "log1": {
+            "rabbit": true,
+            "turtle": true
+          }
+        },
+        "mount": "RIDING",
+        "oxygen": 8.0,
+        "rabbit_state": "RIDING",
+        "rescue_ok": 0,
+        "score": 0,
+        "score_log": [
+          {
+            "points": -100,
+            "reason": "mistake:TURTLE_DIVE_LATE"
+          }
+        ],
+        "t": 3.217,
+        "turtle_dunk": 0.0,
+        "turtle_failures": 0,
+        "turtle_speed": 220.0
+      },
+      "first_hit_t": {
+        "rabbit": 2.0,
+        "turtle": 0.667
+      },
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "roles": [
+        "turtle",
+        "rabbit"
+      ],
+      "target": "log1",
+      "x0": 6210.0
+    },
+    "s4_two_records_one_group": {
+      "end": {
+        "accident": "RABBIT_STUN",
+        "accident_count": 1,
+        "bro": 1,
+        "casualties": 0,
+        "control": "turtle",
+        "cooldown": 3.0,
+        "hit_roles": {
+          "log1": {
+            "rabbit": true,
+            "turtle": true
+          }
+        },
+        "mount": "RIDING",
+        "oxygen": 7.57,
+        "rabbit_state": "STUNNED",
+        "rescue_ok": 0,
+        "score": 0,
+        "score_log": [
+          {
+            "points": -100,
+            "reason": "mistake:TURTLE_DIVE_LATE"
+          }
+        ],
+        "t": 2.317,
+        "turtle_dunk": 0.47,
+        "turtle_failures": 0,
+        "turtle_speed": 132.0
+      },
+      "first_hit": {
+        "accident": "NONE",
+        "accident_count": 1,
+        "bro": 1,
+        "casualties": 0,
+        "control": "turtle",
+        "cooldown": 0.0,
+        "hit_roles": {
+          "log1": {
+            "turtle": true
+          }
+        },
+        "mount": "RIDING",
+        "oxygen": 8.0,
+        "rabbit_state": "RIDING",
+        "rescue_ok": 0,
+        "score": 0,
+        "score_log": [
+          {
+            "points": -100,
+            "reason": "mistake:TURTLE_DIVE_LATE"
+          }
+        ],
+        "t": 0.983,
+        "turtle_dunk": 1.8,
+        "turtle_failures": 0,
+        "turtle_speed": 132.0
+      },
+      "first_hit_reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "first_hit_t": 0.983,
+      "reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "roles": [
+        "turtle",
+        "rabbit"
+      ],
+      "second_hit": {
+        "accident": "RABBIT_STUN",
+        "accident_count": 1,
+        "bro": 1,
+        "casualties": 0,
+        "control": "turtle",
+        "cooldown": 3.0,
+        "hit_roles": {
+          "log1": {
+            "rabbit": true,
+            "turtle": true
+          }
+        },
+        "mount": "RIDING",
+        "oxygen": 7.57,
+        "rabbit_state": "STUNNED",
+        "rescue_ok": 0,
+        "score": 0,
+        "score_log": [
+          {
+            "points": -100,
+            "reason": "mistake:TURTLE_DIVE_LATE"
+          }
+        ],
+        "t": 2.317,
+        "turtle_dunk": 0.47,
+        "turtle_failures": 0,
+        "turtle_speed": 132.0
+      },
+      "second_hit_t": 2.317
+    },
+    "s5_wave_during_rescue": {
+      "end": {
+        "accident": "RABBIT_WATER",
+        "accident_count": 2,
+        "bro": 2,
+        "casualties": 1,
+        "control": "turtle",
+        "cooldown": 1.62,
+        "hit_roles": {
+          "shark1": {
+            "turtle": true
+          }
+        },
+        "mount": "RESCUE_ACTIVE",
+        "oxygen": 7.57,
+        "rabbit_state": "FALLING_WATER",
+        "rescue_ok": 0,
+        "score": 0,
+        "score_log": [
+          {
+            "points": -100,
+            "reason": "mistake:RABBIT_WATER"
+          },
+          {
+            "points": -100,
+            "reason": "mistake:TURTLE_WAVE"
+          }
+        ],
+        "t": 1.4,
+        "turtle_dunk": 1.8,
+        "turtle_failures": 0,
+        "turtle_speed": 54.0
+      },
+      "reasons": [
+        "mistake:RABBIT_WATER",
+        "mistake:TURTLE_WAVE"
+      ],
+      "roles": [
+        "turtle"
+      ],
+      "trigger": {
+        "accident": "RABBIT_WATER",
+        "accident_count": 1,
+        "bro": 1,
+        "casualties": 1,
+        "control": "turtle",
+        "cooldown": 3.0,
+        "hit_roles": {},
+        "mount": "RESCUE_ACTIVE",
+        "oxygen": 7.57,
+        "rabbit_state": "FALLING_WATER",
+        "rescue_ok": 0,
+        "score": 0,
+        "score_log": [
+          {
+            "points": -100,
+            "reason": "mistake:RABBIT_WATER"
+          }
+        ],
+        "t": 0.017,
+        "turtle_dunk": 0.0,
+        "turtle_failures": 0,
+        "turtle_speed": 220.0
+      },
+      "wave_hit": {
+        "accident": "RABBIT_WATER",
+        "accident_count": 2,
+        "bro": 2,
+        "casualties": 1,
+        "control": "turtle",
+        "cooldown": 1.62,
+        "hit_roles": {
+          "shark1": {
+            "turtle": true
+          }
+        },
+        "mount": "RESCUE_ACTIVE",
+        "oxygen": 7.57,
+        "rabbit_state": "FALLING_WATER",
+        "rescue_ok": 0,
+        "score": 0,
+        "score_log": [
+          {
+            "points": -100,
+            "reason": "mistake:RABBIT_WATER"
+          },
+          {
+            "points": -100,
+            "reason": "mistake:TURTLE_WAVE"
+          }
+        ],
+        "t": 1.4,
+        "turtle_dunk": 1.8,
+        "turtle_failures": 0,
+        "turtle_speed": 54.0
+      }
+    }
+  },
+  "generated_at": "2026-11-13T22:09:49"
+}

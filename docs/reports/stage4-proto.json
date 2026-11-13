@@ -1,0 +1,152 @@
+{
+  "crouch_bird": {
+    "passed": true,
+    "turtle_y": 334.0
+  },
+  "gate_dive": {
+    "deepest": 483.992645263672,
+    "passed": true,
+    "surfaced_after_release": true
+  },
+  "gate_no_dive": {
+    "daze": 3.6,
+    "hit": true
+  },
+  "geometry": {
+    "crouch_top": 284.0,
+    "dive_rabbit_top": 402.0,
+    "leap_apex": 174.0,
+    "log_above_s": 0.785584404849573,
+    "log_span_s": 0.290909090909091,
+    "rabbit": [
+      252.0,
+      300.0
+    ],
+    "shark_above_s": 1.00680865832477,
+    "shark_span_s": 0.754545454545455,
+    "turtle": [
+      306.0,
+      362.0
+    ]
+  },
+  "jump_rock": {
+    "landed": true,
+    "passed": true,
+    "turtle_y": 334.0
+  },
+  "log_dive_only": {
+    "daze": 3.2,
+    "hit": true
+  },
+  "log_full": {
+    "both_active": true,
+    "landed": true,
+    "mount_dy": 0.0,
+    "passed": true,
+    "rabbit_over_log": true,
+    "turtle_under_log": true,
+    "turtle_y": 335.460845947266
+  },
+  "log_jump_only": {
+    "daze": 3.6,
+    "hit": true
+  },
+  "log_leap_only": {
+    "daze": 3.6,
+    "hit": true
+  },
+  "shark_dive_only": {
+    "daze": 3.55833333333333,
+    "hit": true
+  },
+  "shark_leap": {
+    "apex_y": 174.0,
+    "passed": true,
+    "rabbit_jumped": false
+  },
+  "shark_no_leap": {
+    "daze": 3.6,
+    "hit": true
+  },
+  "structure": {
+    "count": 7,
+    "kinds": {
+      "DIVE_GATE": 1,
+      "FLOATING_LOG": 1,
+      "HIGH_WALL": 1,
+      "LOW_BEAM": 1,
+      "LOW_BIRD": 1,
+      "SHARK": 1,
+      "SURFACE_ROCK": 1
+    }
+  },
+  "wall_leap_only": {
+    "hit": true,
+    "rabbit_daze": 3.2,
+    "turtle_daze": 0.0
+  },
+  "wall_ollie": {
+    "accident": "NONE",
+    "landed": true,
+    "over_pier": true,
+    "passed": true,
+    "settle": true,
+    "turtle_in_window": true
+  },
+  "warning_times": {
+    "combo_s": 5.0,
+    "min_single_s": 4.63636363636364,
+    "rows": [
+      {
+        "group": "proto_bird",
+        "kind": "LOW_BIRD",
+        "seconds": 5.0,
+        "sight_px": 1100.0
+      },
+      {
+        "group": "proto_rock",
+        "kind": "SURFACE_ROCK",
+        "seconds": 4.90909090909091,
+        "sight_px": 1080.0
+      },
+      {
+        "group": "proto_beam",
+        "kind": "LOW_BEAM",
+        "seconds": 4.95454545454545,
+        "sight_px": 1090.0
+      },
+      {
+        "group": "proto_gate",
+        "kind": "DIVE_GATE",
+        "seconds": 4.63636363636364,
+        "sight_px": 1020.0
+      },
+      {
+        "group": "proto_shark",
+        "kind": "SHARK",
+        "seconds": 4.63636363636364,
+        "sight_px": 1020.0
+      },
+      {
+        "group": "proto_log",
+        "kind": "FLOATING_LOG",
+        "seconds": 5.0,
+        "sight_px": 1100.0
+      },
+      {
+        "group": "proto_wall",
+        "kind": "HIGH_WALL",
+        "seconds": 5.0,
+        "sight_px": 1100.0
+      }
+    ]
+  },
+  "wrong_crouch": {
+    "accident": "RABBIT_STUN",
+    "daze": 3.2
+  },
+  "wrong_jump": {
+    "accident": "RABBIT_STUN",
+    "daze": 3.2
+  }
+}

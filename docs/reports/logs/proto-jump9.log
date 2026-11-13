@@ -1,0 +1,103 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+  ok  proto has 6 groups (6)
+  ok  proto has one LOW_BIRD
+  ok  proto has one SURFACE_ROCK
+  ok  proto has one LOW_BEAM
+  ok  proto has one DIVE_GATE
+  ok  proto has one SHARK
+  ok  proto has one FLOATING_LOG
+  ok  proto finishes at its own world end (8700)
+  structure -> { "LOW_BIRD": 1, "SURFACE_ROCK": 1, "LOW_BEAM": 1, "DIVE_GATE": 1, "SHARK": 1, "FLOATING_LOG": 1 }
+  ok  bird test starts on the rabbit
+  ok  crouched rabbit crosses the low bird
+  ok  bird not marked as hit
+  ok  bird counted as passed
+  ok  crouch under the bird causes no accident
+  ok  turtle cruise depth unaffected (334.0 -> 334.0)
+  crouch bird -> passed=true turtle_y 334.0
+  ok  standing into the low bird has a consequence
+  ok  bird marked as hit when standing
+  ok  wrong crouch leaves visible imbalance (3.2)
+  wrong crouch -> RABBIT_STUN daze 3.2
+  ok  up lifts the rabbit off the shell
+  ok  rabbit jump clears the low rock
+  ok  rock not marked as hit
+  ok  rock landing causes no accident
+  ok  rabbit is back on the shell
+  ok  turtle never changes depth for a rabbit-layer obstacle (334.0)
+  jump rock -> passed=true landed=true turtle_y 334.0
+  ok  running into the rock without jumping has a consequence
+  ok  wrong jump reads as RABBIT_STUN (RABBIT_STUN)
+  ok  rock marked as hit without jump
+  wrong jump -> RABBIT_STUN daze 3.2
+DBG hit proto_shark TURTLE x=6255.7 y=334.0 v=220 t=[P: (6210.666, 309.0), S: (90.0, 50.0)] rect=[P: (6300.0, 274.0), S: (70.0, 95.0)]
+  ok  cruising into the shark is a hit
+  ok  shark hit leaves visible imbalance (4.4)
+  ok  a single shark hit is imbalance, not an instant accident (NONE)
+  shark no-leap -> hit=true daze 4.4
+  ok  SHIFT hands control to the turtle
+  ok  up starts the turtle leap
+  ok  leap clears the shark
+  ok  shark not marked as hit when leaping
+  ok  rabbit is carried by the leap and never has to jump
+  ok  rabbit stays on the shell through the leap
+  ok  leap lifts the whole group well above cruise (apex 84)
+  ok  leap causes no accident
+  ok  leap lands back at cruise depth (334.0)
+  shark leap -> passed=true apex 84 rabbit_jumped=false
+DBG hit proto_gate TURTLE x=5055.7 y=334.0 v=220 t=[P: (5010.666, 309.0), S: (90.0, 50.0)] rect=[P: (5100.0, 204.0), S: (180.0, 180.0)]
+  ok  cruising into the reef arch is a hit
+  ok  reef arch hit leaves visible imbalance (4.4)
+  gate no-dive -> hit=true daze 4.4
+  ok  holding down clears the reef arch
+  ok  gate not marked as hit when diving
+  ok  dive reaches the designed depth (483.5)
+  ok  rabbit rides the shell under the arch
+  ok  turtle surfaces after the player releases down (y=335.9)
+  ok  dive causes no accident
+  gate dive -> passed=true deepest 484 surfaced=true
+  ok  jump lifts the rabbit off the shell
+  ok  SHIFT hands control to the turtle
+  ok  rabbit is still airborne after SHIFT to the turtle
+  ok  rabbit keeps rising after the switch (dy=-38)
+  ok  the full sequence crosses the floating log
+  ok  floating log not marked as hit
+  ok  rabbit jump and turtle dive coexist in the same obstacle
+  ok  rabbit body is above the log top while over it
+  ok  turtle body is below the log bottom while over it
+  ok  rabbit lands back on the shell after the log
+  ok  turtle is back at cruise depth after the log (min 335.9)
+  ok  combined log causes no accident
+  ok  floating log counted as passed
+  ok  rabbit sits exactly on the shell after landing (dy=0.0)
+  ok  turtle settles at its departure depth (334.0 -> 335.5)
+  log full -> passed=true both=true above=true below=true landed=true dy 0.0
+DBG hit proto_log TURTLE x=7557.7 y=334.0 v=220 t=[P: (7512.66, 309.0), S: (90.0, 50.0)] rect=[P: (7600.0, 224.0), S: (50.0, 186.0)]
+  ok  jumping alone does not move the shell under the log
+  ok  shell hit leaves visible imbalance (4.4)
+  log jump-only -> hit=true daze 4.4
+DBG hit proto_log RABBIT x=7590.3 r=[P: (7577.327, 380.5312), S: (26.0, 42.0)] rect=[P: (7600.0, 224.0), S: (50.0, 186.0)] st=RIDING
+  ok  diving alone leaves the rabbit in the log's upper route
+  ok  rabbit hit leaves visible imbalance (3.2)
+  log dive-only -> hit=true daze 3.2
+  ok  bird band hits standing rabbit but not crouched (234..274 vs 252/284)
+  ok  bird band never touches the shell (274 < 306)
+  ok  rock band hits the rabbit's body (254..296 vs 252..300)
+  ok  rock leaves the cruising shell clear (296 < 306)
+  ok  dock beam hits standing rabbit, crouch clears (274 < 284)
+  ok  reef arch blocks the cruising shell (204..384 vs 306..362)
+  ok  reef arch clears the diving rabbit (384 < 402)
+  ok  shark overlaps the cruising shell (274..369)
+  ok  leap height leaves margin over the shark (need 88 of 250)
+  ok  shark window has reaction slack (above 1.23 s vs span 0.75 s)
+  ok  log blocks the standing rabbit route (224..410)
+  ok  log blocks the cruising shell route (224..410)
+  ok  log bottom blocks the diving rabbit so dive alone fails (410 > 402)
+  ok  jump window covers the log with slack (above 1.77 s vs span 0.37 s)
+  geometry -> shark above 1.23/0.75 s, log above 1.77/0.37 s
+  ok  single-role obstacles give >= 3.5 s from first sight (min 4.64 s)
+  ok  combined log gives >= 5 s from first sight (5.00 s)
+  warning times -> single min 4.64 s, combo 5.00 s
+  report -> D:/GAMESTUDIO/TURBBIT/docs/reports/stage4-proto.json
+STAGE4 PROTO: PASS

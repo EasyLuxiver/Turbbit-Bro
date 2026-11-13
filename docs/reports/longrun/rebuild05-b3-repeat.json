@@ -1,0 +1,298 @@
+{
+  "cases": {
+    "log1": {
+      "hold_to_end": {
+        "accidents": 1,
+        "end_x": 6654.2,
+        "pass": true,
+        "rabbit_clear": 74.0,
+        "rate": 60.0,
+        "release": 1000000.0,
+        "seconds": 1.88,
+        "state": "pass_wet",
+        "turtle_clear": 44.8
+      },
+      "pass_all": true,
+      "runs": [
+        {
+          "accidents": 0,
+          "end_x": 6654.3,
+          "pass": true,
+          "rabbit_clear": 74.0,
+          "rate": 60.0,
+          "release": 40.0,
+          "seconds": 1.88,
+          "state": "pass",
+          "turtle_clear": 44.6
+        },
+        {
+          "accidents": 0,
+          "end_x": 6654.3,
+          "pass": true,
+          "rabbit_clear": 74.0,
+          "rate": 60.0,
+          "release": 40.0,
+          "seconds": 1.88,
+          "state": "pass",
+          "turtle_clear": 44.6
+        },
+        {
+          "accidents": 0,
+          "end_x": 6654.3,
+          "pass": true,
+          "rabbit_clear": 74.0,
+          "rate": 60.0,
+          "release": 40.0,
+          "seconds": 1.88,
+          "state": "pass",
+          "turtle_clear": 44.6
+        },
+        {
+          "accidents": 0,
+          "end_x": 6654.3,
+          "pass": true,
+          "rabbit_clear": 74.0,
+          "rate": 60.0,
+          "release": 40.0,
+          "seconds": 1.88,
+          "state": "pass",
+          "turtle_clear": 44.6
+        },
+        {
+          "accidents": 0,
+          "end_x": 6654.3,
+          "pass": true,
+          "rabbit_clear": 74.0,
+          "rate": 60.0,
+          "release": 40.0,
+          "seconds": 1.88,
+          "state": "pass",
+          "turtle_clear": 44.6
+        },
+        {
+          "accidents": 0,
+          "end_x": 6658.0,
+          "pass": true,
+          "rabbit_clear": 69.3,
+          "rate": 30.0,
+          "release": 40.0,
+          "seconds": 1.9,
+          "state": "pass",
+          "turtle_clear": 45.0
+        },
+        {
+          "accidents": 0,
+          "end_x": 6652.5,
+          "pass": true,
+          "rabbit_clear": 76.8,
+          "rate": 120.0,
+          "release": 40.0,
+          "seconds": 1.87,
+          "state": "pass",
+          "turtle_clear": 44.5
+        }
+      ],
+      "state_counts": {
+        "pass": 7
+      }
+    },
+    "log3": {
+      "hold_to_end": {
+        "accidents": 1,
+        "end_x": 30805.9,
+        "pass": true,
+        "rabbit_clear": 75.8,
+        "rate": 60.0,
+        "release": 1000000.0,
+        "seconds": 1.73,
+        "state": "pass_wet",
+        "turtle_clear": 44.1
+      },
+      "pass_all": true,
+      "runs": [
+        {
+          "accidents": 0,
+          "end_x": 30806.0,
+          "pass": true,
+          "rabbit_clear": 75.8,
+          "rate": 60.0,
+          "release": 40.0,
+          "seconds": 1.73,
+          "state": "pass",
+          "turtle_clear": 43.7
+        },
+        {
+          "accidents": 0,
+          "end_x": 30806.0,
+          "pass": true,
+          "rabbit_clear": 75.8,
+          "rate": 60.0,
+          "release": 40.0,
+          "seconds": 1.73,
+          "state": "pass",
+          "turtle_clear": 43.7
+        },
+        {
+          "accidents": 0,
+          "end_x": 30806.0,
+          "pass": true,
+          "rabbit_clear": 75.8,
+          "rate": 60.0,
+          "release": 40.0,
+          "seconds": 1.73,
+          "state": "pass",
+          "turtle_clear": 43.7
+        },
+        {
+          "accidents": 0,
+          "end_x": 30806.0,
+          "pass": true,
+          "rabbit_clear": 75.8,
+          "rate": 60.0,
+          "release": 40.0,
+          "seconds": 1.73,
+          "state": "pass",
+          "turtle_clear": 43.7
+        },
+        {
+          "accidents": 0,
+          "end_x": 30806.0,
+          "pass": true,
+          "rabbit_clear": 75.8,
+          "rate": 60.0,
+          "release": 40.0,
+          "seconds": 1.73,
+          "state": "pass",
+          "turtle_clear": 43.7
+        },
+        {
+          "accidents": 0,
+          "end_x": 30806.0,
+          "pass": true,
+          "rabbit_clear": 70.5,
+          "rate": 30.0,
+          "release": 40.0,
+          "seconds": 1.73,
+          "state": "pass",
+          "turtle_clear": 44.3
+        },
+        {
+          "accidents": 0,
+          "end_x": 30804.0,
+          "pass": true,
+          "rabbit_clear": 78.4,
+          "rate": 120.0,
+          "release": 40.0,
+          "seconds": 1.72,
+          "state": "pass",
+          "turtle_clear": 43.6
+        }
+      ],
+      "state_counts": {
+        "pass": 7
+      }
+    },
+    "log8": {
+      "hold_to_end": {
+        "accidents": 1,
+        "end_x": 64815.8,
+        "pass": true,
+        "rabbit_clear": 75.8,
+        "rate": 60.0,
+        "release": 1000000.0,
+        "seconds": 1.6,
+        "state": "pass_wet",
+        "turtle_clear": 43.0
+      },
+      "pass_all": true,
+      "runs": [
+        {
+          "accidents": 0,
+          "end_x": 64815.9,
+          "pass": true,
+          "rabbit_clear": 75.8,
+          "rate": 60.0,
+          "release": 40.0,
+          "seconds": 1.6,
+          "state": "pass",
+          "turtle_clear": 42.8
+        },
+        {
+          "accidents": 0,
+          "end_x": 64815.9,
+          "pass": true,
+          "rabbit_clear": 75.8,
+          "rate": 60.0,
+          "release": 40.0,
+          "seconds": 1.6,
+          "state": "pass",
+          "turtle_clear": 42.8
+        },
+        {
+          "accidents": 0,
+          "end_x": 64815.9,
+          "pass": true,
+          "rabbit_clear": 75.8,
+          "rate": 60.0,
+          "release": 40.0,
+          "seconds": 1.6,
+          "state": "pass",
+          "turtle_clear": 42.8
+        },
+        {
+          "accidents": 0,
+          "end_x": 64815.9,
+          "pass": true,
+          "rabbit_clear": 75.8,
+          "rate": 60.0,
+          "release": 40.0,
+          "seconds": 1.6,
+          "state": "pass",
+          "turtle_clear": 42.8
+        },
+        {
+          "accidents": 0,
+          "end_x": 64815.9,
+          "pass": true,
+          "rabbit_clear": 75.8,
+          "rate": 60.0,
+          "release": 40.0,
+          "seconds": 1.6,
+          "state": "pass",
+          "turtle_clear": 42.8
+        },
+        {
+          "accidents": 0,
+          "end_x": 64816.1,
+          "pass": true,
+          "rabbit_clear": 70.5,
+          "rate": 30.0,
+          "release": 40.0,
+          "seconds": 1.6,
+          "state": "pass",
+          "turtle_clear": 43.6
+        },
+        {
+          "accidents": 0,
+          "end_x": 64814.1,
+          "pass": true,
+          "rabbit_clear": 78.4,
+          "rate": 120.0,
+          "release": 40.0,
+          "seconds": 1.59,
+          "state": "pass",
+          "turtle_clear": 42.6
+        }
+      ],
+      "state_counts": {
+        "pass": 7
+      }
+    }
+  },
+  "generated_at": "2026-11-13T13:29:21",
+  "standard": {
+    "lead_px": 160.0,
+    "release_px_past_group_end": 40.0,
+    "shift_delay_s": 0.1
+  }
+}

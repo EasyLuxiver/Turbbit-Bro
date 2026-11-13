@@ -1,0 +1,49 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+LEVEL SEED 20261112
+SNACK DRAW #1 group=gate1 zone=1 kind=DIVE_GATE (fixed)
+SNACK DRAW #2 group=beam1 zone=1 kind=LOW_BIRD (was LOW_BEAM)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SHARK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=SURFACE_ROCK (was DIVE_GATE)
+LEVEL SEED 20261112
+ok   log rect unchanged (32 x 218), got 32.0 x 218.0
+ok   turtle body not shrunk (96 x 56)
+ok   rabbit body not shrunk (32 x 48)
+ok   1 one event, rabbit only
+ok   1 exactly one penalty (accidents=1, mistakes=1)
+ok   1 one BRO METER slot (hud=BRO METER 1/3)
+ok   1 score entry is RABBIT_STUN (["mistake:RABBIT_STUN"])
+ok   1 rabbit is stunned, turtle is not blocked by the A-class rock
+ok   2 one event, turtle only
+ok   2 exactly one penalty (accidents=1, mistakes=1)
+ok   2 turtle feedback is not swallowed (dunk=1.80, flip=0.90)
+ok   2 turtle slowed down (132.0 <= 132)
+ok   3 one event, both roles, joint
+ok   3 joint accident is charged once (accidents=1, mistakes=1)
+ok   3 joint still fills exactly one slot (bro=1, hud=BRO METER 1/3)
+ok   3 second role still gets physical feedback (dunk=1.80)
+ok   4 both roles recorded on the same log (["rabbit", "turtle"])
+ok   4 same obstacle within the joint window (gap=1.33 s <= 1.5 s)
+ok   4 still only one penalty (accidents=1, mistakes=1, ["mistake:TURTLE_DIVE_LATE"])
+ok   4 penalty is recorded as joint (got joint)
+ok   4 rabbit still gets its physical consequence (STUNNED, feedback=跳跃高度不对 - 撞上浮木！)
+ok   5 fall is rabbit-only ([{ "id": 1, "group": "pb_beam", "kind": "LOW_BEAM", "roles": ["rabbit"], "settled": true, "penalty_role": "rabbit", "rescue": "NONE", "t": 0.13 }])
+ok   5 rescue completes (caught/RIDING)
+ok   5 successful rescue adds no penalty (accidents=1, mistakes=1)
+ok   5 rescue success is never a joint accident (joint=0, roles=["rabbit"])
+ok   5 accident state clears after the rescue (NONE)
+ok   6 independent hit happens while the rabbit is in the water (RABBIT_WATER)
+ok   6 independent collision is not swallowed (accidents=2, mistakes=2)
+ok   6 the new event is turtle-only, not joint (events=[{ "id": 1, "group": "pb_beam2", "kind": "LOW_BEAM", "roles": ["rabbit"], "settled": true, "penalty_role": "rabbit", "rescue": "NONE", "t": 0.13 }, { "id": 2, "group": "pb_shark2", "kind": "SHARK", "roles": ["turtle"], "settled": true, "penalty_role": "turtle", "rescue": "RESCUE_FALLING", "t": 0.47 }])
+ok   6 first event stays rabbit-only ({ "id": 1, "group": "pb_beam2", "kind": "LOW_BEAM", "roles": ["rabbit"], "settled": true, "penalty_role": "rabbit", "rescue": "NONE", "t": 0.13 })
+ok   7 turtle is physically blocked at the log (x=10455.0 <= 10455.0)
+ok   7 overlap does not stack penalties (accidents=1, mistakes=1)
+ok   7 event stays turtle-only (["turtle"])
+ok   8 clean dive records nothing (accidents=0, events=0)
+ok   8 turtle actually passed the gate (x=14601.1 > 14480.0)
+CORE-FEEL-07 P0-B: PASS

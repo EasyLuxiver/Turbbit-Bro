@@ -1,0 +1,692 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+  STAGE 3 FULL RUN  time_scale=3.0  capture=false
+  ok  race scene loaded
+  ok  state RUNNING
+  ---- RUN 1  (ENTER) ----
+  SETTLE[travel] t=2.50 x=1011 y=392 tur=0.85 rab=0.73 target=1160 room=149
+  JUMP  x=1266 rock=1300-1390 y=407 spd=170 ctl=rabbit show=false
+  JUMP  t=3.90 x=1291 rab_y=306 rab_vy=-470 tur=413 st=JUMPING
+  JUMP  t=4.10 x=1321 rab_y=234 rab_vy=-290 tur=413 st=JUMPING
+  JUMP  t=4.30 x=1349 rab_y=199 rab_vy=-110 tur=413 st=JUMPING
+  JUMP  t=4.50 x=1374 rab_y=199 rab_vy=70 tur=413 st=FALLING
+  JUMP  t=4.70 x=1398 rab_y=236 rab_vy=250 tur=413 st=FALLING
+  JUMP  t=4.90 x=1418 rab_y=355 rab_vy=0 tur=413 st=RIDING
+  t=   5.6  x=  1439 y=426 zone=1 control=turtle mount=RIDING phase=travel rab=RELAXED tur=DIVING oxy=7.9 combo=0 show=0 passed=0
+  SETTLE[travel] t=7.30 x=1920 y=360 tur=0.45 rab=1.95 target=2045 room=125
+  CROUCH exit x=2294 y=496 tur=1.80 rab=0.00
+  t=  10.7  x=  2424 y=513 zone=1 control=turtle mount=RIDING phase=travel rab=RELAXED tur=SURFACING oxy=6.6 combo=2 show=0 passed=2
+  SETTLE[travel] t=13.85 x=3133 y=469 tur=1.50 rab=0.35 target=3380 room=247
+  t=  15.8  x=  3427 y=393 zone=1 control=turtle mount=RIDING phase=travel rab=SLIDING tur=SURFACING oxy=6.7 combo=2 show=0 passed=2
+  SETTLE[travel] t=16.50 x=3691 y=360 tur=0.45 rab=2.55 target=3600 room=-91
+  GATE  switch t=19.15 x=4230 gate=4300-4400 tur=0.00 rab=3.07 y=417
+  GATE  t=19.25 x=4251 y=417 daze=0.10 ctl=rabbit st=DAZED
+  GATE  t=19.45 x=4291 y=417 daze=0.30 ctl=rabbit st=DAZED
+  GATE  t=19.65 x=4326 y=417 daze=0.50 ctl=rabbit st=DAZED
+  GATE  t=19.85 x=4358 y=418 daze=0.70 ctl=rabbit st=DAZED
+  GATE  t=20.05 x=4386 y=428 daze=0.90 ctl=rabbit st=SINKING
+  t=  20.8  x=  4412 y=447 zone=1 control=rabbit mount=RIDING phase=travel rab=RIDING tur=SINKING oxy=5.4 combo=3 show=0 passed=4
+  GATE  t=20.25 x=4412 y=447 daze=1.10 ctl=rabbit st=SINKING
+  GATE  t=20.45 x=4435 y=469 daze=1.30 ctl=rabbit st=SINKING
+  GATE  exit t=20.60 x=4451 daze=1.45 y=486 acc=NONE
+  GATE  return t=20.65 x=4457 tur=1.45 y=490
+  SETTLE[travel] t=20.80 x=4482 y=502 tur=1.45 rab=0.90 target=4780 room=298
+  SETTLE[travel] t=23.50 x=4994 y=432 tur=1.30 rab=0.30 target=5160 room=166
+  JUMP  x=5267 rock=5300-5390 y=436 spd=176 ctl=rabbit show=false
+  JUMP  t=25.00 x=5292 rab_y=333 rab_vy=-470 tur=440 st=JUMPING
+  JUMP  t=25.15 x=5316 rab_y=276 rab_vy=-335 tur=440 st=JUMPING
+  JUMP  t=25.30 x=5339 rab_y=239 rab_vy=-200 tur=440 st=JUMPING
+  t=  25.9  x=  5346 y=440 zone=1 control=rabbit mount=AIRBORNE phase=travel rab=JUMPING tur=SINKING oxy=6.1 combo=3 show=0 passed=6
+  JUMP  t=25.45 x=5361 rab_y=222 rab_vy=-65 tur=440 st=JUMPING
+  JUMP  t=25.60 x=5381 rab_y=226 rab_vy=70 tur=440 st=FALLING
+  JUMP  t=25.75 x=5399 rab_y=250 rab_vy=205 tur=440 st=FALLING
+  JUMP  t=25.90 x=5417 rab_y=294 rab_vy=340 tur=440 st=FALLING
+  SETTLE[travel] t=26.30 x=5481 y=460 tur=2.08 rab=0.30 target=5545 room=64
+  WARN  settle deep x=5547 y=459 daze_t=1.83
+  CROUCH exit x=5794 y=603 tur=3.17 rab=0.00
+  t=  30.9  x=  6319 y=436 zone=1 control=turtle mount=RIDING phase=travel rab=RIDING tur=SURFACING oxy=7.7 combo=0 show=1 passed=8
+  SETTLE[travel] t=31.45 x=6561 y=334 tur=0.00 rab=0.45 target=6860 room=299
+  JUMP  x=6965 rock=7000-7090 y=359 spd=170 ctl=rabbit show=false
+  JUMP  t=33.50 x=6989 rab_y=261 rab_vy=-470 tur=368 st=JUMPING
+  JUMP  t=33.70 x=7018 rab_y=189 rab_vy=-290 tur=368 st=JUMPING
+  JUMP  t=33.90 x=7044 rab_y=154 rab_vy=-110 tur=368 st=JUMPING
+  JUMP  t=34.10 x=7068 rab_y=154 rab_vy=70 tur=368 st=FALLING
+  JUMP  t=34.30 x=7090 rab_y=191 rab_vy=250 tur=368 st=FALLING
+  JUMP  t=34.50 x=7109 rab_y=310 rab_vy=0 tur=368 st=RIDING
+  t=  35.9  x=  7279 y=369 zone=1 control=turtle mount=RIDING phase=travel rab=SLIDING tur=SURFACING oxy=8.0 combo=1 show=1 passed=9
+  t=  41.0  x=  8318 y=351 zone=1 control=rabbit mount=RIDING phase=travel rab=RIDING tur=DAZED oxy=8.0 combo=1 show=1 passed=9
+  SETTLE[travel] t=42.95 x=8804 y=344 tur=0.40 rab=2.85 target=8945 room=141
+  WARN  settle deep x=9034 y=405 daze_t=1.20
+  CROUCH exit x=9196 y=509 tur=2.15 rab=1.37
+  t=  46.0  x=  9267 y=531 zone=1 control=turtle mount=RIDING phase=travel rab=SLIDING tur=DIVING oxy=6.8 combo=2 show=1 passed=10
+  t=  51.0  x= 10229 y=424 zone=1 control=turtle mount=RIDING phase=travel rab=SLIDING tur=DIVING oxy=7.9 combo=2 show=1 passed=10
+  SETTLE[travel] t=53.00 x=10714 y=426 tur=1.25 rab=0.95 target=10860 room=146
+  JUMP  x=10968 rock=11000-11090 y=443 spd=184 ctl=rabbit show=false
+  JUMP  t=54.40 x=10995 rab_y=342 rab_vy=-470 tur=449 st=JUMPING
+  JUMP  t=54.60 x=11028 rab_y=271 rab_vy=-290 tur=449 st=JUMPING
+  JUMP  t=54.80 x=11059 rab_y=235 rab_vy=-110 tur=449 st=JUMPING
+  JUMP  t=55.00 x=11088 rab_y=236 rab_vy=70 tur=449 st=FALLING
+  JUMP  t=55.20 x=11114 rab_y=272 rab_vy=250 tur=449 st=FALLING
+  JUMP  t=55.40 x=11138 rab_y=391 rab_vy=0 tur=449 st=RIDING
+  t=  56.1  x= 11162 y=462 zone=1 control=turtle mount=RIDING phase=travel rab=RELAXED tur=DIVING oxy=6.4 combo=2 show=1 passed=10
+  t=  61.2  x= 12283 y=334 zone=1 control=turtle mount=RIDING phase=travel rab=SLIDING tur=CRUISING oxy=8.0 combo=0 show=2 passed=11
+  SETTLE[travel] t=63.20 x=12768 y=470 tur=1.55 rab=1.80 target=12895 room=127
+  WARN  settle deep x=12899 y=489 daze_t=1.30
+  CROUCH exit x=13148 y=616 tur=2.70 rab=0.15
+  t=  66.3  x= 13264 y=665 zone=1 control=turtle mount=RIDING phase=travel rab=RELAXED tur=DIVING oxy=4.5 combo=1 show=2 passed=12
+  t=  71.3  x= 14291 y=352 zone=1 control=rabbit mount=RIDING phase=travel rab=RIDING tur=DAZED oxy=6.9 combo=1 show=2 passed=12
+  t=  75.2  ZONE 2 CORAL CHAOS  x=15015
+  t=  76.4  x= 15289 y=372 zone=2 control=rabbit mount=RIDING phase=travel rab=RIDING tur=DAZED oxy=8.0 combo=1 show=2 passed=12
+  SETTLE[travel] t=76.10 x=15333 y=377 tur=0.75 rab=1.87 target=15480 room=147
+  SETTLE[travel] t=80.70 x=16333 y=432 tur=1.08 rab=2.27 target=16480 room=147
+  t=  81.4  x= 16367 y=432 zone=2 control=turtle mount=RIDING phase=travel rab=EDGE tur=SURFACING oxy=5.2 combo=2 show=2 passed=13
+  t=  86.4  x= 17523 y=334 zone=2 control=rabbit mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=0 show=3 passed=14
+  GATE  switch t=86.10 x=17583 gate=17800-17900 tur=0.00 rab=0.25 y=334
+  GATE  t=86.20 x=17606 y=335 daze=0.10 ctl=rabbit st=DAZED
+  GATE  t=86.45 x=17660 y=347 daze=0.35 ctl=rabbit st=DAZED
+  GATE  t=86.70 x=17707 y=368 daze=0.60 ctl=rabbit st=DAZED
+  GATE  t=86.95 x=17749 y=392 daze=0.85 ctl=rabbit st=SINKING
+  GATE  t=87.20 x=17786 y=419 daze=1.10 ctl=rabbit st=SINKING
+  GATE  t=87.45 x=17820 y=447 daze=1.35 ctl=rabbit st=SINKING
+  GATE  t=87.70 x=17850 y=474 daze=1.60 ctl=rabbit st=SINKING
+  GATE  t=87.95 x=17876 y=502 daze=1.85 ctl=rabbit st=SINKING
+  GATE  t=88.20 x=17899 y=529 daze=2.10 ctl=rabbit st=SINKING
+  GATE  t=88.45 x=17922 y=557 daze=2.35 ctl=rabbit st=SINKING
+  GATE  t=88.70 x=17943 y=589 daze=2.60 ctl=rabbit st=DEEP
+  GATE  exit t=88.80 x=17951 daze=2.70 y=604 acc=NONE
+  GATE  return t=88.85 x=17956 tur=2.70 y=612
+  t=  91.5  x= 18440 y=474 zone=2 control=turtle mount=RIDING phase=travel rab=SLIDING tur=SURFACING oxy=4.2 combo=1 show=3 passed=15
+  SETTLE[travel] t=93.70 x=19025 y=439 tur=1.38 rab=1.90 target=19145 room=120
+  WARN  settle deep x=19145 y=443 daze_t=1.38
+  CROUCH exit x=19397 y=544 tur=2.62 rab=0.52
+  t=  96.5  x= 19513 y=589 zone=2 control=turtle mount=RIDING phase=travel rab=SLIDING tur=DIVING oxy=4.9 combo=2 show=3 passed=16
+  SETTLE[travel] t=99.25 x=20201 y=459 tur=1.50 rab=0.32 target=20438 room=237
+  JUMP  x=20545 rock=20600-20690 y=436 spd=190 ctl=rabbit show=false
+  t= 101.5  x= 20572 y=436 zone=2 control=rabbit mount=AIRBORNE phase=travel rab=JUMPING tur=DAZED oxy=5.0 combo=2 show=3 passed=16
+  JUMP  t=100.95 x=20572 rab_y=329 rab_vy=-470 tur=436 st=JUMPING
+  JUMP  t=101.15 x=20605 rab_y=258 rab_vy=-290 tur=436 st=JUMPING
+  JUMP  t=101.35 x=20636 rab_y=222 rab_vy=-110 tur=436 st=JUMPING
+  JUMP  t=101.55 x=20665 rab_y=223 rab_vy=70 tur=436 st=FALLING
+  JUMP  t=101.75 x=20691 rab_y=259 rab_vy=250 tur=436 st=FALLING
+  JUMP  t=101.95 x=20715 rab_y=378 rab_vy=0 tur=436 st=RIDING
+  SETTLE[travel] t=105.65 x=21588 y=334 tur=0.00 rab=0.65 target=21880 room=292
+  t= 106.6  x= 21684 y=334 zone=2 control=turtle mount=RIDING phase=travel rab=SLIDING tur=CRUISING oxy=8.0 combo=0 show=4 passed=17
+  t= 111.6  x= 22779 y=388 zone=2 control=rabbit mount=RIDING phase=travel rab=RIDING tur=SINKING oxy=8.0 combo=1 show=4 passed=18
+  SETTLE[travel] t=112.75 x=23137 y=434 tur=1.10 rab=1.52 target=23280 room=143
+  t= 116.7  x= 23857 y=488 zone=2 control=turtle mount=RIDING phase=travel rab=SLIDING tur=DIVING oxy=7.1 combo=2 show=4 passed=19
+  GATE  switch t=119.45 x=24592 gate=24800-24900 tur=0.00 rab=2.82 y=363
+  GATE  t=119.55 x=24615 y=363 daze=0.10 ctl=rabbit st=DAZED
+  GATE  t=119.80 x=24669 y=363 daze=0.35 ctl=rabbit st=DAZED
+  GATE  t=120.05 x=24716 y=364 daze=0.60 ctl=rabbit st=DAZED
+  GATE  t=120.30 x=24758 y=378 daze=0.85 ctl=rabbit st=SINKING
+  GATE  t=120.55 x=24795 y=405 daze=1.10 ctl=rabbit st=SINKING
+  GATE  t=120.80 x=24829 y=432 daze=1.35 ctl=rabbit st=SINKING
+  GATE  t=121.05 x=24859 y=460 daze=1.60 ctl=rabbit st=SINKING
+  t= 121.7  x= 24870 y=471 zone=2 control=rabbit mount=RIDING phase=travel rab=RIDING tur=SINKING oxy=7.5 combo=2 show=4 passed=19
+  GATE  t=121.30 x=24885 y=487 daze=1.85 ctl=rabbit st=SINKING
+  GATE  t=121.55 x=24908 y=515 daze=2.10 ctl=rabbit st=SINKING
+  GATE  t=121.80 x=24931 y=542 daze=2.35 ctl=rabbit st=SINKING
+  GATE  exit t=122.00 x=24948 daze=2.55 y=567 acc=NONE
+  GATE  return t=122.05 x=24953 tur=2.55 y=573
+  SETTLE[travel] t=125.40 x=25739 y=334 tur=0.00 rab=0.40 target=26038 room=299
+  t= 126.7  x= 25919 y=334 zone=2 control=turtle mount=RIDING phase=travel rab=SLIDING tur=CRUISING oxy=8.0 combo=0 show=5 passed=20
+  JUMP  x=26145 rock=26200-26290 y=359 spd=190 ctl=rabbit show=false
+  JUMP  t=127.30 x=26172 rab_y=261 rab_vy=-470 tur=368 st=JUMPING
+  JUMP  t=127.50 x=26205 rab_y=189 rab_vy=-290 tur=368 st=JUMPING
+  JUMP  t=127.70 x=26235 rab_y=154 rab_vy=-110 tur=368 st=JUMPING
+  JUMP  t=127.90 x=26263 rab_y=154 rab_vy=70 tur=368 st=FALLING
+  JUMP  t=128.05 x=26283 rab_y=178 rab_vy=205 tur=368 st=FALLING
+  JUMP  t=128.20 x=26301 rab_y=222 rab_vy=340 tur=368 st=FALLING
+  t= 131.8  x= 27002 y=336 zone=2 control=rabbit mount=RIDING phase=travel rab=RIDING tur=DAZED oxy=8.0 combo=1 show=5 passed=21
+  SETTLE[travel] t=133.30 x=27423 y=437 tur=0.95 rab=2.17 target=27545 room=122
+  WARN  settle deep x=27555 y=418 daze_t=0.83
+  CROUCH exit x=27798 y=485 tur=2.03 rab=0.97
+  t= 136.8  x= 28081 y=439 zone=2 control=turtle mount=RIDING phase=travel rab=SLIDING tur=SURFACING oxy=3.9 combo=2 show=5 passed=22
+  SETTLE[travel] t=139.30 x=28731 y=453 tur=1.38 rab=1.60 target=28880 room=149
+  t= 141.8  x= 29171 y=401 zone=2 control=rabbit mount=RIDING phase=travel rab=RIDING tur=DAZED oxy=8.0 combo=2 show=5 passed=22
+  SETTLE[travel] t=143.65 x=29710 y=334 tur=0.00 rab=0.00 target=29880 room=170
+  t= 146.9  x= 30351 y=347 zone=2 control=rabbit mount=RIDING phase=travel rab=RIDING tur=DAZED oxy=8.0 combo=1 show=6 passed=24
+  SETTLE[travel] t=149.95 x=31132 y=502 tur=1.75 rab=1.37 target=31280 room=148
+  WARN  settle deep x=31287 y=518 daze_t=1.38
+  t= 151.9  x= 31467 y=426 zone=2 control=turtle mount=RIDING phase=travel rab=EDGE tur=SURFACING oxy=5.5 combo=1 show=6 passed=24
+  t= 157.0  x= 32546 y=420 zone=2 control=turtle mount=RIDING phase=travel rab=SLIDING tur=DIVING oxy=7.8 combo=2 show=6 passed=25
+  GATE  switch t=156.65 x=32594 gate=32800-32900 tur=0.88 rab=2.37 y=419
+  GATE  t=156.75 x=32618 y=420 daze=0.98 ctl=rabbit st=SINKING
+  GATE  t=156.95 x=32663 y=426 daze=1.18 ctl=rabbit st=SINKING
+  GATE  t=157.15 x=32706 y=442 daze=1.38 ctl=rabbit st=SINKING
+  GATE  t=157.35 x=32746 y=464 daze=1.58 ctl=rabbit st=SINKING
+  GATE  t=157.55 x=32785 y=486 daze=1.78 ctl=rabbit st=SINKING
+  GATE  t=157.75 x=32820 y=508 daze=1.98 ctl=rabbit st=SINKING
+  GATE  t=157.95 x=32854 y=530 daze=2.18 ctl=rabbit st=SINKING
+  GATE  t=158.15 x=32884 y=552 daze=2.38 ctl=rabbit st=SINKING
+  GATE  t=158.35 x=32913 y=578 daze=2.57 ctl=rabbit st=DEEP
+  GATE  t=158.55 x=32941 y=610 daze=2.77 ctl=rabbit st=DEEP
+  GATE  exit t=158.65 x=32954 daze=2.87 y=626 acc=NONE
+  GATE  return t=158.70 x=32962 tur=2.87 y=634
+  t= 162.0  x= 33614 y=399 zone=2 control=turtle mount=RIDING phase=travel rab=RIDING tur=SURFACING oxy=7.8 combo=0 show=7 passed=26
+  SETTLE[travel] t=162.00 x=33746 y=338 tur=0.00 rab=0.40 target=34038 room=292
+  JUMP  x=34143 rock=34200-34290 y=354 spd=195 ctl=rabbit show=false
+  JUMP  t=163.85 x=34171 rab_y=256 rab_vy=-470 tur=363 st=JUMPING
+  JUMP  t=164.00 x=34196 rab_y=199 rab_vy=-335 tur=363 st=JUMPING
+  JUMP  t=164.15 x=34220 rab_y=162 rab_vy=-200 tur=363 st=JUMPING
+  JUMP  t=164.30 x=34243 rab_y=146 rab_vy=-65 tur=363 st=JUMPING
+  JUMP  t=164.45 x=34264 rab_y=149 rab_vy=70 tur=363 st=FALLING
+  JUMP  t=164.60 x=34284 rab_y=173 rab_vy=205 tur=363 st=FALLING
+  JUMP  t=164.75 x=34302 rab_y=218 rab_vy=340 tur=363 st=FALLING
+  t= 167.0  x= 34682 y=337 zone=2 control=turtle mount=RIDING phase=travel rab=SLIDING tur=SURFACING oxy=8.0 combo=1 show=7 passed=27
+  SETTLE[travel] t=167.05 x=34817 y=355 tur=0.40 rab=1.80 target=34945 room=128
+  CROUCH exit x=35199 y=477 tur=1.68 rab=0.10
+  t= 172.1  x= 35801 y=335 zone=2 control=turtle mount=RIDING phase=travel rab=EDGE tur=CRUISING oxy=8.0 combo=2 show=7 passed=28
+  SETTLE[travel] t=173.25 x=36105 y=469 tur=1.50 rab=0.35 target=36280 room=175
+  t= 177.1  x= 36883 y=334 zone=2 control=turtle mount=RIDING phase=travel rab=SHOWTIME tur=CRUISING oxy=8.0 combo=0 show=7 passed=29
+  SETTLE[travel] t=177.80 x=37183 y=334 tur=0.00 rab=0.00 target=37480 room=297
+  SETTLE[travel] t=180.85 x=37868 y=403 tur=0.95 rab=0.38 target=38038 room=170
+  t= 182.1  x= 38029 y=417 zone=2 control=turtle mount=RIDING phase=travel rab=SLIDING tur=SURFACING oxy=7.4 combo=1 show=8 passed=30
+  JUMP  x=38138 rock=38200-38290 y=417 spd=195 ctl=rabbit show=false
+  JUMP  t=182.20 x=38166 rab_y=315 rab_vy=-470 tur=423 st=JUMPING
+  JUMP  t=182.35 x=38193 rab_y=258 rab_vy=-335 tur=423 st=JUMPING
+  JUMP  t=182.50 x=38219 rab_y=222 rab_vy=-200 tur=423 st=JUMPING
+  JUMP  t=182.65 x=38243 rab_y=205 rab_vy=-65 tur=423 st=JUMPING
+  JUMP  t=182.80 x=38266 rab_y=209 rab_vy=70 tur=423 st=FALLING
+  JUMP  t=182.95 x=38288 rab_y=233 rab_vy=205 tur=423 st=FALLING
+  JUMP  t=183.10 x=38308 rab_y=277 rab_vy=340 tur=423 st=FALLING
+  SETTLE[travel] t=184.20 x=38548 y=407 tur=0.68 rab=1.00 target=38838 room=290
+  JUMP  x=38945 rock=39000-39090 y=360 spd=195 ctl=rabbit show=false
+  JUMP  t=186.05 x=38973 rab_y=262 rab_vy=-470 tur=369 st=JUMPING
+  JUMP  t=186.20 x=38998 rab_y=205 rab_vy=-335 tur=369 st=JUMPING
+  t= 186.9  ZONE 3 MUSCLE MAYHEM  x=39022
+  JUMP  t=186.35 x=39022 rab_y=168 rab_vy=-200 tur=369 st=JUMPING
+  JUMP  t=186.50 x=39044 rab_y=151 rab_vy=-65 tur=369 st=JUMPING
+  t= 187.2  x= 39066 y=369 zone=3 control=rabbit mount=AIRBORNE phase=travel rab=FALLING tur=SINKING oxy=8.0 combo=2 show=8 passed=31
+  JUMP  t=186.65 x=39066 rab_y=155 rab_vy=70 tur=369 st=FALLING
+  JUMP  t=186.80 x=39085 rab_y=179 rab_vy=205 tur=369 st=FALLING
+  JUMP  t=186.95 x=39104 rab_y=223 rab_vy=340 tur=369 st=FALLING
+  SETTLE[travel] t=190.25 x=39926 y=334 tur=0.00 rab=0.15 target=40145 room=219
+  t= 192.2  x= 40273 y=363 zone=3 control=rabbit mount=RIDING phase=travel rab=CROUCHING tur=DAZED oxy=8.0 combo=0 show=9 passed=32
+  CROUCH exit x=40396 y=436 tur=1.25 rab=0.00
+  SETTLE[travel] t=195.35 x=41139 y=382 tur=0.70 rab=1.80 target=41280 room=141
+  t= 197.3  x= 41492 y=351 zone=3 control=rabbit mount=RIDING phase=travel rab=RIDING tur=DAZED oxy=8.0 combo=1 show=9 passed=33
+  GATE  switch t=201.20 x=42552 gate=42600-42700 tur=1.40 rab=2.62 y=538
+  GATE  t=201.30 x=42578 y=538 daze=1.50 ctl=rabbit st=SINKING
+  GATE  t=201.50 x=42627 y=538 daze=1.70 ctl=rabbit st=SINKING
+  GATE  t=201.70 x=42674 y=539 daze=1.90 ctl=rabbit st=SINKING
+  t= 202.3  x= 42686 y=541 zone=3 control=rabbit mount=RIDING phase=travel rab=RIDING tur=SINKING oxy=3.7 combo=2 show=9 passed=34
+  GATE  t=201.90 x=42719 y=550 daze=2.10 ctl=rabbit st=SINKING
+  GATE  exit t=202.05 x=42751 daze=2.25 y=564 acc=NONE
+  GATE  return t=202.10 x=42762 tur=2.25 y=569
+  SETTLE[travel] t=204.25 x=43321 y=367 tur=0.00 rab=0.00 target=43615 room=295
+  JUMP  x=43725 rock=43800-43890 y=355 spd=215 ctl=rabbit show=false
+  JUMP  t=206.00 x=43756 rab_y=256 rab_vy=-470 tur=364 st=JUMPING
+  JUMP  t=206.15 x=43785 rab_y=199 rab_vy=-335 tur=364 st=JUMPING
+  JUMP  t=206.30 x=43811 rab_y=163 rab_vy=-200 tur=364 st=JUMPING
+  JUMP  t=206.45 x=43837 rab_y=146 rab_vy=-65 tur=364 st=JUMPING
+  JUMP  t=206.60 x=43861 rab_y=150 rab_vy=70 tur=364 st=FALLING
+  t= 207.3  x= 43884 y=364 zone=3 control=rabbit mount=AIRBORNE phase=travel rab=FALLING tur=SINKING oxy=8.0 combo=0 show=10 passed=35
+  JUMP  t=206.75 x=43884 rab_y=174 rab_vy=205 tur=364 st=FALLING
+  JUMP  t=206.90 x=43905 rab_y=218 rab_vy=340 tur=364 st=FALLING
+  SETTLE[travel] t=209.00 x=44416 y=350 tur=0.35 rab=1.65 target=44545 room=129
+  CROUCH exit x=44796 y=445 tur=1.55 rab=0.40
+  t= 212.4  x= 45088 y=406 zone=3 control=turtle mount=RIDING phase=travel rab=SLIDING tur=SURFACING oxy=7.0 combo=2 show=10 passed=37
+  SETTLE[travel] t=213.65 x=45533 y=378 tur=0.65 rab=2.32 target=45680 room=147
+  t= 217.4  x= 46309 y=359 zone=3 control=turtle mount=RIDING phase=travel rab=SHOWTIME tur=SURFACING oxy=7.7 combo=0 show=10 passed=38
+  SETTLE[travel] t=217.75 x=46543 y=334 tur=0.00 rab=0.00 target=46480 room=-63
+  SETTLE[travel] t=221.65 x=47534 y=372 tur=0.65 rab=1.97 target=47680 room=146
+  t= 222.4  x= 47583 y=384 zone=3 control=turtle mount=RIDING phase=travel rab=SLIDING tur=DIVING oxy=8.0 combo=1 show=11 passed=39
+  t= 227.5  x= 48809 y=530 zone=3 control=turtle mount=RIDING phase=travel rab=SLIDING tur=DIVING oxy=4.6 combo=2 show=11 passed=40
+  GATE  switch t=227.50 x=48952 gate=49000-49100 tur=1.40 rab=2.80 y=510
+  GATE  t=227.60 x=48978 y=510 daze=1.50 ctl=rabbit st=SINKING
+  GATE  t=227.80 x=49027 y=510 daze=1.70 ctl=rabbit st=SINKING
+  GATE  t=228.00 x=49074 y=511 daze=1.90 ctl=rabbit st=SINKING
+  GATE  t=228.20 x=49118 y=522 daze=2.10 ctl=rabbit st=SINKING
+  GATE  exit t=228.35 x=49150 daze=2.25 y=536 acc=NONE
+  GATE  return t=228.40 x=49162 tur=2.25 y=541
+  SETTLE[travel] t=230.55 x=49720 y=348 tur=0.00 rab=0.00 target=50015 room=295
+  t= 232.5  x= 50080 y=341 zone=3 control=rabbit mount=RIDING phase=travel rab=RIDING tur=DAZED oxy=8.0 combo=0 show=12 passed=41
+  JUMP  x=50125 rock=50200-50290 y=354 spd=215 ctl=rabbit show=false
+  JUMP  t=232.30 x=50156 rab_y=256 rab_vy=-470 tur=363 st=JUMPING
+  JUMP  t=232.45 x=50184 rab_y=199 rab_vy=-335 tur=363 st=JUMPING
+  JUMP  t=232.60 x=50211 rab_y=162 rab_vy=-200 tur=363 st=JUMPING
+  JUMP  t=232.75 x=50237 rab_y=146 rab_vy=-65 tur=363 st=JUMPING
+  JUMP  t=232.90 x=50261 rab_y=150 rab_vy=70 tur=363 st=FALLING
+  JUMP  t=233.05 x=50284 rab_y=174 rab_vy=205 tur=363 st=FALLING
+  JUMP  t=233.20 x=50305 rab_y=218 rab_vy=340 tur=363 st=FALLING
+  SETTLE[travel] t=236.85 x=51200 y=382 tur=0.70 rab=2.35 target=51345 room=145
+  t= 237.6  x= 51247 y=394 zone=3 control=turtle mount=RIDING phase=travel rab=EDGE tur=DIVING oxy=8.0 combo=1 show=12 passed=42
+  WARN  settle deep x=51351 y=389 daze_t=0.45
+  CROUCH exit x=51597 y=469 tur=1.60 rab=1.32
+  SETTLE[travel] t=241.60 x=52267 y=452 tur=1.50 rab=0.32 target=52480 room=213
+  t= 242.6  x= 52369 y=474 zone=3 control=turtle mount=RIDING phase=travel rab=RELAXED tur=DIVING oxy=7.2 combo=2 show=12 passed=43
+  GATE  switch t=246.75 x=53591 gate=53800-53900 tur=0.00 rab=0.10 y=334
+  GATE  t=246.85 x=53617 y=335 daze=0.10 ctl=rabbit st=DAZED
+  t= 247.6  x= 53664 y=343 zone=3 control=rabbit mount=RIDING phase=travel rab=RIDING tur=DAZED oxy=8.0 combo=0 show=13 passed=44
+  GATE  t=247.05 x=53664 y=343 daze=0.30 ctl=rabbit st=DAZED
+  GATE  t=247.25 x=53708 y=359 daze=0.50 ctl=rabbit st=DAZED
+  GATE  t=247.45 x=53747 y=377 daze=0.70 ctl=rabbit st=DAZED
+  GATE  t=247.65 x=53783 y=397 daze=0.90 ctl=rabbit st=SINKING
+  GATE  t=247.85 x=53817 y=419 daze=1.10 ctl=rabbit st=SINKING
+  GATE  t=248.05 x=53848 y=441 daze=1.30 ctl=rabbit st=SINKING
+  GATE  t=248.25 x=53877 y=463 daze=1.50 ctl=rabbit st=SINKING
+  GATE  t=248.45 x=53904 y=485 daze=1.70 ctl=rabbit st=SINKING
+  GATE  t=248.65 x=53928 y=507 daze=1.90 ctl=rabbit st=SINKING
+  GATE  t=248.85 x=53949 y=529 daze=2.10 ctl=rabbit st=SINKING
+  GATE  exit t=248.85 x=53949 daze=2.10 y=529 acc=NONE
+  GATE  return t=248.90 x=53956 tur=2.10 y=534
+  SETTLE[travel] t=251.80 x=54668 y=364 tur=0.65 rab=1.92 target=54815 room=147
+  t= 252.7  x= 54756 y=378 zone=3 control=turtle mount=RIDING phase=travel rab=SLIDING tur=DIVING oxy=8.0 combo=1 show=13 passed=45
+  JUMP  x=54916 rock=55000-55090 y=376 spd=222 ctl=rabbit show=false
+  JUMP  t=252.95 x=54948 rab_y=275 rab_vy=-470 tur=382 st=JUMPING
+  JUMP  t=253.10 x=54979 rab_y=218 rab_vy=-335 tur=382 st=JUMPING
+  JUMP  t=253.25 x=55009 rab_y=181 rab_vy=-200 tur=382 st=JUMPING
+  JUMP  t=253.40 x=55038 rab_y=164 rab_vy=-65 tur=382 st=JUMPING
+  JUMP  t=253.55 x=55065 rab_y=168 rab_vy=70 tur=382 st=FALLING
+  JUMP  t=253.70 x=55090 rab_y=192 rab_vy=205 tur=382 st=FALLING
+  JUMP  t=253.85 x=55114 rab_y=236 rab_vy=340 tur=382 st=FALLING
+  SETTLE[travel] t=255.90 x=55619 y=350 tur=0.35 rab=1.60 target=55745 room=126
+  t= 257.7  x= 55916 y=389 zone=3 control=rabbit mount=RIDING phase=travel rab=CROUCHING tur=SINKING oxy=8.0 combo=2 show=13 passed=46
+  CROUCH exit x=55999 y=438 tur=1.55 rab=0.35
+  SETTLE[travel] t=259.90 x=56590 y=334 tur=0.00 rab=0.00 target=56880 room=290
+  t= 262.8  x= 57201 y=334 zone=3 control=turtle mount=RIDING phase=travel rab=SLIDING tur=CRUISING oxy=8.0 combo=0 show=14 passed=47
+  SETTLE[travel] t=263.70 x=57512 y=425 tur=1.15 rab=0.33 target=57680 room=168
+  t= 267.8  x= 58378 y=425 zone=3 control=turtle mount=RIDING phase=travel rab=SLIDING tur=DIVING oxy=7.7 combo=2 show=14 passed=49
+  SETTLE[travel] t=268.70 x=58732 y=364 tur=0.65 rab=2.40 target=58880 room=148
+  t= 272.8  x= 59599 y=334 zone=3 control=turtle mount=RIDING phase=travel rab=SHOWTIME tur=CRUISING oxy=8.0 combo=0 show=14 passed=50
+  GATE  switch t=273.75 x=59989 gate=60200-60300 tur=0.00 rab=0.05 y=334
+  GATE  t=273.85 x=60014 y=335 daze=0.10 ctl=rabbit st=DAZED
+  GATE  t=274.05 x=60062 y=343 daze=0.30 ctl=rabbit st=DAZED
+  GATE  t=274.25 x=60105 y=359 daze=0.50 ctl=rabbit st=DAZED
+  GATE  t=274.45 x=60145 y=377 daze=0.70 ctl=rabbit st=DAZED
+  GATE  t=274.65 x=60181 y=397 daze=0.90 ctl=rabbit st=SINKING
+  GATE  t=274.85 x=60214 y=419 daze=1.10 ctl=rabbit st=SINKING
+  GATE  t=275.05 x=60246 y=441 daze=1.30 ctl=rabbit st=SINKING
+  GATE  t=275.25 x=60275 y=463 daze=1.50 ctl=rabbit st=SINKING
+  GATE  t=275.45 x=60301 y=485 daze=1.70 ctl=rabbit st=SINKING
+  GATE  t=275.65 x=60325 y=507 daze=1.90 ctl=rabbit st=SINKING
+  GATE  t=275.85 x=60347 y=529 daze=2.10 ctl=rabbit st=SINKING
+  GATE  exit t=275.90 x=60352 daze=2.15 y=535 acc=NONE
+  GATE  return t=275.95 x=60358 tur=2.15 y=540
+  t= 277.9  x= 60703 y=452 zone=3 control=turtle mount=RIDING phase=travel rab=SLIDING tur=SURFACING oxy=5.5 combo=1 show=15 passed=51
+  SETTLE[travel] t=278.85 x=61070 y=360 tur=0.65 rab=1.92 target=61215 room=145
+  JUMP  x=61318 rock=61400-61490 y=372 spd=222 ctl=rabbit show=false
+  JUMP  t=280.00 x=61350 rab_y=271 rab_vy=-470 tur=378 st=JUMPING
+  JUMP  t=280.15 x=61381 rab_y=214 rab_vy=-335 tur=378 st=JUMPING
+  JUMP  t=280.30 x=61411 rab_y=177 rab_vy=-200 tur=378 st=JUMPING
+  JUMP  t=280.45 x=61439 rab_y=161 rab_vy=-65 tur=378 st=JUMPING
+  JUMP  t=280.60 x=61466 rab_y=164 rab_vy=70 tur=378 st=FALLING
+  JUMP  t=280.75 x=61492 rab_y=188 rab_vy=205 tur=378 st=FALLING
+  JUMP  t=280.90 x=61516 rab_y=233 rab_vy=340 tur=378 st=FALLING
+  t= 282.9  x= 61872 y=342 zone=3 control=turtle mount=RIDING phase=travel rab=SLIDING tur=SURFACING oxy=8.0 combo=2 show=15 passed=52
+  SETTLE[travel] t=282.95 x=62021 y=350 tur=0.35 rab=1.60 target=62145 room=124
+  CROUCH exit x=62400 y=439 tur=1.55 rab=0.35
+  SETTLE[travel] t=286.95 x=62991 y=334 tur=0.00 rab=0.00 target=63280 room=289
+  t= 287.9  x= 63095 y=334 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=0 show=16 passed=53
+  t= 293.0  x= 64357 y=528 zone=3 control=turtle mount=RIDING phase=travel rab=SLIDING tur=DIVING oxy=6.5 combo=1 show=16 passed=54
+  GATE  switch t=293.20 x=64552 gate=64600-64700 tur=1.00 rab=2.05 y=511
+  GATE  t=293.30 x=64577 y=511 daze=1.10 ctl=rabbit st=SINKING
+  GATE  t=293.50 x=64627 y=511 daze=1.30 ctl=rabbit st=SINKING
+  GATE  t=293.70 x=64674 y=512 daze=1.50 ctl=rabbit st=SINKING
+  GATE  t=293.90 x=64718 y=521 daze=1.70 ctl=rabbit st=SINKING
+  GATE  exit t=294.05 x=64750 daze=1.85 y=534 acc=NONE
+  GATE  return t=294.10 x=64761 tur=1.85 y=538
+  t= 298.0  x= 65568 y=432 zone=3 control=turtle mount=RIDING phase=travel rab=SLIDING tur=SURFACING oxy=6.1 combo=2 show=16 passed=55
+  ok  run 1 finish captured
+  FINISH  run=1 time=300.0 score=12150 grade=S passed=55/55 casualties=0 engine=0 show=16 streak=55
+  ok  run 1 reached result screen
+  ok  run 1 state RESULT
+  ok  run 1 result shows score + streak
+  ok  run 1 result shows best records
+  ok  R on result starts the retry race
+  ok  retry state RUNNING
+  ok  retry clears finish state
+  ---- RUN 2  (RETRY) ----
+  SETTLE[travel] t=2.80 x=1011 y=392 tur=0.85 rab=1.03 target=1160 room=149
+  JUMP  x=1266 rock=1300-1390 y=407 spd=170 ctl=rabbit show=false
+  JUMP  t=4.20 x=1291 rab_y=306 rab_vy=-470 tur=413 st=JUMPING
+  JUMP  t=4.40 x=1321 rab_y=234 rab_vy=-290 tur=413 st=JUMPING
+  JUMP  t=4.60 x=1349 rab_y=199 rab_vy=-110 tur=413 st=JUMPING
+  JUMP  t=4.80 x=1374 rab_y=199 rab_vy=70 tur=413 st=FALLING
+  JUMP  t=5.00 x=1398 rab_y=236 rab_vy=250 tur=413 st=FALLING
+  t=   5.3  x=  1408 y=413 zone=1 control=rabbit mount=AIRBORNE phase=travel rab=FALLING tur=SINKING oxy=8.0 combo=0 show=0 passed=0
+  JUMP  t=5.20 x=1418 rab_y=355 rab_vy=0 tur=413 st=RIDING
+  SETTLE[travel] t=7.60 x=1920 y=360 tur=0.45 rab=1.95 target=2045 room=125
+  CROUCH exit x=2294 y=496 tur=1.80 rab=0.00
+  t=  10.4  x=  2369 y=518 zone=1 control=turtle mount=RIDING phase=travel rab=RELAXED tur=DIVING oxy=6.9 combo=2 show=0 passed=2
+  SETTLE[travel] t=14.15 x=3133 y=469 tur=1.50 rab=0.35 target=3380 room=247
+  t=  15.4  x=  3350 y=446 zone=1 control=turtle mount=RIDING phase=travel rab=SLIDING tur=SURFACING oxy=6.5 combo=2 show=0 passed=2
+  SETTLE[travel] t=16.80 x=3691 y=360 tur=0.45 rab=2.55 target=3600 room=-91
+  GATE  switch t=19.45 x=4230 gate=4300-4400 tur=0.00 rab=3.07 y=417
+  GATE  t=19.55 x=4251 y=417 daze=0.10 ctl=rabbit st=DAZED
+  GATE  t=19.75 x=4291 y=417 daze=0.30 ctl=rabbit st=DAZED
+  GATE  t=19.95 x=4326 y=417 daze=0.50 ctl=rabbit st=DAZED
+  GATE  t=20.15 x=4358 y=418 daze=0.70 ctl=rabbit st=DAZED
+  t=  20.4  x=  4365 y=420 zone=1 control=rabbit mount=RIDING phase=travel rab=RIDING tur=DAZED oxy=5.7 combo=3 show=0 passed=4
+  GATE  t=20.35 x=4386 y=428 daze=0.90 ctl=rabbit st=SINKING
+  GATE  t=20.55 x=4412 y=447 daze=1.10 ctl=rabbit st=SINKING
+  GATE  t=20.75 x=4435 y=469 daze=1.30 ctl=rabbit st=SINKING
+  GATE  exit t=20.90 x=4451 daze=1.45 y=486 acc=NONE
+  GATE  return t=20.95 x=4457 tur=1.45 y=490
+  SETTLE[travel] t=21.10 x=4482 y=502 tur=1.45 rab=0.90 target=4780 room=298
+  SETTLE[travel] t=23.80 x=4994 y=432 tur=1.30 rab=0.30 target=5160 room=166
+  JUMP  x=5267 rock=5300-5390 y=436 spd=176 ctl=rabbit show=false
+  t=  25.5  x=  5292 y=440 zone=1 control=rabbit mount=AIRBORNE phase=travel rab=JUMPING tur=SINKING oxy=6.1 combo=3 show=0 passed=6
+  JUMP  t=25.30 x=5292 rab_y=333 rab_vy=-470 tur=440 st=JUMPING
+  JUMP  t=25.45 x=5316 rab_y=276 rab_vy=-335 tur=440 st=JUMPING
+  JUMP  t=25.60 x=5339 rab_y=239 rab_vy=-200 tur=440 st=JUMPING
+  JUMP  t=25.75 x=5361 rab_y=222 rab_vy=-65 tur=440 st=JUMPING
+  JUMP  t=25.90 x=5381 rab_y=226 rab_vy=70 tur=440 st=FALLING
+  JUMP  t=26.05 x=5399 rab_y=250 rab_vy=205 tur=440 st=FALLING
+  JUMP  t=26.20 x=5417 rab_y=294 rab_vy=340 tur=440 st=FALLING
+  SETTLE[travel] t=26.60 x=5481 y=460 tur=2.08 rab=0.30 target=5545 room=64
+  WARN  settle deep x=5547 y=459 daze_t=1.83
+  CROUCH exit x=5794 y=603 tur=3.17 rab=0.00
+  t=  30.5  x=  6242 y=488 zone=1 control=turtle mount=RIDING phase=travel rab=SHOWTIME tur=SURFACING oxy=2.1 combo=0 show=0 passed=8
+  SETTLE[travel] t=31.75 x=6561 y=334 tur=0.00 rab=0.45 target=6860 room=299
+  JUMP  x=6965 rock=7000-7090 y=359 spd=170 ctl=rabbit show=false
+  JUMP  t=33.80 x=6989 rab_y=261 rab_vy=-470 tur=368 st=JUMPING
+  JUMP  t=34.00 x=7018 rab_y=189 rab_vy=-290 tur=368 st=JUMPING
+  JUMP  t=34.20 x=7044 rab_y=154 rab_vy=-110 tur=368 st=JUMPING
+  JUMP  t=34.40 x=7068 rab_y=154 rab_vy=70 tur=368 st=FALLING
+  JUMP  t=34.60 x=7090 rab_y=191 rab_vy=250 tur=368 st=FALLING
+  JUMP  t=34.80 x=7109 rab_y=310 rab_vy=0 tur=368 st=RIDING
+  t=  35.6  x=  7224 y=387 zone=1 control=turtle mount=RIDING phase=travel rab=RELAXED tur=SURFACING oxy=8.0 combo=1 show=1 passed=9
+  t=  40.6  x=  8253 y=347 zone=1 control=rabbit mount=RIDING phase=travel rab=RIDING tur=DAZED oxy=8.0 combo=1 show=1 passed=9
+  SETTLE[travel] t=43.25 x=8804 y=344 tur=0.40 rab=2.85 target=8945 room=141
+  WARN  settle deep x=9034 y=405 daze_t=1.20
+  t=  45.6  x=  9196 y=509 zone=1 control=rabbit mount=RIDING phase=travel rab=CROUCHING tur=SINKING oxy=7.1 combo=1 show=1 passed=9
+  CROUCH exit x=9196 y=509 tur=2.15 rab=1.37
+  t=  50.7  x= 10188 y=402 zone=1 control=rabbit mount=RIDING phase=travel rab=RIDING tur=SINKING oxy=8.0 combo=2 show=1 passed=10
+  SETTLE[travel] t=53.30 x=10714 y=426 tur=1.25 rab=0.95 target=10860 room=146
+  JUMP  x=10968 rock=11000-11090 y=443 spd=184 ctl=rabbit show=false
+  JUMP  t=54.70 x=10995 rab_y=342 rab_vy=-470 tur=449 st=JUMPING
+  JUMP  t=54.90 x=11028 rab_y=271 rab_vy=-290 tur=449 st=JUMPING
+  JUMP  t=55.10 x=11059 rab_y=235 rab_vy=-110 tur=449 st=JUMPING
+  JUMP  t=55.30 x=11088 rab_y=236 rab_vy=70 tur=449 st=FALLING
+  t=  55.7  x= 11114 y=449 zone=1 control=rabbit mount=AIRBORNE phase=travel rab=FALLING tur=SINKING oxy=6.6 combo=2 show=1 passed=10
+  JUMP  t=55.50 x=11114 rab_y=272 rab_vy=250 tur=449 st=FALLING
+  JUMP  t=55.70 x=11138 rab_y=391 rab_vy=0 tur=449 st=RIDING
+  t=  60.7  x= 12184 y=334 zone=1 control=turtle mount=RIDING phase=travel rab=SLIDING tur=CRUISING oxy=8.0 combo=0 show=2 passed=11
+  SETTLE[travel] t=63.50 x=12768 y=470 tur=1.55 rab=1.80 target=12895 room=127
+  WARN  settle deep x=12899 y=489 daze_t=1.30
+  CROUCH exit x=13148 y=616 tur=2.70 rab=0.15
+  t=  65.8  x= 13165 y=631 zone=1 control=turtle mount=RIDING phase=travel rab=RELAXED tur=DIVING oxy=5.0 combo=0 show=2 passed=11
+  t=  70.8  x= 14196 y=374 zone=1 control=turtle mount=RIDING phase=travel rab=EDGE tur=SURFACING oxy=5.6 combo=1 show=2 passed=12
+  t=  75.2  ZONE 2 CORAL CHAOS  x=15027
+  t=  75.9  x= 15195 y=372 zone=2 control=rabbit mount=RIDING phase=travel rab=RIDING tur=DAZED oxy=8.0 combo=1 show=2 passed=12
+  SETTLE[travel] t=76.40 x=15333 y=377 tur=0.75 rab=1.87 target=15480 room=147
+  t=  80.9  x= 16277 y=430 zone=2 control=rabbit mount=RIDING phase=travel rab=RIDING tur=DAZED oxy=5.7 combo=2 show=2 passed=13
+  SETTLE[travel] t=81.00 x=16333 y=432 tur=1.08 rab=2.27 target=16480 room=147
+  t=  85.9  x= 17415 y=334 zone=2 control=rabbit mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=0 show=3 passed=14
+  GATE  switch t=86.40 x=17583 gate=17800-17900 tur=0.00 rab=0.25 y=334
+  GATE  t=86.50 x=17606 y=335 daze=0.10 ctl=rabbit st=DAZED
+  GATE  t=86.75 x=17660 y=347 daze=0.35 ctl=rabbit st=DAZED
+  GATE  t=87.00 x=17707 y=368 daze=0.60 ctl=rabbit st=DAZED
+  GATE  t=87.25 x=17749 y=392 daze=0.85 ctl=rabbit st=SINKING
+  GATE  t=87.50 x=17786 y=419 daze=1.10 ctl=rabbit st=SINKING
+  GATE  t=87.75 x=17820 y=447 daze=1.35 ctl=rabbit st=SINKING
+  GATE  t=88.00 x=17850 y=474 daze=1.60 ctl=rabbit st=SINKING
+  GATE  t=88.25 x=17876 y=502 daze=1.85 ctl=rabbit st=SINKING
+  GATE  t=88.50 x=17899 y=529 daze=2.10 ctl=rabbit st=SINKING
+  GATE  t=88.75 x=17922 y=557 daze=2.35 ctl=rabbit st=SINKING
+  GATE  t=89.00 x=17943 y=589 daze=2.60 ctl=rabbit st=DEEP
+  GATE  exit t=89.10 x=17951 daze=2.70 y=604 acc=NONE
+  GATE  return t=89.15 x=17956 tur=2.70 y=612
+  t=  91.0  x= 18332 y=542 zone=2 control=turtle mount=RIDING phase=travel rab=SLIDING tur=SURFACING oxy=4.7 combo=1 show=3 passed=15
+  SETTLE[travel] t=94.00 x=19025 y=439 tur=1.38 rab=1.90 target=19145 room=120
+  WARN  settle deep x=19145 y=443 daze_t=1.38
+  CROUCH exit x=19397 y=544 tur=2.62 rab=0.52
+  t=  96.0  x= 19407 y=551 zone=2 control=turtle mount=RIDING phase=travel rab=RELAXED tur=DIVING oxy=5.3 combo=1 show=3 passed=15
+  SETTLE[travel] t=99.55 x=20201 y=459 tur=1.50 rab=0.32 target=20438 room=237
+  t= 101.1  x= 20505 y=436 zone=2 control=rabbit mount=RIDING phase=travel rab=RIDING tur=DAZED oxy=5.2 combo=2 show=3 passed=16
+  JUMP  x=20545 rock=20600-20690 y=436 spd=190 ctl=rabbit show=false
+  JUMP  t=101.25 x=20572 rab_y=329 rab_vy=-470 tur=436 st=JUMPING
+  JUMP  t=101.45 x=20605 rab_y=258 rab_vy=-290 tur=436 st=JUMPING
+  JUMP  t=101.65 x=20636 rab_y=222 rab_vy=-110 tur=436 st=JUMPING
+  JUMP  t=101.85 x=20665 rab_y=223 rab_vy=70 tur=436 st=FALLING
+  JUMP  t=102.05 x=20691 rab_y=259 rab_vy=250 tur=436 st=FALLING
+  JUMP  t=102.25 x=20715 rab_y=378 rab_vy=0 tur=436 st=RIDING
+  t= 106.1  x= 21576 y=334 zone=2 control=turtle mount=RIDING phase=travel rab=RELAXED tur=CRUISING oxy=8.0 combo=0 show=4 passed=17
+  SETTLE[travel] t=105.95 x=21588 y=334 tur=0.00 rab=0.65 target=21880 room=292
+  t= 111.2  x= 22722 y=361 zone=2 control=rabbit mount=RIDING phase=travel rab=RIDING tur=DAZED oxy=8.0 combo=1 show=4 passed=18
+  SETTLE[travel] t=113.05 x=23137 y=434 tur=1.10 rab=1.52 target=23280 room=143
+  t= 116.3  x= 23774 y=470 zone=2 control=turtle mount=RIDING phase=travel rab=SLIDING tur=DIVING oxy=7.5 combo=2 show=4 passed=19
+  GATE  switch t=119.75 x=24592 gate=24800-24900 tur=0.00 rab=2.82 y=363
+  GATE  t=119.85 x=24615 y=363 daze=0.10 ctl=rabbit st=DAZED
+  GATE  t=120.10 x=24669 y=363 daze=0.35 ctl=rabbit st=DAZED
+  GATE  t=120.35 x=24716 y=364 daze=0.60 ctl=rabbit st=DAZED
+  GATE  t=120.60 x=24758 y=378 daze=0.85 ctl=rabbit st=SINKING
+  GATE  t=120.85 x=24795 y=405 daze=1.10 ctl=rabbit st=SINKING
+  t= 121.3  x= 24829 y=432 zone=2 control=rabbit mount=RIDING phase=travel rab=RIDING tur=SINKING oxy=7.8 combo=2 show=4 passed=19
+  GATE  t=121.10 x=24829 y=432 daze=1.35 ctl=rabbit st=SINKING
+  GATE  t=121.35 x=24859 y=460 daze=1.60 ctl=rabbit st=SINKING
+  GATE  t=121.60 x=24885 y=487 daze=1.85 ctl=rabbit st=SINKING
+  GATE  t=121.85 x=24908 y=515 daze=2.10 ctl=rabbit st=SINKING
+  GATE  t=122.10 x=24931 y=542 daze=2.35 ctl=rabbit st=SINKING
+  GATE  exit t=122.30 x=24948 daze=2.55 y=567 acc=NONE
+  GATE  return t=122.35 x=24953 tur=2.55 y=573
+  SETTLE[travel] t=125.70 x=25739 y=334 tur=0.00 rab=0.40 target=26038 room=299
+  t= 126.4  x= 25859 y=334 zone=2 control=turtle mount=RIDING phase=travel rab=SLIDING tur=CRUISING oxy=8.0 combo=0 show=5 passed=20
+  JUMP  x=26145 rock=26200-26290 y=359 spd=190 ctl=rabbit show=false
+  JUMP  t=127.60 x=26172 rab_y=261 rab_vy=-470 tur=368 st=JUMPING
+  JUMP  t=127.80 x=26205 rab_y=189 rab_vy=-290 tur=368 st=JUMPING
+  JUMP  t=128.00 x=26235 rab_y=154 rab_vy=-110 tur=368 st=JUMPING
+  JUMP  t=128.15 x=26256 rab_y=151 rab_vy=25 tur=368 st=FALLING
+  JUMP  t=128.30 x=26276 rab_y=168 rab_vy=160 tur=368 st=FALLING
+  JUMP  t=128.45 x=26295 rab_y=205 rab_vy=295 tur=368 st=FALLING
+  JUMP  t=128.60 x=26312 rab_y=310 rab_vy=0 tur=368 st=RIDING
+  t= 131.4  x= 26919 y=334 zone=2 control=turtle mount=RIDING phase=travel rab=EDGE tur=CRUISING oxy=8.0 combo=1 show=5 passed=21
+  SETTLE[travel] t=133.60 x=27423 y=437 tur=0.95 rab=2.17 target=27545 room=122
+  WARN  settle deep x=27555 y=418 daze_t=0.83
+  CROUCH exit x=27798 y=485 tur=2.03 rab=0.97
+  t= 136.4  x= 27997 y=487 zone=2 control=turtle mount=RIDING phase=travel rab=SLIDING tur=SURFACING oxy=4.3 combo=2 show=5 passed=22
+  SETTLE[travel] t=139.60 x=28731 y=453 tur=1.38 rab=1.60 target=28880 room=149
+  t= 141.5  x= 29126 y=400 zone=2 control=rabbit mount=RIDING phase=travel rab=RIDING tur=DAZED oxy=7.3 combo=2 show=5 passed=22
+  SETTLE[travel] t=143.95 x=29710 y=334 tur=0.00 rab=0.00 target=29880 room=170
+  t= 146.5  x= 30274 y=334 zone=2 control=turtle mount=RIDING phase=travel rab=SLIDING tur=CRUISING oxy=8.0 combo=1 show=6 passed=24
+  SETTLE[travel] t=150.25 x=31132 y=502 tur=1.75 rab=1.37 target=31280 room=148
+  WARN  settle deep x=31287 y=518 daze_t=1.38
+  t= 151.5  x= 31383 y=478 zone=2 control=turtle mount=RIDING phase=travel rab=EDGE tur=SURFACING oxy=5.8 combo=1 show=6 passed=24
+  t= 156.6  x= 32469 y=399 zone=2 control=rabbit mount=RIDING phase=travel rab=RIDING tur=SINKING oxy=8.0 combo=2 show=6 passed=25
+  GATE  switch t=156.95 x=32594 gate=32800-32900 tur=0.88 rab=2.37 y=419
+  GATE  t=157.05 x=32618 y=420 daze=0.98 ctl=rabbit st=SINKING
+  GATE  t=157.25 x=32663 y=426 daze=1.18 ctl=rabbit st=SINKING
+  GATE  t=157.45 x=32706 y=442 daze=1.38 ctl=rabbit st=SINKING
+  GATE  t=157.65 x=32746 y=464 daze=1.58 ctl=rabbit st=SINKING
+  GATE  t=157.85 x=32785 y=486 daze=1.78 ctl=rabbit st=SINKING
+  GATE  t=158.05 x=32820 y=508 daze=1.98 ctl=rabbit st=SINKING
+  GATE  t=158.25 x=32854 y=530 daze=2.18 ctl=rabbit st=SINKING
+  GATE  t=158.45 x=32884 y=552 daze=2.38 ctl=rabbit st=SINKING
+  GATE  t=158.65 x=32913 y=578 daze=2.57 ctl=rabbit st=DEEP
+  GATE  t=158.85 x=32941 y=610 daze=2.77 ctl=rabbit st=DEEP
+  GATE  exit t=158.95 x=32954 daze=2.87 y=626 acc=NONE
+  GATE  return t=159.00 x=32962 tur=2.87 y=634
+  t= 161.6  x= 33530 y=451 zone=2 control=turtle mount=RIDING phase=travel rab=RIDING tur=SURFACING oxy=7.5 combo=0 show=7 passed=26
+  SETTLE[travel] t=162.30 x=33746 y=338 tur=0.00 rab=0.40 target=34038 room=292
+  JUMP  x=34143 rock=34200-34290 y=354 spd=195 ctl=rabbit show=false
+  JUMP  t=164.15 x=34171 rab_y=256 rab_vy=-470 tur=363 st=JUMPING
+  JUMP  t=164.30 x=34196 rab_y=199 rab_vy=-335 tur=363 st=JUMPING
+  JUMP  t=164.45 x=34220 rab_y=162 rab_vy=-200 tur=363 st=JUMPING
+  JUMP  t=164.60 x=34243 rab_y=146 rab_vy=-65 tur=363 st=JUMPING
+  JUMP  t=164.75 x=34264 rab_y=149 rab_vy=70 tur=363 st=FALLING
+  JUMP  t=164.90 x=34284 rab_y=173 rab_vy=205 tur=363 st=FALLING
+  JUMP  t=165.05 x=34302 rab_y=218 rab_vy=340 tur=363 st=FALLING
+  t= 166.7  x= 34622 y=340 zone=2 control=turtle mount=RIDING phase=travel rab=SLIDING tur=SURFACING oxy=8.0 combo=1 show=7 passed=27
+  SETTLE[travel] t=167.35 x=34817 y=355 tur=0.40 rab=1.80 target=34945 room=128
+  CROUCH exit x=35199 y=477 tur=1.68 rab=0.10
+  t= 171.7  x= 35717 y=336 zone=2 control=turtle mount=RIDING phase=travel rab=SLIDING tur=CRUISING oxy=8.0 combo=2 show=7 passed=28
+  SETTLE[travel] t=173.55 x=36105 y=469 tur=1.50 rab=0.35 target=36280 room=175
+  t= 176.7  x= 36799 y=334 zone=2 control=turtle mount=RIDING phase=travel rab=SHOWTIME tur=CRUISING oxy=8.0 combo=0 show=7 passed=29
+  SETTLE[travel] t=178.10 x=37183 y=334 tur=0.00 rab=0.00 target=37480 room=297
+  SETTLE[travel] t=181.15 x=37868 y=403 tur=0.95 rab=0.38 target=38038 room=170
+  t= 181.8  x= 37969 y=425 zone=2 control=turtle mount=RIDING phase=travel rab=SLIDING tur=DIVING oxy=7.7 combo=1 show=8 passed=30
+  JUMP  x=38138 rock=38200-38290 y=417 spd=195 ctl=rabbit show=false
+  JUMP  t=182.50 x=38166 rab_y=315 rab_vy=-470 tur=423 st=JUMPING
+  JUMP  t=182.65 x=38193 rab_y=258 rab_vy=-335 tur=423 st=JUMPING
+  JUMP  t=182.80 x=38219 rab_y=222 rab_vy=-200 tur=423 st=JUMPING
+  JUMP  t=182.95 x=38243 rab_y=205 rab_vy=-65 tur=423 st=JUMPING
+  JUMP  t=183.10 x=38266 rab_y=209 rab_vy=70 tur=423 st=FALLING
+  JUMP  t=183.25 x=38288 rab_y=233 rab_vy=205 tur=423 st=FALLING
+  JUMP  t=183.40 x=38308 rab_y=277 rab_vy=340 tur=423 st=FALLING
+  SETTLE[travel] t=184.50 x=38548 y=407 tur=0.68 rab=1.00 target=38838 room=290
+  JUMP  x=38945 rock=39000-39090 y=360 spd=195 ctl=rabbit show=false
+  JUMP  t=186.35 x=38973 rab_y=262 rab_vy=-470 tur=369 st=JUMPING
+  JUMP  t=186.50 x=38998 rab_y=205 rab_vy=-335 tur=369 st=JUMPING
+  t= 186.8  ZONE 3 MUSCLE MAYHEM  x=39014
+  t= 186.8  x= 39014 y=369 zone=3 control=rabbit mount=AIRBORNE phase=travel rab=JUMPING tur=SINKING oxy=8.0 combo=2 show=8 passed=31
+  JUMP  t=186.65 x=39022 rab_y=168 rab_vy=-200 tur=369 st=JUMPING
+  JUMP  t=186.80 x=39044 rab_y=151 rab_vy=-65 tur=369 st=JUMPING
+  JUMP  t=186.95 x=39066 rab_y=155 rab_vy=70 tur=369 st=FALLING
+  JUMP  t=187.10 x=39085 rab_y=179 rab_vy=205 tur=369 st=FALLING
+  JUMP  t=187.25 x=39104 rab_y=223 rab_vy=340 tur=369 st=FALLING
+  SETTLE[travel] t=190.55 x=39926 y=334 tur=0.00 rab=0.15 target=40145 room=219
+  t= 191.8  x= 40196 y=339 zone=3 control=rabbit mount=RIDING phase=travel rab=CROUCHING tur=DAZED oxy=8.0 combo=0 show=9 passed=32
+  CROUCH exit x=40396 y=436 tur=1.25 rab=0.00
+  SETTLE[travel] t=195.65 x=41139 y=382 tur=0.70 rab=1.80 target=41280 room=141
+  t= 196.9  x= 41408 y=350 zone=3 control=turtle mount=RIDING phase=travel rab=EDGE tur=SURFACING oxy=8.0 combo=1 show=9 passed=33
+  GATE  switch t=201.50 x=42552 gate=42600-42700 tur=1.40 rab=2.62 y=538
+  GATE  t=201.60 x=42578 y=538 daze=1.50 ctl=rabbit st=SINKING
+  t= 201.9  x= 42603 y=538 zone=3 control=rabbit mount=RIDING phase=travel rab=RIDING tur=SINKING oxy=4.1 combo=2 show=9 passed=34
+  GATE  t=201.80 x=42627 y=538 daze=1.70 ctl=rabbit st=SINKING
+  GATE  t=202.00 x=42674 y=539 daze=1.90 ctl=rabbit st=SINKING
+  GATE  t=202.20 x=42719 y=550 daze=2.10 ctl=rabbit st=SINKING
+  GATE  exit t=202.35 x=42751 daze=2.25 y=564 acc=NONE
+  GATE  return t=202.40 x=42762 tur=2.25 y=569
+  SETTLE[travel] t=204.55 x=43321 y=367 tur=0.00 rab=0.00 target=43615 room=295
+  JUMP  x=43725 rock=43800-43890 y=355 spd=215 ctl=rabbit show=false
+  JUMP  t=206.30 x=43756 rab_y=256 rab_vy=-470 tur=364 st=JUMPING
+  JUMP  t=206.45 x=43785 rab_y=199 rab_vy=-335 tur=364 st=JUMPING
+  JUMP  t=206.60 x=43811 rab_y=163 rab_vy=-200 tur=364 st=JUMPING
+  JUMP  t=206.75 x=43837 rab_y=146 rab_vy=-65 tur=364 st=JUMPING
+  t= 207.0  x= 43845 y=364 zone=3 control=rabbit mount=AIRBORNE phase=travel rab=JUMPING tur=SINKING oxy=8.0 combo=0 show=10 passed=35
+  JUMP  t=206.90 x=43861 rab_y=150 rab_vy=70 tur=364 st=FALLING
+  JUMP  t=207.05 x=43884 rab_y=174 rab_vy=205 tur=364 st=FALLING
+  JUMP  t=207.20 x=43905 rab_y=218 rab_vy=340 tur=364 st=FALLING
+  SETTLE[travel] t=209.30 x=44416 y=350 tur=0.35 rab=1.65 target=44545 room=129
+  CROUCH exit x=44796 y=445 tur=1.55 rab=0.40
+  t= 212.0  x= 44997 y=451 zone=3 control=turtle mount=RIDING phase=travel rab=SLIDING tur=SURFACING oxy=6.9 combo=2 show=10 passed=37
+  SETTLE[travel] t=213.95 x=45533 y=378 tur=0.65 rab=2.32 target=45680 room=147
+  t= 217.0  x= 46218 y=408 zone=3 control=turtle mount=RIDING phase=travel rab=SHOWTIME tur=SURFACING oxy=6.6 combo=0 show=10 passed=38
+  SETTLE[travel] t=218.05 x=46543 y=334 tur=0.00 rab=0.00 target=46480 room=-63
+  t= 222.1  x= 47525 y=368 zone=3 control=rabbit mount=RIDING phase=travel rab=RIDING tur=DAZED oxy=8.0 combo=1 show=11 passed=39
+  SETTLE[travel] t=221.95 x=47534 y=372 tur=0.65 rab=1.97 target=47680 room=146
+  t= 227.1  x= 48720 y=505 zone=3 control=rabbit mount=RIDING phase=travel rab=RIDING tur=DEEP oxy=5.0 combo=2 show=11 passed=40
+  GATE  switch t=227.80 x=48952 gate=49000-49100 tur=1.40 rab=2.80 y=510
+  GATE  t=227.90 x=48978 y=510 daze=1.50 ctl=rabbit st=SINKING
+  GATE  t=228.10 x=49027 y=510 daze=1.70 ctl=rabbit st=SINKING
+  GATE  t=228.30 x=49074 y=511 daze=1.90 ctl=rabbit st=SINKING
+  GATE  t=228.50 x=49118 y=522 daze=2.10 ctl=rabbit st=SINKING
+  GATE  exit t=228.65 x=49150 daze=2.25 y=536 acc=NONE
+  GATE  return t=228.70 x=49162 tur=2.25 y=541
+  SETTLE[travel] t=230.85 x=49720 y=348 tur=0.00 rab=0.00 target=50015 room=295
+  t= 232.1  x= 49993 y=334 zone=3 control=turtle mount=RIDING phase=travel rab=RELAXED tur=CRUISING oxy=8.0 combo=0 show=12 passed=41
+  JUMP  x=50125 rock=50200-50290 y=354 spd=215 ctl=rabbit show=false
+  JUMP  t=232.60 x=50156 rab_y=256 rab_vy=-470 tur=363 st=JUMPING
+  JUMP  t=232.75 x=50184 rab_y=199 rab_vy=-335 tur=363 st=JUMPING
+  JUMP  t=232.90 x=50211 rab_y=162 rab_vy=-200 tur=363 st=JUMPING
+  JUMP  t=233.05 x=50237 rab_y=146 rab_vy=-65 tur=363 st=JUMPING
+  JUMP  t=233.20 x=50261 rab_y=150 rab_vy=70 tur=363 st=FALLING
+  JUMP  t=233.35 x=50284 rab_y=174 rab_vy=205 tur=363 st=FALLING
+  JUMP  t=233.50 x=50305 rab_y=218 rab_vy=340 tur=363 st=FALLING
+  t= 237.2  x= 51170 y=369 zone=3 control=rabbit mount=RIDING phase=travel rab=RIDING tur=DAZED oxy=8.0 combo=1 show=12 passed=42
+  SETTLE[travel] t=237.15 x=51200 y=382 tur=0.70 rab=2.35 target=51345 room=145
+  WARN  settle deep x=51351 y=389 daze_t=0.45
+  CROUCH exit x=51597 y=469 tur=1.60 rab=1.32
+  SETTLE[travel] t=241.90 x=52267 y=452 tur=1.50 rab=0.32 target=52480 room=213
+  t= 242.2  x= 52284 y=461 zone=3 control=turtle mount=RIDING phase=travel rab=RELAXED tur=DIVING oxy=7.6 combo=2 show=12 passed=43
+  GATE  switch t=247.05 x=53591 gate=53800-53900 tur=0.00 rab=0.10 y=334
+  t= 247.3  x= 53604 y=334 zone=3 control=rabbit mount=RIDING phase=travel rab=RIDING tur=DAZED oxy=8.0 combo=0 show=13 passed=44
+  GATE  t=247.15 x=53617 y=335 daze=0.10 ctl=rabbit st=DAZED
+  GATE  t=247.35 x=53664 y=343 daze=0.30 ctl=rabbit st=DAZED
+  GATE  t=247.55 x=53708 y=359 daze=0.50 ctl=rabbit st=DAZED
+  GATE  t=247.75 x=53747 y=377 daze=0.70 ctl=rabbit st=DAZED
+  GATE  t=247.95 x=53783 y=397 daze=0.90 ctl=rabbit st=SINKING
+  GATE  t=248.15 x=53817 y=419 daze=1.10 ctl=rabbit st=SINKING
+  GATE  t=248.35 x=53848 y=441 daze=1.30 ctl=rabbit st=SINKING
+  GATE  t=248.55 x=53877 y=463 daze=1.50 ctl=rabbit st=SINKING
+  GATE  t=248.75 x=53904 y=485 daze=1.70 ctl=rabbit st=SINKING
+  GATE  t=248.95 x=53928 y=507 daze=1.90 ctl=rabbit st=SINKING
+  GATE  t=249.15 x=53949 y=529 daze=2.10 ctl=rabbit st=SINKING
+  GATE  exit t=249.15 x=53949 daze=2.10 y=529 acc=NONE
+  GATE  return t=249.20 x=53956 tur=2.10 y=534
+  t= 252.3  x= 54668 y=364 zone=3 control=rabbit mount=RIDING phase=travel rab=RIDING tur=DAZED oxy=8.0 combo=1 show=13 passed=45
+  SETTLE[travel] t=252.10 x=54668 y=364 tur=0.65 rab=1.92 target=54815 room=147
+  JUMP  x=54916 rock=55000-55090 y=376 spd=222 ctl=rabbit show=false
+  JUMP  t=253.25 x=54948 rab_y=275 rab_vy=-470 tur=382 st=JUMPING
+  JUMP  t=253.40 x=54979 rab_y=218 rab_vy=-335 tur=382 st=JUMPING
+  JUMP  t=253.55 x=55009 rab_y=181 rab_vy=-200 tur=382 st=JUMPING
+  JUMP  t=253.70 x=55038 rab_y=164 rab_vy=-65 tur=382 st=JUMPING
+  JUMP  t=253.85 x=55065 rab_y=168 rab_vy=70 tur=382 st=FALLING
+  JUMP  t=254.00 x=55090 rab_y=192 rab_vy=205 tur=382 st=FALLING
+  JUMP  t=254.15 x=55114 rab_y=236 rab_vy=340 tur=382 st=FALLING
+  SETTLE[travel] t=256.20 x=55619 y=350 tur=0.35 rab=1.60 target=55745 room=126
+  t= 257.3  x= 55843 y=357 zone=3 control=rabbit mount=RIDING phase=travel rab=CROUCHING tur=DAZED oxy=8.0 combo=2 show=13 passed=46
+  CROUCH exit x=55999 y=438 tur=1.55 rab=0.35
+  SETTLE[travel] t=260.20 x=56590 y=334 tur=0.00 rab=0.00 target=56880 room=290
+  t= 262.4  x= 57110 y=334 zone=3 control=turtle mount=RIDING phase=travel rab=SLIDING tur=CRUISING oxy=8.0 combo=0 show=14 passed=47
+  SETTLE[travel] t=264.00 x=57512 y=425 tur=1.15 rab=0.33 target=57680 room=168
+  t= 267.4  x= 58288 y=412 zone=3 control=turtle mount=RIDING phase=travel rab=SLIDING tur=DIVING oxy=8.0 combo=2 show=14 passed=49
+  SETTLE[travel] t=269.00 x=58732 y=364 tur=0.65 rab=2.40 target=58880 room=148
+  t= 272.5  x= 59534 y=336 zone=3 control=turtle mount=RIDING phase=travel rab=SHOWTIME tur=CRUISING oxy=8.0 combo=0 show=14 passed=50
+  GATE  switch t=274.05 x=59989 gate=60200-60300 tur=0.00 rab=0.05 y=334
+  GATE  t=274.15 x=60014 y=335 daze=0.10 ctl=rabbit st=DAZED
+  GATE  t=274.35 x=60062 y=343 daze=0.30 ctl=rabbit st=DAZED
+  GATE  t=274.55 x=60105 y=359 daze=0.50 ctl=rabbit st=DAZED
+  GATE  t=274.75 x=60145 y=377 daze=0.70 ctl=rabbit st=DAZED
+  GATE  t=274.95 x=60181 y=397 daze=0.90 ctl=rabbit st=SINKING
+  GATE  t=275.15 x=60214 y=419 daze=1.10 ctl=rabbit st=SINKING
+  GATE  t=275.35 x=60246 y=441 daze=1.30 ctl=rabbit st=SINKING
+  GATE  t=275.55 x=60275 y=463 daze=1.50 ctl=rabbit st=SINKING
+  GATE  t=275.75 x=60301 y=485 daze=1.70 ctl=rabbit st=SINKING
+  GATE  t=275.95 x=60325 y=507 daze=1.90 ctl=rabbit st=SINKING
+  GATE  t=276.15 x=60347 y=529 daze=2.10 ctl=rabbit st=SINKING
+  GATE  exit t=276.20 x=60352 daze=2.15 y=535 acc=NONE
+  GATE  return t=276.25 x=60358 tur=2.15 y=540
+  t= 277.5  x= 60612 y=504 zone=3 control=turtle mount=RIDING phase=travel rab=SLIDING tur=SURFACING oxy=5.8 combo=1 show=15 passed=51
+  SETTLE[travel] t=279.15 x=61070 y=360 tur=0.65 rab=1.92 target=61215 room=145
+  JUMP  x=61318 rock=61400-61490 y=372 spd=222 ctl=rabbit show=false
+  JUMP  t=280.30 x=61350 rab_y=271 rab_vy=-470 tur=378 st=JUMPING
+  JUMP  t=280.45 x=61381 rab_y=214 rab_vy=-335 tur=378 st=JUMPING
+  JUMP  t=280.60 x=61411 rab_y=177 rab_vy=-200 tur=378 st=JUMPING
+  JUMP  t=280.75 x=61439 rab_y=161 rab_vy=-65 tur=378 st=JUMPING
+  JUMP  t=280.90 x=61466 rab_y=164 rab_vy=70 tur=378 st=FALLING
+  JUMP  t=281.05 x=61492 rab_y=188 rab_vy=205 tur=378 st=FALLING
+  JUMP  t=281.20 x=61516 rab_y=233 rab_vy=340 tur=378 st=FALLING
+  t= 282.5  x= 61781 y=363 zone=3 control=turtle mount=RIDING phase=travel rab=SLIDING tur=SURFACING oxy=8.0 combo=2 show=15 passed=52
+  SETTLE[travel] t=283.25 x=62021 y=350 tur=0.35 rab=1.60 target=62145 room=124
+  CROUCH exit x=62400 y=439 tur=1.55 rab=0.35
+  SETTLE[travel] t=287.25 x=62991 y=334 tur=0.00 rab=0.00 target=63280 room=289
+  t= 287.6  x= 63030 y=334 zone=3 control=turtle mount=RIDING phase=travel rab=RIDING tur=CRUISING oxy=8.0 combo=0 show=16 passed=53
+  t= 292.6  x= 64279 y=493 zone=3 control=rabbit mount=RIDING phase=travel rab=RIDING tur=SINKING oxy=6.9 combo=1 show=16 passed=54
+  GATE  switch t=293.50 x=64552 gate=64600-64700 tur=1.00 rab=2.05 y=511
+  GATE  t=293.60 x=64577 y=511 daze=1.10 ctl=rabbit st=SINKING
+  GATE  t=293.80 x=64627 y=511 daze=1.30 ctl=rabbit st=SINKING
+  GATE  t=294.00 x=64674 y=512 daze=1.50 ctl=rabbit st=SINKING
+  GATE  t=294.20 x=64718 y=521 daze=1.70 ctl=rabbit st=SINKING
+  GATE  exit t=294.35 x=64750 daze=1.85 y=534 acc=NONE
+  GATE  return t=294.40 x=64761 tur=1.85 y=538
+  t= 297.6  x= 65477 y=434 zone=3 control=turtle mount=RIDING phase=travel rab=SLIDING tur=DIVING oxy=6.5 combo=2 show=16 passed=55
+  ok  run 2 finish captured
+  FINISH  run=2 time=299.9 score=12150 grade=S passed=55/55 casualties=0 engine=0 show=16 streak=55
+  ok  run 2 reached result screen
+  ok  run 2 state RESULT
+  ok  run 2 result shows score + streak
+  ok  run 2 result shows best records
+  ok  run 1 simulated >= 240 s (300.0)
+  ok  run 2 simulated >= 240 s (299.9)
+  ok  run 1 visited all 3 zones
+  ok  run 1 passed >= 40 groups (55/55)
+  ok  run 1 grade in S-D (S)
+  ok  run 2 visited all 3 zones
+  ok  run 2 passed >= 40 groups (55/55)
+  ok  run 2 grade in S-D (S)
+  ok  run 2 started from result Retry
+  ok  no accident lasts >=5s (max 0.00s)
+  ok  no unrecoverable stall (max 0.0s)
+  ok  best.json exists
+  ok  best.json is valid JSON
+  ok  best.json stores 4 record fields
+  BEST  time=296.63 accidents=0.0 score=12460.0 streak=55.0  -> C:/Users/26549/AppData/Roaming/Godot/app_userdata/Turbbit Bro!/best.json
+  
+  RESULT  run1 time=300.0 score=12150 grade=S passed=55 accidents=0
+  RESULT  run2 time=299.9 score=12150 grade=S passed=55 accidents=0  (Retry)
+  RESULT  zones=[1, 2, 3]  max_accident=0.00s  max_stuck=0.0s  failures=0
+  log -> D:/GAMESTUDIO/TURBBIT/docs/reports/stage3-run.log
+STAGE3 PLAYTEST: PASS

@@ -1,0 +1,55 @@
+{
+  "controls": {
+    "gate_dive": {
+      "accident_state": "NONE",
+      "celebrate_t": -1.0,
+      "peak_hop_px": 0.0
+    },
+    "plain_jump": {
+      "celebrate_t": -1.0,
+      "jumped": true,
+      "landed": true,
+      "peak_hop_px": 0.0,
+      "pickup_count": 2
+    },
+    "rescue_return": {
+      "accident_state": "NONE",
+      "celebrate_t": -1.0,
+      "peak_hop_px": 0.0
+    }
+  },
+  "generated_at": "2026-11-13T20:23:39",
+  "pickup": {
+    "accident_state": "NONE",
+    "accidents": 0,
+    "banner_expected": true,
+    "carry_frames_before_trigger": 25,
+    "celebrate_kind": "pickup",
+    "celebrate_t_at_success": 0.0,
+    "cleared_after_frames": 21,
+    "expected_kind": "pickup",
+    "frames_nonzero": 19,
+    "mount": "RIDING",
+    "peak_hop_px": 12.0,
+    "pickup_count_delta": 1,
+    "position_unchanged_by_offset": true,
+    "rescue_count_delta": 0,
+    "riding": true
+  },
+  "rescue": {
+    "accident_state": "NONE",
+    "accidents": 0,
+    "carry_frames_before_trigger": 25,
+    "celebrate_kind": "rescue",
+    "celebrate_t_at_success": 0.0,
+    "cleared_after_frames": 21,
+    "expected_kind": "rescue",
+    "frames_nonzero": 19,
+    "mount": "RIDING",
+    "peak_hop_px": 12.0,
+    "pickup_count_delta": 0,
+    "position_unchanged_by_offset": true,
+    "rescue_count_delta": 1,
+    "riding": true
+  }
+}

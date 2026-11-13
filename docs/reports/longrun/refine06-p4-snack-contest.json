@@ -1,0 +1,121 @@
+{
+  "data": {
+    "constants": {
+      "contact_px": 70.0,
+      "interest_px": 320.0,
+      "rabbit_jump_scale": 1.15,
+      "rabbit_tail_px": 180.0
+    },
+    "eat_then_jump": {
+      "boosted_px": 244.0,
+      "eaten_by": "rabbit",
+      "jump_boost_after_eat": 1.15,
+      "normal_px": 183.8,
+      "ratio": 1.33
+    },
+    "formal_track": {
+      "count": 9,
+      "xs": [
+        3250.0,
+        14100.0,
+        18950.0,
+        26350.0,
+        33750.0,
+        53100.0,
+        54590.0,
+        59270.0,
+        62590.0
+      ]
+    },
+    "interest_window": {
+      "expect_x": 3250.0,
+      "interest_at_320": 3250.0,
+      "interest_at_321": -1.0,
+      "rabbit_wants": true,
+      "reaction_s": 1.45,
+      "turtle_wants": true,
+      "zone_speed": 220.0
+    },
+    "jump_peak": {
+      "boosted_px": 244.0,
+      "normal_px": 183.8,
+      "ratio": 1.33
+    },
+    "rabbit_airborne_skip": {
+      "accident_count": 0,
+      "airborne_at_start": true,
+      "bro_meter": 0,
+      "eaten": false,
+      "feedback_count": 0,
+      "rabbit_boost_active": false,
+      "score": 0,
+      "score_log_size": 0,
+      "turtle_boost_active": false
+    },
+    "rabbit_eat": {
+      "accident_count": 0,
+      "boost_speed": 0.0,
+      "boost_until_x": -1.0,
+      "bro_meter": 0,
+      "control": "rabbit",
+      "drift_after": 0.8,
+      "drift_before": 0.8,
+      "eaten": true,
+      "eaten_by": "rabbit",
+      "fed_delta": 0,
+      "feedback": "兔子吃了！ 下一跳更高！",
+      "gulp_t": 0.45,
+      "rabbit_boost_active": true,
+      "rabbit_boost_expected_x": 4160.0,
+      "rabbit_boost_until_x": 4160.0,
+      "rabbit_jump_boost": 1.15,
+      "score_delta": 0,
+      "turtle_boost_active": false,
+      "zone_speed": 220.0
+    },
+    "shift_decides": {
+      "rabbit": {
+        "eaten": true,
+        "eaten_by": "rabbit",
+        "feedback": "兔子吃了！ 下一跳更高！"
+      },
+      "turtle": {
+        "eaten": true,
+        "eaten_by": "turtle",
+        "feedback": "TURBO！亲手喂到！乌龟很满足！"
+      }
+    },
+    "source": {
+      "contest_draw": true,
+      "eater_fn": true,
+      "eater_used": true,
+      "rabbit_fx": true,
+      "rabbit_gulp_mouth": true,
+      "want_mark": true
+    },
+    "turtle_eat": {
+      "accident_count": 0,
+      "boost_speed": 253.0,
+      "boost_until_x": 4160.0,
+      "bro_meter": 0,
+      "control": "turtle",
+      "drift_after": 0.0,
+      "drift_before": 0.8,
+      "eaten": true,
+      "eaten_by": "turtle",
+      "fed_delta": 1,
+      "feedback": "TURBO！亲手喂到！乌龟很满足！",
+      "gulp_t": 0.45,
+      "rabbit_boost_active": false,
+      "rabbit_boost_expected_x": 4160.0,
+      "rabbit_boost_until_x": -1.0,
+      "rabbit_jump_boost": 1.0,
+      "score_delta": 30,
+      "turtle_boost_active": true,
+      "zone_speed": 220.0
+    }
+  },
+  "failures": [],
+  "generated_at": "2026-11-13T19:44:33",
+  "note": "P4 食物争夺：直接调用正式 race.gd 的食物逻辑；引擎输入代理，不是真人试玩。"
+}

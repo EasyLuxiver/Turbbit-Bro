@@ -1,0 +1,41 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+LEVEL SEED 20261112
+SNACK DRAW #1 group=beam1 zone=1 kind=LOW_BEAM (fixed)
+SNACK DRAW #2 group=rock3 zone=1 kind=SURFACE_ROCK (was SURFACE_ROCK)
+SNACK DRAW #3 group=gate3 zone=2 kind=SHARK (was DIVE_GATE)
+SNACK DRAW #4 group=rock6 zone=2 kind=DIVE_GATE (was SURFACE_ROCK)
+SNACK DRAW #5 group=shark5 zone=2 kind=SHARK (was SHARK)
+SNACK DRAW #6 group=shark8 zone=3 kind=SURFACE_ROCK (was SHARK)
+SNACK DRAW #7 group=beam8 zone=3 kind=LOW_BEAM (was LOW_BEAM)
+SNACK DRAW #8 group=shark9 zone=3 kind=SURFACE_ROCK (was SHARK)
+SNACK DRAW #9 group=gate8 zone=3 kind=LOW_BEAM (was DIVE_GATE)
+ok  race scene loads
+ok  normal jump/dive/SHIFT do not fill the meter (meter=0 accidents=0)
+ok  normal actions do not cost score (2000 -> 2000)
+ok  one continuous collision counts once (accidents 0 -> 1)
+ok  one mistake costs exactly 100 (2000 -> 1900)
+ok  first slot filled, joint not pending (meter=1)
+ok  hud bro meter shows 1/3 (BRO METER 1/3)
+ok  second slot filled (meter=2)
+ok  second mistake costs exactly 100
+ok  third slot fills meter and arms the joint show (meter=3 pending=true)
+ok  joint accident counted once (0 -> 1)
+ok  third mistake costs 100 + 200 joint (1900 -> 1600)
+ok  hud bro meter shows 3/3 (BRO METER 3/3)
+ok  joint show starts after the stun clears (state=BRO_BREAK)
+ok  joint show timer is running
+ok  joint show holds the turtle still
+ok  joint show is announced on screen (BRO METER 满 —— 联合惩罚！)
+ok  joint show ends and state returns to NONE
+ok  meter clears after the show (meter=0)
+ok  turtle is restored to cruise depth (y=334 want 334)
+ok  turtle is not rewound by the punishment (x 2023 -> 2023)
+ok  rabbit is riding again (mount=RIDING rabbit=RIDING)
+ok  short protection granted (rabbit 1.50 turtle 1.50)
+ok  run continues after the joint punishment
+ok  hud bro meter shows 0/3 after recovery (BRO METER 0/3)
+ok  second joint accident triggers again (1 -> 2)
+ok  second joint show starts
+ok  second joint show ends and clears the meter
+STAGE4 BRO METER: PASS

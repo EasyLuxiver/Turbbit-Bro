@@ -1,0 +1,60 @@
+{
+  "edge_px": 1080.0,
+  "generated_at": "2026-11-13T20:32:55",
+  "note": "P1-6 Z3 early warning: real race physics; icon geometry measured from state, not screenshots.",
+  "rows": [
+    {
+      "after_pass_group": "",
+      "case": "log5",
+      "checks": {
+        "clears_after_pass": true,
+        "fires": true,
+        "icon_at_screen_edge": true,
+        "icon_in_sky_layer": true,
+        "inactive_before_range": true,
+        "kind_is_log": true,
+        "lead_about_5s": true,
+        "nearest_complex_is_log5": true,
+        "only_edge_or_before": true
+      },
+      "first_dist": 1298.0,
+      "first_x": 42812.0,
+      "group": "log5",
+      "icon_edge_offset": 1080.0,
+      "icon_y": 150.0,
+      "kind": "FLOATING_LOG",
+      "lead_s": 4.99,
+      "pass": true,
+      "start_x": 42700.0
+    },
+    {
+      "case": "wall3",
+      "checks": {
+        "fires": true,
+        "inactive_before_range": true,
+        "kind_is_wall": true,
+        "lead_about_5s": true,
+        "nearest_complex_is_wall3": true
+      },
+      "first_dist": 1283.0,
+      "group": "wall3",
+      "kind": "HIGH_WALL",
+      "lead_s": 4.94,
+      "pass": true,
+      "start_x": 45000.0
+    },
+    {
+      "case": "zone2_only",
+      "checks": {
+        "in_zone2": true,
+        "near_complex_present": true,
+        "no_warning_in_zone2": true
+      },
+      "dist_to_log3": 550.0,
+      "pass": true,
+      "start_x": 30000.0,
+      "warn_group": ""
+    }
+  ],
+  "warn_range_px": 1300.0
+}

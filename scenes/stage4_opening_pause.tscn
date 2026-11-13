@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/test/stage4_opening_pause.gd" id="1_openpause"]
+
+[node name="Stage4OpeningPause" type="Node"]
+script = ExtResource("1_openpause")

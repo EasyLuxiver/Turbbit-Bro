@@ -1,0 +1,2338 @@
+STAGE4 DRIVER  engineering proxy (not human playtest)  time_scale=3.0
+profiles=3 runs_each=4
+
+---- beginner run 1  seed=1133402383 ----
+t=   2.4 x=  1038 NOTICE rock1       SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.1 turtle_daze=0.0
+       diveSTART t=2.95 x=1148 ctrl=turtle y=300 down_applied=false show=false
+t=   6.3 x=  1783 NOTICE beam1       LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=393 oxy=5.0 rabbit_daze=0.1 turtle_daze=1.5
+       diveSTART t=7.10 x=1942 ctrl=rabbit y=303 down_applied=false show=false
+t=  13.9 x=  3229 NOTICE reef1       UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.0 turtle_daze=0.0
+t=  15.4 x=  3555 PUMP -> rabbit  daze=3.0
+t=  16.5 x=  3756 NOTICE reef2       UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.7 turtle_daze=0.8
+t=  16.6 x=  3771 SHIFT DROPPED -> turtle  state=1 accident=NONE show=true ctrl=turtle
+t=  18.3 x=  4154 NOTICE wall1       SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=363 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=18.30 x=4154 ctrl=rabbit y=363 down_applied=true show=false
+t=  21.6 x=  4880 NOTICE airbar      AIR_BAR         -> DIVE  (WRONG)
+       plan ctrl=turtle y=408 oxy=4.7 rabbit_daze=2.3 turtle_daze=0.0
+       diveSTART t=21.60 x=4880 ctrl=turtle y=408 down_applied=false show=false
+t=  22.3 x=  5034 PUMP -> rabbit  daze=3.0
+t=  22.8 x=  5141 NOTICE combo_rock  SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=408 oxy=3.5 rabbit_daze=3.3 turtle_daze=0.2
+t=  24.7 x=  5547 NOTICE combo_beam  LOW_BEAM        -> SURFACE  (WRONG)
+       plan ctrl=rabbit y=408 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t=  25.7 x=  5778 ACCIDENT RABBIT_STUN  zone=1 control=turtle y=318 oxy=7.0
+t=  31.1 x=  6724 NOTICE rock2       SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.0 turtle_daze=0.3
+       diveSTART t=32.60 x=6917 ctrl=rabbit y=323 down_applied=false show=false
+t=  42.9 x=  8743 NOTICE beam2       LOW_BEAM        -> SURFACE  (WRONG)
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.8 turtle_daze=0.0
+t=  44.3 x=  9039 ACCIDENT RABBIT_STUN  zone=1 control=turtle y=300 oxy=8.0
+t=  45.1 x=  9168 NOTICE beam2       LOW_BEAM        -> SURFACE  (WRONG)
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t=  54.1 x= 10750 NOTICE rock3       SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.1 turtle_daze=0.1
+       diveSTART t=54.90 x=10888 ctrl=rabbit y=300 down_applied=false show=false
+t=  64.7 x= 12631 NOTICE beam3       LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=317 oxy=8.0 rabbit_daze=0.0 turtle_daze=1.7
+       diveSTART t=65.80 x=12793 ctrl=turtle y=300 down_applied=false show=false
+t=  79.4 x= 15303 NOTICE z2_reef_a   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=305 oxy=8.0 rabbit_daze=0.3 turtle_daze=1.2
+t=  84.0 x= 16353 NOTICE z2_reef_b   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t=  89.8 x= 17541 NOTICE z2_wall_a   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.3 turtle_daze=0.1
+       diveSTART t=90.25 x=17637 ctrl=turtle y=300 down_applied=false show=false
+t=  91.6 x= 17961 PUMP -> rabbit  daze=3.0
+t=  93.6 x= 18400 PUMP -> rabbit  daze=3.0
+t=  96.1 x= 18941 NOTICE z2_beam_a   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=300 oxy=4.9 rabbit_daze=3.1 turtle_daze=0.3
+       diveSTART t=97.05 x=19092 ctrl=rabbit y=305 down_applied=false show=false
+t=  99.0 x= 19517 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 102.5 x= 20306 NOTICE z2_rock_a   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=387 oxy=6.0 rabbit_daze=0.0 turtle_daze=1.0
+       diveSTART t=103.50 x=20445 ctrl=turtle y=385 down_applied=false show=false
+t= 109.7 x= 21742 NOTICE z2_bar_a    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.9 turtle_daze=0.0
+t= 111.8 x= 22212 PUMP -> rabbit  daze=3.0
+t= 116.6 x= 23147 NOTICE z2_reef_c   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.1 turtle_daze=0.3
+t= 118.2 x= 23512 PUMP -> rabbit  daze=3.0
+t= 122.6 x= 24562 NOTICE z2_wall_b   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.0 turtle_daze=0.0
+       diveSTART t=122.95 x=24634 ctrl=turtle y=300 down_applied=false show=false
+t= 123.5 x= 24757 ACCIDENT TURTLE_REEF  zone=2 control=rabbit y=300 oxy=8.0
+t= 123.6 x= 24780 SHIFT DROPPED -> turtle  state=1 accident=TURTLE_REEF show=false ctrl=rabbit
+t= 125.5 x= 24804 NOTICE z2_wall_b   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=125.50 x=24804 ctrl=rabbit y=300 down_applied=false show=false
+t= 129.7 x= 25801 PUMP -> rabbit  daze=3.0
+t= 130.3 x= 25929 NOTICE z2_rock_b   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=7.9 rabbit_daze=3.3 turtle_daze=0.3
+       diveSTART t=131.25 x=26090 ctrl=rabbit y=305 down_applied=false show=false
+t= 137.6 x= 27330 NOTICE z2_beam_b   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=317 oxy=4.9 rabbit_daze=0.5 turtle_daze=2.9
+       diveSTART t=138.05 x=27426 ctrl=turtle y=300 down_applied=false show=false
+t= 140.8 x= 28071 PUMP -> rabbit  daze=3.2
+t= 142.9 x= 28530 PUMP -> rabbit  daze=3.0
+t= 143.7 x= 28718 NOTICE z2_reef_d   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=3.2 turtle_daze=0.6
+t= 144.8 x= 28938 PUMP -> rabbit  daze=3.0
+t= 148.3 x= 29729 NOTICE z2_reef_e   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t= 155.0 x= 31128 NOTICE z2_bar_b    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.0 turtle_daze=0.2
+t= 156.4 x= 31450 PUMP -> rabbit  daze=3.0
+t= 158.3 x= 31858 PUMP -> rabbit  daze=3.0
+t= 160.5 x= 32339 PUMP -> rabbit  daze=3.0
+t= 161.3 x= 32517 NOTICE z2_wall_c   SURFACE_WALL    -> SURFACE  (WRONG)
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=3.3 turtle_daze=0.5
+t= 162.4 x= 32747 PUMP -> rabbit  daze=3.0
+t= 162.5 x= 32759 ACCIDENT TURTLE_REEF  zone=2 control=rabbit y=301 oxy=8.0
+t= 162.7 x= 32795 SHIFT DROPPED -> rabbit  state=1 accident=TURTLE_REEF show=false ctrl=rabbit
+t= 164.5 x= 32823 NOTICE z2_wall_c   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=164.45 x=32823 ctrl=rabbit y=300 down_applied=false show=false
+t= 169.2 x= 33934 NOTICE z2_rock_c   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=3.3 turtle_daze=0.2
+       diveSTART t=170.00 x=34081 ctrl=rabbit y=301 down_applied=false show=false
+t= 173.1 x= 34687 NOTICE z2_beam_c   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=406 oxy=5.3 rabbit_daze=0.4 turtle_daze=1.5
+       diveSTART t=173.80 x=34828 ctrl=turtle y=301 down_applied=false show=false
+t= 177.1 x= 35596 PUMP -> rabbit  daze=3.0
+t= 179.0 x= 36003 PUMP -> rabbit  daze=3.0
+t= 179.6 x= 36131 NOTICE z2_reef_f   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=301 oxy=8.0 rabbit_daze=3.3 turtle_daze=0.3
+t= 180.9 x= 36411 PUMP -> rabbit  daze=3.0
+t= 185.0 x= 37334 NOTICE z2_bar_c    AIR_BAR         -> DIVE  (WRONG)
+       plan ctrl=rabbit y=302 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.1
+       diveSTART t=185.65 x=37472 ctrl=rabbit y=302 down_applied=false show=false
+t= 187.7 x= 37930 NOTICE z2_rock_d   SURFACE_ROCK    -> SURFACE  (WRONG)
+       plan ctrl=rabbit y=394 oxy=6.3 rabbit_daze=1.7 turtle_daze=0.1
+t= 189.1 x= 38251 ACCIDENT RABBIT_STUN  zone=2 control=turtle y=300 oxy=6.0
+t= 191.6 x= 38684 NOTICE z3_rock_a   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=308 oxy=8.0 rabbit_daze=0.0 turtle_daze=1.4
+       diveSTART t=192.60 x=38827 ctrl=turtle y=306 down_applied=false show=false
+t= 197.5 x= 39922 NOTICE z3_beam_a   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=341 oxy=6.3 rabbit_daze=0.0 turtle_daze=1.8
+       diveSTART t=198.30 x=40075 ctrl=rabbit y=387 down_applied=false show=false
+t= 203.0 x= 41081 NOTICE z3_bar_a    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=330 oxy=7.8 rabbit_daze=0.0 turtle_daze=2.0
+t= 205.5 x= 41713 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 207.9 x= 42337 NOTICE z3_wall_a   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=208.30 x=42438 ctrl=rabbit y=300 down_applied=false show=false
+t= 212.2 x= 43421 PUMP -> rabbit  daze=3.1
+t= 212.7 x= 43537 NOTICE z3_rock_b   SURFACE_ROCK    -> SURFACE  (WRONG)
+       plan ctrl=rabbit y=309 oxy=5.3 rabbit_daze=3.4 turtle_daze=0.7
+t= 214.0 x= 43852 ACCIDENT RABBIT_STUN  zone=3 control=turtle y=300 oxy=8.0
+t= 216.4 x= 44299 NOTICE z3_beam_b   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=306 oxy=8.0 rabbit_daze=0.0 turtle_daze=1.3
+       diveSTART t=217.40 x=44452 ctrl=turtle y=324 down_applied=false show=false
+t= 222.0 x= 45527 NOTICE z3_reef_a   UNDERWATER_REEF -> DIVE  (WRONG)
+       plan ctrl=rabbit y=328 oxy=6.8 rabbit_daze=0.2 turtle_daze=1.6
+       diveSTART t=222.75 x=45673 ctrl=rabbit y=366 down_applied=false show=false
+t= 225.5 x= 46336 NOTICE z3_reef_b   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=4.5 rabbit_daze=2.3 turtle_daze=0.1
+t= 226.6 x= 46620 PUMP -> rabbit  daze=3.0
+t= 227.8 x= 46885 SHIFT DROPPED -> turtle  state=1 accident=NONE show=true ctrl=turtle
+t= 230.3 x= 47548 NOTICE z3_bar_b    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t= 235.7 x= 48743 NOTICE z3_wall_b   SURFACE_WALL    -> SURFACE  (WRONG)
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.2 turtle_daze=0.4
+t= 236.5 x= 48964 ACCIDENT TURTLE_REEF  zone=3 control=rabbit y=300 oxy=8.0
+t= 238.5 x= 49038 NOTICE z3_wall_b   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=238.50 x=49038 ctrl=rabbit y=300 down_applied=false show=false
+t= 242.1 x= 49927 NOTICE z3_rock_c   SURFACE_ROCK    -> SURFACE  (WRONG)
+       plan ctrl=turtle y=327 oxy=4.8 rabbit_daze=1.6 turtle_daze=0.9
+t= 243.4 x= 50252 ACCIDENT RABBIT_STUN  zone=3 control=turtle y=300 oxy=8.0
+t= 247.9 x= 51138 NOTICE z3_beam_c   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.4 turtle_daze=0.0
+       diveSTART t=248.15 x=51216 ctrl=turtle y=300 down_applied=false show=false
+t= 249.5 x= 51567 PUMP -> rabbit  daze=3.0
+t= 251.4 x= 52013 PUMP -> rabbit  daze=3.0
+t= 252.8 x= 52309 NOTICE z3_bar_c    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=302 oxy=8.0 rabbit_daze=2.1 turtle_daze=1.0
+t= 253.7 x= 52539 PUMP -> rabbit  daze=3.0
+t= 255.6 x= 52985 PUMP -> rabbit  daze=3.0
+t= 258.2 x= 53549 NOTICE z3_wall_c   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.8 turtle_daze=0.6
+       diveSTART t=258.40 x=53614 ctrl=turtle y=300 down_applied=false show=false
+t= 259.4 x= 53861 PUMP -> rabbit  daze=3.0
+t= 261.3 x= 54307 PUMP -> rabbit  daze=3.0
+t= 263.0 x= 54745 NOTICE z3_rock_d   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=5.8 rabbit_daze=2.0 turtle_daze=0.3
+       diveSTART t=263.55 x=54867 ctrl=rabbit y=300 down_applied=false show=false
+t= 266.4 x= 55495 NOTICE z3_beam_d   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=399 oxy=5.5 rabbit_daze=0.0 turtle_daze=1.3
+       diveSTART t=267.10 x=55621 ctrl=turtle y=346 down_applied=false show=false
+t= 272.1 x= 56725 NOTICE z3_reef_c   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.5 turtle_daze=2.0
+t= 274.4 x= 57323 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 276.0 x= 57739 NOTICE z3_reef_d   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t= 280.6 x= 58739 NOTICE z3_bar_d    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.5
+t= 286.0 x= 59948 NOTICE z3_wall_d   SURFACE_WALL    -> SURFACE  (WRONG)
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.2 turtle_daze=0.4
+t= 286.8 x= 60156 ACCIDENT TURTLE_REEF  zone=3 control=rabbit y=300 oxy=8.0
+t= 288.8 x= 60230 NOTICE z3_wall_d   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=288.80 x=60230 ctrl=rabbit y=300 down_applied=false show=false
+t= 292.5 x= 61132 NOTICE z3_rock_e   SURFACE_ROCK    -> SURFACE  (WRONG)
+       plan ctrl=turtle y=327 oxy=4.8 rabbit_daze=1.6 turtle_daze=0.9
+t= 293.7 x= 61444 ACCIDENT RABBIT_STUN  zone=3 control=turtle y=300 oxy=8.0
+t= 296.1 x= 61899 NOTICE z3_beam_e   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=307 oxy=8.0 rabbit_daze=0.0 turtle_daze=1.3
+       diveSTART t=297.05 x=62044 ctrl=turtle y=324 down_applied=false show=false
+t= 301.7 x= 63124 NOTICE z3_bar_e    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=330 oxy=7.0 rabbit_daze=0.1 turtle_daze=1.7
+t= 307.2 x= 64338 NOTICE z3_wall_e   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.5
+       diveSTART t=307.45 x=64416 ctrl=turtle y=300 down_applied=false show=false
+t= 309.1 x= 64845 PUMP -> rabbit  daze=3.0
+FINISH beginner  run 1  t=313.8  accidents=10  shifts=182  show=11  oxy_min=1.7  passed=55  grade=B
+
+---- beginner run 2  seed=1134402386 ----
+t=   2.9 x=  1038 NOTICE rock1       SURFACE_ROCK    -> SURFACE  (WRONG)
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.6 turtle_daze=0.0
+t=   4.2 x=  1324 ACCIDENT RABBIT_STUN  zone=1 control=turtle y=300 oxy=8.0
+t=   7.1 x=  1776 NOTICE beam1       LOW_BEAM        -> SURFACE  (WRONG)
+       plan ctrl=rabbit y=321 oxy=8.0 rabbit_daze=0.0 turtle_daze=1.8
+t=   8.9 x=  2116 ACCIDENT RABBIT_STUN  zone=1 control=turtle y=300 oxy=8.0
+t=   9.8 x=  2244 NOTICE beam1       LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=9.75 x=2244 ctrl=turtle y=300 down_applied=false show=false
+t=  15.1 x=  3205 NOTICE reef1       UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.9 turtle_daze=0.5
+t=  17.3 x=  3662 PUMP -> rabbit  daze=3.0
+t=  17.7 x=  3759 NOTICE reef2       UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=3.3 turtle_daze=0.2
+t=  19.2 x=  4031 PUMP -> rabbit  daze=3.0
+t=  19.3 x=  4053 NOTICE wall1       SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=3.1 turtle_daze=0.2
+       diveSTART t=20.05 x=4210 ctrl=rabbit y=301 down_applied=false show=false
+t=  20.4 x=  4261 ACCIDENT TURTLE_REEF  zone=1 control=rabbit y=311 oxy=8.0
+t=  22.4 x=  4293 NOTICE wall1       SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=22.40 x=4293 ctrl=rabbit y=300 down_applied=false show=false
+t=  25.1 x=  4876 NOTICE airbar      AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=408 oxy=5.8 rabbit_daze=2.3 turtle_daze=0.0
+t=  25.8 x=  5030 PUMP -> rabbit  daze=3.0
+t=  26.3 x=  5147 NOTICE combo_rock  SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=7.1 rabbit_daze=3.3 turtle_daze=0.3
+       diveSTART t=26.65 x=5209 ctrl=rabbit y=300 down_applied=false show=false
+t=  27.7 x=  5400 PUMP -> rabbit  daze=3.0
+t=  28.0 x=  5466 NOTICE combo_beam  LOW_BEAM        -> SURFACE  (WRONG)
+       plan ctrl=rabbit y=409 oxy=7.1 rabbit_daze=3.3 turtle_daze=0.0
+t=  29.6 x=  5769 PUMP -> rabbit  daze=3.0
+t=  29.7 x=  5791 ACCIDENT RABBIT_STUN  zone=1 control=turtle y=310 oxy=5.7
+t=  29.8 x=  5815 SHIFT DROPPED -> rabbit  state=1 accident=RABBIT_STUN show=false ctrl=turtle
+t=  35.1 x=  6739 NOTICE rock2       SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.1 turtle_daze=0.2
+       diveSTART t=36.25 x=6907 ctrl=rabbit y=308 down_applied=false show=false
+t=  46.6 x=  8683 NOTICE beam2       LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=335 oxy=7.5 rabbit_daze=0.2 turtle_daze=2.1
+       diveSTART t=47.35 x=8847 ctrl=turtle y=300 down_applied=false show=false
+t=  57.5 x= 10670 NOTICE rock3       SURFACE_ROCK    -> SURFACE  (WRONG)
+       plan ctrl=rabbit y=325 oxy=7.9 rabbit_daze=0.0 turtle_daze=1.9
+t=  59.2 x= 11012 ACCIDENT RABBIT_STUN  zone=1 control=turtle y=300 oxy=8.0
+t=  68.8 x= 12686 NOTICE beam3       LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.1 turtle_daze=0.3
+       diveSTART t=70.10 x=12860 ctrl=rabbit y=312 down_applied=false show=false
+t=  83.6 x= 15307 NOTICE z2_reef_a   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=304 oxy=8.0 rabbit_daze=0.4 turtle_daze=1.2
+t=  88.7 x= 16279 NOTICE z2_reef_b   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=335 oxy=7.5 rabbit_daze=0.2 turtle_daze=2.1
+t=  91.4 x= 16923 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t=  94.0 x= 17547 NOTICE z2_wall_a   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.1
+       diveSTART t=94.70 x=17673 ctrl=rabbit y=300 down_applied=false show=false
+t=  98.1 x= 18450 PUMP -> rabbit  daze=3.0
+t= 100.1 x= 18889 PUMP -> rabbit  daze=3.0
+t= 100.4 x= 18961 NOTICE z2_beam_a   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=6.3 rabbit_daze=3.3 turtle_daze=0.0
+       diveSTART t=101.10 x=19097 ctrl=rabbit y=300 down_applied=false show=false
+t= 102.2 x= 19339 PUMP -> rabbit  daze=3.0
+t= 104.3 x= 19778 PUMP -> rabbit  daze=3.0
+t= 106.4 x= 20229 PUMP -> rabbit  daze=3.0
+t= 106.9 x= 20358 NOTICE z2_rock_a   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=301 oxy=8.0 rabbit_daze=3.4 turtle_daze=0.2
+       diveSTART t=107.60 x=20479 ctrl=rabbit y=301 down_applied=false show=false
+t= 108.4 x= 20667 PUMP -> rabbit  daze=3.0
+t= 112.9 x= 21746 NOTICE z2_bar_a    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.3 turtle_daze=0.0
+t= 119.7 x= 23150 NOTICE z2_reef_c   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.1 turtle_daze=0.2
+t= 121.4 x= 23527 PUMP -> rabbit  daze=3.0
+t= 123.4 x= 23965 PUMP -> rabbit  daze=3.0
+t= 125.5 x= 24416 PUMP -> rabbit  daze=3.0
+t= 126.1 x= 24556 NOTICE z2_wall_b   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=302 oxy=8.0 rabbit_daze=3.4 turtle_daze=0.3
+       diveSTART t=126.85 x=24681 ctrl=turtle y=303 down_applied=false show=false
+t= 127.2 x= 24758 ACCIDENT TURTLE_REEF  zone=2 control=rabbit y=312 oxy=8.0
+t= 129.2 x= 24822 NOTICE z2_wall_b   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=129.20 x=24822 ctrl=rabbit y=300 down_applied=false show=false
+t= 133.9 x= 25934 NOTICE z2_rock_b   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=3.3 turtle_daze=0.2
+       diveSTART t=134.75 x=26081 ctrl=rabbit y=301 down_applied=false show=false
+t= 141.1 x= 27323 NOTICE z2_beam_b   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=329 oxy=4.8 rabbit_daze=0.5 turtle_daze=3.0
+       diveSTART t=141.60 x=27431 ctrl=turtle y=300 down_applied=false show=false
+t= 144.3 x= 28076 PUMP -> rabbit  daze=3.2
+t= 146.4 x= 28535 PUMP -> rabbit  daze=3.0
+t= 147.3 x= 28722 NOTICE z2_reef_d   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=3.2 turtle_daze=0.6
+t= 148.3 x= 28942 PUMP -> rabbit  daze=3.0
+t= 150.1 x= 29314 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 151.9 x= 29734 NOTICE z2_reef_e   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t= 158.5 x= 31133 NOTICE z2_bar_b    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.0 turtle_daze=0.2
+t= 159.9 x= 31455 PUMP -> rabbit  daze=3.0
+t= 161.8 x= 31862 PUMP -> rabbit  daze=3.0
+t= 164.1 x= 32344 PUMP -> rabbit  daze=3.0
+t= 164.9 x= 32522 NOTICE z2_wall_c   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=3.3 turtle_daze=0.5
+       diveSTART t=165.45 x=32631 ctrl=turtle y=301 down_applied=false show=false
+t= 166.0 x= 32763 PUMP -> rabbit  daze=3.1
+t= 167.9 x= 33159 PUMP -> rabbit  daze=3.0
+t= 169.0 x= 33401 SHIFT DROPPED -> turtle  state=1 accident=NONE show=true ctrl=turtle
+t= 171.3 x= 33940 NOTICE z2_rock_c   SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=454 oxy=7.4 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=171.65 x=34036 ctrl=turtle y=382 down_applied=false show=false
+t= 174.6 x= 34728 NOTICE z2_beam_c   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=5.7 rabbit_daze=2.4 turtle_daze=0.0
+       diveSTART t=175.05 x=34836 ctrl=turtle y=300 down_applied=false show=false
+t= 175.6 x= 34968 PUMP -> rabbit  daze=3.4
+t= 175.8 x= 35016 ACCIDENT RABBIT_SLIP  zone=2 control=turtle y=390 oxy=7.7
+t= 175.9 x= 35028 SHIFT DROPPED -> rabbit  state=1 accident=RABBIT_SLIP show=false ctrl=turtle
+t= 181.3 x= 36129 NOTICE z2_reef_f   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=5.2 rabbit_daze=1.0 turtle_daze=0.9
+t= 183.4 x= 36633 PUMP -> rabbit  daze=3.0
+t= 187.2 x= 37334 NOTICE z2_bar_c    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.4 turtle_daze=0.0
+t= 188.8 x= 37730 PUMP -> rabbit  daze=3.0
+t= 189.7 x= 37918 NOTICE z2_rock_d   SURFACE_ROCK    -> SURFACE  (WRONG)
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=3.2 turtle_daze=0.5
+t= 190.7 x= 38138 PUMP -> rabbit  daze=3.0
+t= 191.2 x= 38255 ACCIDENT RABBIT_STUN  zone=2 control=turtle y=301 oxy=8.0
+t= 193.7 x= 38687 NOTICE z3_rock_a   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=308 oxy=8.0 rabbit_daze=0.0 turtle_daze=1.4
+       diveSTART t=194.70 x=38831 ctrl=turtle y=306 down_applied=false show=false
+t= 199.6 x= 39923 NOTICE z3_beam_a   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=344 oxy=6.3 rabbit_daze=0.0 turtle_daze=2.0
+       diveSTART t=200.40 x=40075 ctrl=rabbit y=393 down_applied=false show=false
+t= 205.3 x= 41122 NOTICE z3_bar_a    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.5 turtle_daze=2.0
+t= 207.6 x= 41707 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 210.0 x= 42344 NOTICE z3_wall_a   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=210.35 x=42431 ctrl=rabbit y=300 down_applied=false show=false
+t= 214.3 x= 43415 PUMP -> rabbit  daze=3.1
+t= 214.8 x= 43542 NOTICE z3_rock_b   SURFACE_ROCK    -> SURFACE  (WRONG)
+       plan ctrl=rabbit y=318 oxy=5.2 rabbit_daze=3.4 turtle_daze=0.7
+t= 216.1 x= 43859 ACCIDENT RABBIT_STUN  zone=3 control=turtle y=300 oxy=6.5
+t= 218.4 x= 44298 NOTICE z3_beam_b   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=305 oxy=8.0 rabbit_daze=0.0 turtle_daze=1.2
+       diveSTART t=219.45 x=44447 ctrl=turtle y=333 down_applied=false show=false
+t= 224.1 x= 45525 NOTICE z3_reef_a   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=330 oxy=7.0 rabbit_daze=0.0 turtle_daze=1.7
+t= 227.3 x= 46312 NOTICE z3_reef_b   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.2 turtle_daze=0.9
+t= 232.2 x= 47549 NOTICE z3_bar_b    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t= 237.6 x= 48742 NOTICE z3_wall_b   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.2 turtle_daze=0.4
+       diveSTART t=237.85 x=48820 ctrl=turtle y=300 down_applied=false show=false
+t= 239.5 x= 49236 PUMP -> rabbit  daze=3.0
+t= 241.4 x= 49682 PUMP -> rabbit  daze=3.0
+t= 242.4 x= 49916 NOTICE z3_rock_c   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=364 oxy=3.9 rabbit_daze=2.8 turtle_daze=0.7
+       diveSTART t=242.85 x=50023 ctrl=turtle y=310 down_applied=false show=false
+t= 243.4 x= 50166 PUMP -> rabbit  daze=3.2
+t= 247.3 x= 51148 NOTICE z3_beam_c   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=7.6 rabbit_daze=0.3 turtle_daze=0.0
+       diveSTART t=247.55 x=51226 ctrl=turtle y=300 down_applied=false show=false
+t= 252.2 x= 52325 NOTICE z3_bar_c    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=328 oxy=6.9 rabbit_daze=0.5 turtle_daze=1.6
+t= 257.7 x= 53540 NOTICE z3_wall_c   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.5
+       diveSTART t=258.00 x=53618 ctrl=turtle y=300 down_applied=false show=false
+t= 259.7 x= 54047 PUMP -> rabbit  daze=3.0
+t= 263.0 x= 54856 NOTICE z3_rock_d   SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=454 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=262.95 x=54856 ctrl=turtle y=454 down_applied=false show=false
+t= 265.7 x= 55495 NOTICE z3_beam_d   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=441 oxy=5.2 rabbit_daze=0.0 turtle_daze=1.3
+       diveSTART t=266.25 x=55622 ctrl=turtle y=352 down_applied=false show=false
+t= 271.3 x= 56726 NOTICE z3_reef_c   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.5 turtle_daze=2.0
+t= 273.6 x= 57324 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 275.2 x= 57740 NOTICE z3_reef_d   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t= 279.8 x= 58741 NOTICE z3_bar_d    AIR_BAR         -> DIVE  (WRONG)
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.5
+       diveSTART t=280.05 x=58819 ctrl=turtle y=300 down_applied=false show=false
+t= 284.7 x= 59922 NOTICE z3_wall_d   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=307 oxy=7.9 rabbit_daze=1.7 turtle_daze=1.3
+       diveSTART t=285.55 x=60079 ctrl=rabbit y=340 down_applied=false show=false
+t= 290.3 x= 61255 NOTICE z3_rock_e   SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=409 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=290.25 x=61255 ctrl=turtle y=409 down_applied=false show=false
+t= 293.1 x= 61902 NOTICE z3_beam_e   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=398 oxy=5.2 rabbit_daze=0.0 turtle_daze=1.3
+       diveSTART t=293.55 x=62021 ctrl=turtle y=308 down_applied=false show=false
+t= 297.1 x= 62920 PUMP -> rabbit  daze=3.0
+t= 298.0 x= 63124 NOTICE z3_bar_e    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=3.2 turtle_daze=0.5
+t= 299.0 x= 63365 PUMP -> rabbit  daze=3.0
+t= 303.0 x= 64344 NOTICE z3_wall_e   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=301 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=303.30 x=64431 ctrl=rabbit y=301 down_applied=false show=false
+t= 306.7 x= 65287 PUMP -> rabbit  daze=3.0
+FINISH beginner  run 2  t=310.2  accidents=9  shifts=178  show=11  oxy_min=2.0  passed=55  grade=B
+
+---- beginner run 3  seed=1135402389 ----
+t=   2.9 x=  1038 NOTICE rock1       SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.6 turtle_daze=0.0
+       diveSTART t=3.45 x=1148 ctrl=turtle y=300 down_applied=false show=false
+t=   6.8 x=  1783 NOTICE beam1       LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=393 oxy=5.0 rabbit_daze=0.5 turtle_daze=1.5
+       diveSTART t=7.60 x=1942 ctrl=rabbit y=303 down_applied=false show=false
+t=  14.4 x=  3229 NOTICE reef1       UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.0 turtle_daze=0.0
+t=  15.9 x=  3555 PUMP -> rabbit  daze=3.0
+t=  17.0 x=  3756 NOTICE reef2       UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.7 turtle_daze=0.8
+t=  17.1 x=  3771 SHIFT DROPPED -> turtle  state=1 accident=NONE show=true ctrl=turtle
+t=  18.8 x=  4154 NOTICE wall1       SURFACE_WALL    -> SURFACE  (WRONG)
+       plan ctrl=rabbit y=363 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t=  19.6 x=  4330 ACCIDENT TURTLE_REEF  zone=1 control=rabbit y=318 oxy=7.2
+t=  21.6 x=  4385 NOTICE wall1       SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=7.4 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=21.60 x=4385 ctrl=rabbit y=300 down_applied=false show=false
+t=  23.9 x=  4880 NOTICE airbar      AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=408 oxy=6.2 rabbit_daze=2.0 turtle_daze=0.0
+t=  25.0 x=  5122 PUMP -> rabbit  daze=3.0
+t=  25.1 x=  5144 NOTICE combo_rock  SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=7.4 rabbit_daze=3.1 turtle_daze=0.0
+       diveSTART t=25.05 x=5144 ctrl=turtle y=300 down_applied=false show=false
+t=  26.2 x=  5343 ACCIDENT RABBIT_STUN  zone=1 control=turtle y=301 oxy=8.0
+t=  27.0 x=  5467 NOTICE combo_beam  LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=346 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.2
+       diveSTART t=27.00 x=5476 ctrl=turtle y=346 down_applied=false show=false
+t=  33.5 x=  6679 NOTICE rock2       SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=338 oxy=7.5 rabbit_daze=0.2 turtle_daze=2.1
+       diveSTART t=34.25 x=6840 ctrl=turtle y=300 down_applied=false show=false
+t=  44.6 x=  8678 NOTICE beam2       LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=335 oxy=7.5 rabbit_daze=0.2 turtle_daze=2.1
+       diveSTART t=45.35 x=8839 ctrl=turtle y=300 down_applied=false show=false
+t=  47.5 x=  9312 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t=  54.7 x= 10706 NOTICE rock3       SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=302 oxy=8.0 rabbit_daze=0.8 turtle_daze=1.0
+       diveSTART t=56.05 x=10861 ctrl=turtle y=335 down_applied=false show=false
+t=  65.8 x= 12630 NOTICE beam3       LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=317 oxy=8.0 rabbit_daze=0.0 turtle_daze=1.7
+       diveSTART t=66.95 x=12797 ctrl=turtle y=300 down_applied=false show=false
+t=  80.6 x= 15309 NOTICE z2_reef_a   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=307 oxy=8.0 rabbit_daze=0.1 turtle_daze=1.3
+t=  83.4 x= 15922 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t=  85.2 x= 16354 NOTICE z2_reef_b   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t=  91.0 x= 17540 NOTICE z2_wall_a   SURFACE_WALL    -> SURFACE  (WRONG)
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.3 turtle_daze=0.1
+t=  91.9 x= 17756 ACCIDENT TURTLE_REEF  zone=2 control=rabbit y=300 oxy=8.0
+t=  93.9 x= 17821 NOTICE z2_wall_a   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=93.95 x=17821 ctrl=rabbit y=300 down_applied=false show=false
+t=  98.7 x= 18940 NOTICE z2_beam_a   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=300 oxy=7.7 rabbit_daze=3.1 turtle_daze=0.1
+       diveSTART t=99.45 x=19075 ctrl=rabbit y=300 down_applied=false show=false
+t= 105.6 x= 20283 NOTICE z2_rock_a   SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=361 oxy=7.1 rabbit_daze=0.1 turtle_daze=2.5
+       diveSTART t=106.30 x=20427 ctrl=turtle y=300 down_applied=false show=false
+t= 112.7 x= 21700 NOTICE z2_bar_a    AIR_BAR         -> DIVE  (WRONG)
+       plan ctrl=turtle y=371 oxy=6.8 rabbit_daze=0.3 turtle_daze=2.7
+       diveSTART t=113.30 x=21832 ctrl=turtle y=300 down_applied=false show=false
+t= 118.8 x= 23108 NOTICE z2_reef_c   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=419 oxy=6.0 rabbit_daze=0.0 turtle_daze=1.1
+t= 125.9 x= 24558 NOTICE z2_wall_b   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.1 turtle_daze=0.2
+       diveSTART t=126.55 x=24674 ctrl=rabbit y=300 down_applied=false show=false
+t= 129.4 x= 25319 PUMP -> rabbit  daze=3.0
+t= 132.2 x= 25907 NOTICE z2_rock_b   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=303 oxy=7.0 rabbit_daze=2.2 turtle_daze=1.1
+       diveSTART t=133.50 x=26081 ctrl=turtle y=345 down_applied=false show=false
+t= 138.9 x= 27289 NOTICE z2_beam_b   LOW_BEAM        -> SURFACE  (WRONG)
+       plan ctrl=turtle y=416 oxy=5.6 rabbit_daze=0.1 turtle_daze=1.4
+t= 140.3 x= 27609 ACCIDENT RABBIT_STUN  zone=2 control=turtle y=300 oxy=6.9
+t= 141.1 x= 27738 NOTICE z2_beam_b   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=7.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=141.10 x=27738 ctrl=turtle y=300 down_applied=false show=false
+t= 146.1 x= 28733 NOTICE z2_reef_d   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.0 turtle_daze=0.3
+t= 147.5 x= 29066 PUMP -> rabbit  daze=3.0
+t= 149.4 x= 29473 PUMP -> rabbit  daze=3.0
+t= 150.5 x= 29703 NOTICE z2_reef_e   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=301 oxy=8.0 rabbit_daze=2.6 turtle_daze=0.8
+t= 151.7 x= 29955 PUMP -> rabbit  daze=3.0
+t= 157.4 x= 31129 NOTICE z2_bar_b    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.9 turtle_daze=0.0
+t= 159.0 x= 31509 PUMP -> rabbit  daze=3.0
+t= 163.3 x= 32534 NOTICE z2_wall_c   SURFACE_WALL    -> SURFACE  (WRONG)
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.9 turtle_daze=0.0
+t= 164.3 x= 32762 ACCIDENT TURTLE_REEF  zone=2 control=rabbit y=300 oxy=8.0
+t= 166.3 x= 32826 NOTICE z2_wall_c   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=166.25 x=32826 ctrl=rabbit y=300 down_applied=false show=false
+t= 171.0 x= 33937 NOTICE z2_rock_c   SURFACE_ROCK    -> SURFACE  (WRONG)
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=3.3 turtle_daze=0.2
+t= 171.6 x= 34055 PUMP -> rabbit  daze=3.5
+t= 171.7 x= 34091 ACCIDENT RABBIT_SLIP  zone=2 control=turtle y=300 oxy=8.0
+t= 171.8 x= 34115 SHIFT DROPPED -> rabbit  state=1 accident=RABBIT_SLIP show=false ctrl=turtle
+t= 174.4 x= 34736 NOTICE z2_beam_c   LOW_BEAM        -> SURFACE  (WRONG)
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.2
+t= 175.5 x= 34987 ACCIDENT RABBIT_STUN  zone=2 control=turtle y=300 oxy=8.0
+t= 176.3 x= 35116 NOTICE z2_beam_c   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=176.30 x=35116 ctrl=turtle y=300 down_applied=false show=false
+t= 181.4 x= 36135 NOTICE z2_reef_f   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.0 turtle_daze=0.3
+t= 182.9 x= 36468 PUMP -> rabbit  daze=3.0
+t= 184.8 x= 36876 PUMP -> rabbit  daze=3.0
+t= 186.9 x= 37333 NOTICE z2_bar_c    AIR_BAR         -> DIVE  (WRONG)
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=2.9 turtle_daze=0.1
+       diveSTART t=187.30 x=37429 ctrl=turtle y=300 down_applied=false show=false
+t= 187.6 x= 37501 ACCIDENT RABBIT_SLIP  zone=2 control=turtle y=309 oxy=8.0
+t= 189.8 x= 38029 NOTICE z2_rock_d   SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=354 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=189.80 x=38029 ctrl=turtle y=354 down_applied=false show=false
+t= 193.0 x= 38716 NOTICE z3_rock_a   SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=330 oxy=4.8 rabbit_daze=0.3 turtle_daze=1.1
+       diveSTART t=193.45 x=38836 ctrl=turtle y=300 down_applied=false show=false
+t= 194.2 x= 39000 ACCIDENT RABBIT_STUN  zone=2 control=turtle y=336 oxy=8.0
+t= 198.9 x= 39938 NOTICE z3_beam_a   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=7.6 rabbit_daze=1.4 turtle_daze=0.0
+       diveSTART t=199.20 x=40016 ctrl=turtle y=300 down_applied=false show=false
+t= 200.6 x= 40367 PUMP -> rabbit  daze=3.0
+t= 202.5 x= 40813 PUMP -> rabbit  daze=3.0
+t= 203.8 x= 41109 NOTICE z3_bar_a    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=302 oxy=8.0 rabbit_daze=2.1 turtle_daze=1.0
+t= 204.7 x= 41339 PUMP -> rabbit  daze=3.0
+t= 206.6 x= 41785 PUMP -> rabbit  daze=3.0
+t= 209.2 x= 42349 NOTICE z3_wall_a   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.8 turtle_daze=0.6
+       diveSTART t=209.45 x=42414 ctrl=turtle y=300 down_applied=false show=false
+t= 210.4 x= 42661 PUMP -> rabbit  daze=3.0
+t= 212.3 x= 43107 PUMP -> rabbit  daze=3.0
+t= 214.0 x= 43545 NOTICE z3_rock_b   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=5.8 rabbit_daze=2.0 turtle_daze=0.3
+       diveSTART t=214.60 x=43667 ctrl=rabbit y=300 down_applied=false show=false
+t= 217.5 x= 44295 NOTICE z3_beam_b   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=399 oxy=5.5 rabbit_daze=0.0 turtle_daze=1.3
+       diveSTART t=218.15 x=44421 ctrl=turtle y=346 down_applied=false show=false
+t= 223.2 x= 45525 NOTICE z3_reef_a   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.5 turtle_daze=2.0
+t= 225.5 x= 46123 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 227.1 x= 46539 NOTICE z3_reef_b   UNDERWATER_REEF -> DIVE  (WRONG)
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=227.05 x=46539 ctrl=turtle y=300 down_applied=false show=false
+t= 231.5 x= 47540 NOTICE z3_bar_b    AIR_BAR         -> DIVE  (WRONG)
+       plan ctrl=rabbit y=324 oxy=6.5 rabbit_daze=0.8 turtle_daze=1.6
+       diveSTART t=232.05 x=47657 ctrl=rabbit y=351 down_applied=false show=false
+t= 237.0 x= 48708 NOTICE z3_wall_b   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=306 oxy=7.7 rabbit_daze=0.4 turtle_daze=2.0
+       diveSTART t=237.40 x=48825 ctrl=turtle y=300 down_applied=false show=false
+t= 239.6 x= 49397 PUMP -> rabbit  daze=3.0
+t= 242.2 x= 50047 NOTICE z3_rock_c   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=408 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=242.15 x=50047 ctrl=rabbit y=408 down_applied=false show=false
+t= 246.8 x= 51118 NOTICE z3_beam_c   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=304 oxy=8.0 rabbit_daze=0.0 turtle_daze=1.2
+       diveSTART t=247.90 x=51291 ctrl=turtle y=345 down_applied=false show=false
+t= 251.4 x= 52172 PUMP -> rabbit  daze=3.0
+t= 252.1 x= 52334 NOTICE z3_bar_c    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=3.3 turtle_daze=0.3
+t= 253.3 x= 52617 PUMP -> rabbit  daze=3.0
+t= 254.5 x= 52886 SHIFT DROPPED -> turtle  state=1 accident=NONE show=true ctrl=turtle
+t= 257.0 x= 53549 NOTICE z3_wall_c   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=257.30 x=53627 ctrl=turtle y=301 down_applied=false show=false
+t= 260.1 x= 54355 PUMP -> rabbit  daze=3.0
+t= 261.8 x= 54736 NOTICE z3_rock_d   SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=328 oxy=3.9 rabbit_daze=2.8 turtle_daze=0.9
+       diveSTART t=262.10 x=54826 ctrl=rabbit y=300 down_applied=false show=false
+t= 262.8 x= 54994 PUMP -> rabbit  daze=3.3
+t= 263.1 x= 55072 ACCIDENT RABBIT_SLIP  zone=3 control=turtle y=409 oxy=6.0
+t= 265.3 x= 55644 NOTICE z3_beam_d   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=409 oxy=6.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=265.30 x=55644 ctrl=turtle y=409 down_applied=false show=false
+t= 270.2 x= 56723 NOTICE z3_reef_c   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.5 turtle_daze=2.0
+t= 273.4 x= 57517 NOTICE z3_reef_d   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.0 turtle_daze=0.9
+t= 275.5 x= 58026 PUMP -> rabbit  daze=3.0
+t= 275.8 x= 58091 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 278.3 x= 58741 NOTICE z3_bar_d    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t= 283.7 x= 59948 NOTICE z3_wall_d   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.2 turtle_daze=0.4
+       diveSTART t=283.95 x=60026 ctrl=turtle y=300 down_applied=false show=false
+t= 285.6 x= 60442 PUMP -> rabbit  daze=3.0
+t= 287.5 x= 60887 PUMP -> rabbit  daze=3.0
+t= 288.5 x= 61121 NOTICE z3_rock_e   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=364 oxy=3.9 rabbit_daze=2.8 turtle_daze=0.7
+       diveSTART t=288.90 x=61216 ctrl=turtle y=319 down_applied=false show=false
+t= 289.5 x= 61359 PUMP -> rabbit  daze=3.1
+t= 292.2 x= 62039 NOTICE z3_beam_e   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=408 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=292.15 x=62039 ctrl=rabbit y=408 down_applied=false show=false
+t= 296.6 x= 63123 NOTICE z3_bar_e    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=300 oxy=7.5 rabbit_daze=0.8 turtle_daze=0.6
+t= 302.2 x= 64341 NOTICE z3_wall_e   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.5
+       diveSTART t=302.45 x=64419 ctrl=turtle y=300 down_applied=false show=false
+t= 304.1 x= 64848 PUMP -> rabbit  daze=3.0
+FINISH beginner  run 3  t=308.8  accidents=10  shifts=173  show=12  oxy_min=1.8  passed=55  grade=B
+
+---- beginner run 4  seed=1136402392 ----
+t=   2.9 x=  1038 NOTICE rock1       SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.6 turtle_daze=0.0
+       diveSTART t=3.45 x=1148 ctrl=turtle y=300 down_applied=false show=false
+t=   6.8 x=  1783 NOTICE beam1       LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=393 oxy=5.0 rabbit_daze=0.5 turtle_daze=1.5
+       diveSTART t=7.60 x=1942 ctrl=rabbit y=303 down_applied=false show=false
+t=  14.4 x=  3229 NOTICE reef1       UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.0 turtle_daze=0.0
+t=  15.9 x=  3555 PUMP -> rabbit  daze=3.0
+t=  17.0 x=  3756 NOTICE reef2       UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.7 turtle_daze=0.8
+t=  17.1 x=  3771 SHIFT DROPPED -> turtle  state=1 accident=NONE show=true ctrl=turtle
+t=  18.8 x=  4154 NOTICE wall1       SURFACE_WALL    -> SURFACE  (WRONG)
+       plan ctrl=rabbit y=363 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t=  19.6 x=  4330 ACCIDENT TURTLE_REEF  zone=1 control=rabbit y=318 oxy=7.2
+t=  21.6 x=  4385 NOTICE wall1       SURFACE_WALL    -> SURFACE  (WRONG)
+       plan ctrl=rabbit y=300 oxy=7.4 rabbit_daze=0.0 turtle_daze=0.0
+t=  23.7 x=  4836 ACCIDENT TURTLE_REEF  zone=1 control=rabbit y=300 oxy=8.0
+t=  25.7 x=  4891 NOTICE airbar      AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t=  26.8 x=  5144 NOTICE combo_rock  SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.9 turtle_daze=0.0
+       diveSTART t=26.80 x=5144 ctrl=turtle y=300 down_applied=false show=false
+t=  28.3 x=  5463 NOTICE combo_beam  LOW_BEAM        -> SURFACE  (WRONG)
+       plan ctrl=turtle y=408 oxy=6.9 rabbit_daze=2.3 turtle_daze=0.0
+t=  29.0 x=  5628 PUMP -> rabbit  daze=3.0
+t=  29.1 x=  5650 ACCIDENT RABBIT_STUN  zone=1 control=turtle y=300 oxy=6.9
+t=  29.3 x=  5673 SHIFT DROPPED -> rabbit  state=1 accident=RABBIT_STUN show=false ctrl=turtle
+t=  29.9 x=  5778 NOTICE combo_beam  LOW_BEAM        -> SURFACE  (WRONG)
+       plan ctrl=turtle y=300 oxy=7.1 rabbit_daze=0.0 turtle_daze=0.0
+t=  35.2 x=  6730 NOTICE rock2       SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.8 turtle_daze=0.6
+       diveSTART t=36.75 x=6905 ctrl=turtle y=335 down_applied=false show=false
+t=  46.8 x=  8738 NOTICE beam2       LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.6 turtle_daze=0.0
+       diveSTART t=47.30 x=8848 ctrl=rabbit y=300 down_applied=false show=false
+t=  49.1 x=  9222 PUMP -> rabbit  daze=3.0
+t=  57.6 x= 10679 NOTICE rock3       SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=323 oxy=7.9 rabbit_daze=0.0 turtle_daze=1.8
+       diveSTART t=58.55 x=10838 ctrl=turtle y=300 down_applied=false show=false
+t=  60.3 x= 11234 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t=  67.6 x= 12640 NOTICE beam3       LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=303 oxy=8.0 rabbit_daze=0.6 turtle_daze=1.1
+       diveSTART t=68.95 x=12795 ctrl=turtle y=326 down_applied=false show=false
+t=  82.6 x= 15307 NOTICE z2_reef_a   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=307 oxy=8.0 rabbit_daze=0.1 turtle_daze=1.3
+t=  87.7 x= 16276 NOTICE z2_reef_b   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=335 oxy=7.5 rabbit_daze=0.2 turtle_daze=2.1
+t=  90.5 x= 16929 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t=  93.0 x= 17541 NOTICE z2_wall_a   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.1
+       diveSTART t=93.70 x=17671 ctrl=rabbit y=300 down_applied=false show=false
+t=  97.1 x= 18449 PUMP -> rabbit  daze=3.0
+t=  99.1 x= 18888 PUMP -> rabbit  daze=3.0
+t=  99.4 x= 18960 NOTICE z2_beam_a   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=6.3 rabbit_daze=3.3 turtle_daze=0.0
+       diveSTART t=100.10 x=19096 ctrl=rabbit y=300 down_applied=false show=false
+t= 101.2 x= 19338 PUMP -> rabbit  daze=3.0
+t= 103.3 x= 19777 PUMP -> rabbit  daze=3.0
+t= 105.4 x= 20228 PUMP -> rabbit  daze=3.0
+t= 105.9 x= 20357 NOTICE z2_rock_a   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=301 oxy=8.0 rabbit_daze=3.4 turtle_daze=0.2
+       diveSTART t=106.60 x=20478 ctrl=rabbit y=301 down_applied=false show=false
+t= 107.4 x= 20666 PUMP -> rabbit  daze=3.0
+t= 111.9 x= 21746 NOTICE z2_bar_a    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.3 turtle_daze=0.0
+t= 118.7 x= 23151 NOTICE z2_reef_c   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.1 turtle_daze=0.2
+t= 120.4 x= 23538 PUMP -> rabbit  daze=3.0
+t= 122.5 x= 23976 PUMP -> rabbit  daze=3.0
+t= 124.6 x= 24427 PUMP -> rabbit  daze=3.0
+t= 125.1 x= 24556 NOTICE z2_wall_b   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=302 oxy=8.0 rabbit_daze=3.4 turtle_daze=0.2
+       diveSTART t=125.80 x=24677 ctrl=rabbit y=302 down_applied=false show=false
+t= 126.2 x= 24758 ACCIDENT TURTLE_REEF  zone=2 control=rabbit y=321 oxy=8.0
+t= 128.2 x= 24822 NOTICE z2_wall_b   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=128.20 x=24822 ctrl=rabbit y=300 down_applied=false show=false
+t= 132.9 x= 25933 NOTICE z2_rock_b   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=3.3 turtle_daze=0.2
+       diveSTART t=133.75 x=26080 ctrl=rabbit y=301 down_applied=false show=false
+t= 140.1 x= 27322 NOTICE z2_beam_b   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=329 oxy=4.8 rabbit_daze=0.5 turtle_daze=3.0
+       diveSTART t=140.60 x=27430 ctrl=turtle y=300 down_applied=false show=false
+t= 143.3 x= 28075 PUMP -> rabbit  daze=3.2
+t= 145.4 x= 28534 PUMP -> rabbit  daze=3.0
+t= 146.3 x= 28722 NOTICE z2_reef_d   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=3.2 turtle_daze=0.6
+t= 147.3 x= 28942 PUMP -> rabbit  daze=3.0
+t= 149.1 x= 29313 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 150.9 x= 29733 NOTICE z2_reef_e   UNDERWATER_REEF -> DIVE  (WRONG)
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=151.25 x=29829 ctrl=rabbit y=301 down_applied=false show=false
+t= 157.4 x= 31080 NOTICE z2_bar_b    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=364 oxy=7.1 rabbit_daze=0.1 turtle_daze=2.6
+t= 164.3 x= 32528 NOTICE z2_wall_c   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.0 turtle_daze=0.2
+       diveSTART t=165.20 x=32686 ctrl=rabbit y=303 down_applied=false show=false
+t= 170.6 x= 33938 NOTICE z2_rock_c   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=408 oxy=7.5 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=171.00 x=34034 ctrl=rabbit y=408 down_applied=false show=false
+t= 174.0 x= 34734 NOTICE z2_beam_c   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=4.9 rabbit_daze=2.2 turtle_daze=0.0
+       diveSTART t=174.40 x=34830 ctrl=turtle y=300 down_applied=false show=false
+t= 175.0 x= 34962 PUMP -> rabbit  daze=3.1
+t= 177.4 x= 35481 PUMP -> rabbit  daze=3.1
+t= 180.3 x= 36118 NOTICE z2_reef_f   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=362 oxy=4.0 rabbit_daze=1.7 turtle_daze=3.0
+t= 181.6 x= 36428 PUMP -> rabbit  daze=3.0
+t= 182.7 x= 36668 SHIFT DROPPED -> turtle  state=1 accident=NONE show=true ctrl=turtle
+t= 185.5 x= 37336 NOTICE z2_bar_c    AIR_BAR         -> DIVE  (WRONG)
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.1 turtle_daze=0.0
+       diveSTART t=185.90 x=37432 ctrl=turtle y=300 down_applied=false show=false
+t= 188.0 x= 37935 NOTICE z2_rock_d   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=390 oxy=6.3 rabbit_daze=2.5 turtle_daze=0.1
+       diveSTART t=188.70 x=38074 ctrl=rabbit y=390 down_applied=false show=false
+t= 191.6 x= 38722 NOTICE z3_rock_a   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=5.5 rabbit_daze=3.2 turtle_daze=0.5
+       diveSTART t=193.00 x=38914 ctrl=rabbit y=328 down_applied=false show=false
+t= 197.2 x= 39942 NOTICE z3_beam_a   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=414 oxy=6.8 rabbit_daze=0.0 turtle_daze=0.2
+       diveSTART t=197.75 x=40066 ctrl=rabbit y=414 down_applied=false show=false
+t= 202.4 x= 41082 NOTICE z3_bar_a    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=328 oxy=7.8 rabbit_daze=0.0 turtle_daze=1.9
+t= 208.2 x= 42344 NOTICE z3_wall_a   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.2 turtle_daze=0.4
+       diveSTART t=208.45 x=42422 ctrl=turtle y=300 down_applied=false show=false
+t= 210.1 x= 42838 PUMP -> rabbit  daze=3.0
+t= 213.4 x= 43660 NOTICE z3_rock_b   SURFACE_ROCK    -> SURFACE  (WRONG)
+       plan ctrl=turtle y=454 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t= 214.3 x= 43894 ACCIDENT RABBIT_STUN  zone=3 control=turtle y=337 oxy=7.1
+t= 216.5 x= 44309 NOTICE z3_beam_b   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=302 oxy=8.0 rabbit_daze=0.0 turtle_daze=1.1
+       diveSTART t=217.60 x=44472 ctrl=turtle y=333 down_applied=false show=false
+t= 221.8 x= 45533 NOTICE z3_reef_a   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=3.3 turtle_daze=0.4
+t= 222.3 x= 45641 PUMP -> rabbit  daze=3.0
+t= 225.2 x= 46329 NOTICE z3_reef_b   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=340 oxy=7.6 rabbit_daze=2.2 turtle_daze=1.7
+t= 227.0 x= 46788 PUMP -> rabbit  daze=3.0
+t= 229.9 x= 47535 NOTICE z3_bar_b    AIR_BAR         -> DIVE  (WRONG)
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=3.0 turtle_daze=0.3
+       diveSTART t=230.65 x=47676 ctrl=rabbit y=303 down_applied=false show=false
+t= 235.3 x= 48730 NOTICE z3_wall_b   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=328 oxy=7.1 rabbit_daze=0.5 turtle_daze=1.6
+       diveSTART t=236.05 x=48873 ctrl=rabbit y=366 down_applied=false show=false
+t= 239.4 x= 49705 PUMP -> rabbit  daze=3.0
+t= 240.3 x= 49919 NOTICE z3_rock_c   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=329 oxy=2.1 rabbit_daze=3.1 turtle_daze=0.6
+       diveSTART t=241.40 x=50095 ctrl=rabbit y=348 down_applied=false show=false
+t= 242.5 x= 50335 ACCIDENT OXYGEN_OUT   zone=3 control=turtle y=406 oxy=0.0
+t= 246.0 x= 51141 NOTICE z3_beam_c   LOW_BEAM        -> SURFACE  (WRONG)
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.9 turtle_daze=0.4
+t= 247.1 x= 51427 ACCIDENT RABBIT_STUN  zone=3 control=turtle y=300 oxy=8.0
+t= 247.9 x= 51556 NOTICE z3_beam_c   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=247.85 x=51556 ctrl=turtle y=300 down_applied=false show=false
+t= 251.7 x= 52339 NOTICE z3_bar_c    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=7.0 rabbit_daze=1.1 turtle_daze=0.5
+t= 257.1 x= 53547 NOTICE z3_wall_c   SURFACE_WALL    -> SURFACE  (WRONG)
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.2 turtle_daze=0.4
+t= 257.9 x= 53755 ACCIDENT TURTLE_REEF  zone=3 control=rabbit y=300 oxy=8.0
+t= 259.9 x= 53829 NOTICE z3_wall_c   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=259.85 x=53829 ctrl=rabbit y=300 down_applied=false show=false
+t= 263.5 x= 54732 NOTICE z3_rock_d   SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=327 oxy=4.8 rabbit_daze=1.6 turtle_daze=0.9
+       diveSTART t=263.85 x=54823 ctrl=turtle y=300 down_applied=false show=false
+t= 264.9 x= 55096 PUMP -> rabbit  daze=3.0
+t= 266.8 x= 55541 NOTICE z3_beam_d   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=5.3 rabbit_daze=3.0 turtle_daze=0.4
+       diveSTART t=267.10 x=55619 ctrl=turtle y=300 down_applied=false show=false
+t= 267.4 x= 55697 ACCIDENT RABBIT_SLIP  zone=3 control=turtle y=309 oxy=6.9
+t= 271.8 x= 56736 NOTICE z3_reef_c   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=5.9 rabbit_daze=0.3 turtle_daze=1.4
+t= 275.0 x= 57512 NOTICE z3_reef_d   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.4 turtle_daze=0.8
+t= 280.6 x= 58738 NOTICE z3_bar_d    AIR_BAR         -> DIVE  (WRONG)
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.6
+       diveSTART t=280.85 x=58816 ctrl=turtle y=300 down_applied=false show=false
+t= 282.8 x= 59310 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 285.2 x= 59947 NOTICE z3_wall_d   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=381 oxy=7.1 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=285.55 x=60034 ctrl=rabbit y=381 down_applied=false show=false
+t= 288.9 x= 60890 PUMP -> rabbit  daze=3.0
+t= 289.9 x= 61123 NOTICE z3_rock_e   SURFACE_ROCK    -> SURFACE  (WRONG)
+       plan ctrl=rabbit y=336 oxy=2.4 rabbit_daze=2.8 turtle_daze=0.7
+t= 291.2 x= 61416 PUMP -> rabbit  daze=3.0
+t= 291.3 x= 61455 ACCIDENT RABBIT_STUN  zone=3 control=turtle y=300 oxy=4.1
+t= 291.4 x= 61471 SHIFT DROPPED -> rabbit  state=1 accident=RABBIT_STUN show=false ctrl=turtle
+t= 293.7 x= 61902 NOTICE z3_beam_e   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=306 oxy=8.0 rabbit_daze=0.0 turtle_daze=1.3
+       diveSTART t=294.65 x=62043 ctrl=turtle y=333 down_applied=false show=false
+t= 299.3 x= 63124 NOTICE z3_bar_e    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=327 oxy=7.0 rabbit_daze=0.2 turtle_daze=1.6
+t= 304.8 x= 64339 NOTICE z3_wall_e   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.5
+       diveSTART t=305.05 x=64417 ctrl=turtle y=300 down_applied=false show=false
+t= 306.7 x= 64846 PUMP -> rabbit  daze=3.0
+FINISH beginner  run 4  t=311.4  accidents=10  shifts=175  show=11  oxy_min=0.0  passed=55  grade=B
+
+---- normal run 1  seed=277838254 ----
+t=   2.6 x=   961 NOTICE rock1       SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.9 turtle_daze=0.0
+       diveSTART t=3.70 x=1165 ctrl=rabbit y=300 down_applied=false show=false
+t=   6.7 x=  1718 NOTICE beam1       LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=380 oxy=5.3 rabbit_daze=0.0 turtle_daze=1.3
+       diveSTART t=7.85 x=1938 ctrl=rabbit y=321 down_applied=false show=false
+t=  13.4 x=  3201 NOTICE reef1       UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.0 turtle_daze=0.1
+t=  14.6 x=  3536 PUMP -> rabbit  daze=2.9
+t=  15.8 x=  3753 NOTICE reef2       UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=2.2 turtle_daze=0.9
+t=  17.7 x=  4159 NOTICE wall1       SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=382 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=17.65 x=4159 ctrl=turtle y=382 down_applied=false show=false
+t=  20.9 x=  4874 NOTICE airbar      AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=382 oxy=4.7 rabbit_daze=2.3 turtle_daze=0.0
+t=  21.6 x=  5017 PUMP -> rabbit  daze=2.9
+t=  22.2 x=  5149 NOTICE combo_rock  SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=7.2 rabbit_daze=3.1 turtle_daze=0.4
+t=  24.1 x=  5551 NOTICE combo_beam  LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=381 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=24.05 x=5551 ctrl=rabbit y=381 down_applied=false show=false
+t=  29.5 x=  6611 PUMP -> turtle  daze=2.9
+t=  29.6 x=  6629 NOTICE rock2       SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=351 oxy=6.5 rabbit_daze=0.0 turtle_daze=3.0
+t=  30.3 x=  6778 PUMP -> turtle  daze=3.3
+       diveSTART t=30.50 x=6830 ctrl=turtle y=373 down_applied=false show=false
+t=  39.5 x=  8652 NOTICE beam2       LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.8 turtle_daze=0.8
+       diveSTART t=40.45 x=8834 ctrl=turtle y=300 down_applied=false show=false
+t=  42.2 x=  9219 PUMP -> rabbit  daze=2.9
+t=  49.9 x= 10648 NOTICE rock3       SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.2 turtle_daze=0.0
+       diveSTART t=51.15 x=10865 ctrl=rabbit y=301 down_applied=false show=false
+t=  60.5 x= 12601 NOTICE beam3       LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.2
+       diveSTART t=61.75 x=12818 ctrl=rabbit y=301 down_applied=false show=false
+t=  63.8 x= 13235 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t=  73.6 x= 15221 NOTICE z2_reef_a   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=314 oxy=8.0 rabbit_daze=0.2 turtle_daze=1.6
+t=  78.4 x= 16242 NOTICE z2_reef_b   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.8 turtle_daze=1.6
+t=  80.5 x= 16758 PUMP -> rabbit  daze=2.9
+t=  82.6 x= 17208 PUMP -> rabbit  daze=2.9
+t=  83.8 x= 17442 NOTICE z2_wall_a   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=302 oxy=8.0 rabbit_daze=2.2 turtle_daze=0.9
+       diveSTART t=84.60 x=17621 ctrl=rabbit y=306 down_applied=false show=false
+t=  85.2 x= 17758 PUMP -> rabbit  daze=2.9
+t=  87.3 x= 18231 PUMP -> rabbit  daze=2.9
+t=  90.0 x= 18868 NOTICE z2_beam_a   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=472 oxy=7.8 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=90.60 x=19012 ctrl=turtle y=409 down_applied=false show=false
+t=  96.3 x= 20251 NOTICE z2_rock_a   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.6 turtle_daze=0.3
+       diveSTART t=97.65 x=20463 ctrl=turtle y=314 down_applied=false show=false
+t= 103.5 x= 21668 NOTICE z2_bar_a    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=6.2 rabbit_daze=0.8 turtle_daze=2.2
+t= 105.7 x= 22196 PUMP -> rabbit  daze=2.9
+t= 109.8 x= 23055 NOTICE z2_reef_c   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.5 turtle_daze=1.4
+t= 112.2 x= 23631 PUMP -> rabbit  daze=2.9
+t= 116.3 x= 24452 NOTICE z2_wall_b   SURFACE_WALL    -> SURFACE  (WRONG)
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.5 turtle_daze=0.7
+t= 117.7 x= 24762 ACCIDENT TURTLE_REEF  zone=2 control=rabbit y=301 oxy=8.0
+t= 119.7 x= 24826 NOTICE z2_wall_b   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=119.70 x=24826 ctrl=rabbit y=300 down_applied=false show=false
+t= 124.1 x= 25854 NOTICE z2_rock_b   SURFACE_ROCK    -> SURFACE  (WRONG)
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=3.0 turtle_daze=0.3
+t= 124.6 x= 25960 PUMP -> rabbit  daze=3.1
+t= 125.9 x= 26245 ACCIDENT RABBIT_STUN  zone=2 control=turtle y=312 oxy=8.0
+t= 131.0 x= 27219 NOTICE z2_beam_b   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=302 oxy=8.0 rabbit_daze=0.3 turtle_daze=1.0
+       diveSTART t=132.15 x=27425 ctrl=rabbit y=309 down_applied=false show=false
+t= 137.8 x= 28653 NOTICE z2_reef_d   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.8 turtle_daze=1.9
+t= 140.0 x= 29181 PUMP -> rabbit  daze=2.9
+t= 141.9 x= 29589 PUMP -> rabbit  daze=2.9
+t= 142.2 x= 29649 NOTICE z2_reef_e   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=301 oxy=8.0 rabbit_daze=3.1 turtle_daze=0.1
+t= 143.8 x= 29996 PUMP -> rabbit  daze=2.9
+t= 145.3 x= 30296 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 148.4 x= 31038 NOTICE z2_bar_b    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=302 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.5
+t= 155.0 x= 32432 NOTICE z2_wall_c   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.0 turtle_daze=0.7
+       diveSTART t=156.10 x=32616 ctrl=turtle y=300 down_applied=false show=false
+t= 159.1 x= 33330 PUMP -> rabbit  daze=2.9
+t= 161.5 x= 33835 NOTICE z2_rock_c   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=328 oxy=6.1 rabbit_daze=1.7 turtle_daze=1.8
+       diveSTART t=162.50 x=34021 ctrl=turtle y=314 down_applied=false show=false
+t= 165.8 x= 34809 NOTICE z2_beam_c   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=357 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=165.85 x=34821 ctrl=turtle y=357 down_applied=false show=false
+t= 171.6 x= 36052 NOTICE z2_reef_f   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.8 turtle_daze=0.8
+t= 173.8 x= 36568 PUMP -> rabbit  daze=2.9
+t= 175.7 x= 36976 PUMP -> rabbit  daze=2.9
+t= 176.9 x= 37227 NOTICE z2_bar_c    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=2.3 turtle_daze=0.9
+t= 177.6 x= 37383 PUMP -> rabbit  daze=2.9
+t= 179.5 x= 37791 PUMP -> rabbit  daze=2.9
+t= 181.5 x= 38283 NOTICE z2_rock_d   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=383 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=181.50 x=38283 ctrl=rabbit y=383 down_applied=false show=false
+t= 183.0 x= 38643 NOTICE z3_rock_a   SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.5 turtle_daze=0.0
+       diveSTART t=184.05 x=38857 ctrl=rabbit y=300 down_applied=false show=false
+t= 188.6 x= 39846 NOTICE z3_beam_a   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=316 oxy=5.2 rabbit_daze=0.2 turtle_daze=2.3
+       diveSTART t=189.20 x=40010 ctrl=rabbit y=327 down_applied=false show=false
+t= 193.3 x= 41058 NOTICE z3_bar_a    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=351 oxy=7.5 rabbit_daze=0.0 turtle_daze=0.0
+t= 198.3 x= 42253 NOTICE z3_wall_a   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.0
+       diveSTART t=199.05 x=42431 ctrl=rabbit y=300 down_applied=false show=false
+t= 201.5 x= 43050 PUMP -> rabbit  daze=2.9
+t= 203.3 x= 43455 NOTICE z3_rock_b   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=312 oxy=5.5 rabbit_daze=2.6 turtle_daze=1.1
+       diveSTART t=204.05 x=43633 ctrl=rabbit y=337 down_applied=false show=false
+t= 207.3 x= 44447 NOTICE z3_beam_b   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=383 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=207.25 x=44447 ctrl=turtle y=383 down_applied=false show=false
+t= 211.4 x= 45436 NOTICE z3_reef_a   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=322 oxy=8.0 rabbit_daze=0.0 turtle_daze=1.7
+t= 214.6 x= 46239 NOTICE z3_reef_b   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.1 turtle_daze=0.6
+t= 216.5 x= 46704 PUMP -> rabbit  daze=2.9
+t= 219.5 x= 47459 NOTICE z3_bar_b    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t= 224.5 x= 48653 NOTICE z3_wall_b   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.0
+       diveSTART t=225.25 x=48832 ctrl=rabbit y=300 down_applied=false show=false
+t= 227.7 x= 49450 PUMP -> rabbit  daze=2.9
+t= 229.5 x= 49855 NOTICE z3_rock_c   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=312 oxy=5.5 rabbit_daze=2.6 turtle_daze=1.1
+       diveSTART t=230.25 x=50033 ctrl=rabbit y=337 down_applied=false show=false
+t= 234.3 x= 51055 NOTICE z3_beam_c   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=356 oxy=7.2 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=235.00 x=51231 ctrl=rabbit y=356 down_applied=false show=false
+t= 239.5 x= 52254 NOTICE z3_bar_c    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.8 turtle_daze=0.9
+t= 241.7 x= 52826 PUMP -> rabbit  daze=2.9
+t= 244.5 x= 53491 NOTICE z3_wall_c   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.7 turtle_daze=0.4
+       diveSTART t=244.65 x=53563 ctrl=rabbit y=300 down_applied=false show=false
+t= 246.1 x= 53949 PUMP -> rabbit  daze=2.9
+t= 249.7 x= 54850 NOTICE z3_rock_d   SURFACE_ROCK    -> SURFACE  (WRONG)
+       plan ctrl=turtle y=409 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t= 250.3 x= 54993 ACCIDENT RABBIT_STUN  zone=3 control=turtle y=337 oxy=7.5
+t= 252.7 x= 55415 NOTICE z3_beam_d   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=319 oxy=8.0 rabbit_daze=0.0 turtle_daze=1.4
+       diveSTART t=253.60 x=55623 ctrl=rabbit y=318 down_applied=false show=false
+t= 257.9 x= 56643 NOTICE z3_reef_c   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=314 oxy=8.0 rabbit_daze=0.3 turtle_daze=1.6
+t= 261.1 x= 57437 NOTICE z3_reef_d   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.3 turtle_daze=0.5
+t= 262.8 x= 57852 PUMP -> rabbit  daze=2.9
+t= 263.8 x= 58090 SHIFT DROPPED -> turtle  state=1 accident=NONE show=true ctrl=turtle
+t= 266.0 x= 58649 NOTICE z3_bar_d    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t= 271.1 x= 59856 NOTICE z3_wall_d   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.0
+       diveSTART t=271.80 x=60035 ctrl=rabbit y=300 down_applied=false show=false
+t= 274.3 x= 60653 PUMP -> rabbit  daze=2.9
+t= 276.0 x= 61058 NOTICE z3_rock_e   SURFACE_ROCK    -> SURFACE  (WRONG)
+       plan ctrl=rabbit y=312 oxy=5.5 rabbit_daze=2.6 turtle_daze=1.1
+t= 276.6 x= 61197 PUMP -> rabbit  daze=2.9
+t= 277.6 x= 61437 ACCIDENT RABBIT_STUN  zone=3 control=turtle y=331 oxy=7.8
+t= 277.6 x= 61444 SHIFT DROPPED -> turtle  state=1 accident=RABBIT_STUN show=false ctrl=turtle
+t= 279.6 x= 61828 NOTICE z3_beam_e   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=352 oxy=6.5 rabbit_daze=0.0 turtle_daze=1.8
+       diveSTART t=280.50 x=62008 ctrl=rabbit y=349 down_applied=false show=false
+t= 285.0 x= 63055 NOTICE z3_bar_e    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.7 turtle_daze=1.1
+t= 290.1 x= 64250 NOTICE z3_wall_e   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.7 turtle_daze=0.0
+       diveSTART t=290.80 x=64428 ctrl=rabbit y=300 down_applied=false show=false
+t= 292.7 x= 64891 PUMP -> rabbit  daze=2.9
+FINISH normal    run 1  t=297.1  accidents=4  shifts=207  show=15  oxy_min=2.2  passed=55  grade=A
+
+---- normal run 2  seed=278838257 ----
+t=   2.6 x=   961 NOTICE rock1       SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.9 turtle_daze=0.0
+       diveSTART t=3.70 x=1165 ctrl=rabbit y=300 down_applied=false show=false
+t=   6.7 x=  1718 NOTICE beam1       LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=380 oxy=5.3 rabbit_daze=0.0 turtle_daze=1.3
+       diveSTART t=7.85 x=1938 ctrl=rabbit y=321 down_applied=false show=false
+t=  14.0 x=  3123 NOTICE reef1       UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.0 turtle_daze=0.7
+t=  17.0 x=  3751 NOTICE reef2       UNDERWATER_REEF -> DIVE  (WRONG)
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=2.6 turtle_daze=0.0
+       diveSTART t=17.00 x=3751 ctrl=turtle y=300 down_applied=false show=false
+t=  18.9 x=  4158 NOTICE wall1       SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=381 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=18.85 x=4158 ctrl=turtle y=381 down_applied=false show=false
+t=  22.1 x=  4873 NOTICE airbar      AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=381 oxy=4.7 rabbit_daze=2.3 turtle_daze=0.0
+t=  22.8 x=  5016 PUMP -> rabbit  daze=2.9
+t=  23.4 x=  5148 NOTICE combo_rock  SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=7.2 rabbit_daze=3.1 turtle_daze=0.4
+t=  25.3 x=  5551 NOTICE combo_beam  LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=381 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=25.25 x=5551 ctrl=rabbit y=381 down_applied=false show=false
+t=  30.7 x=  6610 PUMP -> turtle  daze=2.9
+t=  30.8 x=  6629 NOTICE rock2       SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=351 oxy=6.5 rabbit_daze=0.0 turtle_daze=3.0
+t=  31.5 x=  6777 PUMP -> turtle  daze=3.3
+       diveSTART t=31.70 x=6829 ctrl=turtle y=373 down_applied=false show=false
+t=  40.7 x=  8651 NOTICE beam2       LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.8 turtle_daze=0.8
+       diveSTART t=41.65 x=8834 ctrl=turtle y=300 down_applied=false show=false
+t=  43.4 x=  9219 PUMP -> rabbit  daze=2.9
+t=  51.1 x= 10647 NOTICE rock3       SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.2 turtle_daze=0.0
+       diveSTART t=52.35 x=10865 ctrl=rabbit y=301 down_applied=false show=false
+t=  61.7 x= 12600 NOTICE beam3       LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.2
+       diveSTART t=62.95 x=12818 ctrl=rabbit y=301 down_applied=false show=false
+t=  65.0 x= 13235 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t=  74.8 x= 15220 NOTICE z2_reef_a   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=314 oxy=8.0 rabbit_daze=0.2 turtle_daze=1.6
+t=  79.6 x= 16241 NOTICE z2_reef_b   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.8 turtle_daze=1.6
+t=  81.7 x= 16757 PUMP -> rabbit  daze=2.9
+t=  83.8 x= 17208 PUMP -> rabbit  daze=2.9
+t=  85.0 x= 17442 NOTICE z2_wall_a   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=302 oxy=8.0 rabbit_daze=2.2 turtle_daze=0.9
+       diveSTART t=85.80 x=17620 ctrl=rabbit y=306 down_applied=false show=false
+t=  86.4 x= 17758 PUMP -> rabbit  daze=2.9
+t=  88.5 x= 18231 PUMP -> rabbit  daze=2.9
+t=  91.2 x= 18868 NOTICE z2_beam_a   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=472 oxy=7.8 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=91.80 x=19012 ctrl=turtle y=409 down_applied=false show=false
+t=  97.5 x= 20252 NOTICE z2_rock_a   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.6 turtle_daze=0.2
+       diveSTART t=98.90 x=20475 ctrl=turtle y=314 down_applied=false show=false
+t= 104.7 x= 21661 NOTICE z2_bar_a    AIR_BAR         -> DIVE  (WRONG)
+       plan ctrl=turtle y=300 oxy=5.8 rabbit_daze=0.7 turtle_daze=2.4
+       diveSTART t=105.45 x=21833 ctrl=rabbit y=333 down_applied=false show=false
+t= 110.6 x= 23045 NOTICE z2_reef_c   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=393 oxy=6.4 rabbit_daze=0.0 turtle_daze=0.6
+t= 117.1 x= 24442 NOTICE z2_wall_b   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.6 turtle_daze=0.5
+       diveSTART t=118.35 x=24631 ctrl=turtle y=314 down_applied=false show=false
+t= 121.1 x= 25290 PUMP -> rabbit  daze=2.9
+t= 123.8 x= 25857 NOTICE z2_rock_b   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=315 oxy=7.2 rabbit_daze=1.7 turtle_daze=1.6
+       diveSTART t=124.70 x=26015 ctrl=turtle y=345 down_applied=false show=false
+t= 129.9 x= 27240 NOTICE z2_beam_b   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=372 oxy=6.0 rabbit_daze=0.3 turtle_daze=0.8
+       diveSTART t=130.75 x=27421 ctrl=turtle y=343 down_applied=false show=false
+t= 136.3 x= 28642 NOTICE z2_reef_d   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.7 turtle_daze=0.3
+t= 138.0 x= 29024 PUMP -> rabbit  daze=2.9
+t= 139.9 x= 29432 PUMP -> rabbit  daze=2.9
+t= 140.8 x= 29630 NOTICE z2_reef_e   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=301 oxy=8.0 rabbit_daze=2.5 turtle_daze=0.8
+t= 141.8 x= 29839 PUMP -> rabbit  daze=2.9
+t= 143.7 x= 30247 PUMP -> rabbit  daze=2.9
+t= 143.8 x= 30283 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 147.0 x= 31037 NOTICE z2_bar_b    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=302 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.5
+t= 153.6 x= 32435 NOTICE z2_wall_c   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.2 turtle_daze=0.7
+       diveSTART t=154.70 x=32615 ctrl=turtle y=300 down_applied=false show=false
+t= 157.8 x= 33341 PUMP -> rabbit  daze=2.9
+t= 160.1 x= 33836 NOTICE z2_rock_c   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=326 oxy=6.1 rabbit_daze=1.8 turtle_daze=1.7
+       diveSTART t=161.10 x=34020 ctrl=turtle y=323 down_applied=false show=false
+t= 164.4 x= 34808 NOTICE z2_beam_c   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=384 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=164.45 x=34820 ctrl=turtle y=384 down_applied=false show=false
+t= 170.2 x= 36043 NOTICE z2_reef_f   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.7 turtle_daze=1.0
+t= 172.4 x= 36583 PUMP -> rabbit  daze=2.9
+t= 174.3 x= 36991 PUMP -> rabbit  daze=2.9
+t= 175.5 x= 37222 NOTICE z2_bar_c    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=2.2 turtle_daze=0.9
+t= 176.2 x= 37398 PUMP -> rabbit  daze=2.9
+t= 178.1 x= 37806 PUMP -> rabbit  daze=2.9
+t= 178.3 x= 37854 NOTICE z2_rock_d   SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=302 oxy=8.0 rabbit_daze=0.8 turtle_daze=0.0
+       diveSTART t=179.10 x=38037 ctrl=rabbit y=302 down_applied=false show=false
+t= 181.9 x= 38623 NOTICE z3_rock_a   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=368 oxy=5.6 rabbit_daze=0.9 turtle_daze=1.1
+       diveSTART t=182.90 x=38826 ctrl=rabbit y=323 down_applied=false show=false
+t= 187.4 x= 39855 NOTICE z3_beam_a   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.1
+       diveSTART t=188.15 x=40034 ctrl=rabbit y=300 down_applied=false show=false
+t= 190.0 x= 40483 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 192.2 x= 41055 NOTICE z3_bar_a    AIR_BAR         -> DIVE  (WRONG)
+       plan ctrl=rabbit y=381 oxy=7.5 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=192.75 x=41210 ctrl=rabbit y=381 down_applied=false show=false
+t= 197.3 x= 42255 NOTICE z3_wall_a   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.6 turtle_daze=1.3
+       diveSTART t=197.90 x=42418 ctrl=rabbit y=318 down_applied=false show=false
+t= 200.6 x= 43112 PUMP -> rabbit  daze=2.9
+t= 202.1 x= 43453 NOTICE z3_rock_b   SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=311 oxy=4.2 rabbit_daze=2.5 turtle_daze=0.9
+       diveSTART t=202.80 x=43622 ctrl=rabbit y=324 down_applied=false show=false
+t= 206.0 x= 44442 NOTICE z3_beam_b   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=385 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=206.00 x=44442 ctrl=turtle y=385 down_applied=false show=false
+t= 210.2 x= 45442 NOTICE z3_reef_a   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=324 oxy=7.9 rabbit_daze=0.0 turtle_daze=1.7
+t= 213.4 x= 46238 NOTICE z3_reef_b   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.3 turtle_daze=0.5
+t= 215.1 x= 46653 PUMP -> rabbit  daze=2.9
+t= 218.3 x= 47454 NOTICE z3_bar_b    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t= 223.3 x= 48649 NOTICE z3_wall_b   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.1
+       diveSTART t=224.10 x=48837 ctrl=rabbit y=300 down_applied=false show=false
+t= 226.8 x= 49507 PUMP -> rabbit  daze=2.9
+t= 228.3 x= 49848 NOTICE z3_rock_c   SURFACE_ROCK    -> SURFACE  (WRONG)
+       plan ctrl=turtle y=310 oxy=4.6 rabbit_daze=2.5 turtle_daze=0.9
+t= 229.1 x= 50051 PUMP -> rabbit  daze=2.9
+t= 229.9 x= 50247 ACCIDENT RABBIT_STUN  zone=3 control=turtle y=321 oxy=8.0
+t= 233.8 x= 51053 NOTICE z3_beam_c   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.4 turtle_daze=0.0
+       diveSTART t=234.60 x=51244 ctrl=rabbit y=300 down_applied=false show=false
+t= 238.9 x= 52235 NOTICE z3_bar_c    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=336 oxy=6.6 rabbit_daze=0.0 turtle_daze=2.1
+t= 244.2 x= 53459 NOTICE z3_wall_c   SURFACE_WALL    -> SURFACE  (WRONG)
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.0
+t= 245.3 x= 53758 ACCIDENT TURTLE_REEF  zone=3 control=rabbit y=300 oxy=8.0
+t= 247.3 x= 53832 NOTICE z3_wall_c   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=247.30 x=53832 ctrl=rabbit y=300 down_applied=false show=false
+t= 250.5 x= 54646 NOTICE z3_rock_d   SURFACE_ROCK    -> SURFACE  (WRONG)
+       plan ctrl=turtle y=345 oxy=5.1 rabbit_daze=1.6 turtle_daze=0.8
+t= 251.8 x= 54984 PUMP -> rabbit  daze=2.9
+t= 252.1 x= 55061 ACCIDENT RABBIT_STUN  zone=3 control=turtle y=300 oxy=8.0
+t= 254.1 x= 55427 NOTICE z3_beam_d   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=302 oxy=8.0 rabbit_daze=0.0 turtle_daze=1.0
+       diveSTART t=255.10 x=55607 ctrl=rabbit y=303 down_applied=false show=false
+t= 259.5 x= 56643 NOTICE z3_reef_c   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=344 oxy=5.9 rabbit_daze=0.0 turtle_daze=2.1
+t= 262.7 x= 57437 NOTICE z3_reef_d   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.3 turtle_daze=0.5
+t= 264.4 x= 57852 PUMP -> rabbit  daze=2.9
+t= 265.5 x= 58091 SHIFT DROPPED -> turtle  state=1 accident=NONE show=true ctrl=turtle
+t= 267.6 x= 58649 NOTICE z3_bar_d    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t= 272.6 x= 59902 NOTICE z3_wall_d   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.3 turtle_daze=0.3
+       diveSTART t=272.70 x=59940 ctrl=turtle y=300 down_applied=false show=false
+t= 274.6 x= 60484 PUMP -> rabbit  daze=2.9
+t= 277.0 x= 61050 NOTICE z3_rock_e   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=310 oxy=6.5 rabbit_daze=3.0 turtle_daze=0.4
+       diveSTART t=278.20 x=61258 ctrl=turtle y=322 down_applied=false show=false
+t= 279.6 x= 61604 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 281.3 x= 62046 NOTICE z3_beam_e   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=385 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=281.25 x=62046 ctrl=turtle y=385 down_applied=false show=false
+t= 285.4 x= 63035 NOTICE z3_bar_e    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=322 oxy=8.0 rabbit_daze=0.0 turtle_daze=1.7
+t= 290.6 x= 64259 NOTICE z3_wall_e   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.0
+       diveSTART t=291.30 x=64428 ctrl=rabbit y=300 down_applied=false show=false
+t= 293.7 x= 65022 PUMP -> rabbit  daze=2.9
+FINISH normal    run 2  t=297.5  accidents=3  shifts=203  show=15  oxy_min=2.2  passed=55  grade=S
+
+---- normal run 3  seed=279838260 ----
+t=   2.6 x=   961 NOTICE rock1       SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.9 turtle_daze=0.0
+       diveSTART t=3.70 x=1165 ctrl=rabbit y=300 down_applied=false show=false
+t=   6.7 x=  1718 NOTICE beam1       LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=380 oxy=5.3 rabbit_daze=0.0 turtle_daze=1.3
+       diveSTART t=7.85 x=1938 ctrl=rabbit y=321 down_applied=false show=false
+t=  14.0 x=  3123 NOTICE reef1       UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.0 turtle_daze=0.7
+t=  17.0 x=  3751 NOTICE reef2       UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=2.6 turtle_daze=0.0
+t=  18.9 x=  4158 NOTICE wall1       SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=381 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=18.85 x=4158 ctrl=turtle y=381 down_applied=false show=false
+t=  22.1 x=  4873 NOTICE airbar      AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=381 oxy=4.7 rabbit_daze=2.3 turtle_daze=0.0
+t=  22.8 x=  5016 PUMP -> rabbit  daze=2.9
+t=  23.4 x=  5148 NOTICE combo_rock  SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=7.2 rabbit_daze=3.1 turtle_daze=0.4
+t=  25.3 x=  5551 NOTICE combo_beam  LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=381 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=25.25 x=5551 ctrl=rabbit y=381 down_applied=false show=false
+t=  30.7 x=  6610 PUMP -> turtle  daze=2.9
+t=  30.8 x=  6629 NOTICE rock2       SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=351 oxy=6.5 rabbit_daze=0.0 turtle_daze=3.0
+t=  31.5 x=  6777 PUMP -> turtle  daze=3.3
+       diveSTART t=31.70 x=6829 ctrl=turtle y=373 down_applied=false show=false
+t=  40.7 x=  8651 NOTICE beam2       LOW_BEAM        -> SURFACE  (WRONG)
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.8 turtle_daze=0.8
+t=  42.5 x=  9047 ACCIDENT RABBIT_STUN  zone=1 control=turtle y=300 oxy=8.0
+t=  43.3 x=  9176 NOTICE beam2       LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=43.35 x=9176 ctrl=turtle y=300 down_applied=false show=false
+t=  51.4 x= 10623 NOTICE rock3       SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=307 oxy=8.0 rabbit_daze=0.0 turtle_daze=1.3
+       diveSTART t=52.65 x=10836 ctrl=rabbit y=333 down_applied=false show=false
+t=  62.0 x= 12613 NOTICE beam3       LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.4 turtle_daze=0.0
+       diveSTART t=63.25 x=12821 ctrl=rabbit y=302 down_applied=false show=false
+t=  76.2 x= 15263 NOTICE z2_reef_a   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.6 turtle_daze=0.0
+t=  78.1 x= 15703 PUMP -> rabbit  daze=2.9
+t=  80.6 x= 16299 NOTICE z2_reef_b   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t=  86.0 x= 17458 NOTICE z2_wall_a   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.3 turtle_daze=0.0
+       diveSTART t=86.85 x=17643 ctrl=rabbit y=300 down_applied=false show=false
+t=  89.4 x= 18230 PUMP -> rabbit  daze=2.9
+t=  92.4 x= 18848 NOTICE z2_beam_a   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=343 oxy=6.6 rabbit_daze=0.7 turtle_daze=2.1
+       diveSTART t=93.25 x=19018 ctrl=rabbit y=360 down_applied=false show=false
+t=  98.5 x= 20250 NOTICE z2_rock_a   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=426 oxy=6.4 rabbit_daze=0.0 turtle_daze=0.7
+       diveSTART t=99.30 x=20421 ctrl=rabbit y=427 down_applied=false show=false
+t= 105.0 x= 21655 NOTICE z2_bar_a    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.6 turtle_daze=0.0
+t= 106.8 x= 22071 PUMP -> rabbit  daze=2.9
+t= 108.9 x= 22522 PUMP -> rabbit  daze=2.9
+t= 110.9 x= 22961 PUMP -> rabbit  daze=2.9
+t= 111.4 x= 23066 NOTICE z2_reef_c   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=302 oxy=8.0 rabbit_daze=3.2 turtle_daze=0.2
+t= 113.0 x= 23411 PUMP -> rabbit  daze=2.9
+t= 117.7 x= 24451 NOTICE z2_wall_b   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=301 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.7
+       diveSTART t=118.50 x=24622 ctrl=rabbit y=302 down_applied=false show=false
+t= 121.3 x= 25297 PUMP -> rabbit  daze=2.9
+t= 124.0 x= 25854 NOTICE z2_rock_b   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=325 oxy=6.8 rabbit_daze=1.6 turtle_daze=1.7
+       diveSTART t=124.90 x=26013 ctrl=turtle y=357 down_applied=false show=false
+t= 130.6 x= 27233 NOTICE z2_beam_b   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.9 turtle_daze=0.8
+       diveSTART t=131.75 x=27420 ctrl=rabbit y=300 down_applied=false show=false
+t= 133.7 x= 27883 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 136.9 x= 28634 NOTICE z2_reef_d   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=352 oxy=6.5 rabbit_daze=0.0 turtle_daze=0.5
+t= 141.6 x= 29637 NOTICE z2_reef_e   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.5 turtle_daze=1.5
+t= 144.0 x= 30213 PUMP -> rabbit  daze=2.9
+t= 145.9 x= 30621 PUMP -> rabbit  daze=2.9
+t= 147.8 x= 31028 PUMP -> rabbit  daze=2.9
+t= 147.9 x= 31052 NOTICE z2_bar_b    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=3.0 turtle_daze=0.0
+t= 149.7 x= 31436 PUMP -> rabbit  daze=2.9
+t= 150.8 x= 31650 SHIFT DROPPED -> turtle  state=1 accident=NONE show=true ctrl=turtle
+t= 154.2 x= 32448 NOTICE z2_wall_c   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.6 turtle_daze=0.0
+       diveSTART t=155.20 x=32658 ctrl=rabbit y=301 down_applied=false show=false
+t= 158.4 x= 33387 PUMP -> rabbit  daze=2.9
+t= 160.3 x= 33795 PUMP -> rabbit  daze=2.9
+t= 160.5 x= 33843 NOTICE z2_rock_c   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=6.2 rabbit_daze=3.1 turtle_daze=0.0
+       diveSTART t=161.45 x=34035 ctrl=turtle y=301 down_applied=false show=false
+t= 162.2 x= 34202 PUMP -> rabbit  daze=2.9
+t= 164.1 x= 34610 PUMP -> rabbit  daze=2.9
+t= 164.2 x= 34646 NOTICE z2_beam_c   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=7.5 rabbit_daze=3.1 turtle_daze=0.0
+       diveSTART t=165.25 x=34850 ctrl=turtle y=301 down_applied=false show=false
+t= 166.0 x= 35017 PUMP -> rabbit  daze=2.9
+t= 170.5 x= 36032 NOTICE z2_reef_f   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=382 oxy=6.5 rabbit_daze=0.0 turtle_daze=0.5
+t= 176.1 x= 37251 NOTICE z2_bar_c    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.4 turtle_daze=0.0
+t= 177.6 x= 37611 PUMP -> rabbit  daze=2.9
+t= 178.8 x= 37842 NOTICE z2_rock_d   SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=2.2 turtle_daze=0.9
+       diveSTART t=179.55 x=38024 ctrl=rabbit y=308 down_applied=false show=false
+t= 180.5 x= 38244 PUMP -> rabbit  daze=2.9
+t= 182.9 x= 38811 NOTICE z3_rock_a   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=386 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=182.90 x=38811 ctrl=rabbit y=386 down_applied=false show=false
+t= 187.3 x= 39833 NOTICE z3_beam_a   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=347 oxy=6.2 rabbit_daze=0.0 turtle_daze=2.1
+       diveSTART t=188.10 x=40006 ctrl=rabbit y=341 down_applied=false show=false
+t= 192.6 x= 41054 NOTICE z3_bar_a    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.7 turtle_daze=1.0
+t= 194.9 x= 41639 PUMP -> rabbit  daze=2.9
+t= 195.0 x= 41678 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 197.2 x= 42250 NOTICE z3_wall_a   SURFACE_WALL    -> SURFACE  (WRONG)
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t= 198.4 x= 42562 ACCIDENT TURTLE_REEF  zone=3 control=rabbit y=300 oxy=8.0
+t= 200.4 x= 42636 NOTICE z3_wall_a   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=200.40 x=42636 ctrl=rabbit y=300 down_applied=false show=false
+t= 203.7 x= 43443 NOTICE z3_rock_b   SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=327 oxy=5.1 rabbit_daze=1.7 turtle_daze=0.8
+       diveSTART t=204.35 x=43617 ctrl=rabbit y=306 down_applied=false show=false
+t= 206.9 x= 44225 NOTICE z3_beam_b   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=366 oxy=5.6 rabbit_daze=1.6 turtle_daze=1.0
+       diveSTART t=207.80 x=44412 ctrl=rabbit y=312 down_applied=false show=false
+t= 212.3 x= 45459 NOTICE z3_reef_a   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.4 turtle_daze=0.8
+t= 213.8 x= 45849 PUMP -> rabbit  daze=2.9
+t= 214.9 x= 46088 SHIFT DROPPED -> turtle  state=1 accident=NONE show=true ctrl=turtle
+t= 216.6 x= 46529 NOTICE z3_reef_b   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t= 220.6 x= 47450 NOTICE z3_bar_b    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.1
+t= 222.5 x= 47944 PUMP -> rabbit  daze=2.9
+t= 224.4 x= 48390 PUMP -> rabbit  daze=2.9
+t= 225.5 x= 48634 NOTICE z3_wall_b   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=2.1 turtle_daze=0.9
+       diveSTART t=226.20 x=48818 ctrl=rabbit y=306 down_applied=false show=false
+t= 226.9 x= 48994 PUMP -> rabbit  daze=2.9
+t= 228.8 x= 49460 PUMP -> rabbit  daze=2.9
+t= 231.1 x= 50053 NOTICE z3_rock_c   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=450 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=231.10 x=50053 ctrl=rabbit y=450 down_applied=false show=false
+t= 235.3 x= 51036 NOTICE z3_beam_c   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=313 oxy=6.4 rabbit_daze=0.8 turtle_daze=0.7
+       diveSTART t=236.40 x=51229 ctrl=turtle y=330 down_applied=false show=false
+t= 240.7 x= 52240 NOTICE z3_bar_c    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=335 oxy=6.7 rabbit_daze=0.0 turtle_daze=2.0
+t= 245.4 x= 53450 NOTICE z3_wall_c   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=246.05 x=53616 ctrl=rabbit y=300 down_applied=false show=false
+t= 249.2 x= 54428 PUMP -> rabbit  daze=2.9
+t= 250.1 x= 54635 NOTICE z3_rock_d   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=336 oxy=4.3 rabbit_daze=2.6 turtle_daze=0.7
+       diveSTART t=251.10 x=54817 ctrl=turtle y=309 down_applied=false show=false
+t= 253.6 x= 55441 NOTICE z3_beam_d   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=305 oxy=6.2 rabbit_daze=2.4 turtle_daze=0.6
+       diveSTART t=254.70 x=55629 ctrl=turtle y=317 down_applied=false show=false
+t= 256.5 x= 56083 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 258.7 x= 56655 NOTICE z3_reef_c   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=380 oxy=7.5 rabbit_daze=0.0 turtle_daze=0.0
+t= 261.8 x= 57442 NOTICE z3_reef_d   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.8 turtle_daze=0.6
+t= 263.8 x= 57938 PUMP -> rabbit  daze=2.9
+t= 265.7 x= 58383 PUMP -> rabbit  daze=2.9
+t= 266.8 x= 58627 NOTICE z3_bar_d    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=302 oxy=8.0 rabbit_daze=2.1 turtle_daze=0.9
+t= 267.6 x= 58829 PUMP -> rabbit  daze=2.9
+t= 269.5 x= 59287 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 271.7 x= 59861 NOTICE z3_wall_d   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=272.30 x=60015 ctrl=rabbit y=300 down_applied=false show=false
+t= 275.5 x= 60828 PUMP -> rabbit  daze=2.9
+t= 276.4 x= 61036 NOTICE z3_rock_e   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=336 oxy=4.3 rabbit_daze=2.6 turtle_daze=0.7
+       diveSTART t=277.35 x=61217 ctrl=turtle y=309 down_applied=false show=false
+t= 279.9 x= 61842 NOTICE z3_beam_e   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=305 oxy=6.2 rabbit_daze=2.4 turtle_daze=0.6
+       diveSTART t=280.95 x=62030 ctrl=turtle y=317 down_applied=false show=false
+t= 282.7 x= 62484 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 284.9 x= 63057 NOTICE z3_bar_e    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=380 oxy=7.5 rabbit_daze=0.0 turtle_daze=0.0
+t= 290.0 x= 64252 NOTICE z3_wall_e   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.0
+       diveSTART t=290.70 x=64430 ctrl=rabbit y=300 down_applied=false show=false
+t= 293.2 x= 65049 PUMP -> rabbit  daze=2.9
+FINISH normal    run 3  t=297.3  accidents=2  shifts=206  show=17  oxy_min=2.2  passed=55  grade=S
+
+---- normal run 4  seed=280838263 ----
+t=   2.6 x=   961 NOTICE rock1       SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.9 turtle_daze=0.0
+       diveSTART t=3.70 x=1165 ctrl=rabbit y=300 down_applied=false show=false
+t=   6.7 x=  1718 NOTICE beam1       LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=380 oxy=5.3 rabbit_daze=0.0 turtle_daze=1.3
+       diveSTART t=7.85 x=1938 ctrl=rabbit y=321 down_applied=false show=false
+t=  13.4 x=  3201 NOTICE reef1       UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.0 turtle_daze=0.1
+t=  14.6 x=  3536 PUMP -> rabbit  daze=2.9
+t=  15.8 x=  3753 NOTICE reef2       UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=2.2 turtle_daze=0.9
+t=  17.7 x=  4159 NOTICE wall1       SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=382 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=17.65 x=4159 ctrl=turtle y=382 down_applied=false show=false
+t=  20.9 x=  4874 NOTICE airbar      AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=382 oxy=4.7 rabbit_daze=2.3 turtle_daze=0.0
+t=  21.6 x=  5017 PUMP -> rabbit  daze=2.9
+t=  22.2 x=  5149 NOTICE combo_rock  SURFACE_ROCK    -> SURFACE  (WRONG)
+       plan ctrl=rabbit y=300 oxy=7.2 rabbit_daze=3.1 turtle_daze=0.4
+t=  24.1 x=  5551 NOTICE combo_beam  LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=381 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=24.05 x=5551 ctrl=rabbit y=381 down_applied=false show=false
+t=  29.5 x=  6611 PUMP -> turtle  daze=2.9
+t=  29.6 x=  6629 NOTICE rock2       SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=351 oxy=6.5 rabbit_daze=0.0 turtle_daze=3.0
+t=  30.3 x=  6778 PUMP -> turtle  daze=3.3
+       diveSTART t=30.50 x=6830 ctrl=turtle y=373 down_applied=false show=false
+t=  39.5 x=  8652 NOTICE beam2       LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.8 turtle_daze=0.8
+       diveSTART t=40.45 x=8834 ctrl=turtle y=300 down_applied=false show=false
+t=  42.2 x=  9219 PUMP -> rabbit  daze=2.9
+t=  49.9 x= 10648 NOTICE rock3       SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.2 turtle_daze=0.0
+       diveSTART t=51.15 x=10865 ctrl=rabbit y=301 down_applied=false show=false
+t=  60.5 x= 12601 NOTICE beam3       LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.2
+       diveSTART t=61.75 x=12818 ctrl=rabbit y=301 down_applied=false show=false
+t=  63.8 x= 13235 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t=  74.3 x= 15262 NOTICE z2_reef_a   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.9 turtle_daze=0.7
+t=  76.4 x= 15766 PUMP -> rabbit  daze=2.9
+t=  78.4 x= 16205 PUMP -> rabbit  daze=2.9
+t=  78.7 x= 16265 NOTICE z2_reef_b   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=301 oxy=8.0 rabbit_daze=3.2 turtle_daze=0.0
+t=  80.5 x= 16655 PUMP -> rabbit  daze=2.9
+t=  82.6 x= 17094 PUMP -> rabbit  daze=2.9
+t=  84.4 x= 17472 NOTICE z2_wall_a   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=2.6 turtle_daze=0.7
+       diveSTART t=85.15 x=17639 ctrl=rabbit y=301 down_applied=false show=false
+t=  85.9 x= 17802 PUMP -> rabbit  daze=2.9
+t=  87.9 x= 18241 PUMP -> rabbit  daze=2.9
+t=  90.6 x= 18867 NOTICE z2_beam_a   LOW_BEAM        -> SURFACE  (WRONG)
+       plan ctrl=rabbit y=428 oxy=7.8 rabbit_daze=0.0 turtle_daze=0.0
+t=  91.9 x= 19191 ACCIDENT RABBIT_STUN  zone=2 control=turtle y=300 oxy=8.0
+t=  92.7 x= 19319 NOTICE z2_beam_a   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=92.75 x=19319 ctrl=turtle y=300 down_applied=false show=false
+t=  97.2 x= 20240 NOTICE z2_rock_a   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.4 turtle_daze=0.5
+       diveSTART t=98.45 x=20431 ctrl=turtle y=314 down_applied=false show=false
+t= 104.3 x= 21659 NOTICE z2_bar_a    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=6.0 rabbit_daze=0.8 turtle_daze=2.1
+t= 106.4 x= 22175 PUMP -> rabbit  daze=2.9
+t= 108.5 x= 22613 PUMP -> rabbit  daze=2.9
+t= 110.6 x= 23064 NOTICE z2_reef_c   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=302 oxy=8.0 rabbit_daze=2.9 turtle_daze=0.0
+t= 110.6 x= 23064 PUMP -> rabbit  daze=2.9
+t= 112.6 x= 23502 PUMP -> rabbit  daze=2.9
+t= 116.7 x= 24459 NOTICE z2_wall_b   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.5 turtle_daze=0.0
+       diveSTART t=117.55 x=24643 ctrl=rabbit y=300 down_applied=false show=false
+t= 120.7 x= 25387 PUMP -> rabbit  daze=2.9
+t= 123.0 x= 25865 NOTICE z2_rock_b   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=311 oxy=5.7 rabbit_daze=2.6 turtle_daze=1.3
+       diveSTART t=124.10 x=26060 ctrl=turtle y=358 down_applied=false show=false
+t= 129.6 x= 27228 NOTICE z2_beam_b   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.7 turtle_daze=0.8
+       diveSTART t=130.80 x=27419 ctrl=rabbit y=302 down_applied=false show=false
+t= 132.7 x= 27882 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 135.9 x= 28633 NOTICE z2_reef_d   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=352 oxy=6.5 rabbit_daze=0.0 turtle_daze=0.5
+t= 140.7 x= 29648 NOTICE z2_reef_e   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.6 turtle_daze=1.5
+t= 143.1 x= 30212 PUMP -> rabbit  daze=2.9
+t= 145.0 x= 30620 PUMP -> rabbit  daze=2.9
+t= 146.9 x= 31027 PUMP -> rabbit  daze=2.9
+t= 147.0 x= 31051 NOTICE z2_bar_b    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=3.0 turtle_daze=0.0
+t= 148.8 x= 31435 PUMP -> rabbit  daze=2.9
+t= 153.7 x= 32444 NOTICE z2_wall_c   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.7 turtle_daze=1.0
+       diveSTART t=154.55 x=32630 ctrl=turtle y=303 down_applied=false show=false
+t= 156.8 x= 33170 PUMP -> rabbit  daze=2.9
+t= 160.1 x= 33843 NOTICE z2_rock_c   SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=5.7 rabbit_daze=1.0 turtle_daze=2.2
+       diveSTART t=160.90 x=34035 ctrl=rabbit y=336 down_applied=false show=false
+t= 163.5 x= 34643 NOTICE z2_beam_c   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=5.9 rabbit_daze=2.3 turtle_daze=0.8
+       diveSTART t=164.45 x=34844 ctrl=rabbit y=302 down_applied=false show=false
+t= 166.4 x= 35280 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 169.6 x= 36032 NOTICE z2_reef_f   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=351 oxy=6.5 rabbit_daze=0.0 turtle_daze=0.5
+t= 175.2 x= 37251 NOTICE z2_bar_c    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.4 turtle_daze=0.0
+t= 176.7 x= 37611 PUMP -> rabbit  daze=2.9
+t= 177.9 x= 37842 NOTICE z2_rock_d   SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=2.2 turtle_daze=0.9
+       diveSTART t=178.65 x=38024 ctrl=rabbit y=308 down_applied=false show=false
+t= 179.6 x= 38244 PUMP -> rabbit  daze=2.9
+t= 182.0 x= 38810 NOTICE z3_rock_a   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=386 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=182.00 x=38810 ctrl=rabbit y=386 down_applied=false show=false
+t= 186.4 x= 39833 NOTICE z3_beam_a   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=347 oxy=6.2 rabbit_daze=0.0 turtle_daze=2.1
+       diveSTART t=187.20 x=40005 ctrl=rabbit y=341 down_applied=false show=false
+t= 191.7 x= 41053 NOTICE z3_bar_a    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.7 turtle_daze=1.0
+t= 194.0 x= 41638 PUMP -> rabbit  daze=2.9
+t= 194.1 x= 41677 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 196.3 x= 42249 NOTICE z3_wall_a   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=196.95 x=42416 ctrl=rabbit y=300 down_applied=false show=false
+t= 200.1 x= 43227 PUMP -> rabbit  daze=2.9
+t= 201.0 x= 43435 NOTICE z3_rock_b   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=336 oxy=4.3 rabbit_daze=2.6 turtle_daze=0.7
+       diveSTART t=202.00 x=43616 ctrl=turtle y=309 down_applied=false show=false
+t= 204.5 x= 44241 NOTICE z3_beam_b   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=305 oxy=6.2 rabbit_daze=2.4 turtle_daze=0.6
+       diveSTART t=205.60 x=44429 ctrl=turtle y=317 down_applied=false show=false
+t= 207.4 x= 44883 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 209.6 x= 45455 NOTICE z3_reef_a   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=380 oxy=7.5 rabbit_daze=0.0 turtle_daze=0.0
+t= 212.7 x= 46242 NOTICE z3_reef_b   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.8 turtle_daze=0.6
+t= 214.7 x= 46737 PUMP -> rabbit  daze=2.9
+t= 216.6 x= 47183 PUMP -> rabbit  daze=2.9
+t= 217.7 x= 47427 NOTICE z3_bar_b    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=302 oxy=8.0 rabbit_daze=2.1 turtle_daze=0.9
+t= 218.5 x= 47629 PUMP -> rabbit  daze=2.9
+t= 220.4 x= 48087 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 222.6 x= 48659 NOTICE z3_wall_b   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=223.20 x=48814 ctrl=rabbit y=300 down_applied=false show=false
+t= 226.4 x= 49626 PUMP -> rabbit  daze=2.9
+t= 227.3 x= 49834 NOTICE z3_rock_c   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=336 oxy=4.3 rabbit_daze=2.6 turtle_daze=0.7
+       diveSTART t=228.25 x=50015 ctrl=turtle y=309 down_applied=false show=false
+t= 232.7 x= 51048 NOTICE z3_beam_c   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.2 turtle_daze=0.1
+       diveSTART t=233.50 x=51237 ctrl=rabbit y=300 down_applied=false show=false
+t= 235.3 x= 51685 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 237.5 x= 52257 NOTICE z3_bar_c    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=381 oxy=7.5 rabbit_daze=0.0 turtle_daze=0.0
+t= 242.5 x= 53497 NOTICE z3_wall_c   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.3 turtle_daze=0.3
+       diveSTART t=242.65 x=53568 ctrl=rabbit y=300 down_applied=false show=false
+t= 244.5 x= 54059 PUMP -> rabbit  daze=2.9
+t= 247.0 x= 54651 NOTICE z3_rock_d   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=310 oxy=6.4 rabbit_daze=3.1 turtle_daze=0.4
+       diveSTART t=248.10 x=54850 ctrl=turtle y=322 down_applied=false show=false
+t= 249.5 x= 55205 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 251.2 x= 55647 NOTICE z3_beam_d   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=385 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=251.20 x=55647 ctrl=turtle y=385 down_applied=false show=false
+t= 255.3 x= 56636 NOTICE z3_reef_c   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=322 oxy=8.0 rabbit_daze=0.0 turtle_daze=1.7
+t= 258.6 x= 57439 NOTICE z3_reef_d   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.1 turtle_daze=0.6
+t= 260.5 x= 57904 PUMP -> rabbit  daze=2.9
+t= 263.4 x= 58659 NOTICE z3_bar_d    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t= 268.5 x= 59853 NOTICE z3_wall_d   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.0
+       diveSTART t=269.20 x=60032 ctrl=rabbit y=300 down_applied=false show=false
+t= 271.7 x= 60650 PUMP -> rabbit  daze=2.9
+t= 273.4 x= 61055 NOTICE z3_rock_e   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=312 oxy=5.5 rabbit_daze=2.6 turtle_daze=1.1
+       diveSTART t=274.20 x=61233 ctrl=rabbit y=337 down_applied=false show=false
+t= 277.4 x= 62047 NOTICE z3_beam_e   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=356 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=277.40 x=62047 ctrl=turtle y=356 down_applied=false show=false
+t= 281.7 x= 63060 NOTICE z3_bar_e    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.2 turtle_daze=0.0
+t= 283.4 x= 63515 PUMP -> rabbit  daze=2.9
+t= 285.3 x= 63961 PUMP -> rabbit  daze=2.9
+t= 286.6 x= 64237 NOTICE z3_wall_e   SURFACE_WALL    -> SURFACE  (WRONG)
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=2.3 turtle_daze=0.9
+t= 287.2 x= 64406 PUMP -> rabbit  daze=2.9
+t= 287.9 x= 64564 ACCIDENT TURTLE_REEF  zone=3 control=rabbit y=301 oxy=8.0
+t= 289.9 x= 64617 NOTICE z3_wall_e   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=289.85 x=64617 ctrl=rabbit y=300 down_applied=false show=false
+FINISH normal    run 4  t=295.8  accidents=2  shifts=203  show=16  oxy_min=2.2  passed=55  grade=S
+
+---- skilled run 1  seed=2573861389 ----
+t=   2.4 x=   928 NOTICE rock1       SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.0
+       diveSTART t=3.55 x=1124 ctrl=rabbit y=301 down_applied=false show=false
+t=   6.6 x=  1714 NOTICE beam1       LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=315 oxy=5.3 rabbit_daze=0.4 turtle_daze=1.1
+       diveSTART t=7.65 x=1913 ctrl=rabbit y=325 down_applied=false show=false
+t=  10.8 x=  2588 PUMP -> rabbit  daze=2.6
+t=  13.6 x=  3115 NOTICE reef1       UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.1 turtle_daze=0.2
+t=  14.6 x=  3319 PUMP -> rabbit  daze=2.6
+t=  16.5 x=  3688 PUMP -> rabbit  daze=2.6
+t=  16.8 x=  3753 NOTICE reef2       UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=301 oxy=8.0 rabbit_daze=2.8 turtle_daze=0.2
+t=  18.7 x=  4159 NOTICE wall1       SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=364 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=18.65 x=4159 ctrl=rabbit y=364 down_applied=false show=false
+t=  21.9 x=  4874 NOTICE airbar      AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=382 oxy=4.7 rabbit_daze=2.3 turtle_daze=0.0
+t=  22.3 x=  4951 PUMP -> rabbit  daze=2.6
+t=  23.4 x=  5148 NOTICE combo_rock  SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=301 oxy=7.9 rabbit_daze=1.8 turtle_daze=0.9
+       diveSTART t=23.35 x=5148 ctrl=turtle y=301 down_applied=false show=false
+t=  25.2 x=  5551 NOTICE combo_beam  LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=364 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=25.20 x=5551 ctrl=turtle y=364 down_applied=false show=false
+t=  30.7 x=  6606 NOTICE rock2       SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.2 turtle_daze=1.2
+       diveSTART t=31.75 x=6813 ctrl=turtle y=331 down_applied=false show=false
+t=  33.5 x=  7186 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t=  40.4 x=  8616 NOTICE beam2       LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.3 turtle_daze=0.1
+       diveSTART t=41.70 x=8820 ctrl=turtle y=306 down_applied=false show=false
+t=  50.8 x= 10614 NOTICE rock3       SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.6 turtle_daze=0.8
+       diveSTART t=51.90 x=10798 ctrl=rabbit y=305 down_applied=false show=false
+t=  61.1 x= 12582 NOTICE beam3       LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.0
+       diveSTART t=62.20 x=12777 ctrl=rabbit y=301 down_applied=false show=false
+t=  64.3 x= 13217 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t=  73.1 x= 15227 NOTICE z2_reef_a   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.7 turtle_daze=0.8
+t=  75.1 x= 15695 PUMP -> rabbit  daze=2.6
+t=  77.1 x= 16133 PUMP -> rabbit  daze=2.6
+t=  77.5 x= 16226 NOTICE z2_reef_b   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=301 oxy=8.0 rabbit_daze=2.8 turtle_daze=0.3
+t=  79.2 x= 16584 PUMP -> rabbit  daze=2.6
+t=  83.2 x= 17437 NOTICE z2_wall_a   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.4 turtle_daze=0.3
+       diveSTART t=84.15 x=17615 ctrl=rabbit y=305 down_applied=false show=false
+t=  86.8 x= 18245 PUMP -> rabbit  daze=2.6
+t=  89.3 x= 18830 NOTICE z2_beam_a   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=362 oxy=7.9 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=90.00 x=18986 ctrl=turtle y=300 down_applied=false show=false
+t=  95.5 x= 20220 NOTICE z2_rock_a   SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.0 turtle_daze=0.9
+       diveSTART t=96.40 x=20401 ctrl=rabbit y=304 down_applied=false show=false
+t= 102.1 x= 21606 NOTICE z2_bar_a    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=306 oxy=8.0 rabbit_daze=0.1 turtle_daze=1.3
+t= 104.7 x= 22215 PUMP -> rabbit  daze=2.6
+t= 108.4 x= 23028 NOTICE z2_reef_c   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.3 turtle_daze=0.1
+t= 109.8 x= 23352 PUMP -> rabbit  daze=2.6
+t= 114.8 x= 24417 NOTICE z2_wall_b   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=303 oxy=8.0 rabbit_daze=0.6 turtle_daze=1.1
+       diveSTART t=115.70 x=24581 ctrl=rabbit y=303 down_applied=false show=false
+t= 118.2 x= 25188 PUMP -> rabbit  daze=2.6
+t= 120.3 x= 25627 PUMP -> rabbit  daze=2.6
+t= 121.2 x= 25821 NOTICE z2_rock_b   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.0 turtle_daze=0.8
+       diveSTART t=122.05 x=25991 ctrl=rabbit y=305 down_applied=false show=false
+t= 122.8 x= 26168 PUMP -> rabbit  daze=2.6
+t= 127.3 x= 27227 NOTICE z2_beam_b   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.4 turtle_daze=0.4
+       diveSTART t=128.40 x=27402 ctrl=turtle y=300 down_applied=false show=false
+t= 133.8 x= 28605 NOTICE z2_reef_d   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=302 oxy=8.0 rabbit_daze=1.3 turtle_daze=1.1
+t= 135.7 x= 29025 PUMP -> rabbit  daze=2.6
+t= 137.6 x= 29432 PUMP -> rabbit  daze=2.6
+t= 138.4 x= 29610 NOTICE z2_reef_e   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=301 oxy=8.0 rabbit_daze=2.3 turtle_daze=0.7
+t= 139.5 x= 29840 PUMP -> rabbit  daze=2.6
+t= 141.4 x= 30247 PUMP -> rabbit  daze=2.6
+t= 141.5 x= 30271 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 144.6 x= 31018 NOTICE z2_bar_b    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=302 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.4
+t= 151.1 x= 32407 NOTICE z2_wall_c   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=305 oxy=8.0 rabbit_daze=0.5 turtle_daze=1.2
+       diveSTART t=151.95 x=32597 ctrl=rabbit y=319 down_applied=false show=false
+t= 154.6 x= 33213 PUMP -> rabbit  daze=2.6
+t= 156.5 x= 33621 PUMP -> rabbit  daze=2.6
+t= 157.4 x= 33807 NOTICE z2_rock_c   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.1 turtle_daze=0.8
+       diveSTART t=158.20 x=33988 ctrl=rabbit y=306 down_applied=false show=false
+t= 158.9 x= 34140 PUMP -> rabbit  daze=2.6
+t= 161.8 x= 34808 NOTICE z2_beam_c   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=402 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=161.75 x=34808 ctrl=turtle y=402 down_applied=false show=false
+t= 167.2 x= 36028 NOTICE z2_reef_f   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.4
+t= 169.2 x= 36488 PUMP -> rabbit  daze=2.6
+t= 171.1 x= 36895 PUMP -> rabbit  daze=2.6
+t= 172.6 x= 37219 NOTICE z2_bar_c    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=2.3 turtle_daze=0.9
+t= 173.0 x= 37303 PUMP -> rabbit  daze=2.6
+t= 174.9 x= 37711 PUMP -> rabbit  daze=2.6
+t= 175.5 x= 37843 NOTICE z2_rock_d   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=302 oxy=8.0 rabbit_daze=2.8 turtle_daze=0.4
+       diveSTART t=177.30 x=38283 ctrl=rabbit y=365 down_applied=false show=false
+t= 178.8 x= 38617 NOTICE z3_rock_a   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=365 oxy=6.5 rabbit_daze=0.0 turtle_daze=0.5
+       diveSTART t=179.55 x=38787 ctrl=rabbit y=339 down_applied=false show=false
+t= 184.0 x= 39827 NOTICE z3_beam_a   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.5 turtle_daze=0.2
+       diveSTART t=184.90 x=40015 ctrl=rabbit y=303 down_applied=false show=false
+t= 188.9 x= 41022 NOTICE z3_bar_a    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=341 oxy=7.6 rabbit_daze=0.0 turtle_daze=0.0
+t= 193.8 x= 42229 NOTICE z3_wall_a   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.5 turtle_daze=0.0
+       diveSTART t=194.60 x=42403 ctrl=rabbit y=300 down_applied=false show=false
+t= 197.1 x= 43020 PUMP -> rabbit  daze=2.6
+t= 198.8 x= 43427 NOTICE z3_rock_b   SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=6.1 rabbit_daze=2.5 turtle_daze=0.4
+       diveSTART t=199.50 x=43592 ctrl=rabbit y=300 down_applied=false show=false
+t= 200.0 x= 43713 PUMP -> rabbit  daze=2.6
+t= 203.0 x= 44444 NOTICE z3_beam_b   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=365 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=202.95 x=44444 ctrl=turtle y=365 down_applied=false show=false
+t= 207.0 x= 45431 NOTICE z3_reef_a   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.4 turtle_daze=0.0
+t= 208.6 x= 45852 PUMP -> rabbit  daze=2.6
+t= 210.3 x= 46233 NOTICE z3_reef_b   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=2.4 turtle_daze=0.7
+t= 210.5 x= 46298 PUMP -> rabbit  daze=2.6
+t= 212.4 x= 46743 PUMP -> rabbit  daze=2.6
+t= 215.1 x= 47425 NOTICE z3_bar_b    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t= 220.0 x= 48631 NOTICE z3_wall_b   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.4 turtle_daze=0.0
+       diveSTART t=220.80 x=48805 ctrl=rabbit y=300 down_applied=false show=false
+t= 223.3 x= 49436 PUMP -> rabbit  daze=2.6
+t= 225.0 x= 49829 NOTICE z3_rock_c   SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=5.9 rabbit_daze=2.4 turtle_daze=0.5
+       diveSTART t=225.70 x=49995 ctrl=rabbit y=300 down_applied=false show=false
+t= 226.4 x= 50164 PUMP -> rabbit  daze=2.6
+t= 229.9 x= 51031 NOTICE z3_beam_c   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=230.40 x=51173 ctrl=rabbit y=300 down_applied=false show=false
+t= 234.8 x= 52228 NOTICE z3_bar_c    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.8 turtle_daze=0.0
+t= 236.0 x= 52532 PUMP -> rabbit  daze=2.6
+t= 239.6 x= 53456 NOTICE z3_wall_c   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.7 turtle_daze=1.1
+       diveSTART t=239.80 x=53531 ctrl=rabbit y=300 down_applied=false show=false
+t= 240.9 x= 53840 PUMP -> rabbit  daze=2.6
+t= 242.8 x= 54286 PUMP -> rabbit  daze=2.6
+t= 245.0 x= 54854 NOTICE z3_rock_d   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=384 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=244.95 x=54854 ctrl=rabbit y=384 down_applied=false show=false
+t= 247.3 x= 55406 NOTICE z3_beam_d   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=385 oxy=5.7 rabbit_daze=0.0 turtle_daze=1.0
+       diveSTART t=248.05 x=55580 ctrl=rabbit y=318 down_applied=false show=false
+t= 252.4 x= 56626 NOTICE z3_reef_c   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.6 turtle_daze=0.0
+t= 253.8 x= 56982 PUMP -> rabbit  daze=2.6
+t= 255.2 x= 57285 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 256.9 x= 57740 NOTICE z3_reef_d   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t= 260.7 x= 58635 NOTICE z3_bar_d    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.2 turtle_daze=0.0
+t= 262.5 x= 59095 PUMP -> rabbit  daze=2.6
+t= 264.4 x= 59540 PUMP -> rabbit  daze=2.6
+t= 265.6 x= 59817 NOTICE z3_wall_d   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=2.0 turtle_daze=0.9
+       diveSTART t=266.30 x=59989 ctrl=rabbit y=311 down_applied=false show=false
+t= 267.5 x= 60281 PUMP -> rabbit  daze=2.6
+t= 269.4 x= 60727 PUMP -> rabbit  daze=2.6
+t= 271.4 x= 61259 NOTICE z3_rock_e   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=380 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=271.40 x=61259 ctrl=rabbit y=380 down_applied=false show=false
+t= 273.7 x= 61810 NOTICE z3_beam_e   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=381 oxy=5.7 rabbit_daze=0.0 turtle_daze=1.0
+       diveSTART t=274.45 x=61971 ctrl=rabbit y=322 down_applied=false show=false
+t= 278.9 x= 63031 NOTICE z3_bar_e    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=4.3 rabbit_daze=1.6 turtle_daze=0.0
+t= 280.3 x= 63387 PUMP -> rabbit  daze=2.6
+t= 283.7 x= 64223 NOTICE z3_wall_e   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=301 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=284.25 x=64379 ctrl=rabbit y=301 down_applied=false show=false
+t= 287.1 x= 65104 PUMP -> rabbit  daze=2.6
+t= 289.0 x= 65550 PUMP -> rabbit  daze=2.6
+t= 290.9 x= 65995 PUMP -> rabbit  daze=2.6
+FINISH skilled   run 1  t=290.9  accidents=0  shifts=234  show=17  oxy_min=1.5  passed=55  grade=S
+
+---- skilled run 2  seed=2574861392 ----
+t=   2.4 x=   928 NOTICE rock1       SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.0
+       diveSTART t=3.55 x=1124 ctrl=rabbit y=301 down_applied=false show=false
+t=   6.6 x=  1714 NOTICE beam1       LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=315 oxy=5.3 rabbit_daze=0.4 turtle_daze=1.1
+       diveSTART t=7.65 x=1913 ctrl=rabbit y=325 down_applied=false show=false
+t=  10.8 x=  2588 PUMP -> rabbit  daze=2.6
+t=  13.3 x=  3161 NOTICE reef1       UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=2.4 turtle_daze=0.0
+t=  14.0 x=  3368 PUMP -> rabbit  daze=2.7
+t=  15.8 x=  3735 PUMP -> rabbit  daze=2.6
+t=  15.9 x=  3757 NOTICE reef2       UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=2.7 turtle_daze=0.3
+t=  17.3 x=  4054 NOTICE wall1       SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=2.1 turtle_daze=0.0
+       diveSTART t=17.40 x=4087 ctrl=rabbit y=300 down_applied=false show=false
+t=  18.2 x=  4244 PUMP -> rabbit  daze=2.6
+t=  20.1 x=  4617 PUMP -> rabbit  daze=2.6
+t=  21.5 x=  4876 NOTICE airbar      AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=402 oxy=4.4 rabbit_daze=2.1 turtle_daze=0.9
+t=  22.0 x=  4986 PUMP -> rabbit  daze=2.6
+t=  22.8 x=  5147 NOTICE combo_rock  SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=6.7 rabbit_daze=2.3 turtle_daze=0.7
+t=  24.7 x=  5546 NOTICE combo_beam  LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=363 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=24.65 x=5546 ctrl=rabbit y=363 down_applied=false show=false
+t=  30.2 x=  6601 NOTICE rock2       SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.2 turtle_daze=1.2
+       diveSTART t=31.20 x=6808 ctrl=turtle y=331 down_applied=false show=false
+t=  33.0 x=  7192 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t=  39.9 x=  8621 NOTICE beam2       LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.3 turtle_daze=0.1
+       diveSTART t=41.20 x=8825 ctrl=turtle y=306 down_applied=false show=false
+t=  50.2 x= 10604 NOTICE rock3       SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.9 turtle_daze=0.7
+       diveSTART t=51.35 x=10793 ctrl=rabbit y=304 down_applied=false show=false
+t=  60.6 x= 12581 NOTICE beam3       LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.0
+       diveSTART t=61.70 x=12777 ctrl=rabbit y=301 down_applied=false show=false
+t=  63.8 x= 13216 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t=  73.7 x= 15224 NOTICE z2_reef_a   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.5
+t=  78.4 x= 16234 NOTICE z2_reef_b   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.5 turtle_daze=1.1
+t=  79.6 x= 16510 PUMP -> rabbit  daze=2.6
+t=  83.9 x= 17431 NOTICE z2_wall_a   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.7 turtle_daze=0.1
+       diveSTART t=85.00 x=17623 ctrl=rabbit y=303 down_applied=false show=false
+t=  87.8 x= 18269 PUMP -> rabbit  daze=2.6
+t=  90.1 x= 18825 NOTICE z2_beam_a   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=360 oxy=7.9 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=90.80 x=18981 ctrl=turtle y=300 down_applied=false show=false
+t=  96.3 x= 20220 NOTICE z2_rock_a   SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.0 turtle_daze=0.9
+       diveSTART t=97.20 x=20403 ctrl=rabbit y=306 down_applied=false show=false
+t= 102.9 x= 21609 NOTICE z2_bar_a    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=306 oxy=8.0 rabbit_daze=0.1 turtle_daze=1.3
+t= 105.5 x= 22217 PUMP -> rabbit  daze=2.6
+t= 109.2 x= 23031 NOTICE z2_reef_c   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.3 turtle_daze=0.0
+t= 110.6 x= 23355 PUMP -> rabbit  daze=2.6
+t= 115.6 x= 24420 NOTICE z2_wall_b   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=303 oxy=8.0 rabbit_daze=0.6 turtle_daze=1.1
+       diveSTART t=116.50 x=24584 ctrl=rabbit y=303 down_applied=false show=false
+t= 119.0 x= 25191 PUMP -> rabbit  daze=2.6
+t= 121.1 x= 25630 PUMP -> rabbit  daze=2.6
+t= 121.9 x= 25807 NOTICE z2_rock_b   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.3 turtle_daze=0.7
+       diveSTART t=122.80 x=25983 ctrl=rabbit y=304 down_applied=false show=false
+t= 123.6 x= 26171 PUMP -> rabbit  daze=2.6
+t= 128.1 x= 27230 NOTICE z2_beam_b   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.4 turtle_daze=0.4
+       diveSTART t=129.15 x=27398 ctrl=turtle y=300 down_applied=false show=false
+t= 134.6 x= 28602 NOTICE z2_reef_d   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=302 oxy=8.0 rabbit_daze=1.3 turtle_daze=1.1
+t= 136.4 x= 29021 PUMP -> rabbit  daze=2.6
+t= 138.3 x= 29429 PUMP -> rabbit  daze=2.6
+t= 139.2 x= 29607 NOTICE z2_reef_e   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=301 oxy=8.0 rabbit_daze=2.3 turtle_daze=0.7
+t= 140.2 x= 29837 PUMP -> rabbit  daze=2.6
+t= 142.1 x= 30244 PUMP -> rabbit  daze=2.6
+t= 142.2 x= 30268 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 145.4 x= 31015 NOTICE z2_bar_b    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=302 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.4
+t= 151.8 x= 32399 NOTICE z2_wall_c   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=305 oxy=8.0 rabbit_daze=0.5 turtle_daze=1.2
+       diveSTART t=152.70 x=32595 ctrl=rabbit y=321 down_applied=false show=false
+t= 155.2 x= 33177 PUMP -> rabbit  daze=2.6
+t= 157.1 x= 33584 PUMP -> rabbit  daze=2.6
+t= 158.2 x= 33803 NOTICE z2_rock_c   SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=1.8 turtle_daze=0.9
+       diveSTART t=159.00 x=33994 ctrl=rabbit y=311 down_applied=false show=false
+t= 160.2 x= 34263 PUMP -> rabbit  daze=2.6
+t= 162.5 x= 34807 NOTICE z2_beam_c   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=360 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=162.45 x=34807 ctrl=rabbit y=360 down_applied=false show=false
+t= 167.9 x= 36027 NOTICE z2_reef_f   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.4
+t= 169.9 x= 36487 PUMP -> rabbit  daze=2.6
+t= 171.8 x= 36895 PUMP -> rabbit  daze=2.6
+t= 173.3 x= 37218 NOTICE z2_bar_c    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=2.3 turtle_daze=0.9
+t= 173.7 x= 37302 PUMP -> rabbit  daze=2.6
+t= 175.6 x= 37710 PUMP -> rabbit  daze=2.6
+t= 176.2 x= 37843 NOTICE z2_rock_d   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=302 oxy=8.0 rabbit_daze=2.8 turtle_daze=0.4
+       diveSTART t=178.00 x=38282 ctrl=rabbit y=365 down_applied=false show=false
+t= 179.5 x= 38617 NOTICE z3_rock_a   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=365 oxy=6.5 rabbit_daze=0.0 turtle_daze=0.5
+       diveSTART t=180.25 x=38786 ctrl=rabbit y=339 down_applied=false show=false
+t= 184.7 x= 39826 NOTICE z3_beam_a   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.5 turtle_daze=0.2
+       diveSTART t=185.60 x=40014 ctrl=rabbit y=303 down_applied=false show=false
+t= 187.5 x= 40475 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 189.6 x= 41034 NOTICE z3_bar_a    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=332 oxy=7.6 rabbit_daze=0.0 turtle_daze=0.0
+t= 194.5 x= 42228 NOTICE z3_wall_a   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.4 turtle_daze=0.0
+       diveSTART t=195.30 x=42402 ctrl=rabbit y=300 down_applied=false show=false
+t= 197.8 x= 43033 PUMP -> rabbit  daze=2.6
+t= 199.5 x= 43426 NOTICE z3_rock_b   SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=5.9 rabbit_daze=2.4 turtle_daze=0.5
+       diveSTART t=200.25 x=43602 ctrl=rabbit y=300 down_applied=false show=false
+t= 200.9 x= 43761 PUMP -> rabbit  daze=2.6
+t= 201.9 x= 43988 SHIFT DROPPED -> turtle  state=1 accident=NONE show=true ctrl=turtle
+t= 203.7 x= 44442 NOTICE z3_beam_b   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=367 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=203.65 x=44442 ctrl=rabbit y=367 down_applied=false show=false
+t= 207.8 x= 45420 NOTICE z3_reef_a   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=345 oxy=5.7 rabbit_daze=0.0 turtle_daze=2.0
+t= 211.0 x= 46221 NOTICE z3_reef_b   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.4 turtle_daze=0.5
+t= 212.5 x= 46579 PUMP -> rabbit  daze=2.6
+t= 213.8 x= 46881 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 215.9 x= 47427 NOTICE z3_bar_b    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=301 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t= 220.9 x= 48634 NOTICE z3_wall_b   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.4 turtle_daze=0.0
+       diveSTART t=221.65 x=48808 ctrl=rabbit y=300 down_applied=false show=false
+t= 224.2 x= 49438 PUMP -> rabbit  daze=2.6
+t= 225.9 x= 49832 NOTICE z3_rock_c   SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=5.9 rabbit_daze=2.4 turtle_daze=0.5
+       diveSTART t=226.55 x=49997 ctrl=rabbit y=300 down_applied=false show=false
+t= 227.3 x= 50166 PUMP -> rabbit  daze=2.6
+t= 230.7 x= 51033 NOTICE z3_beam_c   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=231.25 x=51176 ctrl=rabbit y=300 down_applied=false show=false
+t= 235.6 x= 52230 NOTICE z3_bar_c    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.8 turtle_daze=0.0
+t= 236.8 x= 52535 PUMP -> rabbit  daze=2.6
+t= 240.5 x= 53459 NOTICE z3_wall_c   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.7 turtle_daze=1.1
+       diveSTART t=240.65 x=53533 ctrl=rabbit y=300 down_applied=false show=false
+t= 241.7 x= 53842 PUMP -> rabbit  daze=2.6
+t= 243.6 x= 54289 PUMP -> rabbit  daze=2.6
+t= 245.8 x= 54857 NOTICE z3_rock_d   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=384 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=245.80 x=54857 ctrl=rabbit y=384 down_applied=false show=false
+t= 248.1 x= 55408 NOTICE z3_beam_d   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=385 oxy=5.7 rabbit_daze=0.0 turtle_daze=1.0
+       diveSTART t=248.85 x=55569 ctrl=rabbit y=317 down_applied=false show=false
+t= 253.3 x= 56629 NOTICE z3_reef_c   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.6 turtle_daze=0.0
+t= 254.7 x= 56985 PUMP -> rabbit  daze=2.6
+t= 257.7 x= 57730 NOTICE z3_reef_d   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t= 261.5 x= 58624 NOTICE z3_bar_d    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.2 turtle_daze=0.0
+t= 263.3 x= 59097 PUMP -> rabbit  daze=2.6
+t= 265.2 x= 59543 PUMP -> rabbit  daze=2.6
+t= 266.5 x= 59820 NOTICE z3_wall_d   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=2.0 turtle_daze=0.9
+       diveSTART t=267.00 x=59972 ctrl=rabbit y=307 down_applied=false show=false
+t= 267.7 x= 60154 PUMP -> rabbit  daze=2.6
+t= 269.6 x= 60620 PUMP -> rabbit  daze=2.6
+t= 272.1 x= 61256 NOTICE z3_rock_e   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=426 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=272.10 x=61256 ctrl=rabbit y=426 down_applied=false show=false
+t= 274.4 x= 61808 NOTICE z3_beam_e   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=427 oxy=5.7 rabbit_daze=0.0 turtle_daze=1.0
+       diveSTART t=275.15 x=61969 ctrl=turtle y=350 down_applied=false show=false
+t= 279.4 x= 63051 NOTICE z3_bar_e    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=2.0 turtle_daze=0.2
+t= 280.0 x= 63240 PUMP -> rabbit  daze=2.6
+t= 281.9 x= 63673 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 284.0 x= 64232 NOTICE z3_wall_e   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=301 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=284.55 x=64375 ctrl=rabbit y=301 down_applied=false show=false
+t= 287.4 x= 65101 PUMP -> rabbit  daze=2.6
+t= 289.3 x= 65547 PUMP -> rabbit  daze=2.6
+t= 291.2 x= 65992 PUMP -> rabbit  daze=2.6
+FINISH skilled   run 2  t=291.2  accidents=0  shifts=235  show=16  oxy_min=2.9  passed=55  grade=S
+
+---- skilled run 3  seed=2575861395 ----
+t=   2.4 x=   928 NOTICE rock1       SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.0
+       diveSTART t=3.55 x=1124 ctrl=rabbit y=301 down_applied=false show=false
+t=   6.6 x=  1714 NOTICE beam1       LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=315 oxy=5.3 rabbit_daze=0.4 turtle_daze=1.1
+       diveSTART t=7.65 x=1913 ctrl=rabbit y=325 down_applied=false show=false
+t=  10.8 x=  2588 PUMP -> rabbit  daze=2.6
+t=  13.3 x=  3161 NOTICE reef1       UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=2.4 turtle_daze=0.0
+t=  14.0 x=  3368 PUMP -> rabbit  daze=2.7
+t=  15.8 x=  3735 PUMP -> rabbit  daze=2.6
+t=  15.9 x=  3757 NOTICE reef2       UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=2.7 turtle_daze=0.3
+t=  17.3 x=  4054 NOTICE wall1       SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=2.1 turtle_daze=0.0
+       diveSTART t=17.40 x=4087 ctrl=rabbit y=300 down_applied=false show=false
+t=  18.2 x=  4244 PUMP -> rabbit  daze=2.6
+t=  20.1 x=  4617 PUMP -> rabbit  daze=2.6
+t=  21.5 x=  4876 NOTICE airbar      AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=402 oxy=4.4 rabbit_daze=2.1 turtle_daze=0.9
+t=  22.0 x=  4986 PUMP -> rabbit  daze=2.6
+t=  22.8 x=  5147 NOTICE combo_rock  SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=6.7 rabbit_daze=2.3 turtle_daze=0.7
+t=  24.7 x=  5546 NOTICE combo_beam  LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=363 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=24.65 x=5546 ctrl=rabbit y=363 down_applied=false show=false
+t=  30.2 x=  6601 NOTICE rock2       SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.2 turtle_daze=1.2
+       diveSTART t=31.20 x=6808 ctrl=turtle y=331 down_applied=false show=false
+t=  33.0 x=  7192 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t=  39.9 x=  8621 NOTICE beam2       LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.3 turtle_daze=0.1
+       diveSTART t=41.20 x=8825 ctrl=turtle y=306 down_applied=false show=false
+t=  50.2 x= 10604 NOTICE rock3       SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.9 turtle_daze=0.7
+       diveSTART t=51.35 x=10793 ctrl=rabbit y=304 down_applied=false show=false
+t=  60.6 x= 12581 NOTICE beam3       LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.0
+       diveSTART t=61.70 x=12777 ctrl=rabbit y=301 down_applied=false show=false
+t=  63.8 x= 13216 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t=  72.6 x= 15226 NOTICE z2_reef_a   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.7 turtle_daze=0.8
+t=  74.6 x= 15694 PUMP -> rabbit  daze=2.6
+t=  76.6 x= 16133 PUMP -> rabbit  daze=2.6
+t=  77.0 x= 16225 NOTICE z2_reef_b   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=301 oxy=8.0 rabbit_daze=2.8 turtle_daze=0.3
+t=  78.7 x= 16584 PUMP -> rabbit  daze=2.6
+t=  82.7 x= 17437 NOTICE z2_wall_a   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.4 turtle_daze=0.3
+       diveSTART t=83.65 x=17614 ctrl=rabbit y=305 down_applied=false show=false
+t=  86.3 x= 18245 PUMP -> rabbit  daze=2.6
+t=  88.8 x= 18829 NOTICE z2_beam_a   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=362 oxy=7.9 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=89.50 x=18985 ctrl=turtle y=300 down_applied=false show=false
+t=  95.0 x= 20220 NOTICE z2_rock_a   SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.0 turtle_daze=0.9
+       diveSTART t=95.90 x=20401 ctrl=rabbit y=304 down_applied=false show=false
+t= 101.6 x= 21605 NOTICE z2_bar_a    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=306 oxy=8.0 rabbit_daze=0.1 turtle_daze=1.3
+t= 104.2 x= 22214 PUMP -> rabbit  daze=2.6
+t= 107.9 x= 23028 NOTICE z2_reef_c   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.3 turtle_daze=0.1
+t= 109.3 x= 23352 PUMP -> rabbit  daze=2.6
+t= 114.3 x= 24417 NOTICE z2_wall_b   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=303 oxy=8.0 rabbit_daze=0.6 turtle_daze=1.1
+       diveSTART t=115.20 x=24581 ctrl=rabbit y=303 down_applied=false show=false
+t= 117.7 x= 25188 PUMP -> rabbit  daze=2.6
+t= 119.8 x= 25626 PUMP -> rabbit  daze=2.6
+t= 120.7 x= 25820 NOTICE z2_rock_b   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.0 turtle_daze=0.8
+       diveSTART t=121.55 x=25991 ctrl=rabbit y=305 down_applied=false show=false
+t= 122.3 x= 26167 PUMP -> rabbit  daze=2.6
+t= 126.8 x= 27226 NOTICE z2_beam_b   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.4 turtle_daze=0.4
+       diveSTART t=127.90 x=27401 ctrl=turtle y=300 down_applied=false show=false
+t= 133.3 x= 28605 NOTICE z2_reef_d   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=302 oxy=8.0 rabbit_daze=1.3 turtle_daze=1.1
+t= 135.2 x= 29024 PUMP -> rabbit  daze=2.6
+t= 137.1 x= 29432 PUMP -> rabbit  daze=2.6
+t= 137.9 x= 29610 NOTICE z2_reef_e   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=301 oxy=8.0 rabbit_daze=2.3 turtle_daze=0.7
+t= 139.0 x= 29839 PUMP -> rabbit  daze=2.6
+t= 140.9 x= 30247 PUMP -> rabbit  daze=2.6
+t= 141.0 x= 30271 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 144.1 x= 31018 NOTICE z2_bar_b    AIR_BAR         -> DIVE  (WRONG)
+       plan ctrl=turtle y=302 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.4
+       diveSTART t=144.95 x=31198 ctrl=rabbit y=302 down_applied=false show=false
+t= 150.5 x= 32428 NOTICE z2_wall_c   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.6
+       diveSTART t=151.35 x=32604 ctrl=rabbit y=302 down_applied=false show=false
+t= 154.0 x= 33213 PUMP -> rabbit  daze=2.6
+t= 155.9 x= 33621 PUMP -> rabbit  daze=2.6
+t= 156.8 x= 33807 NOTICE z2_rock_c   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.2 turtle_daze=0.8
+       diveSTART t=157.60 x=33988 ctrl=rabbit y=306 down_applied=false show=false
+t= 158.3 x= 34140 PUMP -> rabbit  daze=2.6
+t= 161.2 x= 34808 NOTICE z2_beam_c   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=402 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=161.15 x=34808 ctrl=turtle y=402 down_applied=false show=false
+t= 166.6 x= 36027 NOTICE z2_reef_f   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.4
+t= 168.6 x= 36488 PUMP -> rabbit  daze=2.6
+t= 170.5 x= 36895 PUMP -> rabbit  daze=2.6
+t= 172.0 x= 37219 NOTICE z2_bar_c    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=2.3 turtle_daze=0.9
+t= 172.4 x= 37303 PUMP -> rabbit  daze=2.6
+t= 174.3 x= 37710 PUMP -> rabbit  daze=2.6
+t= 174.9 x= 37843 NOTICE z2_rock_d   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=302 oxy=8.0 rabbit_daze=2.8 turtle_daze=0.4
+       diveSTART t=176.70 x=38283 ctrl=rabbit y=365 down_applied=false show=false
+t= 178.2 x= 38617 NOTICE z3_rock_a   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=365 oxy=6.5 rabbit_daze=0.0 turtle_daze=0.5
+       diveSTART t=178.95 x=38786 ctrl=rabbit y=339 down_applied=false show=false
+t= 183.4 x= 39827 NOTICE z3_beam_a   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.5 turtle_daze=0.2
+       diveSTART t=184.30 x=40015 ctrl=rabbit y=303 down_applied=false show=false
+t= 186.2 x= 40476 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 188.3 x= 41035 NOTICE z3_bar_a    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=332 oxy=7.6 rabbit_daze=0.0 turtle_daze=0.0
+t= 193.2 x= 42229 NOTICE z3_wall_a   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.4 turtle_daze=0.0
+       diveSTART t=194.00 x=42403 ctrl=rabbit y=300 down_applied=false show=false
+t= 196.5 x= 43033 PUMP -> rabbit  daze=2.6
+t= 198.2 x= 43427 NOTICE z3_rock_b   SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=5.9 rabbit_daze=2.4 turtle_daze=0.5
+       diveSTART t=198.90 x=43592 ctrl=rabbit y=300 down_applied=false show=false
+t= 199.6 x= 43761 PUMP -> rabbit  daze=2.6
+t= 200.6 x= 43989 SHIFT DROPPED -> turtle  state=1 accident=NONE show=true ctrl=turtle
+t= 202.4 x= 44442 NOTICE z3_beam_b   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=367 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=202.35 x=44442 ctrl=rabbit y=367 down_applied=false show=false
+t= 206.5 x= 45420 NOTICE z3_reef_a   UNDERWATER_REEF -> DIVE  (WRONG)
+       plan ctrl=rabbit y=345 oxy=5.7 rabbit_daze=0.0 turtle_daze=2.0
+       diveSTART t=207.10 x=45574 ctrl=rabbit y=324 down_applied=false show=false
+t= 209.7 x= 46226 NOTICE z3_reef_b   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=317 oxy=4.9 rabbit_daze=2.3 turtle_daze=0.3
+t= 210.6 x= 46454 PUMP -> rabbit  daze=2.6
+t= 214.6 x= 47433 NOTICE z3_bar_b    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=301 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t= 219.5 x= 48626 NOTICE z3_wall_b   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.4 turtle_daze=0.0
+       diveSTART t=220.30 x=48809 ctrl=rabbit y=300 down_applied=false show=false
+t= 222.9 x= 49465 PUMP -> rabbit  daze=2.6
+t= 224.5 x= 49832 NOTICE z3_rock_c   SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=5.3 rabbit_daze=2.3 turtle_daze=0.8
+       diveSTART t=225.15 x=49988 ctrl=rabbit y=301 down_applied=false show=false
+t= 225.9 x= 50161 PUMP -> rabbit  daze=2.6
+t= 229.3 x= 51032 NOTICE z3_beam_c   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=229.85 x=51175 ctrl=rabbit y=300 down_applied=false show=false
+t= 234.2 x= 52229 NOTICE z3_bar_c    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.8 turtle_daze=0.0
+t= 235.4 x= 52534 PUMP -> rabbit  daze=2.6
+t= 239.1 x= 53458 NOTICE z3_wall_c   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.7 turtle_daze=1.1
+       diveSTART t=239.25 x=53532 ctrl=rabbit y=300 down_applied=false show=false
+t= 240.3 x= 53841 PUMP -> rabbit  daze=2.6
+t= 242.2 x= 54288 PUMP -> rabbit  daze=2.6
+t= 244.4 x= 54856 NOTICE z3_rock_d   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=384 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=244.40 x=54856 ctrl=rabbit y=384 down_applied=false show=false
+t= 246.7 x= 55407 NOTICE z3_beam_d   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=385 oxy=5.7 rabbit_daze=0.0 turtle_daze=1.0
+       diveSTART t=247.45 x=55568 ctrl=rabbit y=317 down_applied=false show=false
+t= 251.9 x= 56628 NOTICE z3_reef_c   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.6 turtle_daze=0.0
+t= 253.3 x= 56984 PUMP -> rabbit  daze=2.6
+t= 256.3 x= 57728 NOTICE z3_reef_d   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t= 260.1 x= 58623 NOTICE z3_bar_d    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.2 turtle_daze=0.0
+t= 261.9 x= 59096 PUMP -> rabbit  daze=2.6
+t= 263.8 x= 59542 PUMP -> rabbit  daze=2.6
+t= 265.1 x= 59818 NOTICE z3_wall_d   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=2.0 turtle_daze=0.9
+       diveSTART t=265.60 x=59971 ctrl=rabbit y=307 down_applied=false show=false
+t= 266.3 x= 60153 PUMP -> rabbit  daze=2.6
+t= 268.2 x= 60619 PUMP -> rabbit  daze=2.6
+t= 270.7 x= 61255 NOTICE z3_rock_e   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=426 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=270.70 x=61255 ctrl=rabbit y=426 down_applied=false show=false
+t= 273.0 x= 61807 NOTICE z3_beam_e   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=427 oxy=5.7 rabbit_daze=0.0 turtle_daze=1.0
+       diveSTART t=273.80 x=61981 ctrl=turtle y=341 down_applied=false show=false
+t= 278.0 x= 63050 NOTICE z3_bar_e    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=2.0 turtle_daze=0.2
+t= 278.6 x= 63239 PUMP -> rabbit  daze=2.6
+t= 280.5 x= 63672 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 282.6 x= 64231 NOTICE z3_wall_e   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=301 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=283.15 x=64374 ctrl=rabbit y=301 down_applied=false show=false
+t= 286.0 x= 65100 PUMP -> rabbit  daze=2.6
+t= 287.9 x= 65546 PUMP -> rabbit  daze=2.6
+t= 289.8 x= 65991 PUMP -> rabbit  daze=2.6
+FINISH skilled   run 3  t=289.8  accidents=0  shifts=239  show=16  oxy_min=2.9  passed=55  grade=S
+
+---- skilled run 4  seed=2576861398 ----
+t=   2.4 x=   928 NOTICE rock1       SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.0
+       diveSTART t=3.55 x=1124 ctrl=rabbit y=301 down_applied=false show=false
+t=   6.6 x=  1714 NOTICE beam1       LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=315 oxy=5.3 rabbit_daze=0.4 turtle_daze=1.1
+       diveSTART t=7.65 x=1913 ctrl=rabbit y=325 down_applied=false show=false
+t=  10.8 x=  2588 PUMP -> rabbit  daze=2.6
+t=  13.3 x=  3161 NOTICE reef1       UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=2.4 turtle_daze=0.0
+t=  14.0 x=  3368 PUMP -> rabbit  daze=2.7
+t=  15.8 x=  3735 PUMP -> rabbit  daze=2.6
+t=  15.9 x=  3757 NOTICE reef2       UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=2.7 turtle_daze=0.3
+t=  17.3 x=  4054 NOTICE wall1       SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=2.1 turtle_daze=0.0
+       diveSTART t=17.40 x=4087 ctrl=rabbit y=300 down_applied=false show=false
+t=  18.2 x=  4244 PUMP -> rabbit  daze=2.6
+t=  20.1 x=  4617 PUMP -> rabbit  daze=2.6
+t=  21.5 x=  4876 NOTICE airbar      AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=402 oxy=4.4 rabbit_daze=2.1 turtle_daze=0.9
+t=  22.0 x=  4986 PUMP -> rabbit  daze=2.6
+t=  22.8 x=  5147 NOTICE combo_rock  SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=6.7 rabbit_daze=2.3 turtle_daze=0.7
+t=  24.7 x=  5546 NOTICE combo_beam  LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=363 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=24.65 x=5546 ctrl=rabbit y=363 down_applied=false show=false
+t=  30.2 x=  6601 NOTICE rock2       SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.2 turtle_daze=1.2
+       diveSTART t=31.20 x=6808 ctrl=turtle y=331 down_applied=false show=false
+t=  33.0 x=  7192 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t=  39.9 x=  8621 NOTICE beam2       LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.3 turtle_daze=0.1
+       diveSTART t=41.20 x=8825 ctrl=turtle y=306 down_applied=false show=false
+t=  50.2 x= 10604 NOTICE rock3       SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.9 turtle_daze=0.7
+       diveSTART t=51.35 x=10793 ctrl=rabbit y=304 down_applied=false show=false
+t=  60.6 x= 12581 NOTICE beam3       LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.0
+       diveSTART t=61.70 x=12777 ctrl=rabbit y=301 down_applied=false show=false
+t=  63.8 x= 13216 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t=  72.6 x= 15226 NOTICE z2_reef_a   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.7 turtle_daze=0.8
+t=  74.6 x= 15694 PUMP -> rabbit  daze=2.6
+t=  76.6 x= 16133 PUMP -> rabbit  daze=2.6
+t=  77.0 x= 16225 NOTICE z2_reef_b   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=301 oxy=8.0 rabbit_daze=2.8 turtle_daze=0.3
+t=  78.7 x= 16584 PUMP -> rabbit  daze=2.6
+t=  82.7 x= 17437 NOTICE z2_wall_a   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.4 turtle_daze=0.3
+       diveSTART t=83.65 x=17614 ctrl=rabbit y=305 down_applied=false show=false
+t=  86.3 x= 18245 PUMP -> rabbit  daze=2.6
+t=  88.8 x= 18829 NOTICE z2_beam_a   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=362 oxy=7.9 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=89.50 x=18985 ctrl=turtle y=300 down_applied=false show=false
+t=  95.0 x= 20220 NOTICE z2_rock_a   SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.0 turtle_daze=0.9
+       diveSTART t=95.90 x=20401 ctrl=rabbit y=304 down_applied=false show=false
+t= 101.6 x= 21605 NOTICE z2_bar_a    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=306 oxy=8.0 rabbit_daze=0.1 turtle_daze=1.3
+t= 104.2 x= 22214 PUMP -> rabbit  daze=2.6
+t= 107.9 x= 23028 NOTICE z2_reef_c   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.3 turtle_daze=0.1
+t= 109.3 x= 23352 PUMP -> rabbit  daze=2.6
+t= 114.3 x= 24417 NOTICE z2_wall_b   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=303 oxy=8.0 rabbit_daze=0.6 turtle_daze=1.1
+       diveSTART t=115.20 x=24581 ctrl=rabbit y=303 down_applied=false show=false
+t= 117.7 x= 25188 PUMP -> rabbit  daze=2.6
+t= 119.8 x= 25626 PUMP -> rabbit  daze=2.6
+t= 120.7 x= 25820 NOTICE z2_rock_b   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.0 turtle_daze=0.8
+       diveSTART t=121.55 x=25991 ctrl=rabbit y=305 down_applied=false show=false
+t= 122.3 x= 26167 PUMP -> rabbit  daze=2.6
+t= 126.8 x= 27226 NOTICE z2_beam_b   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=0.4 turtle_daze=0.4
+       diveSTART t=127.90 x=27401 ctrl=turtle y=300 down_applied=false show=false
+t= 133.3 x= 28605 NOTICE z2_reef_d   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=302 oxy=8.0 rabbit_daze=1.3 turtle_daze=1.1
+t= 135.2 x= 29024 PUMP -> rabbit  daze=2.6
+t= 137.1 x= 29432 PUMP -> rabbit  daze=2.6
+t= 137.9 x= 29610 NOTICE z2_reef_e   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=301 oxy=8.0 rabbit_daze=2.3 turtle_daze=0.7
+t= 139.0 x= 29839 PUMP -> rabbit  daze=2.6
+t= 140.9 x= 30247 PUMP -> rabbit  daze=2.6
+t= 141.0 x= 30271 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 144.1 x= 31018 NOTICE z2_bar_b    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=302 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.4
+t= 150.6 x= 32407 NOTICE z2_wall_c   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=305 oxy=8.0 rabbit_daze=0.5 turtle_daze=1.2
+       diveSTART t=151.45 x=32597 ctrl=rabbit y=319 down_applied=false show=false
+t= 154.1 x= 33213 PUMP -> rabbit  daze=2.6
+t= 156.0 x= 33620 PUMP -> rabbit  daze=2.6
+t= 156.9 x= 33806 NOTICE z2_rock_c   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.1 turtle_daze=0.8
+       diveSTART t=157.70 x=33988 ctrl=rabbit y=306 down_applied=false show=false
+t= 158.4 x= 34139 PUMP -> rabbit  daze=2.6
+t= 161.3 x= 34807 NOTICE z2_beam_c   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=402 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=161.25 x=34807 ctrl=turtle y=402 down_applied=false show=false
+t= 166.7 x= 36027 NOTICE z2_reef_f   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.1 turtle_daze=0.4
+t= 168.7 x= 36488 PUMP -> rabbit  daze=2.6
+t= 170.6 x= 36895 PUMP -> rabbit  daze=2.6
+t= 172.1 x= 37219 NOTICE z2_bar_c    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=2.3 turtle_daze=0.9
+t= 172.5 x= 37303 PUMP -> rabbit  daze=2.6
+t= 174.4 x= 37710 PUMP -> rabbit  daze=2.6
+t= 175.0 x= 37843 NOTICE z2_rock_d   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=302 oxy=8.0 rabbit_daze=2.8 turtle_daze=0.4
+       diveSTART t=176.80 x=38283 ctrl=rabbit y=365 down_applied=false show=false
+t= 178.3 x= 38617 NOTICE z3_rock_a   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=365 oxy=6.5 rabbit_daze=0.0 turtle_daze=0.5
+       diveSTART t=179.05 x=38786 ctrl=rabbit y=339 down_applied=false show=false
+t= 183.5 x= 39827 NOTICE z3_beam_a   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.5 turtle_daze=0.2
+       diveSTART t=184.40 x=40015 ctrl=rabbit y=303 down_applied=false show=false
+t= 186.3 x= 40476 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 188.4 x= 41035 NOTICE z3_bar_a    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=332 oxy=7.6 rabbit_daze=0.0 turtle_daze=0.0
+t= 193.3 x= 42228 NOTICE z3_wall_a   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.4 turtle_daze=0.0
+       diveSTART t=194.10 x=42402 ctrl=rabbit y=300 down_applied=false show=false
+t= 196.6 x= 43033 PUMP -> rabbit  daze=2.6
+t= 198.3 x= 43426 NOTICE z3_rock_b   SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=5.9 rabbit_daze=2.4 turtle_daze=0.5
+       diveSTART t=199.00 x=43592 ctrl=rabbit y=300 down_applied=false show=false
+t= 199.7 x= 43761 PUMP -> rabbit  daze=2.6
+t= 200.7 x= 43988 SHIFT DROPPED -> turtle  state=1 accident=NONE show=true ctrl=turtle
+t= 202.5 x= 44442 NOTICE z3_beam_b   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=367 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=202.45 x=44442 ctrl=rabbit y=367 down_applied=false show=false
+t= 206.6 x= 45420 NOTICE z3_reef_a   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=345 oxy=5.7 rabbit_daze=0.0 turtle_daze=2.0
+t= 209.8 x= 46221 NOTICE z3_reef_b   UNDERWATER_REEF -> SURFACE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=2.4 turtle_daze=0.5
+t= 211.1 x= 46531 PUMP -> rabbit  daze=2.6
+t= 214.7 x= 47432 NOTICE z3_bar_b    AIR_BAR         -> SURFACE
+       plan ctrl=rabbit y=301 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t= 219.6 x= 48626 NOTICE z3_wall_b   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=300 oxy=8.0 rabbit_daze=1.4 turtle_daze=0.0
+       diveSTART t=220.45 x=48809 ctrl=rabbit y=300 down_applied=false show=false
+t= 223.1 x= 49464 PUMP -> rabbit  daze=2.6
+t= 224.7 x= 49832 NOTICE z3_rock_c   SURFACE_ROCK    -> DIVE
+       plan ctrl=turtle y=300 oxy=5.3 rabbit_daze=2.3 turtle_daze=0.8
+       diveSTART t=225.30 x=49988 ctrl=rabbit y=301 down_applied=false show=false
+t= 226.0 x= 50160 PUMP -> rabbit  daze=2.6
+t= 229.5 x= 51031 NOTICE z3_beam_c   LOW_BEAM        -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=230.00 x=51174 ctrl=rabbit y=300 down_applied=false show=false
+t= 234.4 x= 52228 NOTICE z3_bar_c    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.8 turtle_daze=0.0
+t= 235.6 x= 52533 PUMP -> rabbit  daze=2.6
+t= 239.2 x= 53457 NOTICE z3_wall_c   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.7 turtle_daze=1.1
+       diveSTART t=239.40 x=53531 ctrl=rabbit y=300 down_applied=false show=false
+t= 240.5 x= 53841 PUMP -> rabbit  daze=2.6
+t= 242.4 x= 54287 PUMP -> rabbit  daze=2.6
+t= 244.6 x= 54855 NOTICE z3_rock_d   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=384 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=244.55 x=54855 ctrl=rabbit y=384 down_applied=false show=false
+t= 246.9 x= 55406 NOTICE z3_beam_d   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=385 oxy=5.7 rabbit_daze=0.0 turtle_daze=1.0
+       diveSTART t=247.65 x=55580 ctrl=rabbit y=318 down_applied=false show=false
+t= 252.0 x= 56627 NOTICE z3_reef_c   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.6 turtle_daze=0.0
+t= 253.4 x= 56983 PUMP -> rabbit  daze=2.6
+t= 254.8 x= 57286 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 256.5 x= 57741 NOTICE z3_reef_d   UNDERWATER_REEF -> SURFACE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+t= 260.2 x= 58622 NOTICE z3_bar_d    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=1.2 turtle_daze=0.0
+t= 262.1 x= 59096 PUMP -> rabbit  daze=2.6
+t= 264.0 x= 59541 PUMP -> rabbit  daze=2.6
+t= 265.2 x= 59818 NOTICE z3_wall_d   SURFACE_WALL    -> DIVE
+       plan ctrl=turtle y=301 oxy=8.0 rabbit_daze=2.0 turtle_daze=0.9
+       diveSTART t=265.75 x=59971 ctrl=rabbit y=307 down_applied=false show=false
+t= 266.5 x= 60152 PUMP -> rabbit  daze=2.6
+t= 268.4 x= 60618 PUMP -> rabbit  daze=2.6
+t= 270.9 x= 61254 NOTICE z3_rock_e   SURFACE_ROCK    -> DIVE
+       plan ctrl=rabbit y=426 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=270.85 x=61254 ctrl=rabbit y=426 down_applied=false show=false
+t= 273.2 x= 61806 NOTICE z3_beam_e   LOW_BEAM        -> DIVE
+       plan ctrl=rabbit y=427 oxy=5.7 rabbit_daze=0.0 turtle_daze=1.0
+       diveSTART t=273.95 x=61980 ctrl=turtle y=341 down_applied=false show=false
+t= 278.2 x= 63049 NOTICE z3_bar_e    AIR_BAR         -> SURFACE
+       plan ctrl=turtle y=300 oxy=8.0 rabbit_daze=2.0 turtle_daze=0.2
+t= 278.8 x= 63238 PUMP -> rabbit  daze=2.6
+t= 280.6 x= 63671 SHIFT DROPPED -> rabbit  state=1 accident=NONE show=true ctrl=turtle
+t= 282.8 x= 64230 NOTICE z3_wall_e   SURFACE_WALL    -> DIVE
+       plan ctrl=rabbit y=301 oxy=8.0 rabbit_daze=0.0 turtle_daze=0.0
+       diveSTART t=283.30 x=64373 ctrl=rabbit y=301 down_applied=false show=false
+t= 286.1 x= 65099 PUMP -> rabbit  daze=2.6
+t= 288.0 x= 65545 PUMP -> rabbit  daze=2.6
+t= 289.9 x= 65991 PUMP -> rabbit  daze=2.6
+FINISH skilled   run 4  t=289.9  accidents=0  shifts=235  show=16  oxy_min=2.9  passed=55  grade=S

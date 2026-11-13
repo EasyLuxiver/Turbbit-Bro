@@ -1,0 +1,70 @@
+{
+  "generated_at": "2026-11-13T13:29:27",
+  "groups": {
+    "bird1": {
+      "band": [
+        234.0,
+        274.0
+      ],
+      "contact_samples": 29,
+      "drawn_but_no_hit": 0,
+      "examples": [],
+      "hit_but_not_drawn": 0,
+      "phases": [
+        "CRUISE",
+        "TELEGRAPH",
+        "DIVE",
+        "STRIKE",
+        "RECOVER",
+        "CRUISE"
+      ],
+      "strike_enters_crouch_lane": 0
+    },
+    "bird3": {
+      "band": [
+        234.0,
+        274.0
+      ],
+      "contact_samples": 29,
+      "drawn_but_no_hit": 0,
+      "examples": [],
+      "hit_but_not_drawn": 0,
+      "phases": [
+        "CRUISE",
+        "TELEGRAPH",
+        "DIVE",
+        "STRIKE",
+        "RECOVER",
+        "CRUISE"
+      ],
+      "strike_enters_crouch_lane": 0
+    },
+    "bird4": {
+      "band": [
+        234.0,
+        274.0
+      ],
+      "contact_samples": 27,
+      "drawn_but_no_hit": 0,
+      "examples": [],
+      "hit_but_not_drawn": 0,
+      "phases": [
+        "CRUISE",
+        "TELEGRAPH",
+        "DIVE",
+        "STRIKE",
+        "RECOVER",
+        "CRUISE"
+      ],
+      "strike_enters_crouch_lane": 0
+    }
+  },
+  "sweep": {
+    "air": [
+      130.0,
+      234.0
+    ],
+    "gaps": 0,
+    "max_gap_px": 0
+  }
+}

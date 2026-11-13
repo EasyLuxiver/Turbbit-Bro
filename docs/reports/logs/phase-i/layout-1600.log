@@ -1,0 +1,11 @@
+﻿Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+HUD LAYOUT 1600x900/zh (viewport 1600x900) area=4.167% panels={ "tl": [P: (14.0, 14.0), S: (203.0, 90.0)], "tr": [P: (1437.0, 14.0), S: (149.0, 127.0)], "bl": [P: (14.0, 814.0), S: (140.0, 72.0)], "br": [P: (1443.0, 797.0), S: (143.0, 89.0)] } bottom_center=[P: (587.0, 787.0), S: (426.0, 97.0)]
+HUD LAYOUT 1600x900/zh (viewport 1600x900) labels_checked=16
+HUD LAYOUT 1600x900/en (viewport 1600x900) area=5.281% panels={ "tl": [P: (14.0, 14.0), S: (235.0, 90.0)], "tr": [P: (1352.0, 14.0), S: (234.0, 127.0)], "bl": [P: (14.0, 814.0), S: (173.0, 72.0)], "br": [P: (1443.0, 797.0), S: (143.0, 89.0)] } bottom_center=[P: (575.0, 787.0), S: (450.0, 97.0)]
+HUD LAYOUT 1600x900/en (viewport 1600x900) labels_checked=16
+HUD LAYOUT 1280x720/zh (viewport 1600x900) area=4.167% panels={ "tl": [P: (14.0, 14.0), S: (203.0, 90.0)], "tr": [P: (1437.0, 14.0), S: (149.0, 127.0)], "bl": [P: (14.0, 814.0), S: (140.0, 72.0)], "br": [P: (1443.0, 797.0), S: (143.0, 89.0)] } bottom_center=[P: (587.0, 787.0), S: (426.0, 97.0)]
+HUD LAYOUT 1280x720/zh (viewport 1600x900) labels_checked=16
+HUD LAYOUT 1280x720/en (viewport 1600x900) area=5.281% panels={ "tl": [P: (14.0, 14.0), S: (235.0, 90.0)], "tr": [P: (1352.0, 14.0), S: (234.0, 127.0)], "bl": [P: (14.0, 814.0), S: (173.0, 72.0)], "br": [P: (1443.0, 797.0), S: (143.0, 89.0)] } bottom_center=[P: (575.0, 787.0), S: (450.0, 97.0)]
+HUD LAYOUT 1280x720/en (viewport 1600x900) labels_checked=16
+STAGE4 HUD LAYOUT: PASS

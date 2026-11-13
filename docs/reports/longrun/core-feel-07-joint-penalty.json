@@ -1,0 +1,490 @@
+{
+  "cases": {
+    "c1_rabbit_only": {
+      "accident_count": 1,
+      "accident_signals": [
+        "RABBIT_STUN"
+      ],
+      "accident_state": "RABBIT_STUN",
+      "banner": "咚！兔子被撞晕",
+      "bro_meter": 1,
+      "case": "rabbit_only",
+      "events": [
+        {
+          "group": "pb_rock",
+          "id": 1,
+          "kind": "SURFACE_ROCK",
+          "penalty_role": "rabbit",
+          "rescue": "NONE",
+          "roles": [
+            "rabbit"
+          ],
+          "settled": true,
+          "t": 0.68
+        }
+      ],
+      "feedback": [],
+      "hints": [],
+      "hit_roles_log1": "",
+      "hud_meter": "BRO METER 1/3",
+      "joint_count": 0,
+      "kind": "SURFACE_ROCK",
+      "mistake_points": -100,
+      "mistake_reasons": [
+        "mistake:RABBIT_STUN"
+      ],
+      "mistakes": 1,
+      "mount_state": "RIDING",
+      "rabbit_state": "STUNNED",
+      "score": 0,
+      "turtle_past_rock": true,
+      "turtle_speed": 147.0
+    },
+    "c2_turtle_only": {
+      "accident_count": 1,
+      "accident_signals": [],
+      "accident_state": "NONE",
+      "banner": "咚！兔子被撞晕",
+      "bro_meter": 1,
+      "case": "turtle_only",
+      "events": [
+        {
+          "group": "pb_gate",
+          "id": 1,
+          "kind": "DIVE_GATE",
+          "penalty_role": "turtle",
+          "rescue": "NONE",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.53
+        }
+      ],
+      "feedback": [
+        "没潜到位 - 壳撞上拱岩！"
+      ],
+      "hints": [
+        "拱岩：按住 ↓ 潜到它下面再松"
+      ],
+      "hit_roles_log1": "",
+      "hud_meter": "BRO METER 1/3",
+      "joint_count": 0,
+      "kind": "DIVE_GATE",
+      "mistake_points": -100,
+      "mistake_reasons": [
+        "mistake:TURTLE_WAVE"
+      ],
+      "mistakes": 1,
+      "mount_state": "RIDING",
+      "score": 0,
+      "turtle_dunk": 1.8,
+      "turtle_flip": 0.9,
+      "turtle_speed": 132.0
+    },
+    "c3_both_same_frame": {
+      "accident_count": 1,
+      "accident_signals": [
+        "RABBIT_STUN"
+      ],
+      "accident_state": "RABBIT_STUN",
+      "banner": "咚！兔子被撞晕",
+      "bro_meter": 1,
+      "case": "both_same_frame",
+      "events": [
+        {
+          "group": "pb_log",
+          "id": 1,
+          "kind": "FLOATING_LOG",
+          "penalty_role": "joint",
+          "rescue": "NONE",
+          "roles": [
+            "rabbit",
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.0
+        }
+      ],
+      "feedback": [
+        "跳跃高度不对 - 撞上浮木！",
+        "下潜太晚 - 壳撞上浮木！"
+      ],
+      "hints": [
+        "浮木：先按 ↑ 让兔子起跳，再 SHIFT 给乌龟",
+        "浮木：兔子起跳后 SHIFT 给乌龟，它会自动下潜、过木自动上浮"
+      ],
+      "hit_roles_log1": "",
+      "hud_meter": "BRO METER 1/3",
+      "joint_count": 0,
+      "kind": "FLOATING_LOG",
+      "mistake_points": -100,
+      "mistake_reasons": [
+        "mistake:RABBIT_STUN"
+      ],
+      "mistakes": 1,
+      "mount_state": "RIDING",
+      "rabbit_state": "STUNNED",
+      "score": 0,
+      "turtle_dunk": 1.8,
+      "turtle_speed": 79.2
+    },
+    "c4_sequential_same_log": {
+      "accident_count": 1,
+      "accident_signals": [
+        "RABBIT_STUN"
+      ],
+      "accident_state": "RABBIT_STUN",
+      "banner": "咚！兔子被撞晕",
+      "bro_meter": 1,
+      "case": "sequential_same_log",
+      "events": [
+        {
+          "group": "pb_log",
+          "id": 1,
+          "kind": "FLOATING_LOG",
+          "penalty_role": "joint",
+          "rescue": "NONE",
+          "roles": [
+            "rabbit",
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.72
+        }
+      ],
+      "feedback": [
+        "下潜太晚 - 壳撞上浮木！",
+        "跳跃高度不对 - 撞上浮木！"
+      ],
+      "gap_s": 1.33,
+      "hints": [
+        "浮木：兔子起跳后 SHIFT 给乌龟，它会自动下潜、过木自动上浮",
+        "浮木：先按 ↑ 让兔子起跳，再 SHIFT 给乌龟"
+      ],
+      "hit_roles_log1": "",
+      "hud_meter": "BRO METER 1/3",
+      "joint_count": 0,
+      "kind": "FLOATING_LOG",
+      "mistake_points": -100,
+      "mistake_reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "mistakes": 1,
+      "mount_state": "RIDING",
+      "rabbit_feedback": "跳跃高度不对 - 撞上浮木！",
+      "rabbit_state": "STUNNED",
+      "score": 0,
+      "turtle_dunk": 0.47
+    },
+    "c5_rabbit_water_rescue": {
+      "accident_count": 1,
+      "accident_signals": [
+        "RABBIT_WATER"
+      ],
+      "accident_state": "NONE",
+      "banner": "获救",
+      "bro_meter": 1,
+      "case": "rabbit_water_rescue",
+      "events": [
+        {
+          "group": "pb_beam",
+          "id": 1,
+          "kind": "LOW_BEAM",
+          "penalty_role": "rabbit",
+          "rescue": "NONE",
+          "roles": [
+            "rabbit"
+          ],
+          "settled": true,
+          "t": 0.13
+        }
+      ],
+      "feedback": [
+        "接住了！兄弟！",
+        "兄弟回来了！右边这口气补上了"
+      ],
+      "hints": [],
+      "hit_roles_log1": "",
+      "hit_snapshot": {
+        "accident_count": 1,
+        "accident_state": "RABBIT_WATER",
+        "bro_meter": 1,
+        "events": [
+          {
+            "group": "pb_beam",
+            "id": 1,
+            "kind": "LOW_BEAM",
+            "penalty_role": "rabbit",
+            "rescue": "NONE",
+            "roles": [
+              "rabbit"
+            ],
+            "settled": true,
+            "t": 0.13
+          }
+        ],
+        "hud_meter": "BRO METER 1/3",
+        "joint_count": 0,
+        "mistake_reasons": [
+          "mistake:RABBIT_WATER"
+        ],
+        "mistakes": 1,
+        "mount_state": "RESCUE_FALLING"
+      },
+      "hud_meter": "BRO METER 1/3",
+      "joint_count": 0,
+      "kind": "LOW_BEAM",
+      "mistake_points": -100,
+      "mistake_reasons": [
+        "mistake:RABBIT_WATER"
+      ],
+      "mistakes": 1,
+      "mount_state": "RIDING",
+      "rescue_reason": "caught",
+      "rescue_result": "caught",
+      "rescue_seconds": 1.47,
+      "score": 50
+    },
+    "c6_rescue_independent_hit": {
+      "accident_count": 2,
+      "accident_signals": [
+        "RABBIT_WATER"
+      ],
+      "accident_state": "RABBIT_WATER",
+      "accident_state_at_hit": "RABBIT_WATER",
+      "after_fall": {
+        "accident_count": 1,
+        "accident_state": "RABBIT_WATER",
+        "bro_meter": 1,
+        "events": [
+          {
+            "group": "pb_beam2",
+            "id": 1,
+            "kind": "LOW_BEAM",
+            "penalty_role": "rabbit",
+            "rescue": "NONE",
+            "roles": [
+              "rabbit"
+            ],
+            "settled": true,
+            "t": 0.13
+          }
+        ],
+        "hud_meter": "BRO METER 1/3",
+        "joint_count": 0,
+        "mistake_reasons": [
+          "mistake:RABBIT_WATER"
+        ],
+        "mistakes": 1,
+        "mount_state": "RESCUE_FALLING"
+      },
+      "banner": "扑通！兔子落水",
+      "bro_meter": 2,
+      "case": "rescue_independent_hit",
+      "events": [
+        {
+          "group": "pb_beam2",
+          "id": 1,
+          "kind": "LOW_BEAM",
+          "penalty_role": "rabbit",
+          "rescue": "NONE",
+          "roles": [
+            "rabbit"
+          ],
+          "settled": true,
+          "t": 0.13
+        },
+        {
+          "group": "pb_shark2",
+          "id": 2,
+          "kind": "SHARK",
+          "penalty_role": "turtle",
+          "rescue": "RESCUE_FALLING",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.47
+        }
+      ],
+      "feedback": [
+        "鲨鱼从下面来的 - 壳翻了！"
+      ],
+      "hints": [
+        "鲨鱼只咬壳 - 按 ↑ 跃起躲开"
+      ],
+      "hit_roles_log1": "",
+      "hit_snapshot": {
+        "accident_count": 2,
+        "accident_state": "RABBIT_WATER",
+        "bro_meter": 2,
+        "events": [
+          {
+            "group": "pb_beam2",
+            "id": 1,
+            "kind": "LOW_BEAM",
+            "penalty_role": "rabbit",
+            "rescue": "NONE",
+            "roles": [
+              "rabbit"
+            ],
+            "settled": true,
+            "t": 0.13
+          },
+          {
+            "group": "pb_shark2",
+            "id": 2,
+            "kind": "SHARK",
+            "penalty_role": "turtle",
+            "rescue": "RESCUE_FALLING",
+            "roles": [
+              "turtle"
+            ],
+            "settled": true,
+            "t": 0.47
+          }
+        ],
+        "hud_meter": "BRO METER 2/3",
+        "joint_count": 0,
+        "mistake_reasons": [
+          "mistake:RABBIT_WATER",
+          "mistake:TURTLE_WAVE"
+        ],
+        "mistakes": 2,
+        "mount_state": "RESCUE_FALLING"
+      },
+      "hud_meter": "BRO METER 2/3",
+      "joint_count": 0,
+      "kind": "SHARK",
+      "mistake_points": -200,
+      "mistake_reasons": [
+        "mistake:RABBIT_WATER",
+        "mistake:TURTLE_WAVE"
+      ],
+      "mistakes": 2,
+      "mount_state": "RESCUE_FALLING",
+      "rescue_state_at_hit": "RESCUE_FALLING",
+      "score": 0,
+      "seconds_to_hit": 0.33
+    },
+    "c7_turtle_pushed_no_second": {
+      "accident_count": 1,
+      "accident_signals": [],
+      "accident_state": "NONE",
+      "at_hit": {
+        "accident_count": 1,
+        "accident_state": "NONE",
+        "bro_meter": 1,
+        "events": [
+          {
+            "group": "pb_log2",
+            "id": 1,
+            "kind": "FLOATING_LOG",
+            "penalty_role": "turtle",
+            "rescue": "NONE",
+            "roles": [
+              "turtle"
+            ],
+            "settled": true,
+            "t": 0.53
+          }
+        ],
+        "hud_meter": "BRO METER 1/3",
+        "joint_count": 0,
+        "mistake_reasons": [
+          "mistake:TURTLE_DIVE_LATE"
+        ],
+        "mistakes": 1,
+        "mount_state": "RIDING"
+      },
+      "banner": "扑通！兔子落水",
+      "bro_meter": 1,
+      "case": "turtle_pushed_no_second",
+      "events": [
+        {
+          "group": "pb_log2",
+          "id": 1,
+          "kind": "FLOATING_LOG",
+          "penalty_role": "turtle",
+          "rescue": "NONE",
+          "roles": [
+            "turtle"
+          ],
+          "settled": true,
+          "t": 0.53
+        }
+      ],
+      "feedback": [
+        "下潜太晚 - 壳撞上浮木！"
+      ],
+      "hints": [
+        "浮木：兔子起跳后 SHIFT 给乌龟，它会自动下潜、过木自动上浮"
+      ],
+      "hit_roles_log1": "",
+      "hud_meter": "BRO METER 1/3",
+      "joint_count": 0,
+      "kind": "FLOATING_LOG",
+      "log_left": 10500.0,
+      "mistake_points": -100,
+      "mistake_reasons": [
+        "mistake:TURTLE_DIVE_LATE"
+      ],
+      "mistakes": 1,
+      "mount_state": "RIDING",
+      "pinned_left_of_log": true,
+      "score": 0,
+      "turtle_x": 10455.0
+    },
+    "c8_turtle_passes_clean": {
+      "accident_count": 0,
+      "accident_signals": [],
+      "accident_state": "NONE",
+      "banner": "扑通！兔子落水",
+      "bro_meter": 0,
+      "case": "turtle_passes_clean",
+      "end_x": 14601.1,
+      "events": [],
+      "feedback": [
+        "干净通过！"
+      ],
+      "gate_right": 14480.0,
+      "hints": [
+        "氧气偏低 - 换回乌龟就上浮"
+      ],
+      "hit_groups": [],
+      "hit_roles_log1": "",
+      "hud_meter": "BRO METER 0/3",
+      "joint_count": 0,
+      "kind": "DIVE_GATE",
+      "mistake_points": 0,
+      "mistake_reasons": [],
+      "mistakes": 0,
+      "mount_state": "RIDING",
+      "score": 150
+    }
+  },
+  "generated_at": "2026-11-13T22:09:46",
+  "geometry": {
+    "hazard_cooldown_s": 3.0,
+    "joint_window_s": 1.5,
+    "log_rect": [
+      6000.0,
+      192.0,
+      32.0,
+      218.0
+    ],
+    "rabbit_body": [
+      32.0,
+      48.0
+    ],
+    "turtle_body": [
+      96.0,
+      56.0
+    ]
+  },
+  "rule": {
+    "joint_window_s": 1.5,
+    "note": "same obstacle + same window = one event; both roles = joint, still one penalty"
+  }
+}

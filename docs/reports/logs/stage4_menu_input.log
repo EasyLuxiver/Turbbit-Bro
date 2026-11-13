@@ -1,0 +1,51 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+Vulkan 1.4.341 - Forward+ - Using Device #0: NVIDIA - NVIDIA GeForce RTX 4060 Laptop GPU
+
+  ok  main menu exposes 3 native buttons (3)
+  ok  start button visible
+  ok  settings button visible
+  ok  quit button visible
+  ok  start button has a real on-screen rect
+  ok  mouse hover reaches the start button (hover style applies)
+    click '开始游戏' at (799.5, 477.0) (viewport (1600.0, 900.0))
+  ok  mouse click on START GAME enters the race
+  ok  race state RUNNING
+    click '退出游戏' at (799.5, 625.0) (viewport (1600.0, 900.0))
+  ok  quit confirmation offers cancel + confirm
+  ok  quit confirmation defaults focus to CANCEL
+  ok  confirm does not change state
+    click '取消' at (560.0, 500.0) (viewport (1600.0, 900.0))
+  ok  cancel closes the confirmation and returns to the menu
+  ok  still in MENU after cancel
+    click '设置' at (799.5, 553.0) (viewport (1600.0, 900.0))
+  ok  settings shows a language button
+    click '语言：简体中文   [L]' at (800.0, 410.0) (viewport (1600.0, 900.0))
+  ok  mouse click on language button switches language
+  ok  language choice persisted after menu click
+  ok  settings has a back button
+    click '返回' at (800.0, 542.0) (viewport (1600.0, 900.0))
+  ok  back returns to main menu
+  ok  pause menu shows CONTINUE
+  ok  pause menu shows RESTART
+  ok  pause menu shows MAIN MENU
+    click '继续游戏' at (800.0, 406.0) (viewport (1600.0, 900.0))
+  ok  mouse click on CONTINUE resumes the race
+    click '重新开始' at (800.0, 482.0) (viewport (1600.0, 900.0))
+  ok  restart reloads the race
+  ok  restart resets the run
+    click '返回主菜单' at (800.0, 554.0) (viewport (1600.0, 900.0))
+  ok  mouse click on MAIN MENU returns to the menu
+  ok  state MENU after leaving
+  ok  result shows PLAY AGAIN + MAIN MENU buttons
+    click '再玩一次' at (560.0, 736.0) (viewport (1600.0, 900.0))
+  ok  mouse click on PLAY AGAIN starts a race
+    click '返回主菜单' at (800.0, 554.0) (viewport (1600.0, 900.0))
+    click '返回主菜单' at (1040.0, 736.0) (viewport (1600.0, 900.0))
+  ok  mouse click on MAIN MENU from result returns to menu
+  ok  a button holds keyboard focus on entry
+  ok  DOWN moves focus to another button
+  ok  UP returns focus (开始游戏)
+  ok  SPACE activates the focused button
+  ok  race scene is live after keyboard start
+  ok  menu tests do not touch best.json
+STAGE4 MENU INPUT: PASS

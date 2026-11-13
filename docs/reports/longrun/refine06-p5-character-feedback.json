@@ -1,0 +1,196 @@
+{
+  "data": {
+    "constants": {
+      "dunk_time": 1.8,
+      "flip_time": 0.9,
+      "max_implied_speed": 1000.0,
+      "rescue_entry_y": 340.0
+    },
+    "flip": {
+      "accident_count": 1,
+      "accident_delta": 1,
+      "accident_delta_total": 0,
+      "accident_state_end": "NONE",
+      "bro_delta": 1,
+      "bro_delta_total": 0,
+      "bro_meter": 1,
+      "control_end": "turtle",
+      "cruise_t": 3.13,
+      "flip_end_t": 0.9,
+      "flip_frames": 53,
+      "flip_move_px": 142.2,
+      "flip_t_at_hit": 0.9,
+      "mount_end": "RIDING",
+      "speed_at_cruise": 220.0,
+      "state_at_cruise": "CRUISING",
+      "turtle_accident": false,
+      "turtle_accident_end": false,
+      "turtle_base_speed": 220.0,
+      "turtle_speed_end": 220.0,
+      "turtle_state_end": "CRUISING"
+    },
+    "flip_no_clip": {
+      "crossed_without_contact": false,
+      "flip_frames": 53,
+      "frames": 72,
+      "intersect_frames": 71,
+      "log_left_x": 6400.0,
+      "log_rect": [
+        6400.0,
+        192.0,
+        6432.0,
+        410.0
+      ],
+      "max_shell_right_x": 6403.0,
+      "turtle_x": 6355.0,
+      "turtle_y": 409.0
+    },
+    "formal_track": {
+      "final_accident_state": "NONE",
+      "final_mount": "RIDING",
+      "flip_accident_count": 1,
+      "flip_accident_state": "NONE",
+      "flip_move_px": 0.0,
+      "flip_state": "DUNKED",
+      "flip_time_s": 0.9,
+      "flip_triggered": true,
+      "rabbit_water_t": 0.98,
+      "rabbit_water_triggered": true,
+      "rescue_after_water_s": 0.53,
+      "rescue_caught": true,
+      "rescue_success_count": 1
+    },
+    "rabbit_splash": {
+      "fall_frames": 15,
+      "mount_state": "RESCUE_ACTIVE",
+      "rabbit_at_splash": [
+        4954.0,
+        344.0
+      ],
+      "splash_err_px": 0.0,
+      "splash_pos": [
+        4954.0,
+        344.0
+      ],
+      "splash_y_minus_entry": 4.0
+    },
+    "rabbit_water": {
+      "accident_count": 1,
+      "accident_state": "NONE",
+      "carry_frames": 16,
+      "catch_frame": 59,
+      "fall_frames": 0,
+      "last_reason": "caught",
+      "last_result": "caught",
+      "max_implied_speed": 944.4,
+      "mount_state": "RIDING",
+      "rabbit_state": "RIDING",
+      "recovered_frame": 75,
+      "rescue_success": 1,
+      "splash_err_px": 0.8,
+      "trace": [
+        [
+          0.17,
+          "RESCUE_ACTIVE",
+          [
+            4954.0,
+            388.5
+          ],
+          [
+            5032.08349609375,
+            334.0
+          ],
+          170.0
+        ],
+        [
+          0.33,
+          "RESCUE_ACTIVE",
+          [
+            4954.0,
+            396.0
+          ],
+          [
+            5055.83349609375,
+            334.0
+          ],
+          120.0
+        ],
+        [
+          0.5,
+          "RESCUE_ACTIVE",
+          [
+            4954.0,
+            403.5
+          ],
+          [
+            5072.08349609375,
+            334.0
+          ],
+          90.0
+        ],
+        [
+          0.67,
+          "RESCUE_ACTIVE",
+          [
+            4954.0,
+            411.0
+          ],
+          [
+            5087.08349609375,
+            350.666656494141
+          ],
+          90.0
+        ],
+        [
+          0.83,
+          "RESCUE_ACTIVE",
+          [
+            4954.0,
+            418.5
+          ],
+          [
+            5102.08349609375,
+            426.669067382813
+          ],
+          90.0
+        ],
+        [
+          1.0,
+          "CARRYING",
+          [
+            4980.6787109375,
+            419.697265625
+          ],
+          [
+            5117.2001953125,
+            459.98388671875
+          ],
+          97.0
+        ],
+        [
+          1.17,
+          "CARRYING",
+          [
+            5111.4482421875,
+            416.716491699219
+          ],
+          [
+            5139.78369140625,
+            473.939544677734
+          ],
+          167.0
+        ]
+      ],
+      "water_frames": 58
+    },
+    "source": {
+      "contact_calls_start_flip": true,
+      "draw_uses_flip_t": true,
+      "flip_decrements": true,
+      "splash_sets_pos": true
+    }
+  },
+  "failures": [],
+  "generated_at": "2026-11-13T22:09:48",
+  "note": "P5 角色反馈：直接跑正式 race.gd 的落水/救援与浪击掀翻；引擎输入代理，不是真人试玩。"
+}

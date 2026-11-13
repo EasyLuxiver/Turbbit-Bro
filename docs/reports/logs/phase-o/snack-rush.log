@@ -1,0 +1,8 @@
+Godot Engine v4.7.stable.official.5b4e0cb0f - https://godotengine.org
+
+SNACK eaten x=3250 obstacle=beam1 boost_until=4050 speed=253
+SNACK case=eat  pass=true eaten=true v=220 max=253.0 warn=4.70 hit=false acc=NONE riding=true checks={ "ate": true, "boost_at_obstacle": true, "speed_raised": true, "single_boost": true, "back_to_cruise": true, "warning_ge_4s": true, "passed_clean": true }
+SNACK case=skip pass=true eaten=false v=220 max=220.0 warn=5.00 hit=false acc=NONE riding=true checks={ "not_eaten": true, "cruise_speed": true, "no_penalty": true, "passed_clean": true }
+SNACK eaten x=3250 obstacle=beam1 boost_until=4050 speed=253
+SNACK case=hit  pass=true eaten=true v=220 max=253.0 warn=-1.00 hit=true acc=RABBIT_STUN riding=true checks={ "ate": true, "collision_alive": true }
+SNACK: DONE cases=3 fails=0

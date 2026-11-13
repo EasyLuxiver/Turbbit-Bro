@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/test/stage7b_bro_dive_charge.gd" id="1"]
+
+[node name="Stage7bBroDiveCharge" type="Node"]
+script = ExtResource("1")
