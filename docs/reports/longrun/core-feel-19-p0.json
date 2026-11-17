@@ -1,17 +1,7 @@
 {
   "checks": [
     {
-      "detail": "TUBO OVERLOAD 3/3",
-      "name": "full_meter_visible",
-      "ok": true
-    },
-    {
-      "detail": "BITT OVERLOAD 0/3",
-      "name": "other_brother_visible",
-      "ok": true
-    },
-    {
-      "detail": "SPACE TO RESCUE TUBO",
+      "detail": "下潜靠近 兔子；够不到按 SPACE 追",
       "name": "rescue_prompt_space",
       "ok": true
     },
@@ -21,12 +11,7 @@
       "ok": true
     },
     {
-      "detail": "SHIFT TO BITT: ↑ LEAP / ↓ DIVE. SPACE RESCUES A TUBO IN THE WATER",
-      "name": "tutorial_mentions_space",
-      "ok": true
-    },
-    {
-      "detail": "SHIFT SWAP: TUBO ↑ JUMP / ↓ CROUCH; BITT ↑ LEAP / ↓ DIVE\nTHE BUBBLES OVER TUBO ARE AIR; A FULL OVERLOAD METER MAKES THE CURRENT BODY ACT OUT\nSEAWEED: SHIFT PICKS WHO EATS - BITT SPEEDS UP, TUBO JUMPS HIGHER; SKIPPING COSTS NOTHING\nSHIFT RELAYS · CLEAN PASSES BUILD BRO COMBO · TEAM MOVES START SHOWTIME\nSPACE: BITT RESCUES A TUBO IN THE WATER",
+      "detail": "SHIFT 换人：兔子 ↑ 跳 / ↓ 趴低；乌龟 ↑ 跃起 / ↓ 下潜\n兔子 头顶的气泡是氧气；失误后他会嘟囔，没人管就可能自己找事\n海藻：SHIFT 决定谁吃——乌龟 加速，兔子 下一跳更高；不吃不扣分\n换人接力 · 海藻加速 · 下潜靠近救兄弟\n救援：乌龟 下潜靠近 兔子 就会接住；够不到按 SPACE 追一把",
       "name": "pause_help_mentions_space",
       "ok": true
     }

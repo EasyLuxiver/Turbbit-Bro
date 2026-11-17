@@ -26,7 +26,7 @@
     },
     {
       "ok": true,
-      "what": "boost state shows TURBO in HUD ('乌龟 TURBO！加速中')"
+      "what": "boost state shows TURBO in HUD ('乌龟 加速中！')"
     },
     {
       "ok": true,
@@ -34,27 +34,23 @@
     },
     {
       "ok": true,
-      "what": "zh HUD shows current character ('SHIFT   当前控制：兔子')"
+      "what": "zh HUD shows current character ('操控 兔子 · SHIFT 换人')"
     },
     {
       "ok": true,
-      "what": "zh HUD shows BRO METER ('BRO METER 0/3')"
+      "what": "zh HUD shows oxygen bubbles (3)"
     },
     {
       "ok": true,
-      "what": "zh HUD shows oxygen ('氧气 8.0s')"
+      "what": "zh HUD min actual font 14.4 px >= 14 (design 18, '操控 兔子 · SHIFT 换人')"
     },
     {
       "ok": true,
-      "what": "zh HUD min actual font 14.4 px >= 14 (design 18, 'SHIFT   当前控制：兔子')"
+      "what": "zh panel area 0.00% <= 8%"
     },
     {
       "ok": true,
-      "what": "zh panel area 6.44% <= 8%"
-    },
-    {
-      "ok": true,
-      "what": "en boost state shows TURBO ('TURTLE TURBO!')"
+      "what": "en boost state shows TURBO ('BITT TURBO!')"
     },
     {
       "ok": true,
@@ -62,23 +58,19 @@
     },
     {
       "ok": true,
-      "what": "en HUD shows current character ('SHIFT   CONTROL: RABBIT')"
+      "what": "en HUD shows current character ('DRIVING TUBO · SHIFT TO SWAP')"
     },
     {
       "ok": true,
-      "what": "en HUD shows BRO METER ('BRO METER 0/3')"
+      "what": "en HUD shows oxygen bubbles (3)"
     },
     {
       "ok": true,
-      "what": "en HUD shows oxygen ('AIR 8.0s')"
+      "what": "en HUD min actual font 14.4 px >= 14 (design 18, 'DRIVING TUBO · SHIFT TO SWAP')"
     },
     {
       "ok": true,
-      "what": "en HUD min actual font 14.4 px >= 14 (design 18, 'SHIFT   CONTROL: RABBIT')"
-    },
-    {
-      "ok": true,
-      "what": "en panel area 7.68% <= 8%"
+      "what": "en panel area 0.00% <= 8%"
     },
     {
       "ok": true,
@@ -86,15 +78,7 @@
     },
     {
       "ok": true,
-      "what": "combo milestone feedback in HUD (got 'BRO COMBO！', combo=3)"
-    },
-    {
-      "ok": true,
-      "what": "beam1 encounter exists for rescue probe"
-    },
-    {
-      "ok": true,
-      "what": "real collision produces RABBIT_WATER"
+      "what": "clean pass feedback in HUD (got '干净通过！')"
     },
     {
       "ok": true,
@@ -102,7 +86,7 @@
     },
     {
       "ok": true,
-      "what": "rescue feedback two beats (catch emitted=true, HUD last='兄弟回来了！右边这口气补上了')"
+      "what": "rescue feedback two beats (catch emitted=true, HUD last='兄弟回来了！氧气也回了一口')"
     },
     {
       "ok": true,
@@ -118,19 +102,7 @@
     },
     {
       "ok": true,
-      "what": "zh result shows combos"
-    },
-    {
-      "ok": true,
-      "what": "zh result shows rescue saves"
-    },
-    {
-      "ok": true,
       "what": "zh result shows mistakes"
-    },
-    {
-      "ok": true,
-      "what": "zh result shows capsizes"
     },
     {
       "ok": true,
@@ -142,7 +114,7 @@
     },
     {
       "ok": true,
-      "what": "zh result min actual font 14.4 px >= 14 (design 18, '最佳时间 296.63 s   最低事故 0   最长连')"
+      "what": "zh result min actual font 14.4 px >= 14 (design 18, '大表哥把解药丢过来：喝了。下次别让我下水捞你们。')"
     },
     {
       "ok": true,
@@ -154,19 +126,7 @@
     },
     {
       "ok": true,
-      "what": "en result shows combos"
-    },
-    {
-      "ok": true,
-      "what": "en result shows rescue saves"
-    },
-    {
-      "ok": true,
       "what": "en result shows mistakes"
-    },
-    {
-      "ok": true,
-      "what": "en result shows capsizes"
     },
     {
       "ok": true,
@@ -174,61 +134,60 @@
     },
     {
       "ok": true,
-      "what": "en result min actual font 14.4 px >= 14 (design 18, 'BEST TIME  296.63 s   BEST A')"
+      "what": "en result min actual font 14.4 px >= 14 (design 18, 'COUSIN TOSSES OVER THE ANTID')"
     }
   ],
-  "combo_after": 3,
-  "combo_feedback": "BRO COMBO！",
+  "combo_after": 0,
+  "combo_feedback": "干净通过！",
   "content_scale": 0.8,
   "failures": [],
   "font_en": {
     "actual": 14.4,
     "design": 18.0,
-    "text": "SHIFT   CONTROL: RABBIT"
+    "text": "DRIVING TUBO · SHIFT TO SWAP"
   },
   "font_result_en": {
     "actual": 14.4,
     "design": 18.0,
-    "text": "BEST TIME  296.63 s   BEST A"
+    "text": "COUSIN TOSSES OVER THE ANTID"
   },
   "font_result_zh": {
     "actual": 14.4,
     "design": 18.0,
-    "text": "最佳时间 296.63 s   最低事故 0   最长连"
+    "text": "大表哥把解药丢过来：喝了。下次别让我下水捞你们。"
   },
   "font_zh": {
     "actual": 14.4,
     "design": 18.0,
-    "text": "SHIFT   当前控制：兔子"
+    "text": "操控 兔子 · SHIFT 换人"
   },
-  "generated_at": "2026-11-13T22:10:06",
-  "hud_shot_en": "res://screenshots/phase-t-hud-en-1280x720.png",
-  "hud_shot_zh": "res://screenshots/phase-t-hud-zh-1280x720.png",
-  "panel_area_en": 0.0768,
-  "panel_area_zh": 0.0644,
-  "rescue_crash": "RABBIT_WATER",
-  "rescue_feedback": "兄弟回来了！右边这口气补上了",
+  "generated_at": "2026-11-18T00:43:03",
+  "hud_shot_en": "",
+  "hud_shot_zh": "",
+  "panel_area_en": 0.0,
+  "panel_area_zh": 0.0,
+  "rescue_crash": "forced_rescue_probe",
+  "rescue_feedback": "兄弟回来了！氧气也回了一口",
   "rescue_feedback_events": [
-    "BRO COMBO！|bro",
-    "TURBO！亲手喂到！乌龟很满足！|pop",
+    "兔子 嘟囔：又是我……|hit",
+    "兔子 呛水了，气短——别再频繁掉水|hit",
     "接住了！兄弟！|pop",
-    "兄弟回来了！右边这口气补上了|bro"
+    "兄弟回来了！氧气也回了一口|bro"
   ],
   "rescue_success_count": 1,
-  "result_shot_en": "res://screenshots/phase-t-result-en-1280x720.png",
-  "result_shot_zh": "res://screenshots/phase-t-result-zh-1280x720.png",
+  "result_shot_en": "",
+  "result_shot_zh": "",
   "result_zh_lines": [
-    "比赛完成",
+    "训练结束",
     "S   绝对好兄弟！",
-    "比赛时间               296.63 秒",
-    "干净通过                   55",
-    "连招                       11",
-    "救援成功                    4",
-    "亲手喂到                    1",
-    "失误                        2",
-    "翻船次数                    1",
+    "大表哥：这才叫兄弟默契！",
+    "大表哥把解药丢过来：喝了。下次别让我下水捞你们。",
+    "兔子：我本来就很快。   乌龟：是我把你带过去的。",
+    "比赛时间              296.63 秒      失误                  2      干净通过              55",
+    "干净 55 · BRO DIVE 8 · BRO OLLIE 3 · 食物 0",
     "最佳时间 296.63 s   最低事故 0   最长连击 54",
-    "R  -  重开        M  -  主菜单        Enter  -  选中的按钮",
+    "下次试试：按 SHIFT 换到 乌龟，亲手把海藻喂给它",
+    "R 再来一次    M 回主菜单    Enter 确认",
     "再玩一次",
     "返回主菜单"
   ],
@@ -236,8 +195,8 @@
     "points": 50,
     "reason": "probe_retained_2"
   },
-  "turbo_text_en": "TURTLE TURBO!",
-  "turbo_text_zh": "乌龟 TURBO！加速中",
+  "turbo_text_en": "BITT TURBO!",
+  "turbo_text_zh": "乌龟 加速中！",
   "viewport_design": [
     1600.0,
     900.0

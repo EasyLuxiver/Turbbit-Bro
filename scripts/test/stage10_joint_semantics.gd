@@ -97,14 +97,15 @@ func _case_single(who: String) -> void:
 	for i in 3:
 		GameManager.note_mistake("RABBIT_STUN" if who == "rabbit" else "TURTLE_WAVE",
 			who)
+	# FEEL-24：单角色连续失误只留下抱怨窗口，不武装 BRO 槽、不触发联合。
 	_check("%s_single" % who,
-		GameManager.role_mischief_pending and GameManager.role_mischief_role == who
+		GameManager.complaint_role == who
 			and GameManager.joint_accident_count == 0
 			and race.joint_show_t == 0.0,
-		"pending=%s role=%s joint=%d" % [str(GameManager.role_mischief_pending),
-			GameManager.role_mischief_role, GameManager.joint_accident_count])
+		"complaint=%s joint=%d" % [GameManager.complaint_role,
+			GameManager.joint_accident_count])
 	rows.append({"case": who + "_single", "bro": GameManager.bro_meter,
-		"pending": GameManager.role_mischief_role})
+		"complaint": GameManager.complaint_role})
 
 
 func _case_true_joint() -> void:
@@ -155,11 +156,13 @@ func _case_two_slots_then_single() -> void:
 	GameManager.note_mistake("RABBIT_STUN", "rabbit")
 	GameManager.note_mistake("TURTLE_WAVE", "turtle")
 	GameManager.note_mistake("RABBIT_STUN", "rabbit")
+	# FEEL-24 起不再有“两格→第三格武装”的 BRO 槽；连续失误只生成
+	# 最后一次抱怨窗口（complaint_role），不会自动升级成联合事故。
 	_check("two_slots_then_single",
-		GameManager.role_mischief_role == "rabbit"
+		GameManager.complaint_role == "rabbit"
 			and GameManager.joint_accident_count == 0
 			and race.joint_show_t == 0.0,
-		"role=%s joint=%d" % [GameManager.role_mischief_role,
+		"complaint=%s joint=%d" % [GameManager.complaint_role,
 			GameManager.joint_accident_count])
 
 

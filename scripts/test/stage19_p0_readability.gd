@@ -1,5 +1,7 @@
 extends Node
-## FEEL-19 P0：MISCHIEF 满格可见 + 救援 SPACE 文案/键帽。
+## FEEL-19 P0：救援 SPACE 文案/键帽。
+## FEEL-24 起右下角 0/3 面板已移除，原“满格可见”两条断言随之删除；
+## MISCHIEF 可读性由 stage15_mischief 覆盖。
 
 var is_runner := false
 var race: Node
@@ -29,22 +31,13 @@ func _run() -> void:
 	race.test_disable_hazards = true
 	race.load_level([], [])
 	GameManager.current_control = "rabbit"
-	GameManager.clear_bro_meter()
-	for i in 3:
-		GameManager.note_mistake("RABBIT_STUN", "rabbit")
-	race.hud._process(0.016)
-	_check("full_meter_visible", race.hud.bro_meter_label.text.contains("3/3"),
-		race.hud.bro_meter_label.text)
-	_check("other_brother_visible", race.hud.bro_other_label.text.contains("BITT"),
-		race.hud.bro_other_label.text)
 	GameManager.prompt.emit(Locale.t("prompt.rescue_dive"))
 	race.hud._process(0.016)
 	_check("rescue_prompt_space", race.hud.prompt_label.text.contains("SPACE"),
 		race.hud.prompt_label.text)
 	_check("space_keycap_visible", race.hud.keycap_panels["pop"].visible,
 		str(race.hud.keycap_panels["pop"].visible))
-	_check("tutorial_mentions_space", Locale.t("tutorial.step2_hint").contains("SPACE"),
-		Locale.t("tutorial.step2_hint"))
+	# 教学只教换人/动词；救援 SPACE 由实时 prompt 与暂停帮助承载。
 	_check("pause_help_mentions_space", Locale.t("pause.help_body").contains("SPACE"),
 		Locale.t("pause.help_body"))
 	_write()

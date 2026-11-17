@@ -1,12 +1,12 @@
 {
   "checks": [
     {
-      "detail": "pending=true role=rabbit joint=0",
+      "detail": "complaint=rabbit joint=0",
       "name": "rabbit_single",
       "ok": true
     },
     {
-      "detail": "pending=true role=turtle joint=0",
+      "detail": "complaint=turtle joint=0",
       "name": "turtle_single",
       "ok": true
     },
@@ -21,17 +21,17 @@
       "ok": true
     },
     {
-      "detail": "accidents 1->1 bro 1->1",
+      "detail": "accidents 1->1 bro 0->0",
       "name": "rescue_success",
       "ok": true
     },
     {
-      "detail": "accidents 1->1 bro 1->1",
+      "detail": "accidents 1->1 bro 0->0",
       "name": "rescue_fail",
       "ok": true
     },
     {
-      "detail": "role=rabbit joint=0",
+      "detail": "complaint=rabbit joint=0",
       "name": "two_slots_then_single",
       "ok": true
     },
@@ -51,17 +51,17 @@
       "ok": true
     }
   ],
-  "generated_at": "2026-11-14T20:26:10",
+  "generated_at": "2026-11-18T00:44:01",
   "rows": [
     {
       "bro": 0,
       "case": "rabbit_single",
-      "pending": "rabbit"
+      "complaint": "rabbit"
     },
     {
       "bro": 0,
       "case": "turtle_single",
-      "pending": "turtle"
+      "complaint": "turtle"
     },
     {
       "activated": true,

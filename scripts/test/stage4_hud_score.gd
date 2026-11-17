@@ -133,8 +133,7 @@ func _hud_checks(tag: String, who_word: String, air_word: String) -> void:
 		"%s HUD hides fixed total score" % tag)
 	_check(hud.control_label.text.contains(who_word),
 		"%s HUD shows current character ('%s')" % [tag, hud.control_label.text])
-	_check(hud.bro_meter_label.text.contains("BRO METER") or hud.bro_meter_label.text.contains("OVERLOAD") or hud.bro_meter_label.text.contains("捣乱压力"),
-		"%s HUD shows BRO meter ('%s')" % [tag, hud.bro_meter_label.text])
+	# FEEL-24 起右下角 0/3 面板（BRO METER）已移除，不再断言该行。
 	_check(race.oxygen_bubble_count() > 0,
 		"%s HUD shows oxygen bubbles (%d)" % [tag, race.oxygen_bubble_count()])
 	var mf := _min_actual_font(hud)
