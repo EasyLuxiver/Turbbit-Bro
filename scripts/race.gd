@@ -15,6 +15,14 @@ const ShiftFXScript = preload("res://scripts/ui/shift_fx.gd")
 const OpeningScript = preload("res://scripts/ui/opening.gd")
 
 const SURFACE_Y := 300.0
+## PHASE-ART：Z1 用制作人提供的室外码头图；切掉平蓝水面，换成玩法水柱。
+const Z1_DOCK_TEX = preload("res://assets/art/z1_dock_cutout.png")
+const Z1_DOCK_REFLECT = preload("res://assets/art/z1_dock_reflection.png")
+const Z1_DOCK_TEX_MIRROR = preload("res://assets/art/z1_dock_cutout_mirror.png")
+const Z1_DOCK_REFLECT_MIRROR = preload("res://assets/art/z1_dock_reflection_mirror.png")
+const Z1_ART_Y := 25.0
+const Z1_ART_TILE_W := 1600.0
+const USE_Z1_ART := true
 const WORLD_END := LevelDataScript.WORLD_END
 const HAZARD_WARN := 270.0
 ## 表演需要的空档：1.8 s 表演 + 1.0 s 结束宽限 + 换人/起跳提前量，按 260 px/s 取约 900 px。
@@ -4526,6 +4534,11 @@ func _draw() -> void:
 	var finish_extra := FINISH_BEACH_EXTRA
 	var world_width := world_end + finish_extra
 	var cam_x: float = camera.position.x if camera != null else turtle.position.x
+	if USE_Z1_ART:
+		_draw_z1_water_base(cam_x)
+		_draw_z1_reflection(cam_x)
+		_draw_z1_art(cam_x)
+		_draw_z1_water_fx(cam_x)
 	# 三个区域各画一段背景；区域边界和名字直接画在世界里。
 	# CORE-FEEL-08 P1-D：第二区域改成室内木质码头，背景由 Zone2Dock 的六层节点负责
 	# （z_index 都在本节点之下）。这里如果继续铺平色块，会把那些层整个盖住。
@@ -4538,7 +4551,7 @@ func _draw() -> void:
 		# 硬边会从渐变带底下露出来，接缝只是变淡而没有消失。
 		if int(zone["id"]) == 1:
 			w -= 400.0
-		if int(zone["id"]) != 2:
+		if int(zone["id"]) != 2 and not (int(zone["id"]) == 1 and USE_Z1_ART):
 			draw_rect(Rect2(x0, -200, w, 500), zone["sky"])
 			draw_rect(Rect2(x0, SURFACE_Y, w, 700), zone["water"])
 			draw_rect(Rect2(x0, 460, w, 440), zone["deep"])
@@ -4556,7 +4569,8 @@ func _draw() -> void:
 	# 两段之间会留下一条竖直的“图层跳变”。这里用 800 px 的 Z1→透明渐变带
 	# 把接缝化开：14600 还是完整 Z1，15400 完全交给码头，第一组障碍 15800 之前完成。
 	_draw_zone2_blend()
-	_draw_zone1_layers(cam_x)
+	if not USE_Z1_ART:
+		_draw_zone1_layers(cam_x)
 	_draw_zone3_layers(cam_x)
 	if not test_no_finish:
 		_draw_finish_beach()
@@ -4624,6 +4638,122 @@ func _layer_screen_positions(cam_x: float, parallax: float, period: float,
 		if sx > -160.0 and sx < width + 160.0:
 			out.append(cam_x + sx)
 	return out
+
+
+func _z1_visible_right(cam_x: float) -> float:
+	var vw: float = get_viewport_rect().size.x
+	return minf(cam_x + vw * 0.5, 10000.0)
+
+
+func _draw_z1_water_base(cam_x: float) -> void:
+	var vw: float = get_viewport_rect().size.x
+	var left := cam_x - vw * 0.5
+	var right := _z1_visible_right(cam_x)
+	if right <= left:
+		return
+	# 不透明水柱：上青绿、下深蓝，只铺到 Z1 结束。
+	for i in 12:
+		var k := float(i) / 11.0
+		var c := Color(0.24, 0.58, 0.69).lerp(Color(0.035, 0.12, 0.22), k)
+		draw_rect(Rect2(left, SURFACE_Y + k * 600.0, right - left, 56.0), c)
+	draw_rect(Rect2(left, SURFACE_Y, right - left, 22.0),
+		Color(0.36, 0.73, 0.80, 0.85))
+
+
+func _draw_z1_reflection(cam_x: float) -> void:
+	var vw: float = get_viewport_rect().size.x
+	var left := cam_x - vw * 0.5
+	var right := _z1_visible_right(cam_x)
+	if right <= left:
+		return
+	var first := int(floor(left / Z1_ART_TILE_W)) * int(Z1_ART_TILE_W)
+	var last := int(ceil(right / Z1_ART_TILE_W)) * int(Z1_ART_TILE_W)
+	var tx := first
+	while tx < last:
+		var l := maxf(float(tx), left)
+		var r := minf(float(tx) + Z1_ART_TILE_W, right)
+		if r > l:
+			var idx := int(tx / int(Z1_ART_TILE_W))
+			var tex = Z1_DOCK_REFLECT if idx % 2 == 0 else Z1_DOCK_REFLECT_MIRROR
+			var src_x := (l - float(tx)) / Z1_ART_TILE_W * 1920.0
+			var src_w := (r - l) / Z1_ART_TILE_W * 1920.0
+			draw_texture_rect_region(tex, Rect2(l, SURFACE_Y, r - l, 108.0),
+				Rect2(src_x, 0.0, src_w, 130.0),
+				Color(0.82, 0.95, 1.0, 0.20))
+		tx += int(Z1_ART_TILE_W)
+
+
+func _draw_z1_art(cam_x: float) -> void:
+	var vw: float = get_viewport_rect().size.x
+	var left := cam_x - vw * 0.5
+	var right := _z1_visible_right(cam_x)
+	if right <= left:
+		return
+	# 图顶部 25 px 的空隙用天空色补上。
+	draw_rect(Rect2(left, -400.0, right - left, 425.0),
+		Color(0.78, 0.88, 0.94))
+	var first := int(floor(left / Z1_ART_TILE_W)) * int(Z1_ART_TILE_W)
+	var last := int(ceil(right / Z1_ART_TILE_W)) * int(Z1_ART_TILE_W)
+	var tx := first
+	while tx < last:
+		var l := maxf(float(tx), left)
+		var r := minf(float(tx) + Z1_ART_TILE_W, right)
+		if r > l:
+			var idx := int(tx / int(Z1_ART_TILE_W))
+			var tex = Z1_DOCK_TEX if idx % 2 == 0 else Z1_DOCK_TEX_MIRROR
+			var src_x := (l - float(tx)) / Z1_ART_TILE_W * 1920.0
+			var src_w := (r - l) / Z1_ART_TILE_W * 1920.0
+			draw_texture_rect_region(tex,
+				Rect2(l, Z1_ART_Y, r - l, 900.0),
+				Rect2(src_x, 0.0, src_w, 1080.0))
+		tx += int(Z1_ART_TILE_W)
+
+
+func _draw_z1_water_fx(cam_x: float) -> void:
+	var vw: float = get_viewport_rect().size.x
+	var left := cam_x - vw * 0.5
+	var right := _z1_visible_right(cam_x)
+	if right <= left:
+		return
+	var t := Time.get_ticks_msec() * 0.001
+	var width := right - left
+	# 水面泡沫线：两层，错相。
+	for layer in 2:
+		var pts := PackedVector2Array()
+		for i in 34:
+			var x := left - 10.0 + float(i) * (width + 20.0) / 33.0
+			var y := SURFACE_Y - 2.0 - layer * 5.0 				+ sin(x * 0.035 + t * (2.2 + layer) + layer * 1.7) * 3.5
+			pts.append(Vector2(x, y))
+		draw_polyline(pts, Color(0.88, 0.98, 1.0, 0.95 - layer * 0.35),
+			3.2 - layer, true)
+	# 焦散：四条缓慢移动的亮线。
+	for j in 4:
+		var cy := SURFACE_Y + 90.0 + j * 105.0
+		var ca := PackedVector2Array()
+		for i in 28:
+			var x := left - 10.0 + float(i) * (width + 20.0) / 27.0
+			var y := cy + sin(x * 0.022 + t * (1.1 + j * 0.27)) * 9.0
+			ca.append(Vector2(x, y))
+		draw_polyline(ca, Color(0.58, 0.90, 1.0, 0.13), 2.2, true)
+	# 光柱：三束斜向下的半透明光。
+	for j in 3:
+		var sx := left + fmod(float(j) * 430.0 + t * 10.0, maxf(width, 1.0))
+		draw_colored_polygon(PackedVector2Array([
+			Vector2(sx, SURFACE_Y), Vector2(sx + 70.0, SURFACE_Y),
+			Vector2(sx + 150.0, 760.0), Vector2(sx + 40.0, 760.0),
+		]), Color(0.55, 0.88, 1.0, 0.045))
+	# 气泡：固定相位，缓慢上升。
+	for i in 18:
+		var bx := left + fmod(float(i) * 173.0 + t * 9.0, maxf(width, 1.0))
+		var by := 850.0 - fmod(float(i) * 57.0 + t * (26.0 + i), 520.0)
+		draw_circle(Vector2(bx, by), 1.8 + float(i % 3),
+			Color(0.78, 0.95, 1.0, 0.26))
+	# 水面高光短划。
+	for i in 10:
+		var sx := left + fmod(float(i) * 227.0 + t * 14.0, maxf(width, 1.0))
+		draw_line(Vector2(sx, SURFACE_Y + 3.0),
+			Vector2(sx + 20.0, SURFACE_Y + 3.0),
+			Color(0.95, 1.0, 1.0, 0.38), 2.0)
 
 
 func _zone_layer_fade(cam_x: float, z: Dictionary) -> float:
