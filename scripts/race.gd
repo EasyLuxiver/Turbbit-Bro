@@ -312,6 +312,8 @@ var test_no_mischief := false
 var test_no_showtime := false
 ## 教学/回归关闭撞击弹回，避免把固定驾驶器的路线推回。
 var test_no_bounce := false
+## 角色美术试验截图可隐藏控制环。
+var test_no_control_ring := false
 ## 路线审计/基础动作矩阵用：只测普通路线，不让自动电流过载改变动作。
 var test_no_overdrive := false
 ## FEEL-19：需要纯基线审计时可关海鸟额外行为；正式比赛默认开。
@@ -7762,6 +7764,8 @@ func _drift_level_for(state: String) -> int:
 
 
 func _draw_control_ring() -> void:
+	if test_no_control_ring:
+		return
 	var color := Color(1.0, 0.9, 0.25, 0.9)
 	if GameManager.current_control == "turtle":
 		draw_arc(turtle.position, 62.0, 0, TAU, 48, color, 5.0)
