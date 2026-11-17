@@ -74,15 +74,18 @@ func _rebuild() -> void:
 		func() -> void: GameManager.start_race())
 	var menu := _button(box, Locale.t("pause.menu"),
 		func() -> void: GameManager.go_to_menu())
+	# FEEL-09 P1-A：帮助直接铺在暂停页，随时可重看（不新增按钮，
+	# 保持 resume / restart / menu 三个入口的既有顺序与快捷键）。
+	box.add_child(_spacer(2))
+	box.add_child(UiTheme.make_label(Locale.t("pause.help_title"), 20,
+		UiTheme.GOLD))
+	var body := UiTheme.make_label(Locale.t("pause.help_body"), 18,
+		Color(0.82, 0.92, 1.0))
+	body.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	body.custom_minimum_size = Vector2(760, 0)
+	box.add_child(body)
 	box.add_child(_spacer(6))
-	# REBUILD-05 G12：暂停是玩家唯一能停下来“我该按哪个键”的地方，旧面板只有
-	# ESC/R/M 三个菜单键，没有 SHIFT/↑/↓ 各自的含义。menu.hint 这条文案早就写好
-	# （双语、逐角色分工），但从来没有挂到任何界面上；挂在这里，不新增字符串。
-	box.add_child(UiTheme.make_label(Locale.t("menu.hint"), 18,
-		Color(0.78, 0.9, 1.0)))
-	# CORE-FEEL-07 P1-C：食物规则写在暂停页（用户试玩时不知道食物有什么用）。
-	box.add_child(UiTheme.make_label(Locale.t("pause.food"), 17,
-		Color(0.62, 0.95, 0.78)))
+	# 帮助正文已经覆盖按键、障碍分工和食物；这里只留菜单快捷键。
 	box.add_child(UiTheme.make_label(Locale.t("pause.keys"), 18,
 		Color(0.68, 0.84, 0.94)))
 

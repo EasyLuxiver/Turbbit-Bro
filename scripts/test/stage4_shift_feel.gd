@@ -84,7 +84,7 @@ func _test_fx() -> Dictionary:
 	var frames0: int = fx.sfx_frames
 	var tp: Vector2 = race.turtle.position
 	var rp: Vector2 = race.rabbit.position
-	GameManager.toggle_control()
+	_swap()
 	var same_call: bool = fx.fx_count == fx0 + 1 and fx.sfx_count == sfx0
 	_check(same_call, "one player SHIFT -> exactly one FX and no SFX event (%d/%d)"
 		% [fx.fx_count - fx0, fx.sfx_count - sfx0])
@@ -114,11 +114,16 @@ func _test_fx() -> Dictionary:
 		hud_text = race.hud.control_label.text
 	_check(hud_text.contains("TURTLE"), "HUD control text syncs to the new character (%s)" % hud_text)
 
-	# 无冷却：立刻再换一次仍然成立，且是第二发表现（音效仍然 0）。
+	# FEEL-09 P0-C：第一次换手已在上面发生；立刻再按应被 0.20 s 锁定挡住。
 	GameManager.toggle_control()
-	var second_ok: bool = fx.fx_count == fx0 + 2 and fx.sfx_count == sfx0
-	_check(second_ok, "no SHIFT cooldown: immediate second shift fires its own FX (SFX still muted)")
-	_check(race._shift_jolt_who == "rabbit", "second jolt follows the second new character")
+	var blocked_ok: bool = fx.fx_count == fx0 + 1 \
+		and GameManager.current_control == "turtle"
+	_check(blocked_ok, "0.20 s lock: immediate second shift is ignored (no second FX)")
+	# 锁定到期后再按，第二发表现才成立。
+	_swap()
+	var second_ok: bool = fx.fx_count == fx0 + 2 \
+		and GameManager.current_control == "rabbit"
+	_check(second_ok, "after 0.20 s the second shift fires its own FX (SFX still muted)")
 
 	# 程序换人（set_control）不冒充玩家电击。
 	var direct0: int = fx.fx_count
@@ -187,7 +192,7 @@ func _test_shift_action() -> Dictionary:
 	# 兔子 → 乌龟：同帧 SHIFT + ↑，交给人后只该乌龟跃起。
 	_setup_stable()
 	race._note_up_input()
-	GameManager.toggle_control()
+	_swap()
 	_tick(1)
 	var leap: bool = race.turtle.leap_active
 	var rabbit_air: bool = race.mount.state != "RIDING" or race.rabbit.is_airborne()
@@ -199,7 +204,7 @@ func _test_shift_action() -> Dictionary:
 	_setup_stable()
 	GameManager.set_control("turtle")
 	race._note_up_input()
-	GameManager.toggle_control()
+	_swap()
 	_tick(1)
 	var rabbit_jump: bool = race.rabbit.is_airborne()
 	var turtle_leap: bool = race.turtle.leap_active
@@ -208,7 +213,7 @@ func _test_shift_action() -> Dictionary:
 
 	# 略晚按：换人完成后同一帧内再按，也归新角色。
 	_setup_stable()
-	GameManager.toggle_control()
+	_swap()
 	race._note_up_input()
 	_tick(1)
 	_check(race.turtle.leap_active, "slightly late press after the handoff still goes to the turtle")
@@ -240,9 +245,9 @@ func _test_shift_action() -> Dictionary:
 func _test_rapid_shift() -> Dictionary:
 	_setup_stable()
 	race._note_up_input()
-	GameManager.toggle_control()
-	GameManager.toggle_control()
-	GameManager.toggle_control()
+	_swap()
+	_swap()
+	_swap()
 	var shifts: int = GameManager.shift_count
 	_tick(1)
 	var fired: bool = race.turtle.leap_active or race.rabbit.is_airborne()
@@ -289,7 +294,7 @@ func _test_rates() -> Dictionary:
 func _test_shift_action_at_rate() -> Dictionary:
 	_setup_stable()
 	race._note_up_input()
-	GameManager.toggle_control()
+	_swap()
 	_tick(1)
 	return {
 		"leap": race.turtle.leap_active,
@@ -416,6 +421,14 @@ func _wait_scene(suffix: String) -> void:
 func _frames(n: int) -> void:
 	for i in n:
 		await get_tree().process_frame
+
+
+## 本探针测 FX / 缓冲，不测 0.20 s 锁定；换手前把锁定走完，
+## 让“快速连续换手”的场景仍按原来的时序执行。
+func _swap() -> void:
+	if GameManager.shift_lock_t > 0.0:
+		GameManager.tick_shift_lock(0.25)
+	GameManager.toggle_control()
 
 
 func _check(ok: bool, what: String) -> void:

@@ -184,8 +184,8 @@ func _snap(group: Dictionary) -> Dictionary:
 		race.hud._refresh()
 		if race.hud.bro_meter_label != null:
 			hud_bro = race.hud.bro_meter_label.text
-		if race.hud.oxygen_label != null:
-			hud_status = race.hud.oxygen_label.text
+		if race != null:
+			hud_status = "bubbles=%d" % race.oxygen_bubble_count()
 	return {
 		"group": String(group["group"]),
 		"accident_state": GameManager.accident_state,

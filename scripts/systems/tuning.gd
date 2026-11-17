@@ -52,8 +52,25 @@ const MISCHIEF_POSE_LIFT := 18.0
 ## 提前多远开始摆这个姿势（px）。240 px/s 下约 0.7 s，够看清并切回。
 const MISCHIEF_POSE_NEAR := 170.0
 
+## ---- CORE-FEEL-08 P0-A：神游必须真的影响控制 ----
+## 旧版只有位置偏移 / 速度 / 空中修正，玩家仍能“按了就好”。现在分心之后，
+## 新按下的动作会晚半拍才执行（不是丢键、不是锁死）：
+##   分心 3–6 s：+0.04～0.10 s（几乎只在数字上）
+##   坐不住 6–9 s：+0.10～0.18 s（按跳跃能感觉到延迟）
+##   恶作剧 9 s+：+0.18～0.26 s（明显慢半拍，但仍会执行）
+## 延迟只作用于“按下沿”，按住不放不受影响；切换角色立即按各自的神游量算。
+const DRIFT_REACT_MIN := 0.04
+const DRIFT_REACT_RABBIT_MAX := 0.22
+const DRIFT_REACT_TURTLE_MAX := 0.26
+## 两角色各自的小动作：BITT 会自己趴一下（安全方向），TUBO 的壳会自己漂一点深度。
+## 只在恶作剧且玩家没有垂直输入时发生；幅度小、会自己回来，不写 BRO METER。
+const BITT_AUTOCROUCH_PERIOD := 2.6
+const BITT_AUTOCROUCH_LEN := 0.35
+## 壳自己漂的深度偏移上限（px）。比神游晃动 18 px 小，玩家按住 ↓ 立刻整个让位。
+const TUBO_AUTODRIFT_PX := 14.0
+
 # 氧气：GDD 建议 5 秒；按反馈延长到 8 秒，三档 5 / 2.5 / 0。
-const OXYGEN_MAX := 8.0
+const OXYGEN_MAX := 6.5
 const OXYGEN_LOW := 5.0
 const OXYGEN_CRITICAL := 2.5
 const OXYGEN_DRAIN := 1.0
@@ -68,7 +85,7 @@ const SNACK_SWITCH_BONUS := 30
 const SNACK_INTEREST_PX := 320.0
 ## 兔子跳跃强化：初速 ×1.15（峰值高度 ≈ ×1.32），窗口与乌龟加速同长——
 ## 到该遭遇的障碍末尾 + 180 px，确保强化覆盖它本来要跳的那一组。
-const RABBIT_SNACK_JUMP_SCALE := 1.15
+const RABBIT_SNACK_JUMP_SCALE := 1.30
 const RABBIT_SNACK_TAIL := 180.0
 # REBUILD-05 D2：主动把落水的兄弟接回壳上是一笔正向奖励（不是“补回扣分”）。
 # 不切过去追接也不会多扣分——救援失败仍然只是原来的落水账。

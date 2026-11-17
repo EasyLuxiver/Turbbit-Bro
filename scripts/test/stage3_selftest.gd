@@ -54,7 +54,7 @@ func _check_level_data() -> void:
 	_check(zones[0]["id"] == 1 and zones[1]["id"] == 2 and zones[2]["id"] == 3,
 		"zone ids are 1, 2, 3")
 	_check(zones[0]["name"] == "SUNNY COAST"
-		and zones[1]["name"] == "CORAL CHAOS"
+		and zones[1]["name"] == "DOCK CHAOS"
 		and zones[2]["name"] == "MUSCLE MAYHEM", "zone names")
 	_check(is_zero_approx(zones[0]["start"]), "zone 1 starts at 0")
 	_check(is_equal_approx(zones[0]["end"], 15000.0)
@@ -137,8 +137,10 @@ func _check_level_data() -> void:
 		"density rises %.1f < %.1f < %.1f groups/min" % [
 			z1["groups_per_min"], z2["groups_per_min"], z3["groups_per_min"]])
 	# 空档按“时间”判，不按像素：快区的组合前导天然更长（260 px/s 下 5 s = 1300 px）。
-	var gap_s := [
-		z1["max_gap"] / 220.0, z2["max_gap"] / 240.0, z3["max_gap"] / 260.0]
+	# FEEL-09：用“上一组尾端 → 下一组起点”的自由时间；start-to-start 会把
+	# 600 px 的长隧道也算成空档，误报 7.31 s。
+	var gap_px := [_max_tail_gap(1), _max_tail_gap(2), _max_tail_gap(3)]
+	var gap_s := [gap_px[0] / 220.0, gap_px[1] / 240.0, gap_px[2] / 260.0]
 	_check(gap_s[0] <= 6.0 and gap_s[1] <= 6.0 and gap_s[2] <= 6.0,
 		"longest empty stretch stays under 6 s in every zone (%.2f / %.2f / %.2f s)" % gap_s)
 	var logs := {1: 0, 2: 0, 3: 0}
@@ -147,10 +149,28 @@ func _check_level_data() -> void:
 			logs[group["zone"]] += 1
 	_check(logs[1] >= 1 and logs[2] >= 3 and logs[3] >= 4,
 		"combined obstacles rise per zone (%d / %d / %d)" % [logs[1], logs[2], logs[3]])
-	print("  stats  -> Z1 %.1f/min gap %.0f | Z2 %.1f/min gap %.0f | Z3 %.1f/min gap %.0f" % [
-		z1["groups_per_min"], z1["max_gap"],
-		z2["groups_per_min"], z2["max_gap"],
-		z3["groups_per_min"], z3["max_gap"]])
+	print("  stats  -> Z1 %.1f/min tail-gap %.0f | Z2 %.1f/min tail-gap %.0f | Z3 %.1f/min tail-gap %.0f" % [
+		z1["groups_per_min"], gap_px[0],
+		z2["groups_per_min"], gap_px[1],
+		z3["groups_per_min"], gap_px[2]])
+
+
+func _max_tail_gap(zone_id: int) -> float:
+	var list: Array = LevelDataScript.groups_in_zone(zone_id)
+	list.sort_custom(func(a, b) -> bool:
+		return LevelDataScript.group_start(a) < LevelDataScript.group_start(b))
+	var prev := 0.0
+	var first := true
+	var mx := 0.0
+	for g in list:
+		var s: float = LevelDataScript.group_start(g)
+		if first:
+			# 区域开场到第一组不算“障碍之间”的空档。
+			first = false
+		else:
+			mx = maxf(mx, s - prev)
+		prev = LevelDataScript.group_end(g)
+	return mx
 
 
 # ---- 2. 评分与事故分类。 ----
@@ -286,7 +306,7 @@ func _check_full_flow() -> void:
 	race.turtle.position = Vector2(16000.0, 300.0)
 	await _physics_frames(3)
 	await _frames(2)
-	_check(GameManager.zone == 2 and GameManager.zone_name_text == "CORAL CHAOS",
+	_check(GameManager.zone == 2 and GameManager.zone_name_text == "DOCK CHAOS",
 		"zone 2 entered at 16000")
 	_check(is_equal_approx(race.turtle.base_speed, 240.0),
 		"zone 2 base speed 240 (%.0f)" % race.turtle.base_speed)
@@ -317,7 +337,7 @@ func _check_full_flow() -> void:
 	# §七-9：结算七项（时间/干净通过/连招/救援成功/失误/联合事故/评级），
 	# 固定数字总分退出玩家界面。
 	for metric in ["RACE TIME", "CLEAN PASSES", "BRO COMBOS", "RESCUE SAVES",
-			"MISTAKES", "JOINT ACCIDENTS"]:
+			"MISTAKES", "CAPSIZES"]:
 		_check(joined.contains(metric), "result shows " + metric)
 	_check(not joined.contains("TOTAL SCORE"), "result hides total score")
 	_check(GameManager.grade in ["S", "A", "B", "C", "D"],

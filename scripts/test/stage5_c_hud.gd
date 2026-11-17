@@ -86,7 +86,7 @@ func _case_log_window() -> void:
 	_expect("dive: 80 px is still valid (%s)" % rows[4]["phase"], rows[4]["phase"] == "now")
 	_expect("dive: 60 px is missed (%s)" % rows[5]["phase"], rows[5]["phase"] == "missed")
 	_expect("dive: label names BRO DIVE (%s)" % rows[3]["label"],
-		String(rows[3]["label"]).contains("BRO DIVE"))
+		String(rows[3]["label"]).contains(Locale.t("combo.bro_dive")))
 	_expect("dive: rabbit row offers the chance (%s)" % rows[3]["rabbit"],
 		String(rows[3]["rabbit"]).length() > 0)
 	_expect("dive: turtle row says assist only (%s)" % rows[3]["turtle"],
@@ -116,11 +116,11 @@ func _case_wall_window() -> void:
 	out["cases"].append({"case": "ollie_window", "group": "wall1", "rows": [r]})
 	_expect("ollie: 200 px is valid (%s)" % r["phase"], r["phase"] == "now")
 	_expect("ollie: label names BRO OLLIE (%s)" % r["label"],
-		String(r["label"]).contains("BRO OLLIE"))
+		String(r["label"]).contains(Locale.t("combo.bro_ollie")))
 	_expect("ollie: turtle row is the actor (%s)" % r["turtle"],
-		String(r["turtle"]).contains("BRO OLLIE"))
+		String(r["turtle"]).contains(Locale.t("combo.bro_ollie")))
 	_expect("ollie: rabbit row says assist (%s)" % r["rabbit"],
-		not String(r["rabbit"]).contains("BRO OLLIE"))
+		not String(r["rabbit"]).contains(Locale.t("combo.bro_ollie")))
 
 
 # ---------------------------------------------------------------- 控制权 / 接应
@@ -154,12 +154,12 @@ func _case_control_and_rescue() -> void:
 
 	out["cases"].append({"case": "control_and_rescue", "rows": rows})
 	_expect("control: rabbit row says DRIVING in zh (%s)" % rows["rabbit_control"]["rabbit"],
-		String(rows["rabbit_control"]["rabbit"]).contains("操控"))
+		String(rows["rabbit_control"]["rabbit"]).contains("骑乘"))
 	_expect("control: turtle row says standby (%s)" % rows["rabbit_control"]["turtle"],
 		String(rows["rabbit_control"]["turtle"]).contains("待命"))
 	_expect("control: turtle row says DRIVING after shift (%s)"
 		% rows["turtle_control"]["turtle"],
-		String(rows["turtle_control"]["turtle"]).contains("操控"))
+		String(rows["turtle_control"]["turtle"]).contains("巡航"))
 	_expect("rescue: rabbit row says wait for catch (%s)" % rows["rabbit_water"]["rabbit"],
 		String(rows["rabbit_water"]["rabbit"]).contains("等接应"))
 	_expect("rescue: turtle row says rescuing (%s)" % rows["rabbit_water"]["turtle"],
@@ -247,9 +247,9 @@ func _actor_line() -> String:
 		if race.hud.rabbit_coop.visible else ""
 	var t: String = String(race.hud.turtle_coop.text).strip_edges() \
 		if race.hud.turtle_coop.visible else ""
-	if r.contains("BRO"):
+	if r.contains("BRO") or r.contains("兄弟"):
 		return r
-	if t.contains("BRO"):
+	if t.contains("BRO") or t.contains("兄弟"):
 		return t
 	return r if r != "" else t
 

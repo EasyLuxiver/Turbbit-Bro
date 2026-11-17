@@ -71,15 +71,13 @@ var time_label: Label
 var zone_label: Label
 var progress_label: Label
 
-var oxygen_label: Label
-var oxygen_status: Label
-var oxygen_segs: Array[ColorRect] = []
 ## Phase O：食物加速状态。只在“加速中 / 前方有海藻”时出现，不做常驻空行。
 var snack_label: Label
 ## CORE-FEEL-07 P1-C：食物接近时第二行，同时预告“兔子吃 / 乌龟吃”两种效果。
 var snack_effect_label: Label
 
 var bro_meter_label: Label
+var bro_other_label: Label
 var bro_meter_segs: Array[ColorRect] = []
 var bond_label: Label
 var bond_segs: Array[ColorRect] = []
@@ -87,6 +85,13 @@ var bond_segs: Array[ColorRect] = []
 var feedback_label: Label
 var hint_label: Label
 var prompt_label: Label
+## FEEL-09 P1-A：按键图标行。重要指令必须能“看见要按哪个键”，
+## 不只读一行字。三个键帽是高亮提示，不是可点击按钮。
+var key_row: HBoxContainer
+var keycap_panels := {}
+var keycap_labels := {}
+## 只在亮/暗状态变化时重建 StyleBox；否则每帧 duplicate 会拖慢高 tick 测试。
+var keycap_lit := {}
 
 var hint_text := ""
 var hint_timer := 0.0
@@ -107,7 +112,7 @@ func _ready() -> void:
 	rabbit_row.add_theme_constant_override("separation", 8)
 	tl.add_child(rabbit_row)
 	rabbit_arrow = _label(rabbit_row, 18, GOLD)
-	rabbit_arrow.text = "▶"
+	rabbit_arrow.text = ">"
 	rabbit_arrow.visible = false
 	rabbit_glyph = RoleGlyphScript.new()
 	rabbit_glyph.role = "rabbit"
@@ -126,7 +131,7 @@ func _ready() -> void:
 	turtle_row.add_theme_constant_override("separation", 8)
 	tl.add_child(turtle_row)
 	turtle_arrow = _label(turtle_row, 18, GOLD)
-	turtle_arrow.text = "▶"
+	turtle_arrow.text = ">"
 	turtle_arrow.visible = false
 	turtle_glyph = RoleGlyphScript.new()
 	turtle_glyph.role = "turtle"
@@ -171,49 +176,13 @@ func _ready() -> void:
 	progress_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 
 	var bl := _make_panel("bl")
-	oxygen_label = _label(bl, 18, TEXT)
-	oxygen_status = _label(bl, 18, GREEN)
-	var oxy_row := HBoxContainer.new()
-	oxy_row.add_theme_constant_override("separation", 4)
-	bl.add_child(oxy_row)
-	for i in 4:
-		var seg := ColorRect.new()
-		seg.custom_minimum_size = Vector2(26, 8)
-		seg.color = Color(0.2, 0.28, 0.32, 0.8)
-		oxy_row.add_child(seg)
-		oxygen_segs.append(seg)
+	# FEEL-12 E：氧气改画在 TUBO 头顶三颗气泡；左下只保留食物加速状态。
 	snack_label = _label(bl, 18, CYAN)
 	snack_effect_label = _label(bl, 15, MUTED)
 	snack_effect_label.visible = false
+	snack_label.visible = false
 
-	var br := _make_panel("br")
-	# BRO METER 在默契上方：三格是“失误槽”，填满触发联合惩罚；
-	# 默契是“连招槽”，满了进 SHOWTIME。两者含义不同，不能合并。
-	bro_meter_label = _label(br, 18, RED_TEXT)
-	bro_meter_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
-	var bro_row := HBoxContainer.new()
-	bro_row.alignment = BoxContainer.ALIGNMENT_END
-	bro_row.add_theme_constant_override("separation", 6)
-	br.add_child(bro_row)
-	for i in GameManager.BRO_METER_SLOTS:
-		var seg := ColorRect.new()
-		seg.custom_minimum_size = Vector2(30, 8)
-		seg.color = Color(0.18, 0.12, 0.12, 0.85)
-		bro_row.add_child(seg)
-		bro_meter_segs.append(seg)
-	bond_label = _label(br, 18, GOLD)
-	bond_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
-	var bond_row := HBoxContainer.new()
-	bond_row.alignment = BoxContainer.ALIGNMENT_END
-	bond_row.add_theme_constant_override("separation", 6)
-	br.add_child(bond_row)
-	for i in Tuning.SHOWTIME_COMBO:
-		var seg := ColorRect.new()
-		seg.custom_minimum_size = Vector2(30, 10)
-		seg.color = Color(0.26, 0.24, 0.18, 0.85)
-		bond_row.add_child(seg)
-		bond_segs.append(seg)
-
+	# FEEL-24：右下角不再创建任何 0/3 面板。
 	# 底部中央不挂面板：文字直接压在画面上，避免挡角色和障碍。
 	_bottom_center = VBoxContainer.new()
 	_bottom_center.alignment = BoxContainer.ALIGNMENT_END
@@ -221,6 +190,18 @@ func _ready() -> void:
 	add_child(_bottom_center)
 	feedback_label = _label(_bottom_center, 26, GOLD)
 	feedback_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	# 按键图标行：SHIFT / ↑ / ↓。只在有指令提示时出现，按文案高亮。
+	key_row = HBoxContainer.new()
+	key_row.alignment = BoxContainer.ALIGNMENT_CENTER
+	key_row.add_theme_constant_override("separation", 8)
+	_bottom_center.add_child(key_row)
+	keycaps_entry("shift", "SHIFT")
+	keycaps_entry("up", "↑")
+	keycaps_entry("down", "↓")
+	# FEEL-19：SPACE 只在主动救援提示里出现，不常驻。
+	keycaps_entry("pop", "SPACE")
+	keycap_panels["pop"].visible = false
+	key_row.visible = false
 	hint_label = _label(_bottom_center, 18, MUTED)
 	hint_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	prompt_label = _label(_bottom_center, 22, CYAN)
@@ -314,46 +295,9 @@ func _refresh() -> void:
 	zone_label.text = Locale.t("hud.zone",
 		[race.zone_id(), Locale.zone_name(race.zone_id())])
 	progress_label.text = Locale.t("hud.progress", [
-		int(round(race.progress() * 100.0)), race.passed_count(), race.total_groups()])
+		race.passed_count(), race.total_groups()])
 
-	# ---- 左下：氧气 ----
-	var ox: float = GameManager.oxygen
-	oxygen_label.text = Locale.t("hud.oxygen", ["%.1f" % ox])
-	var status := ""
-	var status_color := GREEN
-	if GameManager.accident_state == "OXYGEN_OUT":
-		status = Locale.t("hud.emergency")
-		status_color = RED_TEXT
-	elif race.mount.state == "RESCUE_ACTIVE":
-		status = Locale.t("hud.rescuing", ["%.1f" % race.mount.rescue_timer])
-		status_color = RED_TEXT
-	elif race.mount.state == "RESCUE_AIR":
-		status = Locale.t("hud.rescuing_air", ["%.1f" % race.mount.rescue_timer])
-		status_color = RED_TEXT
-	elif race.mount.state == "RESCUING":
-		status = Locale.t("hud.rescue_return", ["%.1f" % race.mount.rescue_timer])
-		status_color = AMBER
-	elif race.mount.state != "RIDING":
-		status = Locale.t("hud.airborne")
-		status_color = CYAN
-	elif race.turtle.dunk_timer > 0.0 \
-			or race.turtle.position.y > race.surface_y() + Tuning.OXYGEN_DEPTH_MARGIN:
-		status = Locale.t("hud.underwater")
-		status_color = RED_TEXT
-	elif GameManager.oxygen_phase == "CRITICAL":
-		status = Locale.t("hud.oxygen_critical")
-		status_color = RED_TEXT
-	elif GameManager.oxygen_phase == "LOW":
-		status = Locale.t("hud.oxygen_low")
-		status_color = AMBER
-	else:
-		status = Locale.t("hud.oxygen_recovering")
-		status_color = GREEN
-	oxygen_status.text = status
-	oxygen_status.add_theme_color_override("font_color", status_color)
-	# 食物效果：谁的强化就显示谁。CORE-FEEL-07 P1-C 起，接近食物时不再只说
-	# “SHIFT 决定谁吃”——HUD 同时列出两种效果，并直接写出“当前谁吃”，
-	# 因为用户试玩时不知道食物有什么用、也不知道怎么让某个角色吃到。
+	# ---- 左下：食物（氧气改为 TUBO 头顶气泡，不再显示数值） ----
 	if race.snack_rabbit_boost_active():
 		snack_label.visible = true
 		snack_label.text = Locale.t("hud.rabbit_boost")
@@ -365,8 +309,6 @@ func _refresh() -> void:
 		snack_label.add_theme_color_override("font_color", GREEN)
 		snack_effect_label.visible = false
 	elif race.snack_ahead_distance() >= 0.0:
-		# 抓得到就写名字，抓不到（跃起 / 不在巡航 / 兔子晕着）就写“够不到”，
-		# 免得玩家以为“按键没响应”是 bug。
 		var eater: String = race.snack_who_eats()
 		snack_label.visible = true
 		if eater == "":
@@ -380,43 +322,9 @@ func _refresh() -> void:
 	else:
 		snack_label.visible = false
 		snack_effect_label.visible = false
-	var filled := int(ceil(ox / Tuning.OXYGEN_MAX * 4.0))
-	if ox <= 0.01:
-		filled = 0
-	for i in oxygen_segs.size():
-		var on := i < filled
-		if not on:
-			oxygen_segs[i].color = Color(0.2, 0.28, 0.32, 0.8)
-		elif filled == 1:
-			oxygen_segs[i].color = RED
-		elif filled == 2:
-			oxygen_segs[i].color = AMBER
-		else:
-			oxygen_segs[i].color = Color(0.35, 0.95, 0.7)
+	_panels["bl"].visible = snack_label.visible or snack_effect_label.visible
 
-	# ---- 右下：BRO METER（失误槽）+ 默契（连招槽） ----
-	bro_meter_label.text = Locale.t("hud.bro_meter",
-		[GameManager.bro_meter, GameManager.BRO_METER_SLOTS])
-	for i in bro_meter_segs.size():
-		var used: bool = i < GameManager.bro_meter
-		if used and GameManager.bro_meter >= GameManager.BRO_METER_SLOTS:
-			bro_meter_segs[i].color = Color(1.0, 0.15, 0.1)
-		elif used:
-			bro_meter_segs[i].color = RED
-		else:
-			bro_meter_segs[i].color = Color(0.18, 0.12, 0.12, 0.85)
-	if race.showtime_active:
-		bond_label.text = Locale.t("hud.showtime_t", ["%.1f" % race.showtime_left()])
-		bond_label.add_theme_color_override("font_color", AMBER)
-	else:
-		bond_label.text = Locale.t("hud.bond", [race.combo, Tuning.SHOWTIME_COMBO])
-		bond_label.add_theme_color_override("font_color", GOLD)
-	for i in bond_segs.size():
-		var lit: bool = i < race.combo
-		if race.showtime_active:
-			lit = true
-		bond_segs[i].color = GOLD if lit else Color(0.26, 0.24, 0.18, 0.85)
-
+	# FEEL-24：右下角不再常驻任何 0/3 计数。
 	# ---- 底部中央：反馈 / 一次性教学 / 提示 ----
 	feedback_label.visible = feedback_timer > 0.0
 	feedback_label.text = feedback_text
@@ -429,6 +337,28 @@ func _refresh() -> void:
 	if prompt_timer > 0.0 and prompt_timer < 0.6:
 		a = prompt_timer / 0.6
 	prompt_label.modulate.a = a
+	# 按键图标：只高亮这条提示真正用到的键。
+	key_row.visible = prompt_label.visible and prompt_text != ""
+	if key_row.visible:
+		key_row.modulate.a = a
+		var on_shift := prompt_text.contains("SHIFT")
+		var on_up := prompt_text.contains("↑")
+		var on_down := prompt_text.contains("↓")
+		_set_keycap("shift", on_shift)
+		_set_keycap("up", on_up)
+		_set_keycap("down", on_down)
+		# FEEL-22：只显示这条提示真正要按的键。三个键帽常驻会把底栏撑成键盘，
+		# 反而盖住角色和当前动作。
+		keycap_panels["shift"].visible = on_shift
+		keycap_panels["up"].visible = on_up
+		keycap_panels["down"].visible = on_down
+		var space_on: bool = prompt_text.contains("SPACE")
+		_set_keycap("pop", space_on)
+		keycap_panels["pop"].visible = space_on
+	# FEEL-09 P0-C：换手冷却时把 SHIFT 键帽压暗，避免“按了没反应”。
+	var shift_cap: PanelContainer = keycap_panels.get("shift")
+	if shift_cap != null:
+		shift_cap.modulate.a = 0.62 if GameManager.shift_lock_t > 0.0 else 1.0
 
 
 func _rabbit_action() -> String:
@@ -500,13 +430,15 @@ func _drift_effect(who: String, controlled: bool) -> String:
 		var air := int(round(race.rabbit.drift_air_scale() * 100.0))
 		if controlled:
 			return Locale.t("hud.drift_recover_rabbit", [air])
-		var off := int(round(race.rabbit.drift_offset_amp_px()))
-		return Locale.t("hud.drift_effect_rabbit", [air, off])
+		var off: float = race.rabbit.drift_offset_amp_px()
+		return Locale.t("hud.drift_effect_rabbit" if off >= 4.0
+			else "hud.drift_effect_rabbit_light", [air])
 	var cruise := int(round(race.turtle.drift_speed_scale(controlled) * 100.0))
 	if controlled:
 		return Locale.t("hud.drift_recover_turtle", [cruise])
-	var bob := int(round(race.turtle.drift_bob_amp_px(controlled)))
-	return Locale.t("hud.drift_effect_turtle", [cruise, bob])
+	var bob: float = race.turtle.drift_bob_amp_px(controlled)
+	return Locale.t("hud.drift_effect_turtle" if bob >= 4.0
+		else "hud.drift_effect_turtle_light", [cruise])
 
 
 ## 阶段越深颜色越重：CALM 绿、DISTRACTED 琥珀、RESTLESS 橙、MISCHIEF 红。
@@ -562,6 +494,8 @@ func _update_drift_bar(row: HBoxContainer, bar: ProgressBar, brain,
 func _coop_target() -> Dictionary:
 	if race == null or race.hazard_groups == null:
 		return {}
+	if bool(race.get("test_no_coop_hint")):
+		return {}
 	if GameManager.accident_state != "NONE":
 		return {}
 	var ms := String(race.mount.state)
@@ -603,7 +537,7 @@ func _coop_target() -> Dictionary:
 	return {
 		"group": String(best["group"]),
 		"kind": kind2,
-		"combo": "BRO DIVE" if dive else "BRO OLLIE",
+		"combo": Locale.t("combo.bro_dive" if dive else "combo.bro_ollie"),
 		"actor": "rabbit" if dive else "turtle",
 		"dist": best_d,
 		"phase": phase,
@@ -707,12 +641,75 @@ func _on_hint(text: String) -> void:
 func _on_feedback(text: String, kind: String) -> void:
 	feedback_text = text
 	feedback_kind = kind
-	feedback_timer = 0.75
+	# Showtime 奖励一行信息量大，0.75 s 读不完；给它 1.8 s。
+	feedback_timer = 1.8 if text.contains("SHOWTIME") or text.contains("表演") \
+		or text.contains("配合上了") or text.contains("CLICKED") else 0.75
 
 
 func _on_prompt(text: String) -> void:
-	prompt_text = text
-	prompt_timer = 3.0
+	prompt_text = _at_most_two_lines(text)
+	# FEEL-09 P1-A：SHIFT / 连招提示在 1100 px 外就触发，3 s 会在障碍前
+	# 2 s 就消失。给需要跨到障碍前的提示 5 s，单动作提示仍 3 s。
+	var hold := 3.0
+	if text.contains("SHIFT") or text.contains("浮木") or text.contains("高墙") \
+			or text.contains("吊网") or text.contains("鳗鱼") \
+			or text.contains("船闸") or text.contains("CARGO NET") \
+			or text.contains("EEL") or text.contains("SLUICE"):
+		hold = 5.0
+	prompt_timer = hold
+
+
+## FEEL-09 P1-A：一次提示最多两行。过长的单行在中间断开，
+## 不在 26 个字里塞完整段说明。
+func _at_most_two_lines(text: String) -> String:
+	if text.contains("\n") or text.length() <= 40:
+		return text
+	var mid := text.length() / 2
+	# 只在语义分隔处断行，绝不把 “SHIFT” 这类按键词劈开。
+	for sep in [" → ", "，", "；", " - ", " "]:
+		var cut := text.find(sep, maxi(mid - 10, 0))
+		if cut >= 0 and cut <= mid + 14:
+			var after: int = cut + String(sep).length()
+			return text.substr(0, after).strip_edges() + "\n" \
+				+ text.substr(after).strip_edges()
+	return text
+
+
+func keycaps_entry(id: String, text: String) -> void:
+	var panel := PanelContainer.new()
+	var style := StyleBoxFlat.new()
+	style.bg_color = Color(0.06, 0.1, 0.13, 0.9)
+	style.border_color = Color(0.3, 0.42, 0.5, 0.9)
+	style.set_border_width_all(1)
+	style.set_corner_radius_all(5)
+	style.content_margin_left = 8
+	style.content_margin_right = 8
+	style.content_margin_top = 1
+	style.content_margin_bottom = 1
+	panel.add_theme_stylebox_override("panel", style)
+	var lab := Label.new()
+	lab.text = text
+	lab.add_theme_font_size_override("font_size", 15)
+	lab.add_theme_color_override("font_color", Color(0.62, 0.78, 0.88))
+	panel.add_child(lab)
+	key_row.add_child(panel)
+	keycap_panels[id] = panel
+	keycap_labels[id] = lab
+
+
+func _set_keycap(id: String, lit: bool) -> void:
+	if bool(keycap_lit.get(id, false)) == lit:
+		return
+	keycap_lit[id] = lit
+	var panel: PanelContainer = keycap_panels.get(id)
+	var lab: Label = keycap_labels.get(id)
+	if panel == null or lab == null:
+		return
+	var style: StyleBoxFlat = panel.get_theme_stylebox("panel").duplicate()
+	style.bg_color = Color(0.35, 0.27, 0.08, 0.95) if lit else Color(0.06, 0.1, 0.13, 0.9)
+	style.border_color = GOLD if lit else Color(0.3, 0.42, 0.5, 0.9)
+	panel.add_theme_stylebox_override("panel", style)
+	lab.add_theme_color_override("font_color", GOLD if lit else Color(0.62, 0.78, 0.88))
 
 
 func _on_language_changed(_code: String) -> void:

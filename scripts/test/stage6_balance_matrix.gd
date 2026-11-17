@@ -47,6 +47,10 @@ const LEAD_ROCK_JUMP := 60.0
 const LEAD_LOG_JUMP := 140.0
 ## 高墙蹬踏：跃起后壳到墙前 70 px 时切兔子补跳（与 solution_audit 一致）。
 const WALL_STOMP_AT := 70.0
+## CORE-FEEL-08 P0-A：恶作剧档的神游角色按键会晚 ~0.26 s 才执行。
+## D 段是“墙前/门前一刻才接手”的剧本，必须按人类反应那样把接手再提前
+## 260 ms 的量（220 px/s ≈ 57 px），否则测到的是“剧本按太晚”，不是关卡不公。
+const DRIFT_LEAD := 60.0
 
 var is_runner := false
 var race: Node = null
@@ -626,7 +630,8 @@ func _run_de() -> void:
 			_release("down")
 			did["beam_r"] = true
 		# 墙前一刻接手：乌龟已经神游了一整段，跃起窗口只剩 176 px。
-		if not did.has("wall_leap") and x >= wall - LEAD_WALL:
+		# P0-A 之后它还会晚半拍才听见按键，所以按 DRIFT_LEAD 再提前一点接手。
+		if not did.has("wall_leap") and x >= wall - LEAD_WALL - DRIFT_LEAD:
 			_shift_to("turtle")
 			run_data["segments"]["D_shift"] = _snap_pair()
 			_press("up")
@@ -643,7 +648,8 @@ func _run_de() -> void:
 			did["wall_stomp_r"] = true
 		# 蹬踏完成后不再切回乌龟：让它在神游里继续待着，
 		# 直到下潜前一刻才接手——这才是“伙伴最糟的时候被迫接手”。
-		if not did.has("gate_d") and x >= gate - LEAD_DIVE:
+		# 同样按 DRIFT_LEAD 提前：神游中的乌龟按键会晚半拍才生效。
+		if not did.has("gate_d") and x >= gate - LEAD_DIVE - DRIFT_LEAD:
 			_shift_to("turtle")
 			_press("down")
 			did["gate_d"] = true

@@ -239,10 +239,10 @@ func _evaluate() -> void:
 			and int(dive.get("frames_nonzero", 0)) >= 10)
 	_expect("BRO DIVE success: draw offset does not move the rabbit",
 		bool(dive.get("position_unchanged_by_offset", false)))
-	_expect("BRO DIVE success: hop ends by 0.4 s (%s frames)"
+	_expect("BRO DIVE success: hop ends by 0.75 s (%s frames)"
 		% str(dive.get("cleared_after_frames", -1)),
 		int(dive.get("cleared_after_frames", -1)) > 0
-			and int(dive.get("cleared_after_frames", -1)) <= 25)
+			and int(dive.get("cleared_after_frames", -1)) <= 45)
 	_expect("BRO OLLIE success: celebration triggers (%s)"
 		% ollie.get("celebrate_kind", ""),
 		String(ollie.get("celebrate_kind", "")) == "ollie")

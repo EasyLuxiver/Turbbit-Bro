@@ -391,6 +391,8 @@ func _fail_count(row: Dictionary) -> int:
 
 func _reset(x: float, zone: Dictionary) -> void:
 	_release_all()
+	GameManager.state = GameManager.GameState.RUNNING
+	GameManager.finished = false
 	GameManager.accident_state = "NONE"
 	GameManager.oxygen = Tuning.OXYGEN_MAX
 	GameManager.showtime_active = false

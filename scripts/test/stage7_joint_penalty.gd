@@ -481,6 +481,22 @@ func _reset_at(x: float) -> void:
 	race.accident_event_time = 0.0
 	race.rescue_last_result = ""
 	race.rescue_last_reason = ""
+	# FEEL-10 P0-A：联合判罚改成真实双人危险检测后，这些计时器也必须逐例清零；
+	# 否则上一例的“被顶住 0.3 s”会带进下一例，把一次救援误判成联合。
+	race._turtle_blocked_t = 0.0
+	race._rabbit_danger_since = -1.0
+	race._turtle_danger_since = -1.0
+	race._joint_episode_done = false
+	race._joint_done_t = 0.0
+	race._burst_who = ""
+	race._burst_phase = ""
+	race._burst_t = 0.0
+	race._burst_cd = 0.0
+	race._rabbit_refuse_t = 0.0
+	race._turtle_refuse_t = 0.0
+	GameManager.joint_accident_count = 0
+	GameManager.role_mischief_pending = false
+	GameManager.role_mischief_role = ""
 	race._clear_dive_assist()
 	race.reset_brains()
 	race.current_zone = LevelData.zone_by_id(1)

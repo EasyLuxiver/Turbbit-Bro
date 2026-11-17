@@ -70,13 +70,13 @@ func _run() -> void:
 	race.hud._refresh()
 	data["approach_turtle"] = _hud_texts()
 	_expect("1 接近时 HUD 写“当前乌龟会吃”",
-		String(race.hud.snack_label.text).contains("乌龟")
-			and String(race.hud.snack_label.text).contains("会吃"),
+		String(race.hud.snack_label.text).contains("BITT")
+			and String(race.hud.snack_label.text).contains("吃"),
 		String(race.hud.snack_label.text))
 	_expect("1 接近时 HUD 第二行同时列出两种效果",
 		race.hud.snack_effect_label.visible
-			and String(race.hud.snack_effect_label.text).contains("兔子")
-			and String(race.hud.snack_effect_label.text).contains("乌龟")
+			and String(race.hud.snack_effect_label.text).contains("TUBO")
+			and String(race.hud.snack_effect_label.text).contains("BITT")
 			and String(race.hud.snack_effect_label.text).contains("↑")
 			and String(race.hud.snack_effect_label.text).contains("»"),
 		String(race.hud.snack_effect_label.text))
@@ -89,8 +89,8 @@ func _run() -> void:
 	race.hud._refresh()
 	data["approach_rabbit"] = _hud_texts()
 	_expect("1 换成兔子后 HUD 写“当前兔子会吃”",
-		String(race.hud.snack_label.text).contains("兔子")
-			and String(race.hud.snack_label.text).contains("会吃"),
+		String(race.hud.snack_label.text).contains("TUBO")
+			and String(race.hud.snack_label.text).contains("吃"),
 		String(race.hud.snack_label.text))
 
 	# 够不到：把乌龟压到巡航深度以下 60 px（例如刚下潜），HUD 必须解释原因。
@@ -108,12 +108,12 @@ func _run() -> void:
 	race.hud._refresh()
 	data["approach_turtle_en"] = _hud_texts()
 	_expect("1 EN 接近时写 “TURTLE EATS NOW”",
-		String(race.hud.snack_label.text).contains("TURTLE")
+		String(race.hud.snack_label.text).contains("BITT")
 			and String(race.hud.snack_label.text).contains("EATS NOW"),
 		String(race.hud.snack_label.text))
 	_expect("1 EN 第二行同时列出两种效果",
-		String(race.hud.snack_effect_label.text).contains("RABBIT")
-			and String(race.hud.snack_effect_label.text).contains("TURTLE")
+		String(race.hud.snack_effect_label.text).contains("TUBO")
+			and String(race.hud.snack_effect_label.text).contains("BITT")
 			and String(race.hud.snack_effect_label.text).contains("↑")
 			and String(race.hud.snack_effect_label.text).contains("»"),
 		String(race.hud.snack_effect_label.text))
@@ -141,12 +141,12 @@ func _run() -> void:
 		absf(float(turtle_case["boost_speed"]) - base_speed * LevelDataScript.SNACK_BOOST_SCALE) < 0.01
 			and bool(turtle_case["boost_active"]),
 		"%s vs %s" % [turtle_case["boost_speed"], base_speed * LevelDataScript.SNACK_BOOST_SCALE])
-	_expect("3 乌龟吃到：HUD 写 TURBO 并点名乌龟",
-		String(turtle_case["hud"]).contains("TURBO")
-			and String(turtle_case["hud"]).contains("乌龟"),
+	_expect("3 乌龟吃到：HUD 写“加速”并点名 BITT",
+		String(turtle_case["hud"]).contains("加速")
+			and String(turtle_case["hud"]).contains("BITT"),
 		String(turtle_case["hud"]))
-	_expect("3 乌龟吃到：反馈文案点名 TURBO",
-		_has_feedback("TURBO"), str(turtle_case["feedback"]))
+	_expect("3 乌龟吃到：反馈文案点名加速",
+		_has_feedback("加速"), str(turtle_case["feedback"]))
 
 	# ---- 4) 兔子吃 ----
 	_relayout()
@@ -171,11 +171,11 @@ func _run() -> void:
 			and not bool(rabbit_case["turtle_boost_active"]),
 		"jump_boost=%s" % rabbit_case["jump_boost"])
 	_expect("4 兔子吃到：HUD 点名兔子 + 下一跳更高",
-		String(rabbit_case["hud"]).contains("兔子")
+		String(rabbit_case["hud"]).contains("TUBO")
 			and String(rabbit_case["hud"]).contains("更高"),
 		String(rabbit_case["hud"]))
 	_expect("4 兔子吃到：反馈文案说兔子吃了",
-		_has_feedback("兔子"), str(rabbit_case["feedback"]))
+		_has_feedback("TUBO"), str(rabbit_case["feedback"]))
 
 	# ---- 5) 不吃（跃起越过） ----
 	_relayout()
@@ -204,15 +204,15 @@ func _run() -> void:
 	var pause_text: String = await _pause_menu_text()
 	data["pause_text"] = pause_text
 	_expect("6 暂停页有食物说明（谁吃、两种效果、不吃不扣分）",
-		pause_text.contains("海藻") and pause_text.contains("乌龟")
-			and pause_text.contains("兔子") and pause_text.contains("不扣分"),
+		pause_text.contains("海藻") and pause_text.contains("BITT")
+			and pause_text.contains("TUBO") and pause_text.contains("不扣分"),
 		pause_text)
 	var opening_source := _read_source("res://scripts/ui/opening.gd")
 	data["opening_food_text"] = Locale.t("opening.food")
 	_expect("6 开场画面（第一次教学，零障碍）挂上食物说明",
 		opening_source.contains("opening.food")
-			and String(data["opening_food_text"]).contains("乌龟")
-			and String(data["opening_food_text"]).contains("兔子"),
+			and String(data["opening_food_text"]).contains("BITT")
+			and String(data["opening_food_text"]).contains("TUBO"),
 		String(data["opening_food_text"]))
 	# 开场说明必须真的在“没有障碍”的位置：赛道起点到第一组障碍之间。
 	var first_group_x: float = 1.0e9

@@ -119,21 +119,23 @@ func _hud_consequence_case(who: String) -> Dictionary:
 	_expect("1 %s 满值时 HUD 显示神游条（100%%）" % who,
 		bool(out["row_visible"]) and absf(float(out["bar_value"]) - 100.0) < 0.01,
 		str(out["bar_value"]))
-	_expect("1 %s 状态行点名“要惹麻烦”，条旁写明具体后果" % who,
-		String(out["status"]).contains("要惹麻烦")
-			and String(out["effect"]).contains("px")
+	_expect("1 %s 状态行点名“过载”，条旁写明具体后果" % who,
+		String(out["status"]).contains("过载")
+			and not String(out["effect"]).contains("px")
 			and String(out["effect"]).contains("%"),
 		"%s | %s" % [out["status"], out["effect"]])
 	if who == "rabbit":
-		_expect("1 兔子后果 = 空中修正 55% + 身偏 px（读控制器真实值）",
+		_expect("1 兔子后果 = 空中修正 55% + 落点偏（读控制器真实值）",
 			String(out["effect"]).contains("空中修正 %d%%" % want_air)
-				and String(out["effect"]).contains("身偏 %dpx" % want_off)
+				and String(out["effect"]).contains("落点偏")
+				and not String(out["effect"]).contains("px")
 				and want_air == 55,
 			"air=%d off=%d text=%s" % [want_air, want_off, out["effect"]])
 	else:
-		_expect("1 乌龟后果 = 巡航 90% + 壳晃 18px（读控制器真实值）",
-			String(out["effect"]).contains("巡航 %d%%" % want_cruise)
-				and String(out["effect"]).contains("壳晃 %dpx" % want_bob)
+		_expect("1 乌龟后果 = 速度 90% + 壳在晃（读控制器真实值）",
+			String(out["effect"]).contains("速度 %d%%" % want_cruise)
+				and String(out["effect"]).contains("壳在晃")
+				and not String(out["effect"]).contains("px")
 				and want_cruise == 90 and want_bob == 18,
 			"cruise=%d bob=%d text=%s" % [want_cruise, want_bob, out["effect"]])
 	return out
@@ -153,9 +155,9 @@ func _threshold_case(who: String) -> Dictionary:
 	var restless := {}
 	var mischief := {}
 	for w in warnings:
-		if String(w["text"]).contains("坐不住"):
+		if String(w["text"]).contains("发麻"):
 			restless = w
-		elif String(w["text"]).contains("要惹麻烦"):
+		elif String(w["text"]).contains("过载"):
 			mischief = w
 	var drift: float = float(_brain(who).drift)
 	var out := {
@@ -173,7 +175,7 @@ func _threshold_case(who: String) -> Dictionary:
 	_expect("2 报警点名角色并写出代价（不是只说“要惹麻烦”）",
 		not mischief.is_empty()
 			and String(mischief["text"]).contains(Locale.t("who." + who))
-			and String(mischief["text"]).contains("px"),
+			and not String(mischief["text"]).contains("px"),
 		String(mischief.get("text", "")))
 	_expect("2 报告只有两条（升级才报，不刷屏）", warnings.size() == 2,
 		str(warnings.size()))
@@ -308,6 +310,9 @@ func _no_trap_case() -> Dictionary:
 	# 输入没被锁：SHIFT 照常换人；换回后按住 ↑ 仍然是合法输入（不报错、不拦）。
 	GameManager.toggle_control()
 	var toggled := GameManager.current_control
+	# FEEL-09 P0-C：0.20 s 换手锁定；用同一套手动步进把锁定走完再换回。
+	for i in 16:
+		_step()
 	GameManager.toggle_control()
 	var toggled_back := GameManager.current_control
 	var out := {
@@ -466,7 +471,7 @@ func _on_feedback(text: String, kind: String = "") -> void:
 	feedback_log.append({"text": text, "kind": kind, "t": sim})
 	if feedback_log.size() > 80:
 		feedback_log.pop_front()
-	if text.contains("坐不住") or text.contains("要惹麻烦"):
+	if text.contains("发麻") or text.contains("过载"):
 		warn_log.append({"text": text, "kind": kind, "t": snappedf(sim, 0.01)})
 	if warn_log.size() > 40:
 		warn_log.pop_front()

@@ -31,6 +31,13 @@ var leap_count := 0
 ## 主动下潜（↓）：按住下到巡航水深以下，松开/通过后自动上浮。
 ## 不是事故状态，也不累积失衡。
 var diving := false
+## FEEL-11 B2：被切出时把当前下潜再维持 0.55 s，让待命角色“做完这个动作”，
+## 也构成“BITT 继续潜行、玩家接管 TUBO”的电流接力。
+var standby_dive_t := 0.0
+## FEEL-12：旋壳过载的表现计时（race 写入，画法读）。
+var overdrive_spin_t := 0.0
+## FEEL-12 补充 B：BRO CATCH 的目标水深；-1 表示不使用。
+var catch_target_y := -1.0
 ## CORE-FEEL-07 P0-A：辅助下潜期间由 race 写入。只加快“主动下潜”的沉速，
 ## 深度上限、浮力上浮、碰撞体都不动；辅助结束当帧写回 false。
 var dive_assist_active := false
@@ -46,6 +53,9 @@ var drift := 0.0
 var drift_state := "CALM"
 ## 最近一个未吃食物的前方距离（race 写入）；< 0 表示没有。
 var food_ahead := -1.0
+## CORE-FEEL-08 P0-A：恶作剧时壳自己漂的目标深度偏移（px），由 race 每帧写入。
+## 只是 want_y 的一个小偏移，不是下潜：玩家按 ↓ 时目标深度整段覆盖它。
+var autodrift_px := 0.0
 ## 速度上限：兔子落水后 race 把乌龟压到 90（找人），其余时候是无穷大。
 var speed_cap := 1.0e9
 var _brain_t := 0.0
@@ -66,6 +76,9 @@ func reset(start_pos: Vector2) -> void:
 	leap_cooldown = 0.0
 	leap_count = 0
 	diving = false
+	standby_dive_t = 0.0
+	overdrive_spin_t = 0.0
+	catch_target_y = -1.0
 	dive_assist_active = false
 	dunk_timer = 0.0
 	flip_t = 0.0
@@ -73,6 +86,7 @@ func reset(start_pos: Vector2) -> void:
 	drift = 0.0
 	drift_state = "CALM"
 	food_ahead = -1.0
+	autodrift_px = 0.0
 	speed_cap = 1.0e9
 	_brain_t = 0.0
 
@@ -123,29 +137,15 @@ func tick(delta: float, controlled: bool, boosting: bool, vertical: float,
 			state = "CRUISING"
 		# 受控时保留 _sink_speed：再次失控会从当前下沉速度继续，而不是免费的归零。
 	else:
+		# FEEL-26：待命乌龟不再因为“离开控制时间”掉速/下沉。
+		# 它保持巡航速度与巡航水深；救援时由 speed_cap 限制。
 		control_hold = 0.0
-		daze_time += delta
-		if daze_time < Tuning.RELAX_TIME:
-			# 提示期：失去推进，但还稳在水面，不动位置。
-			state = "DAZED"
-			speed = move_toward(speed, 140.0, 100.0 * delta)
-			_sink_speed = 0.0
-		elif daze_time < Tuning.SINK_EDGE_TIME:
-			# 进行期：缓慢下沉。
-			state = "SINKING"
-			speed = move_toward(speed, 90.0, 60.0 * delta)
-			_sink_speed = move_toward(_sink_speed, 50.0, 40.0 * delta)
-			position.y = minf(position.y + _sink_speed * delta, DEEP_Y)
-		elif daze_time < Tuning.SINK_DANGER_TIME:
-			# 危险期：接近危险深度。
-			state = "DEEP"
-			speed = move_toward(speed, 50.0, 40.0 * delta)
-			_sink_speed = move_toward(_sink_speed, 120.0, 50.0 * delta)
-			position.y = minf(position.y + _sink_speed * delta, DEEP_Y)
-		else:
-			state = "DANGER"
-			speed = move_toward(speed, 40.0, 30.0 * delta)
-			position.y = minf(position.y + 140.0 * delta, DEEP_Y)
+		daze_time = 0.0
+		_sink_speed = 0.0
+		state = "CRUISING"
+		var target := minf(base_speed, speed_cap)
+		speed = move_toward(speed, target, 420.0 * delta)
+		position.y = move_toward(position.y, Tuning.NEUTRAL_DEPTH, 180.0 * delta)
 
 	position.x += speed * delta
 
@@ -160,15 +160,10 @@ func _tick_surfboard(delta: float, controlled: bool, boosting: bool,
 	if dunk_timer > 0.0:
 		dunk_timer = maxf(dunk_timer - delta, 0.0)
 
-	# 速度：自动巡航。Phase O 的 TURBO 是整组事件，吃下后即使玩家切到兔子
-	# （过梁/过鸟必须切）也继续生效，直到该遭遇的障碍通过。
-	# BRO BRAIN：无人控制时走神会微微掉速；受控时只保留一半影响，随恢复逐渐回到满速。
-	var target := base_speed * drift_speed_scale(controlled)
+	# 速度：自动巡航。旧 BroBrain 掉速已停用，速度只受 TURBO/碰撞/救援状态影响。
+	var target := base_speed
 	if boosting:
 		target = boost_target
-	if not controlled and drift_state == "MISCHIEF" and food_ahead >= 0.0:
-		# 闻到吃的：一边靠近一边慢下来，这是“强烈兴趣”的可见代价。
-		target *= 0.92
 	target = minf(target, speed_cap)
 	var accel := 420.0 if target > speed else 300.0
 	speed = move_toward(speed, target, accel * delta)
@@ -201,7 +196,15 @@ func _tick_surfboard(delta: float, controlled: bool, boosting: bool,
 	# 目标深度：默认巡航；按住 ↓ 时下潜；被撞后短暂强制更深。
 	# BRO BRAIN：待命/未恢复时围绕巡航水深上下晃（不是持续下沉），
 	# 受控后幅度保留一半并随 recovery 收小——SHIFT 到手不等于立刻稳。
-	var want_y := Tuning.NEUTRAL_DEPTH + drift_bob_px(controlled)
+	# CORE-FEEL-08 P0-A：autodrift_px 是“壳自己漂”的目标深度偏移（恶作剧时由 race 写入）。
+	var want_y := Tuning.NEUTRAL_DEPTH + autodrift_px
+	var catch_mode := catch_target_y >= 0.0 and absf(vertical) < 0.1
+	# BRO CATCH 的目标深度：只在玩家没有按 ↑/↓ 时接管垂直，仍然走浮力/加速度。
+	if catch_mode:
+		want_y = catch_target_y
+	# FEEL-22：切走后不再执行玩家之前按下的下潜尾动作。
+	# 下潜只由“当前受控 + 此刻按住 ↓”成立；切走当帧就结束。
+	standby_dive_t = 0.0
 	diving = controlled and vertical > 0.0 and dunk_timer <= 0.0
 	if diving:
 		want_y = Tuning.NEUTRAL_DEPTH + Tuning.DIVE_DEPTH
@@ -210,10 +213,10 @@ func _tick_surfboard(delta: float, controlled: bool, boosting: bool,
 	if vertical < 0.0:
 		# 紧急上浮（氧气耗尽）：强制目标改成水面，但仍然按加速度移动。
 		want_y = SURFACE_Y
-	var sink_speed := Tuning.DIVE_SINK_SPEED if diving else Tuning.BUOY_SINK_SPEED
+	var sink_speed := Tuning.DIVE_SINK_SPEED if (diving or catch_mode) else Tuning.BUOY_SINK_SPEED
 	# 主动下潜用更硬的增益：目标深度不变，只是更快吃掉最后几十像素。
 	# 松开/上浮仍用 BUOY_GAIN，接人时的上浮速度没有变化。
-	var gain := Tuning.DIVE_GAIN if diving else Tuning.BUOY_GAIN
+	var gain := Tuning.DIVE_GAIN if (diving or catch_mode) else Tuning.BUOY_GAIN
 	var dive_accel := Tuning.DIVE_ACCEL
 	# CORE-FEEL-07 P0-A：辅助下潜时更快沉下去（真实位移，深度上限与碰撞都不变）。
 	if diving and dive_assist_active:
@@ -300,6 +303,9 @@ func drift_look_px(controlled: bool) -> Vector2:
 
 ## 主动跃起：整组上抛，躲水下攻击。一次性，不是档位；冷却很短，防止连按叠跳。
 func can_leap() -> bool:
+	# FEEL-25：水下不能直接起跳；必须先浮回巡航水面。
+	if position.y > Tuning.NEUTRAL_DEPTH + 20.0:
+		return false
 	return not accident and not leap_active and leap_cooldown <= 0.0
 
 

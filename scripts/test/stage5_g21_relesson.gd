@@ -93,7 +93,8 @@ func _case_beam_rearm() -> void:
 	_expect("A1 LOW_BEAM 首次教学在接近时发出一次", first.size() == 1)
 	_expect("A2 首次教学文本与 locale 一致",
 		first.size() == 1 and String(first[0]["text"]) == Locale.t("prompt.crouch"))
-	_expect("A3 教学后 LOW_BEAM 标记为已教", race.lesson_seen.has("LOW_BEAM"))
+	_expect("A3 教学后 LOW_BEAM 标记为已教",
+		race.lesson_seen.has(race._lesson_key(beam3)))
 
 	# 不趴低，直接开进 beam3：真实碰撞、真实记账。
 	var before: int = GameManager.accident_count
@@ -101,9 +102,15 @@ func _case_beam_rearm() -> void:
 	var reasons := _reasons()
 	_expect("A4 beam3 上真的记了一笔 RABBIT_STUN",
 		GameManager.accident_count > before and reasons.has("RABBIT_STUN"))
-	_expect("A5 撞完 LOW_BEAM 重新武装", not race.lesson_seen.has("LOW_BEAM"))
-	_expect("A6 其他六类仍保持已教（只有这一类型被拿掉）",
-		race.lesson_seen.size() == 6 and not race.lesson_seen.has("LOW_BEAM"))
+	_expect("A5 撞完 LOW_BEAM 重新武装",
+		not race.lesson_seen.has(race._lesson_key(beam3)))
+	var only_low := true
+	for g in race.hazard_groups:
+		if String(g["kind"]) == "LOW_BEAM":
+			continue
+		if not race.lesson_seen.has(race._lesson_key(g)):
+			only_low = false
+	_expect("A6 其他类型仍保持已教（只有这一类型被拿掉）", only_low)
 	rows.append({"case": "A", "accidents": GameManager.accident_count,
 		"reasons": reasons, "seen_after_hit": race.lesson_seen.keys()})
 
@@ -116,7 +123,8 @@ func _case_beam_rearm() -> void:
 	_expect("A7 下一组同类型（beam4）前重新发教学", again.size() == 1)
 	_expect("A8 补教文本与首次一致",
 		again.size() == 1 and String(again[0]["text"]) == Locale.t("prompt.crouch"))
-	_expect("A9 补教后再次标记为已教", race.lesson_seen.has("LOW_BEAM"))
+	_expect("A9 补教后再次标记为已教",
+		race.lesson_seen.has(race._lesson_key(beam4)))
 	_teleport(s4 - 660.0)
 	prompts.clear()
 	_frames(3)
@@ -146,7 +154,8 @@ func _case_reteach_cap() -> void:
 	_step_to(e3 + 40.0, 6000)
 	_expect("F2 beam3 记了一笔真实失误",
 		GameManager.accident_count > before1 and _reasons().has("RABBIT_STUN"))
-	_expect("F3 第一次撞完重新武装", not race.lesson_seen.has("LOW_BEAM"))
+	_expect("F3 第一次撞完重新武装",
+		not race.lesson_seen.has(race._lesson_key(_group("beam5"))))
 
 	_step_until(func() -> bool: return GameManager.accident_state == "NONE", 600)
 	_teleport(s4 - 700.0)
@@ -159,7 +168,8 @@ func _case_reteach_cap() -> void:
 	var before2: int = GameManager.accident_count
 	_step_to(e4 + 40.0, 6000)
 	_expect("F5 beam4 上又记了一笔真实失误", GameManager.accident_count > before2)
-	_expect("F6 补教用过一次后不再重新武装", race.lesson_seen.has("LOW_BEAM"))
+	_expect("F6 补教用过一次后不再重新武装",
+		race.lesson_seen.has(race._lesson_key(_group("beam5"))))
 
 	_step_until(func() -> bool: return GameManager.accident_state == "NONE", 600)
 	_teleport(s5 - 700.0)
@@ -184,14 +194,14 @@ func _case_clean_pass() -> void:
 	_seed_except(["LOW_BIRD"])
 	prompts.clear()
 	_step_to(s3 - 700.0, 600)
-	var first := _with_text(Locale.t("prompt.crouch"))
+	var first := _with_text(Locale.t("prompt.net"))
 	_expect("B1 LOW_BIRD 首次教学发出一次", first.size() == 1)
 	var before: int = GameManager.accident_count
 	Input.action_press("down")
 	_step_to(e3 + 60.0, 4000)
 	Input.action_release("down")
 	_expect("B2 趴低干净通过、没有记账", GameManager.accident_count == before)
-	_expect("B3 干净通过不重新武装", race.lesson_seen.has("LOW_BIRD"))
+	_expect("B3 干净通过不重新武装", race.lesson_seen.has(race._lesson_key(bird3)))
 	_teleport(s4 - 700.0)
 	prompts.clear()
 	_frames(3)
@@ -212,7 +222,8 @@ func _case_blocked_contact() -> void:
 	var before: int = GameManager.accident_count
 	_frames(60)
 	_expect("C1 冷却期撞上不记账", GameManager.accident_count == before)
-	_expect("C2 被冷却挡下的碰撞不重新武装", race.lesson_seen.has("LOW_BEAM"))
+	_expect("C2 被冷却挡下的碰撞不重新武装",
+		race.lesson_seen.has(race._lesson_key(_group("beam5"))))
 	rows.append({"case": "C", "accidents": GameManager.accident_count,
 		"seen_after_blocked": race.lesson_seen.keys()})
 
@@ -225,9 +236,9 @@ func _case_other_kind() -> void:
 	_seed_except(["DIVE_GATE"])
 	prompts.clear()
 	_step_to(s4 - 700.0, 600)
-	var d1 := _with_text(Locale.t("prompt.dive"))
+	var d1 := _with_text(Locale.t("prompt.sluice"))
 	_frames(5)
-	var d2 := _with_text(Locale.t("prompt.dive"))
+	var d2 := _with_text(Locale.t("prompt.sluice"))
 	_expect("D1 DIVE_GATE 教学仍只出现一次",
 		d1.size() == 1 and d2.size() == 1)
 	_expect("D2 没有别的类型被顺带重新发一遍", prompts.size() == 1)
@@ -246,7 +257,7 @@ func _case_turtle_same_group() -> void:
 	_seed_except(["SHARK"])
 	prompts.clear()
 	_step_to(s3 - 700.0, 600)
-	var first := _with_text(Locale.t("prompt.leap"))
+	var first := _with_text(Locale.t("prompt.eel"))
 	_expect("E1 SHARK 首次教学发出一次", first.size() == 1)
 	# 不跃起，用壳直接开进 shark3：乌龟记账，但没有事故状态。
 	# 巡逻鲨会往回巡 30 px，接触点可能落在组起点之前——正是“同一帧复读”的入口。
@@ -257,12 +268,13 @@ func _case_turtle_same_group() -> void:
 		n += 1
 	_expect("E2 shark3 真的撞了（TURTLE_WAVE）", race.hit_roles.has("shark3")
 		and _reasons().has("TURTLE_WAVE"))
-	_expect("E3 撞完 SHARK 重新武装", not race.lesson_seen.has("SHARK"))
+	_expect("E3 撞完 SHARK 重新武装",
+		not race.lesson_seen.has(race._lesson_key(shark3)))
 	_frames(5)
 	_expect("E4 刚撞的这一组不会原地复读", prompts.size() == before_hit)
 	_teleport(s5 - 700.0)
 	_frames(3)
-	var again := _with_text(Locale.t("prompt.leap"))
+	var again := _with_text(Locale.t("prompt.eel"))
 	_expect("E5 下一组同类型（shark5）前补教一次，位置在 shark5 前",
 		again.size() == 2 and float(again[1]["x"]) >= s5 - 1200.0)
 	rows.append({"case": "E", "prompts": prompts.duplicate(true),
@@ -321,9 +333,12 @@ func _reset(x: float) -> void:
 func _seed_except(except: Array) -> void:
 	race.lesson_seen.clear()
 	race.lesson_retaught.clear()
-	for k in ALL_KINDS:
-		if not (k in except):
-			race.lesson_seen[k] = true
+	# FEEL-09 P0-A：Z2 新身份用 kind|identity 作课键；这里按实际组播种，
+	# 不能再只播种 kind，否则 Z2 的同类组会被误判成“没教过”。
+	for g in race.hazard_groups:
+		if String(g["kind"]) in except:
+			continue
+		race.lesson_seen[race._lesson_key(g)] = true
 
 
 func _step_to(x: float, limit: int) -> void:

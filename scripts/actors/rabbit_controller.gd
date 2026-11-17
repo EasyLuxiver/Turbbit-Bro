@@ -16,10 +16,16 @@ const CROUCH_BODY := Vector2(32, 24)
 
 var state := "RIDING"
 var velocity := Vector2.ZERO
+## FEEL-29：BRO DIVE 接应期间由 race 写入的水平速度上限。
+## 兔子在空中的 → 键是 150 px/s 的空中加速，玩家按住加速跳时会把壳甩在身后，
+## 接应只能把兔子往回拽。潜水接人时把上限压到壳的当前速度附近，让落点留在接人窗口里。
+var air_speed_cap := INF
 var slide := 0.0
 var air_base := 0.0
 ## P4：兔子自己吃到海藻后的跳跃初速倍率；窗口结束由 race 复位为 1.0。
 var jump_boost := 1.0
+## FEEL-47：兔子吃到海藻后，高跳保留到下一次普通起跳才消耗。
+var snack_jump_pending := false
 var daze_time := 0.0
 var control_hold := 0.0
 var showtime_spin := 0.0
@@ -33,6 +39,11 @@ var air_scale := 1.0
 ## P0-3：MISCHIEF 且在低梁/海鸟前——站直探头（身体抬高，进入碰撞矩形）。
 ## 由 race 每帧按“未受控 + MISCHIEF + 前方 170 px 有低障碍”写入；切回即取消。
 var mischief_pose := false
+## CORE-FEEL-08 P0-A：race 每帧写入“这一刻真正被听见的 ↓”，
+## 神游造成的反应延迟在 race 里统一算，控制器不再直接读原始输入。
+var input_down := false
+## FEEL-11 B2：被切出时把“趴低”再维持 0.35 s，让动作有尾，不是一切换就站起。
+var standby_crouch_t := 0.0
 var _brain_t := 0.0
 
 
@@ -48,6 +59,10 @@ func reset() -> void:
 	drift_state = "CALM"
 	air_scale = 1.0
 	mischief_pose = false
+	snack_jump_pending = false
+	input_down = false
+	air_speed_cap = INF
+	standby_crouch_t = 0.0
 	_brain_t = 0.0
 
 
@@ -60,7 +75,7 @@ func tick_riding(delta: float, mount_point: Vector2, controlled: bool,
 		control_hold = 0.0
 		state = "RIDING"
 		slide = maxf(slide - 0.55 * delta, 0.0)
-		position = mount_point + Vector2(-drift_offset_px(), drift_bob_px())
+		position = mount_point
 		return
 
 	if controlled and can_act:
@@ -70,7 +85,11 @@ func tick_riding(delta: float, mount_point: Vector2, controlled: bool,
 		if control_hold >= Tuning.CONTROL_RECOVER_DELAY:
 			daze_time = maxf(daze_time - Tuning.CONTROL_RECOVER_RATE * delta, 0.0)
 		slide = slide_for_time(daze_time)
-		state = "CROUCHING" if Input.is_action_pressed("down") else "RIDING"
+		state = "CROUCHING" if input_down else "RIDING"
+		if input_down:
+			standby_crouch_t = 0.35
+		else:
+			standby_crouch_t = 0.0
 	elif controlled:
 		# 受控但暂时不能行动（硬直等）：冻结，不再自动恶化。
 		# 失衡只来自事件（碰撞/错误着陆/特殊动作失败），不来自时间。
@@ -80,12 +99,18 @@ func tick_riding(delta: float, mount_point: Vector2, controlled: bool,
 	else:
 		# 待命：抓紧龟壳，稳定。不累积、不滑落、不清零。
 		# 这是本指令最硬的一条：未被选中永远不会让兔子变糟。
+		# CORE-FEEL-08 P0-A：待命时 input_down 只可能是“自己趴下”（恶作剧），
+		# 不是玩家输入——让它照样看得见，但不改变任何累积/恢复规则。
 		control_hold = 0.0
-		state = phase_name() if daze_time > 0.01 else "RIDING"
+		if standby_crouch_t > 0.0 and not input_down:
+			standby_crouch_t = maxf(standby_crouch_t - delta, 0.0)
+		if input_down or standby_crouch_t > 0.0:
+			state = "CROUCHING"
+		else:
+			state = phase_name() if daze_time > 0.01 else "RIDING"
 		slide = slide_for_time(daze_time)
 
-	position = mount_point + Vector2(-slide * Tuning.SLIDE_PIXELS - drift_offset_px(),
-		drift_bob_px())
+	position = mount_point + Vector2(-slide * Tuning.SLIDE_PIXELS, 0.0)
 	if state == "CROUCHING":
 		position.y += CROUCH_DROP
 	elif mischief_pose and not controlled:
@@ -198,8 +223,7 @@ func tick_stun(_delta: float, mount_point: Vector2) -> void:
 	# 硬直期间不累积也不恢复，结束后由“是否受控”决定回落还是继续恶化。
 	state = "STUNNED"
 	slide = slide_for_time(daze_time)
-	position = mount_point + Vector2(-slide * Tuning.SLIDE_PIXELS - drift_offset_px(),
-		drift_bob_px())
+	position = mount_point + Vector2(-slide * Tuning.SLIDE_PIXELS, 0.0)
 
 
 func force_slip() -> void:
@@ -224,16 +248,27 @@ func add_imbalance(amount: float) -> void:
 ## 默认仍是普通跳；水平速度跟随乌龟，所以蹬踏后不会甩开壳太远。
 ## REBUILD-06 P4：普通跳的初速乘 jump_boost（兔子自己吃到海藻时 1.15），
 ## BRO OLLIE 的显式初速不受影响。
+func arm_snack_jump(scale: float) -> void:
+	jump_boost = scale
+	snack_jump_pending = true
+
+
 func launch(mount_point: Vector2, turtle_speed: float,
 		kick_velocity: float = 0.0, height_scale: float = 1.0) -> void:
 	state = "JUMPING"
+	var normal_launch := is_zero_approx(kick_velocity)
+	var boost := jump_boost
+	if normal_launch and snack_jump_pending:
+		snack_jump_pending = false
+		jump_boost = 1.0
 	# 从“实际站着的位置”起跳，而不是瞬间回到壳心：神游越深，起跳点越偏。
-	air_scale = drift_air_scale()
-	position = mount_point + Vector2(-drift_offset_px(), drift_bob_px())
+	air_scale = 1.0
+	position = mount_point
 	air_base = turtle_speed
 	if is_zero_approx(kick_velocity):
-		kick_velocity = JUMP_VELOCITY * jump_boost * height_scale
+		kick_velocity = JUMP_VELOCITY * boost * height_scale
 	velocity = Vector2(turtle_speed + 15.0, kick_velocity)
+	air_speed_cap = INF
 
 
 func tick_air(delta: float, controlled: bool) -> void:
@@ -241,7 +276,14 @@ func tick_air(delta: float, controlled: bool) -> void:
 		var dir := Input.get_axis("left", "right")
 		var maxv := AIR_MAX * air_scale
 		var target := air_base + dir * maxv
+		if air_speed_cap < INF:
+			target = minf(target, air_speed_cap)
 		velocity.x = move_toward(velocity.x, target, AIR_ACCEL * air_scale * delta)
+	# FEEL-29：换到乌龟后兔子不再受控，但已经在空中的水平速度仍要收回到上限，
+	# 否则按住 → 起跳再 SHIFT，兔子会一直领先壳 150 px/s。
+	if air_speed_cap < INF and velocity.x > air_speed_cap:
+		velocity.x = move_toward(velocity.x, air_speed_cap,
+			AIR_ACCEL * air_scale * delta)
 	velocity.y = minf(velocity.y + GRAVITY * delta, 950.0)
 	position += velocity * delta
 	state = "JUMPING" if velocity.y < 0.0 else "FALLING"
@@ -256,6 +298,7 @@ func attach(mount_point: Vector2) -> void:
 	showtime_spin = 0.0
 	showtime_pose = false
 	position = mount_point
+	air_speed_cap = INF
 
 
 func is_airborne() -> bool:

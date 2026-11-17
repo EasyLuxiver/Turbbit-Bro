@@ -53,6 +53,9 @@ func _run() -> void:
 
 func _flow_zh() -> void:
 	Locale.set_language("zh")
+	# FEEL-11：这个回归只测正式比赛流程，跳过新开场/教学。
+	GameManager.story_seen = true
+	GameManager.tutorial_done = true
 	GameManager.go_to_menu()
 	await _wait_scene("menu.tscn")
 	await _frames(3)
@@ -78,7 +81,7 @@ func _flow_zh() -> void:
 	await _wait_scene("result.tscn", 240)
 	await _frames(4)
 	var result := get_tree().current_scene
-	_check(_joined(result).contains("比赛完成"), "zh result title")
+	_check(_joined(result).contains("训练结束"), "zh result title")
 	check_numbers(result, "zh")
 
 	await _press(KEY_R)
@@ -113,7 +116,7 @@ func _flow_en() -> void:
 	await _wait_scene("result.tscn", 240)
 	await _frames(4)
 	var result := get_tree().current_scene
-	_check(_joined(result).contains("RACE COMPLETE"), "en result title")
+	_check(_joined(result).contains("TRAINING'S OVER"), "en result title")
 	check_numbers(result, "en")
 
 	# 结算默认焦点在“再玩一次”；返回主菜单走 M 快捷键或点按钮。
@@ -127,9 +130,8 @@ func _flow_en() -> void:
 func check_numbers(result: Node, tag: String) -> void:
 	var text := _joined(result)
 	# §七-9：结算七项可读，固定数字总分不再出现。
-	var keys: Array = ["比赛时间", "干净通过", "连招", "救援成功", "失误", "翻船次数"] \
-		if tag == "zh" else ["RACE TIME", "CLEAN PASSES", "BRO COMBOS",
-			"RESCUE SAVES", "MISTAKES", "CAPSIZES"]
+	var keys: Array = ["比赛时间", "失误", "干净通过"] \
+		if tag == "zh" else ["RACE TIME", "MISTAKES", "CLEAN PASSES"]
 	for key in keys:
 		_check(text.contains(String(key)), "%s result shows %s" % [tag, key])
 	var score_key := "总分" if tag == "zh" else "TOTAL SCORE"

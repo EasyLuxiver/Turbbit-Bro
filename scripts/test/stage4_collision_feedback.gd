@@ -138,7 +138,7 @@ func _case_turtle_wave() -> Dictionary:
 		"accident_none": acc == "NONE",
 		"turtle_dunked": dunk > 0.0,
 		"turtle_speed_x06": absf(ratio - 0.6) < 0.03,
-		"bro_meter_1": GameManager.bro_meter == 1,
+		"bro_meter_1": GameManager.last_mistake_role == "turtle",
 		"hitstop_80_100ms": not hs.is_empty() and String(hs["who"]) == "turtle" \
 			and float(hs["s"]) >= 0.07 and float(hs["s"]) <= 0.10,
 		"shake_amp_5_8px": not sh.is_empty() and bool(sh["major"]) \
@@ -154,9 +154,9 @@ func _case_turtle_wave() -> Dictionary:
 
 
 func _case_landing() -> Dictionary:
-	_reset(4300.0, "rabbit")
+	_reset(3800.0, "rabbit")
 	var pickup0: int = GameManager.pickup_count
-	await _until_x(4420.0)
+	await _until_x(3900.0)
 	_press("up")
 	await _step()
 	if race.mount.state != "AIRBORNE":
@@ -195,10 +195,16 @@ func _case_landing() -> Dictionary:
 
 
 func _case_dive_fx() -> Dictionary:
-	_reset(5900.0, "turtle")
-	await _settle(6150.0)
+	# FEEL-34/35：log1 加高后必须真的 BRO DIVE；从实际组位置取，不写死旧坐标。
+	var start := _group_start("log1")
+	var end := 0.0
+	for g in race.hazard_groups:
+		if String(g["group"]) == "log1":
+			end = LevelData.group_end(g)
+	_reset(start - 760.0, "turtle")
+	await _settle(start - float(race.turtle.base_speed) * 0.8)
 	await _control_to("rabbit")
-	var press_x: float = 6400.0 - (float(race.turtle.base_speed) * 0.7 - 2.0)
+	var press_x: float = start - float(race.turtle.base_speed) * 0.7
 	await _until_x(press_x)
 	_press("up")
 	await _step()
@@ -208,9 +214,7 @@ func _case_dive_fx() -> Dictionary:
 	_press("down")
 	await _control_to("turtle")
 	var guard := 0
-	# 浮木尾端 6432：壳要带着下潜保持到 6462（尾端后 30 px）再上浮，否则
-	# 壳左侧还在木下就开始抬，会蹭到木的下沿（实测 6472 处 y=431 撞上）。
-	while guard < 600 and race.turtle.position.x < 6462.0 \
+	while guard < 600 and race.turtle.position.x < end + 30.0 \
 			and GameManager.accident_state == "NONE":
 		await _step()
 		guard += 1
@@ -234,9 +238,9 @@ func _case_dive_fx() -> Dictionary:
 
 
 func _case_ollie_fx() -> Dictionary:
-	# P6 换位后 wall1 在 10860（原 13300），重置点随之前移。
-	_reset(10100.0, "turtle")
-	var start := 10860.0
+	# FEEL-22：墙位会随关卡数据调整，不能写死 10860；从本局实际组起点取。
+	var start: float = _group_start("wall1")
+	_reset(start - 760.0, "turtle")
 	var lead: float = float(race.turtle.base_speed) * 0.8
 	await _settle(start - lead)
 	# 壳跃起
@@ -248,7 +252,7 @@ func _case_ollie_fx() -> Dictionary:
 	# 换到兔子，在墙前 90 px 蹬踏（第二跳）
 	await _control_to("rabbit")
 	var guard := 0
-	while guard < 240 and race.turtle.position.x < start - 90.0 \
+	while guard < 240 and race.turtle.position.x < start - 70.0 \
 			and GameManager.accident_state == "NONE":
 		await _step()
 		guard += 1
@@ -288,6 +292,7 @@ func _reset(x: float, control: String) -> void:
 	GameManager.showtime_active = false
 	GameManager.current_control = control
 	GameManager.has_shifted = true
+	GameManager.finished = false
 	GameManager.pickup_window = false
 	GameManager.bro_meter = 0
 	race.showtime_active = false
@@ -300,6 +305,9 @@ func _reset(x: float, control: String) -> void:
 	race.rabbit_stun = 0.0
 	race.emergency_timer = 0.0
 	race.combo = 0
+	# FEEL-22：每个用例从同一神游状态起跑；否则上一例积累的 drift 会让
+	# 跃起/蹬踏晚半拍，Ollie 探针时红时绿。
+	race.reset_brains()
 	# G20：hit_roles 必须和 hit_groups 一起清。只清 hit_groups 时，B2 起的“角色×组”记账还留着，同组第二例起整组免疫——后面那些重复用例其实在测一段不会撞的赛道。
 	race.hit_groups.clear()
 	race.hit_roles.clear()
@@ -326,6 +334,13 @@ func _reset(x: float, control: String) -> void:
 	race.rabbit.attach(race.turtle.get_mount_point())
 	race.mount.reset()
 	race.mount.mark_riding()
+
+
+func _group_start(name: String) -> float:
+	for g in race.hazard_groups:
+		if String(g["group"]) == name:
+			return LevelData.group_start(g)
+	return 0.0
 
 
 func _settle(target_x: float) -> void:

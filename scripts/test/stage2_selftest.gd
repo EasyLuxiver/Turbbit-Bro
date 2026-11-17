@@ -43,7 +43,7 @@ func _run() -> void:
 	_check(is_equal_approx(GameManager.oxygen, Tuning.OXYGEN_MAX), "oxygen starts at max")
 	_check(race.get_node_or_null("HUDLayer/HUD") != null, "HUD lives in main race scene")
 	_check(race.hud.control_label.text.contains("CONTROL"), "HUD control field")
-	_check(race.hud.oxygen_label.text.contains("AIR"), "HUD oxygen field")
+	_check(race.oxygen_bubble_count() > 0, "HUD oxygen bubbles")
 	_check(race.hud.bond_label.text.contains("BRO PASS"), "HUD brotherhood field")
 	_check(race.hud.time_label.text.contains(":"), "HUD time field")
 	_check(race._debug_overlay != null, "F1 debug overlay exists")

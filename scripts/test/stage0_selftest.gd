@@ -65,11 +65,14 @@ func _run() -> void:
 		_check(overlay.label.text.contains("TURTLE"),
 			"debug overlay follows control change")
 
+	# FEEL-09 P0-C：0.20 s 内第二次 SHIFT 会被锁定挡住；等锁定过了再按。
+	await get_tree().create_timer(0.25).timeout
 	_send_key(KEY_SHIFT, true)
 	await get_tree().process_frame
 	_send_key(KEY_SHIFT, false)
 	_check(GameManager.current_control == "rabbit", "Shift event swaps control back to rabbit")
 	# 阶段 4：下潜是主动动作。切到乌龟，按住 ↓ 越过 334+80 的氧气线。
+	await get_tree().create_timer(0.25).timeout
 	_send_key(KEY_SHIFT, true)
 	await get_tree().process_frame
 	_send_key(KEY_SHIFT, false)

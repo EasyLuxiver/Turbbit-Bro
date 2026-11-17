@@ -3,7 +3,7 @@ extends Node
 
 func _ready() -> void:
 	var label := Label.new()
-	label.text = "简体中文 测试：阳光海岸 珊瑚乱流 肌肉狂潮 乌龟 兔子 氧气"
+	label.text = "简体中文 测试：阳光海岸 码头乱流 肌肉狂潮 乌龟 兔子 氧气"
 	label.position = Vector2(80, 120)
 	label.add_theme_font_size_override("font_size", 44)
 	label.add_theme_color_override("font_color", Color(1, 1, 1))

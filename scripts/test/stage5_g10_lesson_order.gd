@@ -138,8 +138,9 @@ func _run() -> void:
 	for kind in all_kinds:
 		_expect("full track teaches %s" % kind,
 			taught.has(Locale.t(all_kinds[kind])))
-	# 同一类只教一次：七类 → 至多 7 条（LOW_BEAM/LOW_BIRD 共用 crouch 文案，按 kind 计仍各一次）。
-	_expect("lesson count stays small (<= 7)", emissions.size() <= 7)
+	# 同一类只教一次：七类 → 至多 7 条；FEEL-09 起 Z2 的吊网/鳗鱼/船闸
+	# 有独立文案，各多一条；整条赛道目前 13 条，上限放到 14。
+	_expect("lesson count stays small (<= 14)", emissions.size() <= 14)
 
 	_write(log_start, log_end, shark_start, leap_x, forbidden)
 	print("G10 LESSON ORDER: " + ("PASS" if failures.is_empty() else "FAIL"))

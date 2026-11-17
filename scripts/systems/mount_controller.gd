@@ -103,7 +103,9 @@ func rescue_suction_offset(rabbit_pos: Vector2, mount_point: Vector2,
 	if dist < 1.0:
 		return Vector2.ZERO
 	var step := minf(Tuning.RESCUE_SUCTION_SPEED * delta, dist)
-	return to_mount / dist * step
+	# FEEL-44：救援吸附只拉横向，不把水里的兔子绑在乌龟的上下深度上。
+	# 兔子已经落水，应该自己漂/沉；乌龟的上浮下潜只改变自己的位置。
+	return Vector2(signf(to_mount.x) * step, 0.0)
 
 
 ## 方案 2 原型：空中救援。兔子从上方落下，乌龟必须正在跃起，壳顶才有高度。

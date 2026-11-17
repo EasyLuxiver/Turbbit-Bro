@@ -25,6 +25,7 @@ var race
 var seen_accidents := {}
 var zones_seen := {}
 var _captured_zones := {}
+var _captured_relays := {}
 var saw_boost := false
 ## 物理帧时钟：固定 1/60，逐帧累加。GameManager.race_time 走的是渲染帧
 ## delta，headless 下每次运行都不一样，用它做驾驶判断会让 A 组结果不可复现。
@@ -87,6 +88,8 @@ func _run() -> void:
 	GameManager.start_race()
 	await _frames(3)
 	race = get_tree().current_scene
+	if race != null:
+		race.test_no_overdrive = true
 	_check(race.scene_file_path.ends_with("race.tscn"), "race scene loaded")
 	_check(GameManager.state == GameManager.GameState.RUNNING, "state RUNNING")
 	_start_watchdog()
@@ -108,8 +111,15 @@ func _run() -> void:
 	_check(_scene_is("race.tscn"), "R on result starts the retry race")
 	_check(GameManager.state == GameManager.GameState.RUNNING, "retry state RUNNING")
 	race = get_tree().current_scene
-	_check(not GameManager.finished and GameManager.race_time < 0.5,
-		"retry clears finish state")
+	# 第二圈是新的 race 实例：回归基线必须和第一圈同条件。
+	# 过载/教学单独由 stage12_* 覆盖，这里关掉，否则会把“新实例默认开”误算成手感差异。
+	if race != null:
+		race.test_no_overdrive = true
+		race.test_no_lessons = true
+	# 8 个渲染帧在 time_scale=3 下本身就可能推进 0.6–0.8 s；这里判“刚重开”，
+	# 不是判某一帧的精确值。旧阈值 0.5 会在加载慢时误报。
+	_check(not GameManager.finished and GameManager.race_time < 1.0,
+		"retry clears finish state (race_time=%.2f)" % GameManager.race_time)
 	_reset_watchdog_baseline()
 	var r2: Dictionary = await _run_once(2, true)
 
@@ -202,6 +212,15 @@ func _run_once(index: int, retry: bool) -> Dictionary:
 		+ "casualties=%d engine=%d show=%d streak=%d" % [
 			stats["casualties"], stats["engine_failures"],
 			stats["showtime"], stats["streak"]])
+	# FEEL-42：确认正式跑中鲨群三拍都发生，而不是只出老大/胖鲨。
+	if race != null and race.get("_shark_pack_log") != null:
+		_log("SHARK_PACK_LOG " + JSON.stringify(race._shark_pack_log))
+		var pack_who := []
+		for e in race._shark_pack_log:
+			if String(e.get("event", "")) == "attack":
+				pack_who.append(String(e.get("who", "")))
+		_check(pack_who.has("leader") and pack_who.has("fat") and pack_who.has("thin"),
+			"run %d shark pack three attacks %s" % [index, JSON.stringify(pack_who)])
 	_check_score_table(index)
 
 	start = Time.get_ticks_msec()
@@ -216,9 +235,8 @@ func _run_once(index: int, retry: bool) -> Dictionary:
 		var joined := "\n".join(PackedStringArray(texts))
 		if zh_run:
 			_check(not joined.contains("总分") and joined.contains("干净通过")
-				and joined.contains("连招") and joined.contains("救援成功")
-				and joined.contains("失误") and joined.contains("翻船次数"),
-				"run %d result shows clean/combos/rescues/mistakes/joint, no score (zh)" % index)
+				and joined.contains("失误") and joined.contains("比赛时间"),
+				"run %d result shows time/mistakes/clean, no score (zh)" % index)
 			_check(joined.contains("比赛时间")
 				and joined.contains(Locale.grade_title(GameManager.grade)),
 				"run %d result shows time and grade (zh)" % index)
@@ -226,10 +244,9 @@ func _run_once(index: int, retry: bool) -> Dictionary:
 				"run %d result shows best records (zh)" % index)
 		else:
 			_check(not joined.contains("TOTAL SCORE")
-				and joined.contains("CLEAN PASSES")
-				and joined.contains("BRO COMBOS") and joined.contains("RESCUE SAVES")
-				and joined.contains("MISTAKES") and joined.contains("CAPSIZES"),
-				"run %d result shows clean/combos/rescues/mistakes/joint, no score" % index)
+				and joined.contains("CLEAN PASSES") and joined.contains("MISTAKES")
+				and joined.contains("RACE TIME"),
+				"run %d result shows time/mistakes/clean, no score" % index)
 			_check(joined.contains("RACE TIME")
 				and joined.contains(Locale.grade_title(GameManager.grade)),
 				"run %d result shows time and grade" % index)
@@ -265,6 +282,10 @@ func _handle_group(g: Dictionary) -> void:
 	var kind: String = g["kind"]
 	var start := LevelDataScript.group_start(g)
 	var end := LevelDataScript.group_end(g)
+	if capture and String(g["group"]) in ["rock2", "beam3", "bird3", "gate4", "bird5", "log5", "beam7", "bird8", "bird9"] \
+			and not _captured_relays.has(String(g["group"])):
+		_captured_relays[String(g["group"])] = true
+		await _save_shot("stage37_%s.png" % String(g["group"]))
 	if race.turtle.position.x > end + 80.0:
 		return
 	match kind:
@@ -304,6 +325,28 @@ func _motion_offset_x(g: Dictionary, delay: float = 0.0) -> float:
 	return amp * sin(TAU * (t / period + float(motion.get("phase", 0.0))))
 
 
+## CORE-FEEL-08 P0-A：兔子可能正在“走神”，起跳会晚半拍才执行。
+## 会玩的玩家看见“BITT 走神了”会提前按——驾驶器也这么补偿，把按下点
+## 往前挪 delay × 龟速 像素，让兔子离地的位置回到原来的设计点。
+## 这不是绕过延迟：延迟仍然真实发生，只是驾驶器的按键更早。
+func _press_lead_px(who: String = "rabbit") -> float:
+	var react := float(race.drift_react_delay_ms(who)) / 1000.0
+	return react * float(race.turtle.base_speed)
+
+
+## 按住 ↑ 直到真的离地。走神的兔子最多晚 0.35 s，这里等到位再松手；
+## 返回是否离地（不丢键：延迟结束后一定执行）。
+func _press_up_until_airborne(max_steps: int = 30) -> bool:
+	Input.action_press("up")
+	var n := 0
+	while n < max_steps and race.mount.state != "AIRBORNE" \
+			and GameManager.accident_state == "NONE":
+		await _step()
+		n += 1
+	Input.action_release("up")
+	return race.mount.state == "AIRBORNE"
+
+
 func _jump_over(start: float, end: float) -> void:
 	phase = "jump"
 	# 起跳点由“接人那一刻龟壳必须已经让开岩石”决定，不是兔子让开。
@@ -319,7 +362,7 @@ func _jump_over(start: float, end: float) -> void:
 	var spd: float = race.turtle.base_speed
 	var shell_travel: float = 1.2 * spd - 70.0
 	var rock_w: float = maxf(end - start, 1.0)
-	var lead := clampf(shell_travel - (rock_w + 48.0), 15.0, 120.0)
+	var lead := clampf(shell_travel - (rock_w + 48.0), 55.0, 120.0)
 	# 壳必须在巡航水深、龟速接近满档才起跳：起跳速度就是当时的龟速。
 	# 壳沉 100 px 时弧线整体低 100 px，会撞在岩檐上。
 	await _settle_turtle(start - lead - 100.0, 0.6, 300.0, 440.0)
@@ -328,7 +371,8 @@ func _jump_over(start: float, end: float) -> void:
 	# 顶到 3.3，换过去还要再站 0.5 s——落崖就是这么发生的。
 	await _control_to("rabbit")
 	var t1: float = sim_time
-	while sim_time - t1 < 2.0 and race.turtle.position.x < start - lead \
+	var press_x: float = start - lead - _press_lead_px()
+	while sim_time - t1 < 2.0 and race.turtle.position.x < press_x \
 			and GameManager.accident_state == "NONE":
 		await _step()
 	_log("JUMP  x=%.0f rock=%.0f-%.0f y=%.0f spd=%.0f ctl=%s show=%s" % [
@@ -338,12 +382,7 @@ func _jump_over(start: float, end: float) -> void:
 	# “just pressed”只在按键被处理的那一帧成立：先按住，等真正离地再松手。
 	# 同一帧按完就松开等于没按，兔子会原地骑进岩石（旧日志里 JUMP 后面没有
 	# 任何 t= 轨迹行，就是起跳根本没发生）。
-	Input.action_press("up")
-	await _step()
-	if race.mount.state != "AIRBORNE":
-		await _step()
-	Input.action_release("up")
-	if race.mount.state != "AIRBORNE":
+	if not await _press_up_until_airborne():
 		_log("WARN  jump did not launch x=%.0f y=%.0f ctl=%s" % [
 			race.turtle.position.x, race.turtle.position.y,
 			GameManager.current_control])
@@ -369,9 +408,17 @@ func _crouch_under(start: float, end: float) -> void:
 	# 梁前的每一像素都是“兔子握权、壳在下沉”：130 px 的余量让整段趴下
 	# 变成 2.6 s、出口 y=600～690、乌龟计时 2.8～3.5（离 3.6 只剩 0.1 s），
 	# 氧气也在那一段被抽干。55 px 够按两帧，出口能压在 500 上下。
-	await _settle_turtle(start - 55.0, 0.6, 220.0, 380.0)
+	# CORE-FEEL-08 P0-A：走神的兔子听 ↓ 会晚半拍（最多 0.26 s ≈ 57 px）。
+	# 会玩的玩家看见“BITT 走神了”会提前趴下——驾驶器也提前 lead px 停，
+	# 并且等它真的趴下（CROUCHING）再往梁里走，否则站着进了判定带。
+	await _settle_turtle(start - 55.0 - _press_lead_px(), 0.6, 220.0, 380.0)
 	await _control_to("rabbit")
 	Input.action_press("down")
+	var crouch_wait := 0
+	while crouch_wait < 30 and race.rabbit.state != "CROUCHING" \
+			and GameManager.accident_state == "NONE":
+		await _step()
+		crouch_wait += 1
 	var guard := 0
 	# 兔子矩形半宽 16，过 end+24 就再也碰不到梁；再多守 26 px 只是让乌龟
 	# 多沉一截——壳从巡航水深沉 160 px/s 时，50 px 的余量等于 50 px 的深度。
@@ -398,7 +445,8 @@ func _leap_shark(g: Dictionary, start: float, end: float) -> void:
 	# 顶点在起跳后 0.8 s，入口在重叠中点前 0.8v-80 px；
 	# 按键还要跨 2~3 个物理帧才被消费（约 0.13 s），一并前移。
 	var v: float = maxf(race.turtle.base_speed, 1.0)
-	await _settle_turtle(start - (0.93 * v - 35.0), 0.6, 300.0, 380.0)
+	await _settle_turtle(start - (0.93 * v - 35.0) - _press_lead_px("turtle"),
+		0.6, 300.0, 380.0)
 	# REBUILD-05 E2：鲨鱼会前后巡游。按“弧顶压到危险区中心”那一刻它的位置挪起跳点
 	# （提前量 + 半宽 = 0.93 s），不是按此刻位置、也不是背固定秒数。
 	var patrol := _motion_offset_x(g, 0.93)
@@ -409,9 +457,13 @@ func _leap_shark(g: Dictionary, start: float, end: float) -> void:
 			patrol, race.turtle.position.x])
 	await _control_to("turtle")
 	# “just pressed”只在按键被处理的那一帧成立：按住等真正起跳再松手。
+	# CORE-FEEL-08 P0-A：乌龟走神时 ↑ 也会晚半拍，这里等到 leap 真的开始。
 	Input.action_press("up")
-	await _step()
-	await _step()  # race 在物理帧里消费按键，隔一帧才能判定
+	var leap_wait := 0
+	while leap_wait < 30 and not race.turtle.leap_active \
+			and GameManager.accident_state == "NONE":
+		await _step()
+		leap_wait += 1
 	Input.action_release("up")
 	if not race.turtle.leap_active:
 		_log("WARN  leap did not start x=%.0f y=%.0f" % [
@@ -434,11 +486,15 @@ func _wall_ollie(start: float, end: float) -> void:
 	# 跃起最高点在起跳后 0.8 s：起跳点按“最高点正对墙面”摆，
 	# 壳进窗口时兔子正好在墙楣高度（它比壳高 60 px，正好被楣挡住）。
 	var lead: float = race.turtle.base_speed * 0.8
-	await _settle_turtle(start - lead, 0.6, 300.0, 380.0)
+	await _settle_turtle(start - lead - _press_lead_px("turtle"), 0.6, 300.0, 380.0)
 	await _control_to("turtle")
+	# CORE-FEEL-08 P0-A：乌龟走神时 ↑ 晚半拍，按住等到 leap 真的开始。
 	Input.action_press("up")
-	await _step()
-	await _step()  # race 在物理帧里消费按键，隔一帧才能判定
+	var leap_wait := 0
+	while leap_wait < 30 and not race.turtle.leap_active \
+			and GameManager.accident_state == "NONE":
+		await _step()
+		leap_wait += 1
 	Input.action_release("up")
 	if not race.turtle.leap_active:
 		_log("WARN  wall leap did not start x=%.0f y=%.0f" % [
@@ -461,7 +517,8 @@ func _wall_ollie(start: float, end: float) -> void:
 		guard += 1
 	await _control_to("rabbit")
 	guard = 0
-	while guard < 240 and race.turtle.position.x < start - 70.0 \
+	var kick_x: float = start - 70.0 - _press_lead_px()
+	while guard < 240 and race.turtle.position.x < kick_x \
 			and GameManager.accident_state == "NONE":
 		await _step()
 		guard += 1
@@ -495,7 +552,9 @@ func _wall_ollie(start: float, end: float) -> void:
 func _dive_gate(start: float, end: float) -> void:
 	phase = "dive"
 	# 进门必须龟壳在巡航水深：上一段兔子握权时壳已经沉了，潜深会叠加。
-	await _settle_turtle(start - 160.0, 0.6, 300.0, 380.0)
+	# CORE-FEEL-08 P0-A：乌龟走神时 ↓ 晚半拍，提前 lead px 开始沉。
+	await _settle_turtle(start - 160.0 - _press_lead_px("turtle"),
+		0.6, 300.0, 380.0)
 	await _control_to("turtle")
 	Input.action_press("down")
 	var guard := 0
@@ -527,7 +586,8 @@ func _log_combo(start: float, end: float) -> void:
 	# (lead-16..lead+56)/v；下潜侧壳顶要沉到 410 以下约 0.22 s，换人还要 ~0.18 s。
 	# 两侧合并后窗口取中点：lead = 0.7v - 2。
 	await _control_to("rabbit")
-	var press_x: float = start - (float(race.turtle.base_speed) * 0.7 - 2.0)
+	var press_x: float = start - (float(race.turtle.base_speed) * 0.7 - 2.0) \
+		- _press_lead_px()
 	var guard := 0
 	while guard < 240 and GameManager.accident_state == "NONE":
 		# 用兔子自己的 x 判起跳点：未受控时它会比壳落后十几到二十几像素，
@@ -537,13 +597,8 @@ func _log_combo(start: float, end: float) -> void:
 			break
 		await _step()
 		guard += 1
-	Input.action_press("up")
-	await _step()
-	if race.mount.state != "AIRBORNE":
-		await _step()
-	Input.action_release("up")
-	if race.mount.state != "AIRBORNE":
-		_log("WARN  combo jump did not launch x=%.0f" % race.turtle.position.x)
+	if not await _press_up_until_airborne():
+		_log("WARN  combo jump did not launch x=%.0f rab=%s mount=%s tur_y=%.0f ctl=%s pending=%s" % [race.turtle.position.x, race.rabbit.state, race.mount.state, race.turtle.position.y, GameManager.current_control, str(race.rabbit.snack_jump_pending)])
 	# 离地后只等一帧就换乌龟：跳跃在按键被处理的那一帧已经离地，换人不取消它。
 	# 等 0.12 s 会让下潜晚 ~30 px；浮木下沿离巡航壳顶只有 12 px，
 	# 下潜起步晚半拍就撞下沿（实测 8 次全撞），所以这里把余量全吃满。
@@ -982,7 +1037,8 @@ func _step() -> void:
 ## 失误 -100、三格 -200、同一动作不重复计”不是看代码猜的，是这局跑出来的。
 func _check_score_table(index: int) -> void:
 	var counts := {"clean": 0, "precise": 0, "bro_dive": 0, "bro_ollie": 0,
-		"mistake": 0, "joint": 0, "snack": 0}
+		"mistake": 0, "joint": 0, "snack": 0, "showtime": 0,
+		"relay_clever": 0, "relay_perfect": 0, "rescue_switch": 0}
 	var bad: Array[String] = []
 	var replay := 0
 	for entry in GameManager.score_log:
@@ -1001,6 +1057,10 @@ func _check_score_table(index: int) -> void:
 		elif reason == "joint":
 			counts["joint"] += 1
 			want = -200
+		elif reason == "showtime":
+			# FEEL-09 P0-D：Showtime 正常完成的一次性奖励。
+			counts["showtime"] += 1
+			want = 100
 		elif reason.begins_with("precise:"):
 			counts["precise"] += 1
 			want = 150
@@ -1008,6 +1068,15 @@ func _check_score_table(index: int) -> void:
 			# PLAYFUL-04 §4：亲手喂到的一小笔奖励，只在分数表里多一行。
 			counts["snack"] += 1
 			want = Tuning.SNACK_SWITCH_BONUS
+		elif reason == "relay_clever":
+			counts["relay_clever"] += 1
+			want = 50
+		elif reason == "relay_perfect":
+			counts["relay_perfect"] += 1
+			want = 100
+		elif reason == "rescue_switch":
+			counts["rescue_switch"] += 1
+			want = Tuning.RESCUE_SWITCH_BONUS
 		elif reason.begins_with("mistake:"):
 			counts["mistake"] += 1
 			want = -100
@@ -1036,10 +1105,10 @@ func _check_score_table(index: int) -> void:
 		"run %d combo counters match the log (dive %d/%d ollie %d/%d)" % [
 			index, counts["bro_dive"], GameManager.combo_dive_count,
 			counts["bro_ollie"], GameManager.combo_ollie_count])
-	_log("SCORE   clean=%d precise=%d dive=%d ollie=%d snack=%d mistake=%d joint=%d -> %d"
+	_log("SCORE   clean=%d precise=%d dive=%d ollie=%d snack=%d showtime=%d mistake=%d joint=%d -> %d"
 		% [counts["clean"], counts["precise"], counts["bro_dive"],
-			counts["bro_ollie"], counts["snack"], counts["mistake"],
-			counts["joint"], replay])
+			counts["bro_ollie"], counts["snack"], counts["showtime"],
+			counts["mistake"], counts["joint"], replay])
 
 
 func _check(condition: bool, message: String) -> void:

@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/zone2_dock.gd" id="1_dock"]
+[ext_resource type="Script" path="res://scripts/world/zone2_layer.gd" id="2_layer"]
+
+[node name="Zone2Dock" type="Node2D"]
+script = ExtResource("1_dock")
+
+[node name="BG_Far" type="Node2D" parent="."]
+z_index = -100
+script = ExtResource("2_layer")
+layer = "bg_far"
+parallax = 0.3
+fade_lag = 0.0
+
+[node name="BG_Mid" type="Node2D" parent="."]
+z_index = -90
+script = ExtResource("2_layer")
+layer = "bg_mid"
+parallax = 0.5
+fade_lag = 300.0
+
+[node name="BG_Props" type="Node2D" parent="."]
+z_index = -80
+script = ExtResource("2_layer")
+layer = "bg_props"
+parallax = 0.7
+fade_lag = 600.0
+
+[node name="Gameplay_Canal" type="Node2D" parent="."]
+z_index = -70
+script = ExtResource("2_layer")
+layer = "canal"
+parallax = 1.0
+
+[node name="FG_Overhead" type="Node2D" parent="."]
+z_index = 60
+script = ExtResource("2_layer")
+layer = "fg_overhead"
+parallax = 1.08
+fade_lag = 1300.0
+
+[node name="FG_Near" type="Node2D" parent="."]
+z_index = 50
+script = ExtResource("2_layer")
+layer = "fg_near"
+parallax = 1.15
+fade_lag = 1500.0

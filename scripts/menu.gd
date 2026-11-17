@@ -125,15 +125,6 @@ func _build_main(box: VBoxContainer) -> void:
 	box.add_child(UiTheme.make_label(Locale.t("menu.title"), 72, UiTheme.GOLD))
 	box.add_child(UiTheme.make_label(Locale.t("menu.subtitle"), 20,
 		Color(0.85, 0.95, 1.0)))
-	box.add_child(UiTheme.make_label(Locale.t("menu.stage"), 18, Color(0.6, 0.8, 0.9)))
-
-	if GameManager.best_time > 0.0:
-		# §六/§七-9：玩家界面不显示固定总分；纪录只留时间与最长连击。
-		box.add_child(UiTheme.make_label(Locale.t("menu.best", [
-			"%.2f" % GameManager.best_time,
-			"%d" % GameManager.best_streak_record]), 18, UiTheme.GOLD))
-	else:
-		box.add_child(UiTheme.make_label(Locale.t("menu.no_record"), 18, UiTheme.GOLD))
 
 	box.add_child(_spacer(12))
 	var start := _button(box, Locale.t("menu.start_game"), _on_start, true)
@@ -221,7 +212,16 @@ func _grab_focus() -> void:
 
 
 func _on_start() -> void:
-	GameManager.start_race()
+	GameManager.start_game_flow()
+
+
+func _on_producer() -> void:
+	get_tree().change_scene_to_file("res://scenes/producer_menu.tscn")
+
+
+func _on_test_arena() -> void:
+	GameManager.test_no_best = true
+	get_tree().change_scene_to_file("res://scenes/test_arena.tscn")
 
 
 func _on_settings() -> void:

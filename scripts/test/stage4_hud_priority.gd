@@ -127,7 +127,9 @@ func _measure_lifetimes() -> void:
 		print("HUD TIMING %s=%.2f s (appeared=%s)" % [k, v, seen.get(k, false)])
 	print("HUD TIMING max=%.2f s" % worst)
 	_check(res.size() == 3, "all three lines appeared and cleared within 6 s")
-	_check(worst > 0.0 and worst <= 3.0, "longest visible line %.2f s <= 3.0 s" % worst)
+	# FEEL-09 P1-A：SHIFT / 连招提示要在 1100 px 外触发后一直留到障碍前，
+	# 设计值从 3 s 提到 5 s；反馈 0.75 s、hint 2.2 s 不变。
+	_check(worst > 0.0 and worst <= 5.05, "longest visible line %.2f s <= 5.0 s" % worst)
 
 
 func _wait_scene(suffix: String) -> void:

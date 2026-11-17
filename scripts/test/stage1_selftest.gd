@@ -110,10 +110,18 @@ func _run() -> void:
 	await _physics_frames(2)
 	_check(GameManager.current_control == "rabbit", "back on rabbit before jump")
 	_send_key(KEY_UP, true)
-	await _physics_frames(2)
+	# CORE-FEEL-08 P0-A：前面刚待命 9.8 s，兔子已在“要惹麻烦”档——起跳会晚半拍
+	# （<= 0.35 s）。这里等它真的起跳，并把实测延迟记下来：延迟是设计，丢键才是 bug。
+	var jump_wait := 0.0
+	while race.mount.state != "AIRBORNE" and jump_wait < 0.45:
+		await get_tree().create_timer(1.0 / 60.0).timeout
+		jump_wait += 1.0 / 60.0
 	_send_key(KEY_UP, false)
+	print("  jump   -> delayed %.3f s after 10 s standby" % jump_wait)
 	_check(race.mount.state == "AIRBORNE", "jump -> mount AIRBORNE")
 	_check(race.rabbit.is_airborne(), "jump -> rabbit airborne")
+	_check(jump_wait <= 0.35,
+		"drift delays the jump but does not drop it (%.3f s)" % jump_wait)
 
 	await get_tree().create_timer(0.2).timeout
 	await _shift()

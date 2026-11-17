@@ -7,10 +7,13 @@ const UiTheme = preload("res://scripts/ui/ui_theme.gd")
 
 var _title_label: Label
 var _grade_label: Label
+var _antidote_label: Label
 var _stats_label: Label
 var _best_label: Label
 var _try_label: Label
 var _prompt_label: Label
+var _cousin_line: Label
+var _bros_line: Label
 var _again_button: Button
 var _menu_button: Button
 
@@ -23,6 +26,10 @@ func _ready() -> void:
 	if "--capture-result" in args:
 		# 截图用样本数据；不调用 finalize_run，所以不会写 best.json。
 		_fill_sample()
+		for a in args:
+			if a.begins_with("--grade="):
+				GameManager.grade = a.substr(8)
+				_refresh()
 		# G17：-- --trynext 把样本改成“有连招、没亲手喂到”的那一局，
 		# 拍「下次试试」这一行；只改内存里的样本值。
 		if "--trynext" in args:
@@ -33,11 +40,55 @@ func _ready() -> void:
 
 func _draw() -> void:
 	var view := get_viewport_rect().size
-	draw_rect(Rect2(Vector2.ZERO, view), Color(0.03, 0.10, 0.16))
-	draw_rect(Rect2(0, view.y * 0.70, view.x, view.y * 0.30), Color(0.05, 0.30, 0.40))
-	# 太阳让到标题侧后方：原来正压在金色标题上，两种语言都读不清。
-	draw_circle(Vector2(view.x * 0.715, view.y * 0.14), 84.0,
-		Color(1.0, 0.85, 0.25, 0.62))
+	# FEEL-15：终点是明亮完整的海岸终点，不再是黑暗空场。
+	for i in 12:
+		var k := float(i) / 11.0
+		draw_rect(Rect2(0, view.y * k / 3.0, view.x, view.y / 3.0 + 2.0),
+			Color(0.42 + 0.18 * k, 0.72 + 0.12 * k, 0.88 + 0.06 * k))
+	draw_rect(Rect2(0, view.y * 0.46, view.x, view.y * 0.20),
+		Color(0.06, 0.42, 0.52))
+	draw_rect(Rect2(0, view.y * 0.66, view.x, view.y * 0.34),
+		Color(0.78, 0.66, 0.40))
+	draw_circle(Vector2(view.x * 0.82, view.y * 0.14), 92.0,
+		Color(1.0, 0.86, 0.35, 0.92))
+	draw_circle(Vector2(view.x * 0.82, view.y * 0.14), 116.0,
+		Color(1.0, 0.90, 0.50, 0.20))
+	# 终点舞台：木板 + 彩旗，读作“到达终点”，不是结算表格背景。
+	draw_rect(Rect2(view.x * 0.06, view.y * 0.66, view.x * 0.88, 18),
+		Color(0.52, 0.35, 0.18))
+	for i in 9:
+		var x := view.x * (0.08 + 0.10 * i)
+		draw_line(Vector2(x, view.y * 0.66), Vector2(x, view.y * 0.60),
+			Color(0.34, 0.22, 0.12), 4)
+		draw_colored_polygon(PackedVector2Array([
+			Vector2(x, view.y * 0.60), Vector2(x + 34, view.y * 0.615),
+			Vector2(x, view.y * 0.635)]),
+			Color(1.0, 0.45 + 0.2 * (i % 2), 0.3, 0.85))
+	# 中央半透明底：明亮的终点也要保证两种语言的成绩可读。
+	# FEEL-22：底框盖到快捷键行，避免白字压在沙地/木板上读不清。
+	draw_rect(Rect2(view.x * 0.11, view.y * 0.05, view.x * 0.78, view.y * 0.68),
+		Color(0.02, 0.08, 0.12, 0.62))
+	draw_rect(Rect2(view.x * 0.11, view.y * 0.05, view.x * 0.78, view.y * 0.68),
+		Color(1.0, 0.86, 0.35, 0.55), false, 2.0)
+	_draw_cousin(Vector2(view.x * 0.84, view.y * 0.82), 1.05)
+	# 大表哥手里的解药：绿色小瓶 + 软木塞 + 高光。
+	_draw_potion(Vector2(view.x * 0.84 + 70, view.y * 0.82 - 30), 1.0)
+	_draw_tubo(Vector2(view.x * 0.10, view.y * 0.84), 0.95)
+	_draw_bitt(Vector2(view.x * 0.22, view.y * 0.88), 0.95)
+
+
+func _draw_potion(p: Vector2, s: float) -> void:
+	draw_circle(p, 20 * s, Color(0.45, 1.0, 0.55, 0.16))
+	draw_rect(Rect2(p + Vector2(-10, -8) * s, Vector2(20, 30) * s),
+		Color(0.30, 0.85, 0.38))
+	draw_rect(Rect2(p + Vector2(-10, -8) * s, Vector2(20, 30) * s),
+		Color(0.12, 0.45, 0.18), false, 2.0)
+	draw_rect(Rect2(p + Vector2(-4, -16) * s, Vector2(8, 10) * s),
+		Color(0.48, 0.32, 0.18))
+	draw_rect(Rect2(p + Vector2(-5, -20) * s, Vector2(10, 5) * s),
+		Color(0.75, 0.58, 0.32))
+	draw_circle(p + Vector2(-3, 4) * s, 3.5 * s,
+		Color(0.85, 1.0, 0.8, 0.9))
 
 
 func _build_ui() -> void:
@@ -66,6 +117,23 @@ func _build_ui() -> void:
 	_grade_label.add_theme_color_override("font_color", _grade_color(GameManager.grade))
 	box.add_child(_grade_label)
 
+	_cousin_line = Label.new()
+	_cousin_line.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_cousin_line.add_theme_font_size_override("font_size", 22)
+	_cousin_line.add_theme_color_override("font_color", Color(1.0, 0.86, 0.36))
+	box.add_child(_cousin_line)
+	# 终点画面里有大表哥和解药；文字必须把这件事说破，不能只在背景画个绿瓶。
+	_antidote_label = Label.new()
+	_antidote_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_antidote_label.add_theme_font_size_override("font_size", 18)
+	_antidote_label.add_theme_color_override("font_color", Color(0.72, 1.0, 0.76))
+	box.add_child(_antidote_label)
+	_bros_line = Label.new()
+	_bros_line.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_bros_line.add_theme_font_size_override("font_size", 18)
+	_bros_line.add_theme_color_override("font_color", Color(0.82, 0.95, 1.0))
+	box.add_child(_bros_line)
+
 	var spacer := Control.new()
 	spacer.custom_minimum_size = Vector2(0, 10)
 	box.add_child(spacer)
@@ -80,6 +148,8 @@ func _build_ui() -> void:
 	_best_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_best_label.add_theme_font_size_override("font_size", 18)
 	_best_label.add_theme_color_override("font_color", Color(0.7, 0.85, 0.95))
+	_best_label.add_theme_color_override("font_outline_color", Color(0.02, 0.08, 0.12, 0.9))
+	_best_label.add_theme_constant_override("outline_size", 4)
 	box.add_child(_best_label)
 
 	# G17：一条「下次试试」。只显示 Local 里选中的那一句；没有建议时整行隐藏，
@@ -100,6 +170,8 @@ func _build_ui() -> void:
 	_prompt_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_prompt_label.add_theme_font_size_override("font_size", 24)
 	_prompt_label.add_theme_color_override("font_color", Color(1, 1, 1))
+	_prompt_label.add_theme_color_override("font_outline_color", Color(0.02, 0.08, 0.12, 0.95))
+	_prompt_label.add_theme_constant_override("outline_size", 5)
 	box.add_child(_prompt_label)
 
 	# 真正可点的结算按钮：再玩一次 / 返回主菜单。R / M 仍是快捷键。
@@ -121,19 +193,23 @@ func _refresh() -> void:
 	_grade_label.add_theme_color_override("font_color", _grade_color(GameManager.grade))
 	_grade_label.text = "%s   %s" % [
 		GameManager.grade, Locale.grade_title(GameManager.grade)]
-	# §七-9：固定数字总分退出玩家界面（仍照常计算并写 score_log，供分析）。
-	# 结算只读完成时间、干净通过、连招、救援成功、失误、联合事故与评级。
-	_stats_label.text = "\n".join([
-		Locale.t("result.time", ["%7.2f" % GameManager.finish_time]),
-		Locale.t("result.clean", ["%7d" % GameManager.clean_pass_count]),
-		Locale.t("result.combos",
-			["%7d" % (GameManager.combo_dive_count + GameManager.combo_ollie_count)]),
-		Locale.t("result.rescues", ["%7d" % GameManager.rescue_success_count]),
-		Locale.t("result.snacks", ["%7d" % GameManager.snack_switch_count]),
-		Locale.t("result.mistakes", ["%7d" % GameManager.accident_count]),
-		Locale.t("result.joint", ["%7d" % GameManager.joint_accident_count]),
+	var g := String(GameManager.grade)
+	if g not in ["S", "A", "B", "C", "D"]:
+		g = "D"
+	if _cousin_line != null:
+		_cousin_line.text = Locale.t("result.cousin_" + g)
+	if _antidote_label != null:
+		_antidote_label.text = Locale.t("result.antidote")
+	if _bros_line != null:
+		var line_g := g if g in ["S", "B", "D"] else "B"
+		_bros_line.text = "%s   %s" % [Locale.t("result.tubo_" + line_g),
+			Locale.t("result.bitt_" + line_g)]
+	# FEEL-12：只留时间/事故/默契/组合四行；其余统计退出结算页。
+	_stats_label.text = "      ".join([
+		Locale.t("result.time", ["%6.2f" % GameManager.finish_time]),
+		Locale.t("result.mistakes", ["%d" % GameManager.accident_count]),
+		Locale.t("result.clean", ["%d" % GameManager.clean_pass_count]),
 	])
-
 	var best_time := "--"
 	if GameManager.best_time > 0.0:
 		best_time = "%.2f s" % GameManager.best_time
@@ -227,3 +303,36 @@ func _grade_color(grade: String) -> Color:
 			return Color(1.0, 0.65, 0.35)
 		_:
 			return Color(1.0, 0.4, 0.35)
+
+
+func _draw_cousin(p: Vector2, s: float) -> void:
+	var skin := Color(0.95, 0.72, 0.52)
+	var shirt := Color(1.0, 0.38, 0.3)
+	var line := Color(0.12, 0.08, 0.06)
+	draw_circle(p + Vector2(0, 40) * s, 54 * s, shirt)
+	draw_rect(Rect2(p + Vector2(-40, 46) * s, Vector2(80, 72) * s), shirt)
+	draw_circle(p + Vector2(0, -24) * s, 34 * s, skin)
+	draw_arc(p + Vector2(0, -30) * s, 23 * s, PI, TAU, 14, line, 4 * s)
+	draw_line(p + Vector2(-24, -24) * s, p + Vector2(-8, -24) * s, line, 4 * s)
+	draw_line(p + Vector2(8, -24) * s, p + Vector2(24, -24) * s, line, 4 * s)
+	draw_line(p + Vector2(-44, 22) * s, p + Vector2(-72, -8) * s, skin, 20 * s)
+	draw_line(p + Vector2(44, 22) * s, p + Vector2(72, -8) * s, skin, 20 * s)
+	draw_circle(p + Vector2(-73, -9) * s, 11 * s, skin)
+	draw_circle(p + Vector2(73, -9) * s, 11 * s, skin)
+	draw_line(p + Vector2(0, -2) * s, p + Vector2(0, 12) * s, line, 3 * s)
+	draw_circle(p + Vector2(0, 14) * s, 5 * s, Color(0.85, 0.85, 0.8))
+
+
+func _draw_tubo(p: Vector2, s: float) -> void:
+	var body := Color(0.95, 0.95, 0.93)
+	draw_circle(p, 24 * s, body)
+	draw_rect(Rect2(p + Vector2(-13, -62) * s, Vector2(9, 38) * s), body)
+	draw_rect(Rect2(p + Vector2(4, -62) * s, Vector2(9, 38) * s), body)
+	draw_circle(p + Vector2(10, -4) * s, 3 * s, Color(0.1, 0.1, 0.1))
+
+
+func _draw_bitt(p: Vector2, s: float) -> void:
+	draw_circle(p, 34 * s, Color(0.25, 0.6, 0.3))
+	draw_circle(p + Vector2(36, -10) * s, 16 * s, Color(0.4, 0.7, 0.3))
+	draw_circle(p + Vector2(42, -13) * s, 3 * s, Color(0.05, 0.08, 0.06))
+	draw_arc(p, 20 * s, 0, TAU, 20, Color(0.55, 0.9, 0.4), 3 * s)

@@ -255,8 +255,14 @@ func _first_motion(zone_id: int, skip: int) -> Dictionary:
 
 func _motion_hints() -> Array:
 	var result: Array = []
+	# FEEL-09：会动的障碍按身份各有一句（浮标/吊箱/漂流货/鳗鱼/通用）。
+	var keys := ["hint.motion", "hint.motion_buoy", "hint.motion_hoist",
+		"hint.motion_cargo", "hint.motion_eel"]
+	var allowed := []
+	for k in keys:
+		allowed.append(Locale.t(k))
 	for h in hints:
-		if String(h["text"]) == Locale.t(HINT_KEY):
+		if String(h["text"]) in allowed:
 			result.append(h)
 	return result
 

@@ -36,6 +36,12 @@ func _ready() -> void:
 
 
 func _run() -> void:
+	# 本探针需要真实渲染；headless 下 frame_post_draw 不保证触发，
+	# 以前会挂到 600 s 被外部杀掉。显式跳过，结果写清楚。
+	if DisplayServer.get_name() == "headless":
+		print("HUD CONTRAST: SKIP (requires a real window; run without --headless)")
+		get_tree().quit(0)
+		return
 	Locale.language = "zh"
 	GameManager.start_race()
 	await _wait_scene("race.tscn")
@@ -130,9 +136,6 @@ func _measure_forced() -> void:
 	hud.set_process(false)
 	hud.rabbit_risk_row.visible = true
 	hud.turtle_risk_row.visible = true
-	hud.oxygen_status.text = "缺氧"
-	hud.oxygen_status.add_theme_color_override("font_color",
-		hud.get_script().get_script_constant_map()["RED_TEXT"])
 	await _frames(3)
 	await RenderingServer.frame_post_draw
 	var full: Image = get_viewport().get_texture().get_image()
@@ -149,13 +152,9 @@ func _measure_forced() -> void:
 		await RenderingServer.frame_post_draw
 		_report(tag, "tl/risk%d" % pct, hud.rabbit_risk_label, tl_bg,
 			_ratio(hud.rabbit_risk_label, tl_bg))
-	var bl: Control = hud._panels["bl"]
-	var bl_bg := _ring_max(full, bl.get_global_rect(), k)
-	_report(tag, "bl", hud.oxygen_status, bl_bg, _ratio(hud.oxygen_status, bl_bg))
 
 	hud.rabbit_risk_row.visible = false
 	hud.turtle_risk_row.visible = false
-	hud.oxygen_status.text = ""
 	hud.set_process(true)
 	await _frames(2)
 

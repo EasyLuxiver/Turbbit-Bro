@@ -136,9 +136,12 @@ func _handle(g: Dictionary) -> void:
 				first["jump"] = sim
 				first["jump_x"] = race.turtle.position.x
 			_press("up")
-			await _step()
-			if race.mount.state != "AIRBORNE":
+			# 兔子可能正在神游：按键会晚 0.04–0.22 s 才执行，等真的离地再松手。
+			var launch := 0
+			while launch < 30 and race.mount.state != "AIRBORNE" \
+					and GameManager.accident_state == "NONE":
 				await _step()
+				launch += 1
 			_release("up")
 			var guard := 0
 			while race.mount.state == "AIRBORNE" and guard < 200 \
@@ -176,6 +179,9 @@ func _handle(g: Dictionary) -> void:
 
 
 func _log_combo(start: float, end: float) -> void:
+	# 本探针测节奏，不测 Showtime；连击刚好在浮木前触发时表演会锁兔子。
+	if race.showtime_active:
+		race._end_showtime(false)
 	await _settle(start - 250.0)
 	await _control_to("rabbit")
 	var press_x: float = start - (float(race.turtle.base_speed) * 0.7 - 2.0)
@@ -184,11 +190,15 @@ func _log_combo(start: float, end: float) -> void:
 		first["combo"] = sim
 		first["combo_x"] = race.turtle.position.x
 	_press("up")
-	await _step()
-	if race.mount.state != "AIRBORNE":
+	var launch := 0
+	while launch < 30 and race.mount.state != "AIRBORNE" \
+			and GameManager.accident_state == "NONE":
 		await _step()
+		launch += 1
 	_release("up")
 	_press("down")
+	# 本探针只测 Z1 节奏，不测 SHIFT 冷却；由 _control_to 清掉锁定，
+	# 保持原始“跳→换手→下潜”的时序。
 	await _control_to("turtle")
 	var guard := 0
 	while race.turtle.position.x < end + 30.0 and guard < 600 \
@@ -238,6 +248,7 @@ func _control_to(who: String) -> void:
 			await _step()
 			guard += 1
 			continue
+		GameManager.shift_lock_t = 0.0
 		GameManager.toggle_control()
 		await _step()
 		guard += 1

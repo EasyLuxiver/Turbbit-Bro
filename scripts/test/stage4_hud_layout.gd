@@ -15,7 +15,7 @@ var failures: Array[String] = []
 var race
 
 const AREA_LIMIT := 0.08
-const SIZES := [Vector2i(1600, 900), Vector2i(1280, 720)]
+const SIZES := [Vector2i(1920, 1080), Vector2i(1600, 900), Vector2i(1280, 720)]
 const LANGS := ["zh", "en"]
 const CORNERS := ["tl", "tr", "bl", "br"]
 
@@ -97,12 +97,19 @@ func _measure(size_hint: Vector2i, lang: String) -> void:
 	var screen := Rect2(Vector2.ZERO, vp)
 	for c in CORNERS:
 		_check(screen.encloses(rects[c]), "%s panel %s inside viewport" % [tag, c])
-	for i in CORNERS.size():
-		for j in range(i + 1, CORNERS.size()):
-			_check(not rects[CORNERS[i]].intersects(rects[CORNERS[j]]),
-				"%s panels %s/%s do not overlap" % [tag, CORNERS[i], CORNERS[j]])
-		if rects[CORNERS[i]].intersects(bc):
-			_check(false, "%s panel %s overlaps bottom-center text" % [tag, CORNERS[i]])
+	# FEEL-13：隐藏的空面板（例如没吃食物时的左下状态）不参与重叠判定；
+	# 它的 rect 留在原点，和左上角面板相交，但那不是玩家看得见的东西。
+	var visible_panels: Array[String] = []
+	for c in CORNERS:
+		var p: Control = hud._panels[c]
+		if p != null and p.is_visible_in_tree() and p.size.x > 8.0 and p.size.y > 8.0:
+			visible_panels.append(c)
+	for i in visible_panels.size():
+		for j in range(i + 1, visible_panels.size()):
+			_check(not rects[visible_panels[i]].intersects(rects[visible_panels[j]]),
+				"%s panels %s/%s do not overlap" % [tag, visible_panels[i], visible_panels[j]])
+		if rects[visible_panels[i]].intersects(bc):
+			_check(false, "%s panel %s overlaps bottom-center text" % [tag, visible_panels[i]])
 
 	var labels := 0
 	for c in CORNERS:

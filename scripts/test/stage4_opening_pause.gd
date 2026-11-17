@@ -17,7 +17,7 @@ extends Node
 ## 输出：docs/reports/longrun/phase-v-opening-pause.json
 
 const OUT_PATH := "res://docs/reports/longrun/phase-v-opening-pause.json"
-const BREATH := "Take a breath, bro."
+const BREATH := "喘口气，兄弟。"
 
 var is_runner := false
 var race
@@ -49,6 +49,10 @@ func _run() -> void:
 		return
 	race.test_no_finish = true
 	race.test_disable_hazards = true
+	# 测试场景启动时 `_opening_wanted()` 按设计不挂开场（它不是 race.tscn）；
+	# 这里显式挂一次，测的是开场本身，而不是“测试场景会不会自动挂”。
+	if not race.opening_active:
+		race._start_opening()
 
 	rows.append(await _case_boot())
 	rows.append(await _case_freeze())
@@ -152,7 +156,7 @@ func _case_pause() -> Dictionary:
 	var checks := {
 		"paused": GameManager.state == GameManager.GameState.PAUSED,
 		"menu_visible": menu != null and menu.visible,
-		"breath_text": BREATH in labels,
+		"breath_text": Locale.t("pause.breath") in labels,
 		"title_text": Locale.t("pause.title") in labels,
 		"three_buttons": buttons.size() == 3,
 		"buttons_labeled": buttons.size() == 3 \

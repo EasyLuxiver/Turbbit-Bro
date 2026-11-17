@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/test/stage13_catch_gif.gd" id="1"]
+
+[node name="Stage13CatchGif" type="Node"]
+script = ExtResource("1")

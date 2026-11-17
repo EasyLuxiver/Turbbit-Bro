@@ -90,16 +90,18 @@ func _build() -> void:
 	center.add_child(box)
 
 	box.add_child(UiTheme.make_label(Locale.t("menu.title"), 76, UiTheme.GOLD))
-	box.add_child(UiTheme.make_label(Locale.t("menu.subtitle"), 22,
+	box.add_child(UiTheme.make_label(Locale.t("opening.subtitle"), 22,
 		Color(0.78, 0.9, 0.98)))
 	box.add_child(UiTheme.make_label(Locale.t("opening.ready"), 30,
 		Color(0.95, 0.95, 0.95)))
-	box.add_child(UiTheme.make_label(Locale.t("opening.hint"), 18,
+	# FEEL-09 P1-A：开场只教“基础移动/跳跃”，不堆三行长字；
+	# SHIFT 等第一道必须换人的障碍（gate1）再教。食物只留一句，不写数值。
+	# 食物规则的完整版仍在暂停页和第一次接近食物时。
+	box.add_child(UiTheme.make_label(Locale.t("opening.hint"), 20,
 		Color(0.62, 0.8, 0.9)))
-	# CORE-FEEL-07 P1-C：第一次讲食物放在这里——开场没有任何障碍，不打断操作；
-	# 跳过开场的人也还有食物接近时的 HUD 持续预告。
-	box.add_child(UiTheme.make_label(Locale.t("opening.food"), 17,
-		Color(0.55, 0.95, 0.75)))
+	# 食物规则放在第一次接近食物时也有一份；开场先说一句，玩家不用等。
+	box.add_child(UiTheme.make_label(Locale.t("opening.food"), 18,
+		Color(0.72, 0.88, 0.8)))
 
 	var skip := UiTheme.make_label(Locale.t("opening.skip"), 18,
 		Color(0.95, 0.8, 0.35, 0.9))

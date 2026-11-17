@@ -174,13 +174,13 @@ func _check_hud_live_switch() -> void:
 	race.test_disable_hazards = true
 	await _frames(2)
 
-	_check(race.hud.control_label.text.contains("控制"), "zh HUD control")
-	_check(race.hud.control_label.text.contains("兔子"), "zh HUD rabbit")
+	_check(race.hud.control_label.text.contains("操控"), "zh HUD control")
+	_check(race.hud.control_label.text.contains("兔子"), "zh HUD TUBO")
 	_check(race.hud.time_label.text.contains(":"), "zh HUD time")
 	_check(race.hud.zone_label.text.contains("区域 1/3"), "zh HUD zone")
-	_check(race.hud.oxygen_label.text.contains("氧气"), "zh HUD oxygen")
-	_check(race.hud.bond_label.text.contains("默契"), "zh HUD brotherhood")
-	_check(race.hud.bro_meter_label.text.contains("BRO METER"),
+	_check(race.oxygen_bubble_count() > 0, "zh HUD oxygen bubbles")
+	_check(race.hud.bond_label.text.contains("兄弟配合"), "zh HUD brotherhood")
+	_check(race.hud.bro_meter_label.text.contains("捣乱压力"),
 		"zh HUD bro meter label")
 	# 底部行空闲时不放常驻说明书，只显示当下的短提示。
 	_check(race.hud.hint_label.text == "", "zh HUD idle hint line is empty")
@@ -195,12 +195,12 @@ func _check_hud_live_switch() -> void:
 
 	Locale.set_language("en")
 	await _frames(2)
-	_check(race.hud.control_label.text.contains("CONTROL"), "en HUD control updates live")
+	_check(race.hud.control_label.text.contains("DRIVING"), "en HUD control updates live")
 	_check(race.hud.time_label.text.contains(":"), "en HUD time updates live")
 	_check(race.hud.zone_label.text.contains("ZONE 1/3"), "en HUD zone updates live")
-	_check(race.hud.oxygen_label.text.contains("AIR"), "en HUD oxygen updates live")
-	_check(race.hud.bond_label.text.contains("BRO PASS"), "en HUD brotherhood updates live")
-	_check(race.hud.bro_meter_label.text.contains("BRO METER"),
+	_check(race.oxygen_bubble_count() > 0, "en HUD oxygen bubbles")
+	_check(race.hud.bond_label.text.contains("BRO COMBO"), "en HUD brotherhood updates live")
+	_check(race.hud.bro_meter_label.text.contains("OVERLOAD"),
 		"en HUD bro meter label is language-neutral")
 	_check(race.hud.hint_label.text == "", "en HUD idle hint line stays empty")
 	_check(is_equal_approx(race.turtle.speed, speed_before), "language does not change speed")
@@ -222,11 +222,11 @@ func _check_banner_live_switch() -> void:
 	Locale.language = "zh"
 	GameManager.accident.emit("RABBIT_SLIP")
 	await _frames(1)
-	_check(banner.label.text == "摔了！兔子没抓住", "zh accident banner")
+	_check(banner.label.text == "摔了！兔子 没抓住", "zh accident banner")
 	Locale.set_language("en")
 	GameManager.accident.emit("RABBIT_SLIP")
 	await _frames(1)
-	_check(banner.label.text == "WIPEOUT! RABBIT LOST GRIP", "en accident banner")
+	_check(banner.label.text == "WIPEOUT! TUBO LOST GRIP", "en accident banner")
 	Locale.language = "zh"
 	GameManager.pickup_success.emit()
 	await _frames(1)
@@ -285,30 +285,28 @@ func _check_result_live_switch() -> void:
 	_check(result != null and result.scene_file_path.ends_with("result.tscn"),
 		"result scene loads")
 	var zh_text := _joined(result)
-	_check(zh_text.contains("比赛完成"), "zh result title")
+	_check(zh_text.contains("训练结束"), "zh result title")
 	_check(not zh_text.contains("总分"), "zh result hides total score")
 	_check(zh_text.contains("比赛时间") and zh_text.contains("296.63"), "zh result time")
-	_check(zh_text.contains("干净通过") and zh_text.contains("连招")
-		and zh_text.contains("失误") and zh_text.contains("翻船次数")
-		and zh_text.contains("救援成功"),
-		"zh result stats (clean/combos/rescues/mistakes/joint)")
-	_check(zh_text.contains("R  -  重开"), "zh result prompt")
+	_check(zh_text.contains("比赛时间") and zh_text.contains("失误")
+		and zh_text.contains("干净通过"),
+		"zh result stats (time/mistakes/clean)")
+	_check(zh_text.contains("R 再来一次"), "zh result prompt")
 	print("  result zh -> %s" % zh_text.replace("\n", " | "))
 
 	Locale.set_language("en")
 	await _frames(2)
 	var en_text := _joined(result)
-	_check(en_text.contains("RACE COMPLETE"), "en result updates live")
+	_check(en_text.contains("TRAINING'S OVER"), "en result updates live")
 	_check(not en_text.contains("TOTAL SCORE"), "en result hides total score")
-	_check(en_text.contains("CLEAN PASSES") and en_text.contains("BRO COMBOS")
-		and en_text.contains("MISTAKES") and en_text.contains("CAPSIZES")
-		and en_text.contains("RESCUE SAVES"),
-		"en result stats (clean/combos/rescues/mistakes/joint)")
-	_check(en_text.contains("R  -  RETRY"), "en result prompt")
+	_check(en_text.contains("RACE TIME") and en_text.contains("MISTAKES")
+		and en_text.contains("CLEAN PASSES"),
+		"en result stats (time/mistakes/clean)")
+	_check(en_text.contains("R  RETRY"), "en result prompt")
 	_check(not en_text.contains("比赛"), "result has no leftover Chinese")
 	Locale.set_language("zh")
 	await _frames(2)
-	_check(_joined(result).contains("比赛完成"), "result switches back live")
+	_check(_joined(result).contains("训练结束"), "result switches back live")
 
 
 # ---- 工具 ----

@@ -5,7 +5,7 @@ extends Node
 const Tuning = preload("res://scripts/systems/tuning.gd")
 const LevelDataScript = preload("res://scripts/systems/level_data.gd")
 
-enum GameState { MENU, RUNNING, PAUSED, RESULT }
+enum GameState { MENU, RUNNING, PAUSED, RESULT, FAILED }
 
 signal accident(reason: String)
 signal pickup_success
@@ -25,15 +25,29 @@ signal shift_shocked(from_who: String, to_who: String)
 const MENU_SCENE := "res://scenes/menu.tscn"
 const RACE_SCENE := "res://scenes/race.tscn"
 const RESULT_SCENE := "res://scenes/result.tscn"
+const FAIL_SCENE := "res://scenes/fail.tscn"
+const STORY_SCENE := "res://scenes/opening_comic.tscn"
+const TUTORIAL_SCENE := "res://scenes/tutorial.tscn"
 const BEST_PATH := "user://best.json"
 ## 分数表改版：旧档的 best_score 用的是另一套计分，和新表不可比。
 ## 只丢弃最高分，最佳时间/事故/连胜继续保留。
 const SCORE_MODEL := 2
 
 var state: GameState = GameState.MENU
+## P1-B：制作人测试入口。菜单写模式，producer_case 读取；测试期间不写纪录。
+var producer_mode := ""
+var test_no_best := false
+## FEEL-11：首次启动先看 7 格连环画，再进 60–90 s 教学；之后直接比赛。
+var story_seen := false
+var tutorial_done := false
 var current_control: String = "rabbit"
 var has_shifted: bool = false
 var shift_count: int = 0
+## FEEL-09 P0-C：成功换手后的短锁定。第一次换仍然立刻生效；
+## 0.20 s 内的第二次 SHIFT 直接忽略（不排队、不延迟补发）。
+## 目的不是提高操作门槛，而是让“什么时候换”变成一次要提前做的决定。
+const SHIFT_LOCK_TIME := 0.20
+var shift_lock_t: float = 0.0
 var race_time: float = 0.0
 var rabbit_state: String = "RIDING"
 var turtle_state: String = "CRUISING"
@@ -80,6 +94,23 @@ var best_streak_record: int = 0
 const BRO_METER_SLOTS := 3
 var bro_meter: int = 0
 var bro_meter_max: int = 0
+## FEEL-10 P0-A：累计失误满格时，只让“本次失误的角色”短暂捣乱，
+## 不再把三格累计误判成两人同时出事。
+var role_mischief_pending := false
+var role_mischief_role := ""
+## FEEL-24：一次失误就产生可读的抱怨事件；没有 3 格计数。
+var complaint_role := ""
+var complaint_t := 0.0
+## FEEL-15：两个角色各自的惩罚条（内部 0..3）；HUD 当前显示主控角色的那一条。
+## bro_meter 继续作为兼容/显示值，不再代表“两人共享”。
+var bro_meter_role := {"rabbit": 0, "turtle": 0}
+## MISCHIEF 进行中时锁住该角色的惩罚条：失误照常扣分/计事故，但不再充能。
+var mischief_lock_role := ""
+var failure_reason := ""
+## FEEL-25：频繁落水造成的“气短”层数；不显示数字，靠气泡/动作表达。
+var waterlogged := 0
+var waterlogged_t := 0.0
+## 兼容旧探针：真正的联合事故由 race 的双人危险检测触发，不再由 BRO 满格触发。
 var bro_joint_pending := false
 var joint_accident_count: int = 0
 var combo_dive_count: int = 0
@@ -101,6 +132,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if state == GameState.RUNNING:
 		race_time += delta
+
+
+## FEEL-09 P0-C：锁定按比赛模拟时间走。由 race._physics_process 调用，
+## 这样 30/60/120 Hz 与测试里的手动步进都一致；暂停/开场不推进。
+func tick_shift_lock(delta: float) -> void:
+	shift_lock_t = maxf(shift_lock_t - delta, 0.0)
 
 
 func _bind_inputs() -> void:
@@ -137,12 +174,34 @@ func _unhandled_input(event: InputEvent) -> void:
 				or state == GameState.RESULT:
 			start_race()
 	elif event.is_action_pressed("menu"):
-		if state == GameState.PAUSED or state == GameState.RESULT:
+		if state == GameState.PAUSED or state == GameState.RESULT 				or state == GameState.FAILED:
 			go_to_menu()
+
+
+func start_game_flow() -> void:
+	if not story_seen:
+		state = GameState.MENU
+		get_tree().change_scene_to_file(STORY_SCENE)
+		return
+	if not tutorial_done:
+		start_tutorial()
+		return
+	start_race()
+
+
+func start_tutorial() -> void:
+	_reset_run()
+	test_no_best = true
+	state = GameState.RUNNING
+	get_tree().change_scene_to_file(TUTORIAL_SCENE)
 
 
 func start_race() -> void:
 	_reset_run()
+	# 从正式流程进来时故事/教学已经看过；直接重开也跳过它们，避免重复错乱。
+	story_seen = true
+	tutorial_done = true
+	test_no_best = false
 	state = GameState.RUNNING
 	get_tree().change_scene_to_file(RACE_SCENE)
 
@@ -157,20 +216,42 @@ func finish_race() -> void:
 	get_tree().change_scene_to_file(RESULT_SCENE)
 
 
+## FEEL-15：氧气耗尽不是普通结算，也不能写最佳纪录；独立失败画面只允许重开/回菜单。
+func finish_failure(reason: String = "OXYGEN_OUT") -> void:
+	if state == GameState.FAILED:
+		return
+	failure_reason = reason
+	test_no_best = true
+	finished = false
+	state = GameState.FAILED
+	get_tree().change_scene_to_file(FAIL_SCENE)
+
+
 func toggle_control() -> void:
 	if state != GameState.RUNNING:
+		return
+	# FEEL-22：冲线演出已经结算，别再让 SHIFT 改控制权；结算页的重开不受影响。
+	if finished:
 		return
 	# 主动救援是唯一允许在事故中换人的状态：玩家必须切到乌龟把兔子接上来。
 	if accident_state != "NONE" and accident_state != "RABBIT_WATER" \
 			and accident_state != "RABBIT_AIR":
 		return
-	# Showtime 期间 SHIFT 是“中断表演”，由 race 处理，不能普通换人。
-	if showtime_active:
+	# FEEL-09 P0-C：成功换手后 0.20 s 锁定。锁定期内不排队、不延迟补发；
+	# 给一条轻量反馈，避免玩家以为按键丢了。
+	if shift_lock_t > 0.0:
+		feedback.emit(Locale.t("feedback.shift_lock"), "shift")
 		return
 	var from_who := current_control
 	current_control = "rabbit" if current_control == "turtle" else "turtle"
+	# FEEL-25：切到抱怨角色只阻止 MISCHIEF，不再瞬间抹掉抱怨状态；
+	# 抱怨窗口自然过期，或由 فعال MISCHIEF 结束清除。
 	has_shifted = true
 	shift_count += 1
+	shift_lock_t = SHIFT_LOCK_TIME
+	# HUD 跟着主控角色切换显示它自己的惩罚条。
+	bro_meter = int(bro_meter_role.get(current_control, 0))
+	bro_meter_changed.emit(bro_meter)
 	shift_shocked.emit(from_who, current_control)
 
 
@@ -193,6 +274,7 @@ func _reset_run() -> void:
 	current_control = "rabbit"
 	has_shifted = false
 	shift_count = 0
+	shift_lock_t = 0.0
 	race_time = 0.0
 	rabbit_state = "RIDING"
 	turtle_state = "CRUISING"
@@ -230,6 +312,18 @@ func _reset_run() -> void:
 	bro_meter = 0
 	bro_meter_max = 0
 	bro_joint_pending = false
+	role_mischief_pending = false
+	role_mischief_role = ""
+	complaint_role = ""
+	complaint_t = 0.0
+	waterlogged = 0
+	waterlogged_t = 0.0
+	bro_meter_role = {"rabbit": 0, "turtle": 0}
+	complaint_role = ""
+	complaint_t = 0.0
+	mischief_lock_role = ""
+	failure_reason = ""
+	last_mistake_role = ""
 	joint_accident_count = 0
 	combo_dive_count = 0
 	combo_ollie_count = 0
@@ -267,33 +361,155 @@ func note_zone(id: int, name: String) -> void:
 ## 统一的失误记账（Phase G）：所有“有效失误”只走这一条路——
 ## 兔子撞障碍、乌龟撞浪、落水/翻壳等事故都记 1 格 BRO METER、扣 100 分。
 ## BRO METER 是唯一的持续惩罚；daze_time 只做短硬直，不许再记第二笔。
-func note_mistake(reason: String) -> void:
+func note_mistake(reason: String, role: String = "") -> void:
+	var who := role
+	if who == "":
+		who = _role_for_reason(reason)
+	last_mistake_role = who
 	accident_count += 1
 	perfect_streak = 0
 	add_score(-100, "mistake:" + reason)
-	bro_meter = mini(bro_meter + 1, BRO_METER_SLOTS)
-	bro_meter_max = maxi(bro_meter_max, bro_meter)
-	bro_meter_changed.emit(bro_meter)
-	if bro_meter >= BRO_METER_SLOTS and not bro_joint_pending:
-		bro_joint_pending = true
-		joint_accident_count += 1
-		add_score(-200, "joint")
-		bro_meter_full.emit()
+	if who not in ["rabbit", "turtle"]:
+		return
+	# FEEL-24：不再累计 3 格；一次失误生成一次可读的抱怨事件。
+	if mischief_lock_role == who:
+		return
+	complaint_role = who
+	complaint_t = 2.6
+	feedback.emit(Locale.t("feedback.complaint_" + who), "hit")
 
 
-func note_accident(reason: String) -> void:
+var last_mistake_role := ""
+
+
+func _role_for_reason(reason: String) -> String:
+	if reason.begins_with("RABBIT") or reason == "OXYGEN_OUT":
+		return "rabbit"
+	if reason.begins_with("TURTLE"):
+		return "turtle"
+	return ""
+
+
+## race 取走一次“单角色捣乱”，取走后不重复触发。
+func take_role_mischief() -> String:
+	if not role_mischief_pending:
+		return ""
+	role_mischief_pending = false
+	var who := role_mischief_role
+	role_mischief_role = ""
+	return who
+
+
+func oxygen_capacity() -> float:
+	return maxf(Tuning.OXYGEN_MAX - 0.5 * float(waterlogged), 4.5)
+
+
+func oxygen_drain_scale() -> float:
+	return 1.0 + 0.12 * float(waterlogged)
+
+
+func note_fall() -> void:
+	waterlogged = mini(waterlogged + 1, 3)
+	waterlogged_t = 0.0
+	if waterlogged == 1:
+		feedback.emit(Locale.t("feedback.waterlogged"), "hit")
+
+
+func tick_waterlogged(delta: float) -> void:
+	# 连续约 30 秒不落水，恢复一层；不靠隐藏数字制造无限负循环。
+	waterlogged_t += delta
+	if waterlogged > 0 and waterlogged_t >= 30.0:
+		waterlogged -= 1
+		waterlogged_t = 0.0
+
+
+func note_accident(reason: String, role: String = "") -> void:
 	if reason in ["RABBIT_SLIP", "RABBIT_WATER", "RABBIT_AIR", "OXYGEN_OUT"]:
 		rabbit_casualties += 1
 	elif reason == "TURTLE_REEF":
 		turtle_failures += 1
-	note_mistake(reason)
+	note_mistake(reason, role)
+
+
+## CORE-FEEL-08 P0-B：事故分级。
+## 轻 = 还在壳上、只是短硬直（0.8 s 自己站起来，不丢骑乘、不强制换人）；
+## 重 = 离开壳 / 整组停摆，需要救援或等演出结束。
+## 分级只影响“玩家读到的重量”（横幅颜色/停留时间），不改任何判定与计时。
+const ACCIDENT_SEVERITY := {
+	"RABBIT_HIT": "minor",
+	"RABBIT_STUN": "minor",
+	# 乌龟层失误（浪击/下潜太晚）不算 accident_state，但同样只记一格、可立刻继续操作。
+	"TURTLE_WAVE": "minor",
+	"TURTLE_DIVE_LATE": "minor",
+	"RABBIT_SLIP": "severe",
+	"RABBIT_WATER": "severe",
+	"RABBIT_AIR": "severe",
+	"TURTLE_REEF": "severe",
+	"OXYGEN_OUT": "severe",
+	"BRO_BREAK": "severe",
+}
+
+
+func accident_severity(reason: String) -> String:
+	return String(ACCIDENT_SEVERITY.get(reason, "severe"))
 
 
 ## 联合惩罚演出结束时才清空：演出期间三格保持满，玩家看得到“这是第三格”。
 func clear_bro_meter() -> void:
 	bro_meter = 0
 	bro_joint_pending = false
+	role_mischief_pending = false
+	role_mischief_role = ""
+	complaint_role = ""
+	complaint_t = 0.0
+	waterlogged = 0
+	waterlogged_t = 0.0
+	bro_meter_role = {"rabbit": 0, "turtle": 0}
+	complaint_role = ""
+	complaint_t = 0.0
+	mischief_lock_role = ""
 	bro_meter_changed.emit(bro_meter)
+
+
+## FEEL-15：MISCHIEF 结束时明确清零该角色的惩罚条（不是缓慢自然恢复）。
+func reset_role_meter(who: String) -> void:
+	if not bro_meter_role.has(who):
+		return
+	bro_meter_role[who] = 0
+	if who == current_control:
+		bro_meter = 0
+		bro_meter_changed.emit(bro_meter)
+
+
+func role_meter(who: String) -> int:
+	return int(bro_meter_role.get(who, 0))
+
+
+## FEEL-24：抱怨窗口。玩家切到该角色会制止；窗口过期自然消散。
+func tick_complaint(delta: float) -> void:
+	if complaint_t <= 0.0:
+		return
+	complaint_t = maxf(complaint_t - delta, 0.0)
+	if complaint_t <= 0.0:
+		complaint_role = ""
+
+
+## FEEL-23：干净通过/有效操作给一次压力释放；这是玩家可理解的脱困途径。
+## 正在捣乱的角色不能靠这一步洗掉事件，必须由 SHIFT/结束流程处理。
+func relieve_pressure(who: String, amount: int = 1) -> void:
+	if who not in ["rabbit", "turtle"] or mischief_lock_role == who:
+		return
+	var cur := int(bro_meter_role.get(who, 0))
+	if cur <= 0:
+		return
+	cur = maxi(cur - amount, 0)
+	bro_meter_role[who] = cur
+	if who == current_control:
+		bro_meter = cur
+		bro_meter_changed.emit(bro_meter)
+	if cur < BRO_METER_SLOTS and role_mischief_role == who:
+		role_mischief_pending = false
+		role_mischief_role = ""
 
 
 # ---- 阶段 4：指令里的分数表（同一次动作只记一笔）。 ----
@@ -344,8 +560,11 @@ func finalize_run() -> void:
 	# 冲线时不再按时间/连击重算，等待或拖延不会加一分。
 	grade = grade_for_score(total_score)
 	grade_name = grade_title(grade)
-	_update_best()
-	_save_best()
+	# P1-B：制作人测试入口不写正式纪录。场景本身也会 test_no_finish，
+	# 这里再兜一层，防止手动改 world_end 或误触结算时污染 best.json。
+	if not test_no_best:
+		_update_best()
+		_save_best()
 
 
 ## 兼容旧调用：分数已经是逐笔累计值。

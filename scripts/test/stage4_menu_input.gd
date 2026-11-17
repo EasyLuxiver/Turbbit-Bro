@@ -66,6 +66,10 @@ func _run() -> void:
 # ---- 主菜单：三个按钮都在，点“开始游戏”真的进比赛。 ----
 
 func _test_main_menu_mouse() -> void:
+	# FEEL-11：正式流程首次启动会先进连环画；这个回归只测“开始→比赛”，
+	# 所以把故事/教学标记置为已看。
+	GameManager.story_seen = true
+	GameManager.tutorial_done = true
 	GameManager.state = GameManager.GameState.MENU
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
 	await _frames(6)
@@ -234,6 +238,8 @@ func _test_result_mouse() -> void:
 # ---- 键盘：焦点可见、方向键移动、Enter 触发。 ----
 
 func _test_keyboard_focus() -> void:
+	GameManager.story_seen = true
+	GameManager.tutorial_done = true
 	GameManager.state = GameManager.GameState.MENU
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
 	await _frames(6)

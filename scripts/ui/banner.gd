@@ -43,7 +43,13 @@ func _on_center(text: String, color: Color) -> void:
 
 
 func _on_accident(reason: String) -> void:
-	show_text(_accident_text(reason), Color(1.0, 0.45, 0.3))
+	# CORE-FEEL-08 P0-B：轻/重两种事故在呼吸感上也要分得开——
+	# 轻撞是琥珀色、1.2 s；落水/没气这类重事故是红色、2.0 s。
+	# 文字本身已经说了发生了什么，这里只补“有多重”，不改文案。
+	var severe: bool = GameManager.accident_severity(reason) == "severe"
+	show_text(_accident_text(reason),
+		Color(1.0, 0.45, 0.3) if severe else Color(1.0, 0.78, 0.35),
+		2.0 if severe else 1.2)
 
 
 func _on_pickup() -> void:

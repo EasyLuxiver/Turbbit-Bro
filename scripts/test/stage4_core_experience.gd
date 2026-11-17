@@ -140,11 +140,18 @@ func _test_rapid_shift() -> void:
 	var before: float = race.rabbit.daze_time
 	var turtle_before: float = race.turtle.daze_time
 	var count0: int = GameManager.shift_count
-	for i in 6:
-		await _shift()
-		await _wait_sim(0.1)
-	_check(GameManager.shift_count == count0 + 6,
-		"six rapid SHIFTs all register (%d)" % (GameManager.shift_count - count0))
+	# FEEL-09 P0-C：第一次切换立刻生效；0.20 s 内的第二次被忽略；
+	# 锁定到期后再按才再次生效。旧的“6 连按全部登记”不再是规格。
+	await _shift()
+	_check(GameManager.shift_count == count0 + 1,
+		"first rapid SHIFT registers (%d)" % (GameManager.shift_count - count0))
+	await _shift()
+	_check(GameManager.shift_count == count0 + 1,
+		"second SHIFT inside 0.20 s is ignored (%d)" % (GameManager.shift_count - count0))
+	await _wait_sim(0.25)
+	await _shift()
+	_check(GameManager.shift_count == count0 + 2,
+		"SHIFT after the lock registers (%d)" % (GameManager.shift_count - count0))
 	_check(absf(race.rabbit.daze_time - before) < 0.08,
 		"rapid SHIFT keeps existing rabbit risk (%.2f -> %.2f)" % [
 			before, race.rabbit.daze_time])
@@ -152,6 +159,10 @@ func _test_rapid_shift() -> void:
 		"rapid SHIFT adds no turtle risk (%.2f)" % race.turtle.daze_time)
 	_check(GameManager.accident_state == "NONE", "rapid SHIFT causes no accident")
 	# 受控方站稳 0.5 s 后仍然会恢复；切换本身不是豁免。
+	# 把控制权明确放回兔子（锁定已过），再等 2 s。
+	if GameManager.current_control != "rabbit":
+		GameManager.shift_lock_t = 0.0
+		await _shift()
 	var d0: float = race.rabbit.daze_time
 	await _wait_sim(2.0)
 	_check(race.rabbit.daze_time < d0 - 0.5,

@@ -117,6 +117,7 @@ func _run() -> void:
 		_print_and_quit(1)
 		return
 	race.test_disable_hazards = false
+	race.test_no_overdrive = true
 	race.test_no_finish = true
 	race.load_level(LevelData.groups(), LevelData.boost_lanes())
 	if DISABLE_BOOST:
@@ -207,6 +208,11 @@ func _audit_group(index: int, g: Dictionary) -> Dictionary:
 			var b := float(zone["base_speed"])
 			leads = [b * 0.7 + 16.0, b * 0.7 - 2.0,
 				b * 0.7 - 20.0, b * 0.7 - 38.0]
+		if String(g["kind"]) == "FLOATING_LOG":
+			if scheme == "dive":
+				leads = [500.0, 460.0, 420.0, 380.0, 340.0, 300.0]
+			elif scheme == "dive_jump":
+				leads = [260.0, 240.0, 220.0, 200.0, 180.0, 160.0, 140.0]
 		for lead_v in leads:
 			var lead: float = float(lead_v)
 			trials.append(await _run_case(g, scheme, lead, start, end, zone))
@@ -291,6 +297,10 @@ func _run_case(g: Dictionary, scheme: String, lead: float, start: float,
 		if accident_at >= 0.0 and sim - accident_at > 0.7:
 			break
 		var x: float = race.turtle.position.x
+		# 组后 250 px 就停：后面的鸟/岩不属于这一组，继续跑会把“下一组撞了”
+		# 误记成这一组无解（log7/log8 的位置离下一只鸟只有 1000 px）。
+		if x > end + 250.0:
+			break
 		if x <= end + 200.0:
 			# ---- 方案输入 ----
 			match scheme:
