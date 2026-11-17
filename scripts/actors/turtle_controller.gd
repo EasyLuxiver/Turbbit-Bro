@@ -10,6 +10,9 @@ const BASE_SPEED := 220.0
 const BOOST_SPEED := 330.0
 const VERTICAL_SPEED := 180.0
 const BODY_SIZE := Vector2(96, 56)
+## PHASE-1 MISCHIEF：兔子拽绳的真实后果。不是只翻肚皮：壳被拉低、速度下降。
+const TUG_DEPTH := 28.0
+const TUG_SPEED_SCALE := 0.72
 
 var speed := BASE_SPEED
 ## 区域基础速度：由 race 按当前赛段写入，220 → 240 → 260。
@@ -56,6 +59,11 @@ var food_ahead := -1.0
 ## CORE-FEEL-08 P0-A：恶作剧时壳自己漂的目标深度偏移（px），由 race 每帧写入。
 ## 只是 want_y 的一个小偏移，不是下潜：玩家按 ↓ 时目标深度整段覆盖它。
 var autodrift_px := 0.0
+## PHASE-1 MISCHIEF：拽绳/电击造成的短时真实后果。
+## tug_t > 0 时壳目标深度 +TUG_DEPTH、目标速度 ×TUG_SPEED_SCALE；
+## zap_stun_t > 0 时暂时不能下潜（被电麻）。
+var tug_t := 0.0
+var zap_stun_t := 0.0
 ## 速度上限：兔子落水后 race 把乌龟压到 90（找人），其余时候是无穷大。
 var speed_cap := 1.0e9
 var _brain_t := 0.0
@@ -87,6 +95,8 @@ func reset(start_pos: Vector2) -> void:
 	drift_state = "CALM"
 	food_ahead = -1.0
 	autodrift_px = 0.0
+	tug_t = 0.0
+	zap_stun_t = 0.0
 	speed_cap = 1.0e9
 	_brain_t = 0.0
 
@@ -159,11 +169,15 @@ func _tick_surfboard(delta: float, controlled: bool, boosting: bool,
 	leap_cooldown = maxf(leap_cooldown - delta, 0.0)
 	if dunk_timer > 0.0:
 		dunk_timer = maxf(dunk_timer - delta, 0.0)
+	tug_t = maxf(tug_t - delta, 0.0)
+	zap_stun_t = maxf(zap_stun_t - delta, 0.0)
 
 	# 速度：自动巡航。旧 BroBrain 掉速已停用，速度只受 TURBO/碰撞/救援状态影响。
 	var target := base_speed
 	if boosting:
 		target = boost_target
+	if tug_t > 0.0:
+		target *= TUG_SPEED_SCALE
 	target = minf(target, speed_cap)
 	var accel := 420.0 if target > speed else 300.0
 	speed = move_toward(speed, target, accel * delta)
@@ -198,6 +212,8 @@ func _tick_surfboard(delta: float, controlled: bool, boosting: bool,
 	# 受控后幅度保留一半并随 recovery 收小——SHIFT 到手不等于立刻稳。
 	# CORE-FEEL-08 P0-A：autodrift_px 是“壳自己漂”的目标深度偏移（恶作剧时由 race 写入）。
 	var want_y := Tuning.NEUTRAL_DEPTH + autodrift_px
+	if tug_t > 0.0:
+		want_y += TUG_DEPTH
 	var catch_mode := catch_target_y >= 0.0 and absf(vertical) < 0.1
 	# BRO CATCH 的目标深度：只在玩家没有按 ↑/↓ 时接管垂直，仍然走浮力/加速度。
 	if catch_mode:
@@ -205,7 +221,7 @@ func _tick_surfboard(delta: float, controlled: bool, boosting: bool,
 	# FEEL-22：切走后不再执行玩家之前按下的下潜尾动作。
 	# 下潜只由“当前受控 + 此刻按住 ↓”成立；切走当帧就结束。
 	standby_dive_t = 0.0
-	diving = controlled and vertical > 0.0 and dunk_timer <= 0.0
+	diving = controlled and vertical > 0.0 and dunk_timer <= 0.0 and zap_stun_t <= 0.0
 	if diving:
 		want_y = Tuning.NEUTRAL_DEPTH + Tuning.DIVE_DEPTH
 	if dunk_timer > 0.0:

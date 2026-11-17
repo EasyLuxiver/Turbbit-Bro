@@ -689,6 +689,8 @@ const STRINGS := {
 	"mischief.hit_rabbit": {"zh": "乌龟 电了 兔子 一下！", "en": "BITT ZAPPED TUBO!"},
 	"mischief.zap_landing": {"zh": "兔子 起跳时被 乌龟 电了一下，掉下去了！", "en": "BITT ZAPPED TUBO MID-AIR!"},
 	"mischief.end": {"zh": "行了行了，我不闹了。", "en": "OKAY, OKAY - I'M DONE."},
+	"mischief.tag_tug": {"zh": "拽绳", "en": "TUG"},
+	"mischief.tag_zap": {"zh": "电击", "en": "ZAP"},
 	"feedback.complaint_rabbit": {"zh": "兔子 嘟囔：又是我……", "en": "TUBO MUTTERS: ME AGAIN..."},
 	"feedback.complaint_turtle": {"zh": "乌龟 嘟囔：你倒是看着点啊。", "en": "BITT MUTTERS: WATCH IT."},
 	"feedback.log_smash": {"zh": "浮木撞碎了——继续走！", "en": "LOG SMASHED - KEEP GOING!"},
@@ -929,6 +931,10 @@ const STRINGS := {
 	"fail.sub": {
 		"zh": "氧气见底了。\n乌龟 没能把他捞回来。",
 		"en": "TUBO RAN OUT OF AIR.\nBITT COULDN'T GET HIM BACK."},
+	"fail.reason_oxygen": {"zh": "原因：氧气耗尽", "en": "CAUSE: OUT OF AIR"},
+	"fail.tip_oxygen": {
+		"zh": "下次：先 SHIFT 乌龟上浮，或让 兔子 吃海藻补氧。",
+		"en": "NEXT: SHIFT TO BITT TO SURFACE, OR LET TUBO EAT KELP."},
 	"fail.again": {"zh": "再来一次", "en": "TRY AGAIN"},
 	"fail.menu": {"zh": "回主菜单", "en": "MAIN MENU"},
 	"fail.hint": {"zh": "R / ENTER 再来一次 · M 回主菜单", "en": "R / ENTER RETRY · M MENU"},
@@ -951,6 +957,12 @@ const STRINGS := {
 		"zh": "下次试试：兔子 落水时 SHIFT 到 乌龟，下潜靠近；够不到再按 SPACE 追",
 		"en": "NEXT TRY: WHEN THE TUBO FALLS IN, SHIFT TO BITT AND DIVE CLOSER; SPACE TO LUNGE"},
 	"result.mistakes": {"zh": "失误                  {0}", "en": "MISTAKES               {0}"},
+	"result.next_goal_clean": {
+		"zh": "下一目标：S 需要 0 次失误（本局 {0} 次）",
+		"en": "NEXT GOAL: S REQUIRES 0 MISTAKES (THIS RUN: {0})"},
+	"result.next_goal_score": {
+		"zh": "下一目标：S 需要 8000 分以上",
+		"en": "NEXT GOAL: S NEEDS 8000+"},
 	"result.best": {
 		"zh": "最佳时间 {0}   最低事故 {1}   最长连击 {2}",
 		"en": "BEST TIME  {0}   BEST ACCIDENTS  {1}   BEST STREAK  {2}"},

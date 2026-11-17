@@ -198,10 +198,12 @@ var _bitt_autocrouch_left := 0.0
 var _bitt_autocrouch_fb_t := -99.0
 ## FEEL-15：BRO MISCHIEF 状态机。只有“未受控 + 该角色惩罚条满”才启动。
 ## 单事件、单角色；SHIFT/救援/落水/Showtime 会立即取消，不会残留。
-const MISCHIEF_TELEGRAPH := 0.45
+const MISCHIEF_TELEGRAPH := 0.65
 const MISCHIEF_ACTION := 0.70
 const MISCHIEF_END := 0.22
-const MISCHIEF_CD := 1.8
+const MISCHIEF_CD := 3.0
+## 抱怨窗口 7 s，但要让玩家先有“我把他留失控了”的 1.2 s，才允许动手。
+const MISCHIEF_REACTION_DELAY := 1.2
 var _mischief_role := ""
 var _mischief_phase := ""
 var _mischief_t := 0.0
@@ -210,6 +212,9 @@ var _mischief_last_control := ""
 var _mischief_fx_kind := ""
 var _mischief_fx_t := 0.0
 var _mischief_action_done := false
+## PHASE-1：每个角色自己的动作序列，保证“电击”不会被拽绳完全淹没。
+## 偶数次兔子捣乱必出电击；其余时候仍按上下潜/跃起情境选。
+var _mischief_action_seq := {"rabbit": 0, "turtle": 0}
 var mischief_log: Array = []
 ## 供探针读取：每次延迟/自主动作的记录（角色、类型、秒）。
 var drift_impair_log: Array = []
@@ -873,6 +878,7 @@ func reset_brains() -> void:
 	_mischief_fx_kind = ""
 	_mischief_fx_t = 0.0
 	_mischief_action_done = false
+	_mischief_action_seq = {"rabbit": 0, "turtle": 0}
 	mischief_log.clear()
 	if GameManager != null:
 		GameManager.mischief_lock_role = ""
@@ -4102,7 +4108,7 @@ func _mischief_clear_of_hazards() -> bool:
 	var near := next_hazard_info()
 	if near.is_empty():
 		return true
-	return float(near.get("distance", 1.0e9)) > 700.0
+	return float(near.get("distance", 1.0e9)) > 520.0
 
 
 func _maybe_start_mischief() -> void:
@@ -4110,24 +4116,22 @@ func _maybe_start_mischief() -> void:
 		return
 	if _mischief_cd > 0.0 or showtime_active or _rescue_context() != "NONE":
 		return
-	# FEEL-24：不在障碍前启动捣乱，避免速度损失直接变成必然撞。
-	# FEEL-34：安全距离恢复为 700 px（此前代码是 340）。
+	# 不在障碍前启动捣乱，避免速度损失直接变成必然撞。520 px 在 Z3
+	# 260 px/s 下约 2 s，足够从预兆里切回来。
 	if not _mischief_clear_of_hazards():
 		return
-	# FEEL-24：一次失误只生成一次抱怨窗口；没有 3 格计数。
+	# 一次失误只生成一次抱怨窗口；没有 3 格计数。
 	var who := GameManager.complaint_role
 	if who == "" or who == GameManager.current_control:
+		return
+	# 给玩家 1.2 s 的“我把谁留失控了”反应时间，再动手。
+	if GameManager.complaint_t > 7.0 - MISCHIEF_REACTION_DELAY:
 		return
 	# 救援优先：兔子在水里时，先让玩家切 BITT 救援，不启动捣乱。
 	if who == "rabbit" and (GameManager.accident_state in ["RABBIT_WATER", "RABBIT_AIR"] 			or rabbit.state in ["FALLING_WATER", "PASSED_OUT"]):
 		return
-	# FEEL-33：原分支写反了（randf() > 0.68 走的是“不启动”，实际 68% 动手）。
-	# 现在 > 0.32 才退回第二阶段，有效动手率约 32%。
-	if float(_ignore_t.get(who, 0.0)) >= 12.0 and randf() > 0.32:
-		GameManager.complaint_role = ""
-		GameManager.complaint_t = 0.0
-		_ignore_t[who] = 8.0
-		return
+	# PHASE-1：去掉 32% 随机抑制。情绪窗口 + 失控 + 安全区就是确定性触发；
+	# 玩家看到预兆后仍可用 SHIFT 当帧取消。
 	GameManager.complaint_role = ""
 	GameManager.complaint_t = 0.0
 	GameManager.mischief_lock_role = who
@@ -4145,8 +4149,21 @@ func _maybe_start_mischief() -> void:
 	mischief_log.append({"event": "start", "who": who, "t": accident_event_time})
 
 
+## 预兆阶段只读当前状态，不提前消耗随机/动作；用于把“拽绳/电击”写在脸上。
+func _mischief_predicted_kind() -> String:
+	if _mischief_role == "turtle":
+		return "zap_landing" if rabbit.state in ["JUMPING", "FALLING"] else "shock"
+	if _mischief_role == "rabbit":
+		if turtle.diving or turtle.leap_active:
+			return "rabbit_shock"
+		return "rabbit_shock" if int(_mischief_action_seq.get("rabbit", 0)) % 2 == 0 else "tug"
+	return ""
+
+
 func _apply_mischief_action() -> void:
 	_bump_visual_stress(_mischief_role, 0.8)
+	var seq := int(_mischief_action_seq.get(_mischief_role, 0))
+	_mischief_action_seq[_mischief_role] = seq + 1
 	if _mischief_role == "turtle":
 		# BITT 使坏：兔子在空中时把它打下来；否则电一下。
 		if rabbit.state in ["JUMPING", "FALLING"]:
@@ -4158,19 +4175,35 @@ func _apply_mischief_action() -> void:
 		else:
 			_mischief_fx_kind = "shock"
 			_mischief_fx_t = 0.65
-			rabbit.add_imbalance(0.11)
-			rabbit.velocity.x += 24.0
+			# 真实后果：失衡更深、前冲更明显，不只是“头顶冒电”。
+			rabbit.add_imbalance(0.18)
+			rabbit.velocity.x += 32.0
 			GameManager.feedback.emit(Locale.t("mischief.hit_rabbit"), "hit")
 	else:
-		# TUBO 使坏动作池：乌龟正在潜/跃时电它，否则拽绳。
-		if turtle.diving or turtle.leap_active:
+		# TUBO 使坏动作池：乌龟正在潜/跃时电它并打断动作；乌龟巡航时
+		# 第一次也电击（让玩家真的看到“电对方”），之后在电击/拽绳之间交替。
+		var do_shock: bool = turtle.diving or turtle.leap_active or seq % 2 == 0
+		if do_shock:
 			_mischief_fx_kind = "rabbit_shock"
 			_mischief_fx_t = 0.65
-			turtle.add_imbalance(0.11)
+			# PHASE-1：电击必须真的打断下潜/跃起，不能只加一点失衡。
+			turtle.zap_stun_t = 0.35
+			turtle.leap_active = false
+			turtle.leap_timer = 0.0
+			if turtle.position.y < Tuning.NEUTRAL_DEPTH:
+				turtle.position.y = Tuning.NEUTRAL_DEPTH
+			else:
+				turtle.position.y = maxf(turtle.position.y - 22.0, SURFACE_Y)
+			turtle.speed *= 0.80
+			turtle.add_imbalance(0.16)
+			turtle.start_flip()
 			GameManager.feedback.emit(Locale.t("mischief.rabbit_shock"), "hit")
 		else:
 			_mischief_fx_kind = "tug"
 			_mischief_fx_t = 0.65
+			# PHASE-1：拽绳从“翻一下”改成真实的壳下沉 + 减速。
+			turtle.tug_t = 0.65
+			turtle.speed *= 0.85
 			turtle.add_imbalance(0.10)
 			turtle.start_flip()
 			GameManager.feedback.emit(Locale.t("mischief.hit_turtle"), "hit")
@@ -4277,6 +4310,10 @@ func _draw_mischief() -> void:
 			draw_line(a, b, Color(1.0, 0.72, 0.2, 0.35), 2.0)
 		draw_string(ThemeDB.fallback_font, culprit + Vector2(-8, -90), "!",
 			HORIZONTAL_ALIGNMENT_LEFT, -1, 30, Color(1.0, 0.55, 0.15, 0.95))
+		var tag := Locale.t("mischief.tag_tug" if _mischief_predicted_kind() == "tug"
+			else "mischief.tag_zap")
+		draw_string(ThemeDB.fallback_font, culprit + Vector2(-18, -112), tag,
+			HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color(1.0, 0.82, 0.35, 0.95))
 		return
 	if _mischief_fx_t <= 0.0:
 		return

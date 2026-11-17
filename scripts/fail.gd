@@ -67,6 +67,21 @@ func _build() -> void:
 	_sub.add_theme_font_size_override("font_size", 22)
 	_sub.add_theme_color_override("font_color", Color(0.72, 0.9, 1.0))
 	box.add_child(_sub)
+	var reason := Label.new()
+	reason.text = Locale.t("fail.reason_oxygen") if GameManager.failure_reason == "OXYGEN_OUT" \
+		else GameManager.failure_reason
+	reason.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	reason.add_theme_font_size_override("font_size", 18)
+	reason.add_theme_color_override("font_color", Color(1.0, 0.68, 0.48))
+	box.add_child(reason)
+	var tip := Label.new()
+	tip.text = Locale.t("fail.tip_oxygen") if GameManager.failure_reason == "OXYGEN_OUT" \
+		else Locale.t("fail.tip_oxygen")
+	tip.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	tip.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	tip.add_theme_font_size_override("font_size", 18)
+	tip.add_theme_color_override("font_color", Color(0.78, 0.92, 1.0))
+	box.add_child(tip)
 	var spacer := Control.new()
 	spacer.custom_minimum_size = Vector2(0, 24)
 	box.add_child(spacer)

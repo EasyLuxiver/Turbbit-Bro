@@ -226,8 +226,20 @@ func _refresh() -> void:
 	_best_label.text = "   ".join(PackedStringArray(lines))
 	if is_instance_valid(_try_label):
 		var try_key := GameManager.next_try_key()
-		_try_label.visible = try_key != ""
-		_try_label.text = Locale.t(try_key) if try_key != "" else ""
+		var goal := ""
+		if g != "S":
+			if GameManager.accident_count > 0:
+				goal = Locale.t("result.next_goal_clean",
+					["%d" % GameManager.accident_count])
+			elif GameManager.total_score < 8000:
+				goal = Locale.t("result.next_goal_score")
+		var parts: Array[String] = []
+		if try_key != "":
+			parts.append(Locale.t(try_key))
+		if goal != "":
+			parts.append(goal)
+		_try_label.visible = not parts.is_empty()
+		_try_label.text = "   ".join(PackedStringArray(parts))
 	_prompt_label.text = Locale.t("result.retry")
 	if is_instance_valid(_again_button):
 		_again_button.text = Locale.t("result.again")

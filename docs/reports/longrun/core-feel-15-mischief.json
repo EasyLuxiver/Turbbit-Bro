@@ -56,13 +56,33 @@
       "ok": true
     },
     {
-      "detail": "steps=42 role= meter=0",
+      "detail": "steps=48 role= meter=0",
       "name": "7_mischief_hz_30",
       "ok": true
     },
     {
-      "detail": "steps=165 role= meter=0",
+      "detail": "steps=189 role= meter=0",
       "name": "7_mischief_hz_120",
+      "ok": true
+    },
+    {
+      "detail": "early=true steps=72 role=turtle",
+      "name": "8_reaction_delay",
+      "ok": true
+    },
+    {
+      "detail": "fx=tug tug_t=0.65 speed=187.0",
+      "name": "9_tug_real_effect",
+      "ok": true
+    },
+    {
+      "detail": "fx=rabbit_shock stun=0.35 diving=true",
+      "name": "10_shock_interrupts",
+      "ok": true
+    },
+    {
+      "detail": "S/A/B",
+      "name": "11_s_requires_clean",
       "ok": true
     }
   ]

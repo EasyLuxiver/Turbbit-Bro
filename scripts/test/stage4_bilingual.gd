@@ -264,7 +264,7 @@ func _check_pause_texts() -> void:
 
 func _check_result_live_switch() -> void:
 	GameManager.state = GameManager.GameState.RESULT
-	GameManager.grade = "S"
+	GameManager.grade = "B"
 	GameManager.total_score = 12460
 	GameManager.finish_time = 296.63
 	GameManager.rabbit_casualties = 0
@@ -272,7 +272,7 @@ func _check_result_live_switch() -> void:
 	GameManager.perfect_cooperation = 54
 	GameManager.showtime_count = 18
 	GameManager.best_streak = 54
-	GameManager.accident_count = 0
+	GameManager.accident_count = 5
 	GameManager.combo_dive_count = 8
 	GameManager.combo_ollie_count = 3
 	GameManager.clean_pass_count = 55
@@ -302,6 +302,8 @@ func _check_result_live_switch() -> void:
 	_check(en_text.contains("RACE TIME") and en_text.contains("MISTAKES")
 		and en_text.contains("CLEAN PASSES"),
 		"en result stats (time/mistakes/clean)")
+	_check(en_text.contains("NEXT GOAL") and en_text.contains("0 MISTAKES"),
+		"en result shows S clean goal")
 	_check(en_text.contains("R  RETRY"), "en result prompt")
 	_check(not en_text.contains("比赛"), "result has no leftover Chinese")
 	Locale.set_language("zh")

@@ -90,6 +90,9 @@ func _run() -> void:
 	race = get_tree().current_scene
 	if race != null:
 		race.test_no_overdrive = true
+		# 全关自动驾驶只验证“55 组可跑完/计分闭合”。MISCHIEF 会主动改变
+		# 速度/深度，让固定驾驶器出现一次非路线碰撞，改由 stage15 覆盖。
+		race.test_no_mischief = true
 	_check(race.scene_file_path.ends_with("race.tscn"), "race scene loaded")
 	_check(GameManager.state == GameManager.GameState.RUNNING, "state RUNNING")
 	_start_watchdog()
@@ -116,6 +119,7 @@ func _run() -> void:
 	if race != null:
 		race.test_no_overdrive = true
 		race.test_no_lessons = true
+		race.test_no_mischief = true
 	# 8 个渲染帧在 time_scale=3 下本身就可能推进 0.6–0.8 s；这里判“刚重开”，
 	# 不是判某一帧的精确值。旧阈值 0.5 会在加载慢时误报。
 	_check(not GameManager.finished and GameManager.race_time < 1.0,
@@ -212,6 +216,9 @@ func _run_once(index: int, retry: bool) -> Dictionary:
 		+ "casualties=%d engine=%d show=%d streak=%d" % [
 			stats["casualties"], stats["engine_failures"],
 			stats["showtime"], stats["streak"]])
+	# PHASE-1：正式跑里必须真的看得到捣乱动作，而不是只有系统存在。
+	if race != null and race.get("mischief_log") != null:
+		_log("MISCHIEF_LOG " + JSON.stringify(race.mischief_log))
 	# FEEL-42：确认正式跑中鲨群三拍都发生，而不是只出老大/胖鲨。
 	if race != null and race.get("_shark_pack_log") != null:
 		_log("SHARK_PACK_LOG " + JSON.stringify(race._shark_pack_log))

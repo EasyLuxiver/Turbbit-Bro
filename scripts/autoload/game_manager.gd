@@ -372,10 +372,13 @@ func note_mistake(reason: String, role: String = "") -> void:
 	if who not in ["rabbit", "turtle"]:
 		return
 	# FEEL-24：不再累计 3 格；一次失误生成一次可读的抱怨事件。
+	# PHASE-1：抱怨窗口从 2.6 s 拉到 7 s。玩家离开该角色后，捣乱才有机会
+	# 真正发生；2.6 s 在 220–260 px/s 下往往还没离开安全区就过期，导致
+	# 玩家几乎看不到“电对方/拽绳”。
 	if mischief_lock_role == who:
 		return
 	complaint_role = who
-	complaint_t = 2.6
+	complaint_t = 7.0
 	feedback.emit(Locale.t("feedback.complaint_" + who), "hit")
 
 
@@ -558,7 +561,7 @@ func finalize_run() -> void:
 	finish_time = race_time
 	# STAGE 4 起分数按动作逐笔累计（见 add_score / note_precise_pass），
 	# 冲线时不再按时间/连击重算，等待或拖延不会加一分。
-	grade = grade_for_score(total_score)
+	grade = grade_for_score(total_score, accident_count)
 	grade_name = grade_title(grade)
 	# P1-B：制作人测试入口不写正式纪录。场景本身也会 test_no_finish，
 	# 这里再兜一层，防止手动改 world_end 或误触结算时污染 best.json。
@@ -573,7 +576,19 @@ func compute_score() -> int:
 
 
 ## 满编 55 组全精准 = 44×150 + 3×300 + 8×250 = 9500。
-func grade_for_score(score: int) -> String:
+## PHASE-1：S 不再只看分数。0 事故 + 8000 才是 S；1–2 次最高 A；
+## 3–5 次最高 B。accidents < 0 时保留旧调用（测试/探针只测分数曲线）。
+func grade_for_score(score: int, accidents: int = -1) -> String:
+	if accidents >= 0:
+		if accidents == 0 and score >= 8000:
+			return "S"
+		if accidents <= 2 and score >= 6500:
+			return "A"
+		if accidents <= 5 and score >= 5000:
+			return "B"
+		if accidents <= 8 and score >= 3000:
+			return "C"
+		return "D"
 	if score >= 8000:
 		return "S"
 	if score >= 6500:

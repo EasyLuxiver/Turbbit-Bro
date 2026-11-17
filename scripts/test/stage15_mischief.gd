@@ -39,7 +39,7 @@ func _run() -> void:
 		and GameManager.current_control == "rabbit",
 		"role=%s control=%s phase=%s" % [race._mischief_role,
 			GameManager.current_control, race._mischief_phase])
-	_tick_for(0.50)
+	_tick_for(0.70)
 	_check("1b_shock_effect", race._mischief_phase == "ACTION"
 		and race._mischief_fx_kind == "shock",
 		"phase=%s fx=%s" % [race._mischief_phase, race._mischief_fx_kind])
@@ -50,9 +50,10 @@ func _run() -> void:
 
 	# 2) TUBO 满、玩家控 BITT：TUBO 拽 BITT，减速。
 	_reset("turtle")
+	race._mischief_action_seq["rabbit"] = 1
 	_fill("rabbit")
 	race._tick_mischief(1.0 / FPS)
-	_tick_for(0.50)
+	_tick_for(0.70)
 	_check("2_tubo_mischief", race._mischief_role == "rabbit"
 		and race._mischief_fx_kind == "tug",
 		"role=%s fx=%s" % [race._mischief_role, race._mischief_fx_kind])
@@ -79,7 +80,7 @@ func _run() -> void:
 	_reset("rabbit")
 	_fill("turtle")
 	race._tick_mischief(1.0 / FPS)
-	_tick_for(0.50) # 进入 ACTION 并已施加一次
+	_tick_for(0.70) # 进入 ACTION 并已施加一次
 	GameManager.shift_lock_t = 0.0
 	GameManager.toggle_control()
 	race._tick_mischief(1.0 / FPS)
@@ -141,6 +142,46 @@ func _run() -> void:
 			and GameManager.role_meter("turtle") == 0,
 			"steps=%d role=%s meter=%d" % [steps, race._mischief_role,
 				GameManager.role_meter("turtle")])
+	# 8) PHASE-1：1.2 s 反应延迟后才动手，不是一失误立刻触发。
+	_reset("rabbit")
+	_fill("turtle", false)
+	race._tick_mischief(1.0 / FPS)
+	var too_early: bool = race._mischief_role == ""
+	var delay_steps := 0
+	while race._mischief_role == "" and delay_steps < 120:
+		race._tick_mischief(1.0 / FPS)
+		delay_steps += 1
+	_check("8_reaction_delay", too_early and race._mischief_role == "turtle",
+		"early=%s steps=%d role=%s" % [str(too_early), delay_steps,
+			race._mischief_role])
+	# 9) 拽绳必须真的改乌龟速度和深度计时，不只是翻壳。
+	_reset("turtle")
+	race._mischief_action_seq["rabbit"] = 1
+	_fill("rabbit")
+	race._tick_mischief(1.0 / FPS)
+	_tick_for(0.70)
+	_check("9_tug_real_effect", race._mischief_fx_kind == "tug"
+		and race.turtle.tug_t > 0.0 and race.turtle.speed < 220.0,
+		"fx=%s tug_t=%.2f speed=%.1f" % [race._mischief_fx_kind,
+			race.turtle.tug_t, race.turtle.speed])
+	# 10) 乌龟下潜时，兔子电击必须打断并留下麻痺窗口。
+	_reset("turtle")
+	race.turtle.diving = true
+	_fill("rabbit")
+	race._tick_mischief(1.0 / FPS)
+	_tick_for(0.70)
+	_check("10_shock_interrupts", race._mischief_fx_kind == "rabbit_shock"
+		and race.turtle.zap_stun_t > 0.0,
+		"fx=%s stun=%.2f diving=%s" % [race._mischief_fx_kind,
+			race.turtle.zap_stun_t, str(race.turtle.diving)])
+	# 11) S 不再被事故分掩盖：0 事故才是 S。
+	_check("11_s_requires_clean",
+		GameManager.grade_for_score(9000, 0) == "S"
+		and GameManager.grade_for_score(9000, 1) == "A"
+		and GameManager.grade_for_score(9000, 5) == "B",
+		"%s/%s/%s" % [GameManager.grade_for_score(9000, 0),
+			GameManager.grade_for_score(9000, 1),
+			GameManager.grade_for_score(9000, 5)])
 	_write()
 	get_tree().quit(0 if checks.all(func(c): return bool(c["ok"])) else 1)
 
@@ -160,6 +201,7 @@ func _reset(control: String) -> void:
 	race._mischief_fx_kind = ""
 	race._mischief_fx_t = 0.0
 	race._mischief_action_done = false
+	race._mischief_action_seq = {"rabbit": 0, "turtle": 0}
 	race.mount.reset()
 	race.mount.mark_riding()
 	race.rabbit.reset()
@@ -168,9 +210,12 @@ func _reset(control: String) -> void:
 	race.turtle.speed = 220.0
 
 
-func _fill(who: String) -> void:
+func _fill(who: String, ready: bool = true) -> void:
 	for i in 3:
 		GameManager.note_mistake("TURTLE_WAVE" if who == "turtle" else "RABBIT_STUN", who)
+	# 测试旧行为时跳过 1.2 s 反应延迟；专门的 8 号用例验证延迟。
+	if ready:
+		GameManager.complaint_t = 7.0 - 1.3
 
 
 func _tick_for(seconds: float) -> void:
