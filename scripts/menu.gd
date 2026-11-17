@@ -141,11 +141,13 @@ func _build_settings(box: VBoxContainer) -> void:
 	box.add_child(_spacer(6))
 	var language := _button(box, Locale.t("menu.language") + "   [L]",
 		_on_toggle_language, true)
+	var fullscreen := _button(box,
+		Locale.t("settings.fullscreen_on" if Locale.fullscreen 			else "settings.fullscreen_off"), _on_toggle_fullscreen)
 	box.add_child(UiTheme.make_label(Locale.t("settings.note"), 18,
 		Color(0.72, 0.86, 0.95)))
 	box.add_child(_spacer(6))
 	var back := _button(box, Locale.t("settings.back_button"), _on_back)
-	_focusables = [language, back]
+	_focusables = [language, fullscreen, back]
 	box.add_child(_spacer(4))
 	box.add_child(UiTheme.make_label(Locale.t("settings.keys"), 18,
 		Color(0.65, 0.82, 0.92)))
@@ -238,6 +240,11 @@ func _on_back() -> void:
 
 func _on_toggle_language() -> void:
 	Locale.toggle_language()
+
+
+func _on_toggle_fullscreen() -> void:
+	Locale.toggle_fullscreen()
+	_refresh()
 
 
 func _open_quit_confirm() -> void:

@@ -124,6 +124,11 @@ func _check_menu_flow() -> void:
 	_check(not en_text.contains("开始游戏"), "no zh/en stacked in one menu")
 	var saved := _read_file(SETTINGS_PATH)
 	_check(saved.contains("\"en\""), "language choice persisted to settings.json")
+	Locale.set_fullscreen(true)
+	var fs_saved := _read_file(SETTINGS_PATH)
+	_check(fs_saved.contains("\"fullscreen\":true"),
+		"fullscreen choice persisted to settings.json")
+	Locale.set_fullscreen(false)
 	print("  menu en -> %s" % en_text.replace("\n", " | "))
 
 	# S 进设置，设置页有语言按钮；ESC 返回主菜单而不是退出游戏。

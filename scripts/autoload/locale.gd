@@ -10,11 +10,13 @@ const LANGUAGES := ["zh", "en"]
 const DEFAULT_LANGUAGE := "zh"
 
 var language: String = DEFAULT_LANGUAGE
+var fullscreen := false
 var _web_theme: Theme = null
 
 
 func _ready() -> void:
 	_load()
+	_apply_display()
 	# Web 导出没有系统字体回退，默认字体不含中日韩字形。
 	# 用打包的 Noto Sans SC 子集当默认字体；CanvasLayer 会截断主题继承，
 	# 所以额外给挂在 CanvasLayer 下的根 Control 直接装主题。
@@ -45,6 +47,25 @@ func set_language(code: String) -> void:
 
 func toggle_language() -> void:
 	set_language("en" if language == "zh" else "zh")
+
+
+func set_fullscreen(on: bool) -> void:
+	fullscreen = on
+	_save()
+	_apply_display()
+
+
+func toggle_fullscreen() -> void:
+	set_fullscreen(not fullscreen)
+
+
+func _apply_display() -> void:
+	if DisplayServer.get_name() == "headless":
+		return
+	var mode := DisplayServer.WINDOW_MODE_WINDOWED
+	if fullscreen:
+		mode = DisplayServer.WINDOW_MODE_FULLSCREEN
+	DisplayServer.window_set_mode(mode)
 
 
 func t(id: String, args: Array = []) -> String:
@@ -108,13 +129,14 @@ func _load() -> void:
 	var code: String = str(parsed.get("language", DEFAULT_LANGUAGE))
 	if code in LANGUAGES:
 		language = code
+	fullscreen = bool(parsed.get("fullscreen", false))
 
 
 func _save() -> void:
 	var file := FileAccess.open(SETTINGS_PATH, FileAccess.WRITE)
 	if file == null:
 		return
-	file.store_string(JSON.stringify({"language": language}))
+	file.store_string(JSON.stringify({"language": language, "fullscreen": fullscreen}))
 	file.close()
 
 
@@ -254,6 +276,8 @@ const STRINGS := {
 		"en": "LANGUAGE    L - SWITCH (CURRENT: ENGLISH)"},
 	"settings.back": {"zh": "ESC / S  -  返回", "en": "ESC / S  -  BACK"},
 	"settings.back_button": {"zh": "返回", "en": "BACK"},
+	"settings.fullscreen_on": {"zh": "全屏：开", "en": "FULLSCREEN: ON"},
+	"settings.fullscreen_off": {"zh": "全屏：关", "en": "FULLSCREEN: OFF"},
 	"settings.keys": {
 		"zh": "↑↓ 选择   Enter 确认   L 切换语言",
 		"en": "↑↓ SELECT   ENTER CONFIRM   L SWITCH LANGUAGE"},

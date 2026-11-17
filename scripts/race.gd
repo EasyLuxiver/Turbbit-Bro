@@ -4426,6 +4426,7 @@ func _draw() -> void:
 	# PHASE-2：终点后至少留一屏沙滩，不能再让镜头滑进默认黑色清屏。
 	var finish_extra := FINISH_BEACH_EXTRA
 	var world_width := world_end + finish_extra
+	var cam_x: float = camera.position.x if camera != null else turtle.position.x
 	# 三个区域各画一段背景；区域边界和名字直接画在世界里。
 	# CORE-FEEL-08 P1-D：第二区域改成室内木质码头，背景由 Zone2Dock 的六层节点负责
 	# （z_index 都在本节点之下）。这里如果继续铺平色块，会把那些层整个盖住。
@@ -4456,6 +4457,8 @@ func _draw() -> void:
 	# 两段之间会留下一条竖直的“图层跳变”。这里用 800 px 的 Z1→透明渐变带
 	# 把接缝化开：14600 还是完整 Z1，15400 完全交给码头，第一组障碍 15800 之前完成。
 	_draw_zone2_blend()
+	_draw_zone1_layers(cam_x)
+	_draw_zone3_layers(cam_x)
 	if not test_no_finish:
 		_draw_finish_beach()
 	# 危险深度线只在 F3 调试层出现；正常界面没有红线。
@@ -4469,7 +4472,6 @@ func _draw() -> void:
 	_draw_snacks()
 	_draw_z3_warning()
 
-	var cam_x: float = camera.position.x if camera != null else turtle.position.x
 	for g in hazard_groups:
 		var group: Dictionary = g
 		for i in group["rects"].size():
@@ -4504,6 +4506,97 @@ func _draw() -> void:
 	if accident_flash > 0.0:
 		var a: float = 0.55 * (accident_flash / Tuning.ACCIDENT_FLASH)
 		draw_rect(Rect2(cam_x - 1400.0, -400.0, 2800.0, 1600.0), Color(1, 1, 1, a))
+
+
+## PHASE-3：Z1/Z3 的灰盒纵深。只画远景/中景/前景，不参与判定。
+## 屏幕空间按 cam*parallax 平移，再取模重复；这样无论镜头走到哪里，
+## 层都保持在可视区里，不会因为 base 固定在世界开头而飘走。
+func _layer_screen_positions(cam_x: float, parallax: float, period: float,
+		count: int, phase: float = 0.0) -> Array:
+	var out := []
+	var width: float = get_viewport_rect().size.x
+	var total := period * maxf(float(count), 1.0)
+	var shift := fmod(cam_x * parallax + phase, total)
+	for i in count:
+		var sx := fmod(float(i) * period - shift + total, total)
+		# 取模后可能出现在屏幕右侧；只画屏内及少量预卷。
+		if sx > -160.0 and sx < width + 160.0:
+			out.append(cam_x + sx)
+	return out
+
+
+func _draw_zone1_layers(cam_x: float) -> void:
+	var z: Dictionary = LevelDataScript.ZONES[0]
+	if cam_x < float(z["start"]) - 200.0 or cam_x > float(z["end"]) + 200.0:
+		return
+	# 远景云：p=0.18。
+	var clouds := _layer_screen_positions(cam_x, 0.18, 820.0, 4, 0.0)
+	for idx in clouds.size():
+		var sx: float = clouds[idx]
+		var cy := 72.0 + float(idx % 3) * 34.0
+		draw_circle(Vector2(sx, cy), 28.0, Color(1, 1, 1, 0.11))
+		draw_circle(Vector2(sx + 34, cy + 4), 22.0, Color(1, 1, 1, 0.09))
+		draw_circle(Vector2(sx - 30, cy + 7), 18.0, Color(1, 1, 1, 0.08))
+	# 远景岛：p=0.32。
+	var islands := _layer_screen_positions(cam_x, 0.32, 1500.0, 4, 260.0)
+	for idx in islands.size():
+		var sx: float = islands[idx]
+		var w := 110.0 + float(idx % 3) * 42.0
+		draw_colored_polygon(PackedVector2Array([
+			Vector2(sx - w, SURFACE_Y), Vector2(sx - w * 0.6, SURFACE_Y - 34.0),
+			Vector2(sx - w * 0.1, SURFACE_Y - 18.0), Vector2(sx + w * 0.5, SURFACE_Y - 42.0),
+			Vector2(sx + w, SURFACE_Y),
+		]), Color(0.24, 0.38, 0.42, 0.62))
+	# 中景棕榈/木桩：p=0.62。
+	var palms := _layer_screen_positions(cam_x, 0.62, 980.0, 4, 120.0)
+	for idx in palms.size():
+		var sx: float = palms[idx]
+		var trunk := Color(0.22, 0.30, 0.23, 0.85)
+		draw_line(Vector2(sx, SURFACE_Y + 14.0), Vector2(sx + 10.0, SURFACE_Y - 52.0), trunk, 5.0)
+		for j in 3:
+			var a := -PI * 0.5 + (float(j) - 1.0) * 0.85
+			draw_line(Vector2(sx + 10.0, SURFACE_Y - 52.0),
+				Vector2(sx + 10.0, SURFACE_Y - 52.0) + Vector2(cos(a), sin(a)) * 34.0,
+				Color(0.20, 0.42, 0.28, 0.82), 4.0)
+	# 近景浪：p=1.12。
+	var waves := _layer_screen_positions(cam_x, 1.12, 360.0, 6, 0.0)
+	for idx in waves.size():
+		var sx: float = waves[idx]
+		var wy := 664.0 + float(idx % 4) * 42.0
+		draw_arc(Vector2(sx, wy), 26.0 + float(idx % 3) * 8.0,
+			0.12, PI - 0.12, 10, Color(0.78, 0.96, 1.0, 0.18), 2.0)
+
+
+func _draw_zone3_layers(cam_x: float) -> void:
+	var z: Dictionary = LevelDataScript.ZONES[2]
+	if cam_x < float(z["start"]) - 200.0 or cam_x > float(z["end"]) + 200.0:
+		return
+	# 远景礁柱：p=0.25。
+	var spires := _layer_screen_positions(cam_x, 0.25, 1450.0, 4, 180.0)
+	for idx in spires.size():
+		var sx: float = spires[idx]
+		var h := 54.0 + float(idx % 4) * 32.0
+		draw_colored_polygon(PackedVector2Array([
+			Vector2(sx - 52, SURFACE_Y), Vector2(sx - 22, SURFACE_Y - h),
+			Vector2(sx + 12, SURFACE_Y - h - 26.0), Vector2(sx + 38, SURFACE_Y - h * 0.5),
+			Vector2(sx + 58, SURFACE_Y),
+		]), Color(0.34, 0.18, 0.11, 0.66))
+	# 中景吊架/沉船骨架：p=0.55。
+	var rigs := _layer_screen_positions(cam_x, 0.55, 1900.0, 3, 500.0)
+	for idx in rigs.size():
+		var sx: float = rigs[idx]
+		var col := Color(0.22, 0.14, 0.10, 0.86)
+		draw_line(Vector2(sx, SURFACE_Y + 40.0), Vector2(sx, SURFACE_Y - 90.0), col, 6.0)
+		draw_line(Vector2(sx - 44.0, SURFACE_Y - 64.0), Vector2(sx + 44.0, SURFACE_Y - 64.0), col, 5.0)
+		draw_line(Vector2(sx - 30.0, SURFACE_Y - 64.0), Vector2(sx - 30.0, SURFACE_Y - 24.0), col, 3.0)
+		draw_circle(Vector2(sx, SURFACE_Y - 96.0), 7.0, Color(0.62, 0.28, 0.16, 0.9))
+	# 近景浪：p=1.15。
+	var waves := _layer_screen_positions(cam_x, 1.15, 430.0, 5, 0.0)
+	for idx in waves.size():
+		var sx: float = waves[idx]
+		var wy := 628.0 + float(idx % 4) * 48.0
+		draw_arc(Vector2(sx, wy), 30.0 + float(idx % 3) * 10.0,
+			0.10, PI - 0.10, 12, Color(1.0, 0.74, 0.42, 0.18), 2.0)
 
 
 ## FEEL-10 P0-D：Z1→Z2 的横向渐变带。只画颜色，不改任何坐标或遮挡关系。
