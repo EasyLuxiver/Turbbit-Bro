@@ -1,0 +1,21 @@
+# Godot
+.godot/
+*.translation
+export.cfg
+export_presets.cfg
+
+# Local captures / scratch
+screenshots/
+_attic/
+*.tmp
+*.log.tmp
+Thumbs.db
+.DS_Store
+
+# Build outputs
+builds/
+build/
+*.exe
+*.pck
+*.zip
+*.7z
