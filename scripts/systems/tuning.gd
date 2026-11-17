@@ -69,12 +69,14 @@ const BITT_AUTOCROUCH_LEN := 0.35
 ## 壳自己漂的深度偏移上限（px）。比神游晃动 18 px 小，玩家按住 ↓ 立刻整个让位。
 const TUBO_AUTODRIFT_PX := 14.0
 
-# 氧气：GDD 建议 5 秒；按反馈延长到 8 秒，三档 5 / 2.5 / 0。
+# 氧气：GDD 建议 5 秒；P1 放宽到 6.5，但实测乌龟路线几乎无代价。
+# PHASE-2：容量 6.0、耗 1.2/s、回 2.0/s，连续两次下潜/长隧道会真的肉疼；
+# 仍保留三档提示（满/低/告急），不新增状态。
 const OXYGEN_MAX := 6.5
 const OXYGEN_LOW := 5.0
 const OXYGEN_CRITICAL := 2.5
-const OXYGEN_DRAIN := 1.0
-const OXYGEN_RECOVER := 3.0
+const OXYGEN_DRAIN := 1.1
+const OXYGEN_RECOVER := 2.0
 const OXYGEN_RECOVERED := 5.0
 
 # PLAYFUL-04 §4：亲手喂到海藻的一小笔奖励。只是加分，不加惩罚、不加新状态。
