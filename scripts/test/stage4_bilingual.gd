@@ -184,9 +184,8 @@ func _check_hud_live_switch() -> void:
 	_check(race.hud.time_label.text.contains(":"), "zh HUD time")
 	_check(race.hud.zone_label.text.contains("区域 1/3"), "zh HUD zone")
 	_check(race.oxygen_bubble_count() > 0, "zh HUD oxygen bubbles")
-	_check(race.hud.bond_label.text.contains("兄弟配合"), "zh HUD brotherhood")
-	_check(race.hud.bro_meter_label.text.contains("捣乱压力"),
-		"zh HUD bro meter label")
+	# FEEL-24 起右下角 0/3 面板（BRO METER、默契/Showtime）已整体移除；
+	# 这里不再断言 bond_label / bro_meter_label，否则会拿到 nil 并中断整段 HUD 断言。
 	# 底部行空闲时不放常驻说明书，只显示当下的短提示。
 	_check(race.hud.hint_label.text == "", "zh HUD idle hint line is empty")
 	print("  hud zh -> %s" % race.hud.control_label.text.replace("\n", " | "))
@@ -204,9 +203,6 @@ func _check_hud_live_switch() -> void:
 	_check(race.hud.time_label.text.contains(":"), "en HUD time updates live")
 	_check(race.hud.zone_label.text.contains("ZONE 1/3"), "en HUD zone updates live")
 	_check(race.oxygen_bubble_count() > 0, "en HUD oxygen bubbles")
-	_check(race.hud.bond_label.text.contains("BRO COMBO"), "en HUD brotherhood updates live")
-	_check(race.hud.bro_meter_label.text.contains("OVERLOAD"),
-		"en HUD bro meter label is language-neutral")
 	_check(race.hud.hint_label.text == "", "en HUD idle hint line stays empty")
 	_check(is_equal_approx(race.turtle.speed, speed_before), "language does not change speed")
 	_check(race.turtle.position.x >= x_before, "language does not rewind position")

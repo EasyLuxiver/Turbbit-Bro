@@ -3,7 +3,7 @@ extends Control
 ## 左上：SHIFT 当前控制 + 两个角色各自的“操控 / 待命·稳定”，
 ##       只有真的失衡时才出现一条“兔子失衡 18% / 乌龟倾覆风险 40%”。
 ## 右上：时间（mm:ss.t）、区域、进度。没有速度行，也没有固定总分（§七-9）。
-## 左下：氧气 + 状态 + 分格条。右下：默契 0/3 三格。
+## 左下：氧气 + 状态 + 分格条。右下不再有 0/3 面板（FEEL-24）。
 ## 底部中央：首次遇到某类障碍时教一次；干净通过/BRO PASS 短反馈。
 ## 数据全部来自 race 与 GameManager，不自己存副本。
 
@@ -76,12 +76,9 @@ var snack_label: Label
 ## CORE-FEEL-07 P1-C：食物接近时第二行，同时预告“兔子吃 / 乌龟吃”两种效果。
 var snack_effect_label: Label
 
-var bro_meter_label: Label
-var bro_other_label: Label
-var bro_meter_segs: Array[ColorRect] = []
-var bond_label: Label
-var bond_segs: Array[ColorRect] = []
-
+## FEEL-24：右下角 0/3 面板（BRO METER、默契/Showtime）已整体移除；
+## FEEL-47 起三格 BRO METER 改由头顶短叹号 + 抱怨窗口表达。
+## 旧标签不再声明，避免测试误以为 HUD 还有这一行。
 var feedback_label: Label
 var hint_label: Label
 var prompt_label: Label
