@@ -33,6 +33,7 @@ func _run() -> void:
 	race.test_disable_hazards = true
 	race.hazard_groups = []
 	race.test_no_control_ring = true
+	race.test_no_gameplay_draw = true
 	# 只看新角色与背景；隐藏灰盒角色和 HUD。
 	race.rabbit.visible = false
 	race.turtle.visible = false
@@ -41,15 +42,15 @@ func _run() -> void:
 	pair = Sprite2D.new()
 	pair.texture = load("res://assets/art/characters_pair.png")
 	pair.centered = false
-	pair.scale = Vector2(0.45, 0.45)
+	pair.scale = Vector2(0.8, 0.8)
 	pair.z_index = 20
 	race.add_child(pair)
 	for x in [400.0, 1800.0]:
 		race.camera.position = Vector2(x, 450.0)
 		race.turtle.position = Vector2(x, race.surface_ref())
 		# 以合照中心对准角色位置，脚底压在水线上。
-		pair.position = Vector2(x - 250.0 * 0.45 * 0.5,
-			race.surface_ref() - 300.0 * 0.45 + 10.0)
+		pair.position = Vector2(x - 250.0 * 0.8 * 0.5,
+			race.surface_ref() - 300.0 * 0.8 + 10.0)
 		race._update_dock()
 		race.queue_redraw()
 		for i in 3:
