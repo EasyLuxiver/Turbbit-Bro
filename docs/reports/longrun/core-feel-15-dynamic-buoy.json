@@ -1,0 +1,44 @@
+{
+  "checks": [
+    {
+      "detail": "bumped=true visual_overlap=true rect=[P: (1000.0, 306.0), S: (120.0, 42.0)] body=[P: (952.0, 306.0), S: (96.0, 56.0)]",
+      "name": "buoy_high_hits_turtle",
+      "ok": true
+    },
+    {
+      "detail": "speed=196.8 hit_roles={  }",
+      "name": "buoy_high_hits_turtle_feedback",
+      "ok": true
+    },
+    {
+      "detail": "dunk_timer=1.80",
+      "name": "buoy_high_hits_turtle_visible_reaction",
+      "ok": true
+    },
+    {
+      "detail": "bumped=false visual_overlap=false rect=[P: (1000.0, 236.0), S: (120.0, 42.0)] body=[P: (952.0, 306.0), S: (96.0, 56.0)]",
+      "name": "buoy_low_lets_turtle_pass",
+      "ok": true
+    },
+    {
+      "detail": "bumped=true visual_overlap=true rect=[P: (1000.0, 306.0), S: (120.0, 42.0)] body=[P: (952.0, 306.0), S: (96.0, 56.0)]",
+      "name": "crate_high_hits_turtle",
+      "ok": true
+    },
+    {
+      "detail": "speed=196.8 hit_roles={  }",
+      "name": "crate_high_hits_turtle_feedback",
+      "ok": true
+    },
+    {
+      "detail": "dunk_timer=1.80",
+      "name": "crate_high_hits_turtle_visible_reaction",
+      "ok": true
+    },
+    {
+      "detail": "bumped=false visual_overlap=false rect=[P: (1000.0, 254.0), S: (120.0, 42.0)] body=[P: (952.0, 306.0), S: (96.0, 56.0)]",
+      "name": "static_rock_does_not_hit_turtle",
+      "ok": true
+    }
+  ]
+}

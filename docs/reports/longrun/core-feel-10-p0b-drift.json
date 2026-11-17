@@ -1,0 +1,17 @@
+{
+  "checks": [
+    {
+      "detail": "delay CALM=0.00 DIST=0.05 RESTLESS=0.17 MISCHIEF=0.22",
+      "name": "stage_delays",
+      "ok": true
+    },
+    {
+      "detail": "RESTLESS≈2.6 MISCHIEF≈2.6",
+      "name": "tubo_stage_drift",
+      "ok": true
+    }
+  ],
+  "generated_at": "2026-11-14T20:25:29",
+  "rows": [],
+  "task": "TBB-CORE-FEEL-10 P0-B"
+}

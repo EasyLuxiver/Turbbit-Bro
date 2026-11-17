@@ -1,0 +1,81 @@
+{
+  "checks": [
+    {
+      "detail": "30 Hz: 首次=true 立即二次被挡=true 解锁=0.233s 误差=0.033s 不排队=true",
+      "name": "shift_30Hz",
+      "ok": true
+    },
+    {
+      "detail": "60 Hz: 首次=true 立即二次被挡=true 解锁=0.217s 误差=0.017s 不排队=true",
+      "name": "shift_60Hz",
+      "ok": true
+    },
+    {
+      "detail": "120 Hz: 首次=true 立即二次被挡=true 解锁=0.208s 误差=0.008s 不排队=true",
+      "name": "shift_120Hz",
+      "ok": true
+    },
+    {
+      "detail": "普通事故挡住=true；主动救援允许=true",
+      "name": "shift_accident_rules",
+      "ok": true
+    },
+    {
+      "detail": "开始=true 结束=true 分=100 氧=5.5 次数=1",
+      "name": "showtime_once",
+      "ok": true
+    },
+    {
+      "detail": "第二次完成调用不重复发奖=true",
+      "name": "showtime_no_double",
+      "ok": true
+    },
+    {
+      "detail": "SHIFT 中断不发奖=true",
+      "name": "showtime_interrupt_no_reward",
+      "ok": true
+    },
+    {
+      "detail": "HUD 反馈含奖励文本=true",
+      "name": "showtime_feedback",
+      "ok": true
+    },
+    {
+      "detail": "结算页显示次数=true",
+      "name": "showtime_result_row",
+      "ok": true
+    }
+  ],
+  "failed": 0,
+  "generated_at": "2026-11-14T04:28:42",
+  "shift_lock": [
+    {
+      "error_vs_0p2_s": 0.033,
+      "first_immediate": true,
+      "hz": 30,
+      "immediate_second_blocked": true,
+      "no_queue": true,
+      "step_s": 0.0333333333333333,
+      "unlock_s": 0.233
+    },
+    {
+      "error_vs_0p2_s": 0.017,
+      "first_immediate": true,
+      "hz": 60,
+      "immediate_second_blocked": true,
+      "no_queue": true,
+      "step_s": 0.0166666666666667,
+      "unlock_s": 0.217
+    },
+    {
+      "error_vs_0p2_s": 0.008,
+      "first_immediate": true,
+      "hz": 120,
+      "immediate_second_blocked": true,
+      "no_queue": true,
+      "step_s": 0.00833333333333333,
+      "unlock_s": 0.208
+    }
+  ],
+  "task": "TBB-CORE-FEEL-09 P0-C/P0-D"
+}

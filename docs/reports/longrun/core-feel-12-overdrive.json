@@ -1,0 +1,127 @@
+{
+  "checks": [
+    {
+      "detail": "control=turtle od= time=1.0",
+      "name": "1_normal_shift_no_slow",
+      "ok": true
+    },
+    {
+      "detail": "od= role=",
+      "name": "2a_tubo_pre",
+      "ok": false
+    },
+    {
+      "detail": "control=turtle od= rabbit=RIDING emphasis=0.00",
+      "name": "2b_tubo_shift_overdrive",
+      "ok": false
+    },
+    {
+      "detail": "emphasis=0.00 time=1.00",
+      "name": "2c_emphasis_holds",
+      "ok": false
+    },
+    {
+      "detail": "emphasis=0.00 time=1.00",
+      "name": "2d_emphasis_ends",
+      "ok": true
+    },
+    {
+      "detail": "od=",
+      "name": "3a_bitt_pre",
+      "ok": false
+    },
+    {
+      "detail": "control=rabbit turtle_speed=220 time=1.0",
+      "name": "3b_bitt_shift_overdrive",
+      "ok": false
+    },
+    {
+      "detail": "BITT diving in slow-mo=true",
+      "name": "4_slowmo_inputs",
+      "ok": true
+    },
+    {
+      "detail": "events 0 -> 0",
+      "name": "5_slowmo_shift_no_repeat",
+      "ok": true
+    },
+    {
+      "detail": "relay={  } score_delta=0",
+      "name": "6_collision_no_relay_reward",
+      "ok": true
+    },
+    {
+      "detail": "events=0",
+      "name": "7_consecutive_different_roles",
+      "ok": false
+    },
+    {
+      "detail": "od= control=turtle",
+      "name": "8_rescue_no_overdrive",
+      "ok": true
+    },
+    {
+      "detail": "end=0.73 time=1.00",
+      "name": "9_emphasis_30Hz",
+      "ok": true
+    },
+    {
+      "detail": "end=0.70 time=1.00",
+      "name": "9_emphasis_60Hz",
+      "ok": true
+    },
+    {
+      "detail": "end=0.70 time=1.00",
+      "name": "9_emphasis_120Hz",
+      "ok": true
+    }
+  ],
+  "generated_at": "2026-11-15T16:51:43",
+  "rows": [
+    {
+      "case": "normal"
+    },
+    {
+      "case": "tubo",
+      "event": {},
+      "time": 1.0
+    },
+    {
+      "case": "bitt",
+      "event": {},
+      "speed": 220.0
+    },
+    {
+      "case": "slow_inputs",
+      "dive": true
+    },
+    {
+      "case": "slow_shift",
+      "events": 0
+    },
+    {
+      "case": "collision",
+      "relay": {}
+    },
+    {
+      "case": "consecutive",
+      "events": 0
+    },
+    {
+      "case": "rescue"
+    },
+    {
+      "case": "emphasis_30",
+      "end": 0.733333333333333
+    },
+    {
+      "case": "emphasis_60",
+      "end": 0.700000000000001
+    },
+    {
+      "case": "emphasis_120",
+      "end": 0.7
+    }
+  ],
+  "task": "TBB-CORE-FEEL-12 P0"
+}

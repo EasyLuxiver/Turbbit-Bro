@@ -1,0 +1,69 @@
+{
+  "checks": [
+    {
+      "detail": "pack=LEAD_LUNGE leader=WARN",
+      "name": "first_is_leader",
+      "ok": true
+    },
+    {
+      "detail": "target=rabbit mode=fat phases=[\"LEAD_LUNGE\", \"SAFE1\", \"GAP1\", \"FAT_LUNGE\"]",
+      "name": "second_is_fat",
+      "ok": true
+    },
+    {
+      "detail": "actors=3",
+      "name": "pack_has_three_entities",
+      "ok": true
+    },
+    {
+      "detail": "same=true",
+      "name": "fat_is_same_entity",
+      "ok": true
+    },
+    {
+      "detail": "crouch=false stand=true",
+      "name": "fat_crouch_safe_stand_hit",
+      "ok": true
+    },
+    {
+      "detail": "target=turtle mode=thin",
+      "name": "third_is_thin",
+      "ok": true
+    },
+    {
+      "detail": "same=true",
+      "name": "thin_is_same_entity",
+      "ok": true
+    },
+    {
+      "detail": "dive=true cruise=true leap=true",
+      "name": "thin_dive_only",
+      "ok": true
+    },
+    {
+      "detail": "phase=CIRCLE attacks=0",
+      "name": "rescue_clears_pack",
+      "ok": true
+    },
+    {
+      "detail": "stands=12.0",
+      "name": "pack_enters_stands",
+      "ok": true
+    },
+    {
+      "detail": "found=true",
+      "name": "z3_shark6_present",
+      "ok": true
+    },
+    {
+      "detail": "phase=LEAD_LUNGE attacks=1",
+      "name": "z3_pack_attacks",
+      "ok": true
+    },
+    {
+      "detail": "method=false",
+      "name": "shark_intervention_removed",
+      "ok": true
+    }
+  ]
+}

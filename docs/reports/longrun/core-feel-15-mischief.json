@@ -1,0 +1,69 @@
+{
+  "checks": [
+    {
+      "detail": "role=turtle control=rabbit phase=TELEGRAPH",
+      "name": "1_bitt_mischief",
+      "ok": true
+    },
+    {
+      "detail": "phase=ACTION fx=shock",
+      "name": "1b_shock_effect",
+      "ok": true
+    },
+    {
+      "detail": "role= meter=0",
+      "name": "1c_resets",
+      "ok": true
+    },
+    {
+      "detail": "role=rabbit fx=tug",
+      "name": "2_tubo_mischief",
+      "ok": true
+    },
+    {
+      "detail": "role= turtle_meter=0",
+      "name": "3_shift_stops_old",
+      "ok": true
+    },
+    {
+      "detail": "role=rabbit",
+      "name": "3b_new_role_takes_over",
+      "ok": true
+    },
+    {
+      "detail": "role= meter=0",
+      "name": "3c_action_shift_stops",
+      "ok": true
+    },
+    {
+      "detail": "role= fx=",
+      "name": "4_no_residual_fx",
+      "ok": true
+    },
+    {
+      "detail": "role= meter=0",
+      "name": "5_rescue_priority",
+      "ok": true
+    },
+    {
+      "detail": "control=turtle catch=true",
+      "name": "5b_bitt_can_catch",
+      "ok": true
+    },
+    {
+      "detail": "role=",
+      "name": "6_single_role",
+      "ok": true
+    },
+    {
+      "detail": "steps=42 role= meter=0",
+      "name": "7_mischief_hz_30",
+      "ok": true
+    },
+    {
+      "detail": "steps=165 role= meter=0",
+      "name": "7_mischief_hz_120",
+      "ok": true
+    }
+  ]
+}

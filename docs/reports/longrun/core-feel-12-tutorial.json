@@ -1,0 +1,25 @@
+{
+  "checks": [
+    {
+      "detail": "line/hint step1",
+      "name": "step1_prompt",
+      "ok": true
+    },
+    {
+      "detail": "line step2, no step1",
+      "name": "step2_replaces_step1",
+      "ok": true
+    },
+    {
+      "detail": "step=2 (expect 2)",
+      "name": "early_action_advances",
+      "ok": true
+    },
+    {
+      "detail": "line step3 stable",
+      "name": "no_stale_prompt",
+      "ok": true
+    }
+  ],
+  "task": "TBB-CORE-FEEL-12 G"
+}

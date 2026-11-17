@@ -1,0 +1,14 @@
+{
+  "checks": [
+    {
+      "detail": "negative=false positive=true step=3",
+      "name": "tutorial_requires_real_relay",
+      "ok": true
+    },
+    {
+      "detail": "step=3",
+      "name": "tutorial_advances_after_relay",
+      "ok": true
+    }
+  ]
+}

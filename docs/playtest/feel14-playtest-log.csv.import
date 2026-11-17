@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bks0ro5ymxl64"
+
+[deps]
+
+source_file="res://docs/playtest/feel14-playtest-log.csv"
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

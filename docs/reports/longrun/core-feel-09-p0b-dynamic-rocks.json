@@ -1,0 +1,384 @@
+{
+  "checks": [
+    {
+      "detail": "9 个动态障碍全部存在",
+      "name": "nine_present",
+      "ok": true
+    },
+    {
+      "detail": "x/w/判定矩形/motion 与基线一致",
+      "name": "physics_identical",
+      "ok": true
+    },
+    {
+      "detail": "9/9 有运动来源",
+      "name": "motion_source",
+      "ok": true
+    }
+  ],
+  "count": 9,
+  "generated_at": "2026-11-14T04:28:48",
+  "rows": [
+    {
+      "collision": "同一矩形（含反下潜段）随浪整体上下；没有缩框",
+      "motion_baseline": {
+        "amp": 52.0,
+        "axis": "y",
+        "name": "tide_rock",
+        "period": 3.6
+      },
+      "motion_now": {
+        "amp": 52.0,
+        "axis": "y",
+        "name": "tide_rock",
+        "period": 3.6
+      },
+      "motion_source": "锚绳拴在海底，浮标随涌浪起落；画面上绳子和浪峰一起动",
+      "new_identity": "buoy",
+      "obstacle_id": "rock3",
+      "old_identity": "sea_rock (FEEL-08 前)",
+      "physics_identical": true,
+      "rects_now": [
+        [
+          8400.0,
+          220.0,
+          120.0,
+          42.0
+        ],
+        [
+          8400.0,
+          368.0,
+          120.0,
+          50.0
+        ]
+      ],
+      "visual_behavior": "红白桶身 + 顶灯 + 锚绳；浪峰时底部画浪鼓，浪谷时水线没过桶身",
+      "w_baseline": 120.0,
+      "w_now": 120.0,
+      "x_baseline": 8400.0,
+      "x_now": 8400.0,
+      "zone": 1
+    },
+    {
+      "collision": "同一矩形（含反下潜段）随吊点上下；没有缩框",
+      "motion_baseline": {
+        "amp": 52.0,
+        "axis": "y",
+        "name": "tide_rock",
+        "period": 3.6
+      },
+      "motion_now": {
+        "amp": 52.0,
+        "axis": "y",
+        "name": "tide_rock",
+        "period": 3.6
+      },
+      "motion_source": "吊索挂在屋顶/吊臂上，货箱随吊点升降；画面上吊索与滑轮可见",
+      "new_identity": "dock_crate",
+      "obstacle_id": "rock4",
+      "old_identity": "sea_rock (FEEL-08 前)",
+      "physics_identical": true,
+      "rects_now": [
+        [
+          17770.0,
+          220.0,
+          120.0,
+          42.0
+        ],
+        [
+          17770.0,
+          368.0,
+          120.0,
+          50.0
+        ]
+      ],
+      "visual_behavior": "木箱 + 两根吊索汇聚到滑轮；箱体升降时吊索长度同步变化",
+      "w_baseline": 120.0,
+      "w_now": 120.0,
+      "x_baseline": 17770.0,
+      "x_now": 17770.0,
+      "zone": 2
+    },
+    {
+      "collision": "同一矩形（含反下潜段）随吊点上下；没有缩框",
+      "motion_baseline": {
+        "amp": 52.0,
+        "axis": "y",
+        "name": "tide_rock",
+        "period": 3.6
+      },
+      "motion_now": {
+        "amp": 52.0,
+        "axis": "y",
+        "name": "tide_rock",
+        "period": 3.6
+      },
+      "motion_source": "吊索挂在屋顶/吊臂上，货箱随吊点升降；画面上吊索与滑轮可见",
+      "new_identity": "dock_crate",
+      "obstacle_id": "rock5",
+      "old_identity": "sea_rock (FEEL-08 前)",
+      "physics_identical": true,
+      "rects_now": [
+        [
+          23200.0,
+          220.0,
+          130.0,
+          42.0
+        ],
+        [
+          23200.0,
+          368.0,
+          130.0,
+          50.0
+        ]
+      ],
+      "visual_behavior": "木箱 + 两根吊索汇聚到滑轮；箱体升降时吊索长度同步变化",
+      "w_baseline": 130.0,
+      "w_now": 130.0,
+      "x_baseline": 23200.0,
+      "x_now": 23200.0,
+      "zone": 2
+    },
+    {
+      "collision": "同一矩形（含反下潜段）随吊点上下；没有缩框",
+      "motion_baseline": {
+        "amp": 52.0,
+        "axis": "y",
+        "name": "tide_rock",
+        "period": 3.6
+      },
+      "motion_now": {
+        "amp": 52.0,
+        "axis": "y",
+        "name": "tide_rock",
+        "period": 3.6
+      },
+      "motion_source": "吊索挂在屋顶/吊臂上，货箱随吊点升降；画面上吊索与滑轮可见",
+      "new_identity": "dock_crate",
+      "obstacle_id": "rock7",
+      "old_identity": "sea_rock (FEEL-08 前)",
+      "physics_identical": true,
+      "rects_now": [
+        [
+          31800.0,
+          220.0,
+          120.0,
+          42.0
+        ],
+        [
+          31800.0,
+          368.0,
+          120.0,
+          50.0
+        ]
+      ],
+      "visual_behavior": "木箱 + 两根吊索汇聚到滑轮；箱体升降时吊索长度同步变化",
+      "w_baseline": 120.0,
+      "w_now": 120.0,
+      "x_baseline": 31800.0,
+      "x_now": 31800.0,
+      "zone": 2
+    },
+    {
+      "collision": "同一矩形（含反下潜段）随浪上下；没有缩框",
+      "motion_baseline": {
+        "amp": 52.0,
+        "axis": "y",
+        "name": "tide_rock",
+        "period": 3.6
+      },
+      "motion_now": {
+        "amp": 52.0,
+        "axis": "y",
+        "name": "tide_rock",
+        "period": 3.6
+      },
+      "motion_source": "从码头冲出的货箱，随水渠/大浪浮沉；画面上浪峰与水花可见",
+      "new_identity": "drift_crate",
+      "obstacle_id": "rock8",
+      "old_identity": "sea_rock (FEEL-08 前)",
+      "physics_identical": true,
+      "rects_now": [
+        [
+          41450.0,
+          220.0,
+          130.0,
+          42.0
+        ],
+        [
+          41450.0,
+          368.0,
+          130.0,
+          50.0
+        ]
+      ],
+      "visual_behavior": "半沉木箱 + 浪鼓 + 两侧水花；浪谷时箱体几乎贴水线",
+      "w_baseline": 130.0,
+      "w_now": 130.0,
+      "x_baseline": 41450.0,
+      "x_now": 41450.0,
+      "zone": 3
+    },
+    {
+      "collision": "同一矩形（含反下潜段）随浪上下；没有缩框",
+      "motion_baseline": {
+        "amp": 52.0,
+        "axis": "y",
+        "name": "tide_rock",
+        "period": 3.6
+      },
+      "motion_now": {
+        "amp": 52.0,
+        "axis": "y",
+        "name": "tide_rock",
+        "period": 3.6
+      },
+      "motion_source": "从码头冲出的货箱，随水渠/大浪浮沉；画面上浪峰与水花可见",
+      "new_identity": "drift_crate",
+      "obstacle_id": "rock9",
+      "old_identity": "sea_rock (FEEL-08 前)",
+      "physics_identical": true,
+      "rects_now": [
+        [
+          48610.0,
+          220.0,
+          140.0,
+          42.0
+        ],
+        [
+          48610.0,
+          368.0,
+          140.0,
+          50.0
+        ]
+      ],
+      "visual_behavior": "半沉木箱 + 浪鼓 + 两侧水花；浪谷时箱体几乎贴水线",
+      "w_baseline": 140.0,
+      "w_now": 140.0,
+      "x_baseline": 48610.0,
+      "x_now": 48610.0,
+      "zone": 3
+    },
+    {
+      "collision": "同一矩形（含反下潜段）随浪上下；没有缩框",
+      "motion_baseline": {
+        "amp": 52.0,
+        "axis": "y",
+        "name": "tide_rock",
+        "period": 3.6
+      },
+      "motion_now": {
+        "amp": 52.0,
+        "axis": "y",
+        "name": "tide_rock",
+        "period": 3.6
+      },
+      "motion_source": "从码头冲出的货箱，随水渠/大浪浮沉；画面上浪峰与水花可见",
+      "new_identity": "drift_crate",
+      "obstacle_id": "rock10",
+      "old_identity": "sea_rock (FEEL-08 前)",
+      "physics_identical": true,
+      "rects_now": [
+        [
+          56180.0,
+          220.0,
+          120.0,
+          42.0
+        ],
+        [
+          56180.0,
+          368.0,
+          120.0,
+          50.0
+        ]
+      ],
+      "visual_behavior": "半沉木箱 + 浪鼓 + 两侧水花；浪谷时箱体几乎贴水线",
+      "w_baseline": 120.0,
+      "w_now": 120.0,
+      "x_baseline": 56180.0,
+      "x_now": 56180.0,
+      "zone": 3
+    },
+    {
+      "collision": "同一矩形（含反下潜段）随浪上下；没有缩框",
+      "motion_baseline": {
+        "amp": 52.0,
+        "axis": "y",
+        "name": "tide_rock",
+        "period": 3.6
+      },
+      "motion_now": {
+        "amp": 52.0,
+        "axis": "y",
+        "name": "tide_rock",
+        "period": 3.6
+      },
+      "motion_source": "从码头冲出的货箱，随水渠/大浪浮沉；画面上浪峰与水花可见",
+      "new_identity": "drift_crate",
+      "obstacle_id": "rock11",
+      "old_identity": "sea_rock (FEEL-08 前)",
+      "physics_identical": true,
+      "rects_now": [
+        [
+          61940.0,
+          220.0,
+          150.0,
+          42.0
+        ],
+        [
+          61940.0,
+          368.0,
+          150.0,
+          50.0
+        ]
+      ],
+      "visual_behavior": "半沉木箱 + 浪鼓 + 两侧水花；浪谷时箱体几乎贴水线",
+      "w_baseline": 150.0,
+      "w_now": 150.0,
+      "x_baseline": 61940.0,
+      "x_now": 61940.0,
+      "zone": 3
+    },
+    {
+      "collision": "同一矩形（含反下潜段）随浪上下；没有缩框",
+      "motion_baseline": {
+        "amp": 52.0,
+        "axis": "y",
+        "name": "tide_rock",
+        "period": 3.6
+      },
+      "motion_now": {
+        "amp": 52.0,
+        "axis": "y",
+        "name": "tide_rock",
+        "period": 3.6
+      },
+      "motion_source": "从码头冲出的货箱，随水渠/大浪浮沉；画面上浪峰与水花可见",
+      "new_identity": "drift_crate",
+      "obstacle_id": "rock12",
+      "old_identity": "sea_rock (FEEL-08 前)",
+      "physics_identical": true,
+      "rects_now": [
+        [
+          66720.0,
+          220.0,
+          120.0,
+          42.0
+        ],
+        [
+          66720.0,
+          368.0,
+          120.0,
+          50.0
+        ]
+      ],
+      "visual_behavior": "半沉木箱 + 浪鼓 + 两侧水花；浪谷时箱体几乎贴水线",
+      "w_baseline": 120.0,
+      "w_now": 120.0,
+      "x_baseline": 66720.0,
+      "x_now": 66720.0,
+      "zone": 3
+    }
+  ],
+  "task": "TBB-CORE-FEEL-09 P0-B"
+}

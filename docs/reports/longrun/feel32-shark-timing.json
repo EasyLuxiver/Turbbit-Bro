@@ -1,0 +1,14 @@
+{
+  "checks": [
+    {
+      "detail": "10/10",
+      "name": "arena_10_rounds",
+      "ok": true
+    },
+    {
+      "detail": "{\"max_attacks\":1,\"ok\":true,\"order\":[\"leader\",\"fat\",\"thin\"],\"safety\":[\"leader->fat=0.70\",\"fat->thin=0.70\"],\"warn\":[\"leader=0.95\",\"fat=0.95\",\"thin=1.05\"]}",
+      "name": "z3_timeline",
+      "ok": true
+    }
+  ]
+}

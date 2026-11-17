@@ -1,0 +1,309 @@
+{
+  "checks": [
+    {
+      "detail": "兔子！看前面！",
+      "name": "step1 baseline text",
+      "ok": true
+    },
+    {
+      "detail": "702.0 vs 702.0",
+      "name": "line width stable #0",
+      "ok": true
+    },
+    {
+      "detail": "1 vs 1",
+      "name": "line count stable #0",
+      "ok": true
+    },
+    {
+      "detail": "880.0 vs 880.0",
+      "name": "panel width stable #0",
+      "ok": true
+    },
+    {
+      "detail": "162.0 vs 162.0",
+      "name": "panel height stable #0",
+      "ok": true
+    },
+    {
+      "detail": "360.0 vs 360.0",
+      "name": "panel x stable #0",
+      "ok": true
+    },
+    {
+      "detail": "兔子！看前面！",
+      "name": "line text unchanged #0",
+      "ok": true
+    },
+    {
+      "detail": "702.0 vs 702.0",
+      "name": "line width stable #1",
+      "ok": true
+    },
+    {
+      "detail": "1 vs 1",
+      "name": "line count stable #1",
+      "ok": true
+    },
+    {
+      "detail": "880.0 vs 880.0",
+      "name": "panel width stable #1",
+      "ok": true
+    },
+    {
+      "detail": "162.0 vs 162.0",
+      "name": "panel height stable #1",
+      "ok": true
+    },
+    {
+      "detail": "360.0 vs 360.0",
+      "name": "panel x stable #1",
+      "ok": true
+    },
+    {
+      "detail": "兔子！看前面！",
+      "name": "line text unchanged #1",
+      "ok": true
+    },
+    {
+      "detail": "702.0 vs 702.0",
+      "name": "line width stable #2",
+      "ok": true
+    },
+    {
+      "detail": "1 vs 1",
+      "name": "line count stable #2",
+      "ok": true
+    },
+    {
+      "detail": "880.0 vs 880.0",
+      "name": "panel width stable #2",
+      "ok": true
+    },
+    {
+      "detail": "162.0 vs 162.0",
+      "name": "panel height stable #2",
+      "ok": true
+    },
+    {
+      "detail": "360.0 vs 360.0",
+      "name": "panel x stable #2",
+      "ok": true
+    },
+    {
+      "detail": "兔子！看前面！",
+      "name": "line text unchanged #2",
+      "ok": true
+    },
+    {
+      "detail": "702.0 vs 702.0",
+      "name": "line width stable #3",
+      "ok": true
+    },
+    {
+      "detail": "1 vs 1",
+      "name": "line count stable #3",
+      "ok": true
+    },
+    {
+      "detail": "880.0 vs 880.0",
+      "name": "panel width stable #3",
+      "ok": true
+    },
+    {
+      "detail": "162.0 vs 162.0",
+      "name": "panel height stable #3",
+      "ok": true
+    },
+    {
+      "detail": "360.0 vs 360.0",
+      "name": "panel x stable #3",
+      "ok": true
+    },
+    {
+      "detail": "兔子！看前面！",
+      "name": "line text unchanged #3",
+      "ok": true
+    },
+    {
+      "detail": "702.0 vs 702.0",
+      "name": "line width stable #4",
+      "ok": true
+    },
+    {
+      "detail": "1 vs 1",
+      "name": "line count stable #4",
+      "ok": true
+    },
+    {
+      "detail": "880.0 vs 880.0",
+      "name": "panel width stable #4",
+      "ok": true
+    },
+    {
+      "detail": "162.0 vs 162.0",
+      "name": "panel height stable #4",
+      "ok": true
+    },
+    {
+      "detail": "360.0 vs 360.0",
+      "name": "panel x stable #4",
+      "ok": true
+    },
+    {
+      "detail": "兔子！看前面！",
+      "name": "line text unchanged #4",
+      "ok": true
+    },
+    {
+      "detail": "702.0 vs 702.0",
+      "name": "line width stable #5",
+      "ok": true
+    },
+    {
+      "detail": "1 vs 1",
+      "name": "line count stable #5",
+      "ok": true
+    },
+    {
+      "detail": "880.0 vs 880.0",
+      "name": "panel width stable #5",
+      "ok": true
+    },
+    {
+      "detail": "162.0 vs 162.0",
+      "name": "panel height stable #5",
+      "ok": true
+    },
+    {
+      "detail": "360.0 vs 360.0",
+      "name": "panel x stable #5",
+      "ok": true
+    },
+    {
+      "detail": "兔子！看前面！",
+      "name": "line text unchanged #5",
+      "ok": true
+    },
+    {
+      "detail": "702.0 vs 702.0",
+      "name": "line width stable #6",
+      "ok": true
+    },
+    {
+      "detail": "1 vs 1",
+      "name": "line count stable #6",
+      "ok": true
+    },
+    {
+      "detail": "880.0 vs 880.0",
+      "name": "panel width stable #6",
+      "ok": true
+    },
+    {
+      "detail": "162.0 vs 162.0",
+      "name": "panel height stable #6",
+      "ok": true
+    },
+    {
+      "detail": "360.0 vs 360.0",
+      "name": "panel x stable #6",
+      "ok": true
+    },
+    {
+      "detail": "兔子！看前面！",
+      "name": "line text unchanged #6",
+      "ok": true
+    },
+    {
+      "detail": "702.0 vs 702.0",
+      "name": "line width stable #7",
+      "ok": true
+    },
+    {
+      "detail": "1 vs 1",
+      "name": "line count stable #7",
+      "ok": true
+    },
+    {
+      "detail": "880.0 vs 880.0",
+      "name": "panel width stable #7",
+      "ok": true
+    },
+    {
+      "detail": "162.0 vs 162.0",
+      "name": "panel height stable #7",
+      "ok": true
+    },
+    {
+      "detail": "360.0 vs 360.0",
+      "name": "panel x stable #7",
+      "ok": true
+    },
+    {
+      "detail": "兔子！看前面！",
+      "name": "line text unchanged #7",
+      "ok": true
+    },
+    {
+      "detail": "702.0 vs 702.0",
+      "name": "line width stable #8",
+      "ok": true
+    },
+    {
+      "detail": "1 vs 1",
+      "name": "line count stable #8",
+      "ok": true
+    },
+    {
+      "detail": "880.0 vs 880.0",
+      "name": "panel width stable #8",
+      "ok": true
+    },
+    {
+      "detail": "162.0 vs 162.0",
+      "name": "panel height stable #8",
+      "ok": true
+    },
+    {
+      "detail": "360.0 vs 360.0",
+      "name": "panel x stable #8",
+      "ok": true
+    },
+    {
+      "detail": "兔子！看前面！",
+      "name": "line text unchanged #8",
+      "ok": true
+    },
+    {
+      "detail": "702.0 vs 702.0",
+      "name": "line width stable #9",
+      "ok": true
+    },
+    {
+      "detail": "1 vs 1",
+      "name": "line count stable #9",
+      "ok": true
+    },
+    {
+      "detail": "880.0 vs 880.0",
+      "name": "panel width stable #9",
+      "ok": true
+    },
+    {
+      "detail": "162.0 vs 162.0",
+      "name": "panel height stable #9",
+      "ok": true
+    },
+    {
+      "detail": "360.0 vs 360.0",
+      "name": "panel x stable #9",
+      "ok": true
+    },
+    {
+      "detail": "兔子！看前面！",
+      "name": "line text unchanged #9",
+      "ok": true
+    }
+  ]
+}

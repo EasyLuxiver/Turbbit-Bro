@@ -1,0 +1,114 @@
+{
+  "checks": [
+    {
+      "detail": "role=turtle phase=TELEGRAPH",
+      "name": "mischief_starts_uncontrolled",
+      "ok": true
+    },
+    {
+      "detail": "control=turtle role= complaint=",
+      "name": "shift_into_role_cancels",
+      "ok": true
+    },
+    {
+      "detail": "standby=0.00 buf= down=0.00 assist=OFF",
+      "name": "shift_clears_old_dive_and_jump",
+      "ok": true
+    },
+    {
+      "detail": "control=rabbit rabbit=RIDING",
+      "name": "shift_new_role_idle",
+      "ok": true
+    },
+    {
+      "detail": "dove=true diving=false standby=0.00",
+      "name": "turtle_does_not_inherit_dive",
+      "ok": true
+    },
+    {
+      "detail": "dove=true diving=false",
+      "name": "real_physics_no_dive_inherit",
+      "ok": true
+    },
+    {
+      "detail": "race=true gm=true",
+      "name": "showtime_starts",
+      "ok": true
+    },
+    {
+      "detail": "control=turtle active=true rabbit=SHOWTIME",
+      "name": "shift_keeps_showtime",
+      "ok": true
+    },
+    {
+      "detail": "od=",
+      "name": "overdrive_blocked_by_showtime",
+      "ok": true
+    },
+    {
+      "detail": "phase= role=",
+      "name": "overdrive_auto_trigger_disabled",
+      "ok": true
+    },
+    {
+      "detail": "phase= control=turtle",
+      "name": "overdrive_stays_off_after_shift",
+      "ok": true
+    },
+    {
+      "detail": "result= mount=RESCUE_ACTIVE oxygen=0.50",
+      "name": "auto_rescue_blocked_low_air",
+      "ok": true
+    },
+    {
+      "detail": "result= mount=RESCUE_ACTIVE oxygen=2.00",
+      "name": "auto_rescue_disabled",
+      "ok": true
+    },
+    {
+      "detail": "bird=0 shark=0 accidents=0->0",
+      "name": "rescue_clears_attacks",
+      "ok": true
+    },
+    {
+      "detail": "accident=NONE pending=false show=false lock=0.00 finished=false",
+      "name": "retry_reset_global",
+      "ok": true
+    },
+    {
+      "detail": "destroyed=true passed=true",
+      "name": "failed_log_destroys_once",
+      "ok": true
+    },
+    {
+      "detail": "deep=false surface=true",
+      "name": "no_underwater_leap",
+      "ok": true
+    },
+    {
+      "detail": "before=1300 after=1300",
+      "name": "long_gate_no_left_snap",
+      "ok": true
+    },
+    {
+      "detail": "氧气见底了。\n乌龟 没能把他捞回来。",
+      "name": "fail_text_in_character",
+      "ok": true
+    },
+    {
+      "detail": "训练结束 | 大表哥把解药丢过来：喝了。下次别让我下水捞你们。",
+      "name": "result_has_antidote",
+      "ok": true
+    },
+    {
+      "detail": "cap=6.0 level=0",
+      "name": "waterlogged_caps_and_recovers",
+      "ok": true
+    },
+    {
+      "detail": "赛程 12/55 | 速度 90% · 壳在晃",
+      "name": "hud_has_no_debug_units",
+      "ok": true
+    }
+  ]
+}

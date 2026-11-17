@@ -1,0 +1,76 @@
+{
+  "checks": [
+    {
+      "detail": "pending=true role=rabbit joint=0",
+      "name": "rabbit_single",
+      "ok": true
+    },
+    {
+      "detail": "pending=true role=turtle joint=0",
+      "name": "turtle_single",
+      "ok": true
+    },
+    {
+      "detail": "joint=1 show=1.40 state=BRO_BREAK",
+      "name": "true_joint",
+      "ok": true
+    },
+    {
+      "detail": "triggered=true accidents=1",
+      "name": "rescue_success_initial",
+      "ok": true
+    },
+    {
+      "detail": "accidents 1->1 bro 1->1",
+      "name": "rescue_success",
+      "ok": true
+    },
+    {
+      "detail": "accidents 1->1 bro 1->1",
+      "name": "rescue_fail",
+      "ok": true
+    },
+    {
+      "detail": "role=rabbit joint=0",
+      "name": "two_slots_then_single",
+      "ok": true
+    },
+    {
+      "detail": "joint=0 show=0.00",
+      "name": "outside_window",
+      "ok": true
+    },
+    {
+      "detail": "accidents 1 -> 1",
+      "name": "same_event",
+      "ok": true
+    },
+    {
+      "detail": "单角色捣乱时另一角色仍受控、不接受捣乱计时",
+      "name": "other_role_operable",
+      "ok": true
+    }
+  ],
+  "generated_at": "2026-11-14T20:26:10",
+  "rows": [
+    {
+      "bro": 0,
+      "case": "rabbit_single",
+      "pending": "rabbit"
+    },
+    {
+      "bro": 0,
+      "case": "turtle_single",
+      "pending": "turtle"
+    },
+    {
+      "activated": true,
+      "case": "overdrive",
+      "control_ok": true,
+      "recovered": true,
+      "started": true,
+      "turtle_ok": true
+    }
+  ],
+  "task": "TBB-CORE-FEEL-10 P0-A"
+}

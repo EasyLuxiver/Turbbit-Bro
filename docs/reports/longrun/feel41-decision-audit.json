@@ -1,0 +1,204 @@
+{
+  "checks": [
+    {
+      "detail": "by zone {\"1\":4,\"2\":5,\"3\":5}",
+      "name": "must_switch_14",
+      "ok": true
+    },
+    {
+      "detail": "by zone {\"1\":1,\"2\":7,\"3\":7}",
+      "name": "continuous_15",
+      "ok": true
+    },
+    {
+      "detail": "by zone {\"1\":2,\"2\":3,\"3\":0}",
+      "name": "dual_total_5",
+      "ok": true
+    },
+    {
+      "detail": "coop=21 combos=15",
+      "name": "coop_count",
+      "ok": true
+    },
+    {
+      "detail": "rock2=996,gate3=941,gate4=704,bird4=1180,log5=565,bird6=617,rock10=529,bird8=513,bird9=594",
+      "name": "combo_gaps_400_800",
+      "ok": true
+    },
+    {
+      "detail": "tight=log5,bird6,rock10,bird8,bird9",
+      "name": "tight_relay_count_5",
+      "ok": true
+    },
+    {
+      "detail": "rock6->gate4 704 px = 2.93 s",
+      "name": "z2_anticipation_gap",
+      "ok": true
+    },
+    {
+      "detail": "count=5",
+      "name": "dual_count",
+      "ok": true
+    },
+    {
+      "detail": "低梁：兔子趴低，或 SHIFT 乌龟下潜（耗氧）",
+      "name": "dual_beam_prompt",
+      "ok": true
+    },
+    {
+      "detail": "海鸟低飞：兔子趴低，或 SHIFT 乌龟下潜（耗氧）",
+      "name": "dual_bird_prompt",
+      "ok": true
+    },
+    {
+      "detail": "礁石：兔子跳过，或 SHIFT 乌龟下潜（耗氧，省一次换人）",
+      "name": "dual_rock_prompt",
+      "ok": true
+    },
+    {
+      "detail": "潮汐岩：兔子看浪谷跳过（时机风险），或 SHIFT 乌龟下潜（耗氧）",
+      "name": "dual_tide_prompt",
+      "ok": true
+    },
+    {
+      "detail": "低梁：兔子趴低，或 SHIFT 乌龟下潜（耗氧）",
+      "name": "dual_prompt_live",
+      "ok": true
+    },
+    {
+      "detail": "低梁：兔子趴低，或 SHIFT 乌龟下潜（耗氧）",
+      "name": "dual_prompt_mentions_two_answers",
+      "ok": true
+    },
+    {
+      "detail": "连招：拱下潜 → SHIFT 兔子跳过岩石",
+      "name": "z1_chain_prompt_live",
+      "ok": true
+    },
+    {
+      "detail": "海鸟低飞：兔子趴低，或 SHIFT 乌龟下潜（耗氧）",
+      "name": "z1_bird2_prompt_live",
+      "ok": true
+    },
+    {
+      "detail": "LOW_BEAM vs LOW_BEAM|dual",
+      "name": "dual_lesson_key",
+      "ok": true
+    },
+    {
+      "detail": "连招：拱下潜 → 立刻 SHIFT 兔子跳 → SHIFT 乌龟潜（浮木）",
+      "name": "tight_relay_prompt",
+      "ok": true
+    },
+    {
+      "detail": "FLOATING_LOG|relay",
+      "name": "tight_relay_lesson_key",
+      "ok": true
+    },
+    {
+      "detail": "连招：拱下潜 → SHIFT 兔子跳过岩石",
+      "name": "z1_chain_prompt",
+      "ok": true
+    },
+    {
+      "detail": "提前换人：礁石后 3 秒是拱门——跳完立刻 SHIFT 乌龟，或直接潜过礁石",
+      "name": "z2_anticipation_prompt",
+      "ok": true
+    },
+    {
+      "detail": "early + tight combos have failure-cause text",
+      "name": "relay_fail_hints",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"up\",\"hit_roles\":{},\"oxygen_used\":true,\"passed\":true,\"rabbit_y\":380.953460693359,\"turtle_y\":438.953460693359,\"who\":\"rabbit\"}",
+      "name": "dual_rabbit_passes_rock3",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"hit_roles\":{},\"oxygen_used\":true,\"passed\":true,\"rabbit_y\":425.996643066406,\"turtle_y\":483.996643066406,\"who\":\"turtle\"}",
+      "name": "dual_turtle_passes_rock3",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"hit_roles\":{},\"oxygen_used\":false,\"passed\":true,\"rabbit_y\":296.0,\"turtle_y\":334.0,\"who\":\"rabbit\"}",
+      "name": "dual_rabbit_passes_bird2",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"hit_roles\":{},\"oxygen_used\":true,\"passed\":true,\"rabbit_y\":425.995635986328,\"turtle_y\":483.995635986328,\"who\":\"turtle\"}",
+      "name": "dual_turtle_passes_bird2",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"hit_roles\":{},\"oxygen_used\":false,\"passed\":true,\"rabbit_y\":296.0,\"turtle_y\":334.0,\"who\":\"rabbit\"}",
+      "name": "dual_rabbit_passes_beam4",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"hit_roles\":{},\"oxygen_used\":true,\"passed\":true,\"rabbit_y\":425.997619628906,\"turtle_y\":483.997619628906,\"who\":\"turtle\"}",
+      "name": "dual_turtle_passes_beam4",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"up\",\"hit_roles\":{},\"oxygen_used\":false,\"passed\":true,\"rabbit_y\":276.0,\"turtle_y\":334.0,\"who\":\"rabbit\"}",
+      "name": "dual_rabbit_passes_rock6",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"hit_roles\":{},\"oxygen_used\":true,\"passed\":true,\"rabbit_y\":425.994323730469,\"turtle_y\":483.994323730469,\"who\":\"turtle\"}",
+      "name": "dual_turtle_passes_rock6",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"hit_roles\":{},\"oxygen_used\":false,\"passed\":true,\"rabbit_y\":296.0,\"turtle_y\":334.0,\"who\":\"rabbit\"}",
+      "name": "dual_rabbit_passes_beam5",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"hit_roles\":{},\"oxygen_used\":true,\"passed\":true,\"rabbit_y\":425.997161865234,\"turtle_y\":483.997161865234,\"who\":\"turtle\"}",
+      "name": "dual_turtle_passes_beam5",
+      "ok": true
+    },
+    {
+      "detail": "7/8 [true, true, false, true, true, true, true, true] (timing risk; turtle dive is stable)",
+      "name": "rock3_tide_phases",
+      "ok": true
+    },
+    {
+      "detail": "8/8 [true, true, true, true, true, true, true, true]",
+      "name": "rock3_turtle_phases",
+      "ok": true
+    },
+    {
+      "detail": "full={\"color\":\"(0.55, 0.95, 0.55, 1.0)\",\"fill\":1.0} two={\"color\":\"(0.55, 0.95, 0.55, 1.0)\",\"fill\":0.5} mid={\"color\":\"(1.0, 0.86, 0.3, 1.0)\",\"fill\":0.8} first_mid={\"color\":\"(1.0, 0.86, 0.3, 1.0)\",\"fill\":1.0} last={\"color\":\"(1.0, 0.35, 0.28, 1.0)\",\"fill\":0.8}",
+      "name": "oxygen_bubble_discrete",
+      "ok": true
+    },
+    {
+      "detail": "[]",
+      "name": "low_beam_motion_cleared",
+      "ok": true
+    },
+    {
+      "detail": "left=-1.0 right=1.0",
+      "name": "turtle_visual_facing",
+      "ok": true
+    },
+    {
+      "detail": "offset=(0.0, 0.0)",
+      "name": "rescue_suction_horizontal_only",
+      "ok": true
+    },
+    {
+      "detail": "1/2/3",
+      "name": "visual_stress_three_stages",
+      "ok": true
+    },
+    {
+      "detail": "after_2.5s=true",
+      "name": "visual_stress_not_permanent",
+      "ok": true
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "checks": [
+    {
+      "detail": "control=turtle relays=0 score_delta=0 speed=220 dx=330",
+      "name": "1_normal_cruise",
+      "ok": true
+    },
+    {
+      "detail": "relay={ \"from\": \"rabbit\", \"to\": \"turtle\", \"action\": \"jump\", \"continued\": true, \"acted\": true, \"clean\": false, \"combo\": false, \"result\": \"clever\", \"elapsed\": 1.417, \"score\": 50 }",
+      "name": "2_jump_to_dive_clever",
+      "ok": true
+    },
+    {
+      "detail": "relay={ \"from\": \"turtle\", \"to\": \"rabbit\", \"action\": \"dive\", \"continued\": false, \"acted\": true, \"clean\": false, \"combo\": false, \"result\": \"normal\", \"elapsed\": 1.417, \"score\": 0 } control=rabbit",
+      "name": "3_dive_to_jump_clever",
+      "ok": false
+    },
+    {
+      "detail": "control=turtle relays=1 last={ \"from\": \"rabbit\", \"to\": \"turtle\", \"action\": \"jump\", \"continued\": true, \"acted\": false, \"clean\": false, \"combo\": false, \"result\": \"normal\", \"elapsed\": 1.417, \"score\": 0 }",
+      "name": "4_rapid_double_no_double",
+      "ok": true
+    },
+    {
+      "detail": "rabbit_air true->true turtle_dive=true standby=0.00",
+      "name": "5_outgoing_continues",
+      "ok": true
+    },
+    {
+      "detail": "relay={ \"from\": \"rabbit\", \"to\": \"turtle\", \"action\": \"jump\", \"continued\": true, \"acted\": true, \"clean\": false, \"combo\": false, \"result\": \"normal\", \"elapsed\": 0.117, \"score\": 0 } score=+0 (obstacle score not counted)",
+      "name": "6_collision_cancels",
+      "ok": true
+    },
+    {
+      "detail": "control=turtle relays=0",
+      "name": "7_rescue_no_relay",
+      "ok": true
+    },
+    {
+      "detail": "control=turtle rabbit_dx=110.0",
+      "name": "8_drift_shift_stable",
+      "ok": true
+    },
+    {
+      "detail": "relay={ \"from\": \"rabbit\", \"to\": \"turtle\", \"action\": \"jump\", \"continued\": true, \"acted\": true, \"clean\": true, \"combo\": true, \"result\": \"perfect\", \"elapsed\": 0.15, \"score\": 100 }",
+      "name": "9_perfect_relay",
+      "ok": true
+    },
+    {
+      "detail": "relays 1->1 score_delta=0 (only obstacle points after)",
+      "name": "10_no_farm",
+      "ok": true
+    }
+  ],
+  "generated_at": "2026-11-16T01:15:05",
+  "rows": [
+    {
+      "case": "normal",
+      "ok": true,
+      "relays": 0
+    },
+    {
+      "case": "jump_to_dive",
+      "relay": {
+        "acted": true,
+        "action": "jump",
+        "clean": false,
+        "combo": false,
+        "continued": true,
+        "elapsed": 1.417,
+        "from": "rabbit",
+        "result": "clever",
+        "score": 50,
+        "to": "turtle"
+      }
+    },
+    {
+      "case": "dive_to_jump",
+      "relay": {
+        "acted": true,
+        "action": "dive",
+        "clean": false,
+        "combo": false,
+        "continued": false,
+        "elapsed": 1.417,
+        "from": "turtle",
+        "result": "normal",
+        "score": 0,
+        "to": "rabbit"
+      }
+    },
+    {
+      "case": "rapid_double",
+      "control": "turtle",
+      "relays": 1
+    },
+    {
+      "case": "outgoing_continues",
+      "rabbit_air": true,
+      "turtle_dive": true
+    },
+    {
+      "case": "collision",
+      "relay": {
+        "acted": true,
+        "action": "jump",
+        "clean": false,
+        "combo": false,
+        "continued": true,
+        "elapsed": 0.117,
+        "from": "rabbit",
+        "result": "normal",
+        "score": 0,
+        "to": "turtle"
+      }
+    },
+    {
+      "case": "rescue",
+      "control": "turtle",
+      "relays": 0
+    },
+    {
+      "case": "drift",
+      "control": "turtle"
+    },
+    {
+      "case": "perfect",
+      "relay": {
+        "acted": true,
+        "action": "jump",
+        "clean": true,
+        "combo": true,
+        "continued": true,
+        "elapsed": 0.15,
+        "from": "rabbit",
+        "result": "perfect",
+        "score": 100,
+        "to": "turtle"
+      }
+    },
+    {
+      "after": 1,
+      "case": "no_farm",
+      "relays": 1
+    }
+  ],
+  "task": "TBB-CORE-FEEL-11 B5"
+}

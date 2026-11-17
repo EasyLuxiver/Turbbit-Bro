@@ -1,0 +1,110 @@
+{
+  "checks": [
+    {
+      "detail": "[0.033, 0.017, 0.008] s，极差 0.025",
+      "label": "1 神游延迟按秒一致（30/60/120 Hz 极差 <= 0.05 s）",
+      "pass": false
+    },
+    {
+      "detail": "[0.033, 0.017, 0.008] s，极差 0.025",
+      "label": "1 神游延迟按秒一致（TUBO 30/60/120 Hz 极差 <= 0.05 s）",
+      "pass": false
+    },
+    {
+      "detail": "[660.0, 660.0, 660.0] px，极差 0.0",
+      "label": "2 3 s 巡航距离一致（极差 <= 1%）",
+      "pass": true
+    },
+    {
+      "detail": "[104.0, 104.0, 104.0] px（2×amp=104.0）",
+      "label": "3 动态障碍振幅按周期一致（极差 <= 2 px，达到 2×amp）",
+      "pass": true
+    },
+    {
+      "detail": "STUN_TIME=0.80，[0.83, 0.8, 0.81] s",
+      "label": "4 轻事故恢复按秒一致（极差 <= 0.1 s，且在 STUN_TIME+0.3 内）",
+      "pass": true
+    },
+    {
+      "detail": "[0.03, 0.02, 0.01] s",
+      "label": "5 神游恢复按秒一致（极差 <= 0.3 s，4.0–6.5 s）",
+      "pass": false
+    },
+    {
+      "detail": "{ \"BG_Far\": -360.0, \"BG_Mid\": -600.0, \"BG_Props\": -840.0, \"Gameplay_Canal\": -1200.0, \"FG_Near\": -1380.0, \"FG_Overhead\": -1296.0 }",
+      "label": "6 第二区域视差与帧率无关（六层位移三次测量完全相同）",
+      "pass": true
+    }
+  ],
+  "generated_at": "2026-11-15T16:51:42",
+  "hz_set": [
+    30,
+    60,
+    120
+  ],
+  "pass": false,
+  "rock_ref": {
+    "amp": 52.0,
+    "period": 3.6
+  },
+  "rows": [
+    {
+      "dive_delay_s": 0.0333333333333333,
+      "dock_deltas": {
+        "BG_Far": -360.0,
+        "BG_Mid": -600.0,
+        "BG_Props": -840.0,
+        "FG_Near": -1380.0,
+        "FG_Overhead": -1296.0,
+        "Gameplay_Canal": -1200.0
+      },
+      "drift_recover_s": 0.03,
+      "hz": 30,
+      "jump_delay_s": 0.0333333333333333,
+      "rock_span_px": 104.0,
+      "step_s": 0.0333,
+      "stun_recover_s": 0.83,
+      "travel_3s_px": 660.0
+    },
+    {
+      "dive_delay_s": 0.0166666666666667,
+      "dock_deltas": {
+        "BG_Far": -360.0,
+        "BG_Mid": -600.0,
+        "BG_Props": -840.0,
+        "FG_Near": -1380.0,
+        "FG_Overhead": -1296.0,
+        "Gameplay_Canal": -1200.0
+      },
+      "drift_recover_s": 0.02,
+      "hz": 60,
+      "jump_delay_s": 0.0166666666666667,
+      "rock_span_px": 104.0,
+      "step_s": 0.0167,
+      "stun_recover_s": 0.8,
+      "travel_3s_px": 660.0
+    },
+    {
+      "dive_delay_s": 0.00833333333333333,
+      "dock_deltas": {
+        "BG_Far": -360.0,
+        "BG_Mid": -600.0,
+        "BG_Props": -840.0,
+        "FG_Near": -1380.0,
+        "FG_Overhead": -1296.0,
+        "Gameplay_Canal": -1200.0
+      },
+      "drift_recover_s": 0.01,
+      "hz": 120,
+      "jump_delay_s": 0.00833333333333333,
+      "rock_span_px": 104.0,
+      "step_s": 0.0083,
+      "stun_recover_s": 0.81,
+      "travel_3s_px": 660.0
+    }
+  ],
+  "stun_ref": {
+    "stun_time": 0.8
+  },
+  "task": "TBB-CORE-FEEL-08 P2-8"
+}

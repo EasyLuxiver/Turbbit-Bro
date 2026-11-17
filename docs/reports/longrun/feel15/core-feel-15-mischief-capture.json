@@ -1,0 +1,25 @@
+{
+  "rows": [
+    {
+      "fx": "shock",
+      "phase": "END",
+      "png": "d:/GAMESTUDIO/TURBBIT/docs/reports/longrun/feel15/mischief-shock.png",
+      "role": "turtle",
+      "tag": "shock"
+    },
+    {
+      "fx": "tug",
+      "phase": "END",
+      "png": "d:/GAMESTUDIO/TURBBIT/docs/reports/longrun/feel15/mischief-tug.png",
+      "role": "rabbit",
+      "tag": "tug"
+    },
+    {
+      "fx": "",
+      "phase": "",
+      "png": "d:/GAMESTUDIO/TURBBIT/docs/reports/longrun/feel15/mischief-shift-cancel.png",
+      "role": "",
+      "tag": "shift-cancel"
+    }
+  ]
+}

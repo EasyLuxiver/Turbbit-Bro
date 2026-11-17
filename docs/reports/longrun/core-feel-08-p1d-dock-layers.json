@@ -1,0 +1,81 @@
+{
+  "checks": [
+    {
+      "detail": "节点 [&\"BG_Far\", &\"BG_Mid\", &\"BG_Props\", &\"Gameplay_Canal\", &\"FG_Near\", &\"FG_Overhead\"]",
+      "name": "six_layers_present",
+      "ok": true
+    },
+    {
+      "detail": "背景 <0 < 近景；顺序正确",
+      "name": "z_order",
+      "ok": true
+    },
+    {
+      "detail": "镜头走 1200 px 时各层屏幕位移 [-360.0, -600.0, -840.0, -1200.0, -1296.0, -1380.0]（严格递减=远慢近快）",
+      "name": "parallax_layers",
+      "ok": true
+    },
+    {
+      "detail": "Zone2Dock 子树里碰撞节点数 = 0",
+      "name": "background_has_no_collision",
+      "ok": true
+    },
+    {
+      "detail": "12000 隐藏=true，22000 显示=true，38000 显示=true，水渠层 alpha=1.00",
+      "name": "zone_gate",
+      "ok": true
+    },
+    {
+      "detail": "水渠层在区域中段完全不透明（边界不会露洞）：alpha=1.00",
+      "name": "canal_opaque",
+      "ok": true
+    },
+    {
+      "detail": "顶梁最低 y=104（<130），近景最高 y=678（>450），判定带 130~450 无遮挡",
+      "name": "foreground_clears_band",
+      "ok": true
+    }
+  ],
+  "failed": 0,
+  "generated_at": "2026-11-13T22:57:09",
+  "layers": [
+    {
+      "fade_lag": 0.0,
+      "node": "BG_Far",
+      "parallax": 0.3,
+      "z_index": -100
+    },
+    {
+      "fade_lag": 300.0,
+      "node": "BG_Mid",
+      "parallax": 0.5,
+      "z_index": -90
+    },
+    {
+      "fade_lag": 600.0,
+      "node": "BG_Props",
+      "parallax": 0.7,
+      "z_index": -80
+    },
+    {
+      "fade_lag": 0.0,
+      "node": "Gameplay_Canal",
+      "parallax": 1.0,
+      "z_index": -70
+    },
+    {
+      "fade_lag": 1500.0,
+      "node": "FG_Near",
+      "parallax": 1.15,
+      "z_index": 50
+    },
+    {
+      "fade_lag": 1300.0,
+      "node": "FG_Overhead",
+      "parallax": 1.08,
+      "z_index": 60
+    }
+  ],
+  "task": "TBB-CORE-FEEL-08 P1-D",
+  "zone": "Z2 15000-39000 indoor wooden dock"
+}

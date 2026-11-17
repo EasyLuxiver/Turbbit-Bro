@@ -1,0 +1,359 @@
+{
+  "checks": [
+    {
+      "detail": "[\"RABBIT_STUN\", \"RABBIT_WATER\", \"OXYGEN_OUT\", \"BRO_BREAK\", \"TURTLE_WAVE / TURTLE_DIVE_LATE\"]",
+      "label": "1 线上事故来源共 5 类（兔子 3 + 乌龟失误 1 组 + 联合 1）",
+      "pass": true
+    },
+    {
+      "detail": "[\"RABBIT_SLIP\", \"TURTLE_REEF\", \"RABBIT_AIR\"]",
+      "label": "1 历史/原型入口不冒充线上来源（SLIP/REEF/AIR 单列）",
+      "pass": true
+    },
+    {
+      "detail": "true",
+      "label": "1 分级与 GameManager.accident_severity 一致（不是报告里另说一套）",
+      "pass": true
+    },
+    {
+      "detail": "",
+      "label": "1 轻事故只有“还在壳上的短硬直”",
+      "pass": true
+    },
+    {
+      "detail": "RABBIT_STUN",
+      "label": "2 真撞岩 → 轻事故 RABBIT_STUN",
+      "pass": true
+    },
+    {
+      "detail": "1",
+      "label": "2 轻事故只记一格（不多扣）",
+      "pass": true
+    },
+    {
+      "detail": "{ \"reason\": \"RABBIT_STUN\", \"charge_at_hit\": 1, \"recovers_in_s\": 0.8, \"stun_time\": 0.8, \"control_after\": \"rabbit\", \"control_changed\": false, \"state_after\": \"RIDING\", \"mount_after\": \"RIDING\", \"jump_after_recovery\": true }",
+      "label": "2 轻事故在 STUN_TIME(+0.3 s) 内自己恢复",
+      "pass": true
+    },
+    {
+      "detail": "{ \"reason\": \"RABBIT_STUN\", \"charge_at_hit\": 1, \"recovers_in_s\": 0.8, \"stun_time\": 0.8, \"control_after\": \"rabbit\", \"control_changed\": false, \"state_after\": \"RIDING\", \"mount_after\": \"RIDING\", \"jump_after_recovery\": true }",
+      "label": "2 轻事故不强制换人、不丢骑乘",
+      "pass": true
+    },
+    {
+      "detail": "true",
+      "label": "2 恢复后立刻能起跳（不是控制锁）",
+      "pass": true
+    },
+    {
+      "detail": "RABBIT_WATER",
+      "label": "3 空中撞岩 → 重事故 RABBIT_WATER",
+      "pass": true
+    },
+    {
+      "detail": "{ \"reason\": \"RABBIT_WATER\", \"charge_at_hit\": 1, \"recover_in_s\": 4.35, \"mount_states\": [\"RESCUE_FALLING\", \"RESCUE_ACTIVE\", \"RESCUING\", \"RIDING\"], \"back_on_shell\": true, \"bro_total_delta\": 1, \"accident_delta\": 1 }",
+      "label": "3 重事故只记一格（下游落水不追罚）",
+      "pass": true
+    },
+    {
+      "detail": "{ \"reason\": \"RABBIT_WATER\", \"charge_at_hit\": 1, \"recover_in_s\": 4.35, \"mount_states\": [\"RESCUE_FALLING\", \"RESCUE_ACTIVE\", \"RESCUING\", \"RIDING\"], \"back_on_shell\": true, \"bro_total_delta\": 1, \"accident_delta\": 1 }",
+      "label": "3 玩家不按任何键也会被冲回壳上（不锁死）",
+      "pass": true
+    },
+    {
+      "detail": "true",
+      "label": "3 救援窗里乌龟仍可下潜（限速不是锁）",
+      "pass": true
+    },
+    {
+      "detail": "OXYGEN_OUT",
+      "label": "3 潜到没气 → OXYGEN_OUT",
+      "pass": true
+    },
+    {
+      "detail": "1",
+      "label": "3 没气只记一格",
+      "pass": true
+    },
+    {
+      "detail": "{ \"reason\": \"OXYGEN_OUT\", \"drain_s\": 8.2, \"charge_at_hit\": 1, \"recover_in_s\": 0.32, \"oxygen_after\": 5.05, \"depth_after\": 333.8, \"accident\": \"NONE\" }",
+      "label": "3 紧急上浮在 EMERGENCY_TIME(+0.5 s) 内结束、回到巡航水深",
+      "pass": true
+    },
+    {
+      "detail": "{ \"reason\": \"OXYGEN_OUT\", \"drain_s\": 8.2, \"charge_at_hit\": 1, \"recover_in_s\": 0.32, \"oxygen_after\": 5.05, \"depth_after\": 333.8, \"accident\": \"NONE\" }",
+      "label": "3 恢复后氧气回到 OXYGEN_RECOVERED",
+      "pass": true
+    },
+    {
+      "detail": "true",
+      "label": "3 第三格 → 联合惩罚挂起",
+      "pass": true
+    },
+    {
+      "detail": "{ \"reason_at_hit\": \"RABBIT_WATER\", \"joint_pending_after_third\": true, \"saw_bro_break\": true, \"start_s\": 3.75, \"recover_in_s\": 5.15, \"meter_after\": 0, \"accident\": \"NONE\", \"mount\": \"RIDING\", \"control\": \"rabbit\" }",
+      "label": "3 联合惩罚演出真的播出并结束（BRO_BREAK → NONE）",
+      "pass": true
+    },
+    {
+      "detail": "{ \"reason_at_hit\": \"RABBIT_WATER\", \"joint_pending_after_third\": true, \"saw_bro_break\": true, \"start_s\": 3.75, \"recover_in_s\": 5.15, \"meter_after\": 0, \"accident\": \"NONE\", \"mount\": \"RIDING\", \"control\": \"rabbit\" }",
+      "label": "3 演出结束 BRO METER 清零、回到骑乘、不锁控制",
+      "pass": true
+    },
+    {
+      "detail": "NONE",
+      "label": "4 浮木撞壳：不进入事故状态（只是失误）",
+      "pass": true
+    },
+    {
+      "detail": "1",
+      "label": "4 只记一格",
+      "pass": true
+    },
+    {
+      "detail": "true",
+      "label": "4 有可见后果（下沉/掀翻）",
+      "pass": true
+    },
+    {
+      "detail": "{ \"accident_state\": \"NONE\", \"charge\": 1, \"accident_delta\": 1, \"dunked\": true, \"recover_in_s\": 1.82, \"diving_after\": true }",
+      "label": "4 2 s 内回正且乌龟仍能下潜",
+      "pass": true
+    },
+    {
+      "detail": "{ \"charge_first\": 1, \"second_charge_allowed\": false, \"second_consequence_shown\": \"RABBIT_STUN\", \"total_charge\": 1, \"accident_delta\": 1, \"joint\": \"joint\" }",
+      "label": "5 第一笔照常记账",
+      "pass": true
+    },
+    {
+      "detail": "false",
+      "label": "5 同一事件第二笔不再记账",
+      "pass": true
+    },
+    {
+      "detail": "{ \"charge_first\": 1, \"second_charge_allowed\": false, \"second_consequence_shown\": \"RABBIT_STUN\", \"total_charge\": 1, \"accident_delta\": 1, \"joint\": \"joint\" }",
+      "label": "5 但第二笔的后果照播（硬直/落水没被吞）",
+      "pass": true
+    },
+    {
+      "detail": "{ \"charge_first\": 1, \"second_charge_allowed\": false, \"second_consequence_shown\": \"RABBIT_STUN\", \"total_charge\": 1, \"accident_delta\": 1, \"joint\": \"joint\" }",
+      "label": "5 整件事只记一格，且记录升级为 joint",
+      "pass": true
+    },
+    {
+      "detail": "true / 55",
+      "label": "6 装载两次的判定框尺寸完全相同（没有被缩）",
+      "pass": true
+    },
+    {
+      "detail": "{ \"LOW_BIRD\": [120.0, 40.0], \"SURFACE_ROCK\": [120.0, 42.0], \"DIVE_GATE\": [760.0, 180.0], \"FLOATING_LOG\": [32.0, 218.0], \"SHARK\": [70.0, 192.0], \"LOW_BEAM\": [170.0, 100.0], \"HIGH_WALL\": [30.0, 16.0] }",
+      "label": "6 主带高度仍是数据原值（岩 42 / 梁 100 / 木 218）",
+      "pass": true
+    },
+    {
+      "detail": "{ \"hit_log1\": true, \"turtle_x\": 6355.0, \"log_x\": 6400.0, \"beyond_log\": false, \"charge\": 1, \"accident\": \"NONE\" }",
+      "label": "7 巡航壳真的撞上浮木（碰撞没被移除）",
+      "pass": true
+    },
+    {
+      "detail": "{ \"hit_log1\": true, \"turtle_x\": 6355.0, \"log_x\": 6400.0, \"beyond_log\": false, \"charge\": 1, \"accident\": \"NONE\" }",
+      "label": "7 壳被顶在浮木前（没有穿过去）",
+      "pass": true
+    },
+    {
+      "detail": "{ \"hit_log1\": true, \"turtle_x\": 6355.0, \"log_x\": 6400.0, \"beyond_log\": false, \"charge\": 1, \"accident\": \"NONE\" }",
+      "label": "7 撞上照常记一格",
+      "pass": true
+    }
+  ],
+  "generated_at": "2026-11-13T22:57:03",
+  "hitboxes": {
+    "groups": 55,
+    "inset_px": 3.0,
+    "main_dims": {
+      "DIVE_GATE": [
+        760.0,
+        180.0
+      ],
+      "FLOATING_LOG": [
+        32.0,
+        218.0
+      ],
+      "HIGH_WALL": [
+        30.0,
+        16.0
+      ],
+      "LOW_BEAM": [
+        170.0,
+        100.0
+      ],
+      "LOW_BIRD": [
+        120.0,
+        40.0
+      ],
+      "SHARK": [
+        70.0,
+        192.0
+      ],
+      "SURFACE_ROCK": [
+        120.0,
+        42.0
+      ]
+    },
+    "same_after_reload": true
+  },
+  "minor_rabbit_stun": {
+    "charge_at_hit": 1,
+    "control_after": "rabbit",
+    "control_changed": false,
+    "jump_after_recovery": true,
+    "mount_after": "RIDING",
+    "reason": "RABBIT_STUN",
+    "recovers_in_s": 0.8,
+    "state_after": "RIDING",
+    "stun_time": 0.8
+  },
+  "pass": true,
+  "same_event_once": {
+    "accident_delta": 1,
+    "charge_first": 1,
+    "joint": "joint",
+    "second_charge_allowed": false,
+    "second_consequence_shown": "RABBIT_STUN",
+    "total_charge": 1
+  },
+  "severe_bro_break": {
+    "accident": "NONE",
+    "control": "rabbit",
+    "joint_pending_after_third": true,
+    "meter_after": 0,
+    "mount": "RIDING",
+    "reason_at_hit": "RABBIT_WATER",
+    "recover_in_s": 5.15,
+    "saw_bro_break": true,
+    "start_s": 3.75
+  },
+  "severe_oxygen_out": {
+    "accident": "NONE",
+    "charge_at_hit": 1,
+    "depth_after": 333.8,
+    "drain_s": 8.2,
+    "oxygen_after": 5.05,
+    "reason": "OXYGEN_OUT",
+    "recover_in_s": 0.32
+  },
+  "severe_rabbit_water": {
+    "no_input": {
+      "accident_delta": 1,
+      "back_on_shell": true,
+      "bro_total_delta": 1,
+      "charge_at_hit": 1,
+      "mount_states": [
+        "RESCUE_FALLING",
+        "RESCUE_ACTIVE",
+        "RESCUING",
+        "RIDING"
+      ],
+      "reason": "RABBIT_WATER",
+      "recover_in_s": 4.35
+    },
+    "shell_operable_during_rescue": true
+  },
+  "solid_collision": {
+    "accident": "NONE",
+    "beyond_log": false,
+    "charge": 1,
+    "hit_log1": true,
+    "log_x": 6400.0,
+    "turtle_x": 6355.0
+  },
+  "source_table": {
+    "archived": [
+      "RABBIT_SLIP",
+      "TURTLE_REEF",
+      "RABBIT_AIR"
+    ],
+    "live": [
+      "RABBIT_STUN",
+      "RABBIT_WATER",
+      "OXYGEN_OUT",
+      "BRO_BREAK",
+      "TURTLE_WAVE / TURTLE_DIVE_LATE"
+    ],
+    "rows": [
+      {
+        "handling": "0.8 s 硬直 + 龟速压到 140；不强换人、不丢骑乘",
+        "live": true,
+        "reason": "RABBIT_STUN",
+        "recover": "计时结束自动回 RIDING，1 s 宽限",
+        "severity": "minor",
+        "source": "兔子层障碍（LOW_BEAM / LOW_BIRD / SURFACE_ROCK）撞到，仍在壳上"
+      },
+      {
+        "handling": "真实下落 → 水花 → 3.2 s 救援窗；壳自动减速到 90",
+        "live": true,
+        "reason": "RABBIT_WATER",
+        "recover": "自己潜过去接住；不接也会被冲回壳上（有限恢复）",
+        "severity": "severe",
+        "source": "空中撞到障碍被撞落水；或落壳时擦到水线"
+      },
+      {
+        "handling": "兔子晕过去，2 s 紧急上浮演出，控制权给乌龟",
+        "live": true,
+        "reason": "OXYGEN_OUT",
+        "recover": "演出结束自动回巡航水深，氧气回到 5.0",
+        "severity": "severe",
+        "source": "潜太深太久，氧气 8 → 0"
+      },
+      {
+        "handling": "1.8 s 联合惩罚演出，整组停住",
+        "live": true,
+        "reason": "BRO_BREAK",
+        "recover": "演出结束清空 BRO METER、恢复巡航与骑乘",
+        "severity": "severe",
+        "source": "BRO METER 三格（第三次失误）"
+      },
+      {
+        "handling": "90 ms 停顿 + 震动 + 下沉/掀翻 + 龟速 ×0.6",
+        "live": true,
+        "reason": "TURTLE_WAVE / TURTLE_DIVE_LATE",
+        "recover": "掀翻 1 s 内自己回正，操控一直可用",
+        "severity": "minor",
+        "source": "乌龟层障碍（浮木/鲨鱼/拱岩/高墙）撞上，记 1 格但不算事故状态"
+      },
+      {
+        "handling": "保留处理分支与横幅文案（存档/旧存档兼容）",
+        "live": false,
+        "reason": "RABBIT_SLIP",
+        "recover": "同上：真发生时走 FALLING_WATER + 救援流程",
+        "severity": "severe",
+        "source": "历史状态：兔子滑落。阶段 4 移除“待命必掉”后已无线上入口"
+      },
+      {
+        "handling": "1.6 s 修复计时后自动回巡航；控制权暂时交给兔子",
+        "live": false,
+        "reason": "TURTLE_REEF",
+        "recover": "计时结束自动恢复",
+        "severity": "severe",
+        "source": "历史状态：乌龟撞暗礁翻肚皮。只剩截图/演出入口，线上不会发生"
+      },
+      {
+        "handling": "兔子被抛到空中，玩家 SHIFT 到乌龟再跃起接住",
+        "live": false,
+        "reason": "RABBIT_AIR",
+        "recover": "接住 / 过期后走 _rescue_miss 冲回壳上",
+        "severity": "severe",
+        "source": "救援原型（--capture-rescue）入口；正式赛局没有调用点"
+      }
+    ],
+    "severity_helper_matches_table": true
+  },
+  "turtle_mistake": {
+    "accident_delta": 1,
+    "accident_state": "NONE",
+    "charge": 1,
+    "diving_after": true,
+    "dunked": true,
+    "recover_in_s": 1.82
+  }
+}

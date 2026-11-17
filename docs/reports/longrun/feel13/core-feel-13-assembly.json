@@ -1,0 +1,41 @@
+{
+  "clips": [
+    {
+      "clip": "idle",
+      "screenshot": "assembly-idle.png"
+    },
+    {
+      "clip": "cruise",
+      "screenshot": "assembly-cruise.png"
+    },
+    {
+      "clip": "jump",
+      "screenshot": "assembly-jump.png"
+    },
+    {
+      "clip": "leap",
+      "screenshot": "assembly-leap.png"
+    },
+    {
+      "clip": "landing",
+      "screenshot": "assembly-landing.png"
+    },
+    {
+      "clip": "guard",
+      "screenshot": "assembly-guard.png"
+    },
+    {
+      "clip": "catch",
+      "screenshot": "assembly-catch.png"
+    },
+    {
+      "clip": "spring_od",
+      "screenshot": "assembly-spring_od.png"
+    },
+    {
+      "clip": "shell_od",
+      "screenshot": "assembly-shell_od.png"
+    }
+  ],
+  "parts": "art_test/feel13/parts_meta.json"
+}

@@ -1,0 +1,29 @@
+{
+  "checks": [
+    {
+      "detail": "distance=699 clear=false",
+      "name": "clear_699",
+      "ok": true
+    },
+    {
+      "detail": "distance=700 clear=false",
+      "name": "clear_700",
+      "ok": true
+    },
+    {
+      "detail": "distance=701 clear=true",
+      "name": "clear_701",
+      "ok": true
+    },
+    {
+      "detail": "starts=0/500",
+      "name": "no_start_inside_700",
+      "ok": true
+    },
+    {
+      "detail": "637/2000 = 31.9%",
+      "name": "rate_outside_700",
+      "ok": true
+    }
+  ]
+}

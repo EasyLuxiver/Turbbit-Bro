@@ -1,0 +1,49 @@
+{
+  "checks": [
+    {
+      "detail": "active=true",
+      "name": "showtime starts",
+      "ok": true
+    },
+    {
+      "detail": "active=true control=rabbit",
+      "name": "showtime survives shifts",
+      "ok": true
+    },
+    {
+      "detail": "state=SHOWTIME spin=1.50",
+      "name": "rabbit still performing",
+      "ok": true
+    },
+    {
+      "detail": "control=turtle active=true",
+      "name": "bitt_controllable_during_showtime",
+      "ok": true
+    },
+    {
+      "detail": "control=turtle turtle_accident=false",
+      "name": "other role remains controllable",
+      "ok": true
+    },
+    {
+      "detail": "ended after 104 frames",
+      "name": "showtime completes",
+      "ok": true
+    },
+    {
+      "detail": "rabbit=RIDING mount=RIDING control=turtle",
+      "name": "riding restored",
+      "ok": true
+    },
+    {
+      "detail": "control=turtle",
+      "name": "control stays where player left it",
+      "ok": true
+    },
+    {
+      "detail": "active=false accident=RABBIT_STUN",
+      "name": "accident_interrupts_showtime",
+      "ok": true
+    }
+  ]
+}

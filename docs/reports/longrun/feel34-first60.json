@@ -1,0 +1,19 @@
+{
+  "checks": [
+    {
+      "detail": "log1=24.0s",
+      "name": "log1_within_60",
+      "ok": true
+    },
+    {
+      "detail": "rabbit=false turtle=true",
+      "name": "single_rabbit_cannot_pass",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":false,\"accident_state\":\"NONE\",\"hit\":false,\"hit_roles\":{\"turtle\":true},\"mode\":\"bro_dive\",\"passed\":true,\"rabbit_y\":286.506469726563,\"riding\":true,\"turtle_y\":344.506469726563}",
+      "name": "bro_dive_passes",
+      "ok": true
+    }
+  ]
+}

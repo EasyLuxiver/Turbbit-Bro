@@ -1,0 +1,54 @@
+{
+  "checks": [
+    {
+      "detail": "result=caught mount=RIDING",
+      "name": "active_rescue_fastest",
+      "ok": true
+    },
+    {
+      "detail": "result=auto mount=RIDING",
+      "name": "auto_rescue_near_succeeds",
+      "ok": true
+    },
+    {
+      "detail": "mount=RESCUE_ACTIVE blocked=1.0 oxygen=4.0",
+      "name": "auto_rescue_far_blocked",
+      "ok": true
+    },
+    {
+      "detail": "oxygen=4.00",
+      "name": "far_still_drains_oxygen",
+      "ok": true
+    },
+    {
+      "detail": "state=FAILED reason=OXYGEN_OUT oxygen=0.00",
+      "name": "oxygen_really_fails",
+      "ok": true
+    },
+    {
+      "detail": "t=4.60 mount=RIDING",
+      "name": "auto_hz_30",
+      "ok": true
+    },
+    {
+      "detail": "t=4.58 mount=RIDING",
+      "name": "auto_hz_60",
+      "ok": true
+    },
+    {
+      "detail": "t=4.60 mount=RIDING",
+      "name": "auto_hz_120",
+      "ok": true
+    },
+    {
+      "detail": "mount=RESCUE_ACTIVE disabled=true",
+      "name": "auto_interrupt_state",
+      "ok": true
+    },
+    {
+      "detail": "state=FAILED mount=CARRYING",
+      "name": "same_frame_oxygen_wins",
+      "ok": true
+    }
+  ]
+}

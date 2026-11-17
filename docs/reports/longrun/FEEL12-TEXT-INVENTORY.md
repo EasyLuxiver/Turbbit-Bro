@@ -1,0 +1,374 @@
+# FEEL-12 全量文本处置清单
+
+旧版 343 条，新版 366 条；处置统计：{"保留": 202, "重写": 88, "仅开发/不使用": 49, "新增": 23, "仅调试（旧开场卡）": 4}
+
+> 每条都有处置结果；`仅开发/不使用` 不进入玩家界面。新 ID 保留占位符。
+
+| ID | 旧中文 | 新中文 | 旧英文 | 新英文 | 处置 | 位置 | 验证 | 备注 |
+|---|---|---|---|---|---|---|---|---|
+| `accident.OXYGEN_OUT` | 氧气耗尽 | 氧气耗尽 | OXYGEN OUT | OXYGEN OUT | 保留 | 事故名 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `accident.RABBIT_AIR` | 兔子被抛到空中 | TUBO被抛到空中 | RABBIT IN THE AIR | TUBO IN THE AIR | 重写 | 事故名 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `accident.RABBIT_SLIP` | 兔子滑落 | TUBO滑落 | RABBIT SLIP | TUBO SLIP | 重写 | 事故名 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `accident.RABBIT_STUN` | 兔子硬直 | TUBO硬直 | RABBIT STUN | TUBO STUN | 重写 | 事故名 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `accident.RABBIT_WATER` | 兔子落水 | TUBO落水 | RABBIT IN WATER | TUBO IN WATER | 重写 | 事故名 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `accident.TURTLE_REEF` | 乌龟撞礁 / 下沉 | BITT撞礁 / 下沉 | TURTLE REEF / SINK | BITT REEF / SINK | 重写 | 事故名 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `action.crouch_after_landing` | 落地后趴下 | 落地后趴下 | CROUCH AFTER LANDING | CROUCH AFTER LANDING | 仅开发/不使用 | 调试/关卡映射 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `action.crouch_or_dive` | 趴下 | 趴下 | CROUCH DOWN | CROUCH DOWN | 仅开发/不使用 | 调试/关卡映射 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `action.dive` | 乌龟 ↓ 下潜 | BITT ↓ 下潜 | TURTLE ↓ DIVE | BITT ↓ DIVE | 仅开发/不使用 | 调试/关卡映射 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `action.dive_through` | 换人让壳沉 | 换人让壳沉 | HAND OVER TO SINK | HAND OVER TO SINK | 仅开发/不使用 | 调试/关卡映射 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `action.dont_jump` | 别跳 | 别跳 | DON'T JUMP | DON'T JUMP | 仅开发/不使用 | 调试/关卡映射 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `action.jump_and_dive` | 兔子跳 + 乌龟潜 | TUBO跳 + BITT潜 | RABBIT JUMP + TURTLE DIVE | TUBO JUMP + BITT DIVE | 仅开发/不使用 | 调试/关卡映射 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `action.jump_or_dive` | 跳过去 | 跳过去 | JUMP OVER | JUMP OVER | 仅开发/不使用 | 调试/关卡映射 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `action.jump_then_crouch` | 先跳再趴 | 先跳再趴 | JUMP THEN CROUCH | JUMP THEN CROUCH | 仅开发/不使用 | 调试/关卡映射 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `action.leap` | 乌龟 ↑ 跃起 | BITT ↑ 跃起 | TURTLE ↑ LEAP | BITT ↑ LEAP | 仅开发/不使用 | 调试/关卡映射 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `action.stay_high` | 保持水面 | 保持水面 | STAY HIGH | STAY HIGH | 仅开发/不使用 | 调试/关卡映射 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `action.take_rabbit` | 换给兔子 | 换给TUBO | TAKE THE RABBIT | TAKE THE TUBO | 仅开发/不使用 | 调试/关卡映射 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `action.water_pop` | 拍水跃浪 | 拍水跃浪 | SPACE WATER POP | SPACE WATER POP | 仅开发/不使用 | 调试/关卡映射 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `banner.hit` | 哎哟！兔子撞到了 | 哎哟！TUBO 撞到了 | OUCH! RABBIT HIT SOMETHING | OUCH! TUBO HIT SOMETHING | 重写 | 大字横幅 | 是 | 静态扫描到 Locale.t 调用 |
+| `banner.oxygen` | 没气了！紧急上浮 | 没气了！紧急上浮 | NO AIR! EMERGENCY ASCENT | NO AIR! EMERGENCY ASCENT | 保留 | 大字横幅 | 是 | 静态扫描到 Locale.t 调用 |
+| `banner.pickup` | 好接！ | 好接！ | NICE SAVE! | NICE SAVE! | 保留 | 大字横幅 | 是 | 静态扫描到 Locale.t 调用 |
+| `banner.reef` | 引擎故障！乌龟撞上暗礁 | BITT 撞上暗礁！ | ENGINE FAILURE! TURTLE HIT THE REEF | BITT HIT THE REEF! | 重写 | 大字横幅 | 是 | 静态扫描到 Locale.t 调用 |
+| `banner.rescue` | 获救 | 获救 | RESCUED | RESCUED | 保留 | 大字横幅 | 是 | 静态扫描到 Locale.t 调用 |
+| `banner.slip` | 摔了！兔子没抓住 | 摔了！TUBO 没抓住 | WIPEOUT! RABBIT LOST GRIP | WIPEOUT! TUBO LOST GRIP | 重写 | 大字横幅 | 是 | 静态扫描到 Locale.t 调用 |
+| `banner.stun` | 咚！兔子被撞晕 | 咚！TUBO 被撞晕 | BONK! RABBIT IS STUNNED | BONK! TUBO IS STUNNED | 重写 | 大字横幅 | 是 | 静态扫描到 Locale.t 调用 |
+| `banner.water` | 扑通！兔子落水 | 扑通！TUBO 落水 | SPLASH! RABBIT IN THE WATER | SPLASH! TUBO IN THE WATER | 重写 | 大字横幅 | 是 | 静态扫描到 Locale.t 调用 |
+| `center.bro_full` | 两人同时出事 —— 一起翻船！ | 两人同时出事 —— 一起翻船！ | BOTH IN TROUBLE - CAPSIZED! | BOTH IN TROUBLE - CAPSIZED! | 保留 | 中央大字 | 是 | 静态扫描到 Locale.t 调用 |
+| `center.bro_recover` | 重新出发！ | 重新出发！ | BACK IN ACTION! | BACK IN ACTION! | 保留 | 中央大字 | 是 | 静态扫描到 Locale.t 调用 |
+| `center.brotherhood` | 兄弟情！ | 兄弟情！ | BROTHERHOOD! | BROTHERHOOD! | 保留 | 中央大字 | 是 | 静态扫描到 Locale.t 调用 |
+| `center.finish` | 冲线！  {0}  {1} | 冲线！  {0}  {1} | FINISH!  {0}  {1} | FINISH!  {0}  {1} | 保留 | 中央大字 | 是 | 静态扫描到 Locale.t 调用 |
+| `center.shows_over` | 表演结束！ | 表演结束！ | SHOW'S OVER! | SHOW'S OVER! | 保留 | 中央大字 | 是 | 静态扫描到 Locale.t 调用 |
+| `center.showtime` | SHOWTIME！ | SHOWTIME！ | SHOWTIME! | SHOWTIME! | 保留 | 中央大字 | 是 | 静态扫描到 Locale.t 调用 |
+| `center.zone` | 区域 {0}  {1} | 区域 {0}  {1} | ZONE {0}  {1} | ZONE {0}  {1} | 保留 | 中央大字 | 是 | 静态扫描到 Locale.t 调用 |
+| `comic.1.narr` | 上一次比赛，兄弟俩本来有机会赢。 | 上一次比赛，兄弟俩本来有机会赢。 | LAST RACE, THE BROS COULD HAVE WON. | LAST RACE, THE BROS COULD HAVE WON. | 保留 | 开场连环画 | 是 | 静态扫描到 Locale.t 调用 |
+| `comic.1.rabbit` | 我就闭眼休息一下…… | 我就闭眼休息一下…… | JUST GONNA REST MY EYES... | JUST GONNA REST MY EYES... | 保留 | 开场连环画 | 是 | 静态扫描到 Locale.t 调用 |
+| `comic.2.turtle` | 你倒是醒醒啊！ | 你倒是醒醒啊！ | WAKE UP, MAN! | WAKE UP, MAN! | 保留 | 开场连环画 | 是 | 静态扫描到 Locale.t 调用 |
+| `comic.3.cousin` | 你们缺的不是速度，是默契！ | 你们缺的不是速度，是默契！ | YOU DON'T LACK SPEED. YOU LACK SYNC! | YOU DON'T LACK SPEED. YOU LACK SYNC! | 保留 | 开场连环画 | 是 | 静态扫描到 Locale.t 调用 |
+| `comic.3.narr` | 大表哥决定亲自训练他们。 | 大表哥决定亲自训练他们。 | COUSIN DECIDED TO TRAIN THEM HIMSELF. | COUSIN DECIDED TO TRAIN THEM HIMSELF. | 保留 | 开场连环画 | 是 | 静态扫描到 Locale.t 调用 |
+| `comic.4.cousin` | 特制能量蛋糕！嘿嘿！ | 特制能量蛋糕！嘿嘿！ | SPECIAL ENERGY CAKE! HEH HEH! | SPECIAL ENERGY CAKE! HEH HEH! | 保留 | 开场连环画 | 是 | 静态扫描到 Locale.t 调用 |
+| `comic.5.bros` | 哇啊啊啊——！ | 哇啊啊啊——！ | WHOA AAAA—! | WHOA AAAA—! | 保留 | 开场连环画 | 是 | 静态扫描到 Locale.t 调用 |
+| `comic.6.narr` | 从那天起，他们偶尔会……交换控制权？ | 从那天起，他们偶尔会……交换控制权？ | SINCE THEN, THEY SOMETIMES... SWAP CONTROL? | SINCE THEN, THEY SOMETIMES... SWAP CONTROL? | 保留 | 开场连环画 | 是 | 静态扫描到 Locale.t 调用 |
+| `comic.6.rabbit` | 等等，刚刚是我在动吗？ | 等等，刚刚是我在动吗？ | WAIT. WAS THAT ME MOVING? | WAIT. WAS THAT ME MOVING? | 保留 | 开场连环画 | 是 | 静态扫描到 Locale.t 调用 |
+| `comic.7.cousin` | 很好！现在，给我跑出兄弟默契！ | 很好！现在，给我跑出兄弟默契！ | GOOD! NOW SHOW ME THAT BRO SYNC! | GOOD! NOW SHOW ME THAT BRO SYNC! | 保留 | 开场连环画 | 是 | 静态扫描到 Locale.t 调用 |
+| `comic.7.narr` | 一场混乱又刺激的训练，正式开始。 | 一场混乱又刺激的训练，正式开始。 | A CHAOTIC, WILD TRAINING STARTS NOW. | A CHAOTIC, WILD TRAINING STARTS NOW. | 保留 | 开场连环画 | 是 | 静态扫描到 Locale.t 调用 |
+| `comic.skip` | 任意键跳过 | 任意键跳过 | PRESS ANY KEY TO SKIP | PRESS ANY KEY TO SKIP | 保留 | 开场连环画 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `feedback.bro_combo` | BRO COMBO！ | BRO COMBO！ | BRO COMBO! | BRO COMBO! | 保留 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.bro_dive` | BRO DIVE！ | BRO DIVE！ | BRO DIVE! | BRO DIVE! | 保留 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.bro_ollie` | BRO OLLIE！ | BRO OLLIE！ | BRO OLLIE! | BRO OLLIE! | 保留 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.bro_pass` | 兄弟！漂亮！ | 兄弟！漂亮！ | BRO PASS! | BRO PASS! | 保留 | 反馈行/世界特效 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `feedback.burst_back` | 回过神了——重新接手 | 电流稳定了 | BACK ONLINE - TAKE OVER | CURRENT STABLE | 重写 | 反馈行/世界特效 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `feedback.burst_rabbit` | BITT 不听指挥，自己趴下了！ | TUBO 弹簧过载！ | BITT IGNORED YOU AND CROUCHED! | TUBO SPRING OVERLOAD! | 重写 | 反馈行/世界特效 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `feedback.burst_rabbit_warn` | BITT 走神了——注意它下一步 | TUBO 电流蓄力！按 SHIFT 可触发 OVERDRIVE | BITT IS DRIFTING - WATCH IT | TUBO IS CHARGING! SHIFT TO OVERDRIVE | 重写 | 反馈行/世界特效 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `feedback.burst_turtle` | TUBO 不听指挥，自己往下沉！ | BITT 旋壳过载！ | TUBO IGNORED YOU AND DOVE! | BITT SHELL OVERLOAD! | 重写 | 反馈行/世界特效 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `feedback.burst_turtle_warn` | TUBO 走神了——注意壳的深度 | BITT 的龟壳开始旋转！按 SHIFT 可触发 OVERDRIVE | TUBO IS DRIFTING - WATCH THE SHELL | BITT'S SHELL IS SPINNING! SHIFT TO OVERDRIVE | 重写 | 反馈行/世界特效 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `feedback.catch_fail` |  | 没接住…… |  | MISSED THE CATCH... | 新增 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.catch_start` |  | BITT 冲过去接 TUBO！ |  | BITT GOES FOR TUBO! | 新增 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.clean` | 干净通过！ | 干净通过！ | CLEAN! | CLEAN! | 保留 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.dive_late` | 下潜太晚 - 壳撞上浮木！ | 下潜太晚 - 壳撞上浮木！ | DIVE TOO LATE - SHELL HIT THE LOG! | DIVE TOO LATE - SHELL HIT THE LOG! | 保留 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.drift_autocrouch` | BITT 自己趴下了！ | TUBO 自己趴下了！ | BITT DUCKED ON HIS OWN! | TUBO DUCKED ON ITS OWN! | 仅开发/不使用 | 反馈行/世界特效 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `feedback.drift_back` | {0}回过神了 | {0}回过神了 | {0} IS BACK | {0} IS BACK | 保留 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.drift_lag_rabbit` | BITT 走神了 - 蹦跳慢了半拍 | TUBO 电流慢了半拍 - 跳跃延迟 | BITT IS DAYDREAMING - SLOW TO JUMP | TUBO'S CURRENT LAGS - JUMP DELAYED | 重写 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.drift_lag_turtle` | TUBO 走神了 - 壳没马上听懂 | BITT 电流慢了半拍 - 壳反应延迟 | TUBO IS DAYDREAMING - SHELL SLOW TO REACT | BITT'S CURRENT LAGS - SHELL DELAYED | 重写 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.drift_warn_mischief` | {0}要惹麻烦了：{1} | {0} 电流过载：{1} | {0} IS ACTING UP: {1} | {0} OVERLOAD: {1} | 重写 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.drift_warn_restless` | {0}坐不住了：{1} | {0} 电流发麻：{1} | {0} IS FIDGETY: {1} | {0} BUZZING: {1} | 重写 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.gate_hit` | 没潜到位 - 壳撞上拱岩！ | 没潜到位 - 壳撞上拱岩！ | NOT DEEP ENOUGH - HIT THE REEF ARCH! | NOT DEEP ENOUGH - HIT THE REEF ARCH! | 保留 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.guard_block` |  | 挡下了！ |  | BLOCKED! | 新增 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.guard_precise` |  | 精准反击！+50 |  | PERFECT GUARD! +50 | 新增 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.guard_ready` |  | TUBO 胡萝卜护盾！ |  | TUBO CARROT GUARD! | 新增 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.leap` | 跃起！ | 跃起！ | LEAP! | LEAP! | 保留 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.log_jump` | 跳跃高度不对 - 撞上浮木！ | 跳跃高度不对 - 撞上浮木！ | BAD JUMP ARC - HIT THE LOG! | BAD JUMP ARC - HIT THE LOG! | 保留 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.od_end` |  | 电流稳定了 |  | CURRENT STABLE | 新增 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.od_ready_rabbit` |  | TUBO 耳朵竖起 —— SHIFT 换走，让它弹！ |  | TUBO'S EARS ARE UP - SHIFT AWAY AND LET IT SPRING! | 新增 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.od_ready_turtle` |  | BITT 的龟壳开始旋转 —— SHIFT 换走，让它旋！ |  | BITT'S SHELL IS SPINNING - SHIFT AWAY AND LET IT SPIN! | 新增 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.od_shell` |  | BITT 旋壳过载！ |  | BITT SHELL OVERLOAD! | 新增 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.od_spring` |  | TUBO 弹簧过载！ |  | TUBO SPRING OVERLOAD! | 新增 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.pop` | 拍水跃浪！ | 拍水跃浪！ | WATER POP! | WATER POP! | 保留 | 反馈行/世界特效 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `feedback.relay_clever` | 电流接力 +50 | 电流接力 +50 | RELAY +50 | RELAY +50 | 保留 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.relay_perfect` | 完美接力 +100 | 完美接力 +100 | PERFECT RELAY +100 | PERFECT RELAY +100 | 保留 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.rescue_miss` | 没接住……兔子被冲回壳上 | 没接住……TUBO被冲回壳上 | MISSED... RABBIT WASHED BACK | MISSED... TUBO WASHED BACK | 重写 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.rescue_ok` | 接住了！兄弟！ | 接住了！兄弟！ | CAUGHT! BRO! | CAUGHT! BRO! | 保留 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.rescue_reunion` | 兄弟回来了！右边这口气补上了 | 兄弟回来了！右边这口气补上了 | BRO'S BACK! BOTH OF YOU CALM DOWN | BRO'S BACK! BOTH OF YOU CALM DOWN | 保留 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.shark_hit` | 鲨鱼从下面来的 - 壳翻了！ | 鲨鱼从下面来的 - 壳翻了！ | SHARK FROM BELOW - SHELL FLIPPED! | SHARK FROM BELOW - SHELL FLIPPED! | 保留 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.shift_lock` | 换人间隔 0.2 秒 | 换人间隔 0.2 秒 | SWAP LOCK 0.2s | SWAP LOCK 0.2s | 保留 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.shift_take` | 换人 - {0}开始收心 | 换人 - {0}开始收心 | SWITCH - {0} RECOVERING | SWITCH - {0} RECOVERING | 保留 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.showtime_reward` | SHOWTIME 完成  +100 分  ·  氧气 +{0} | SHOWTIME 完成  +100 分  ·  氧气 +{0} | SHOWTIME DONE  +100 PTS  ·  OXYGEN +{0} | SHOWTIME DONE  +100 PTS  ·  OXYGEN +{0} | 保留 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.showtime_reward_full` | SHOWTIME 完成  +100 分  ·  氧气已满 | SHOWTIME 完成  +100 分  ·  氧气已满 | SHOWTIME DONE  +100 PTS  ·  OXYGEN FULL | SHOWTIME DONE  +100 PTS  ·  OXYGEN FULL | 保留 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.snack_rabbit` | 兔子吃了！ 下一跳更高！ | TUBO吃了！ 下一跳更高！ | RABBIT ATE! HIGHER JUMP! | TUBO ATE! HIGHER JUMP! | 重写 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.turbo` | TURBO！ 吞下去了！ | TURBO！ 吞下去了！ | TURBO! GULP! | TURBO! GULP! | 保留 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.turbo_switch` | TURBO！亲手喂到！乌龟很满足！ | TURBO！亲手喂到！BITT很满足！ | TURBO! HAND-FED! TURTLE LOVES IT! | TURBO! HAND-FED! BITT LOVES IT! | 重写 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.wall_hit` | 没跃过墙 - 壳撞上去了！ | 没跃过墙 - 壳撞上去了！ | MISSED THE OLLIE - SHELL HIT THE WALL! | MISSED THE OLLIE - SHELL HIT THE WALL! | 保留 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `feedback.wave_hit` | 壳被浪掀翻了！ | 壳被浪掀翻了！ | WAVE HIT - SHELL FLIPPED! | WAVE HIT - SHELL FLIPPED! | 保留 | 反馈行/世界特效 | 是 | 静态扫描到 Locale.t 调用 |
+| `grade.A` | 肌肉兄弟！ | 肌肉兄弟！ | MUSCLE BROTHERS! | MUSCLE BROTHERS! | 保留 | 结算 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `grade.B` | 还算铁的哥们！ | 还算铁的哥们！ | PRETTY GOOD BUDDIES! | PRETTY GOOD BUDDIES! | 保留 | 结算 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `grade.C` | 塑料兄弟情！ | 塑料兄弟情！ | PLASTIC FRIENDSHIP! | PLASTIC FRIENDSHIP! | 保留 | 结算 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `grade.D` | 两个脑细胞，零配合！ | 两个脑细胞，零配合！ | TWO BRAIN CELLS, ZERO COORDINATION! | TWO BRAIN CELLS, ZERO COORDINATION! | 保留 | 结算 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `grade.S` | 绝对好兄弟！ | 绝对好兄弟！ | ABSOLUTE BROS! | ABSOLUTE BROS! | 保留 | 结算 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `hazard.dive_gate` | 水下拱岩 | 水下拱岩 | REEF ARCH | REEF ARCH | 仅开发/不使用 | 调试/关卡映射 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hazard.dock_beam` | 码头横梁 | 码头横梁 | DOCK BEAM | DOCK BEAM | 仅开发/不使用 | 调试/关卡映射 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hazard.final_gate` | 终点门 | 终点门 | FINAL GATE | FINAL GATE | 仅开发/不使用 | 调试/关卡映射 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hazard.floating_log` | 浮木 | 浮木 | FLOATING LOG | FLOATING LOG | 仅开发/不使用 | 调试/关卡映射 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hazard.high_wall` | 高墙 | 高墙 | HIGH WALL | HIGH WALL | 仅开发/不使用 | 调试/关卡映射 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hazard.long_wall` | 长墙 | 长墙 | LONG WALL | LONG WALL | 仅开发/不使用 | 调试/关卡映射 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hazard.low_bar` | 低杆 | 低杆 | LOW BAR | LOW BAR | 仅开发/不使用 | 调试/关卡映射 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hazard.low_beam` | 低梁 | 低梁 | LOW BEAM | LOW BEAM | 仅开发/不使用 | 调试/关卡映射 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hazard.low_bird` | 低飞海鸟 | 低飞海鸟 | LOW BIRD | LOW BIRD | 仅开发/不使用 | 调试/关卡映射 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hazard.low_rock` | 低岩 | 低岩 | LOW ROCK | LOW ROCK | 仅开发/不使用 | 调试/关卡映射 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hazard.reef` | 暗礁 | 暗礁 | REEF | REEF | 仅开发/不使用 | 调试/关卡映射 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hazard.reef_chain` | 礁链 | 礁链 | REEF CHAIN | REEF CHAIN | 仅开发/不使用 | 调试/关卡映射 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hazard.rock_beam` | 岩石 + 横梁 | 岩石 + 横梁 | ROCK + BEAM | ROCK + BEAM | 仅开发/不使用 | 调试/关卡映射 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hazard.shark` | 鲨鱼 | 鲨鱼 | SHARK | SHARK | 仅开发/不使用 | 调试/关卡映射 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hazard.sink_gate` | 下沉门 | 下沉门 | SINK GATE | SINK GATE | 仅开发/不使用 | 调试/关卡映射 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hazard.wide_wave` | 宽浪 | 宽浪 | WIDE WAVE | WIDE WAVE | 仅开发/不使用 | 调试/关卡映射 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hint.air_critical` | 氧气告急 - 马上换乌龟 | 氧气告急 - 马上换BITT | AIR CRITICAL - TURTLE NOW | AIR CRITICAL - BITT NOW | 重写 | 情境提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `hint.air_low` | 氧气偏低 - 换回乌龟就上浮 | 氧气偏低 - 换回BITT就上浮 | AIR LOW - TAKE THE TURTLE BACK | AIR LOW - TAKE THE BITT BACK | 重写 | 情境提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `hint.boost` | 加速带 - 操控乌龟时自动提速 | 加速带 - 操控BITT时自动提速 | BOOST LANE - AUTOMATIC WHILE DRIVING THE TURTLE | BOOST LANE - AUTOMATIC WHILE DRIVING THE BITT | 重写 | 情境提示 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `hint.clean_pass` | 干净通过  {0}/{1} | 干净通过  {0}/{1} | CLEAN PASS  {0}/{1} | CLEAN PASS  {0}/{1} | 保留 | 情境提示 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `hint.dive_deep` | 壳停得太深 - 浮木组合请先 ↑ 起跳再 SHIFT，下潜和上浮会自动完成 | 壳停得太深 - 浮木组合请先 ↑ 起跳再 SHIFT，下潜和上浮会自动完成 | SHELL TOO DEEP - FOR LOGS: ↑ JUMP THEN SHIFT; DIVE AND SURFACE ARE AUTOMATIC | SHELL TOO DEEP - FOR LOGS: ↑ JUMP THEN SHIFT; DIVE AND SURFACE ARE AUTOMATIC | 保留 | 情境提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `hint.dive_late` | 浮木：兔子起跳后 SHIFT 给乌龟，按住 ↓ 下潜；过木后松手上浮 | 浮木：TUBO起跳后 SHIFT 给BITT，按住 ↓ 下潜；过木后松手上浮 | LOG: JUMP, THEN SHIFT TO TURTLE - HOLD ↓ TO DIVE; RELEASE TO SURFACE | LOG: JUMP, THEN SHIFT TO BITT - HOLD ↓ TO DIVE; RELEASE TO SURFACE | 重写 | 情境提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `hint.gate_hit` | 拱岩：按住 ↓ 潜到它下面再松 | 拱岩：按住 ↓ 潜到它下面再松 | REEF ARCH: HOLD ↓ UNTIL YOU'RE UNDER IT | REEF ARCH: HOLD ↓ UNTIL YOU'RE UNDER IT | 保留 | 情境提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `hint.log_jump` | 浮木：先按 ↑ 让兔子起跳，再 SHIFT 给乌龟 | 浮木：先按 ↑ 让TUBO起跳，再 SHIFT 给BITT | LOG: PRESS ↑ TO JUMP FIRST, THEN SHIFT TO THE TURTLE | LOG: PRESS ↑ TO JUMP FIRST, THEN SHIFT TO THE BITT | 重写 | 情境提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `hint.motion` | 这组会动 - 看准空隙再上 | 这组会动 - 看准空隙再上 | THIS ONE MOVES - GO THROUGH THE GAP | THIS ONE MOVES - GO THROUGH THE GAP | 保留 | 情境提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `hint.motion_buoy` | 系泊浮标：锚绳拴在海底，随涌浪起落 - 等它落到低点再跳 | 系泊浮标：锚绳拴在海底，随涌浪起落 - 等它落到低点再跳 | MOORING BUOY - ROPED TO THE SEABED, RIDES THE SWELL. JUMP AT THE LOW POINT | MOORING BUOY - ROPED TO THE SEABED, RIDES THE SWELL. JUMP AT THE LOW POINT | 保留 | 情境提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `hint.motion_cargo` | 漂流货箱：从码头冲出来的货，随大浪浮沉 - 看准浪谷再跳 | 漂流货箱：从码头冲出来的货，随大浪浮沉 - 看准浪谷再跳 | DRIFTING CARGO - WASHED OUT FROM THE DOCK, RIDES THE SWELL. JUMP IN THE TROUGH | DRIFTING CARGO - WASHED OUT FROM THE DOCK, RIDES THE SWELL. JUMP IN THE TROUGH | 保留 | 情境提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `hint.motion_eel` | 水渠鳗鱼：平时盘在水渠底，靠近时带电窜上来 - 提前跃起 | 水渠鳗鱼：平时盘在水渠底，靠近时带电窜上来 - 提前跃起 | CANAL EEL - COILED ON THE CANAL BED, SPARKS AND LUNGES. LEAP EARLY | CANAL EEL - COILED ON THE CANAL BED, SPARKS AND LUNGES. LEAP EARLY | 保留 | 情境提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `hint.motion_hoist` | 吊装货箱：挂在码头吊钩上，跟着吊臂上下晃 - 看准它升起的那拍 | 吊装货箱：挂在码头吊钩上，跟着吊臂上下晃 - 看准它升起的那拍 | HOIST CRATE - HANGS FROM THE DOCK CRANE AND SWINGS WITH IT. TIME THE LIFT | HOIST CRATE - HANGS FROM THE DOCK CRANE AND SWINGS WITH IT. TIME THE LIFT | 保留 | 情境提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `hint.pickup` | 接住了！ | 接住了！ | PICKUP! | PICKUP! | 保留 | 情境提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `hint.shark_hit` | 鲨鱼只咬壳 - 按 ↑ 跃起躲开 | 鲨鱼只咬壳 - 按 ↑ 跃起躲开 | THE SHARK BITES THE SHELL - PRESS ↑ TO LEAP | THE SHARK BITES THE SHELL - PRESS ↑ TO LEAP | 保留 | 情境提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `hint.snack` | 海藻：SHIFT 决定谁吃；不吃不扣分 | 海藻：SHIFT 决定谁吃；不吃不扣分 | SNACK: SHIFT PICKS WHO EATS; SKIPPING IS FREE | SNACK: SHIFT PICKS WHO EATS; SKIPPING IS FREE | 保留 | 情境提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `hint.take_rabbit` | 按 SHIFT 换兔子 - 这个只有兔子能躲 | 按 SHIFT 换TUBO - 这个只有TUBO能躲 | PRESS SHIFT FOR THE RABBIT - ONLY IT CAN DODGE THIS | PRESS SHIFT FOR THE TUBO - ONLY IT CAN DODGE THIS | 重写 | 情境提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `hint.wall_hit` | 高墙：乌龟先 ↑ 跃起，兔子再蹬一下 | 高墙：BITT先 ↑ 跃起，TUBO再蹬一下 | HIGH WALL: ↑ LEAP, THEN KICK WITH THE RABBIT | HIGH WALL: ↑ LEAP, THEN KICK WITH THE TUBO | 重写 | 情境提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `hint.wave_hit` | 壳翻了 - 稳住，等它自己翻回来 | 壳翻了 - 稳住，等它自己翻回来 | SHELL FLIPPED - STEADY, IT ROLLS BACK | SHELL FLIPPED - STEADY, IT ROLLS BACK | 保留 | 情境提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `hud.accident` | 事故    {0} | 事故    {0} | ACCIDENT  {0} | ACCIDENT  {0} | 保留 | HUD | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `hud.acting` | 操控 · {0} | 操控 · {0} | DRIVING · {0} | DRIVING · {0} | 保留 | HUD | 是 | 静态扫描到 Locale.t 调用 |
+| `hud.air` | 氧气    {0} 秒   {1} | 氧气    {0} 秒   {1} | AIR      {0} s   {1} | AIR      {0} s   {1} | 保留 | HUD | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `hud.airborne` | 空中 - 不耗氧 | 空中 - 不耗氧 | AIRBORNE - NO DRAIN | AIRBORNE - NO DRAIN | 仅开发/不使用 | HUD | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hud.bond` | 默契 {0}/{1} | BRO COMBO {0}/{1} | BRO PASS {0}/{1} | BRO COMBO {0}/{1} | 重写 | HUD | 是 | 静态扫描到 Locale.t 调用 |
+| `hud.boost` | 加速 | 加速 | BOOST | BOOST | 保留 | HUD | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `hud.bro_meter` | BRO 槽 {0}/{1} | BRO METER {0}/{1} | BRO METER {0}/{1} | BRO METER {0}/{1} | 重写 | HUD | 是 | 静态扫描到 Locale.t 调用 |
+| `hud.brotherhood` | 兄弟情    {0} | 兄弟情    {0} | BROTHERHOOD  {0} | BROTHERHOOD  {0} | 仅开发/不使用 | HUD | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hud.clean` | 干净通过  {0}/{1} | 干净通过  {0}/{1} | CLEAN PASSES  {0}/{1} | CLEAN PASSES  {0}/{1} | 仅开发/不使用 | HUD | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hud.clean_best` | 干净通过  {0}/{1}   最佳 {2} | 干净通过  {0}/{1}   最佳 {2} | CLEAN PASSES  {0}/{1}   BEST {2} | CLEAN PASSES  {0}/{1}   BEST {2} | 仅开发/不使用 | HUD | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hud.control` | 控制    {0} | 控制    {0} | CONTROL   {0} | CONTROL   {0} | 保留 | HUD | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `hud.control_now` | SHIFT   当前控制：{0} | SHIFT   当前控制：{0} | SHIFT   CONTROL: {0} | SHIFT   CONTROL: {0} | 保留 | HUD | 是 | 静态扫描到 Locale.t 调用 |
+| `hud.coop_assist` | 配合 | 配合 | ASSIST | ASSIST | 保留 | HUD | 是 | 静态扫描到 Locale.t 调用 |
+| `hud.coop_missed` | {0}  已错过 | {0}  已错过 | {0}  MISSED | {0}  MISSED | 保留 | HUD | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `hud.coop_now` | {0}  现在！ | {0}  现在！ | {0}  NOW! | {0}  NOW! | 保留 | HUD | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `hud.coop_prepare` | {0}  准备 | {0}  准备 | {0}  GET READY | {0}  GET READY | 保留 | HUD | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `hud.coop_release` | 松开 ↓ 上浮接人！ | 松开 ↓ 上浮接人！ | RELEASE ↓ - SURFACE & CATCH! | RELEASE ↓ - SURFACE & CATCH! | 保留 | HUD | 是 | 静态扫描到 Locale.t 调用 |
+| `hud.coop_tag` | 可 {0} | 可 {0} | {0} READY | {0} READY | 保留 | HUD | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `hud.cruise` | 巡航 | 巡航 | CRUISE | CRUISE | 保留 | HUD | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `hud.drift_distracted` | 开始神游 | 电流不稳 | DRIFTING | CURRENT UNSTABLE | 重写 | HUD | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `hud.drift_effect_rabbit` | 空中修正 {0}% · 身偏 {1}px | 空中修正 {0}% · 身偏 {1}px | AIR {0}% · {1}px OFF | AIR {0}% · {1}px OFF | 保留 | HUD | 是 | 静态扫描到 Locale.t 调用 |
+| `hud.drift_effect_turtle` | 巡航 {0}% · 壳晃 {1}px | 巡航 {0}% · 壳晃 {1}px | CRUISE {0}% · BOB {1}px | CRUISE {0}% · BOB {1}px | 保留 | HUD | 是 | 静态扫描到 Locale.t 调用 |
+| `hud.drift_mischief` | 要惹麻烦 | 电流过载！ | TROUBLE | OVERLOAD! | 重写 | HUD | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `hud.drift_recover_rabbit` | 回神中 · 空中修正 {0}% | 回神中 · 空中修正 {0}% | RECOVER · AIR {0}% | RECOVER · AIR {0}% | 保留 | HUD | 是 | 静态扫描到 Locale.t 调用 |
+| `hud.drift_recover_turtle` | 回神中 · 巡航 {0}% | 回神中 · 巡航 {0}% | RECOVER · CRUISE {0}% | RECOVER · CRUISE {0}% | 保留 | HUD | 是 | 静态扫描到 Locale.t 调用 |
+| `hud.drift_recovering` | 回神中 | 回神中 | RECOVER | RECOVER | 保留 | HUD | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `hud.drift_restless` | 坐不住了 | 电流发麻 | FIDGETY | CURRENT BUZZ | 重写 | HUD | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `hud.emergency` | 紧急上浮 | 紧急上浮 | EMERGENCY ASCENT | EMERGENCY ASCENT | 保留 | HUD | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `hud.oxygen` | 氧气 {0}s | 氧气 {0}s | AIR {0}s | AIR {0}s | 仅开发/不使用 | HUD | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hud.oxygen_critical` | 氧气告急 | 氧气告急 | AIR CRITICAL | AIR CRITICAL | 仅开发/不使用 | HUD | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hud.oxygen_low` | 氧气偏低 | 氧气偏低 | AIR LOW | AIR LOW | 仅开发/不使用 | HUD | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hud.oxygen_recovering` | 水面恢复中 | 水面恢复中 | SURFACE - RECOVERING | SURFACE - RECOVERING | 仅开发/不使用 | HUD | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hud.progress` | 进度 {0}%   {1}/{2} 组 | 进度 {0}%   {1}/{2} 组 | PROGRESS {0}%   {1}/{2} GROUPS | PROGRESS {0}%   {1}/{2} GROUPS | 保留 | HUD | 是 | 静态扫描到 Locale.t 调用 |
+| `hud.rabbit` | 兔子    {0}   抓地 {1}% | TUBO    {0}   抓地 {1}% | RABBIT    {0}   GRIP {1}% | TUBO    {0}   GRIP {1}% | 重写 | HUD | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `hud.rabbit_boost` | 兔子！下一跳更高 | TUBO！下一跳更高 | RABBIT! HIGHER JUMP | TUBO! HIGHER JUMP | 重写 | HUD | 是 | 静态扫描到 Locale.t 调用 |
+| `hud.rabbit_risk` | 兔子晃动 {0}% | TUBO晃动 {0}% | RABBIT WOBBLE {0}% | TUBO WOBBLE {0}% | 重写 | HUD | 是 | 静态扫描到 Locale.t 调用 |
+| `hud.rescue_return` | 兔子回壳中 {0}s | TUBO回壳中 {0}s | RABBIT RETURNING {0}s | TUBO RETURNING {0}s | 仅开发/不使用 | HUD | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hud.rescuing` | 救援中 {0}s - 潜到兔子下面 | 救援中 {0}s - 潜到TUBO下面 | RESCUE {0}s - DIVE UNDER THE RABBIT | RESCUE {0}s - DIVE UNDER THE TUBO | 仅开发/不使用 | HUD | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hud.rescuing_air` | 救援中 {0}s - 跃起接住 | 救援中 {0}s - 跃起接住 | RESCUE {0}s - LEAP TO CATCH | RESCUE {0}s - LEAP TO CATCH | 仅开发/不使用 | HUD | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hud.showtime` | SHOWTIME  {0} 秒 | SHOWTIME  {0} 秒 | SHOWTIME  {0} s | SHOWTIME  {0} s | 保留 | HUD | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `hud.showtime_banner` | 操控乌龟 · SHIFT 中止 | 操控BITT · SHIFT 中止 | DRIVE TURTLE · SHIFT TO ABORT | DRIVE BITT · SHIFT TO ABORT | 重写 | HUD | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `hud.showtime_ready` | SHOWTIME 就绪 | SHOWTIME 就绪 | SHOWTIME READY | SHOWTIME READY | 保留 | HUD | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `hud.showtime_t` | SHOWTIME {0}s  剩 | SHOWTIME {0}s  剩 | SHOWTIME {0}s LEFT | SHOWTIME {0}s LEFT | 保留 | HUD | 是 | 静态扫描到 Locale.t 调用 |
+| `hud.snack_ahead` | 海藻在前 · 当前：{0}会吃 | 海藻在前 · 当前：{0}会吃 | SNACK AHEAD · {0} EATS NOW | SNACK AHEAD · {0} EATS NOW | 保留 | HUD | 是 | 静态扫描到 Locale.t 调用 |
+| `hud.snack_cant` | 海藻在前 · 现在够不到（回巡航 / 落地再吃） | 海藻在前 · 现在够不到（回巡航 / 落地再吃） | SNACK AHEAD · OUT OF REACH (CRUISE OR LAND TO EAT) | SNACK AHEAD · OUT OF REACH (CRUISE OR LAND TO EAT) | 保留 | HUD | 是 | 静态扫描到 Locale.t 调用 |
+| `hud.snack_preview` | 海藻：兔子吃 ↑ / 乌龟吃 » | 海藻：TUBO吃 ↑ / BITT吃 » | SNACK: RABBIT ↑ / TURTLE » | SNACK: TUBO ↑ / BITT » | 重写 | HUD | 是 | 静态扫描到 Locale.t 调用 |
+| `hud.speed` | 速度    {0} | 速度    {0} | SPEED   {0} | SPEED   {0} | 保留 | HUD | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `hud.standby_risk` | 待命 · 不稳 | 待命 · 不稳 | STANDBY · WOBBLY | STANDBY · WOBBLY | 保留 | HUD | 是 | 静态扫描到 Locale.t 调用 |
+| `hud.standby_stable` | 待命 · 稳定 | 待命 · 稳定 | STANDBY · STABLE | STANDBY · STABLE | 保留 | HUD | 是 | 静态扫描到 Locale.t 调用 |
+| `hud.surface` | 水面 - 恢复中 | 水面 - 恢复中 | SURFACE - RECOVERING | SURFACE - RECOVERING | 保留 | HUD | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `hud.time` | 时间    {0} 秒 | 时间    {0} 秒 | TIME    {0} s | TIME    {0} s | 保留 | HUD | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `hud.turbo` | 乌龟 TURBO！加速中 | BITT TURBO！加速中 | TURTLE TURBO! | BITT TURBO! | 重写 | HUD | 是 | 静态扫描到 Locale.t 调用 |
+| `hud.turtle` | 乌龟    {0} | BITT    {0} | TURTLE    {0} | BITT    {0} | 重写 | HUD | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `hud.turtle_risk` | 乌龟晃动 {0}% | BITT晃动 {0}% | TURTLE WOBBLE {0}% | BITT WOBBLE {0}% | 重写 | HUD | 是 | 静态扫描到 Locale.t 调用 |
+| `hud.undertow` | 暗流 - 壳沉太深，换给乌龟抬起来 | 暗流 - 壳沉太深，换给BITT抬起来 | UNDERTOW - TOO DEEP, GIVE IT TO THE TURTLE | UNDERTOW - TOO DEEP, GIVE IT TO THE BITT | 仅开发/不使用 | HUD | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hud.underwater` | 水下 - 耗氧中 | 水下 - 耗氧中 | UNDERWATER - DRAINING | UNDERWATER - DRAINING | 仅开发/不使用 | HUD | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hud.warn` | {0}  {1} px  -  {2} | {0}  {1} px  -  {2} | {0}  {1} px  -  {2} | {0}  {1} px  -  {2} | 仅开发/不使用 | HUD | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `hud.zone` | 区域 {0}/3  {1} | 区域 {0}/3  {1} | ZONE {0}/3  {1} | ZONE {0}/3  {1} | 保留 | HUD | 是 | 静态扫描到 Locale.t 调用 |
+| `lesson.airbar` | 低杆 - 让兔子留在龟壳上 | 低杆 - 让TUBO留在龟壳上 | LOW BAR - KEEP THE RABBIT ON THE SHELL | LOW BAR - KEEP THE TUBO ON THE SHELL | 重写 | 首次教学 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `lesson.beam` | 趴低过梁 - 按 SHIFT 换兔子，再按 ↓ 趴低 | 趴低过梁 - 按 SHIFT 换TUBO，再按 ↓ 趴低 | CROUCH UNDER THE BEAM - SHIFT TO THE RABBIT, THEN ↓ | CROUCH UNDER THE BEAM - SHIFT TO THE TUBO, THEN ↓ | 重写 | 首次教学 | 是 | 静态扫描到 Locale.t 调用 |
+| `lesson.bird` | 低飞海鸟 - 按 SHIFT 换兔子按 ↓ 趴低，乌龟照常巡航 | 低飞海鸟 - 按 SHIFT 换TUBO按 ↓ 趴低，BITT照常巡航 | LOW BIRD - SHIFT TO THE RABBIT AND PRESS ↓, THE SHELL KEEPS CRUISING | LOW BIRD - SHIFT TO THE TUBO AND PRESS ↓, THE SHELL KEEPS CRUISING | 重写 | 首次教学 | 是 | 静态扫描到 Locale.t 调用 |
+| `lesson.combo` | 连续三次干净通过会触发 SHOWTIME | 连续三次干净通过会触发 SHOWTIME | THREE CLEAN PASSES TRIGGER SHOWTIME | THREE CLEAN PASSES TRIGGER SHOWTIME | 保留 | 首次教学 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `lesson.dock_beam` | 码头横梁 - 按 SHIFT 换兔子趴低过，龟壳不受影响 | 码头横梁 - 按 SHIFT 换TUBO趴低过，龟壳不受影响 | DOCK BEAM - SHIFT TO THE RABBIT AND CROUCH, THE SHELL IS UNAFFECTED | DOCK BEAM - SHIFT TO THE TUBO AND CROUCH, THE SHELL IS UNAFFECTED | 重写 | 首次教学 | 是 | 静态扫描到 Locale.t 调用 |
+| `lesson.gate` | 水下拱岩 - 按 SHIFT 换乌龟，按住 ↓ 潜过去 | 水下拱岩 - 按 SHIFT 换BITT，按住 ↓ 潜过去 | REEF ARCH - SHIFT TO THE TURTLE AND HOLD ↓ | REEF ARCH - SHIFT TO THE BITT AND HOLD ↓ | 重写 | 首次教学 | 是 | 静态扫描到 Locale.t 调用 |
+| `lesson.log` | 浮木 - 兔子先跳，按 SHIFT 换乌龟下潜；越过木尾松开 ↓ 上浮接人 | 浮木 - TUBO先跳，按 SHIFT 换BITT下潜；越过木尾松开 ↓ 上浮接人 | FLOATING LOG - JUMP, SHIFT, DIVE. PAST THE LOG, RELEASE ↓ TO CATCH. | FLOATING LOG - JUMP, SHIFT, DIVE. PAST THE LOG, RELEASE ↓ TO CATCH. | 重写 | 首次教学 | 是 | 静态扫描到 Locale.t 调用 |
+| `lesson.reef` | 暗礁在深处 - 贴着水面走 | 暗礁在深处 - 贴着水面走 | REEFS SIT DEEP - STAY ON THE SURFACE | REEFS SIT DEEP - STAY ON THE SURFACE | 保留 | 首次教学 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `lesson.rock` | 跳过岩石 - 按 SHIFT 换兔子，再按 ↑ 起跳 | 跳过岩石 - 按 SHIFT 换TUBO，再按 ↑ 起跳 | JUMP THE ROCK - SHIFT TO THE RABBIT, THEN ↑ | JUMP THE ROCK - SHIFT TO THE TUBO, THEN ↑ | 重写 | 首次教学 | 是 | 静态扫描到 Locale.t 调用 |
+| `lesson.shark` | 鲨鱼从下面冲上来 - 按 SHIFT 换乌龟，再按 ↑ 跃起 | 鲨鱼从下面冲上来 - 按 SHIFT 换BITT，再按 ↑ 跃起 | SHARK FROM BELOW - SHIFT TO THE TURTLE AND PRESS ↑ | SHARK FROM BELOW - SHIFT TO THE BITT AND PRESS ↑ | 重写 | 首次教学 | 是 | 静态扫描到 Locale.t 调用 |
+| `lesson.sink_gate` | 下沉门 - 兔子掌权时龟壳会自己沉下去 | 下沉门 - TUBO掌权时龟壳会自己沉下去 | SINK GATE - THE SHELL SINKS WHILE THE RABBIT IS IN CHARGE | SINK GATE - THE SHELL SINKS WHILE THE TUBO IS IN CHARGE | 重写 | 首次教学 | 是 | 静态扫描到 Locale.t 调用 |
+| `lesson.wall` | 长墙 - 按 SHIFT 换给兔子，壳会自己沉下去 | 长墙 - 按 SHIFT 换给TUBO，壳会自己沉下去 | LONG WALL - SHIFT TO THE RABBIT AND THE SHELL SINKS | LONG WALL - SHIFT TO THE TUBO AND THE SHELL SINKS | 重写 | 首次教学 | 是 | 静态扫描到 Locale.t 调用 |
+| `lesson.wave` | 宽浪 - 按 SHIFT 换成乌龟，按 SPACE 拍水跃浪 | 宽浪 - 按 SHIFT 换成BITT，按 SPACE 拍水跃浪 | WIDE WAVE - SHIFT TO THE TURTLE, PRESS SPACE TO POP | WIDE WAVE - SHIFT TO THE BITT, PRESS SPACE TO POP | 重写 | 首次教学 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `menu.best` | 最佳 {0} 秒   连击 {1} | 最佳 {0} 秒   连击 {1} | BEST {0} s   STREAK {1} | BEST {0} s   STREAK {1} | 保留 | 菜单 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `menu.hint` | SHIFT 换人    ↑ 兔子跳 / 乌龟跃起    ↓ 兔子趴低 / 乌龟下潜 | SHIFT 换人    ↑ TUBO跳 / BITT跃起    ↓ TUBO趴低 / BITT下潜 | SHIFT transfer   ↑ RABBIT JUMP / TURTLE LEAP   ↓ RABBIT CROUCH / TURTLE DIVE | SHIFT transfer   ↑ TUBO JUMP / BITT LEAP   ↓ TUBO CROUCH / BITT DIVE | 重写 | 菜单 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `menu.keys` | ↑↓ 选择   Enter 确认   L 语言 | ↑↓ 选择   Enter 确认 | ↑↓ SELECT   ENTER CONFIRM   L LANGUAGE | ↑↓ SELECT   ENTER CONFIRM | 重写 | 菜单 | 是 | 静态扫描到 Locale.t 调用 |
+| `menu.language` | 语言：简体中文 | 语言：简体中文 | LANGUAGE: ENGLISH | LANGUAGE: ENGLISH | 保留 | 菜单 | 是 | 静态扫描到 Locale.t 调用 |
+| `menu.no_record` | 还没有纪录 | 还没有纪录 | NO RECORD YET | NO RECORD YET | 保留 | 菜单 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `menu.producer` | 制作人测试 | 制作人测试 | PRODUCER TESTS | PRODUCER TESTS | 仅开发/不使用 | 菜单 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `menu.quit` | Q / ESC  -  退出游戏 | Q / ESC  -  退出游戏 | Q / ESC  -  QUIT | Q / ESC  -  QUIT | 仅开发/不使用 | 菜单 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `menu.quit_button` | 退出游戏 | 退出游戏 | QUIT | QUIT | 保留 | 菜单 | 是 | 静态扫描到 Locale.t 调用 |
+| `menu.settings` | S  -  设置 | S  -  设置 | S  -  SETTINGS | S  -  SETTINGS | 仅开发/不使用 | 菜单 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `menu.settings_button` | 设置 | 设置 | SETTINGS | SETTINGS | 保留 | 菜单 | 是 | 静态扫描到 Locale.t 调用 |
+| `menu.stage` | 大表哥的水上训练挑战 | 大表哥的水上训练挑战 | COUSIN'S WATER TRAINING CHALLENGE | COUSIN'S WATER TRAINING CHALLENGE | 保留 | 菜单 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `menu.start` | 回车  -  开始比赛 | 回车  -  开始比赛 | ENTER  -  START RACE | ENTER  -  START RACE | 仅开发/不使用 | 菜单 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `menu.start_game` | 开始挑战 | 开始游戏 | START CHALLENGE | START GAME | 重写 | 菜单 | 是 | 静态扫描到 Locale.t 调用 |
+| `menu.subtitle` | 兄弟俩，准备好接受训练了吗？ | 兄弟俩，准备好接受训练了吗？ | BROS. READY FOR TRAINING? | BROS. READY FOR TRAINING? | 保留 | 菜单 | 是 | 静态扫描到 Locale.t 调用 |
+| `menu.title` | TURBBIT BRO! | TURBBIT BRO! | TURBBIT BRO! | TURBBIT BRO! | 保留 | 菜单 | 是 | 静态扫描到 Locale.t 调用 |
+| `opening.food` | 能量海藻：操控乌龟吃 → 加速；操控兔子吃 → 下一跳更高；不吃也不扣分 | 能量海藻：操控BITT吃 → 加速；操控TUBO吃 → 下一跳更高；不吃也不扣分 | SNACK: DRIVE THE TURTLE TO EAT = TURBO; DRIVE THE RABBIT = HIGHER JUMP; SKIPPING IS FREE | SNACK: DRIVE THE BITT TO EAT = TURBO; DRIVE THE TUBO = HIGHER JUMP; SKIPPING IS FREE | 仅调试（旧开场卡） | 旧开场卡 | 是 | 仅 --force-opening / 旧测试 |
+| `opening.hint` | ↑ 跳跃    ↓ 趴低 | ↑ 跳跃    ↓ 趴低 | ↑ JUMP    ↓ CROUCH | ↑ JUMP    ↓ CROUCH | 仅调试（旧开场卡） | 旧开场卡 | 是 | 仅 --force-opening / 旧测试 |
+| `opening.ready` | 准备好，兄弟？ | 准备好，兄弟？ | READY, BRO? | READY, BRO? | 仅调试（旧开场卡） | 旧开场卡 | 是 | 仅 --force-opening / 旧测试 |
+| `opening.skip` | 任意键跳过 | 任意键跳过 | PRESS ANY KEY TO SKIP | PRESS ANY KEY TO SKIP | 仅调试（旧开场卡） | 旧开场卡 | 是 | 仅 --force-opening / 旧测试 |
+| `pause.breath` | Take a breath, bro. | Take a breath, bro. | Take a breath, bro. | Take a breath, bro. | 保留 | 暂停页 | 是 | 静态扫描到 Locale.t 调用 |
+| `pause.food` | 能量海藻：SHIFT 决定谁吃 — 乌龟吃 = 加速，兔子吃 = 下一跳更高；不吃不扣分 | 能量海藻：SHIFT 决定谁吃 — BITT吃 = 加速，TUBO吃 = 下一跳更高；不吃不扣分 | SNACK: SHIFT PICKS WHO EATS - TURTLE = TURBO, RABBIT = HIGHER JUMP; SKIPPING COSTS NOTHING | SNACK: SHIFT PICKS WHO EATS - BITT = TURBO, TUBO = HIGHER JUMP; SKIPPING COSTS NOTHING | 重写 | 暂停页 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `pause.help` | 帮助 / 操作说明 | 帮助 / 操作说明 | HELP / CONTROLS | HELP / CONTROLS | 保留 | 暂停页 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `pause.help_body` | SHIFT 换人：障碍只认一种身体，换错就撞（换人间隔 0.2 秒）\n↑ 兔子跳 / 乌龟跃起    ↓ 兔子趴低 / 乌龟下潜\n礁拱：乌龟潜过去；鲨鱼：乌龟跃起；\n低梁/海鸟/吊网：趴低或下潜；岩/箱/浮台：跳过去\n浮木：先 ↑ 跳，再 SHIFT 给乌龟 ↓ 潜\n高墙：SHIFT + ↑ 跃起，再 SHIFT 兔子 ↑ 蹬踏\n食物：操控谁谁吃，不吃不扣分 | SHIFT 换人：TUBO ↑ 跳 / ↓ 趴低；BITT ↑ 跃起 / ↓ 下潜\nTUBO 头顶三颗气泡是氧气；BRO METER 满会让当前角色电流过载\n电击换手 · 干净通过攒 BRO COMBO · 组合动作触发 SHOWTIME / SPACE：TUBO 胡萝卜护盾 / BITT 主动救援 | SHIFT SWAP: EACH OBSTACLE FITS ONE BODY (0.2s BETWEEN SWAPS)\n↑ RABBIT JUMP / TURTLE LEAP    ↓ RABBIT CROUCH / TURTLE DIVE\nARCH: TURTLE DIVE; SHARK/EEL: TURTLE LEAP\nBEAM/NET/GULL: CROUCH OR DIVE; ROCK/CRATE/PONTOON: JUMP\nLOG: ↑ JUMP FIRST, SHIFT, THEN ↓ DIVE\nHIGH WALL: SHIFT + ↑ LEAP, SHIFT RABBIT, ↑ KICK\nSNACK: WHOEVER YOU DRIVE EATS; SKIPPING IS FREE | SHIFT SWAP: TUBO ↑ JUMP / ↓ CROUCH; BITT ↑ LEAP / ↓ DIVE\nTHREE BUBBLES OVER TUBO ARE AIR; A FULL BRO METER OVERLOADS THE CURRENT BODY\nSHIFT RELAY · CLEAN PASSES BUILD BRO COMBO · COMBOS TRIGGER SHOWTIME / SPACE: TUBO CARROT GUARD / BITT BRO CATCH | 重写 | 暂停页 | 是 | 静态扫描到 Locale.t 调用 |
+| `pause.help_title` | 操作说明 | 操作说明 | CONTROLS | CONTROLS | 保留 | 暂停页 | 是 | 静态扫描到 Locale.t 调用 |
+| `pause.keys` | ESC 继续   R 重开   M 主菜单 | ESC 继续   R 重开   M 主菜单 | ESC RESUME   R RESTART   M MENU | ESC RESUME   R RESTART   M MENU | 保留 | 暂停页 | 是 | 静态扫描到 Locale.t 调用 |
+| `pause.menu` | 返回主菜单 | 返回主菜单 | MAIN MENU | MAIN MENU | 保留 | 暂停页 | 是 | 静态扫描到 Locale.t 调用 |
+| `pause.restart` | 重新开始 | 重新开始 | RESTART | RESTART | 保留 | 暂停页 | 是 | 静态扫描到 Locale.t 调用 |
+| `pause.resume` | 继续游戏 | 继续游戏 | RESUME | RESUME | 保留 | 暂停页 | 是 | 静态扫描到 Locale.t 调用 |
+| `pause.title` | 已暂停 | 已暂停 | PAUSED | PAUSED | 保留 | 暂停页 | 是 | 静态扫描到 Locale.t 调用 |
+| `prompt.catch` |  | SPACE 主动救援 |  | SPACE BRO CATCH | 新增 | 底部动作提示 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `prompt.combo` | 浮木 - ↑ 跳 → SHIFT → ↓ 潜 | 浮木 - ↑ 跳 → SHIFT → ↓ 潜 | LOG - ↑ JUMP → SHIFT → ↓ DIVE | LOG - ↑ JUMP → SHIFT → ↓ DIVE | 保留 | 底部动作提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `prompt.combo_from_turtle` | SHIFT 兔子 → ↑ 跳 → SHIFT → ↓ 潜 | SHIFT TUBO → ↑ 跳 → SHIFT → ↓ 潜 | SHIFT RABBIT → ↑ JUMP → SHIFT → ↓ DIVE | SHIFT TUBO → ↑ JUMP → SHIFT → ↓ DIVE | 重写 | 底部动作提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `prompt.crouch` | ↓ 趴低 | ↓ 趴低 | ↓ CROUCH | ↓ CROUCH | 保留 | 底部动作提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `prompt.crouch_from_turtle` | SHIFT 回兔子 → ↓ 趴低 | SHIFT 回TUBO → ↓ 趴低 | SHIFT TO RABBIT → ↓ CROUCH | SHIFT TO TUBO → ↓ CROUCH | 重写 | 底部动作提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `prompt.dive` | 礁拱 - SHIFT + ↓ 按住下潜 | 礁拱 - SHIFT + ↓ 按住下潜 | ARCH - SHIFT + ↓ HOLD | ARCH - SHIFT + ↓ HOLD | 保留 | 底部动作提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `prompt.dive_on_turtle` | 礁拱下面就是通道 - 按住 ↓ 下潜 | 礁拱下面就是通道 - 按住 ↓ 下潜 | THE GAP IS UNDER THE ARCH - HOLD ↓ DIVE | THE GAP IS UNDER THE ARCH - HOLD ↓ DIVE | 保留 | 底部动作提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `prompt.eel` | 水渠鳗鱼会从底下窜上来 - SHIFT + ↑ 乌龟跃起 | 水渠鳗鱼会从底下窜上来 - SHIFT + ↑ BITT跃起 | CANAL EEL - SHIFT + ↑ TURTLE LEAP | CANAL EEL - SHIFT + ↑ BITT LEAP | 重写 | 底部动作提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `prompt.eel_on_turtle` | 鳗鱼从底下窜上来 - ↑ 乌龟跃起 | 鳗鱼从底下窜上来 - ↑ BITT跃起 | CANAL EEL - ↑ TURTLE LEAP | CANAL EEL - ↑ BITT LEAP | 重写 | 底部动作提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `prompt.guard` |  | SPACE 胡萝卜护盾 |  | SPACE CARROT GUARD | 新增 | 底部动作提示 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `prompt.jump` | ↑ 跳跃 | ↑ 跳跃 | ↑ JUMP | ↑ JUMP | 保留 | 底部动作提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `prompt.jump_from_turtle` | SHIFT 回兔子 → ↑ 跳跃 | SHIFT 回TUBO → ↑ 跳跃 | SHIFT TO RABBIT → ↑ JUMP | SHIFT TO TUBO → ↑ JUMP | 重写 | 底部动作提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `prompt.leap` | 鲨鱼 - SHIFT + ↑ 乌龟跃起 | 鲨鱼 - SHIFT + ↑ BITT跃起 | SHARK - SHIFT + ↑ LEAP | SHARK - SHIFT + ↑ LEAP | 重写 | 底部动作提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `prompt.leap_on_turtle` | 鲨鱼冲上来了 - ↑ 乌龟跃起 | 鲨鱼冲上来了 - ↑ BITT跃起 | SHARK IS UP - ↑ TURTLE LEAP | SHARK IS UP - ↑ BITT LEAP | 重写 | 底部动作提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `prompt.net` | 屋顶吊网压下来 - ↓ 趴低，从网底下过 | 屋顶吊网压下来 - ↓ 趴低，从网底下过 | CARGO NET - ↓ CROUCH | CARGO NET - ↓ CROUCH | 保留 | 底部动作提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `prompt.net_from_turtle` | 吊网只压兔子层 - 按住 ↓ 下潜，从网底下过 | 吊网只压TUBO层 - 按住 ↓ 下潜，从网底下过 | CARGO NET - HOLD ↓ DIVE | CARGO NET - HOLD ↓ DIVE | 重写 | 底部动作提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `prompt.ollie` | 高墙 - SHIFT + ↑ 跃起 → SHIFT → ↑ 蹬踏 | 高墙 - SHIFT + ↑ 跃起 → SHIFT → ↑ 蹬踏 | WALL - SHIFT + ↑ LEAP → SHIFT → ↑ KICK | WALL - SHIFT + ↑ LEAP → SHIFT → ↑ KICK | 保留 | 底部动作提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `prompt.ollie_on_turtle` | 高墙 - ↑ 跃起 → SHIFT 兔子 → ↑ 蹬踏 | 高墙 - ↑ 跃起 → SHIFT TUBO → ↑ 蹬踏 | HIGH WALL - ↑ LEAP → SHIFT RABBIT → ↑ KICK | HIGH WALL - ↑ LEAP → SHIFT TUBO → ↑ KICK | 重写 | 底部动作提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `prompt.pop` | SHIFT + SPACE 拍水跃浪 | SHIFT + SPACE 拍水跃浪 | SHIFT + SPACE WATER POP | SHIFT + SPACE WATER POP | 仅开发/不使用 | 底部动作提示 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `prompt.rescue_dive` | 按住 ↓ 潜下去接住兔子 | 按住 ↓ 潜下去接住TUBO | HOLD ↓ TO CATCH THE RABBIT | HOLD ↓ TO CATCH THE TUBO | 重写 | 底部动作提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `prompt.rescue_leap` | 按 ↑ 跃起接住兔子 | 按 ↑ 跃起接住TUBO | PRESS ↑ TO CATCH THE RABBIT | PRESS ↑ TO CATCH THE TUBO | 重写 | 底部动作提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `prompt.rescue_leap_shift` | SHIFT 乌龟 → 按 ↑ 跃起接住兔子 | SHIFT BITT → 按 ↑ 跃起接住TUBO | SHIFT TURTLE → ↑ TO CATCH | SHIFT BITT → ↑ TO CATCH | 重写 | 底部动作提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `prompt.rescue_shift` | SHIFT 乌龟 → 按住 ↓ 潜下去接住兔子 | SHIFT BITT → 按住 ↓ 潜下去接住TUBO | SHIFT TURTLE → HOLD ↓ TO CATCH | SHIFT BITT → HOLD ↓ TO CATCH | 重写 | 底部动作提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `prompt.sluice` | 船闸只有乌龟潜得过去 - SHIFT + ↓ 按住下潜 | 船闸只有BITT潜得过去 - SHIFT + ↓ 按住下潜 | SLUICE GATE - SHIFT + ↓ HOLD | SLUICE GATE - SHIFT + ↓ HOLD | 重写 | 底部动作提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `prompt.sluice_on_turtle` | 闸板下面就是通道 - 按住 ↓ 下潜 | 闸板下面就是通道 - 按住 ↓ 下潜 | SLUICE GATE - HOLD ↓ DIVE | SLUICE GATE - HOLD ↓ DIVE | 保留 | 底部动作提示 | 是 | 静态扫描到 Locale.t 调用 |
+| `quit.body` | 还没冲线，退出后本局进度不会保留。 | 还没冲线，退出后本局进度不会保留。 | The run is not finished. Progress will be lost. | The run is not finished. Progress will be lost. | 保留 | 其他 | 是 | 静态扫描到 Locale.t 调用 |
+| `quit.no` | 取消 | 取消 | CANCEL | CANCEL | 保留 | 其他 | 是 | 静态扫描到 Locale.t 调用 |
+| `quit.title` | 要退出游戏吗？ | 要退出游戏吗？ | QUIT GAME? | QUIT GAME? | 保留 | 其他 | 是 | 静态扫描到 Locale.t 调用 |
+| `quit.yes` | 退出 | 退出 | QUIT | QUIT | 保留 | 其他 | 是 | 静态扫描到 Locale.t 调用 |
+| `result.accidents` | 事故总数              {0} | 事故总数              {0} | TOTAL ACCIDENTS        {0} | TOTAL ACCIDENTS        {0} | 保留 | 结算页 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `result.again` | 再玩一次 | 再玩一次 | PLAY AGAIN | PLAY AGAIN | 保留 | 结算页 | 是 | 静态扫描到 Locale.t 调用 |
+| `result.best` | 最佳时间 {0}   最低事故 {1}   最长连击 {2} | 最佳时间 {0}   最低事故 {1}   最长连击 {2} | BEST TIME  {0}   BEST ACCIDENTS  {1}   BEST STREAK  {2} | BEST TIME  {0}   BEST ACCIDENTS  {1}   BEST STREAK  {2} | 保留 | 结算页 | 是 | 静态扫描到 Locale.t 调用 |
+| `result.bitt_B` |  | BITT：先把壳稳住吧。 |  | BITT: KEEP THE SHELL STEADY FIRST. | 新增 | 结算页 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `result.bitt_D` |  | BITT：算你头上。 |  | BITT: IT COUNTS. | 新增 | 结算页 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `result.bitt_S` |  | BITT：是我把你带过去的。 |  | BITT: I CARRIED YOU. | 新增 | 结算页 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `result.casualties` | 兔子伤亡              {0} | TUBO 落水              {0} | RABBIT CASUALTIES      {0} | TUBO IN WATER          {0} | 重写 | 结算页 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `result.clean` | 干净通过              {0} | 干净通过              {0} | CLEAN PASSES           {0} | CLEAN PASSES           {0} | 保留 | 结算页 | 是 | 静态扫描到 Locale.t 调用 |
+| `result.combos` | 连招                  {0} | BRO COMBO             {0} | BRO COMBOS             {0} | BRO COMBO              {0} | 重写 | 结算页 | 是 | 静态扫描到 Locale.t 调用 |
+| `result.coop` | 完美合作              {0} | 默契                  {0} | PERFECT COOPERATION    {0} | SYNC                   {0} | 重写 | 结算页 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `result.cousin_A` |  | 大表哥：有进步，再快一点！ |  | COUSIN: BETTER. FASTER NEXT TIME! | 新增 | 结算页 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `result.cousin_B` |  | 大表哥：还行，别只靠蛮力。 |  | COUSIN: NOT BAD. LESS MUSCLE, MORE SYNC. | 新增 | 结算页 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `result.cousin_C` |  | 大表哥：你们俩是在互相拖后腿吗？ |  | COUSIN: ARE YOU DRAGGING EACH OTHER? | 新增 | 结算页 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `result.cousin_D` |  | 大表哥：至少没沉底，再来！ |  | COUSIN: AT LEAST YOU DIDN'T SINK. AGAIN! | 新增 | 结算页 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `result.cousin_S` |  | 大表哥：这才叫兄弟默契！ |  | COUSIN: NOW THAT'S BRO SYNC! | 新增 | 结算页 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `result.engine` | 乌龟故障              {0} | BITT 撞礁              {0} | TURTLE ENGINE FAILURE  {0} | BITT REEF HITS         {0} | 重写 | 结算页 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `result.joint` | 翻船次数              {0} | 翻船次数              {0} | CAPSIZES               {0} | CAPSIZES               {0} | 保留 | 结算页 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `result.menu` | 返回主菜单 | 返回主菜单 | MAIN MENU | MAIN MENU | 保留 | 结算页 | 是 | 静态扫描到 Locale.t 调用 |
+| `result.mistakes` | 失误                  {0} | 失误                  {0} | MISTAKES               {0} | MISTAKES               {0} | 保留 | 结算页 | 是 | 静态扫描到 Locale.t 调用 |
+| `result.new_streak` | 新最长连击！ | 新最长连击！ | NEW BEST STREAK! | NEW BEST STREAK! | 保留 | 结算页 | 是 | 静态扫描到 Locale.t 调用 |
+| `result.new_time` | 新最佳时间！ | 新最佳时间！ | NEW BEST TIME! | NEW BEST TIME! | 保留 | 结算页 | 是 | 静态扫描到 Locale.t 调用 |
+| `result.rescues` | 救援成功              {0} | 救援成功              {0} | RESCUE SAVES           {0} | RESCUE SAVES           {0} | 保留 | 结算页 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `result.retry` | R  -  重开        M  -  主菜单        Enter  -  选中的按钮 | R  -  重开        M  -  主菜单        Enter  -  选中的按钮 | R  -  RETRY    M  -  MAIN MENU    ENTER  -  SELECTED BUTTON | R  -  RETRY    M  -  MAIN MENU    ENTER  -  SELECTED BUTTON | 保留 | 结算页 | 是 | 静态扫描到 Locale.t 调用 |
+| `result.showtime` | 表演次数              {0} | 表演次数              {0} | SHOWTIME               {0} | SHOWTIME               {0} | 保留 | 结算页 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `result.snacks` | 亲手喂到              {0} | 亲手喂到              {0} | HAND-FED SNACKS        {0} | HAND-FED SNACKS        {0} | 保留 | 结算页 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `result.streak` | 完美连击              {0} | 完美连击              {0} | PERFECT STREAK         {0} | PERFECT STREAK         {0} | 保留 | 结算页 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `result.time` | 比赛时间              {0} 秒 | 比赛时间              {0} 秒 | RACE TIME              {0} s | RACE TIME              {0} s | 保留 | 结算页 | 是 | 静态扫描到 Locale.t 调用 |
+| `result.title` | 比赛完成 | 训练完成 | RACE COMPLETE | TRAINING COMPLETE | 重写 | 结算页 | 是 | 静态扫描到 Locale.t 调用 |
+| `result.try_combo` | 下次试试：兔子跳起来后按 SHIFT 让乌龟下潜（BRO DIVE） | 下次试试：TUBO跳起来后按 SHIFT 让BITT下潜（BRO DIVE） | NEXT TRY: JUMP, THEN SHIFT THE TURTLE DOWN (BRO DIVE) | NEXT TRY: JUMP, THEN SHIFT THE BITT DOWN (BRO DIVE) | 重写 | 结算页 | 是 | 静态扫描到 Locale.t 调用 |
+| `result.try_rescue` | 下次试试：兔子落水时按 SHIFT 换乌龟，按住 ↓ 追下去接它 | 下次试试：TUBO落水时按 SHIFT 换BITT，按住 ↓ 追下去接它 | NEXT TRY: WHEN THE RABBIT FALLS IN, SHIFT AND HOLD ↓ TO CATCH | NEXT TRY: WHEN THE TUBO FALLS IN, SHIFT AND HOLD ↓ TO CATCH | 重写 | 结算页 | 是 | 静态扫描到 Locale.t 调用 |
+| `result.try_snack` | 下次试试：按 SHIFT 换到乌龟，亲手把海藻喂给它 | 下次试试：按 SHIFT 换到BITT，亲手把海藻喂给它 | NEXT TRY: SHIFT TO THE TURTLE AND FEED IT THE SEAWEED | NEXT TRY: SHIFT TO THE BITT AND FEED IT THE SEAWEED | 重写 | 结算页 | 是 | 静态扫描到 Locale.t 调用 |
+| `result.tubo_B` |  | TUBO：下一圈我跳得更高。 |  | TUBO: I'LL JUMP HIGHER NEXT RUN. | 新增 | 结算页 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `result.tubo_D` |  | TUBO：刚才那下不算。 |  | TUBO: THAT ONE DIDN'T COUNT. | 新增 | 结算页 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `result.tubo_S` |  | TUBO：我本来就很快。 |  | TUBO: I WAS ALREADY FAST. | 新增 | 结算页 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `settings.back` | ESC / S  -  返回 | ESC / S  -  返回 | ESC / S  -  BACK | ESC / S  -  BACK | 保留 | 其他 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `settings.back_button` | 返回 | 返回 | BACK | BACK | 保留 | 其他 | 是 | 静态扫描到 Locale.t 调用 |
+| `settings.keys` | ↑↓ 选择   Enter 确认   L 切换语言 | ↑↓ 选择   Enter 确认   L 切换语言 | ↑↓ SELECT   ENTER CONFIRM   L SWITCH LANGUAGE | ↑↓ SELECT   ENTER CONFIRM   L SWITCH LANGUAGE | 保留 | 其他 | 是 | 静态扫描到 Locale.t 调用 |
+| `settings.language` | 语言    L - 切换（当前：简体中文） | 语言    L - 切换（当前：简体中文） | LANGUAGE    L - SWITCH (CURRENT: ENGLISH) | LANGUAGE    L - SWITCH (CURRENT: ENGLISH) | 保留 | 其他 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `settings.note` | 语言只改变文字，不影响玩法、物理参数和比赛纪录。 | 语言只改变文字，不影响玩法、物理参数和比赛纪录。 | Language only changes text. It does not affect gameplay, physics, or records. | Language only changes text. It does not affect gameplay, physics, or records. | 保留 | 其他 | 是 | 静态扫描到 Locale.t 调用 |
+| `settings.title` | 设置 | 设置 | SETTINGS | SETTINGS | 保留 | 其他 | 是 | 静态扫描到 Locale.t 调用 |
+| `state.AIRBORNE` | 空中 | 空中 | AIRBORNE | AIRBORNE | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.BELLY_UP` | 翻肚皮 | 翻肚皮 | BELLY UP | BELLY UP | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.BOOSTING` | 加速 | 加速 | BOOSTING | BOOSTING | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.CRITICAL` | 告急 | 告急 | CRITICAL | CRITICAL | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.CROUCHING` | 趴低 | 趴低 | CROUCHING | CROUCHING | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.CRUISING` | 巡航 | 巡航 | CRUISING | CRUISING | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.DANGER` | 危险 | 危险 | DANGER | DANGER | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.DAZED` | 恍惚 | 恍惚 | DAZED | DAZED | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.DEEP` | 过深 | 过深 | DEEP | DEEP | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.DIVING` | 下潜 | 下潜 | DIVING | DIVING | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.DUNKED` | 被浪压进水里 | 被浪压进水里 | DUNKED | DUNKED | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.EDGE` | 快掉了 | 快掉了 | ABOUT TO FALL | ABOUT TO FALL | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.EMERGENCY` | 紧急 | 紧急 | EMERGENCY | EMERGENCY | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.EMPTY` | 耗尽 | 耗尽 | EMPTY | EMPTY | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.FALLING` | 下落 | 下落 | FALLING | FALLING | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.FLIP_RISK` | 要翻了 | 要翻了 | FLIP RISK | FLIP RISK | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.GRIPPING` | 抓紧 | 抓紧 | GRIPPING | GRIPPING | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.JUMPING` | 跳跃 | 跳跃 | JUMPING | JUMPING | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.LEAPING` | 跃起 | 跃起 | LEAPING | LEAPING | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.LOW` | 偏低 | 偏低 | LOW | LOW | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.NO_POWER` | 无动力 | 无动力 | NO POWER | NO POWER | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.POPPING` | 拍水跃浪 | 拍水跃浪 | WATER POP | WATER POP | 仅开发/不使用 | HUD/状态 | 待抽查 | 运行时无调用或只被旧路径引用 |
+| `state.RECOVERING` | 恢复中 | 恢复中 | RECOVERING | RECOVERING | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.RELAXED` | 神游 | 电流发麻 | RELAXED | CURRENT BUZZ | 重写 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.RESCUING` | 救援 | 救援 | RESCUING | RESCUING | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.RIDING` | 骑乘 | 骑乘 | RIDING | RIDING | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.SAFE` | 安全 | 安全 | SAFE | SAFE | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.SHOWTIME` | 表演 | 表演 | SHOWTIME | SHOWTIME | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.SINKING` | 下沉 | 下沉 | SINKING | SINKING | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.SLIDING` | 正在滑落 | 正在滑落 | SLIPPING | SLIPPING | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.STUNNED` | 眩晕 | 眩晕 | STUNNED | STUNNED | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.SURFACING` | 上浮 | 上浮 | SURFACING | SURFACING | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.TOO_DEEP` | 过深 | 过深 | TOO DEEP | TOO DEEP | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.UNCONSCIOUS` | 昏迷 | 昏迷 | UNCONSCIOUS | UNCONSCIOUS | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.UNSTEADY` | 轻微晃动 | 轻微晃动 | UNSTEADY | UNSTEADY | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.WAITING_CATCH` | 落水 · 等接应 | 落水 · 等接应 | IN WATER · WAIT | IN WATER · WAIT | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `state.WOBBLING` | 明显摇晃 | 明显摇晃 | WOBBLING | WOBBLING | 保留 | HUD/状态 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `tutorial.done` | 很好！现在，给我跑出兄弟默契！ | 很好！现在，给我跑出兄弟默契！ | GOOD! NOW SHOW ME THAT BRO SYNC! | GOOD! NOW SHOW ME THAT BRO SYNC! | 保留 | 教学 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `tutorial.fail` | 别急，看看下一步该谁动。 | 别急，看看下一步该谁动。 | EASY. CHECK WHO MOVES NEXT. | EASY. CHECK WHO MOVES NEXT. | 保留 | 教学 | 是 | 静态扫描到 Locale.t 调用 |
+| `tutorial.skip` | K 跳过教学 | K 跳过教学 | K SKIP TUTORIAL | K SKIP TUTORIAL | 保留 | 教学 | 是 | 静态扫描到 Locale.t 调用 |
+| `tutorial.step1` | 兔子！别光顾着跑，看看前面！ | TUBO！别光顾着跑，看看前面！ | RABBIT! STOP DAYDREAMING. WATCH AHEAD! | TUBO! STOP DAYDREAMING. WATCH AHEAD! | 重写 | 教学 | 是 | 静态扫描到 Locale.t 调用 |
+| `tutorial.step1_hint` | TUBO：↑ 跳，↓ 趴低 | TUBO：↑ 跳 / ↓ 趴低 / SPACE 胡萝卜护盾 | TUBO: ↑ JUMP, ↓ CROUCH | TUBO: ↑ JUMP / ↓ CROUCH / SPACE CARROT GUARD | 重写 | 教学 | 是 | 静态扫描到 Locale.t 调用 |
+| `tutorial.step2` | 乌龟！稳住，水里才是你的主场！ | BITT！稳住，水里才是你的主场！ | TURTLE! STEADY. THE WATER IS YOUR HOME! | BITT! STEADY. THE WATER IS YOUR HOME! | 重写 | 教学 | 是 | 静态扫描到 Locale.t 调用 |
+| `tutorial.step2_hint` | SHIFT 换 BITT：↑ 跃起，↓ 下潜 | SHIFT 换 BITT：↑ 跃起 / ↓ 下潜 / SPACE 主动救援 | SHIFT TO BITT: ↑ LEAP, ↓ DIVE | SHIFT TO BITT: ↑ LEAP / ↓ DIVE / SPACE BRO CATCH | 重写 | 教学 | 是 | 静态扫描到 Locale.t 调用 |
+| `tutorial.step3` | 漂亮！别让另一个闲着！ | 漂亮！别让另一个闲着！ | NICE! DON'T LEAVE THE OTHER ONE IDLE! | NICE! DON'T LEAVE THE OTHER ONE IDLE! | 保留 | 教学 | 是 | 静态扫描到 Locale.t 调用 |
+| `tutorial.step3_hint` | ↑ 跳 → SHIFT → ↓ 潜 | ↑ 跳 → SHIFT → ↓ 潜 | ↑ JUMP → SHIFT → ↓ DIVE | ↑ JUMP → SHIFT → ↓ DIVE | 保留 | 教学 | 是 | 静态扫描到 Locale.t 调用 |
+| `tutorial.step4` | 这次你们自己来！ | 这次你们自己来！ | THIS ONE IS ALL YOURS! | THIS ONE IS ALL YOURS! | 保留 | 教学 | 是 | 静态扫描到 Locale.t 调用 |
+| `tutorial.step4_hint` | 用你刚学会的交接，自己过 | 用你刚学会的交接，自己过 | USE THE RELAY YOU JUST LEARNED | USE THE RELAY YOU JUST LEARNED | 保留 | 教学 | 是 | 静态扫描到 Locale.t 调用 |
+| `tutorial.title` | 大表哥的训练 | 大表哥的训练 | COUSIN'S TRAINING | COUSIN'S TRAINING | 保留 | 教学 | 是 | 静态扫描到 Locale.t 调用 |
+| `who.rabbit` | 兔子 | TUBO | RABBIT | TUBO | 重写 | HUD | 是 | 静态扫描到 Locale.t 调用 |
+| `who.turtle` | 乌龟 | BITT | TURTLE | BITT | 重写 | HUD | 是 | 静态扫描到 Locale.t 调用 |
+| `world.boost` | 加速带 | 加速带 | BOOST | BOOST | 保留 | 世界内文字 | 是 | 静态扫描到 Locale.t 调用 |
+| `world.danger_depth` | 危险深度 | 危险深度 | DANGER DEPTH | DANGER DEPTH | 保留 | 世界内文字 | 是 | 静态扫描到 Locale.t 调用 |
+| `world.eat_now` | 吃 | 吃 | EAT | EAT | 保留 | 世界内文字 | 是 | 静态扫描到 Locale.t 调用 |
+| `world.finish` | 终点 | 终点 | FINISH | FINISH | 保留 | 世界内文字 | 是 | 静态扫描到 Locale.t 调用 |
+| `world.grip` | {0}   抓地 {1}% | {0}   抓地 {1}% | {0}  GRIP {1}% | {0}  GRIP {1}% | 保留 | 世界内文字 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `world.pause_hint` | ESC 继续   SHIFT 换人   R 重开   M 主菜单 | ESC 继续   SHIFT 换人   R 重开   M 主菜单 | ESC RESUME   SHIFT TRANSFER   R RESTART   M MENU | ESC RESUME   SHIFT TRANSFER   R RESTART   M MENU | 保留 | 世界内文字 | 是 | 静态扫描到 Locale.t 调用 |
+| `world.paused` | 已暂停 | 已暂停 | PAUSED | PAUSED | 保留 | 世界内文字 | 是 | 静态扫描到 Locale.t 调用 |
+| `world.snack` | 海藻 | 海藻 | SNACK | SNACK | 保留 | 世界内文字 | 是 | 静态扫描到 Locale.t 调用 |
+| `world.zone_header` | {0}  {1} | {0}  {1} | {0}  {1} | {0}  {1} | 保留 | 世界内文字 | 是 | 静态扫描到 Locale.t 调用 |
+| `zone.1.lesson` | 区域 1 阳光海岸 - 学会跳、趴低、乌龟跃起和下潜 | 区域 1 阳光海岸 - 学会跳、趴低、BITT跃起和下潜 | ZONE 1  SUNNY COAST - LEARN JUMP, CROUCH, TURTLE LEAP AND DIVE | ZONE 1  SUNNY COAST - LEARN JUMP, CROUCH, BITT LEAP AND DIVE | 重写 | 区域 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `zone.1.name` | 阳光海岸 | 阳光海岸 | SUNNY COAST | SUNNY COAST | 保留 | 区域 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `zone.2.lesson` | 区域 2 码头乱流 - 吊网、鳗鱼、船闸，换对人才过得去 | 区域 2 码头乱流 - 吊网、鳗鱼、船闸，换对人才过得去 | ZONE 2  DOCK CHAOS - NETS, EELS, SLUICES: PICK THE RIGHT BRO | ZONE 2  DOCK CHAOS - NETS, EELS, SLUICES: PICK THE RIGHT BRO | 保留 | 区域 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `zone.2.name` | 码头乱流 | 码头乱流 | DOCK CHAOS | DOCK CHAOS | 保留 | 区域 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `zone.3.lesson` | 区域 3 肌肉狂潮 - 龟兔各走一条路，别靠连点 | 区域 3 肌肉狂潮 - 龟兔各走一条路，别靠连点 | ZONE 3  MUSCLE MAYHEM - TWO ROUTES, NO MASHING | ZONE 3  MUSCLE MAYHEM - TWO ROUTES, NO MASHING | 保留 | 区域 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |
+| `zone.3.name` | 肌肉狂潮 | 肌肉狂潮 | MUSCLE MAYHEM | MUSCLE MAYHEM | 保留 | 区域 | 待抽查 | 动态 ID 或未静态检出，需运行时抽查 |

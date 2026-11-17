@@ -1,0 +1,114 @@
+{
+  "checks": [
+    {
+      "detail": "coop=19 combos=10",
+      "name": "coop_count",
+      "ok": true
+    },
+    {
+      "detail": "gate4=1054,bird4=1180,log5=565,bird6=617,rock10=529,bird8=513,bird9=594",
+      "name": "combo_gaps_400_800",
+      "ok": true
+    },
+    {
+      "detail": "tight=log5,bird6,rock10,bird8,bird9",
+      "name": "tight_relay_count_5",
+      "ok": true
+    },
+    {
+      "detail": "count=5",
+      "name": "dual_count",
+      "ok": true
+    },
+    {
+      "detail": "低梁：兔子趴低，或 SHIFT 乌龟下潜（耗氧）",
+      "name": "dual_beam_prompt",
+      "ok": true
+    },
+    {
+      "detail": "海鸟低飞：兔子趴低，或 SHIFT 乌龟下潜（耗氧）",
+      "name": "dual_bird_prompt",
+      "ok": true
+    },
+    {
+      "detail": "礁石：兔子跳过，或 SHIFT 乌龟下潜（耗氧，省一次换人）",
+      "name": "dual_rock_prompt",
+      "ok": true
+    },
+    {
+      "detail": "低梁：兔子趴低，或 SHIFT 乌龟下潜（耗氧）",
+      "name": "dual_prompt_live",
+      "ok": true
+    },
+    {
+      "detail": "低梁：兔子趴低，或 SHIFT 乌龟下潜（耗氧）",
+      "name": "dual_prompt_mentions_two_answers",
+      "ok": true
+    },
+    {
+      "detail": "LOW_BEAM vs LOW_BEAM|dual",
+      "name": "dual_lesson_key",
+      "ok": true
+    },
+    {
+      "detail": "连招：拱下潜 → 立刻 SHIFT 兔子跳 → SHIFT 乌龟潜（浮木）",
+      "name": "tight_relay_prompt",
+      "ok": true
+    },
+    {
+      "detail": "FLOATING_LOG|relay",
+      "name": "tight_relay_lesson_key",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"oxygen_used\":false,\"passed\":true,\"who\":\"rabbit\"}",
+      "name": "dual_rabbit_passes_beam4",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"oxygen_used\":true,\"passed\":true,\"who\":\"turtle\"}",
+      "name": "dual_turtle_passes_beam4",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"up\",\"oxygen_used\":false,\"passed\":true,\"who\":\"rabbit\"}",
+      "name": "dual_rabbit_passes_rock6",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"oxygen_used\":true,\"passed\":true,\"who\":\"turtle\"}",
+      "name": "dual_turtle_passes_rock6",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"oxygen_used\":false,\"passed\":true,\"who\":\"rabbit\"}",
+      "name": "dual_rabbit_passes_beam5",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"oxygen_used\":true,\"passed\":true,\"who\":\"turtle\"}",
+      "name": "dual_turtle_passes_beam5",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"oxygen_used\":false,\"passed\":true,\"who\":\"rabbit\"}",
+      "name": "dual_rabbit_passes_bird6",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"oxygen_used\":true,\"passed\":true,\"who\":\"turtle\"}",
+      "name": "dual_turtle_passes_bird6",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"oxygen_used\":false,\"passed\":true,\"who\":\"rabbit\"}",
+      "name": "dual_rabbit_passes_bird7",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"oxygen_used\":true,\"passed\":true,\"who\":\"turtle\"}",
+      "name": "dual_turtle_passes_bird7",
+      "ok": true
+    }
+  ]
+}

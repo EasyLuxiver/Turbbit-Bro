@@ -1,0 +1,67 @@
+{
+  "fullscreen": false,
+  "logical_viewport": [
+    1600.0,
+    900.0
+  ],
+  "min_window_ok": true,
+  "ok": true,
+  "rows": [
+    {
+      "bubbles": 3,
+      "expect": 3,
+      "inside_viewport": true,
+      "ok": true,
+      "oxygen": 8.0,
+      "png": "D:/GAMESTUDIO/TURBBIT/docs/reports/longrun/feel13/oxygen-1920-full.png",
+      "screen_center": [
+        500.0,
+        364.0
+      ],
+      "state": "full"
+    },
+    {
+      "bubbles": 2,
+      "expect": 2,
+      "inside_viewport": true,
+      "ok": true,
+      "oxygen": 4.0,
+      "png": "D:/GAMESTUDIO/TURBBIT/docs/reports/longrun/feel13/oxygen-1920-mid.png",
+      "screen_center": [
+        500.0,
+        364.0
+      ],
+      "state": "mid"
+    },
+    {
+      "bubbles": 1,
+      "expect": 1,
+      "inside_viewport": true,
+      "ok": true,
+      "oxygen": 1.2,
+      "png": "D:/GAMESTUDIO/TURBBIT/docs/reports/longrun/feel13/oxygen-1920-low.png",
+      "screen_center": [
+        500.0,
+        364.0
+      ],
+      "state": "low"
+    },
+    {
+      "bubbles": 0,
+      "expect": 0,
+      "inside_viewport": true,
+      "ok": true,
+      "oxygen": 0.0,
+      "png": "D:/GAMESTUDIO/TURBBIT/docs/reports/longrun/feel13/oxygen-1920-empty.png",
+      "screen_center": [
+        500.0,
+        364.0
+      ],
+      "state": "empty"
+    }
+  ],
+  "window_size": [
+    1920,
+    1080
+  ]
+}

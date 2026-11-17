@@ -1,0 +1,9 @@
+{
+  "checks": [
+    {
+      "detail": "[\"BRO DIVE：先跳，再 SHIFT 到乌龟按住 ↓\"]",
+      "name": "first_dive_hint_once",
+      "ok": true
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "checks": [
+    {
+      "detail": "FAILED",
+      "name": "state_failed",
+      "ok": true
+    },
+    {
+      "detail": "res://scenes/fail.tscn",
+      "name": "fail_scene",
+      "ok": true
+    },
+    {
+      "detail": "res://scenes/race.tscn RUNNING",
+      "name": "retry_race",
+      "ok": true
+    }
+  ]
+}

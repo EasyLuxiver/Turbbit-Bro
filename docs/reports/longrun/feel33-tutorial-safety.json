@@ -1,0 +1,19 @@
+{
+  "checks": [
+    {
+      "detail": "test_no_mischief=true",
+      "name": "tutorial_flag",
+      "ok": true
+    },
+    {
+      "detail": "complaint=",
+      "name": "no_ignore_accumulation",
+      "ok": true
+    },
+    {
+      "detail": "role= lock=",
+      "name": "no_mischief_in_tutorial",
+      "ok": true
+    }
+  ]
+}

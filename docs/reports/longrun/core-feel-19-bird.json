@@ -1,0 +1,84 @@
+{
+  "checks": [
+    {
+      "detail": "[\"TELEGRAPH\", \"ACTION\", \"RECOVER\", \"DONE\"]",
+      "name": "bird3_phases",
+      "ok": true
+    },
+    {
+      "detail": "attacks=1",
+      "name": "bird3_attack_spawned",
+      "ok": true
+    },
+    {
+      "detail": "[\"TELEGRAPH\", \"ACTION\", \"RECOVER\", \"DONE\"]",
+      "name": "bird4_phases",
+      "ok": true
+    },
+    {
+      "detail": "attacks=1",
+      "name": "bird4_attack_spawned",
+      "ok": true
+    },
+    {
+      "detail": "[\"TELEGRAPH\", \"ACTION\", \"RECOVER\", \"DONE\"]",
+      "name": "bird6_phases",
+      "ok": true
+    },
+    {
+      "detail": "attacks=1",
+      "name": "bird6_attack_spawned",
+      "ok": true
+    },
+    {
+      "detail": "accident=RABBIT_STUN flip=0.00 speed=132.0",
+      "name": "poop_hit_rabbit",
+      "ok": true
+    },
+    {
+      "detail": "splashes=1",
+      "name": "poop_splash",
+      "ok": true
+    },
+    {
+      "detail": "passed=false dive=true",
+      "name": "bird_pass_no_hit",
+      "ok": true
+    },
+    {
+      "detail": "before=1 after=0 accident=NONE",
+      "name": "arc_block",
+      "ok": true
+    },
+    {
+      "detail": "t=1.20",
+      "name": "bird_hz_30",
+      "ok": true
+    },
+    {
+      "detail": "t=1.17",
+      "name": "bird_hz_60",
+      "ok": true
+    },
+    {
+      "detail": "t=1.17",
+      "name": "bird_hz_120",
+      "ok": true
+    },
+    {
+      "detail": "states=9",
+      "name": "bird_seed_reproducible",
+      "ok": true
+    },
+    {
+      "detail": "last=",
+      "name": "bird_no_adjacent_repeat",
+      "ok": true
+    },
+    {
+      "detail": "same=false",
+      "name": "bird_seed_changes",
+      "ok": true
+    }
+  ]
+}

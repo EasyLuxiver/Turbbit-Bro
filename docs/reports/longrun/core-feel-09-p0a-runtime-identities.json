@@ -1,0 +1,571 @@
+{
+  "checks": [
+    {
+      "detail": "55/55 组",
+      "name": "group_count",
+      "ok": true
+    },
+    {
+      "detail": "点名的 8 组都存在",
+      "name": "named_8_present",
+      "ok": true
+    },
+    {
+      "detail": "点名的 8 组运行时身份都在码头集合内",
+      "name": "named_8_dock_identity",
+      "ok": true
+    },
+    {
+      "detail": "Z2 无海底/珊瑚礁身份",
+      "name": "z2_no_coral",
+      "ok": true
+    },
+    {
+      "detail": "Z2 的 19 组身份都在码头白名单内",
+      "name": "z2_identity_whitelist",
+      "ok": true
+    },
+    {
+      "detail": "Z2 运行时有 19 组",
+      "name": "z2_count",
+      "ok": true
+    }
+  ],
+  "generated_at": "2026-11-14T04:28:48",
+  "group_count": 55,
+  "level_seed": 20261112,
+  "named": [
+    "bird3",
+    "bird4",
+    "bird5",
+    "shark3",
+    "shark5",
+    "gate3",
+    "gate4",
+    "gate5"
+  ],
+  "rows": [
+    {
+      "identity": "diving_gull",
+      "kind": "LOW_BIRD",
+      "obstacle_id": "bird1",
+      "x": 1560.0,
+      "zone": 1
+    },
+    {
+      "identity": "sea_rock",
+      "kind": "SURFACE_ROCK",
+      "obstacle_id": "rock1",
+      "x": 2500.0,
+      "zone": 1
+    },
+    {
+      "identity": "reef_arch",
+      "kind": "DIVE_GATE",
+      "obstacle_id": "gate1",
+      "x": 3800.0,
+      "zone": 1
+    },
+    {
+      "identity": "sea_rock",
+      "kind": "SURFACE_ROCK",
+      "obstacle_id": "rock2",
+      "x": 5100.0,
+      "zone": 1
+    },
+    {
+      "identity": "drift_log",
+      "kind": "FLOATING_LOG",
+      "obstacle_id": "log1",
+      "x": 6400.0,
+      "zone": 1
+    },
+    {
+      "identity": "reef_shark",
+      "kind": "SHARK",
+      "obstacle_id": "shark1",
+      "x": 7250.0,
+      "zone": 1
+    },
+    {
+      "identity": "buoy",
+      "kind": "SURFACE_ROCK",
+      "obstacle_id": "rock3",
+      "x": 8400.0,
+      "zone": 1
+    },
+    {
+      "identity": "dock_beam",
+      "kind": "LOW_BEAM",
+      "obstacle_id": "beam2",
+      "x": 9600.0,
+      "zone": 1
+    },
+    {
+      "identity": "high_wall",
+      "kind": "HIGH_WALL",
+      "obstacle_id": "wall1",
+      "x": 10860.0,
+      "zone": 1
+    },
+    {
+      "identity": "reef_arch",
+      "kind": "DIVE_GATE",
+      "obstacle_id": "gate2",
+      "x": 12000.0,
+      "zone": 1
+    },
+    {
+      "identity": "diving_gull",
+      "kind": "LOW_BIRD",
+      "obstacle_id": "bird2",
+      "x": 13280.0,
+      "zone": 1
+    },
+    {
+      "identity": "diving_gull",
+      "kind": "LOW_BIRD",
+      "obstacle_id": "beam1",
+      "x": 14550.0,
+      "zone": 1
+    },
+    {
+      "identity": "canal_eel",
+      "kind": "SHARK",
+      "obstacle_id": "shark3",
+      "x": 15800.0,
+      "zone": 2
+    },
+    {
+      "identity": "dock_beam",
+      "kind": "LOW_BEAM",
+      "obstacle_id": "beam3",
+      "x": 16750.0,
+      "zone": 2
+    },
+    {
+      "identity": "dock_crate",
+      "kind": "SURFACE_ROCK",
+      "obstacle_id": "rock4",
+      "x": 17770.0,
+      "zone": 2
+    },
+    {
+      "identity": "canal_eel",
+      "kind": "SHARK",
+      "obstacle_id": "gate3",
+      "x": 19200.0,
+      "zone": 2
+    },
+    {
+      "identity": "cargo_net",
+      "kind": "LOW_BIRD",
+      "obstacle_id": "bird3",
+      "x": 20600.0,
+      "zone": 2
+    },
+    {
+      "identity": "drift_log",
+      "kind": "FLOATING_LOG",
+      "obstacle_id": "log2",
+      "x": 21950.0,
+      "zone": 2
+    },
+    {
+      "identity": "dock_crate",
+      "kind": "SURFACE_ROCK",
+      "obstacle_id": "rock5",
+      "x": 23200.0,
+      "zone": 2
+    },
+    {
+      "identity": "dock_beam",
+      "kind": "LOW_BEAM",
+      "obstacle_id": "beam4",
+      "x": 24400.0,
+      "zone": 2
+    },
+    {
+      "identity": "high_wall",
+      "kind": "HIGH_WALL",
+      "obstacle_id": "wall2",
+      "x": 25600.0,
+      "zone": 2
+    },
+    {
+      "identity": "sluice_gate",
+      "kind": "DIVE_GATE",
+      "obstacle_id": "rock6",
+      "x": 26800.0,
+      "zone": 2
+    },
+    {
+      "identity": "sluice_gate",
+      "kind": "DIVE_GATE",
+      "obstacle_id": "gate4",
+      "x": 28000.0,
+      "zone": 2
+    },
+    {
+      "identity": "cargo_net",
+      "kind": "LOW_BIRD",
+      "obstacle_id": "bird4",
+      "x": 29200.0,
+      "zone": 2
+    },
+    {
+      "identity": "drift_log",
+      "kind": "FLOATING_LOG",
+      "obstacle_id": "log3",
+      "x": 30550.0,
+      "zone": 2
+    },
+    {
+      "identity": "dock_crate",
+      "kind": "SURFACE_ROCK",
+      "obstacle_id": "rock7",
+      "x": 31800.0,
+      "zone": 2
+    },
+    {
+      "identity": "dock_beam",
+      "kind": "LOW_BEAM",
+      "obstacle_id": "beam5",
+      "x": 33000.0,
+      "zone": 2
+    },
+    {
+      "identity": "canal_eel",
+      "kind": "SHARK",
+      "obstacle_id": "shark5",
+      "x": 34200.0,
+      "zone": 2
+    },
+    {
+      "identity": "cargo_net",
+      "kind": "LOW_BIRD",
+      "obstacle_id": "bird5",
+      "x": 35400.0,
+      "zone": 2
+    },
+    {
+      "identity": "drift_log",
+      "kind": "FLOATING_LOG",
+      "obstacle_id": "log4",
+      "x": 36750.0,
+      "zone": 2
+    },
+    {
+      "identity": "sluice_gate",
+      "kind": "DIVE_GATE",
+      "obstacle_id": "gate5",
+      "x": 37630.0,
+      "zone": 2
+    },
+    {
+      "identity": "reef_shark",
+      "kind": "SHARK",
+      "obstacle_id": "shark6",
+      "x": 39200.0,
+      "zone": 3
+    },
+    {
+      "identity": "dock_beam",
+      "kind": "LOW_BEAM",
+      "obstacle_id": "beam6",
+      "x": 40270.0,
+      "zone": 3
+    },
+    {
+      "identity": "drift_crate",
+      "kind": "SURFACE_ROCK",
+      "obstacle_id": "rock8",
+      "x": 41450.0,
+      "zone": 3
+    },
+    {
+      "identity": "reef_arch",
+      "kind": "DIVE_GATE",
+      "obstacle_id": "gate6",
+      "x": 42580.0,
+      "zone": 3
+    },
+    {
+      "identity": "drift_log",
+      "kind": "FLOATING_LOG",
+      "obstacle_id": "log5",
+      "x": 44110.0,
+      "zone": 3
+    },
+    {
+      "identity": "diving_gull",
+      "kind": "LOW_BIRD",
+      "obstacle_id": "bird6",
+      "x": 45250.0,
+      "zone": 3
+    },
+    {
+      "identity": "high_wall",
+      "kind": "HIGH_WALL",
+      "obstacle_id": "wall3",
+      "x": 46370.0,
+      "zone": 3
+    },
+    {
+      "identity": "dock_beam",
+      "kind": "LOW_BEAM",
+      "obstacle_id": "beam7",
+      "x": 47440.0,
+      "zone": 3
+    },
+    {
+      "identity": "drift_crate",
+      "kind": "SURFACE_ROCK",
+      "obstacle_id": "rock9",
+      "x": 48610.0,
+      "zone": 3
+    },
+    {
+      "identity": "reef_arch",
+      "kind": "DIVE_GATE",
+      "obstacle_id": "gate7",
+      "x": 49750.0,
+      "zone": 3
+    },
+    {
+      "identity": "drift_log",
+      "kind": "FLOATING_LOG",
+      "obstacle_id": "log6",
+      "x": 51290.0,
+      "zone": 3
+    },
+    {
+      "identity": "diving_gull",
+      "kind": "LOW_BIRD",
+      "obstacle_id": "bird7",
+      "x": 52440.0,
+      "zone": 3
+    },
+    {
+      "identity": "reef_shark",
+      "kind": "SHARK",
+      "obstacle_id": "shark8",
+      "x": 53550.0,
+      "zone": 3
+    },
+    {
+      "identity": "dock_beam",
+      "kind": "LOW_BEAM",
+      "obstacle_id": "beam8",
+      "x": 55040.0,
+      "zone": 3
+    },
+    {
+      "identity": "drift_crate",
+      "kind": "SURFACE_ROCK",
+      "obstacle_id": "rock10",
+      "x": 56180.0,
+      "zone": 3
+    },
+    {
+      "identity": "drift_log",
+      "kind": "FLOATING_LOG",
+      "obstacle_id": "log7",
+      "x": 57640.0,
+      "zone": 3
+    },
+    {
+      "identity": "diving_gull",
+      "kind": "LOW_BIRD",
+      "obstacle_id": "bird8",
+      "x": 58640.0,
+      "zone": 3
+    },
+    {
+      "identity": "reef_shark",
+      "kind": "SHARK",
+      "obstacle_id": "shark9",
+      "x": 59720.0,
+      "zone": 3
+    },
+    {
+      "identity": "dock_beam",
+      "kind": "LOW_BEAM",
+      "obstacle_id": "beam9",
+      "x": 60820.0,
+      "zone": 3
+    },
+    {
+      "identity": "drift_crate",
+      "kind": "SURFACE_ROCK",
+      "obstacle_id": "rock11",
+      "x": 61940.0,
+      "zone": 3
+    },
+    {
+      "identity": "sea_rock",
+      "kind": "SURFACE_ROCK",
+      "obstacle_id": "gate8",
+      "x": 63040.0,
+      "zone": 3
+    },
+    {
+      "identity": "drift_log",
+      "kind": "FLOATING_LOG",
+      "obstacle_id": "log8",
+      "x": 64560.0,
+      "zone": 3
+    },
+    {
+      "identity": "diving_gull",
+      "kind": "LOW_BIRD",
+      "obstacle_id": "bird9",
+      "x": 65600.0,
+      "zone": 3
+    },
+    {
+      "identity": "drift_crate",
+      "kind": "SURFACE_ROCK",
+      "obstacle_id": "rock12",
+      "x": 66720.0,
+      "zone": 3
+    }
+  ],
+  "task": "TBB-CORE-FEEL-09 P0-A",
+  "z2_count": 19,
+  "z2_rows": [
+    {
+      "identity": "canal_eel",
+      "kind": "SHARK",
+      "obstacle_id": "shark3",
+      "x": 15800.0,
+      "zone": 2
+    },
+    {
+      "identity": "dock_beam",
+      "kind": "LOW_BEAM",
+      "obstacle_id": "beam3",
+      "x": 16750.0,
+      "zone": 2
+    },
+    {
+      "identity": "dock_crate",
+      "kind": "SURFACE_ROCK",
+      "obstacle_id": "rock4",
+      "x": 17770.0,
+      "zone": 2
+    },
+    {
+      "identity": "canal_eel",
+      "kind": "SHARK",
+      "obstacle_id": "gate3",
+      "x": 19200.0,
+      "zone": 2
+    },
+    {
+      "identity": "cargo_net",
+      "kind": "LOW_BIRD",
+      "obstacle_id": "bird3",
+      "x": 20600.0,
+      "zone": 2
+    },
+    {
+      "identity": "drift_log",
+      "kind": "FLOATING_LOG",
+      "obstacle_id": "log2",
+      "x": 21950.0,
+      "zone": 2
+    },
+    {
+      "identity": "dock_crate",
+      "kind": "SURFACE_ROCK",
+      "obstacle_id": "rock5",
+      "x": 23200.0,
+      "zone": 2
+    },
+    {
+      "identity": "dock_beam",
+      "kind": "LOW_BEAM",
+      "obstacle_id": "beam4",
+      "x": 24400.0,
+      "zone": 2
+    },
+    {
+      "identity": "high_wall",
+      "kind": "HIGH_WALL",
+      "obstacle_id": "wall2",
+      "x": 25600.0,
+      "zone": 2
+    },
+    {
+      "identity": "sluice_gate",
+      "kind": "DIVE_GATE",
+      "obstacle_id": "rock6",
+      "x": 26800.0,
+      "zone": 2
+    },
+    {
+      "identity": "sluice_gate",
+      "kind": "DIVE_GATE",
+      "obstacle_id": "gate4",
+      "x": 28000.0,
+      "zone": 2
+    },
+    {
+      "identity": "cargo_net",
+      "kind": "LOW_BIRD",
+      "obstacle_id": "bird4",
+      "x": 29200.0,
+      "zone": 2
+    },
+    {
+      "identity": "drift_log",
+      "kind": "FLOATING_LOG",
+      "obstacle_id": "log3",
+      "x": 30550.0,
+      "zone": 2
+    },
+    {
+      "identity": "dock_crate",
+      "kind": "SURFACE_ROCK",
+      "obstacle_id": "rock7",
+      "x": 31800.0,
+      "zone": 2
+    },
+    {
+      "identity": "dock_beam",
+      "kind": "LOW_BEAM",
+      "obstacle_id": "beam5",
+      "x": 33000.0,
+      "zone": 2
+    },
+    {
+      "identity": "canal_eel",
+      "kind": "SHARK",
+      "obstacle_id": "shark5",
+      "x": 34200.0,
+      "zone": 2
+    },
+    {
+      "identity": "cargo_net",
+      "kind": "LOW_BIRD",
+      "obstacle_id": "bird5",
+      "x": 35400.0,
+      "zone": 2
+    },
+    {
+      "identity": "drift_log",
+      "kind": "FLOATING_LOG",
+      "obstacle_id": "log4",
+      "x": 36750.0,
+      "zone": 2
+    },
+    {
+      "identity": "sluice_gate",
+      "kind": "DIVE_GATE",
+      "obstacle_id": "gate5",
+      "x": 37630.0,
+      "zone": 2
+    }
+  ]
+}

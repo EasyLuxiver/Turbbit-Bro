@@ -1,0 +1,12 @@
+{
+  "caught_at_step": 49,
+  "final_accident": "NONE",
+  "final_control": "turtle",
+  "final_mount": "RIDING",
+  "final_result": "caught",
+  "frames": 55,
+  "no_teleport_check": true,
+  "riding_at_step": 109,
+  "start_rabbit_x": 1220.0,
+  "start_turtle_x": 900.0
+}

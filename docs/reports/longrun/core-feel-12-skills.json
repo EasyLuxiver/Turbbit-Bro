@@ -1,0 +1,81 @@
+{
+  "checks": [
+    {
+      "detail": "guard=0.00 can_block=false score +0",
+      "name": "1_guard_removed",
+      "ok": true
+    },
+    {
+      "detail": "guard=0.00",
+      "name": "2_guard_no_window",
+      "ok": true
+    },
+    {
+      "detail": "guard cannot block any class",
+      "name": "3_guard_no_reward",
+      "ok": true
+    },
+    {
+      "detail": "guard=0.00 control=turtle",
+      "name": "4_no_guard_shift",
+      "ok": true
+    },
+    {
+      "detail": "active=true",
+      "name": "5_catch_forward_starts",
+      "ok": true
+    },
+    {
+      "detail": "turtle x 911 -> 1032",
+      "name": "5b_catch_moves_forward",
+      "ok": true
+    },
+    {
+      "detail": "turtle min x 899 -> 851 (final 899)",
+      "name": "6_catch_moves_backward",
+      "ok": true
+    },
+    {
+      "detail": "active=false",
+      "name": "7_safe_tubo_no_catch",
+      "ok": true
+    },
+    {
+      "detail": "result=caught mount=CARRYING turtle=(1221.5, 496.6972) rabbit=(1220.079, 479.9104) active=false target_y=-1 dist=17",
+      "name": "8_catch_success",
+      "ok": true
+    }
+  ],
+  "generated_at": "2026-11-16T01:13:28",
+  "rows": [
+    {
+      "case": "guard_removed"
+    },
+    {
+      "case": "guard_no_window"
+    },
+    {
+      "case": "guard_no_reward"
+    },
+    {
+      "case": "no_guard_shift"
+    },
+    {
+      "case": "catch_forward",
+      "dx": 121.750305175781
+    },
+    {
+      "case": "catch_backward",
+      "dx": -0.2166748046875
+    },
+    {
+      "case": "catch_safe"
+    },
+    {
+      "case": "catch_success",
+      "mount": "CARRYING",
+      "result": "caught"
+    }
+  ],
+  "task": "TBB-CORE-FEEL-12 skills"
+}

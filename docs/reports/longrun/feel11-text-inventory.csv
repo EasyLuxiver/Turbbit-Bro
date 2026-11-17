@@ -1,0 +1,349 @@
+﻿id,group,zh,en,where,purpose,risk
+menu.title,主菜单 / 设置 / 退出,TURBBIT BRO!,TURBBIT BRO!,主菜单按钮、标题、退出确认、设置页,决定第一印象与基本操作入口,
+menu.subtitle,主菜单 / 设置 / 退出,兄弟俩，准备好接受训练了吗？,BROS. READY FOR TRAINING?,主菜单按钮、标题、退出确认、设置页,决定第一印象与基本操作入口,
+menu.stage,主菜单 / 设置 / 退出,大表哥的水上训练挑战,COUSIN'S WATER TRAINING CHALLENGE,主菜单按钮、标题、退出确认、设置页,决定第一印象与基本操作入口,
+menu.best,主菜单 / 设置 / 退出,最佳 {0} 秒   连击 {1},BEST {0} s   STREAK {1},主菜单按钮、标题、退出确认、设置页,决定第一印象与基本操作入口,
+menu.no_record,主菜单 / 设置 / 退出,还没有纪录,NO RECORD YET,主菜单按钮、标题、退出确认、设置页,决定第一印象与基本操作入口,
+opening.ready,开场,准备好，兄弟？,"READY, BRO?",比赛开始前的开场卡,在没有障碍的低压力画面里讲第一课,
+opening.hint,开场,↑ 跳跃    ↓ 趴低,↑ JUMP    ↓ CROUCH,比赛开始前的开场卡,在没有障碍的低压力画面里讲第一课,
+opening.food,开场,能量海藻：操控乌龟吃 → 加速；操控兔子吃 → 下一跳更高；不吃也不扣分,SNACK: DRIVE THE TURTLE TO EAT = TURBO; DRIVE THE RABBIT = HIGHER JUMP; SKIPPING IS FREE,比赛开始前的开场卡,在没有障碍的低压力画面里讲第一课,
+opening.skip,开场,任意键跳过,PRESS ANY KEY TO SKIP,比赛开始前的开场卡,在没有障碍的低压力画面里讲第一课,
+menu.start,主菜单 / 设置 / 退出,回车  -  开始比赛,ENTER  -  START RACE,主菜单按钮、标题、退出确认、设置页,决定第一印象与基本操作入口,
+menu.settings,主菜单 / 设置 / 退出,S  -  设置,S  -  SETTINGS,主菜单按钮、标题、退出确认、设置页,决定第一印象与基本操作入口,
+menu.quit,主菜单 / 设置 / 退出,Q / ESC  -  退出游戏,Q / ESC  -  QUIT,主菜单按钮、标题、退出确认、设置页,决定第一印象与基本操作入口,
+menu.language,主菜单 / 设置 / 退出,语言：简体中文,LANGUAGE: ENGLISH,主菜单按钮、标题、退出确认、设置页,决定第一印象与基本操作入口,
+menu.start_game,主菜单 / 设置 / 退出,开始挑战,START CHALLENGE,主菜单按钮、标题、退出确认、设置页,决定第一印象与基本操作入口,
+menu.producer,主菜单 / 设置 / 退出,制作人测试,PRODUCER TESTS,主菜单按钮、标题、退出确认、设置页,决定第一印象与基本操作入口,
+menu.settings_button,主菜单 / 设置 / 退出,设置,SETTINGS,主菜单按钮、标题、退出确认、设置页,决定第一印象与基本操作入口,
+menu.quit_button,主菜单 / 设置 / 退出,退出游戏,QUIT,主菜单按钮、标题、退出确认、设置页,决定第一印象与基本操作入口,
+menu.keys,主菜单 / 设置 / 退出,↑↓ 选择   Enter 确认   L 语言,↑↓ SELECT   ENTER CONFIRM   L LANGUAGE,主菜单按钮、标题、退出确认、设置页,决定第一印象与基本操作入口,
+comic.skip,开场连环画,任意键跳过,PRESS ANY KEY TO SKIP,7 格开场连环画,用画面讲清共享意识的来历,
+comic.1.narr,开场连环画,上一次比赛，兄弟俩本来有机会赢。,"LAST RACE, THE BROS COULD HAVE WON.",7 格开场连环画,用画面讲清共享意识的来历,
+comic.1.rabbit,开场连环画,我就闭眼休息一下……,JUST GONNA REST MY EYES...,7 格开场连环画,用画面讲清共享意识的来历,
+comic.2.turtle,开场连环画,你倒是醒醒啊！,"WAKE UP, MAN!",7 格开场连环画,用画面讲清共享意识的来历,
+comic.3.narr,开场连环画,大表哥决定亲自训练他们。,COUSIN DECIDED TO TRAIN THEM HIMSELF.,7 格开场连环画,用画面讲清共享意识的来历,
+comic.3.cousin,开场连环画,你们缺的不是速度，是默契！,YOU DON'T LACK SPEED. YOU LACK SYNC!,7 格开场连环画,用画面讲清共享意识的来历,
+comic.4.cousin,开场连环画,特制能量蛋糕！嘿嘿！,SPECIAL ENERGY CAKE! HEH HEH!,7 格开场连环画,用画面讲清共享意识的来历,
+comic.5.bros,开场连环画,哇啊啊啊——！,WHOA AAAA—!,7 格开场连环画,用画面讲清共享意识的来历,
+comic.6.narr,开场连环画,从那天起，他们偶尔会……交换控制权？,"SINCE THEN, THEY SOMETIMES... SWAP CONTROL?",7 格开场连环画,用画面讲清共享意识的来历,
+comic.6.rabbit,开场连环画,等等，刚刚是我在动吗？,WAIT. WAS THAT ME MOVING?,7 格开场连环画,用画面讲清共享意识的来历,
+comic.7.cousin,开场连环画,很好！现在，给我跑出兄弟默契！,GOOD! NOW SHOW ME THAT BRO SYNC!,7 格开场连环画,用画面讲清共享意识的来历,
+comic.7.narr,开场连环画,一场混乱又刺激的训练，正式开始。,"A CHAOTIC, WILD TRAINING STARTS NOW.",7 格开场连环画,用画面讲清共享意识的来历,
+tutorial.title,教学,大表哥的训练,COUSIN'S TRAINING,60–90 s 教学覆盖层,四步实际问题操作 + 大表哥短句,
+tutorial.step1,教学,兔子！别光顾着跑，看看前面！,RABBIT! STOP DAYDREAMING. WATCH AHEAD!,60–90 s 教学覆盖层,四步实际问题操作 + 大表哥短句,
+tutorial.step1_hint,教学,TUBO：↑ 跳，↓ 趴低,"TUBO: ↑ JUMP, ↓ CROUCH",60–90 s 教学覆盖层,四步实际问题操作 + 大表哥短句,FEEL-10 新名；与“兔子/乌龟”混用，需统一
+tutorial.step2,教学,乌龟！稳住，水里才是你的主场！,TURTLE! STEADY. THE WATER IS YOUR HOME!,60–90 s 教学覆盖层,四步实际问题操作 + 大表哥短句,
+tutorial.step2_hint,教学,SHIFT 换 BITT：↑ 跃起，↓ 下潜,"SHIFT TO BITT: ↑ LEAP, ↓ DIVE",60–90 s 教学覆盖层,四步实际问题操作 + 大表哥短句,FEEL-10 新名；与“兔子/乌龟”混用，需统一
+tutorial.step3,教学,漂亮！别让另一个闲着！,NICE! DON'T LEAVE THE OTHER ONE IDLE!,60–90 s 教学覆盖层,四步实际问题操作 + 大表哥短句,
+tutorial.step3_hint,教学,↑ 跳 → SHIFT → ↓ 潜,↑ JUMP → SHIFT → ↓ DIVE,60–90 s 教学覆盖层,四步实际问题操作 + 大表哥短句,
+tutorial.step4,教学,这次你们自己来！,THIS ONE IS ALL YOURS!,60–90 s 教学覆盖层,四步实际问题操作 + 大表哥短句,
+tutorial.step4_hint,教学,用你刚学会的交接，自己过,USE THE RELAY YOU JUST LEARNED,60–90 s 教学覆盖层,四步实际问题操作 + 大表哥短句,
+tutorial.done,教学,很好！现在，给我跑出兄弟默契！,GOOD! NOW SHOW ME THAT BRO SYNC!,60–90 s 教学覆盖层,四步实际问题操作 + 大表哥短句,
+tutorial.skip,教学,K 跳过教学,K SKIP TUTORIAL,60–90 s 教学覆盖层,四步实际问题操作 + 大表哥短句,
+tutorial.fail,教学,别急，看看下一步该谁动。,EASY. CHECK WHO MOVES NEXT.,60–90 s 教学覆盖层,四步实际问题操作 + 大表哥短句,
+quit.title,主菜单 / 设置 / 退出,要退出游戏吗？,QUIT GAME?,主菜单按钮、标题、退出确认、设置页,决定第一印象与基本操作入口,
+quit.body,主菜单 / 设置 / 退出,还没冲线，退出后本局进度不会保留。,The run is not finished. Progress will be lost.,主菜单按钮、标题、退出确认、设置页,决定第一印象与基本操作入口,
+quit.yes,主菜单 / 设置 / 退出,退出,QUIT,主菜单按钮、标题、退出确认、设置页,决定第一印象与基本操作入口,
+quit.no,主菜单 / 设置 / 退出,取消,CANCEL,主菜单按钮、标题、退出确认、设置页,决定第一印象与基本操作入口,
+menu.hint,主菜单 / 设置 / 退出,SHIFT 换人    ↑ 兔子跳 / 乌龟跃起    ↓ 兔子趴低 / 乌龟下潜,SHIFT transfer   ↑ RABBIT JUMP / TURTLE LEAP   ↓ RABBIT CROUCH / TURTLE DIVE,主菜单按钮、标题、退出确认、设置页,决定第一印象与基本操作入口,
+settings.title,主菜单 / 设置 / 退出,设置,SETTINGS,主菜单按钮、标题、退出确认、设置页,决定第一印象与基本操作入口,
+settings.language,主菜单 / 设置 / 退出,语言    L - 切换（当前：简体中文）,LANGUAGE    L - SWITCH (CURRENT: ENGLISH),主菜单按钮、标题、退出确认、设置页,决定第一印象与基本操作入口,
+settings.back,主菜单 / 设置 / 退出,ESC / S  -  返回,ESC / S  -  BACK,主菜单按钮、标题、退出确认、设置页,决定第一印象与基本操作入口,
+settings.back_button,主菜单 / 设置 / 退出,返回,BACK,主菜单按钮、标题、退出确认、设置页,决定第一印象与基本操作入口,
+settings.keys,主菜单 / 设置 / 退出,↑↓ 选择   Enter 确认   L 切换语言,↑↓ SELECT   ENTER CONFIRM   L SWITCH LANGUAGE,主菜单按钮、标题、退出确认、设置页,决定第一印象与基本操作入口,
+settings.note,主菜单 / 设置 / 退出,语言只改变文字，不影响玩法、物理参数和比赛纪录。,"Language only changes text. It does not affect gameplay, physics, or records.",主菜单按钮、标题、退出确认、设置页,决定第一印象与基本操作入口,
+hud.control,HUD,控制    {0},CONTROL   {0},左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+who.rabbit,角色名,兔子,RABBIT,HUD 与提示里的角色称呼,统一“兔子/乌龟”的称呼,
+who.turtle,角色名,乌龟,TURTLE,HUD 与提示里的角色称呼,统一“兔子/乌龟”的称呼,
+hud.rabbit,HUD,兔子    {0}   抓地 {1}%,RABBIT    {0}   GRIP {1}%,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.turtle,HUD,乌龟    {0},TURTLE    {0},左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.accident,HUD,事故    {0},ACCIDENT  {0},左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.time,HUD,时间    {0} 秒,TIME    {0} s,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.speed,HUD,速度    {0},SPEED   {0},左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.cruise,HUD,巡航,CRUISE,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.boost,HUD,加速,BOOST,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.turbo,HUD,乌龟 TURBO！加速中,TURTLE TURBO!,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.rabbit_boost,HUD,兔子！下一跳更高,RABBIT! HIGHER JUMP,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.snack_ahead,HUD,海藻在前 · 当前：{0}会吃,SNACK AHEAD · {0} EATS NOW,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.snack_cant,HUD,海藻在前 · 现在够不到（回巡航 / 落地再吃）,SNACK AHEAD · OUT OF REACH (CRUISE OR LAND TO EAT),左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.snack_preview,HUD,海藻：兔子吃 ↑ / 乌龟吃 »,SNACK: RABBIT ↑ / TURTLE »,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.zone,HUD,区域 {0}/3  {1},ZONE {0}/3  {1},左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.progress,HUD,进度 {0}%   {1}/{2} 组,PROGRESS {0}%   {1}/{2} GROUPS,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.air,HUD,氧气    {0} 秒   {1},AIR      {0} s   {1},左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.surface,HUD,水面 - 恢复中,SURFACE - RECOVERING,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.emergency,HUD,紧急上浮,EMERGENCY ASCENT,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.airborne,HUD,空中 - 不耗氧,AIRBORNE - NO DRAIN,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.rescuing,HUD,救援中 {0}s - 潜到兔子下面,RESCUE {0}s - DIVE UNDER THE RABBIT,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.rescuing_air,HUD,救援中 {0}s - 跃起接住,RESCUE {0}s - LEAP TO CATCH,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.rescue_return,HUD,兔子回壳中 {0}s,RABBIT RETURNING {0}s,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.underwater,HUD,水下 - 耗氧中,UNDERWATER - DRAINING,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.undertow,HUD,暗流 - 壳沉太深，换给乌龟抬起来,"UNDERTOW - TOO DEEP, GIVE IT TO THE TURTLE",左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.brotherhood,HUD,兄弟情    {0},BROTHERHOOD  {0},左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,BRO METER / 默契 / 兄弟情 术语混用，建议统一
+hud.clean,HUD,干净通过  {0}/{1},CLEAN PASSES  {0}/{1},左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.clean_best,HUD,干净通过  {0}/{1}   最佳 {2},CLEAN PASSES  {0}/{1}   BEST {2},左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.showtime,HUD,SHOWTIME  {0} 秒,SHOWTIME  {0} s,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.showtime_ready,HUD,SHOWTIME 就绪,SHOWTIME READY,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.showtime_banner,HUD,操控乌龟 · SHIFT 中止,DRIVE TURTLE · SHIFT TO ABORT,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.warn,HUD,{0}  {1} px  -  {2},{0}  {1} px  -  {2},左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.control_now,HUD,SHIFT   当前控制：{0},SHIFT   CONTROL: {0},左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.acting,HUD,操控 · {0},DRIVING · {0},左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.standby_stable,HUD,待命 · 稳定,STANDBY · STABLE,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.standby_risk,HUD,待命 · 不稳,STANDBY · WOBBLY,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.drift_distracted,HUD,开始神游,DRIFTING,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.drift_restless,HUD,坐不住了,FIDGETY,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.drift_mischief,HUD,要惹麻烦,TROUBLE,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.drift_effect_rabbit,HUD,空中修正 {0}% · 身偏 {1}px,AIR {0}% · {1}px OFF,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.drift_effect_turtle,HUD,巡航 {0}% · 壳晃 {1}px,CRUISE {0}% · BOB {1}px,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.drift_recover_rabbit,HUD,回神中 · 空中修正 {0}%,RECOVER · AIR {0}%,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.drift_recover_turtle,HUD,回神中 · 巡航 {0}%,RECOVER · CRUISE {0}%,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.drift_recovering,HUD,回神中,RECOVER,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.rabbit_risk,HUD,兔子晃动 {0}%,RABBIT WOBBLE {0}%,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.turtle_risk,HUD,乌龟晃动 {0}%,TURTLE WOBBLE {0}%,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.coop_prepare,HUD,{0}  准备,{0}  GET READY,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.coop_now,HUD,{0}  现在！,{0}  NOW!,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.coop_missed,HUD,{0}  已错过,{0}  MISSED,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.coop_tag,HUD,可 {0},{0} READY,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.coop_assist,HUD,配合,ASSIST,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.coop_release,HUD,松开 ↓ 上浮接人！,RELEASE ↓ - SURFACE & CATCH!,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.oxygen,HUD,氧气 {0}s,AIR {0}s,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.oxygen_recovering,HUD,水面恢复中,SURFACE - RECOVERING,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.oxygen_low,HUD,氧气偏低,AIR LOW,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.oxygen_critical,HUD,氧气告急,AIR CRITICAL,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.bond,HUD,默契 {0}/{1},BRO PASS {0}/{1},左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,BRO METER / 默契 / 兄弟情 术语混用，建议统一
+hud.showtime_t,HUD,SHOWTIME {0}s  剩,SHOWTIME {0}s LEFT,左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,
+hud.bro_meter,HUD,BRO 槽 {0}/{1},BRO METER {0}/{1},左上角色面板、右上时间/区域/进度、底部氧气/食物/协作条,持续可读的状态与时机,BRO METER / 默契 / 兄弟情 术语混用，建议统一
+state.RIDING,角色状态,骑乘,RIDING,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.RECOVERING,角色状态,恢复中,RECOVERING,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.RELAXED,角色状态,神游,RELAXED,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.NO_POWER,角色状态,无动力,NO POWER,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.TOO_DEEP,角色状态,过深,TOO DEEP,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.SLIDING,角色状态,正在滑落,SLIPPING,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.EDGE,角色状态,快掉了,ABOUT TO FALL,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.STUNNED,角色状态,眩晕,STUNNED,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.SHOWTIME,角色状态,表演,SHOWTIME,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.AIRBORNE,角色状态,空中,AIRBORNE,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.WAITING_CATCH,角色状态,落水 · 等接应,IN WATER · WAIT,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.CRUISING,角色状态,巡航,CRUISING,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.BOOSTING,角色状态,加速,BOOSTING,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.SURFACING,角色状态,上浮,SURFACING,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.DIVING,角色状态,下潜,DIVING,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.CROUCHING,角色状态,趴低,CROUCHING,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.GRIPPING,角色状态,抓紧,GRIPPING,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.LEAPING,角色状态,跃起,LEAPING,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.POPPING,角色状态,拍水跃浪,WATER POP,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.DUNKED,角色状态,被浪压进水里,DUNKED,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.BELLY_UP,角色状态,翻肚皮,BELLY UP,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.UNSTEADY,角色状态,轻微晃动,UNSTEADY,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.WOBBLING,角色状态,明显摇晃,WOBBLING,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.FLIP_RISK,角色状态,要翻了,FLIP RISK,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.DAZED,角色状态,恍惚,DAZED,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.SINKING,角色状态,下沉,SINKING,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.DEEP,角色状态,过深,DEEP,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.DANGER,角色状态,危险,DANGER,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.UNCONSCIOUS,角色状态,昏迷,UNCONSCIOUS,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.EMERGENCY,角色状态,紧急,EMERGENCY,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.JUMPING,角色状态,跳跃,JUMPING,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.FALLING,角色状态,下落,FALLING,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.RESCUING,角色状态,救援,RESCUING,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.SAFE,角色状态,安全,SAFE,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.LOW,角色状态,偏低,LOW,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.CRITICAL,角色状态,告急,CRITICAL,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+state.EMPTY,角色状态,耗尽,EMPTY,HUD 角色行、世界内角色旁边的小字,让玩家读出当前姿态/危险,
+accident.RABBIT_SLIP,事故名,兔子滑落,RABBIT SLIP,HUD 事故行/横幅,事故的正式短名,
+accident.RABBIT_WATER,事故名,兔子落水,RABBIT IN WATER,HUD 事故行/横幅,事故的正式短名,
+accident.RABBIT_AIR,事故名,兔子被抛到空中,RABBIT IN THE AIR,HUD 事故行/横幅,事故的正式短名,
+accident.OXYGEN_OUT,事故名,氧气耗尽,OXYGEN OUT,HUD 事故行/横幅,事故的正式短名,
+accident.TURTLE_REEF,事故名,乌龟撞礁 / 下沉,TURTLE REEF / SINK,HUD 事故行/横幅,事故的正式短名,
+accident.RABBIT_STUN,事故名,兔子硬直,RABBIT STUN,HUD 事故行/横幅,事故的正式短名,
+grade.S,评级,绝对好兄弟！,ABSOLUTE BROS!,结算页等级标题,结算的情绪落点,
+grade.A,评级,肌肉兄弟！,MUSCLE BROTHERS!,结算页等级标题,结算的情绪落点,
+grade.B,评级,还算铁的哥们！,PRETTY GOOD BUDDIES!,结算页等级标题,结算的情绪落点,
+grade.C,评级,塑料兄弟情！,PLASTIC FRIENDSHIP!,结算页等级标题,结算的情绪落点,
+grade.D,评级,两个脑细胞，零配合！,"TWO BRAIN CELLS, ZERO COORDINATION!",结算页等级标题,结算的情绪落点,
+zone.1.name,区域名/教学,阳光海岸,SUNNY COAST,区域标题、区域中央提示、HUD 区域行,三个区域的命名与一句话目标,
+zone.2.name,区域名/教学,码头乱流,DOCK CHAOS,区域标题、区域中央提示、HUD 区域行,三个区域的命名与一句话目标,
+zone.3.name,区域名/教学,肌肉狂潮,MUSCLE MAYHEM,区域标题、区域中央提示、HUD 区域行,三个区域的命名与一句话目标,
+zone.1.lesson,区域名/教学,区域 1 阳光海岸 - 学会跳、趴低、乌龟跃起和下潜,"ZONE 1  SUNNY COAST - LEARN JUMP, CROUCH, TURTLE LEAP AND DIVE",区域标题、区域中央提示、HUD 区域行,三个区域的命名与一句话目标,
+zone.2.lesson,区域名/教学,区域 2 码头乱流 - 吊网、鳗鱼、船闸，换对人才过得去,"ZONE 2  DOCK CHAOS - NETS, EELS, SLUICES: PICK THE RIGHT BRO",区域标题、区域中央提示、HUD 区域行,三个区域的命名与一句话目标,
+zone.3.lesson,区域名/教学,区域 3 肌肉狂潮 - 龟兔各走一条路，别靠连点,"ZONE 3  MUSCLE MAYHEM - TWO ROUTES, NO MASHING",区域标题、区域中央提示、HUD 区域行,三个区域的命名与一句话目标,
+hazard.low_rock,障碍名,低岩,LOW ROCK,调试层/旧 HUD/关卡数据映射,障碍的正式名字；多数不在主 HUD 常驻,多为调试/旧键，改它不一定改到玩家看到的字
+hazard.low_beam,障碍名,低梁,LOW BEAM,调试层/旧 HUD/关卡数据映射,障碍的正式名字；多数不在主 HUD 常驻,多为调试/旧键，改它不一定改到玩家看到的字
+hazard.wide_wave,障碍名,宽浪,WIDE WAVE,调试层/旧 HUD/关卡数据映射,障碍的正式名字；多数不在主 HUD 常驻,多为调试/旧键，改它不一定改到玩家看到的字
+hazard.low_bird,障碍名,低飞海鸟,LOW BIRD,调试层/旧 HUD/关卡数据映射,障碍的正式名字；多数不在主 HUD 常驻,多为调试/旧键，改它不一定改到玩家看到的字
+hazard.dock_beam,障碍名,码头横梁,DOCK BEAM,调试层/旧 HUD/关卡数据映射,障碍的正式名字；多数不在主 HUD 常驻,多为调试/旧键，改它不一定改到玩家看到的字
+hazard.shark,障碍名,鲨鱼,SHARK,调试层/旧 HUD/关卡数据映射,障碍的正式名字；多数不在主 HUD 常驻,多为调试/旧键，改它不一定改到玩家看到的字
+hazard.dive_gate,障碍名,水下拱岩,REEF ARCH,调试层/旧 HUD/关卡数据映射,障碍的正式名字；多数不在主 HUD 常驻,多为调试/旧键，改它不一定改到玩家看到的字
+hazard.floating_log,障碍名,浮木,FLOATING LOG,调试层/旧 HUD/关卡数据映射,障碍的正式名字；多数不在主 HUD 常驻,多为调试/旧键，改它不一定改到玩家看到的字
+hazard.high_wall,障碍名,高墙,HIGH WALL,调试层/旧 HUD/关卡数据映射,障碍的正式名字；多数不在主 HUD 常驻,多为调试/旧键，改它不一定改到玩家看到的字
+hazard.reef,障碍名,暗礁,REEF,调试层/旧 HUD/关卡数据映射,障碍的正式名字；多数不在主 HUD 常驻,多为调试/旧键，改它不一定改到玩家看到的字
+hazard.reef_chain,障碍名,礁链,REEF CHAIN,调试层/旧 HUD/关卡数据映射,障碍的正式名字；多数不在主 HUD 常驻,多为调试/旧键，改它不一定改到玩家看到的字
+hazard.long_wall,障碍名,长墙,LONG WALL,调试层/旧 HUD/关卡数据映射,障碍的正式名字；多数不在主 HUD 常驻,多为调试/旧键，改它不一定改到玩家看到的字
+hazard.sink_gate,障碍名,下沉门,SINK GATE,调试层/旧 HUD/关卡数据映射,障碍的正式名字；多数不在主 HUD 常驻,多为调试/旧键，改它不一定改到玩家看到的字
+hazard.final_gate,障碍名,终点门,FINAL GATE,调试层/旧 HUD/关卡数据映射,障碍的正式名字；多数不在主 HUD 常驻,多为调试/旧键，改它不一定改到玩家看到的字
+hazard.low_bar,障碍名,低杆,LOW BAR,调试层/旧 HUD/关卡数据映射,障碍的正式名字；多数不在主 HUD 常驻,多为调试/旧键，改它不一定改到玩家看到的字
+hazard.rock_beam,障碍名,岩石 + 横梁,ROCK + BEAM,调试层/旧 HUD/关卡数据映射,障碍的正式名字；多数不在主 HUD 常驻,多为调试/旧键，改它不一定改到玩家看到的字
+action.jump_or_dive,动作名,跳过去,JUMP OVER,调试层/旧 HUD/关卡数据映射,障碍对应动作的短名,多为调试/旧键，改它不一定改到玩家看到的字
+action.crouch_or_dive,动作名,趴下,CROUCH DOWN,调试层/旧 HUD/关卡数据映射,障碍对应动作的短名,多为调试/旧键，改它不一定改到玩家看到的字
+action.water_pop,动作名,拍水跃浪,SPACE WATER POP,调试层/旧 HUD/关卡数据映射,障碍对应动作的短名,多为调试/旧键，改它不一定改到玩家看到的字
+action.leap,动作名,乌龟 ↑ 跃起,TURTLE ↑ LEAP,调试层/旧 HUD/关卡数据映射,障碍对应动作的短名,多为调试/旧键，改它不一定改到玩家看到的字
+action.dive,动作名,乌龟 ↓ 下潜,TURTLE ↓ DIVE,调试层/旧 HUD/关卡数据映射,障碍对应动作的短名,多为调试/旧键，改它不一定改到玩家看到的字
+action.jump_and_dive,动作名,兔子跳 + 乌龟潜,RABBIT JUMP + TURTLE DIVE,调试层/旧 HUD/关卡数据映射,障碍对应动作的短名,多为调试/旧键，改它不一定改到玩家看到的字
+action.stay_high,动作名,保持水面,STAY HIGH,调试层/旧 HUD/关卡数据映射,障碍对应动作的短名,多为调试/旧键，改它不一定改到玩家看到的字
+action.dive_through,动作名,换人让壳沉,HAND OVER TO SINK,调试层/旧 HUD/关卡数据映射,障碍对应动作的短名,多为调试/旧键，改它不一定改到玩家看到的字
+action.take_rabbit,动作名,换给兔子,TAKE THE RABBIT,调试层/旧 HUD/关卡数据映射,障碍对应动作的短名,多为调试/旧键，改它不一定改到玩家看到的字
+action.dont_jump,动作名,别跳,DON'T JUMP,调试层/旧 HUD/关卡数据映射,障碍对应动作的短名,多为调试/旧键，改它不一定改到玩家看到的字
+action.jump_then_crouch,动作名,先跳再趴,JUMP THEN CROUCH,调试层/旧 HUD/关卡数据映射,障碍对应动作的短名,多为调试/旧键，改它不一定改到玩家看到的字
+action.crouch_after_landing,动作名,落地后趴下,CROUCH AFTER LANDING,调试层/旧 HUD/关卡数据映射,障碍对应动作的短名,多为调试/旧键，改它不一定改到玩家看到的字
+lesson.rock,首次教学,跳过岩石 - 按 SHIFT 换兔子，再按 ↑ 起跳,"JUMP THE ROCK - SHIFT TO THE RABBIT, THEN ↑",底部提示栏，第一次遇到某类障碍时,“谁 + 为什么 + 按什么”的第一课,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+lesson.beam,首次教学,趴低过梁 - 按 SHIFT 换兔子，再按 ↓ 趴低,"CROUCH UNDER THE BEAM - SHIFT TO THE RABBIT, THEN ↓",底部提示栏，第一次遇到某类障碍时,“谁 + 为什么 + 按什么”的第一课,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+lesson.wave,首次教学,宽浪 - 按 SHIFT 换成乌龟，按 SPACE 拍水跃浪,"WIDE WAVE - SHIFT TO THE TURTLE, PRESS SPACE TO POP",底部提示栏，第一次遇到某类障碍时,“谁 + 为什么 + 按什么”的第一课,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+lesson.reef,首次教学,暗礁在深处 - 贴着水面走,REEFS SIT DEEP - STAY ON THE SURFACE,底部提示栏，第一次遇到某类障碍时,“谁 + 为什么 + 按什么”的第一课,
+lesson.wall,首次教学,长墙 - 按 SHIFT 换给兔子，壳会自己沉下去,LONG WALL - SHIFT TO THE RABBIT AND THE SHELL SINKS,底部提示栏，第一次遇到某类障碍时,“谁 + 为什么 + 按什么”的第一课,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+lesson.sink_gate,首次教学,下沉门 - 兔子掌权时龟壳会自己沉下去,SINK GATE - THE SHELL SINKS WHILE THE RABBIT IS IN CHARGE,底部提示栏，第一次遇到某类障碍时,“谁 + 为什么 + 按什么”的第一课,
+lesson.airbar,首次教学,低杆 - 让兔子留在龟壳上,LOW BAR - KEEP THE RABBIT ON THE SHELL,底部提示栏，第一次遇到某类障碍时,“谁 + 为什么 + 按什么”的第一课,
+lesson.combo,首次教学,连续三次干净通过会触发 SHOWTIME,THREE CLEAN PASSES TRIGGER SHOWTIME,底部提示栏，第一次遇到某类障碍时,“谁 + 为什么 + 按什么”的第一课,
+lesson.bird,首次教学,低飞海鸟 - 按 SHIFT 换兔子按 ↓ 趴低，乌龟照常巡航,"LOW BIRD - SHIFT TO THE RABBIT AND PRESS ↓, THE SHELL KEEPS CRUISING",底部提示栏，第一次遇到某类障碍时,“谁 + 为什么 + 按什么”的第一课,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+lesson.dock_beam,首次教学,码头横梁 - 按 SHIFT 换兔子趴低过，龟壳不受影响,"DOCK BEAM - SHIFT TO THE RABBIT AND CROUCH, THE SHELL IS UNAFFECTED",底部提示栏，第一次遇到某类障碍时,“谁 + 为什么 + 按什么”的第一课,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+lesson.gate,首次教学,水下拱岩 - 按 SHIFT 换乌龟，按住 ↓ 潜过去,REEF ARCH - SHIFT TO THE TURTLE AND HOLD ↓,底部提示栏，第一次遇到某类障碍时,“谁 + 为什么 + 按什么”的第一课,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+lesson.shark,首次教学,鲨鱼从下面冲上来 - 按 SHIFT 换乌龟，再按 ↑ 跃起,SHARK FROM BELOW - SHIFT TO THE TURTLE AND PRESS ↑,底部提示栏，第一次遇到某类障碍时,“谁 + 为什么 + 按什么”的第一课,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+lesson.log,首次教学,浮木 - 兔子先跳，按 SHIFT 换乌龟下潜；越过木尾松开 ↓ 上浮接人,"FLOATING LOG - JUMP, SHIFT, DIVE. PAST THE LOG, RELEASE ↓ TO CATCH.",底部提示栏，第一次遇到某类障碍时,“谁 + 为什么 + 按什么”的第一课,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+hint.take_rabbit,情境提示,按 SHIFT 换兔子 - 这个只有兔子能躲,PRESS SHIFT FOR THE RABBIT - ONLY IT CAN DODGE THIS,底部提示栏、角色旁、碰撞后,解释刚刚发生了什么、下一步怎么做,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+world.zone_header,世界内文字,{0}  {1},{0}  {1},世界坐标里的区域标题、终点、加速带、食物、暂停提示,世界内的定位与规则提示,
+world.danger_depth,世界内文字,危险深度,DANGER DEPTH,世界坐标里的区域标题、终点、加速带、食物、暂停提示,世界内的定位与规则提示,
+world.finish,世界内文字,终点,FINISH,世界坐标里的区域标题、终点、加速带、食物、暂停提示,世界内的定位与规则提示,
+world.paused,世界内文字,已暂停,PAUSED,世界坐标里的区域标题、终点、加速带、食物、暂停提示,世界内的定位与规则提示,
+pause.title,暂停页,已暂停,PAUSED,ESC 暂停菜单,玩家唯一能停下来读规则的地方,
+pause.breath,暂停页,"Take a breath, bro.","Take a breath, bro.",ESC 暂停菜单,玩家唯一能停下来读规则的地方,
+pause.resume,暂停页,继续游戏,RESUME,ESC 暂停菜单,玩家唯一能停下来读规则的地方,
+pause.restart,暂停页,重新开始,RESTART,ESC 暂停菜单,玩家唯一能停下来读规则的地方,
+pause.menu,暂停页,返回主菜单,MAIN MENU,ESC 暂停菜单,玩家唯一能停下来读规则的地方,
+pause.keys,暂停页,ESC 继续   R 重开   M 主菜单,ESC RESUME   R RESTART   M MENU,ESC 暂停菜单,玩家唯一能停下来读规则的地方,
+pause.food,暂停页,能量海藻：SHIFT 决定谁吃 — 乌龟吃 = 加速，兔子吃 = 下一跳更高；不吃不扣分,"SNACK: SHIFT PICKS WHO EATS - TURTLE = TURBO, RABBIT = HIGHER JUMP; SKIPPING COSTS NOTHING",ESC 暂停菜单,玩家唯一能停下来读规则的地方,
+pause.help,暂停页,帮助 / 操作说明,HELP / CONTROLS,ESC 暂停菜单,玩家唯一能停下来读规则的地方,
+pause.help_title,暂停页,操作说明,CONTROLS,ESC 暂停菜单,玩家唯一能停下来读规则的地方,
+pause.help_body,暂停页,SHIFT 换人：障碍只认一种身体，换错就撞（换人间隔 0.2 秒）\n↑ 兔子跳 / 乌龟跃起    ↓ 兔子趴低 / 乌龟下潜\n礁拱：乌龟潜过去；鲨鱼：乌龟跃起；\n低梁/海鸟/吊网：趴低或下潜；岩/箱/浮台：跳过去\n浮木：先 ↑ 跳，再 SHIFT 给乌龟 ↓ 潜\n高墙：SHIFT + ↑ 跃起，再 SHIFT 兔子 ↑ 蹬踏\n食物：操控谁谁吃，不吃不扣分,"SHIFT SWAP: EACH OBSTACLE FITS ONE BODY (0.2s BETWEEN SWAPS)\n↑ RABBIT JUMP / TURTLE LEAP    ↓ RABBIT CROUCH / TURTLE DIVE\nARCH: TURTLE DIVE; SHARK/EEL: TURTLE LEAP\nBEAM/NET/GULL: CROUCH OR DIVE; ROCK/CRATE/PONTOON: JUMP\nLOG: ↑ JUMP FIRST, SHIFT, THEN ↓ DIVE\nHIGH WALL: SHIFT + ↑ LEAP, SHIFT RABBIT, ↑ KICK\nSNACK: WHOEVER YOU DRIVE EATS; SKIPPING IS FREE",ESC 暂停菜单,玩家唯一能停下来读规则的地方,
+world.pause_hint,世界内文字,ESC 继续   SHIFT 换人   R 重开   M 主菜单,ESC RESUME   SHIFT TRANSFER   R RESTART   M MENU,世界坐标里的区域标题、终点、加速带、食物、暂停提示,世界内的定位与规则提示,
+world.boost,世界内文字,加速带,BOOST,世界坐标里的区域标题、终点、加速带、食物、暂停提示,世界内的定位与规则提示,
+world.snack,世界内文字,海藻,SNACK,世界坐标里的区域标题、终点、加速带、食物、暂停提示,世界内的定位与规则提示,
+world.eat_now,世界内文字,吃,EAT,世界坐标里的区域标题、终点、加速带、食物、暂停提示,世界内的定位与规则提示,
+world.grip,世界内文字,{0}   抓地 {1}%,{0}  GRIP {1}%,世界坐标里的区域标题、终点、加速带、食物、暂停提示,世界内的定位与规则提示,
+center.zone,中央大字,区域 {0}  {1},ZONE {0}  {1},屏幕中央的区域/Showtime/冲线/满格文字,阶段性节点与强情绪,
+center.showtime,中央大字,SHOWTIME！,SHOWTIME!,屏幕中央的区域/Showtime/冲线/满格文字,阶段性节点与强情绪,
+center.brotherhood,中央大字,兄弟情！,BROTHERHOOD!,屏幕中央的区域/Showtime/冲线/满格文字,阶段性节点与强情绪,
+center.shows_over,中央大字,表演结束！,SHOW'S OVER!,屏幕中央的区域/Showtime/冲线/满格文字,阶段性节点与强情绪,
+center.finish,中央大字,冲线！  {0}  {1},FINISH!  {0}  {1},屏幕中央的区域/Showtime/冲线/满格文字,阶段性节点与强情绪,
+center.bro_full,中央大字,两人同时出事 —— 一起翻船！,BOTH IN TROUBLE - CAPSIZED!,屏幕中央的区域/Showtime/冲线/满格文字,阶段性节点与强情绪,BRO METER / 默契 / 兄弟情 术语混用，建议统一
+center.bro_recover,中央大字,重新出发！,BACK IN ACTION!,屏幕中央的区域/Showtime/冲线/满格文字,阶段性节点与强情绪,
+hint.air_low,情境提示,氧气偏低 - 换回乌龟就上浮,AIR LOW - TAKE THE TURTLE BACK,底部提示栏、角色旁、碰撞后,解释刚刚发生了什么、下一步怎么做,
+hint.air_critical,情境提示,氧气告急 - 马上换乌龟,AIR CRITICAL - TURTLE NOW,底部提示栏、角色旁、碰撞后,解释刚刚发生了什么、下一步怎么做,
+hint.clean_pass,情境提示,干净通过  {0}/{1},CLEAN PASS  {0}/{1},底部提示栏、角色旁、碰撞后,解释刚刚发生了什么、下一步怎么做,
+hint.pickup,情境提示,接住了！,PICKUP!,底部提示栏、角色旁、碰撞后,解释刚刚发生了什么、下一步怎么做,
+hint.boost,情境提示,加速带 - 操控乌龟时自动提速,BOOST LANE - AUTOMATIC WHILE DRIVING THE TURTLE,底部提示栏、角色旁、碰撞后,解释刚刚发生了什么、下一步怎么做,
+hint.snack,情境提示,海藻：SHIFT 决定谁吃；不吃不扣分,SNACK: SHIFT PICKS WHO EATS; SKIPPING IS FREE,底部提示栏、角色旁、碰撞后,解释刚刚发生了什么、下一步怎么做,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+hint.wave_hit,情境提示,壳翻了 - 稳住，等它自己翻回来,"SHELL FLIPPED - STEADY, IT ROLLS BACK",底部提示栏、角色旁、碰撞后,解释刚刚发生了什么、下一步怎么做,
+hint.shark_hit,情境提示,鲨鱼只咬壳 - 按 ↑ 跃起躲开,THE SHARK BITES THE SHELL - PRESS ↑ TO LEAP,底部提示栏、角色旁、碰撞后,解释刚刚发生了什么、下一步怎么做,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+hint.gate_hit,情境提示,拱岩：按住 ↓ 潜到它下面再松,REEF ARCH: HOLD ↓ UNTIL YOU'RE UNDER IT,底部提示栏、角色旁、碰撞后,解释刚刚发生了什么、下一步怎么做,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+hint.wall_hit,情境提示,高墙：乌龟先 ↑ 跃起，兔子再蹬一下,"HIGH WALL: ↑ LEAP, THEN KICK WITH THE RABBIT",底部提示栏、角色旁、碰撞后,解释刚刚发生了什么、下一步怎么做,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+feedback.clean,即时反馈,干净通过！,CLEAN!,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+feedback.bro_pass,即时反馈,兄弟！漂亮！,BRO PASS!,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+feedback.bro_dive,即时反馈,BRO DIVE！,BRO DIVE!,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+feedback.bro_ollie,即时反馈,BRO OLLIE！,BRO OLLIE!,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+feedback.bro_combo,即时反馈,BRO COMBO！,BRO COMBO!,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+feedback.pop,即时反馈,拍水跃浪！,WATER POP!,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+feedback.leap,即时反馈,跃起！,LEAP!,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+feedback.turbo,即时反馈,TURBO！ 吞下去了！,TURBO! GULP!,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+feedback.snack_rabbit,即时反馈,兔子吃了！ 下一跳更高！,RABBIT ATE! HIGHER JUMP!,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+feedback.turbo_switch,即时反馈,TURBO！亲手喂到！乌龟很满足！,TURBO! HAND-FED! TURTLE LOVES IT!,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+feedback.wave_hit,即时反馈,壳被浪掀翻了！,WAVE HIT - SHELL FLIPPED!,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+feedback.shark_hit,即时反馈,鲨鱼从下面来的 - 壳翻了！,SHARK FROM BELOW - SHELL FLIPPED!,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+feedback.gate_hit,即时反馈,没潜到位 - 壳撞上拱岩！,NOT DEEP ENOUGH - HIT THE REEF ARCH!,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+feedback.wall_hit,即时反馈,没跃过墙 - 壳撞上去了！,MISSED THE OLLIE - SHELL HIT THE WALL!,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+feedback.dive_late,即时反馈,下潜太晚 - 壳撞上浮木！,DIVE TOO LATE - SHELL HIT THE LOG!,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+feedback.log_jump,即时反馈,跳跃高度不对 - 撞上浮木！,BAD JUMP ARC - HIT THE LOG!,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+hint.dive_late,情境提示,浮木：兔子起跳后 SHIFT 给乌龟，按住 ↓ 下潜；过木后松手上浮,"LOG: JUMP, THEN SHIFT TO TURTLE - HOLD ↓ TO DIVE; RELEASE TO SURFACE",底部提示栏、角色旁、碰撞后,解释刚刚发生了什么、下一步怎么做,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+hint.log_jump,情境提示,浮木：先按 ↑ 让兔子起跳，再 SHIFT 给乌龟,"LOG: PRESS ↑ TO JUMP FIRST, THEN SHIFT TO THE TURTLE",底部提示栏、角色旁、碰撞后,解释刚刚发生了什么、下一步怎么做,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+hint.dive_deep,情境提示,壳停得太深 - 浮木组合请先 ↑ 起跳再 SHIFT，下潜和上浮会自动完成,SHELL TOO DEEP - FOR LOGS: ↑ JUMP THEN SHIFT; DIVE AND SURFACE ARE AUTOMATIC,底部提示栏、角色旁、碰撞后,解释刚刚发生了什么、下一步怎么做,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+hint.motion,情境提示,这组会动 - 看准空隙再上,THIS ONE MOVES - GO THROUGH THE GAP,底部提示栏、角色旁、碰撞后,解释刚刚发生了什么、下一步怎么做,
+hint.motion_buoy,情境提示,系泊浮标：锚绳拴在海底，随涌浪起落 - 等它落到低点再跳,"MOORING BUOY - ROPED TO THE SEABED, RIDES THE SWELL. JUMP AT THE LOW POINT",底部提示栏、角色旁、碰撞后,解释刚刚发生了什么、下一步怎么做,
+hint.motion_hoist,情境提示,吊装货箱：挂在码头吊钩上，跟着吊臂上下晃 - 看准它升起的那拍,HOIST CRATE - HANGS FROM THE DOCK CRANE AND SWINGS WITH IT. TIME THE LIFT,底部提示栏、角色旁、碰撞后,解释刚刚发生了什么、下一步怎么做,
+hint.motion_cargo,情境提示,漂流货箱：从码头冲出来的货，随大浪浮沉 - 看准浪谷再跳,"DRIFTING CARGO - WASHED OUT FROM THE DOCK, RIDES THE SWELL. JUMP IN THE TROUGH",底部提示栏、角色旁、碰撞后,解释刚刚发生了什么、下一步怎么做,
+hint.motion_eel,情境提示,水渠鳗鱼：平时盘在水渠底，靠近时带电窜上来 - 提前跃起,"CANAL EEL - COILED ON THE CANAL BED, SPARKS AND LUNGES. LEAP EARLY",底部提示栏、角色旁、碰撞后,解释刚刚发生了什么、下一步怎么做,
+feedback.rescue_ok,即时反馈,接住了！兄弟！,CAUGHT! BRO!,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+feedback.rescue_reunion,即时反馈,兄弟回来了！右边这口气补上了,BRO'S BACK! BOTH OF YOU CALM DOWN,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+feedback.rescue_miss,即时反馈,没接住……兔子被冲回壳上,MISSED... RABBIT WASHED BACK,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+feedback.shift_take,即时反馈,换人 - {0}开始收心,SWITCH - {0} RECOVERING,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+feedback.shift_lock,即时反馈,换人间隔 0.2 秒,SWAP LOCK 0.2s,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+feedback.relay_clever,即时反馈,电流接力 +50,RELAY +50,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+feedback.relay_perfect,即时反馈,完美接力 +100,PERFECT RELAY +100,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+feedback.burst_rabbit_warn,即时反馈,BITT 走神了——注意它下一步,BITT IS DRIFTING - WATCH IT,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,FEEL-10 新名；与“兔子/乌龟”混用，需统一
+feedback.burst_turtle_warn,即时反馈,TUBO 走神了——注意壳的深度,TUBO IS DRIFTING - WATCH THE SHELL,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,FEEL-10 新名；与“兔子/乌龟”混用，需统一
+feedback.burst_rabbit,即时反馈,BITT 不听指挥，自己趴下了！,BITT IGNORED YOU AND CROUCHED!,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,FEEL-10 新名；与“兔子/乌龟”混用，需统一
+feedback.burst_turtle,即时反馈,TUBO 不听指挥，自己往下沉！,TUBO IGNORED YOU AND DOVE!,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,FEEL-10 新名；与“兔子/乌龟”混用，需统一
+feedback.burst_back,即时反馈,回过神了——重新接手,BACK ONLINE - TAKE OVER,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+feedback.showtime_reward,即时反馈,SHOWTIME 完成  +100 分  ·  氧气 +{0},SHOWTIME DONE  +100 PTS  ·  OXYGEN +{0},底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+feedback.showtime_reward_full,即时反馈,SHOWTIME 完成  +100 分  ·  氧气已满,SHOWTIME DONE  +100 PTS  ·  OXYGEN FULL,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+feedback.drift_back,即时反馈,{0}回过神了,{0} IS BACK,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+feedback.drift_warn_restless,即时反馈,{0}坐不住了：{1},{0} IS FIDGETY: {1},底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+feedback.drift_warn_mischief,即时反馈,{0}要惹麻烦了：{1},{0} IS ACTING UP: {1},底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,
+feedback.drift_lag_rabbit,即时反馈,BITT 走神了 - 蹦跳慢了半拍,BITT IS DAYDREAMING - SLOW TO JUMP,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,FEEL-10 新名；与“兔子/乌龟”混用，需统一
+feedback.drift_lag_turtle,即时反馈,TUBO 走神了 - 壳没马上听懂,TUBO IS DAYDREAMING - SHELL SLOW TO REACT,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,FEEL-10 新名；与“兔子/乌龟”混用，需统一
+feedback.drift_autocrouch,即时反馈,BITT 自己趴下了！,BITT DUCKED ON HIS OWN!,底部反馈行、角色/世界特效文字,告诉玩家动作成功/失败/状态变化,FEEL-10 新名；与“兔子/乌龟”混用，需统一
+prompt.jump,动作提示,↑ 跳跃,↑ JUMP,底部中央提示栏，接近障碍时,当前该按什么；按当前控制角色分两套,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+prompt.crouch,动作提示,↓ 趴低,↓ CROUCH,底部中央提示栏，接近障碍时,当前该按什么；按当前控制角色分两套,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+prompt.pop,动作提示,SHIFT + SPACE 拍水跃浪,SHIFT + SPACE WATER POP,底部中央提示栏，接近障碍时,当前该按什么；按当前控制角色分两套,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+prompt.rescue_shift,动作提示,SHIFT 乌龟 → 按住 ↓ 潜下去接住兔子,SHIFT TURTLE → HOLD ↓ TO CATCH,底部中央提示栏，接近障碍时,当前该按什么；按当前控制角色分两套,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+prompt.rescue_dive,动作提示,按住 ↓ 潜下去接住兔子,HOLD ↓ TO CATCH THE RABBIT,底部中央提示栏，接近障碍时,当前该按什么；按当前控制角色分两套,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+prompt.rescue_leap_shift,动作提示,SHIFT 乌龟 → 按 ↑ 跃起接住兔子,SHIFT TURTLE → ↑ TO CATCH,底部中央提示栏，接近障碍时,当前该按什么；按当前控制角色分两套,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+prompt.rescue_leap,动作提示,按 ↑ 跃起接住兔子,PRESS ↑ TO CATCH THE RABBIT,底部中央提示栏，接近障碍时,当前该按什么；按当前控制角色分两套,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+prompt.leap,动作提示,鲨鱼 - SHIFT + ↑ 乌龟跃起,SHARK - SHIFT + ↑ LEAP,底部中央提示栏，接近障碍时,当前该按什么；按当前控制角色分两套,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+prompt.dive,动作提示,礁拱 - SHIFT + ↓ 按住下潜,ARCH - SHIFT + ↓ HOLD,底部中央提示栏，接近障碍时,当前该按什么；按当前控制角色分两套,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+prompt.combo,动作提示,浮木 - ↑ 跳 → SHIFT → ↓ 潜,LOG - ↑ JUMP → SHIFT → ↓ DIVE,底部中央提示栏，接近障碍时,当前该按什么；按当前控制角色分两套,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+prompt.ollie,动作提示,高墙 - SHIFT + ↑ 跃起 → SHIFT → ↑ 蹬踏,WALL - SHIFT + ↑ LEAP → SHIFT → ↑ KICK,底部中央提示栏，接近障碍时,当前该按什么；按当前控制角色分两套,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+prompt.jump_from_turtle,动作提示,SHIFT 回兔子 → ↑ 跳跃,SHIFT TO RABBIT → ↑ JUMP,底部中央提示栏，接近障碍时,当前该按什么；按当前控制角色分两套,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748；与默认 prompt 成对；改一条要改两条
+prompt.crouch_from_turtle,动作提示,SHIFT 回兔子 → ↓ 趴低,SHIFT TO RABBIT → ↓ CROUCH,底部中央提示栏，接近障碍时,当前该按什么；按当前控制角色分两套,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748；与默认 prompt 成对；改一条要改两条
+prompt.leap_on_turtle,动作提示,鲨鱼冲上来了 - ↑ 乌龟跃起,SHARK IS UP - ↑ TURTLE LEAP,底部中央提示栏，接近障碍时,当前该按什么；按当前控制角色分两套,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748；与默认 prompt 成对；改一条要改两条
+prompt.dive_on_turtle,动作提示,礁拱下面就是通道 - 按住 ↓ 下潜,THE GAP IS UNDER THE ARCH - HOLD ↓ DIVE,底部中央提示栏，接近障碍时,当前该按什么；按当前控制角色分两套,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748；与默认 prompt 成对；改一条要改两条
+prompt.combo_from_turtle,动作提示,SHIFT 兔子 → ↑ 跳 → SHIFT → ↓ 潜,SHIFT RABBIT → ↑ JUMP → SHIFT → ↓ DIVE,底部中央提示栏，接近障碍时,当前该按什么；按当前控制角色分两套,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748；与默认 prompt 成对；改一条要改两条
+prompt.ollie_on_turtle,动作提示,高墙 - ↑ 跃起 → SHIFT 兔子 → ↑ 蹬踏,HIGH WALL - ↑ LEAP → SHIFT RABBIT → ↑ KICK,底部中央提示栏，接近障碍时,当前该按什么；按当前控制角色分两套,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748；与默认 prompt 成对；改一条要改两条
+prompt.net,动作提示,屋顶吊网压下来 - ↓ 趴低，从网底下过,CARGO NET - ↓ CROUCH,底部中央提示栏，接近障碍时,当前该按什么；按当前控制角色分两套,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+prompt.net_from_turtle,动作提示,吊网只压兔子层 - 按住 ↓ 下潜，从网底下过,CARGO NET - HOLD ↓ DIVE,底部中央提示栏，接近障碍时,当前该按什么；按当前控制角色分两套,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748；与默认 prompt 成对；改一条要改两条
+prompt.eel,动作提示,水渠鳗鱼会从底下窜上来 - SHIFT + ↑ 乌龟跃起,CANAL EEL - SHIFT + ↑ TURTLE LEAP,底部中央提示栏，接近障碍时,当前该按什么；按当前控制角色分两套,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+prompt.eel_on_turtle,动作提示,鳗鱼从底下窜上来 - ↑ 乌龟跃起,CANAL EEL - ↑ TURTLE LEAP,底部中央提示栏，接近障碍时,当前该按什么；按当前控制角色分两套,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748；与默认 prompt 成对；改一条要改两条
+prompt.sluice,动作提示,船闸只有乌龟潜得过去 - SHIFT + ↓ 按住下潜,SLUICE GATE - SHIFT + ↓ HOLD,底部中央提示栏，接近障碍时,当前该按什么；按当前控制角色分两套,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748
+prompt.sluice_on_turtle,动作提示,闸板下面就是通道 - 按住 ↓ 下潜,SLUICE GATE - HOLD ↓ DIVE,底部中央提示栏，接近障碍时,当前该按什么；按当前控制角色分两套,HUD 键帽依赖 ↑/↓/SHIFT，改字要保留符号或同步 hud.gd:748；与默认 prompt 成对；改一条要改两条
+banner.slip,大字横幅,摔了！兔子没抓住,WIPEOUT! RABBIT LOST GRIP,屏幕中央的大字事故/救援横幅,把重大后果说得比小字更重,
+banner.water,大字横幅,扑通！兔子落水,SPLASH! RABBIT IN THE WATER,屏幕中央的大字事故/救援横幅,把重大后果说得比小字更重,
+banner.stun,大字横幅,咚！兔子被撞晕,BONK! RABBIT IS STUNNED,屏幕中央的大字事故/救援横幅,把重大后果说得比小字更重,
+banner.hit,大字横幅,哎哟！兔子撞到了,OUCH! RABBIT HIT SOMETHING,屏幕中央的大字事故/救援横幅,把重大后果说得比小字更重,
+banner.reef,大字横幅,引擎故障！乌龟撞上暗礁,ENGINE FAILURE! TURTLE HIT THE REEF,屏幕中央的大字事故/救援横幅,把重大后果说得比小字更重,
+banner.oxygen,大字横幅,没气了！紧急上浮,NO AIR! EMERGENCY ASCENT,屏幕中央的大字事故/救援横幅,把重大后果说得比小字更重,
+banner.pickup,大字横幅,好接！,NICE SAVE!,屏幕中央的大字事故/救援横幅,把重大后果说得比小字更重,
+banner.rescue,大字横幅,获救,RESCUED,屏幕中央的大字事故/救援横幅,把重大后果说得比小字更重,
+result.title,结算页,比赛完成,RACE COMPLETE,冲线后的结算页,本局数据、纪录、下一次建议,保留 {0} 等占位符与对齐空格
+result.time,结算页,比赛时间              {0} 秒,RACE TIME              {0} s,冲线后的结算页,本局数据、纪录、下一次建议,保留 {0} 等占位符与对齐空格
+result.casualties,结算页,兔子伤亡              {0},RABBIT CASUALTIES      {0},冲线后的结算页,本局数据、纪录、下一次建议,保留 {0} 等占位符与对齐空格
+result.engine,结算页,乌龟故障              {0},TURTLE ENGINE FAILURE  {0},冲线后的结算页,本局数据、纪录、下一次建议,保留 {0} 等占位符与对齐空格
+result.coop,结算页,完美合作              {0},PERFECT COOPERATION    {0},冲线后的结算页,本局数据、纪录、下一次建议,保留 {0} 等占位符与对齐空格
+result.showtime,结算页,表演次数              {0},SHOWTIME               {0},冲线后的结算页,本局数据、纪录、下一次建议,保留 {0} 等占位符与对齐空格
+result.streak,结算页,完美连击              {0},PERFECT STREAK         {0},冲线后的结算页,本局数据、纪录、下一次建议,保留 {0} 等占位符与对齐空格
+result.accidents,结算页,事故总数              {0},TOTAL ACCIDENTS        {0},冲线后的结算页,本局数据、纪录、下一次建议,保留 {0} 等占位符与对齐空格
+result.clean,结算页,干净通过              {0},CLEAN PASSES           {0},冲线后的结算页,本局数据、纪录、下一次建议,保留 {0} 等占位符与对齐空格
+result.combos,结算页,连招                  {0},BRO COMBOS             {0},冲线后的结算页,本局数据、纪录、下一次建议,保留 {0} 等占位符与对齐空格
+result.rescues,结算页,救援成功              {0},RESCUE SAVES           {0},冲线后的结算页,本局数据、纪录、下一次建议,保留 {0} 等占位符与对齐空格
+result.snacks,结算页,亲手喂到              {0},HAND-FED SNACKS        {0},冲线后的结算页,本局数据、纪录、下一次建议,保留 {0} 等占位符与对齐空格
+result.try_combo,结算页,下次试试：兔子跳起来后按 SHIFT 让乌龟下潜（BRO DIVE）,"NEXT TRY: JUMP, THEN SHIFT THE TURTLE DOWN (BRO DIVE)",冲线后的结算页,本局数据、纪录、下一次建议,保留 {0} 等占位符与对齐空格
+result.try_snack,结算页,下次试试：按 SHIFT 换到乌龟，亲手把海藻喂给它,NEXT TRY: SHIFT TO THE TURTLE AND FEED IT THE SEAWEED,冲线后的结算页,本局数据、纪录、下一次建议,保留 {0} 等占位符与对齐空格
+result.try_rescue,结算页,下次试试：兔子落水时按 SHIFT 换乌龟，按住 ↓ 追下去接它,"NEXT TRY: WHEN THE RABBIT FALLS IN, SHIFT AND HOLD ↓ TO CATCH",冲线后的结算页,本局数据、纪录、下一次建议,保留 {0} 等占位符与对齐空格
+result.mistakes,结算页,失误                  {0},MISTAKES               {0},冲线后的结算页,本局数据、纪录、下一次建议,保留 {0} 等占位符与对齐空格
+result.joint,结算页,翻船次数              {0},CAPSIZES               {0},冲线后的结算页,本局数据、纪录、下一次建议,保留 {0} 等占位符与对齐空格
+result.best,结算页,最佳时间 {0}   最低事故 {1}   最长连击 {2},BEST TIME  {0}   BEST ACCIDENTS  {1}   BEST STREAK  {2},冲线后的结算页,本局数据、纪录、下一次建议,保留 {0} 等占位符与对齐空格
+result.new_time,结算页,新最佳时间！,NEW BEST TIME!,冲线后的结算页,本局数据、纪录、下一次建议,保留 {0} 等占位符与对齐空格
+result.new_streak,结算页,新最长连击！,NEW BEST STREAK!,冲线后的结算页,本局数据、纪录、下一次建议,保留 {0} 等占位符与对齐空格
+result.again,结算页,再玩一次,PLAY AGAIN,冲线后的结算页,本局数据、纪录、下一次建议,保留 {0} 等占位符与对齐空格
+result.menu,结算页,返回主菜单,MAIN MENU,冲线后的结算页,本局数据、纪录、下一次建议,保留 {0} 等占位符与对齐空格
+result.retry,结算页,R  -  重开        M  -  主菜单        Enter  -  选中的按钮,R  -  RETRY    M  -  MAIN MENU    ENTER  -  SELECTED BUTTON,冲线后的结算页,本局数据、纪录、下一次建议,保留 {0} 等占位符与对齐空格
+[race] BRO DIVE,动作成功,BRO DIVE,BRO DIVE,race.gd:3372，动作成功特效,BRO DIVE 成功的世界内大字,和 feedback.bro_dive 重复，建议只留一处
+[race] BRO OLLIE,动作成功,BRO OLLIE,BRO OLLIE,race.gd:3372，动作成功特效,BRO OLLIE 成功的世界内大字,和 feedback.bro_ollie 重复，建议只留一处
+[race] CURRENT,测试动词,CURRENT,CURRENT,race.gd:4487，仅 current_log 测试段,强水流方向标签,英文，且只存在于 P0-C 测试段
+[race] 下潜/起跳/无解,测试动词,下潜 / 起跳 / 无解,DIVE / JUMP / NO SOLUTION,race.gd:4507/4522/4527，仅 current_log 测试段,当前这一拍唯一安全解,玩家可见；若并入正式关卡应走 Locale
+[race] 绞盘↑/网低,测试动词,绞盘 ↑ / 网低,WINCH ↑ / NET LOW,race.gd:3868/3872，仅 state_net 测试段,吊网状态,玩家可见；若并入正式关卡应走 Locale

@@ -1,0 +1,34 @@
+{
+  "checks": [
+    {
+      "detail": "TUBO OVERLOAD 3/3",
+      "name": "full_meter_visible",
+      "ok": true
+    },
+    {
+      "detail": "BITT OVERLOAD 0/3",
+      "name": "other_brother_visible",
+      "ok": true
+    },
+    {
+      "detail": "SPACE TO RESCUE TUBO",
+      "name": "rescue_prompt_space",
+      "ok": true
+    },
+    {
+      "detail": "true",
+      "name": "space_keycap_visible",
+      "ok": true
+    },
+    {
+      "detail": "SHIFT TO BITT: ↑ LEAP / ↓ DIVE. SPACE RESCUES A TUBO IN THE WATER",
+      "name": "tutorial_mentions_space",
+      "ok": true
+    },
+    {
+      "detail": "SHIFT SWAP: TUBO ↑ JUMP / ↓ CROUCH; BITT ↑ LEAP / ↓ DIVE\nTHE BUBBLES OVER TUBO ARE AIR; A FULL OVERLOAD METER MAKES THE CURRENT BODY ACT OUT\nSEAWEED: SHIFT PICKS WHO EATS - BITT SPEEDS UP, TUBO JUMPS HIGHER; SKIPPING COSTS NOTHING\nSHIFT RELAYS · CLEAN PASSES BUILD BRO COMBO · TEAM MOVES START SHOWTIME\nSPACE: BITT RESCUES A TUBO IN THE WATER",
+      "name": "pause_help_mentions_space",
+      "ok": true
+    }
+  ]
+}

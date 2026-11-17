@@ -1,0 +1,33 @@
+{
+  "checks": [
+    {
+      "detail": "637/2000 = 31.9%",
+      "name": "rate_rabbit",
+      "ok": true
+    },
+    {
+      "detail": "starts=637 cancels=1363 state_ok=true",
+      "name": "state_rabbit",
+      "ok": true
+    },
+    {
+      "detail": "626/2000 = 31.3%",
+      "name": "rate_turtle",
+      "ok": true
+    },
+    {
+      "detail": "starts=626 cancels=1374 state_ok=true",
+      "name": "state_turtle",
+      "ok": true
+    },
+    {
+      "detail": "after1=0.0 cleared=true",
+      "name": "complaint_window_2_6",
+      "ok": true
+    }
+  ],
+  "rates": {
+    "rabbit": 0.3185,
+    "turtle": 0.313
+  }
+}

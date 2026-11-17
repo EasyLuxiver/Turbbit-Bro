@@ -1,0 +1,38 @@
+stage0_selftest exit=0 fails=0 | STAGE0 SELFTEST: PASS
+stage1_selftest exit=0 fails=0 | STAGE1 SELFTEST: PASS
+stage2_selftest exit=1 fails=9 | STAGE2 SELFTEST: FAIL
+stage3_selftest exit=0 fails=0 | STAGE3 SELFTEST: PASS
+stage4_bilingual exit=0 fails=0 | STAGE4 BILINGUAL: PASS
+stage4_flow exit=127 fails=0 | 
+stage4_hud_priority exit=0 fails=0 | STAGE4 HUD PRIORITY: PASS
+stage4_shift_graybox exit=0 fails=0 | STAGE4 SHIFT GRAYBOX: PASS
+stage4_gear_ab exit=0 fails=0 | 
+stage4_level_audit exit=0 fails=0 | 
+stage4_metrics exit=1 fails=2 | STAGE4 METRICS: FAIL
+stage4_bro_brain exit=0 fails=0 | STAGE4 BRO BRAIN: PASS
+stage4_bro_meter exit=0 fails=0 | STAGE4 BRO METER: PASS
+stage4_bro_dive_matrix exit=127 fails=0 | 
+stage4_menu_input exit=1 fails=16 | STAGE4 MENU INPUT: FAIL
+stage4_opening_pause exit=0 fails=0 | STAGE4 OPENING/PAUSE: PASS
+stage4_playful_joint_verdict exit=0 fails=0 | JOINT VERDICT: PASS
+stage7_drift_visible exit=0 fails=0 | CORE-FEEL-07 P1-D: PASS
+stage7_joint_penalty exit=0 fails=0 | CORE-FEEL-07 P0-B: PASS
+stage7d_joint_copy exit=0 fails=0 | CORE-FEEL-07D: PASS
+stage5_f_lessons exit=0 fails=0 | F LESSONS: PASS
+stage6_balance_matrix exit=0 fails=0 | REFINE06 P1 MATRIX: PASS
+DONE
+# ---- final targeted reruns ----
+stage1_selftest       PASS (gate pass)
+stage3_selftest       PASS (gate pass)
+stage4_opening_pause  PASS (gate pass)
+stage4_hud_priority   PASS (gate pass)
+stage4_flow           PASS standalone (gate timeout 127)
+stage4_bro_dive_matrix PASS standalone <180 s
+stage4_menu_input     windowed PASS (headless 16 pointer-only)
+stage4_hud_contrast   windowed PASS (worst 5.08)
+stage4_core_experience PASS
+stage4_metrics        FAIL 1: gate7->log6 3.62 s < 5 s combined
+stage4_z1_rhythm      PASS
+stage5_g21_relesson   PASS
+stage6_balance_matrix PASS
+stage3_playtest       PASS 55/55 0 accidents Retry

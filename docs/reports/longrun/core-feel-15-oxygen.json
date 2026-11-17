@@ -1,0 +1,44 @@
+{
+  "checks": [
+    {
+      "detail": "visible=false oxygen=6.00",
+      "name": "riding_hides_bubbles",
+      "ok": true
+    },
+    {
+      "detail": "oxygen=6.00",
+      "name": "riding_recovers_oxygen",
+      "ok": true
+    },
+    {
+      "detail": "visible=true",
+      "name": "water_shows_bubbles",
+      "ok": true
+    },
+    {
+      "detail": "oxygen=7.00",
+      "name": "water_drains_oxygen",
+      "ok": true
+    },
+    {
+      "detail": "auto=false mount=RESCUE_ACTIVE t=3.67",
+      "name": "no_timeout_auto_recovery",
+      "ok": true
+    },
+    {
+      "detail": "visible=true",
+      "name": "rescue_bubbles_visible",
+      "ok": true
+    },
+    {
+      "detail": "state=FAILED reason=OXYGEN_OUT",
+      "name": "oxygen_zero_fails",
+      "ok": true
+    },
+    {
+      "detail": "state=FAILED",
+      "name": "failure_does_not_use_result",
+      "ok": true
+    }
+  ]
+}

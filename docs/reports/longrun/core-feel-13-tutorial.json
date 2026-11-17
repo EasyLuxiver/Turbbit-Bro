@@ -1,0 +1,50 @@
+{
+  "checks": [
+    {
+      "detail": "step1 line/hint",
+      "name": "step1 text",
+      "ok": true
+    },
+    {
+      "detail": "cousin title",
+      "name": "cousin title",
+      "ok": true
+    },
+    {
+      "detail": "step2 replaces step1",
+      "name": "step2 immediate",
+      "ok": true
+    },
+    {
+      "detail": "step=2",
+      "name": "early action advances",
+      "ok": true
+    },
+    {
+      "detail": "line step3",
+      "name": "no stale prompt",
+      "ok": true
+    },
+    {
+      "detail": "fail text",
+      "name": "fail visible",
+      "ok": true
+    },
+    {
+      "detail": "fail hidden after 2.3 s",
+      "name": "fail fades",
+      "ok": true
+    },
+    {
+      "detail": "restart step1",
+      "name": "restart step1",
+      "ok": true
+    },
+    {
+      "detail": "finished=true tutorial_done=true",
+      "name": "skip finishes",
+      "ok": true
+    }
+  ],
+  "task": "FEEL-13 P1-B"
+}

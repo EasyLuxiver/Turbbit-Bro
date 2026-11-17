@@ -1,0 +1,34 @@
+{
+  "checks": [
+    {
+      "detail": "BITT 捣乱压力 2/3 ·",
+      "name": "other_near_full",
+      "ok": true
+    },
+    {
+      "detail": "(1.0, 0.8, 0.3, 1.0)",
+      "name": "other_near_full_color",
+      "ok": true
+    },
+    {
+      "detail": "BITT 捣乱压力 3/3 !",
+      "name": "other_full_warning",
+      "ok": true
+    },
+    {
+      "detail": "BITT 捣乱压力 3/3 | TUBO 捣乱压力 0/3",
+      "name": "shift_meter_switch",
+      "ok": true
+    },
+    {
+      "detail": "area=3.821%",
+      "name": "panel_area_ok",
+      "ok": true
+    },
+    {
+      "detail": "no new resource bar",
+      "name": "no_new_meter_nodes",
+      "ok": true
+    }
+  ]
+}

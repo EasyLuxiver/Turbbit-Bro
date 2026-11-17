@@ -1,0 +1,69 @@
+{
+  "checks": [
+    {
+      "detail": "48 相位里无解=0（both=22 jump_only=17 dive_only=9）",
+      "name": "current_always_safe",
+      "ok": true
+    },
+    {
+      "detail": "jump_only=17 dive_only=9",
+      "name": "current_alternates",
+      "ok": true
+    },
+    {
+      "detail": "dive-only@{ \"t\": 4.0, \"offset\": -86.6 } jump-only@{ \"t\": 0.5, \"offset\": 50.0 }",
+      "name": "current_extremes_reachable",
+      "ok": true
+    },
+    {
+      "detail": "到位 0.48 s，最终 -95.0 px",
+      "name": "net_raise_0p5s",
+      "ok": true
+    },
+    {
+      "detail": "网低：站着 hit=true，趴低 hit=false",
+      "name": "net_rabbit_choices",
+      "ok": true
+    },
+    {
+      "detail": "网高：站着 hit=false（应 false）",
+      "name": "net_switch_opens_lane",
+      "ok": true
+    },
+    {
+      "detail": "回落 1.0 s 后 0.00 px",
+      "name": "net_lower_returns",
+      "ok": true
+    }
+  ],
+  "generated_at": "2026-11-14T16:20:44",
+  "rows": [
+    {
+      "amp": 100.0,
+      "both": 22,
+      "dive_only": 9,
+      "dive_only_sample": {
+        "offset": -86.6,
+        "t": 4.0
+      },
+      "jump_only": 17,
+      "jump_only_sample": {
+        "offset": 50.0,
+        "t": 0.5
+      },
+      "neither": 0,
+      "period_s": 6.0,
+      "verb": "current"
+    },
+    {
+      "crouch_low_hit": false,
+      "raise_s": 0.475,
+      "raised_px": -95.0,
+      "returned_px": 0.0,
+      "ride_high_hit": false,
+      "ride_low_hit": true,
+      "verb": "net"
+    }
+  ],
+  "task": "TBB-CORE-FEEL-10 P0-C"
+}

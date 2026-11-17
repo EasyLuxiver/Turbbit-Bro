@@ -1,0 +1,32 @@
+stage1_selftest exit=0 | STAGE1 SELFTEST: PASS
+stage3_selftest exit=0 | STAGE3 SELFTEST: PASS
+stage4_core_experience exit=0 | STAGE4 CORE EXPERIENCE: PASS
+stage4_flow exit=0 | STAGE4 FLOW: PASS
+stage4_opening_pause exit=0 | STAGE4 OPENING/PAUSE: PASS
+stage4_hud_layout exit=0 | STAGE4 HUD LAYOUT: PASS
+stage4_hud_priority exit=0 | STAGE4 HUD PRIORITY: PASS
+stage4_hud_score exit=127 | HUD-SCORE PASS zh panel area 6.44% <= 8%
+stage4_bro_meter exit=0 | STAGE4 BRO METER: PASS
+stage5_f_lessons exit=0 | F LESSONS: PASS
+stage5_g21_relesson exit=0 | G21 RELESSON: PASS
+stage6_balance_matrix exit=0 | REFINE06 P1 MATRIX: PASS
+stage7_drift_visible exit=0 | CORE-FEEL-07 P1-D: PASS
+stage8_hz_regression exit=0 | CORE-FEEL-08 P2-8: PASS
+stage8_obstacle_identity exit=0 | P1C RESULT: PASS
+stage9_shift_showtime exit=0 | P0CD RESULT: PASS
+stage9_tutorial_timeline exit=0 | P1A RESULT: PASS
+stage9_runtime_identity exit=0 | P0A RESULT: PASS
+stage9_dynamic_rocks exit=0 | P0B RESULT: PASS
+stage3_playtest exit=127 |   ok  run 1 state RESULT
+DONE
+stage3_playtest (standalone, 600s) exit=0 | STAGE3 PLAYTEST: PASS (run1/run2 55/55, 0 accidents, 273.9s)
+# after log6/bird7/shark8 +360
+stage4_metrics        PASS
+stage4_core_experience PASS
+stage3_playtest       PASS 55/55 0 accidents
+stage6_balance_matrix PASS
+stage3_selftest       PASS (tail-gap metric)
+stage4_metrics        PASS
+stage4_core_experience PASS
+stage3_playtest       PASS seeds 12345/777/2026 (55/55, 0 accidents)
+stage5_g4_cheer      PASS (0.75 s tolerance)

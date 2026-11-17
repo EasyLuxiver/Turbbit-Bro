@@ -1,0 +1,149 @@
+{
+  "checks": [
+    {
+      "detail": "coop=21 combos=15",
+      "name": "coop_count",
+      "ok": true
+    },
+    {
+      "detail": "rock2=996,gate3=941,gate4=704,bird4=1180,log5=565,bird6=617,rock10=529,bird8=513,bird9=594",
+      "name": "combo_gaps_400_800",
+      "ok": true
+    },
+    {
+      "detail": "tight=log5,bird6,rock10,bird8,bird9",
+      "name": "tight_relay_count_5",
+      "ok": true
+    },
+    {
+      "detail": "rock6->gate4 704 px = 2.93 s",
+      "name": "z2_anticipation_gap",
+      "ok": true
+    },
+    {
+      "detail": "count=5",
+      "name": "dual_count",
+      "ok": true
+    },
+    {
+      "detail": "低梁：兔子趴低，或 SHIFT 乌龟下潜（耗氧）",
+      "name": "dual_beam_prompt",
+      "ok": true
+    },
+    {
+      "detail": "海鸟低飞：兔子趴低，或 SHIFT 乌龟下潜（耗氧）",
+      "name": "dual_bird_prompt",
+      "ok": true
+    },
+    {
+      "detail": "礁石：兔子跳过，或 SHIFT 乌龟下潜（耗氧，省一次换人）",
+      "name": "dual_rock_prompt",
+      "ok": true
+    },
+    {
+      "detail": "潮汐岩：兔子看浪谷跳过（时机风险），或 SHIFT 乌龟下潜（耗氧）",
+      "name": "dual_tide_prompt",
+      "ok": true
+    },
+    {
+      "detail": "低梁：兔子趴低，或 SHIFT 乌龟下潜（耗氧）",
+      "name": "dual_prompt_live",
+      "ok": true
+    },
+    {
+      "detail": "低梁：兔子趴低，或 SHIFT 乌龟下潜（耗氧）",
+      "name": "dual_prompt_mentions_two_answers",
+      "ok": true
+    },
+    {
+      "detail": "连招：拱下潜 → SHIFT 兔子跳过岩石",
+      "name": "z1_chain_prompt_live",
+      "ok": true
+    },
+    {
+      "detail": "海鸟低飞：兔子趴低，或 SHIFT 乌龟下潜（耗氧）",
+      "name": "z1_bird2_prompt_live",
+      "ok": true
+    },
+    {
+      "detail": "LOW_BEAM vs LOW_BEAM|dual",
+      "name": "dual_lesson_key",
+      "ok": true
+    },
+    {
+      "detail": "连招：拱下潜 → 立刻 SHIFT 兔子跳 → SHIFT 乌龟潜（浮木）",
+      "name": "tight_relay_prompt",
+      "ok": true
+    },
+    {
+      "detail": "FLOATING_LOG|relay",
+      "name": "tight_relay_lesson_key",
+      "ok": true
+    },
+    {
+      "detail": "连招：拱下潜 → SHIFT 兔子跳过岩石",
+      "name": "z1_chain_prompt",
+      "ok": true
+    },
+    {
+      "detail": "提前换人：礁石后 3 秒是拱门——跳完立刻 SHIFT 乌龟，或直接潜过礁石",
+      "name": "z2_anticipation_prompt",
+      "ok": true
+    },
+    {
+      "detail": "early + tight combos have failure-cause text",
+      "name": "relay_fail_hints",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"up\",\"oxygen_used\":false,\"passed\":true,\"who\":\"rabbit\"}",
+      "name": "dual_rabbit_passes_rock3",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"oxygen_used\":true,\"passed\":true,\"who\":\"turtle\"}",
+      "name": "dual_turtle_passes_rock3",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"oxygen_used\":false,\"passed\":true,\"who\":\"rabbit\"}",
+      "name": "dual_rabbit_passes_bird2",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"oxygen_used\":true,\"passed\":true,\"who\":\"turtle\"}",
+      "name": "dual_turtle_passes_bird2",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"oxygen_used\":false,\"passed\":true,\"who\":\"rabbit\"}",
+      "name": "dual_rabbit_passes_beam4",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"oxygen_used\":true,\"passed\":true,\"who\":\"turtle\"}",
+      "name": "dual_turtle_passes_beam4",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"up\",\"oxygen_used\":false,\"passed\":true,\"who\":\"rabbit\"}",
+      "name": "dual_rabbit_passes_rock6",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"oxygen_used\":true,\"passed\":true,\"who\":\"turtle\"}",
+      "name": "dual_turtle_passes_rock6",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"oxygen_used\":false,\"passed\":true,\"who\":\"rabbit\"}",
+      "name": "dual_rabbit_passes_beam5",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"oxygen_used\":true,\"passed\":true,\"who\":\"turtle\"}",
+      "name": "dual_turtle_passes_beam5",
+      "ok": true
+    }
+  ]
+}

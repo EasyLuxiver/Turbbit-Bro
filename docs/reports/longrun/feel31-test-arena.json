@@ -1,0 +1,119 @@
+{
+  "checks": [
+    {
+      "detail": "groups=0",
+      "name": "arena_starts_empty",
+      "ok": true
+    },
+    {
+      "detail": "no_finish=true no_best=true",
+      "name": "arena_no_finish",
+      "ok": true
+    },
+    {
+      "detail": "dx=216",
+      "name": "arena_moves_forward",
+      "ok": true
+    },
+    {
+      "detail": "kind=SURFACE_ROCK spawned=true hit=true",
+      "name": "spawn_SURFACE_ROCK",
+      "ok": true
+    },
+    {
+      "detail": "kind=LOW_BIRD spawned=true hit=true",
+      "name": "spawn_LOW_BIRD",
+      "ok": true
+    },
+    {
+      "detail": "kind=LOW_BEAM spawned=true hit=true",
+      "name": "spawn_LOW_BEAM",
+      "ok": true
+    },
+    {
+      "detail": "kind=DIVE_GATE spawned=true hit=true",
+      "name": "spawn_DIVE_GATE",
+      "ok": true
+    },
+    {
+      "detail": "kind=FLOATING_LOG spawned=true hit=true",
+      "name": "spawn_FLOATING_LOG",
+      "ok": true
+    },
+    {
+      "detail": "kind=SHARK spawned=true hit=true",
+      "name": "spawn_SHARK",
+      "ok": true
+    },
+    {
+      "detail": "kind=HIGH_WALL spawned=true hit=true",
+      "name": "spawn_HIGH_WALL",
+      "ok": true
+    },
+    {
+      "detail": "kind=SHARK spawned=true hit=true",
+      "name": "spawn_SHARK6",
+      "ok": true
+    },
+    {
+      "detail": "groups=0",
+      "name": "clear_removes_all",
+      "ok": true
+    },
+    {
+      "detail": "groups=2",
+      "name": "multiple_spawns",
+      "ok": true
+    },
+    {
+      "detail": "stands=9.5 accidents=0",
+      "name": "stands_no_harm",
+      "ok": true
+    },
+    {
+      "detail": "method=false",
+      "name": "intervention_removed",
+      "ok": true
+    },
+    {
+      "detail": "[\"leader\", \"fat\", \"thin\"]",
+      "name": "shark6_all_three_attack",
+      "ok": true
+    },
+    {
+      "detail": "groups=1",
+      "name": "mouse_spawn_button",
+      "ok": true
+    },
+    {
+      "detail": "best byte-identical",
+      "name": "best_json_untouched",
+      "ok": true
+    },
+    {
+      "detail": "found=false",
+      "name": "menu_test_arena_hidden",
+      "ok": true
+    },
+    {
+      "detail": "res://scenes/test_arena.tscn",
+      "name": "arena_scene_direct",
+      "ok": true
+    },
+    {
+      "detail": "opening=false",
+      "name": "arena_no_opening_overlay",
+      "ok": true
+    },
+    {
+      "detail": "res://scenes/test_arena.tscn empty=true",
+      "name": "arena_restart",
+      "ok": true
+    },
+    {
+      "detail": "res://scenes/menu.tscn",
+      "name": "arena_returns_menu",
+      "ok": true
+    }
+  ]
+}

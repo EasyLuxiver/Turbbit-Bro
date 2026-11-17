@@ -1,0 +1,26 @@
+{
+  "checks": [
+    {
+      "detail": "res://scenes/opening_comic.tscn",
+      "name": "fresh_start_opens_comic",
+      "ok": true
+    },
+    {
+      "detail": "res://scenes/tutorial.tscn",
+      "name": "comic_finish_opens_tutorial",
+      "ok": true
+    },
+    {
+      "detail": "res://scenes/race.tscn",
+      "name": "tutorial_finish_opens_race",
+      "ok": true
+    },
+    {
+      "detail": "res://scenes/race.tscn story=true tutorial=true",
+      "name": "retry_skips_story",
+      "ok": true
+    }
+  ],
+  "generated_at": "2026-11-14T21:42:53",
+  "task": "TBB-CORE-FEEL-11 F"
+}
