@@ -15,6 +15,8 @@ signal center_message(text: String, color: Color)
 ## 干净通过 / BRO PASS 的短反馈，和“首次介绍”分开，避免重复教学。
 signal feedback(text: String, kind: String)
 signal prompt(text: String)
+## PHASE-FIX：兄弟对话提示；who 是说话者，HUD 用小头像显示。
+signal bro_say(who: String, text: String)
 ## BRO METER 三格共享事故槽：每涨一格、满格各发一次。
 signal bro_meter_changed(slots: int)
 signal bro_meter_full
@@ -40,6 +42,8 @@ var test_no_best := false
 ## FEEL-11：首次启动先看 7 格连环画，再进 60–90 s 教学；之后直接比赛。
 var story_seen := false
 var tutorial_done := false
+## PHASE-FIX：教学→正赛时让比赛场景从黑场淡入。
+var race_fade_in := false
 var current_control: String = "rabbit"
 var has_shifted: bool = false
 var shift_count: int = 0

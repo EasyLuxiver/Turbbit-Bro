@@ -211,6 +211,18 @@ var _mischief_role := ""
 var _mischief_phase := ""
 var _mischief_t := 0.0
 var _mischief_cd := 0.0
+## PHASE-FIX：乌龟撞上乌龟层障碍后弹回；连续 6 次直接失败。
+var _bonk_streak := 0
+var _bonk_level := 0
+var _bounce_cd := 0.0
+## PHASE-FIX：Showtime 小奖励的冷却与乌龟视觉腾空。
+var _showtime_cd := 0.0
+var _showtime_turtle_y := 0.0
+var _showtime_turtle_spin := 0.0
+const BONK_BACK := 140.0
+const BONK_CD := 0.8
+const BONK_FAIL_COUNT := 6
+const BONK_KINDS := ["DIVE_GATE", "HIGH_WALL", "FLOATING_LOG", "SHARK"]
 var _mischief_last_control := ""
 var _mischief_fx_kind := ""
 var _mischief_fx_t := 0.0
@@ -234,6 +246,8 @@ var _ambush: Dictionary = {}
 var _bird_states: Dictionary = {}
 var _bird_attacks: Array = []
 var _bird_splashes: Array = []
+## PHASE-FIX：落水后的便便停止旋转、下沉淡出。
+var _poop_sinks: Array = []
 ## FEEL-21 P1-B：仅 shark6 单组鲨鱼群。
 ## FEEL-49：三只鲨鱼是持续存在的实体，平时在船底跟随，攻击时由同一只鱼
 ## 从深水上冲到攻击位置；不再“水里三只 + 另外凭空生成一个攻击体”。
@@ -261,9 +275,9 @@ const PACK_SAFETY := 0.70
 ## FEEL-49：三只实体共用的攻击动作。上冲 0.12 s，压顶 0.55 s，下潜 0.45 s；
 ## 攻击体不再有独立寿命，生命周期完全由同一只鲨鱼的相位驱动。
 const PACK_FOLLOW_TIME := 0.85
-const PACK_ACTOR_RISE := 0.12
-const PACK_ACTOR_HOLD := 0.55
-const PACK_ACTOR_RETREAT := 0.45
+const PACK_ACTOR_RISE := 0.26
+const PACK_ACTOR_HOLD := 0.60
+const PACK_ACTOR_RETREAT := 0.55
 const PACK_DEEP_TOP := 760.0
 var turtle_repair := 0.0
 var turtle_grace := 0.0
@@ -285,6 +299,10 @@ var test_no_lessons := false
 var quiet_lessons := DisplayServer.get_name() != "headless"
 ## FEEL-33：教学是教学，不是惩罚局；教学期间关闭抱怨/捣乱。
 var test_no_mischief := false
+## 回归测试可关掉概率 Showtime，避免整关结果抖动。
+var test_no_showtime := false
+## 教学/回归关闭撞击弹回，避免把固定驾驶器的路线推回。
+var test_no_bounce := false
 ## 路线审计/基础动作矩阵用：只测普通路线，不让自动电流过载改变动作。
 var test_no_overdrive := false
 ## FEEL-19：需要纯基线审计时可关海鸟额外行为；正式比赛默认开。
@@ -553,6 +571,21 @@ func _ready() -> void:
 	_update_camera()
 	queue_redraw()
 
+	# PHASE-FIX：教学→正赛时从黑场淡入，不要硬切。
+	if GameManager.race_fade_in:
+		GameManager.race_fade_in = false
+		var fade_layer := CanvasLayer.new()
+		fade_layer.layer = 100
+		add_child(fade_layer)
+		var fade_rect := ColorRect.new()
+		fade_rect.color = Color(0, 0, 0, 1)
+		fade_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		fade_rect.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		fade_layer.add_child(fade_rect)
+		var tw := create_tween()
+		tw.tween_property(fade_rect, "color:a", 0.0, 0.35)
+		tw.tween_callback(func() -> void: fade_layer.queue_free())
+
 	# P2-7：正式开局先播一段可跳过的开场占位。headless 测试与非开场截图
 	# 默认不挂，避免改变既有测试与回归的行为。
 	if _opening_wanted():
@@ -785,6 +818,9 @@ func clear_test_groups() -> void:
 
 func load_level(groups: Array, lanes: Array) -> void:
 	hazard_groups = groups
+	_bonk_streak = 0
+	_bonk_level = 0
+	_bounce_cd = 0.0
 	boost_lanes = lanes
 	reset_brains()
 	group_actions.clear()
@@ -1183,6 +1219,8 @@ func _physics_process(delta: float) -> void:
 	# REBUILD-06 P3：伏击鲨的状态每帧先推进，再判、再顶住：
 	# 这一帧画出来的位置就是这一帧用来判的位置。
 	_update_ambush_sharks(delta)
+	_bounce_cd = maxf(_bounce_cd - delta, 0.0)
+	_showtime_cd = maxf(_showtime_cd - delta, 0.0)
 	_tick_bird_behaviors(delta)
 	_check_bird_attacks(delta)
 	_tick_shark_pack(delta)
@@ -1254,6 +1292,8 @@ func _update_lessons() -> void:
 		if clear_d > 0.0 and clear_d < frontier:
 			frontier = clear_d
 	for g in hazard_groups:
+		if _shark_arena_hides(g):
+			continue
 		var kind: String = g["kind"]
 		var key := _lesson_key(g)
 		if lesson_seen.has(key):
@@ -2466,6 +2506,46 @@ func _turtle_contact(_key: String, kind: String = "", charge: bool = true) -> vo
 			"TURTLE_DIVE_LATE" if kind == "FLOATING_LOG" else "TURTLE_WAVE",
 			"turtle")
 		_bump_visual_stress("turtle", 1.0)
+	_apply_bounce(_key, kind)
+
+
+func _apply_bounce(key: String, kind: String) -> void:
+	if test_no_bounce:
+		return
+	if _bounce_cd > 0.0:
+		return
+	if not (kind in BONK_KINDS) or key.begins_with("pack_"):
+		return
+	var g := _group_by_name(key)
+	if g.is_empty():
+		return
+	var idx := -1
+	for i in hazard_groups.size():
+		if String(hazard_groups[i].get("group", "")) == key:
+			idx = i
+			break
+	if idx < 0:
+		return
+	# 后退 140 px；如果会退进上一组，就停在上一组末端 + 80。
+	var floor_x := 40.0
+	if idx > 0:
+		floor_x = _group_end(hazard_groups[idx - 1]) + 80.0
+	turtle.position.x = maxf(turtle.position.x - BONK_BACK, floor_x)
+	turtle.speed = 0.0
+	_bounce_cd = BONK_CD
+	_bonk_streak += 1
+	_bonk_level = mini(_bonk_streak, BONK_FAIL_COUNT)
+	GameManager.feedback.emit(Locale.t("feedback.turtle_bonk",
+		[_bonk_level, BONK_FAIL_COUNT]), "hit")
+	if _bonk_streak == 2:
+		var speaker := "rabbit" if GameManager.current_control == "turtle" else "turtle"
+		GameManager.bro_say.emit(speaker, Locale.t("bro.bonk"))
+	if _bonk_streak >= BONK_FAIL_COUNT:
+		_bonk_fail()
+
+
+func _bonk_fail() -> void:
+	GameManager.finish_failure("BONK_OUT")
 
 
 ## 旧的“壳沉太深”暗流不再存在：乌龟待命也停在巡航水深。
@@ -2488,6 +2568,9 @@ func _check_hazards() -> void:
 	for g in hazard_groups:
 		var group: Dictionary = g
 		var key := String(group["group"])
+		# 鲨群专场：三拍期间附近普通障碍不出现、不判。
+		if _shark_arena_hides(group):
+			continue
 		# shark6 的碰撞由三只实体鲨鱼负责；旧组只保留位置锚点。
 		if _pack_owns(key):
 			continue
@@ -2746,12 +2829,18 @@ func _update_combo() -> void:
 			else:
 				# FEEL-24：取消“3 组自动积累 → SHOWTIME”的机械流程。
 				combo = 0
+				_bonk_streak = 0
+				_bonk_level = 0
 				var kind: String = String(group["kind"])
 				var act: Dictionary = group_actions.get(key, {})
 				var precise := _precise_action(kind, act)
 				if precise:
 					# 连招整段完成才给 250/300；精准单动作 150；其余干净通过 100。
 					GameManager.note_precise_pass(kind)
+					# PHASE-FIX：BRO DIVE/OLLIE/精准动作概率触发小 SHOWTIME；
+					# 不用 0/3 计数器，一局最多 3 次。
+					if not test_no_showtime and not showtime_active 							and _showtime_cd <= 0.0 							and GameManager.showtime_count < 3 							and randf() < Tuning.SHOWTIME_CHANCE:
+						start_showtime()
 					match kind:
 						"FLOATING_LOG":
 							GameManager.feedback.emit(Locale.t("feedback.bro_dive"), "bro")
@@ -3146,9 +3235,23 @@ func _showtime_clear_ahead() -> bool:
 	return true
 
 
+func _clear_penalty_state() -> void:
+	GameManager.clear_bro_meter()
+	GameManager.complaint_role = ""
+	GameManager.complaint_t = 0.0
+	GameManager.role_mischief_pending = false
+	GameManager.role_mischief_role = ""
+	GameManager.mischief_lock_role = ""
+	_visual_stress = {"rabbit": 0.0, "turtle": 0.0}
+
+
 func start_showtime() -> void:
 	if showtime_active or GameManager.accident_state != "NONE":
 		return
+	if not _showtime_clear_ahead():
+		return
+	_clear_penalty_state()
+	_showtime_cd = Tuning.SHOWTIME_CD
 	showtime_active = true
 	GameManager.showtime_active = true
 	showtime_t = 0.0
@@ -3166,20 +3269,15 @@ func _tick_showtime(delta: float) -> void:
 	var base: Vector2 = turtle.get_mount_point()
 	var offset := 0.0
 	var spin := 0.0
-	if p < 0.31:
-		var q := p / 0.31
-		offset = -sin(q * PI) * 90.0
-		spin = q * TAU * 2.0
-	elif p < 0.64:
-		offset = -absf(sin((p - 0.31) * 30.0)) * 6.0
-		spin = TAU * 2.0
-	else:
-		offset = -4.0
-		spin = TAU * 2.0
+	# 小幅度：兔子小跳 + 一圈后空翻；乌龟一起小 ollie + 转一下。
+	offset = -sin(p * PI) * 26.0
+	spin = p * TAU
 	rabbit.state = "SHOWTIME"
 	rabbit.showtime_spin = spin
-	rabbit.showtime_pose = p >= 0.64
+	rabbit.showtime_pose = p >= 0.7
 	rabbit.position = base + Vector2(0.0, offset)
+	_showtime_turtle_y = -sin(p * PI) * 22.0
+	_showtime_turtle_spin = p * TAU
 	if showtime_t >= Tuning.SHOWTIME_TIME:
 		_end_showtime(true)
 
@@ -3191,6 +3289,8 @@ func _end_showtime(completed: bool) -> void:
 	GameManager.showtime_active = false
 	rabbit.showtime_spin = 0.0
 	rabbit.showtime_pose = false
+	_showtime_turtle_y = 0.0
+	_showtime_turtle_spin = 0.0
 	rabbit.attach(turtle.get_mount_point())
 	mount.mark_riding()
 	if completed:
@@ -3213,14 +3313,11 @@ func _end_showtime(completed: bool) -> void:
 				Locale.t("feedback.showtime_reward", ["%.1f" % oxy_gain]), "bro")
 		turtle_grace = 1.0
 		rabbit_grace = 1.0
-		GameManager.center_message.emit(Locale.t("center.brotherhood"),
+		GameManager.center_message.emit(Locale.t("center.showtime"),
 			Color(1.0, 0.85, 0.25))
 	else:
-		# 中断：跳过提示期，兔子直接从滑落读秒；控制权不抢。
-		rabbit.force_slip()
+		# PHASE-FIX：Showtime 是小奖励，不因中途换人反扣一次滑落。
 		rabbit_grace = 0.0
-		GameManager.center_message.emit(Locale.t("center.shows_over"),
-			Color(0.8, 0.85, 0.9))
 
 
 func showtime_left() -> float:
@@ -3422,6 +3519,8 @@ func next_hazard_info() -> Dictionary:
 	var best_d := 1.0e9
 	for g in hazard_groups:
 		var group: Dictionary = g
+		if _shark_arena_hides(group):
+			continue
 		var rect: Rect2 = group["rects"][0]
 		var d: float = rect.position.x - turtle.position.x
 		if d < -60.0:
@@ -4474,6 +4573,8 @@ func _draw() -> void:
 
 	for g in hazard_groups:
 		var group: Dictionary = g
+		if _shark_arena_hides(group):
+			continue
 		for i in group["rects"].size():
 			_draw_hazard(group, i)
 		if not group.get("motion", {}).is_empty():
@@ -4525,18 +4626,27 @@ func _layer_screen_positions(cam_x: float, parallax: float, period: float,
 	return out
 
 
+func _zone_layer_fade(cam_x: float, z: Dictionary) -> float:
+	# PHASE-5：区域边界不再硬裁剪；前后各 600 px 把整层 alpha 淡到 0。
+	var start := float(z["start"])
+	var end := float(z["end"])
+	var m := 600.0
+	return clampf(minf((cam_x - (start - m)) / m, ((end + m) - cam_x) / m), 0.0, 1.0)
+
+
 func _draw_zone1_layers(cam_x: float) -> void:
 	var z: Dictionary = LevelDataScript.ZONES[0]
-	if cam_x < float(z["start"]) - 200.0 or cam_x > float(z["end"]) + 200.0:
+	var fade := _zone_layer_fade(cam_x, z)
+	if fade <= 0.01:
 		return
 	# 远景云：p=0.18。
 	var clouds := _layer_screen_positions(cam_x, 0.18, 820.0, 4, 0.0)
 	for idx in clouds.size():
 		var sx: float = clouds[idx]
 		var cy := 72.0 + float(idx % 3) * 34.0
-		draw_circle(Vector2(sx, cy), 28.0, Color(1, 1, 1, 0.11))
-		draw_circle(Vector2(sx + 34, cy + 4), 22.0, Color(1, 1, 1, 0.09))
-		draw_circle(Vector2(sx - 30, cy + 7), 18.0, Color(1, 1, 1, 0.08))
+		draw_circle(Vector2(sx, cy), 28.0, Color(1, 1, 1, 0.11 * fade))
+		draw_circle(Vector2(sx + 34, cy + 4), 22.0, Color(1, 1, 1, 0.09 * fade))
+		draw_circle(Vector2(sx - 30, cy + 7), 18.0, Color(1, 1, 1, 0.08 * fade))
 	# 远景岛：p=0.32。
 	var islands := _layer_screen_positions(cam_x, 0.32, 1500.0, 4, 260.0)
 	for idx in islands.size():
@@ -4546,30 +4656,31 @@ func _draw_zone1_layers(cam_x: float) -> void:
 			Vector2(sx - w, SURFACE_Y), Vector2(sx - w * 0.6, SURFACE_Y - 34.0),
 			Vector2(sx - w * 0.1, SURFACE_Y - 18.0), Vector2(sx + w * 0.5, SURFACE_Y - 42.0),
 			Vector2(sx + w, SURFACE_Y),
-		]), Color(0.24, 0.38, 0.42, 0.62))
+		]), Color(0.24, 0.38, 0.42, 0.62 * fade))
 	# 中景棕榈/木桩：p=0.62。
 	var palms := _layer_screen_positions(cam_x, 0.62, 980.0, 4, 120.0)
 	for idx in palms.size():
 		var sx: float = palms[idx]
-		var trunk := Color(0.22, 0.30, 0.23, 0.85)
+		var trunk := Color(0.22, 0.30, 0.23, 0.85 * fade)
 		draw_line(Vector2(sx, SURFACE_Y + 14.0), Vector2(sx + 10.0, SURFACE_Y - 52.0), trunk, 5.0)
 		for j in 3:
 			var a := -PI * 0.5 + (float(j) - 1.0) * 0.85
 			draw_line(Vector2(sx + 10.0, SURFACE_Y - 52.0),
 				Vector2(sx + 10.0, SURFACE_Y - 52.0) + Vector2(cos(a), sin(a)) * 34.0,
-				Color(0.20, 0.42, 0.28, 0.82), 4.0)
+				Color(0.20, 0.42, 0.28, 0.82 * fade), 4.0)
 	# 近景浪：p=1.12。
 	var waves := _layer_screen_positions(cam_x, 1.12, 360.0, 6, 0.0)
 	for idx in waves.size():
 		var sx: float = waves[idx]
 		var wy := 664.0 + float(idx % 4) * 42.0
 		draw_arc(Vector2(sx, wy), 26.0 + float(idx % 3) * 8.0,
-			0.12, PI - 0.12, 10, Color(0.78, 0.96, 1.0, 0.18), 2.0)
+			0.12, PI - 0.12, 10, Color(0.78, 0.96, 1.0, 0.18 * fade), 2.0)
 
 
 func _draw_zone3_layers(cam_x: float) -> void:
 	var z: Dictionary = LevelDataScript.ZONES[2]
-	if cam_x < float(z["start"]) - 200.0 or cam_x > float(z["end"]) + 200.0:
+	var fade := _zone_layer_fade(cam_x, z)
+	if fade <= 0.01:
 		return
 	# 远景礁柱：p=0.25。
 	var spires := _layer_screen_positions(cam_x, 0.25, 1450.0, 4, 180.0)
@@ -4580,31 +4691,32 @@ func _draw_zone3_layers(cam_x: float) -> void:
 			Vector2(sx - 52, SURFACE_Y), Vector2(sx - 22, SURFACE_Y - h),
 			Vector2(sx + 12, SURFACE_Y - h - 26.0), Vector2(sx + 38, SURFACE_Y - h * 0.5),
 			Vector2(sx + 58, SURFACE_Y),
-		]), Color(0.34, 0.18, 0.11, 0.66))
+		]), Color(0.34, 0.18, 0.11, 0.66 * fade))
 	# 中景吊架/沉船骨架：p=0.55。
 	var rigs := _layer_screen_positions(cam_x, 0.55, 1900.0, 3, 500.0)
 	for idx in rigs.size():
 		var sx: float = rigs[idx]
-		var col := Color(0.22, 0.14, 0.10, 0.86)
+		var col := Color(0.22, 0.14, 0.10, 0.86 * fade)
 		draw_line(Vector2(sx, SURFACE_Y + 40.0), Vector2(sx, SURFACE_Y - 90.0), col, 6.0)
 		draw_line(Vector2(sx - 44.0, SURFACE_Y - 64.0), Vector2(sx + 44.0, SURFACE_Y - 64.0), col, 5.0)
 		draw_line(Vector2(sx - 30.0, SURFACE_Y - 64.0), Vector2(sx - 30.0, SURFACE_Y - 24.0), col, 3.0)
-		draw_circle(Vector2(sx, SURFACE_Y - 96.0), 7.0, Color(0.62, 0.28, 0.16, 0.9))
+		draw_circle(Vector2(sx, SURFACE_Y - 96.0), 7.0, Color(0.62, 0.28, 0.16, 0.9 * fade))
 	# 近景浪：p=1.15。
 	var waves := _layer_screen_positions(cam_x, 1.15, 430.0, 5, 0.0)
 	for idx in waves.size():
 		var sx: float = waves[idx]
 		var wy := 628.0 + float(idx % 4) * 48.0
 		draw_arc(Vector2(sx, wy), 30.0 + float(idx % 3) * 10.0,
-			0.10, PI - 0.10, 12, Color(1.0, 0.74, 0.42, 0.18), 2.0)
+			0.10, PI - 0.10, 12, Color(1.0, 0.74, 0.42, 0.18 * fade), 2.0)
 
 
 ## FEEL-10 P0-D：Z1→Z2 的横向渐变带。只画颜色，不改任何坐标或遮挡关系。
 ## 右端 alpha 归零，码头六层从下面透出来；入口因此是“化开”而不是“切一刀”。
 func _draw_zone2_blend() -> void:
 	var z1: Dictionary = LevelDataScript.ZONES[0]
-	var x0 := 14600.0
-	var x1 := 15200.0
+	# PHASE-5 压缩后 Z1 平色在 9600 结束、Z2 从 10000 开始。
+	var x0 := 9600.0
+	var x1 := 10200.0
 	var bands := [
 		[-200.0, 300.0, z1["sky"]],
 		[300.0, 460.0, z1["water"]],
@@ -5154,6 +5266,25 @@ func _shark_group(key: String) -> Dictionary:
 	return {}
 
 
+func _shark_arena_active() -> bool:
+	if _shark_pack.is_empty():
+		return false
+	var ph := String(_shark_pack.get("shark6", {}).get("phase", "DONE"))
+	return ph != "CIRCLE" and ph != "DONE"
+
+
+func _shark_arena_hides(group: Dictionary) -> bool:
+	if not _shark_arena_active():
+		return false
+	if String(group.get("group", "")) == "shark6":
+		return false
+	var sg := _shark_group("shark6")
+	if sg.is_empty():
+		return false
+	return absf(LevelDataScript.group_start(group)
+		- LevelDataScript.group_start(sg)) <= 1500.0
+
+
 func _tick_shark_pack(delta: float) -> void:
 	if _shark_pack.is_empty():
 		return
@@ -5270,7 +5401,9 @@ func _update_pack_swimmers(delta: float) -> void:
 	for a in _pack_actors:
 		if String(a.get("phase", "")) != "SWIM":
 			continue
-		a["x"] = turtle.position.x + float(a["offset"])
+		var want_x: float = turtle.position.x + float(a["offset"])
+		a["x"] = lerpf(float(a.get("x", want_x)), want_x,
+			clampf(delta * 8.0, 0.0, 1.0))
 		a["y"] = 620.0 + sin(Time.get_ticks_msec() * 0.004 +
 			float(a["offset"]) * 0.013) * 5.0
 		var size: Vector2 = a["size"]
@@ -5302,10 +5435,13 @@ func _pack_begin_warn(mode: String, duration: float) -> void:
 	match mode:
 		"leader":
 			GameManager.feedback.emit(Locale.t("feedback.shark_boss_ready"), "hit")
+			GameManager.bro_say.emit("rabbit", Locale.t("bro.leap"))
 		"fat":
 			GameManager.feedback.emit(Locale.t("feedback.shark_fat"), "hit")
+			GameManager.bro_say.emit("turtle", Locale.t("bro.crouch"))
 		"thin":
 			GameManager.feedback.emit(Locale.t("feedback.shark_thin"), "hit")
+			GameManager.bro_say.emit("rabbit", Locale.t("bro.down"))
 
 
 ## 同一只鲨鱼走完 WARN → RISE → HOLD → RETREAT → SWIM。
@@ -5333,9 +5469,12 @@ func _advance_pack_actor(a: Dictionary, delta: float) -> void:
 					float(a["attack_top"]), size.x, size.y)
 			else:
 				var p := smoothstep(0.0, 1.0, t / PACK_ACTOR_RISE)
+				var y := lerpf(PACK_DEEP_TOP, float(a["attack_top"]), p)
+				# 过冲 12 px 再回落，读作“整条鱼冲出水”。
+				if p > 0.78:
+					y -= sin((p - 0.78) / 0.22 * PI) * 12.0
 				a["rect"] = Rect2(float(a["tx"]) - size.x * 0.5,
-					lerpf(PACK_DEEP_TOP, float(a["attack_top"]), p),
-					size.x, size.y)
+					y, size.x, size.y)
 			a["x"] = float(a["tx"])
 			a["y"] = (a["rect"] as Rect2).get_center().y
 		"HOLD":
@@ -5488,8 +5627,8 @@ func _draw_shark_pack_fx() -> void:
 						Color(0.85, 0.96, 1.0, 0.65 * (1.0 - bt)))
 				draw_line(Vector2(p.x, SURFACE_Y), target + Vector2(0, -18),
 					Color(1.0, 0.5, 0.25, 0.38), 3.0)
-				draw_arc(target, 28.0, 0.0, TAU, 28,
-					Color(1.0, 0.5, 0.25, 0.82), 3.0)
+				_draw_lock_reticle(target, Color(1.0, 0.5, 0.25),
+					false, String(a["target"]))
 				draw_string(ThemeDB.fallback_font, target + Vector2(-8, -96), "!",
 					HORIZONTAL_ALIGNMENT_LEFT, -1, 28,
 					Color(1.0, 0.55, 0.25, 0.95))
@@ -5513,6 +5652,30 @@ func _draw_shark_pack_fx() -> void:
 					Color(0.85, 0.96, 1.0, 0.45 * (1.0 - bt)))
 			_draw_pack_shark_rising(rect, bool(a.get("fat", false)))
 			draw_rect(rect, Color(1.0, 0.5, 0.25, 0.16), false, 2.0)
+	_draw_pack_lock()
+
+
+func _draw_lock_reticle(target: Vector2, col: Color, locked: bool,
+		who: String) -> void:
+	var r := 34.0
+	if locked:
+		r = 31.0 + sin(Time.get_ticks_msec() * 0.014) * 1.5
+	draw_arc(target, r, 0.0, TAU, 36, Color(col.r, col.g, col.b, 0.92), 2.5)
+	for d in [Vector2(0, -1), Vector2(1, 0), Vector2(0, 1), Vector2(-1, 0)]:
+		draw_line(target + d * (r + 7.0), target + d * 12.0, col, 3.0)
+	draw_circle(target, 3.0, col)
+	draw_string(ThemeDB.fallback_font, target + Vector2(-18, r + 22),
+		Locale.t("who." + who), HORIZONTAL_ALIGNMENT_LEFT, -1, 14, col)
+
+
+func _draw_pack_lock() -> void:
+	for a in _pack_actors:
+		var ap := String(a.get("phase", ""))
+		if ap not in ["RISE", "HOLD"]:
+			continue
+		var who := String(a.get("target", "turtle"))
+		var target: Vector2 = rabbit.position if who == "rabbit" else turtle.position
+		_draw_lock_reticle(target, Color(1.0, 0.32, 0.2), ap == "HOLD", who)
 
 
 ## 竖向上冲形态：复用普通伏击鲨的身体读法，头朝上、尾在深水。
@@ -5642,6 +5805,7 @@ func _init_bird_behaviors() -> void:
 	_bird_states.clear()
 	_bird_attacks.clear()
 	_bird_splashes.clear()
+	_poop_sinks.clear()
 	var rng := RandomNumberGenerator.new()
 	rng.seed = int(level_seed) ^ 0x51A7
 	# FEEL-46：海鸟先俯冲穿越到玩家左侧，再盘旋做第二段排泄；
@@ -5688,6 +5852,20 @@ func _init_bird_behaviors() -> void:
 			"phase": "WAIT", "t": 0.0, "target": "rabbit"}
 
 
+func _bird_group_offscreen(g: Dictionary) -> bool:
+	if camera == null or g.is_empty():
+		return false
+	var band: Rect2 = g["rects"][0]
+	var view_w: float = get_viewport_rect().size.x
+	return band.position.x < camera.position.x - view_w * 0.55
+
+
+func _clear_bird_attacks_for(key: String) -> void:
+	for i in range(_bird_attacks.size() - 1, -1, -1):
+		if String(_bird_attacks[i].get("group", "")) == key:
+			_bird_attacks.remove_at(i)
+
+
 func _tick_bird_behaviors(delta: float) -> void:
 	if test_no_bird_behaviors:
 		_bird_attacks.clear()
@@ -5706,6 +5884,11 @@ func _tick_bird_behaviors(delta: float) -> void:
 		var phase := String(st["phase"])
 		var band: Rect2 = g["rects"][0]
 		var d: float = band.position.x - turtle.position.x
+		# 鸟组已经被镜头甩到身后：整组收工，别让投射物在屏幕外继续打。
+		if _bird_group_offscreen(g):
+			_clear_bird_attacks_for(key)
+			st["phase"] = "DONE"
+			continue
 		st["t"] = float(st["t"]) + delta
 		if phase == "WAIT":
 			if d < 820.0 and d > -260.0:
@@ -5750,6 +5933,9 @@ func _spawn_bird_attack(g: Dictionary, st: Dictionary) -> void:
 	# FEEL-29：同一时间只允许一个动态威胁；鲨群正在攻击时不叠加海鸟。
 	if not _shark_attacks.is_empty():
 		return
+	# PHASE-FIX：鸟已经飞出屏幕，不再从画面外发射。
+	if _bird_group_offscreen(g):
+		return
 	var band: Rect2 = g["rects"][0]
 	var mode := String(st["mode"])
 	if mode == "dive":
@@ -5760,9 +5946,9 @@ func _spawn_bird_attack(g: Dictionary, st: Dictionary) -> void:
 		# 不直接命中也会在落点留下溅射，而不是飞到终点凭空消失。
 		var flight := 1.25
 		var lead_speed: float = maxf(turtle.speed, rabbit.velocity.x)
-		var target: Vector2 = rabbit.position \
-			+ Vector2(lead_speed * flight * 0.92, 0.0) \
-			+ Vector2(randf_range(-18.0, 18.0), 0.0)
+		# PHASE-FIX：便便最终打到水面，不再瞄兔子身体。
+		var target := Vector2(rabbit.position.x + lead_speed * flight * 0.92
+			+ randf_range(-18.0, 18.0), SURFACE_Y + 10.0)
 		# FEEL-47：远程排泄不要叠在 BRO DIVE 的接人/下潜准备上。
 		# 远程攻击只发生在没有紧邻地面障碍的开阔段，避免和 BRO DIVE/低梁叠拍。
 		for lg in hazard_groups:
@@ -5773,7 +5959,7 @@ func _spawn_bird_attack(g: Dictionary, st: Dictionary) -> void:
 		_bird_attacks.append({
 			"type": "poop", "group": String(g["group"]),
 			"p0": Vector2(band.position.x - 180.0, band.position.y - 150.0),
-			"p1": target + Vector2(0, -18.0),
+			"p1": target,
 			"t": 0.0, "life": flight, "target": "rabbit",
 			"splash_radius": 30.0,
 		})
@@ -5805,6 +5991,10 @@ func _check_bird_attacks(delta: float) -> void:
 		_bird_splashes[i]["t"] = float(_bird_splashes[i]["t"]) + delta
 		if float(_bird_splashes[i]["t"]) >= float(_bird_splashes[i]["life"]):
 			_bird_splashes.remove_at(i)
+	for i in range(_poop_sinks.size() - 1, -1, -1):
+		_poop_sinks[i]["t"] = float(_poop_sinks[i]["t"]) + delta
+		if float(_poop_sinks[i]["t"]) >= float(_poop_sinks[i]["life"]):
+			_poop_sinks.remove_at(i)
 	# FEEL-22：救援优先。TUBO 落水/被接住期间，空中的鸟攻击不再判、也不留残影，
 	# 避免恢复后凭空吃一下。
 	if _rescue_context() != "NONE" or rabbit.state in ["FALLING_WATER", "PASSED_OUT"]:
@@ -5814,6 +6004,10 @@ func _check_bird_attacks(delta: float) -> void:
 	var t_rect := _inset(turtle.get_body_rect(), 3.0)
 	for i in range(_bird_attacks.size() - 1, -1, -1):
 		var a: Dictionary = _bird_attacks[i]
+		var ga := _group_by_name(String(a.get("group", "")))
+		if not ga.is_empty() and _bird_group_offscreen(ga):
+			_bird_attacks.remove_at(i)
+			continue
 		a["t"] = float(a["t"]) + delta
 		if String(a["type"]) == "body":
 			a["x"] = float(a["x"]) + float(a["vx"]) * delta
@@ -5824,6 +6018,7 @@ func _check_bird_attacks(delta: float) -> void:
 				var land: Vector2 = a["p1"]
 				var radius: float = float(a.get("splash_radius", 44.0))
 				_bird_splashes.append({"p": land, "t": 0.0, "life": 0.55})
+				_poop_sinks.append({"p": land, "t": 0.0, "life": 0.6})
 				if GameManager.accident_state == "NONE" \
 						and _circle_hits_rect(land, radius,
 							_inset(rabbit.get_body_rect(), 3.0)):
@@ -5832,6 +6027,9 @@ func _check_bird_attacks(delta: float) -> void:
 					else:
 						_rabbit_contact("LOW_BIRD", true)
 			_bird_attacks.remove_at(i)
+			continue
+		# 排泄只在落水时判；飞行中不再直接砸人。
+		if String(a["type"]) == "poop":
 			continue
 		var rect := _bird_attack_rect(a)
 		var target := String(a["target"])
@@ -5875,17 +6073,16 @@ func _draw_bird_attacks() -> void:
 			for i in 3:
 				var q: Vector2 = p0.lerp(p, 0.35 + 0.2 * i + k * 0.15)
 				draw_circle(q, (6.0 - i) * 0.8, Color(0.32, 0.20, 0.10, 0.25))
-			# 旋转的大便：不规则棕色团块 + 高光 + 小碎屑。
-			var spin: float = float(a["t"]) * 18.0
-			var pts := PackedVector2Array()
-			for i in 7:
-				var ang: float = spin + TAU * float(i) / 7.0
-				var rr: float = 11.0 + 3.0 * sin(float(i) * 2.3 + spin)
-				pts.append(p + Vector2(cos(ang), sin(ang)) * rr)
-			draw_colored_polygon(pts, Color(0.34, 0.20, 0.09, 0.98))
-			draw_circle(p + Vector2(3, -3), 5.0, Color(0.48, 0.30, 0.14, 0.9))
-			draw_circle(p + Vector2(-4, 3), 3.0, Color(0.22, 0.13, 0.06, 0.9))
-			draw_arc(p, 15.0, 0, TAU, 16, Color(0.9, 0.65, 0.35, 0.55), 2.0)
+			# 旋转的螺旋/卷曲（懒羊羊发型那种卷），落水后停转下沉。
+			var spin: float = float(a["t"]) * 16.0
+			_draw_poop_coil(p, spin, 1.0)
+	# 落水后的便便：停止旋转、下沉、淡出。
+	for s in _poop_sinks:
+		var k := clampf(float(s["t"]) / maxf(float(s["life"]), 0.01), 0.0, 1.0)
+		var p: Vector2 = s["p"] + Vector2(0, 26.0 * k)
+		_draw_poop_coil(p, 1.2, 1.0 - k, 1.0 - 0.25 * k)
+		draw_arc(s["p"], 10.0 + 14.0 * k, 0.0, TAU, 20,
+			Color(0.78, 0.70, 0.52, 0.45 * (1.0 - k)), 2.0)
 	# 排泄命中溅射：棕色水滴 + 扩大的落点圈，读作“砸开了”。
 	for s in _bird_splashes:
 		var p: Vector2 = s["p"]
@@ -5899,6 +6096,17 @@ func _draw_bird_attacks() -> void:
 			draw_circle(q, 4.5 * (1.0 - k) + 1.0,
 				Color(0.42, 0.28, 0.14, 0.8 * (1.0 - k)))
 		draw_circle(p, 8.0 * (1.0 - k), Color(0.9, 0.82, 0.6, 0.45 * (1.0 - k)))
+
+
+func _draw_poop_coil(p: Vector2, spin: float, alpha: float,
+		scale: float = 1.0) -> void:
+	var pts := PackedVector2Array()
+	for i in 26:
+		var ang := spin + float(i) * 0.52
+		var rr := (2.0 + float(i) * 0.42) * scale
+		pts.append(p + Vector2(cos(ang), sin(ang)) * rr)
+	draw_polyline(pts, Color(0.34, 0.20, 0.09, 0.98 * alpha), 5.0 * scale, true)
+	draw_circle(p, 3.5 * scale, Color(0.22, 0.13, 0.06, 0.95 * alpha))
 
 
 func bird_pose(group: Dictionary, now_t: float = -1.0) -> Dictionary:
@@ -6945,7 +7153,7 @@ func _draw_turtle() -> void:
 	# 救援/被顶回时乌龟会向左移动；朝向跟着位移翻转，不再“倒着退”。
 	_update_turtle_facing(pos.x)
 	# G9：兔子落回壳上/被接住时整只壳往下沉再回弹；只是画法偏移。
-	pos.y += shell_dip_offset()
+	pos.y += shell_dip_offset() + _showtime_turtle_y
 	if turtle.speed > 250.0:
 		for i in 3:
 			var y := pos.y - 24.0 + i * 22.0
@@ -6955,7 +7163,7 @@ func _draw_turtle() -> void:
 	# 壳画成 92x56 的椭圆，和 96x56 的碰撞体对齐，避免“看着撞了却没判”。
 	# 失控时整只侧倾 + 缓慢左右摇：前两段只有一点倾斜，看得到“不太稳”，
 	# 临界时倾到 0.22 rad 并来回摇，读到“要翻了”。
-	var tilt: float = turtle_tilt() + sin(Time.get_ticks_msec() * 0.005) * vtstress * 0.035
+	var tilt: float = turtle_tilt() + _showtime_turtle_spin 		+ sin(Time.get_ticks_msec() * 0.005) * vtstress * 0.035
 	if tilt > 0.0:
 		tilt += sin(Time.get_ticks_msec() * 0.0024) * tilt * 0.5
 	if turtle.accident:
@@ -6989,6 +7197,7 @@ func _draw_turtle() -> void:
 	draw_circle(pos + Vector2(0, -6).rotated(tilt), 27.0, Color(0.55, 0.8, 0.35))
 	draw_circle(head_base, 14.0, Color(0.4, 0.7, 0.3))
 	draw_circle(head_base + Vector2(4.0 * _turtle_facing, -4), 3.0, Color(0.05, 0.1, 0.08))
+	_draw_bonk_face(head_base, tilt)
 	if turtle.accident:
 		# 翻肚皮：浅色肚皮盖住壳面，四肢朝天，头被压在下面。
 		# 0.6 s 内从侧翻过渡到全翻，先“出事”再定格，不做瞬切。
@@ -7050,9 +7259,9 @@ func _draw_turtle() -> void:
 	# REFINE-06 P1：符号旁必须有角色图形（龟壳），否则两个“?”分不出谁是谁。
 	if not turtle.accident and turtle.daze_time <= 0.1 and turtle.dunk_timer <= 0.0 \
 			and turtle.drift >= Tuning.DRIFT_CALM_END:
-		_draw_drift_mark(pos + Vector2(46, -80), "turtle",
+		_draw_drift_mark(pos + Vector2(0, -96), "turtle",
 			drift_mark_text("turtle"), _drift_color_for(turtle.drift_state),
-			20 + _drift_level_for(turtle.drift_state) * 2)
+			24 + _drift_level_for(turtle.drift_state) * 3)
 	# CORE-FEEL-07 P1-D：满值不只是条变红——乌龟自己开始划水，四肢一直在动，
 	# 读得出“它已经没在配合了”。只画手脚，不改变位置/碰撞。
 	var paddle := turtle_paddle_strength()
@@ -7066,6 +7275,33 @@ func _draw_turtle() -> void:
 			draw_line(root, tip, Color(0.4, 0.7, 0.3), 6.0)
 			draw_circle(tip, 3.5, Color(0.5, 0.78, 0.36))
 	_draw_visual_stress(pos, "turtle")
+
+
+func _draw_bonk_face(head: Vector2, tilt: float) -> void:
+	if _bonk_level <= 0:
+		return
+	var lv := _bonk_level
+	var col := Color(1.0, 0.42, 0.25, 0.95)
+	var e1 := head + Vector2(-5, -6).rotated(tilt)
+	var e2 := head + Vector2(6, -6).rotated(tilt)
+	if lv >= 2:
+		for e in [e1, e2]:
+			draw_line(e + Vector2(-3, -3), e + Vector2(3, 3), col, 2.0)
+			draw_line(e + Vector2(3, -3), e + Vector2(-3, 3), col, 2.0)
+	else:
+		draw_circle(e1, 2.0, Color(0.05, 0.1, 0.08))
+		draw_circle(e2, 2.0, Color(0.05, 0.1, 0.08))
+	var mouth := head + Vector2(0, 5).rotated(tilt)
+	var pts := PackedVector2Array()
+	for i in 5:
+		pts.append(mouth + Vector2(-6.0 + i * 3.0, sin(float(i) * 1.8) * 1.5))
+	draw_polyline(pts, col, 1.8)
+	if lv >= 3:
+		draw_circle(head + Vector2(12, -12), 2.5, Color(0.6, 0.9, 1.0, 0.9))
+	if lv >= 4:
+		var fs := 16 + lv * 2
+		draw_string(ThemeDB.fallback_font, head + Vector2(-fs * 0.5, -30),
+			"囧", HORIZONTAL_ALIGNMENT_LEFT, -1, fs, col)
 
 
 ## FEEL-12 E：三颗氧气气泡跟随 TUBO 头顶；归一化比例，不改氧气数值。
@@ -7361,8 +7597,9 @@ func _draw_drift_mark(at: Vector2, who: String, mark: String, color: Color,
 	# 深色“想法泡”底：白色图形直接画在浅色天空/水面和背景装饰上几乎看不见
 	# （REFINE-06 P1 截图实测：白圈要放大 10 倍才分得清，还和背景鱼糊在一起）。
 	var bubble := base + Vector2(6, 2)
-	draw_circle(bubble, 16.0, Color(0.05, 0.10, 0.14, 0.55))
-	draw_arc(bubble, 16.0, 0, TAU, 24, Color(color.r, color.g, color.b, 0.85), 1.5)
+	var br := 19.0 if who == "turtle" else 16.0
+	draw_circle(bubble, br, Color(0.05, 0.10, 0.14, 0.55))
+	draw_arc(bubble, br, 0, TAU, 24, Color(color.r, color.g, color.b, 0.85), 1.5)
 	var c := Color(0.95, 0.98, 1.0, 1.0)
 	if who == "rabbit":
 		draw_circle(base + Vector2(0, 4), 4.0, c)

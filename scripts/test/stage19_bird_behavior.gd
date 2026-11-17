@@ -107,12 +107,13 @@ func _poop_hit(target: String) -> void:
 		_check("poop_hit_" + target, false, "no attack")
 		return
 	var a: Dictionary = race._bird_attacks[0]
-	a["t"] = float(a["life"]) - 0.02
-	var ar: Rect2 = race._bird_attack_rect(a)
+	# PHASE-FIX：排泄只在落水时判，直接把时间推到落水前 5 ms。
+	a["t"] = float(a["life"]) - 0.005
+	var land: Vector2 = a["p1"]
 	if target == "rabbit":
-		race.rabbit.position = ar.get_center()
+		race.rabbit.position = land
 	else:
-		race.turtle.position = ar.get_center()
+		race.turtle.position = land
 	race._check_bird_attacks(0.01)
 	var hit: bool = GameManager.accident_state in ["RABBIT_STUN", "RABBIT_WATER", "TURTLE_REEF"] \
 		or race.turtle.flip_lock > 0.0 or race.turtle.speed < 220.0

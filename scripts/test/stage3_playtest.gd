@@ -93,6 +93,7 @@ func _run() -> void:
 		# 全关自动驾驶只验证“55 组可跑完/计分闭合”。MISCHIEF 会主动改变
 		# 速度/深度，让固定驾驶器出现一次非路线碰撞，改由 stage15 覆盖。
 		race.test_no_mischief = true
+		race.test_no_showtime = true
 	_check(race.scene_file_path.ends_with("race.tscn"), "race scene loaded")
 	_check(GameManager.state == GameManager.GameState.RUNNING, "state RUNNING")
 	_start_watchdog()
@@ -120,6 +121,7 @@ func _run() -> void:
 		race.test_no_overdrive = true
 		race.test_no_lessons = true
 		race.test_no_mischief = true
+		race.test_no_showtime = true
 	# 8 个渲染帧在 time_scale=3 下本身就可能推进 0.6–0.8 s；这里判“刚重开”，
 	# 不是判某一帧的精确值。旧阈值 0.5 会在加载慢时误报。
 	_check(not GameManager.finished and GameManager.race_time < 1.0,

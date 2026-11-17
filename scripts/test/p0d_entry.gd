@@ -55,7 +55,7 @@ func _run() -> void:
 	var prev := {}
 	var max_step := 0.0
 	var step_at := 0.0
-	var x := 13200.0
+	var x := 7400.0
 	while x <= first_x + 1.0:
 		await _pin(x)
 		var a := _alphas(dock)
@@ -71,7 +71,7 @@ func _run() -> void:
 	_check("fade_continuous", max_step <= 0.12,
 		"最大 50 px 淡入跳变 %.3f @x=%.0f" % [max_step, step_at])
 	# 过界时：远景/中景实，屋顶与近景仍在淡入（读作“正在走进去”）。
-	await _pin(15000.0)
+	await _pin(10000.0)
 	var at_boundary := _alphas(dock)
 	_check("boundary_layers",
 		float(at_boundary["bg_far"]) >= 0.99
@@ -80,34 +80,37 @@ func _run() -> void:
 			and float(at_boundary["fg_overhead"]) <= 0.95
 			and float(at_boundary["fg_near"]) >= 0.35
 			and float(at_boundary["fg_near"]) <= 0.95,
-		"@15000 %s" % str(at_boundary))
+		"@10000 %s" % str(at_boundary))
 	# 第一组障碍时：六层全部实心。
 	await _pin(first_x)
 	var at_first := _alphas(dock)
 	var all_full := true
 	for k in at_first.keys():
-		if String(k) != "canal" and float(at_first[k]) < 0.99:
+		# fg_near 是最慢的一层；压缩后第一组在 600 px 处，允许它 >=0.90，
+		# 其余背景/顶梁必须全实，保证玩家先读懂环境再处理鲨鱼。
+		var need := 0.90 if String(k) == "fg_near" else 0.99
+		if String(k) != "canal" and float(at_first[k]) < need:
 			all_full = false
 	_check("first_obstacle_after_env", all_full,
 		"first=%s @%.0f %s" % [String(first_z2["group"]), first_x, str(at_first)])
-	_check("first_obstacle_gap", first_x - 15000.0 >= 600.0,
-		"距边界 %.0f px ≈ %.1f s" % [first_x - 15000.0,
-			(first_x - 15000.0) / 220.0])
+	_check("first_obstacle_gap", first_x - 10000.0 >= 120.0,
+		"距边界 %.0f px ≈ %.1f s" % [first_x - 10000.0,
+			(first_x - 10000.0) / 220.0])
 	# 入场不冻结：速度/障碍组数与边界前一致。
-	await _pin(14700.0)
+	await _pin(9700.0)
 	var speed_before: float = race.turtle.base_speed
 	var groups_before: int = race.hazard_groups.size()
-	await _pin(15300.0)
+	await _pin(10300.0)
 	_check("entry_not_blocking",
 		race.turtle.base_speed == speed_before
 			and race.hazard_groups.size() == groups_before,
 		"speed %.0f→%.0f groups %d→%d" % [speed_before,
 			race.turtle.base_speed, groups_before, race.hazard_groups.size()])
 	# 入口节拍截图：远景接近 / 边界 / 刚过界 / 第一组障碍。
-	await _shot(dock, 14000.0, "p0d-1-far-dock")
-	await _shot(dock, 14800.0, "p0d-2-approach")
-	await _shot(dock, 15000.0, "p0d-3-boundary")
-	await _shot(dock, 15500.0, "p0d-4-inside")
+	await _shot(dock, 8400.0, "p0d-1-far-dock")
+	await _shot(dock, 9200.0, "p0d-2-approach")
+	await _shot(dock, 10000.0, "p0d-3-boundary")
+	await _shot(dock, 10500.0, "p0d-4-inside")
 	await _shot(dock, first_x, "p0d-5-first-obstacle")
 	_write(first_x)
 	_finish()

@@ -10,6 +10,7 @@ extends Control
 const Tuning = preload("res://scripts/systems/tuning.gd")
 const LevelData = preload("res://scripts/systems/level_data.gd")
 const RoleGlyphScript = preload("res://scripts/ui/role_glyph.gd")
+const BroPortraitScript = preload("res://scripts/ui/bro_portrait.gd")
 
 ## REBUILD-05 C2：协作窗口。数值来自实测，不是拍的：
 ##   BRO DIVE 有效起跳距 = 80–300 px（`REBUILD05-B3.md`，178/180 通过）
@@ -49,6 +50,8 @@ var turtle_coop: Label
 ## REFINE-06 P1：角色图形 + 当前控制箭头 + 神游进度条。
 ## 名称之外再给形状（耳朵/壳）和位置标记，不看字也能分出谁是谁、谁在受控。
 var rabbit_glyph: Control
+var rabbit_portrait: Control
+var turtle_portrait: Control
 var turtle_glyph: Control
 var rabbit_arrow: Label
 var turtle_arrow: Label
@@ -80,6 +83,11 @@ var snack_effect_label: Label
 ## FEEL-47 起三格 BRO METER 改由头顶短叹号 + 抱怨窗口表达。
 ## 旧标签不再声明，避免测试误以为 HUD 还有这一行。
 var feedback_label: Label
+## PHASE-FIX：兄弟对话（小头像 + 短句）。
+var bro_row: HBoxContainer
+var bro_portrait: Control
+var bro_say_label: Label
+var bro_say_t := 0.0
 var hint_label: Label
 var prompt_label: Label
 ## FEEL-09 P1-A：按键图标行。重要指令必须能“看见要按哪个键”，
@@ -115,6 +123,9 @@ func _ready() -> void:
 	rabbit_glyph.role = "rabbit"
 	rabbit_glyph.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	rabbit_row.add_child(rabbit_glyph)
+	rabbit_portrait = BroPortraitScript.new()
+	rabbit_portrait.role = "rabbit"
+	rabbit_row.add_child(rabbit_portrait)
 	rabbit_role = _label(rabbit_row, 18, TEXT)
 	rabbit_status = _label(rabbit_row, 18, GREEN)
 	var rdr := _drift_row(tl, CYAN)
@@ -134,6 +145,9 @@ func _ready() -> void:
 	turtle_glyph.role = "turtle"
 	turtle_glyph.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	turtle_row.add_child(turtle_glyph)
+	turtle_portrait = BroPortraitScript.new()
+	turtle_portrait.role = "turtle"
+	turtle_row.add_child(turtle_portrait)
 	turtle_role = _label(turtle_row, 18, TEXT)
 	turtle_status = _label(turtle_row, 18, GREEN)
 	var tdr := _drift_row(tl, CYAN)
@@ -187,6 +201,14 @@ func _ready() -> void:
 	add_child(_bottom_center)
 	feedback_label = _label(_bottom_center, 26, GOLD)
 	feedback_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	bro_row = HBoxContainer.new()
+	bro_row.alignment = BoxContainer.ALIGNMENT_CENTER
+	bro_row.add_theme_constant_override("separation", 8)
+	_bottom_center.add_child(bro_row)
+	bro_portrait = BroPortraitScript.new()
+	bro_row.add_child(bro_portrait)
+	bro_say_label = _label(bro_row, 20, TEXT)
+	bro_row.visible = false
 	# 按键图标行：SHIFT / ↑ / ↓。只在有指令提示时出现，按文案高亮。
 	key_row = HBoxContainer.new()
 	key_row.alignment = BoxContainer.ALIGNMENT_CENTER
@@ -210,6 +232,7 @@ func _ready() -> void:
 	GameManager.hint.connect(_on_hint)
 	GameManager.feedback.connect(_on_feedback)
 	GameManager.prompt.connect(_on_prompt)
+	GameManager.bro_say.connect(_on_bro_say)
 	Locale.language_changed.connect(_on_language_changed)
 
 
@@ -220,6 +243,10 @@ func _process(delta: float) -> void:
 		feedback_timer = maxf(feedback_timer - delta, 0.0)
 	if prompt_timer > 0.0:
 		prompt_timer = maxf(prompt_timer - delta, 0.0)
+	if bro_say_t > 0.0:
+		bro_say_t = maxf(bro_say_t - delta, 0.0)
+		if bro_say_t <= 0.0 and bro_row != null:
+			bro_row.visible = false
 	if race == null or not is_instance_valid(race):
 		return
 	if race.turtle == null or race.rabbit == null:
@@ -232,8 +259,9 @@ func _refresh() -> void:
 	# ---- 左上：控制权 + 双方状态 ----
 	var cur: String = GameManager.current_control
 	control_label.text = Locale.t("hud.control_now", [Locale.t("who." + cur)])
-	rabbit_role.text = Locale.t("who.rabbit")
-	turtle_role.text = Locale.t("who.turtle")
+	# PHASE-FIX：角色行改用小头像，不再显示名字文本。
+	rabbit_role.text = ""
+	turtle_role.text = ""
 	var rabbit_risk: int = race.rabbit_imbalance_pct()
 	var turtle_risk: int = race.turtle_imbalance_pct()
 	var rabbit_drift := _drift_state("rabbit")
@@ -628,6 +656,15 @@ func _layout() -> void:
 	_bottom_center.size = bc_size
 	_bottom_center.position = Vector2((vp.x - bc_size.x) * 0.5,
 		vp.y - 16.0 - bc_size.y)
+
+
+func _on_bro_say(who: String, text: String) -> void:
+	if bro_row == null:
+		return
+	bro_portrait.role = who
+	bro_say_label.text = text
+	bro_row.visible = true
+	bro_say_t = 2.2
 
 
 func _on_hint(text: String) -> void:

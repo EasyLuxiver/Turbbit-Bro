@@ -173,7 +173,7 @@ const GROUPS := [
 	# bird2(兔)→beam1(兔)→beam3(兔) 是三连兔子：Z1 末尾两连 + 进 Z2 再一组，
 	# 刚做完 wall1 的配合又回到同一个答案；换位后 bird2+beam1 两连、shark3
 	# 在 69.7 s 先要一次乌龟对水下伏击的应对、beam3+rock4 也只剩两连。
-	{"group": "shark3", "zone": 2, "kind": "SHARK", "x": 10162.5, "w": 70.0,
+	{"group": "shark3", "zone": 2, "kind": "SHARK", "x": 10600.0, "w": 70.0,
 		"motion": {"name": "ambush_shark"}},
 	# FEEL-09 优化：beam3 从 17000 提前到 16880，beam3→rock4 由 2.50 s 拉到
 	# 3.71 s，满足“单角色障碍至少 3.5 s”的门槛；rock4 是动态障碍，不动它的 x。

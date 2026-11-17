@@ -239,7 +239,7 @@ const STRINGS := {
 	"comic.3.cousin": {"zh": "你们缺的不是速度，是默契！", "en": "YOU DON'T LACK SPEED. YOU LACK SYNC!"},
 	"comic.4.cousin": {"zh": "特制能量蛋糕！嘿嘿！", "en": "SPECIAL ENERGY CAKE! HEH HEH!"},
 	"comic.5.bros": {"zh": "哇啊啊啊——！", "en": "WHOA AAAA—!"},
-	"comic.6.narr": {"zh": "从那天起，他们偶尔会……交换控制权？", "en": "SINCE THEN, THEY SOMETIMES... SWAP CONTROL?"},
+	"comic.6.narr": {"zh": "从那天起，他们偶尔会……换着来？", "en": "SINCE THEN, THEY SOMETIMES... SWAP?"},
 	"comic.6.rabbit": {"zh": "等等，刚刚是我在动吗？", "en": "WAIT. WAS THAT ME MOVING?"},
 	"comic.7.cousin": {"zh": "很好！现在，给我跑出兄弟默契！", "en": "GOOD! NOW SHOW ME THAT BRO SYNC!"},
 	"comic.7.narr": {"zh": "一场混乱又刺激的训练，正式开始。", "en": "A CHAOTIC, WILD TRAINING STARTS NOW."},
@@ -631,7 +631,7 @@ const STRINGS := {
 		"en": "HIGH WALL: ↑ LEAP, THEN KICK WITH THE TUBO"},
 
 	# ---- 阶段 4：干净通过 / BRO PASS / 首次教学 ----
-	"feedback.clean": {"zh": "干净通过！", "en": "CLEAN!"},
+	"feedback.clean": {"zh": "漂亮！", "en": "NICE!"},
 	"feedback.bro_pass": {"zh": "兄弟配合！", "en": "BRO PASS!"},
 	"feedback.bro_dive": {"zh": "兄弟下潜！", "en": "BRO DIVE!"},
 	"feedback.bro_ollie": {"zh": "兄弟蹬墙！", "en": "BRO OLLIE!"},
@@ -648,8 +648,18 @@ const STRINGS := {
 		"zh": "乌龟 加速！这口喂得漂亮！",
 		"en": "BITT TURBO! HAND-FED!"},
 	"feedback.wave_hit": {"zh": "壳被浪掀翻了！", "en": "WAVE HIT - SHELL FLIPPED!"},
+	"bro.crouch": {"zh": "趴下！", "en": "GET DOWN!"},
+	"bro.down": {"zh": "往下！", "en": "GO DOWN!"},
+	"bro.leap": {"zh": "跃起来！", "en": "LEAP!"},
+	"bro.bonk": {"zh": "别硬顶！先换人！", "en": "STOP HEADBUTTING IT - SWITCH!"},
+	"feedback.turtle_bonk": {
+		"zh": "咚！乌龟被弹回来了（{0}/{1}）",
+		"en": "BONK! BITT BOUNCED BACK ({0}/{1})"},
+	"cousin.bonk_hint": {
+		"zh": "大表哥：别硬顶！先换人，再看清楚再按。",
+		"en": "COUSIN: STOP HEADBUTTING IT - SWITCH, THEN READ IT."},
 	"feedback.shark_pack": {"zh": "鲨鱼群围上来了！", "en": "THE SHARK PACK IS CIRCLING!"},
-	"feedback.shark_fat": {"zh": "身后有胖鲨——SHIFT 兔子 趴低！", "en": "FAT SHARK BEHIND - SHIFT TUBO AND CROUCH!"},
+	"feedback.shark_fat": {"zh": "胖鲨盯上兔子了！", "en": "THE FAT SHARK WANTS TUBO!"},
 	"feedback.shark_boss": {
 		"zh": "老大来了——SHIFT 乌龟，等它冲上来再跃起",
 		"en": "THE BOSS - SHIFT BITT, LEAP AS IT RISES"},
@@ -659,7 +669,7 @@ const STRINGS := {
 	"feedback.shark_boss_now": {
 		"zh": "现在——跃起！",
 		"en": "NOW - LEAP!"},
-	"feedback.shark_thin": {"zh": "瘦鲨压顶——SHIFT 乌龟 下潜！", "en": "THIN SHARK OVERHEAD - SHIFT BITT AND DIVE!"},
+	"feedback.shark_thin": {"zh": "瘦鲨压过来了！", "en": "THE THIN SHARK IS OVERHEAD!"},
 	"feedback.shark_intervention": {"zh": "鲨群撞碎障碍！前面换成胖鲨低扑——趴低！", "en": "THE PACK SMASHES THROUGH - FAT SHARK AHEAD, CROUCH!"},
 	"feedback.bird_attack": {"zh": "海鸟变招了——看预兆！", "en": "THE GULL CHANGED ATTACK - WATCH THE TELL!"},
 	"feedback.bird_poop": {"zh": "乌龟 被海鸟排泄物砸到！", "en": "BITT GOT HIT BY GULL DROPPINGS!"},
@@ -962,6 +972,15 @@ const STRINGS := {
 		"zh": "氧气见底了。\n乌龟 没能把他捞回来。",
 		"en": "TUBO RAN OUT OF AIR.\nBITT COULDN'T GET HIM BACK."},
 	"fail.reason_oxygen": {"zh": "原因：氧气耗尽", "en": "CAUSE: OUT OF AIR"},
+	"fail.reason_bonk": {
+		"zh": "原因：连续撞了 6 次，乌龟晕过去了",
+		"en": "CAUSE: SIX BONKS IN A ROW - BITT IS OUT COLD"},
+	"fail.line_bonk": {
+		"zh": "我让我的兄弟晕过去了。",
+		"en": "I LET MY BRO PASS OUT."},
+	"fail.tip_bonk": {
+		"zh": "先换人，再看清楚障碍再按。",
+		"en": "SWITCH FIRST, THEN READ THE OBSTACLE."},
 	"fail.tip_oxygen": {
 		"zh": "下次：先 SHIFT 乌龟上浮，或让 兔子 吃海藻补氧。",
 		"en": "NEXT: SHIFT TO BITT TO SURFACE, OR LET TUBO EAT KELP."},

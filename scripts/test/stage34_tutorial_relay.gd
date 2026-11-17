@@ -128,6 +128,9 @@ func _step_until(x_target: float) -> void:
 	while race.turtle.position.x < x_target and n < 600:
 		await get_tree().physics_frame
 		n += 1
+	# 测试用物理帧推进 race；补一帧 tutorial 的 _process，确保它读到最新 relay/x。
+	if tut != null:
+		tut._process(1.0 / 60.0)
 
 
 func _check(name: String, ok: bool, detail: String) -> void:

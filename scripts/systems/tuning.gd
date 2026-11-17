@@ -282,7 +282,7 @@ const PROMPT_RANGE := 1100.0
 ## 底栏曾显示 1050 px 外鲨鱼的「SHIFT + ↑ 乌龟跃起」，和左上的「BRO DIVE 现在！」方向相反。
 const LESSON_CLEAR_BEHIND := 80.0
 ## Showtime 不再瞬间回满氧气，只小幅回复。
-const SHOWTIME_OXYGEN := 1.5
+const SHOWTIME_OXYGEN := 0.5
 
 const STUN_TIME := 0.8
 
@@ -365,5 +365,8 @@ const HAZARD_COOLDOWN := 3.0
 ## 触礁修复后乌龟仍停在障碍里；冷却要覆盖 2 s 修复 + 约 2 s 反应/下潜。
 const TURTLE_COOLDOWN := 4.0
 const GRACE_TIME := 2.0
-const SHOWTIME_TIME := 1.8
+const SHOWTIME_TIME := 0.7
 const SHOWTIME_COMBO := 3
+## PHASE-FIX：Showtime 改为概率小奖励，不再用 0/3 计数器。
+const SHOWTIME_CHANCE := 0.15
+const SHOWTIME_CD := 18.0

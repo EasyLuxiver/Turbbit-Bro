@@ -67,16 +67,36 @@ func _build() -> void:
 	_sub.add_theme_font_size_override("font_size", 22)
 	_sub.add_theme_color_override("font_color", Color(0.72, 0.9, 1.0))
 	box.add_child(_sub)
+	if GameManager.failure_reason == "BONK_OUT":
+		var portrait = preload("res://scripts/ui/bro_portrait.gd").new()
+		portrait.role = "rabbit"
+		portrait.custom_minimum_size = Vector2(56, 56)
+		portrait.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+		box.add_child(portrait)
+		var quote := Label.new()
+		quote.text = Locale.t("fail.line_bonk")
+		quote.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		quote.add_theme_font_size_override("font_size", 28)
+		quote.add_theme_color_override("font_color", Color(1.0, 0.86, 0.62))
+		box.add_child(quote)
 	var reason := Label.new()
-	reason.text = Locale.t("fail.reason_oxygen") if GameManager.failure_reason == "OXYGEN_OUT" \
-		else GameManager.failure_reason
+	if GameManager.failure_reason == "OXYGEN_OUT":
+		reason.text = Locale.t("fail.reason_oxygen")
+	elif GameManager.failure_reason == "BONK_OUT":
+		reason.text = Locale.t("fail.reason_bonk")
+	else:
+		reason.text = GameManager.failure_reason
 	reason.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	reason.add_theme_font_size_override("font_size", 18)
 	reason.add_theme_color_override("font_color", Color(1.0, 0.68, 0.48))
 	box.add_child(reason)
 	var tip := Label.new()
-	tip.text = Locale.t("fail.tip_oxygen") if GameManager.failure_reason == "OXYGEN_OUT" \
-		else Locale.t("fail.tip_oxygen")
+	if GameManager.failure_reason == "OXYGEN_OUT":
+		tip.text = Locale.t("fail.tip_oxygen")
+	elif GameManager.failure_reason == "BONK_OUT":
+		tip.text = Locale.t("fail.tip_bonk")
+	else:
+		tip.text = Locale.t("fail.tip_oxygen")
 	tip.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	tip.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	tip.add_theme_font_size_override("font_size", 18)

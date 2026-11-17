@@ -17,6 +17,8 @@ var step := 0
 var _t := 0.0
 var _finished := false
 var _handoff_t := -1.0
+var _black_t := 0.0
+var _fade_rect: ColorRect
 var _jumped := false
 var _crouched := false
 var _leaped := false
@@ -45,6 +47,8 @@ func _ready() -> void:
 	race.test_no_coop_hint = true
 	race.test_no_lessons = true
 	race.test_no_mischief = true
+	race.test_no_showtime = true
+	race.test_no_bounce = true
 	race.world_end = END_X
 	race.turtle.reset(Vector2(400.0, race.surface_ref()))
 	race.rabbit.reset()
@@ -79,6 +83,16 @@ func _process(delta: float) -> void:
 	if _handoff_t > 0.0:
 		_handoff_t -= delta
 		if _handoff_t <= 0.0:
+			# 短暂空挡：先黑场 0.35 s，再切正赛。
+			_black_t = 0.35
+			if _fade_rect != null:
+				_fade_rect.visible = true
+				_fade_rect.color = Color(0, 0, 0, 1)
+		return
+	if _black_t > 0.0:
+		_black_t -= delta
+		if _black_t <= 0.0:
+			GameManager.race_fade_in = true
 			GameManager.test_no_best = false
 			GameManager.start_race()
 		return
@@ -221,6 +235,12 @@ func _build_overlay() -> void:
 	skip.size = Vector2(300, 24)
 	skip.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 	_overlay.add_child(skip)
+	_fade_rect = ColorRect.new()
+	_fade_rect.color = Color(0, 0, 0, 0)
+	_fade_rect.visible = false
+	_fade_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_fade_rect.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	_overlay.add_child(_fade_rect)
 
 
 func _input(event: InputEvent) -> void:

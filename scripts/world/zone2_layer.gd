@@ -12,8 +12,8 @@ extends Node2D
 ## >1 = 更近更快。绘制不做“整层平移节点”，而是按 parallax 换算虚拟坐标，
 ## 只画镜头附近的那一段——这样 24,000 px 的段落不会一次性画完。
 
-const ZONE_START := 15000.0
-const ZONE_END := 39000.0
+const ZONE_START := 10000.0
+const ZONE_END := 34000.0
 const SURFACE_Y := 300.0
 const VIEW_W := 1920.0
 const MARGIN := 600.0

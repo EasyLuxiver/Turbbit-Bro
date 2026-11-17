@@ -201,7 +201,7 @@
       "ok": true
     },
     {
-      "detail": "{\"accident\":\"NONE\",\"action\":\"up\",\"hit_roles\":{},\"oxygen_used\":false,\"passed\":true,\"rabbit_y\":319.5,\"turtle_y\":377.5,\"who\":\"rabbit\"}",
+      "detail": "{\"accident\":\"NONE\",\"action\":\"up\",\"hit_roles\":{},\"oxygen_used\":false,\"passed\":true,\"rabbit_y\":321.0,\"turtle_y\":379.0,\"who\":\"rabbit\"}",
       "name": "dual_rabbit_passes_rock10",
       "ok": true
     },
