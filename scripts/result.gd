@@ -205,10 +205,18 @@ func _refresh() -> void:
 		_bros_line.text = "%s   %s" % [Locale.t("result.tubo_" + line_g),
 			Locale.t("result.bitt_" + line_g)]
 	# FEEL-12：只留时间/事故/默契/组合四行；其余统计退出结算页。
-	_stats_label.text = "      ".join([
-		Locale.t("result.time", ["%6.2f" % GameManager.finish_time]),
-		Locale.t("result.mistakes", ["%d" % GameManager.accident_count]),
-		Locale.t("result.clean", ["%d" % GameManager.clean_pass_count]),
+	_stats_label.text = "\n".join([
+		"      ".join([
+			Locale.t("result.time", ["%6.2f" % GameManager.finish_time]),
+			Locale.t("result.mistakes", ["%d" % GameManager.accident_count]),
+			Locale.t("result.clean", ["%d" % GameManager.clean_pass_count]),
+		]),
+		Locale.t("result.breakdown", [
+			"%d" % GameManager.clean_pass_count,
+			"%d" % GameManager.combo_dive_count,
+			"%d" % GameManager.combo_ollie_count,
+			"%d" % GameManager.snack_switch_count,
+		]),
 	])
 	var best_time := "--"
 	if GameManager.best_time > 0.0:

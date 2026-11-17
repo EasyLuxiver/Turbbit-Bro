@@ -951,6 +951,9 @@ const STRINGS := {
 	"result.time": {"zh": "比赛时间              {0} 秒", "en": "RACE TIME              {0} s"},
 	"result.coop": {"zh": "默契                  {0}", "en": "SYNC                   {0}"},
 	"result.clean": {"zh": "干净通过              {0}", "en": "CLEAN PASSES           {0}"},
+	"result.breakdown": {
+		"zh": "干净 {0} · BRO DIVE {1} · BRO OLLIE {2} · 食物 {3}",
+		"en": "CLEAN {0} · BRO DIVE {1} · BRO OLLIE {2} · SNACKS {3}"},
 	"result.combos": {"zh": "兄弟配合            {0}", "en": "BRO COMBO              {0}"},
 	# G17：结算页的“下次试试”。只给一条，按 next_try_key() 的优先级挑。
 	"result.try_combo": {
