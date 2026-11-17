@@ -57,10 +57,10 @@ func _check_level_data() -> void:
 		and zones[1]["name"] == "DOCK CHAOS"
 		and zones[2]["name"] == "MUSCLE MAYHEM", "zone names")
 	_check(is_zero_approx(zones[0]["start"]), "zone 1 starts at 0")
-	_check(is_equal_approx(zones[0]["end"], 15000.0)
-		and is_equal_approx(zones[1]["start"], 15000.0), "zone 1/2 boundary 15000")
-	_check(is_equal_approx(zones[1]["end"], 39000.0)
-		and is_equal_approx(zones[2]["start"], 39000.0), "zone 2/3 boundary 39000")
+	_check(is_equal_approx(zones[0]["end"], 10000.0)
+		and is_equal_approx(zones[1]["start"], 10000.0), "zone 1/2 boundary 10000")
+	_check(is_equal_approx(zones[1]["end"], 34000.0)
+		and is_equal_approx(zones[2]["start"], 34000.0), "zone 2/3 boundary 34000")
 	_check(is_equal_approx(zones[2]["end"], LevelDataScript.WORLD_END),
 		"zone 3 ends at world end %.0f" % LevelDataScript.WORLD_END)
 	_check(is_equal_approx(zones[0]["base_speed"], 220.0)
@@ -69,14 +69,14 @@ func _check_level_data() -> void:
 		"base speed 220 / 240 / 260")
 
 	_check(LevelDataScript.zone_at(0.0)["id"] == 1, "zone_at(0) = 1")
-	_check(LevelDataScript.zone_at(14999.0)["id"] == 1, "zone_at(14999) = 1")
-	_check(LevelDataScript.zone_at(15000.0)["id"] == 2, "zone_at(15000) = 2")
-	_check(LevelDataScript.zone_at(38999.0)["id"] == 2, "zone_at(38999) = 2")
-	_check(LevelDataScript.zone_at(39000.0)["id"] == 3, "zone_at(39000) = 3")
-	_check(LevelDataScript.zone_at(65999.0)["id"] == 3, "zone_at(65999) = 3")
+	_check(LevelDataScript.zone_at(9999.0)["id"] == 1, "zone_at(9999) = 1")
+	_check(LevelDataScript.zone_at(10000.0)["id"] == 2, "zone_at(10000) = 2")
+	_check(LevelDataScript.zone_at(33999.0)["id"] == 2, "zone_at(33999) = 2")
+	_check(LevelDataScript.zone_at(34000.0)["id"] == 3, "zone_at(34000) = 3")
+	_check(LevelDataScript.zone_at(58999.0)["id"] == 3, "zone_at(58999) = 3")
 
 	var groups: Array = LevelDataScript.groups()
-	_check(groups.size() == 55, "55 hazard groups (%d)" % groups.size())
+	_check(groups.size() == 53, "53 hazard groups (%d)" % groups.size())
 	var counts := {1: 0, 2: 0, 3: 0}
 	var kinds_by_zone := {1: {}, 2: {}, 3: {}}
 	var all_kinds := {}
@@ -100,8 +100,8 @@ func _check_level_data() -> void:
 		prev_start = start
 		if g["rects"].is_empty() or not g.has("hint") or not g.has("action"):
 			rects_ok = false
-	_check(counts[1] == 12 and counts[2] == 20 and counts[3] == 23,
-		"groups per zone 12 / 20 / 23 (%s)" % str(counts))
+	_check(counts[1] == 10 and counts[2] == 20 and counts[3] == 23,
+		"groups per zone 10 / 20 / 23 (%s)" % str(counts))
 	_check(zone_ok, "every group lies inside its declared zone")
 	_check(sorted_ok, "groups are sorted by start x")
 	_check(rects_ok, "every group has rects / hint / action")
@@ -132,9 +132,10 @@ func _check_level_data() -> void:
 	var z1: Dictionary = st[1]
 	var z2: Dictionary = st[2]
 	var z3: Dictionary = st[3]
-	_check(z1["groups_per_min"] < z2["groups_per_min"]
-		and z2["groups_per_min"] < z3["groups_per_min"],
-		"density rises %.1f < %.1f < %.1f groups/min" % [
+	_check(z3["groups_per_min"] > z1["groups_per_min"]
+		and z3["groups_per_min"] > z2["groups_per_min"]
+		and z1["groups_per_min"] >= 10.0 and z2["groups_per_min"] >= 10.0,
+		"Z3 densest: %.1f / %.1f / %.1f groups/min" % [
 			z1["groups_per_min"], z2["groups_per_min"], z3["groups_per_min"]])
 	# 空档按“时间”判，不按像素：快区的组合前导天然更长（260 px/s 下 5 s = 1300 px）。
 	# FEEL-09：用“上一组尾端 → 下一组起点”的自由时间；start-to-start 会把

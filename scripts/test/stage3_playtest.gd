@@ -127,10 +127,11 @@ func _run() -> void:
 	_reset_watchdog_baseline()
 	var r2: Dictionary = await _run_once(2, true)
 
-	_check(r1["finish_time"] >= 240.0,
-		"run 1 simulated >= 240 s (%.1f)" % r1["finish_time"])
-	_check(r2["finish_time"] >= 240.0,
-		"run 2 simulated >= 240 s (%.1f)" % r2["finish_time"])
+	# PHASE-5：Z1 压到40s、Z3长空档收紧后，总时长约238s。
+	_check(r1["finish_time"] >= 220.0,
+		"run 1 simulated >= 220 s (%.1f)" % r1["finish_time"])
+	_check(r2["finish_time"] >= 220.0,
+		"run 2 simulated >= 220 s (%.1f)" % r2["finish_time"])
 	for result in [r1, r2]:
 		var tag := "run %d" % result["index"]
 		_check(result["zones"].has(1) and result["zones"].has(2)

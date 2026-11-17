@@ -403,3 +403,26 @@ A/B/阶段 2 的赛道、信息、延迟、控制参数都不同，**不能合�
 2. 设计一关“必须跳 + 接人”的验证关，先验证一种新组合。
 3. Zone 1 后段改成“保留一段呼吸空间 + 其余用可选加速带/复习组”，改完重跑矩阵、A、B。
 4. 人工试玩仍等制作人启动；`PRODUCER_PLAYTEST_CANDIDATE` 当前不满足（见审计报告 H.4）。
+
+## 10. 2026-11-18 灰盒收口（GRAYBOX Phase 1–5）
+
+审计后的五轮灰盒改造已完成，`STAGE=4` 未变，素材冻结继续有效：
+
+| 轮次 | 内容 | 报告 |
+|---|---|---|
+| Phase 1 | 切换压力 / MISCHIEF 2.0：7 s 抱怨窗口、1.2 s 反应、电击与拽绳交替（鲨鱼群、海鸟、事故反馈在此前单独修完） | `longrun/GRAYBOX-PHASE1-PRESSURE.md` |
+| Phase 2 | 终点沙滩 + 大表哥、10 组双解、氧气成本、S 评价要求 0 事故 | `longrun/GRAYBOX-PHASE2-FINISH-DECISIONS.md` |
+| Phase 3 | Z1/Z3 三层灰盒纵深、全屏设置、结算动作拆解 | `longrun/GRAYBOX-PHASE3-READABILITY.md` |
+| Phase 4 | 区域数据修正、旧测试债收口 | `longrun/GRAYBOX-PHASE4-VERIFY.md` |
+| Phase 5 | Z1 12→10 组（约 60 s→44 s）、Z3 最长空档 5.9→4.9 s、总组数 55→53 | `longrun/GRAYBOX-PHASE5-TRACK-COMPRESSION.md` |
+
+最终回归：`stage3_playtest` PASS（238.6–238.7 s、53/53、4 accidents、max_stuck=0、grade B）；
+`stage3_selftest`、`stage35_combo_audit`、`stage34_first60`、`stage34_tutorial_relay`、
+`stage32_shark_timing` 均 PASS。`best.json` 保持基线哈希
+`067DEB9A71A19C2F6F9F6DC41FEABF09`；未导出、未打包、未部署。
+
+前文“最无聊的 30 秒”（Zone 1 后段 8.3–8.7 s 空档）已由 Phase 5 删除两组教学障碍解决，
+但新手是否觉得 Z1 开头 9 秒就换人太赶，仍需真人试玩。
+
+**有趣性自评：有保留。** 自动代理只能证明可运行、可计分、无卡死，不能证明好玩；
+真人完整试玩与手感验收仍为 NOT TESTED，交付闸门保持 NOT_VERIFIED。

@@ -1,7 +1,7 @@
 {
   "checks": [
     {
-      "detail": "log1=24.0s",
+      "detail": "log1=16.7s",
       "name": "log1_within_60",
       "ok": true
     },

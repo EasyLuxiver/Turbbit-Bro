@@ -11,27 +11,27 @@ const SURFACE_Y := 300.0
 const RACE_START_X := 400.0
 ## FEEL-37：Z3 末段四次后缀前移（-500 / -600 / -600 / -500），把 4 个 4 s 组合
 ## 压成 2 s 级紧接力；再为 Z2 提前换人把 gate4 起后缀前移 350；终点同步前移 2550，尾段留白与调整前一致（5.5 s）。
-const WORLD_END := 63850.0
+const WORLD_END := 58850.0
 const COMBO_GAP := 1200.0
 const PAR_TIME := 300.0
 
 const ZONES := [
 	{
-		"id": 1, "name": "SUNNY COAST", "start": 0.0, "end": 15000.0,
+		"id": 1, "name": "SUNNY COAST", "start": 0.0, "end": 10000.0,
 		"base_speed": 220.0, "grade_color": Color(0.45, 0.95, 1.0),
 		"sky": Color(0.55, 0.80, 0.92), "water": Color(0.06, 0.42, 0.55),
 		"deep": Color(0.03, 0.28, 0.40), "seabed": Color(0.75, 0.68, 0.45),
 		"lesson": "ZONE 1  SUNNY COAST - LEARN THE WATER",
 	},
 	{
-		"id": 2, "name": "DOCK CHAOS", "start": 15000.0, "end": 39000.0,
+		"id": 2, "name": "DOCK CHAOS", "start": 10000.0, "end": 34000.0,
 		"base_speed": 240.0, "grade_color": Color(1.0, 0.55, 0.65),
 		"sky": Color(0.46, 0.73, 0.88), "water": Color(0.10, 0.43, 0.52),
 		"deep": Color(0.05, 0.23, 0.36), "seabed": Color(0.62, 0.48, 0.42),
 		"lesson": "ZONE 2  DOCK CHAOS - NETS, EELS, SLUICES: PICK THE RIGHT BRO",
 	},
 	{
-		"id": 3, "name": "MUSCLE MAYHEM", "start": 39000.0, "end": WORLD_END,
+		"id": 3, "name": "MUSCLE MAYHEM", "start": 34000.0, "end": WORLD_END,
 		"base_speed": 260.0, "grade_color": Color(1.0, 0.80, 0.35),
 		"sky": Color(0.93, 0.58, 0.38), "water": Color(0.16, 0.36, 0.50),
 		"deep": Color(0.08, 0.18, 0.32), "seabed": Color(0.52, 0.40, 0.32),
@@ -131,17 +131,16 @@ const GROUPS := [
 	# 但 rock1 挪进第一段加速带（2550 起）会抢走首份食物的锚点
 	# （食物从 3250 掉到带左端 2550，紧贴岩石前 60 px），已回退到 2500。
 	# 空档改为在 gate1 上解决（见下一行注释）。
-	{"group": "rock1", "zone": 1, "kind": "SURFACE_ROCK", "x": 2380.0, "w": 110.0},
 	# 2026-11-13（REBUILD-05 E3）：3900 → 3800。Z1 最长空档在 rock1→gate1 /
 	# gate1→rock2 上，把礁拱往中间夹 100 px，两段从 6.36 / 5.45 s 收到 5.91 / 5.91 s；
 	# 食物仍锚在加速带右端 3250（clamp 生效，未移位），gate1→rock2 也不再拉长。
-	{"group": "gate1", "zone": 1, "kind": "DIVE_GATE", "x": 3257.1, "w": 180.0},
-	{"group": "rock2", "zone": 1, "kind": "SURFACE_ROCK", "x": 4433.0, "w": 140.0,
+	{"group": "gate1", "zone": 1, "kind": "DIVE_GATE", "x": 2400.0, "w": 180.0},
+	{"group": "rock2", "zone": 1, "kind": "SURFACE_ROCK", "x": 3240.0, "w": 140.0,
 		"combo": "gate1_rock2", "relay": true},
 	# FEEL-34：Z1 第一根浮木加高，乌龟单潜不再能从底部绕过；
 	# 必须兔子跳上沿 + 乌龟潜下沿（约 24 s，第一次真接力）。
-	{"group": "log1", "zone": 1, "kind": "FLOATING_LOG", "x": 5675.5, "w": 32.0, "h": 215.0},
-	{"group": "shark1", "zone": 1, "kind": "SHARK", "x": 6652.4, "w": 70.0,
+	{"group": "log1", "zone": 1, "kind": "FLOATING_LOG", "x": 4080.0, "w": 32.0, "h": 215.0},
+	{"group": "shark1", "zone": 1, "kind": "SHARK", "x": 4920.0, "w": 70.0,
 		"motion": {"name": "ambush_shark"}},
 	# REBUILD-05 E2 原型 1（周期运动）：潮汐岩。
 	# 岩体随浪上下 52 px / 3.6 s。基本解法不变——跳过去在任何相位都成立；
@@ -149,24 +148,23 @@ const GROUPS := [
 	# 浪谷窗口 0.76 s > 过岩的 0.55 s，整段都低才成立）。
 	# 高相位岩顶 306：反下潜段被抬到世界 454，深潜也能从下面过——
 	# 浪峰钻、浪谷骑、任何时候跳，三种答案由运动决定，但都不是必死。
-	{"group": "rock3", "zone": 1, "kind": "SURFACE_ROCK", "x": 7657.2, "w": 120.0, "identity": "buoy",
+	{"group": "rock3", "zone": 1, "kind": "SURFACE_ROCK", "x": 5760.0, "w": 120.0, "identity": "buoy",
 		"dual": true,
 		"motion": {"name": "tide_rock", "axis": "y", "amp": 52.0, "period": 3.6}},
-	{"group": "beam2", "zone": 1, "kind": "LOW_BEAM", "x": 8741.4, "w": 180.0},
 	# P6（2026-11-13）：原 9600 的低梁 → 10860 的高墙、原 10860 的低鸟 → 13300。
 	# 35–50 s 原来是 rock3→beam2→bird2 三连兔子（只跳、趴、趴），命名无聊段。
 	# 现在中段插进 wall1（跃起+蹬踏，BOTH）：47.5 s 必须两角色配合一次，
 	# 三连兔子拆成“两连 + 一次配合”，窗口里角色切换两次。间距全部 4.9~5.1 s。
-	{"group": "wall1", "zone": 1, "kind": "HIGH_WALL", "x": 10003.5, "w": 30.0},
-	{"group": "gate2", "zone": 1, "kind": "DIVE_GATE", "x": 11325.2, "w": 180.0},
+	{"group": "wall1", "zone": 1, "kind": "HIGH_WALL", "x": 6600.0, "w": 30.0},
+	{"group": "gate2", "zone": 1, "kind": "DIVE_GATE", "x": 7440.0, "w": 180.0},
 	# CORE-FEEL-07 P1-E：bird2 从 13300 收到 12850。原 gate2→bird2→beam1 是
 	# “5.05 / 5.18 s”两拍同速；现在变成 3.05 s 的突然一拍，再留 7.23 s 长呼吸，
 	# 让“节奏变化”这一段有可测量的加速与回落（beam1 是食物锚点，位置不动）。
 	# FEEL-09 优化：7.23 s 的空档超过“最长 6 s”门槛，bird2 回到 13280；
 	# 两拍变成 5.82 / 5.77 s，仍保留方向切换，但不再有 7 s 无事可做。
-	{"group": "bird2", "zone": 1, "kind": "LOW_BIRD", "x": 12659.2, "w": 110.0,
+	{"group": "bird2", "zone": 1, "kind": "LOW_BIRD", "x": 8280.0, "w": 110.0,
 		"dual": true},
-	{"group": "beam1", "zone": 1, "kind": "LOW_BEAM", "x": 13980.0, "w": 170.0},
+	{"group": "beam1", "zone": 1, "kind": "LOW_BEAM", "x": 9120.0, "w": 170.0},
 
 	# ---- Zone 2：连换。 ----
 	# REBUILD-06 P3：原来的“巡游鲨”改成水下伏击，移动从横向巡游换成
@@ -175,56 +173,56 @@ const GROUPS := [
 	# bird2(兔)→beam1(兔)→beam3(兔) 是三连兔子：Z1 末尾两连 + 进 Z2 再一组，
 	# 刚做完 wall1 的配合又回到同一个答案；换位后 bird2+beam1 两连、shark3
 	# 在 69.7 s 先要一次乌龟对水下伏击的应对、beam3+rock4 也只剩两连。
-	{"group": "shark3", "zone": 2, "kind": "SHARK", "x": 15162.5, "w": 70.0,
+	{"group": "shark3", "zone": 2, "kind": "SHARK", "x": 10162.5, "w": 70.0,
 		"motion": {"name": "ambush_shark"}},
 	# FEEL-09 优化：beam3 从 17000 提前到 16880，beam3→rock4 由 2.50 s 拉到
 	# 3.71 s，满足“单角色障碍至少 3.5 s”的门槛；rock4 是动态障碍，不动它的 x。
-	{"group": "beam3", "zone": 2, "kind": "LOW_BEAM", "x": 16164.0, "w": 170.0,
+	{"group": "beam3", "zone": 2, "kind": "LOW_BEAM", "x": 11164.0, "w": 170.0,
 		"combo": "shark3_beam3"},
 	# REBUILD-05 G：进 Z2 第一组岩也改成潮汐岩（同 52 px / 3.6 s）。
 	# 这样“进 Z2 就看得见东西在动”，不是先走五组静态再碰到第一块会动的岩。
-	{"group": "rock4", "zone": 2, "kind": "SURFACE_ROCK", "x": 17250.4, "w": 120.0, "identity": "dock_crate",
+	{"group": "rock4", "zone": 2, "kind": "SURFACE_ROCK", "x": 12250.4, "w": 120.0, "identity": "dock_crate",
 		"motion": {"name": "tide_rock", "axis": "y", "amp": 52.0, "period": 3.6, "phase": 0.18}},
-	{"group": "gate3", "zone": 2, "kind": "DIVE_GATE", "x": 18311.7, "w": 180.0,
+	{"group": "gate3", "zone": 2, "kind": "DIVE_GATE", "x": 13311.7, "w": 180.0,
 		"combo": "rock4_gate3", "relay": true},
-	{"group": "bird3", "zone": 2, "kind": "LOW_BIRD", "x": 19539.2, "w": 120.0,
+	{"group": "bird3", "zone": 2, "kind": "LOW_BIRD", "x": 14539.2, "w": 120.0,
 		"combo": "gate3_bird3"},
 	# REBUILD-05 G：Z2 也补一组涨落浮木——到 Z2 结束前，三个原型（潮汐/巡游/浪涌）
 	# 都出现过。浮木不是食物锚点（Z2 锚点是 gate3 / rock6 / shark5）。
 	# 规格与 log6 完全相同（−18 ± 22 px / 5.0 s），浪高上限仍是 +4，不偷袭标准 BRO DIVE。
-	{"group": "log2", "zone": 2, "kind": "FLOATING_LOG", "x": 20837.2, "w": 32.0,
+	{"group": "log2", "zone": 2, "kind": "FLOATING_LOG", "x": 15837.2, "w": 32.0,
 		"motion": {"name": "swell_log", "axis": "y", "amp": 22.0, "period": 5.0,
 			"bias": -18.0, "phase": 0.22}},
 	# REBUILD-05 F：Z2 也补一组潮汐岩（同 52 px / 3.6 s 规格）。Z1 只留 rock3
 	# 当样板——教学区不再加运动；Z2 从这里开始“同样的岩，有时在动”。
 	# 这组不是食物锚点（锚点是 rock6），动的是 y 轴，不影响食物位置。
-	{"group": "rock5", "zone": 2, "kind": "SURFACE_ROCK", "x": 22211.6, "w": 130.0, "identity": "dock_crate",
+	{"group": "rock5", "zone": 2, "kind": "SURFACE_ROCK", "x": 17211.6, "w": 130.0, "identity": "dock_crate",
 		"motion": {"name": "tide_rock", "axis": "y", "amp": 52.0, "period": 3.6, "phase": 0.47}},
-	{"group": "beam4", "zone": 2, "kind": "LOW_BEAM", "x": 23433.2, "w": 180.0,
+	{"group": "beam4", "zone": 2, "kind": "LOW_BEAM", "x": 18433.2, "w": 180.0,
 		"no_anti_dive": true, "dual": true, "combo": "beam4_dual"},
-	{"group": "wall2", "zone": 2, "kind": "HIGH_WALL", "x": 24588.7, "w": 30.0},
-	{"group": "rock6", "zone": 2, "kind": "SURFACE_ROCK", "x": 25579.0, "w": 140.0,
+	{"group": "wall2", "zone": 2, "kind": "HIGH_WALL", "x": 19588.7, "w": 30.0},
+	{"group": "rock6", "zone": 2, "kind": "SURFACE_ROCK", "x": 20579.0, "w": 140.0,
 		"no_anti_dive": true, "dual": true},
-	{"group": "gate4", "zone": 2, "kind": "DIVE_GATE", "x": 26423.1, "w": 180.0,
+	{"group": "gate4", "zone": 2, "kind": "DIVE_GATE", "x": 21423.1, "w": 180.0,
 		"combo": "rock6_gate4", "relay": true},
-	{"group": "bird4", "zone": 2, "kind": "LOW_BIRD", "x": 27782.7, "w": 110.0,
+	{"group": "bird4", "zone": 2, "kind": "LOW_BIRD", "x": 22782.7, "w": 110.0,
 		"combo": "gate4_bird4", "relay": true, "dual": true},
-	{"group": "log3", "zone": 2, "kind": "FLOATING_LOG", "x": 29241.2, "w": 32.0},
-	{"group": "rock7", "zone": 2, "kind": "SURFACE_ROCK", "x": 30367.6, "w": 120.0, "identity": "dock_crate",
+	{"group": "log3", "zone": 2, "kind": "FLOATING_LOG", "x": 24241.2, "w": 32.0},
+	{"group": "rock7", "zone": 2, "kind": "SURFACE_ROCK", "x": 25367.6, "w": 120.0, "identity": "dock_crate",
 		"motion": {"name": "tide_rock", "axis": "y", "amp": 52.0, "period": 3.6, "phase": 0.63}},
-	{"group": "beam5", "zone": 2, "kind": "LOW_BEAM", "x": 31464.7, "w": 170.0,
+	{"group": "beam5", "zone": 2, "kind": "LOW_BEAM", "x": 26464.7, "w": 170.0,
 		"no_anti_dive": true, "dual": true, "combo": "beam5_dual"},
 	# REBUILD-06 P3 原型：水下伏击鲨的样板组（Z2 第一只）。
 	# 潜伏时整条鱼在 528～720，正常巡航/下潜都碰不到；进入 0.95 s 航程
 	# 亮 0.55 s 预警，然后冲到水面压 1.4 s。跃起仍是保底解，退避后壳自动放行。
-	{"group": "shark5", "zone": 2, "kind": "SHARK", "x": 32595.7, "w": 70.0,
+	{"group": "shark5", "zone": 2, "kind": "SHARK", "x": 27595.7, "w": 70.0,
 		"motion": {"name": "ambush_shark"}},
-	{"group": "bird5", "zone": 2, "kind": "LOW_BIRD", "x": 33719.4, "w": 120.0,
+	{"group": "bird5", "zone": 2, "kind": "LOW_BIRD", "x": 28719.4, "w": 120.0,
 		"combo": "shark5_bird5", "dual": true},
-	{"group": "log4", "zone": 2, "kind": "FLOATING_LOG", "x": 35019.4, "w": 32.0},
+	{"group": "log4", "zone": 2, "kind": "FLOATING_LOG", "x": 30019.4, "w": 32.0},
 	# CORE-FEEL-07 P1-E：gate5 从 38000 收到 37480。log4（BRO DIVE）落下后
 	# 已经在下潜姿态，2.91 s 后紧接着要过礁拱——这一段是“连招”，不是两个单点。
-	{"group": "gate5", "zone": 2, "kind": "DIVE_GATE", "x": 36394.3, "w": 180.0,
+	{"group": "gate5", "zone": 2, "kind": "DIVE_GATE", "x": 31394.3, "w": 180.0,
 		"relay": true},
 
 	# ---- Zone 3：收紧。 ----
@@ -235,32 +233,32 @@ const GROUPS := [
 	# shark6 仍是水下伏击，只是从第一组后移一组。
 	# PHASE-4：beam6 在 37953，实际仍在 Z2 区间（Z3 从 39000 开始）。
 	# 保留它作为 Z3 前的最后一拍，但 zone 标为 2，避免“区域外障碍”与提前提速。
-	{"group": "beam6", "zone": 2, "kind": "LOW_BEAM", "x": 37953.1, "w": 180.0},
-	{"group": "shark6", "zone": 3, "kind": "SHARK", "x": 39218.9, "w": 70.0,
+	{"group": "beam6", "zone": 2, "kind": "LOW_BEAM", "x": 32953.1, "w": 180.0},
+	{"group": "shark6", "zone": 3, "kind": "SHARK", "x": 34218.9, "w": 70.0,
 		"motion": {"name": "ambush_shark"}},
 	# P6（2026-11-13）：Z3 第三组岩加入潮汐（同 52 px / 3.6 s）。Z3 的高操作占比
 	# 原来被 Z2 压过（0.50 < 0.58），且这几个静态岩连着梁/拱做成整段“站着按键”。
 	# 它不在食物锚点链上（锚点是 shark8/beam8/shark9/gate8），动的是 y 轴，不影响食物。
-	{"group": "rock8", "zone": 3, "kind": "SURFACE_ROCK", "x": 40372.8, "w": 130.0,
+	{"group": "rock8", "zone": 3, "kind": "SURFACE_ROCK", "x": 35372.8, "w": 130.0,
 		"identity": "drift_crate", "dual": true,
 		"motion": {"name": "tide_rock", "axis": "y", "amp": 52.0, "period": 3.6, "phase": 0.31}},
-	{"group": "gate6", "zone": 3, "kind": "DIVE_GATE", "x": 41553.3, "w": 180.0,
+	{"group": "gate6", "zone": 3, "kind": "DIVE_GATE", "x": 36553.3, "w": 180.0,
 		"relay": true},
 	# REBUILD-05 G22：Z3 的这组浮木也随浪涌走（与 log6/log2 同规格 −18 ± 22 px / 5.0 s，
 	# 相位错开 0.35 个周期）。它不在食物锚点链上（Z3 锚点是 shark8/beam8/shark9/gate8）。
 	# 这样 Z3 两处“浮木/鸟”不再是同一张静态图：第一处浮木会沉浮，第二处不动。
-	{"group": "log5", "zone": 3, "kind": "FLOATING_LOG", "x": 42297.8, "w": 32.0,
+	{"group": "log5", "zone": 3, "kind": "FLOATING_LOG", "x": 37297.8, "w": 32.0,
 		"combo": "gate6_log5", "relay": true,
 		"motion": {"name": "swell_log", "axis": "y", "amp": 22.0, "period": 5.0,
 			"bias": -18.0, "phase": 0.35}},
-	{"group": "bird6", "zone": 3, "kind": "LOW_BIRD", "x": 42946.4, "w": 120.0,
+	{"group": "bird6", "zone": 3, "kind": "LOW_BIRD", "x": 37946.4, "w": 120.0,
 		"combo": "log5_bird6", "relay": true, "dual": true},
-	{"group": "wall3", "zone": 3, "kind": "HIGH_WALL", "x": 44222.3, "w": 30.0},
-	{"group": "beam7", "zone": 3, "kind": "LOW_BEAM", "x": 44706.4, "w": 170.0,
+	{"group": "wall3", "zone": 3, "kind": "HIGH_WALL", "x": 39222.3, "w": 30.0},
+	{"group": "beam7", "zone": 3, "kind": "LOW_BEAM", "x": 39706.4, "w": 170.0,
 		"combo": "wall3_beam7"},
 	# REBUILD-05 F：Z3 第二组潮汐岩（同规格）。这组比样板宽 20 px，
 	# 跳跃在 8 个相位都验过；它不是食物锚点（锚点是 shark9）。
-	{"group": "rock9", "zone": 3, "kind": "SURFACE_ROCK", "x": 45894.0, "w": 140.0, "identity": "drift_crate",
+	{"group": "rock9", "zone": 3, "kind": "SURFACE_ROCK", "x": 40894.0, "w": 140.0, "identity": "drift_crate",
 		"motion": {"name": "tide_rock", "axis": "y", "amp": 52.0, "period": 3.6, "phase": 0.52}},
 	# CORE-FEEL-07 P1-E：D 持续环境段的入口。礁拱从 190 拉成 760 宽——不是新障碍，
 	# 是同一个 DIVE_GATE 拉长：玩家必须持续按住 ↓ 约 3.8 s（含进洞下潜与出洞上浮）
@@ -268,7 +266,7 @@ const GROUPS := [
 	# 环境一直在动，没有“过一组就歇”的节拍。
 	# FEEL-09 优化：D1 长隧道 760 → 600。它仍是全游戏最长的下潜段，但尾端到
 	# log6 的反应从 3.00 s 提到 3.62 s，满足单角色障碍 3.5 s 门槛。
-	{"group": "gate7", "zone": 3, "kind": "DIVE_GATE", "x": 47054.4, "w": 600.0},
+	{"group": "gate7", "zone": 3, "kind": "DIVE_GATE", "x": 42054.4, "w": 600.0},
 	# FEEL-13 P0-B：Z3 末段顺序与间距重排。
 	# 旧顺序在 shark8 之后是 bird7→beam8→rock10 三连兔子；现在把 log7 插进
 	# beam8 与 rock10 之间，再把 shark9 提前到 rock10 之后，最后四组改成
@@ -276,33 +274,33 @@ const GROUPS := [
 	# 间距按“上一组末端 + 3.75~4.55 s 反应时间”重算；gate7 仍是 600 宽长隧道，
 	# 隧道尾到 log6 保留 4.15 s。
 	# REBUILD-05 E2 原型 3（环境变化）：涨落浮木 −18 ± 22 px / 5.0 s，phase 0.14。
-	{"group": "log6", "zone": 3, "kind": "FLOATING_LOG", "x": 48708.0, "w": 32.0,
+	{"group": "log6", "zone": 3, "kind": "FLOATING_LOG", "x": 43708.0, "w": 32.0,
 		"motion": {"name": "swell_log", "axis": "y", "amp": 22.0, "period": 5.0,
 			"bias": -18.0, "phase": 0.14}},
 	# shark8 仍是食物锚点；它现在直接接 bird7，不再让 beam8 紧贴加速尾巴。
-	{"group": "shark8", "zone": 3, "kind": "SHARK", "x": 49853.1, "w": 70.0,
+	{"group": "shark8", "zone": 3, "kind": "SHARK", "x": 44853.1, "w": 70.0,
 		"motion": {"name": "ambush_shark"}},
-	{"group": "bird7", "zone": 3, "kind": "LOW_BIRD", "x": 51077.7, "w": 110.0},
-	{"group": "beam8", "zone": 3, "kind": "LOW_BEAM", "x": 52241.6, "w": 180.0},
-	{"group": "log7", "zone": 3, "kind": "FLOATING_LOG", "x": 53439.0, "w": 32.0},
+	{"group": "bird7", "zone": 3, "kind": "LOW_BIRD", "x": 46077.7, "w": 110.0},
+	{"group": "beam8", "zone": 3, "kind": "LOW_BEAM", "x": 47241.6, "w": 180.0},
+	{"group": "log7", "zone": 3, "kind": "FLOATING_LOG", "x": 48439.0, "w": 32.0},
 	# REBUILD-05 E3：Z3 第二组动态潮汐岩，phase 0.71。
-	{"group": "rock10", "zone": 3, "kind": "SURFACE_ROCK", "x": 54000.0, "w": 120.0,
+	{"group": "rock10", "zone": 3, "kind": "SURFACE_ROCK", "x": 49000.0, "w": 120.0,
 		"identity": "drift_crate", "combo": "log7_rock10", "relay": true, "dual": true,
 		"motion": {"name": "tide_rock", "axis": "y", "amp": 52.0, "period": 3.6, "phase": 0.71}},
-	{"group": "shark9", "zone": 3, "kind": "SHARK", "x": 55665.0, "w": 70.0,
+	{"group": "shark9", "zone": 3, "kind": "SHARK", "x": 50065.0, "w": 70.0,
 		"motion": {"name": "ambush_shark"}},
-	{"group": "bird8", "zone": 3, "kind": "LOW_BIRD", "x": 56248.1, "w": 130.0,
+	{"group": "bird8", "zone": 3, "kind": "LOW_BIRD", "x": 50648.1, "w": 130.0,
 		"combo": "shark9_bird8", "relay": true},
-	{"group": "beam9", "zone": 3, "kind": "LOW_BEAM", "x": 57532.7, "w": 170.0},
-	{"group": "log8", "zone": 3, "kind": "FLOATING_LOG", "x": 58756.6, "w": 32.0},
+	{"group": "beam9", "zone": 3, "kind": "LOW_BEAM", "x": 51932.7, "w": 170.0},
+	{"group": "log8", "zone": 3, "kind": "FLOATING_LOG", "x": 53156.6, "w": 32.0},
 	# REBUILD-05 G：Z3 末段宽岩（w=150）加潮汐，phase 0.27；不是食物锚点。
-	{"group": "rock11", "zone": 3, "kind": "SURFACE_ROCK", "x": 59806.0, "w": 150.0, "identity": "drift_crate",
+	{"group": "rock11", "zone": 3, "kind": "SURFACE_ROCK", "x": 54206.0, "w": 150.0, "identity": "drift_crate",
 		"motion": {"name": "tide_rock", "axis": "y", "amp": 52.0, "period": 3.6, "phase": 0.27}},
-	{"group": "gate8", "zone": 3, "kind": "DIVE_GATE", "x": 60976.4, "w": 180.0},
-	{"group": "bird9", "zone": 3, "kind": "LOW_BIRD", "x": 61750.0, "w": 120.0,
+	{"group": "gate8", "zone": 3, "kind": "DIVE_GATE", "x": 55376.4, "w": 180.0},
+	{"group": "bird9", "zone": 3, "kind": "LOW_BIRD", "x": 56150.0, "w": 120.0,
 		"combo": "gate8_bird9", "relay": true},
 	# 终点前最后一跳仍是动态潮汐岩，phase 0.58；在浪里收尾。
-	{"group": "rock12", "zone": 3, "kind": "SURFACE_ROCK", "x": 62300.0, "w": 120.0,
+	{"group": "rock12", "zone": 3, "kind": "SURFACE_ROCK", "x": 56700.0, "w": 120.0,
 		"identity": "drift_crate",
 		"motion": {"name": "tide_rock", "axis": "y", "amp": 52.0, "period": 3.6, "phase": 0.58}},
 ]
@@ -417,14 +415,14 @@ const SNACK_BOOST_TAIL := 180.0
 
 const BOOST_LANES := [
 	Rect2(2550, 250, 700, 70),
-	Rect2(13700, 250, 700, 70),
-	Rect2(18400, 250, 700, 70),
-	Rect2(25800, 250, 700, 70),
-	Rect2(33400, 250, 700, 70),
-	Rect2(53000, 250, 500, 70),
-	Rect2(54200, 250, 700, 70),
-	Rect2(58900, 250, 500, 70),
-	Rect2(62100, 250, 500, 70),
+	Rect2(7000, 250, 700, 70),
+	Rect2(13400, 250, 700, 70),
+	Rect2(20800, 250, 700, 70),
+	Rect2(28400, 250, 700, 70),
+	Rect2(48000, 250, 500, 70),
+	Rect2(49200, 250, 700, 70),
+	Rect2(53900, 250, 500, 70),
+	Rect2(57100, 250, 500, 70),
 ]
 
 ## 任务书 §二 给的每区候选池（保留原文，作为设计意图的存档）。
