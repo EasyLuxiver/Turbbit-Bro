@@ -233,7 +233,9 @@ const GROUPS := [
 	# FEEL-20 P1：G31–G35 连续情境。把 beam6 放在 Z3 入口第一拍，
 	# 让 gate5（B）→ beam6（T）→ shark6（B）形成 B/T/B 的角色交替；
 	# shark6 仍是水下伏击，只是从第一组后移一组。
-	{"group": "beam6", "zone": 3, "kind": "LOW_BEAM", "x": 37953.1, "w": 180.0},
+	# PHASE-4：beam6 在 37953，实际仍在 Z2 区间（Z3 从 39000 开始）。
+	# 保留它作为 Z3 前的最后一拍，但 zone 标为 2，避免“区域外障碍”与提前提速。
+	{"group": "beam6", "zone": 2, "kind": "LOW_BEAM", "x": 37953.1, "w": 180.0},
 	{"group": "shark6", "zone": 3, "kind": "SHARK", "x": 39218.9, "w": 70.0,
 		"motion": {"name": "ambush_shark"}},
 	# P6（2026-11-13）：Z3 第三组岩加入潮汐（同 52 px / 3.6 s）。Z3 的高操作占比

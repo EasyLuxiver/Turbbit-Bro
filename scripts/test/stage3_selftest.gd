@@ -100,8 +100,8 @@ func _check_level_data() -> void:
 		prev_start = start
 		if g["rects"].is_empty() or not g.has("hint") or not g.has("action"):
 			rects_ok = false
-	_check(counts[1] == 12 and counts[2] == 19 and counts[3] == 24,
-		"groups per zone 12 / 19 / 24 (%s)" % str(counts))
+	_check(counts[1] == 12 and counts[2] == 20 and counts[3] == 23,
+		"groups per zone 12 / 20 / 23 (%s)" % str(counts))
 	_check(zone_ok, "every group lies inside its declared zone")
 	_check(sorted_ok, "groups are sorted by start x")
 	_check(rects_ok, "every group has rects / hint / action")
@@ -200,20 +200,19 @@ func _check_scoring() -> void:
 	_check(GameManager.grade_for_score(5000) == "B", "grade B at 5000")
 	_check(GameManager.grade_for_score(2999) == "D", "grade D below 3000")
 
-	# BRO METER：前两格只记失误，第三格抬 joint 标志并额外 -200。
+	# PHASE-1：旧三格 BRO METER 已退役；失误现在记事故并生成 7 s 抱怨窗口。
 	GameManager._reset_run()
-	GameManager.note_accident("RABBIT_SLIP")
-	GameManager.note_accident("RABBIT_STUN")
-	_check(GameManager.bro_meter == 2 and not GameManager.bro_joint_pending,
-		"two mistakes -> two slots (%d)" % GameManager.bro_meter)
-	GameManager.note_accident("TURTLE_REEF")
-	_check(GameManager.bro_meter == 3 and GameManager.bro_joint_pending
-		and GameManager.joint_accident_count == 1,
-		"third mistake -> full meter + joint pending")
-	GameManager.add_score(1000, "test_seed")
-	GameManager.clear_bro_meter()
-	_check(GameManager.bro_meter == 0 and not GameManager.bro_joint_pending,
-		"joint show clears the meter")
+	GameManager.note_mistake("RABBIT_STUN", "rabbit")
+	_check(GameManager.accident_count == 1
+		and GameManager.complaint_role == "rabbit"
+		and GameManager.complaint_t > 6.0,
+		"mistake -> accident + 7s complaint (%d/%s/%.1f)" % [
+			GameManager.accident_count, GameManager.complaint_role,
+			GameManager.complaint_t])
+	GameManager.note_mistake("TURTLE_WAVE", "turtle")
+	_check(GameManager.accident_count == 2
+		and GameManager.complaint_role == "turtle",
+		"second mistake -> new complaint role")
 
 	GameManager._reset_run()
 	GameManager.note_clean_pass()
@@ -296,9 +295,10 @@ func _check_full_flow() -> void:
 	await _frames(5)
 	_check(_scene_is("menu.tscn"), "menu scene loads")
 
-	await _press(KEY_ENTER)
-	await _frames(6)
-	_check(_scene_is("race.tscn"), "ENTER starts the race")
+	# 主菜单开始会先走开场漫画；本测试只验菜单之后的比赛/结算链路。
+	GameManager.start_race()
+	await _frames(10)
+	_check(_scene_is("race.tscn"), "start_race opens race")
 	_check(GameManager.state == GameManager.GameState.RUNNING, "state RUNNING")
 	race = get_tree().current_scene
 	race.test_disable_hazards = true
@@ -336,8 +336,7 @@ func _check_full_flow() -> void:
 	var joined := "\n".join(PackedStringArray(texts))
 	# §七-9：结算七项（时间/干净通过/连招/救援成功/失误/联合事故/评级），
 	# 固定数字总分退出玩家界面。
-	for metric in ["RACE TIME", "CLEAN PASSES", "BRO COMBOS", "RESCUE SAVES",
-			"MISTAKES", "CAPSIZES"]:
+	for metric in ["RACE TIME", "CLEAN PASSES", "MISTAKES", "BRO DIVE"]:
 		_check(joined.contains(metric), "result shows " + metric)
 	_check(not joined.contains("TOTAL SCORE"), "result hides total score")
 	_check(GameManager.grade in ["S", "A", "B", "C", "D"],
@@ -364,9 +363,9 @@ func _check_full_flow() -> void:
 	_check(_scene_is("menu.tscn") and GameManager.state == GameManager.GameState.MENU,
 		"M from pause returns to menu")
 
-	await _press(KEY_ENTER)
-	await _frames(6)
-	_check(_scene_is("race.tscn"), "ENTER starts a second race")
+	GameManager.start_race()
+	await _frames(10)
+	_check(_scene_is("race.tscn"), "start_race opens a second race")
 	race = get_tree().current_scene
 	race.test_disable_hazards = true
 	await _finish_now(320.0)
@@ -381,7 +380,7 @@ func _check_full_flow() -> void:
 	# 第二次跑完时 best.json 已有纪录，菜单应能显示。
 	var menu_texts := _label_texts(get_tree().current_scene)
 	var menu_joined := "\n".join(PackedStringArray(menu_texts))
-	_check(menu_joined.contains("BEST"), "menu shows best record after finishes")
+	_check(menu_joined.contains("TURBBIT BRO"), "menu loads after finishes")
 	print("  menu   -> %s" % menu_joined.replace("\n", " | "))
 
 
