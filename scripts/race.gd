@@ -23,6 +23,9 @@ const SHOWTIME_CLEAR := 900.0
 ## （灰盒实测 180–220 px 可过，200 px 余量最大），而不是通用 270 px。
 const GATE_WARN := 200.0
 const FINISH_DELAY := 1.6
+## PHASE-2：终点后的沙滩缓冲。镜头跟到世界终点后还要展示大表哥，
+## 这段必须继续有背景，否则会露出默认黑色清屏。
+const FINISH_BEACH_EXTRA := 2200.0
 
 var hazard_groups: Array = []
 var boost_lanes: Array = []
@@ -583,6 +586,8 @@ func _ready() -> void:
 		GameManager.state = GameManager.GameState.RUNNING
 	if "--capture-stage2" in args:
 		_capture_after(1.0, "stage2_hud.png")
+	if "--capture-finish" in args:
+		_capture_finish(_arg_after(args, "--capture-finish", "phase2_finish.png"))
 	if "--capture-race" in args:
 		_capture_after(1.0, _arg_after(args, "--capture-race", "stage4_race.png"))
 	if "--capture-leap" in args:
@@ -4418,13 +4423,17 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _draw() -> void:
-	var world_width := world_end + 900.0
+	# PHASE-2：终点后至少留一屏沙滩，不能再让镜头滑进默认黑色清屏。
+	var finish_extra := FINISH_BEACH_EXTRA
+	var world_width := world_end + finish_extra
 	# 三个区域各画一段背景；区域边界和名字直接画在世界里。
 	# CORE-FEEL-08 P1-D：第二区域改成室内木质码头，背景由 Zone2Dock 的六层节点负责
 	# （z_index 都在本节点之下）。这里如果继续铺平色块，会把那些层整个盖住。
 	for zone in LevelDataScript.ZONES:
 		var x0: float = zone["start"] - 400.0
 		var w: float = zone["end"] - zone["start"] + 400.0
+		if int(zone["id"]) == 3:
+			w += finish_extra
 		# P0-D：Z1 的平色背景提前 400 px 让位给渐变带；否则它在 15000 的
 		# 硬边会从渐变带底下露出来，接缝只是变淡而没有消失。
 		if int(zone["id"]) == 1:
@@ -4447,6 +4456,8 @@ func _draw() -> void:
 	# 两段之间会留下一条竖直的“图层跳变”。这里用 800 px 的 Z1→透明渐变带
 	# 把接缝化开：14600 还是完整 Z1，15400 完全交给码头，第一组障碍 15800 之前完成。
 	_draw_zone2_blend()
+	if not test_no_finish:
+		_draw_finish_beach()
 	# 危险深度线只在 F3 调试层出现；正常界面没有红线。
 	if debug_mode:
 		draw_line(Vector2(-400, 740), Vector2(world_width, 740),
@@ -4457,11 +4468,6 @@ func _draw() -> void:
 
 	_draw_snacks()
 	_draw_z3_warning()
-	if not test_no_finish:
-		draw_rect(Rect2(world_end, 120, 16, 700), Color(1.0, 0.85, 0.2))
-		draw_string(ThemeDB.fallback_font, Vector2(world_end - 50, 100),
-			Locale.t("world.finish"),
-			HORIZONTAL_ALIGNMENT_LEFT, -1, 28, Color(1.0, 0.85, 0.2))
 
 	var cam_x: float = camera.position.x if camera != null else turtle.position.x
 	for g in hazard_groups:
@@ -4529,6 +4535,100 @@ func _draw_zone2_blend() -> void:
 		var c: Color = b[2]
 		draw_texture_rect(_zone2_fade_tex, Rect2(x0, y0, x1 - x0, y1 - y0),
 			false, c)
+
+
+## PHASE-2：终点不是黑屏。沙滩从水平线一直铺到屏幕底部，大表哥站在
+## 终点门后等他们冲线；全部用灰盒几何，后续只换美术。
+func _draw_finish_beach() -> void:
+	var x0 := world_end
+	var x1 := world_end + FINISH_BEACH_EXTRA
+	var sand := Color(0.82, 0.69, 0.45)
+	var sand_dark := Color(0.70, 0.56, 0.35)
+	var wet := Color(0.62, 0.60, 0.44)
+	# 沙地 + 湿沙 + 浪线
+	draw_rect(Rect2(x0, SURFACE_Y, x1 - x0, 640.0), sand)
+	draw_rect(Rect2(x0, SURFACE_Y, 190.0, 76.0), wet)
+	draw_rect(Rect2(x0, SURFACE_Y + 76.0, x1 - x0, 6.0), sand_dark)
+	for i in 7:
+		var fx := x0 + 18.0 + i * 26.0
+		draw_arc(Vector2(fx, SURFACE_Y + 4.0), 12.0 + i * 2.0,
+			0.15, PI - 0.30, 10, Color(0.9, 0.98, 1.0, 0.55 - i * 0.05), 2.0)
+	# 沙滩上的浅色纹理，避免一整块纯色
+	for i in 14:
+		var sx := x0 + 240.0 + i * 138.0
+		var sy := SURFACE_Y + 42.0 + (i % 4) * 38.0
+		draw_line(Vector2(sx, sy), Vector2(sx + 52.0, sy + 8.0),
+			Color(0.92, 0.82, 0.58, 0.35), 2.0)
+	# 终点门：两根木桩 + 横幅
+	var post_col := Color(0.34, 0.25, 0.16)
+	draw_rect(Rect2(x0 + 18.0, 116.0, 12.0, 184.0), post_col)
+	draw_rect(Rect2(x0 + 356.0, 116.0, 12.0, 184.0), post_col)
+	draw_rect(Rect2(x0 + 18.0, 116.0, 350.0, 54.0), Color(0.96, 0.82, 0.32))
+	draw_rect(Rect2(x0 + 18.0, 116.0, 350.0, 54.0),
+		Color(0.32, 0.23, 0.12), false, 3.0)
+	draw_string(ThemeDB.fallback_font, Vector2(x0 + 96.0, 154.0),
+		Locale.t("world.finish"), HORIZONTAL_ALIGNMENT_LEFT, -1, 30,
+		Color(0.24, 0.16, 0.08))
+	# 沙滩遮阳伞
+	var ux := x0 + 760.0
+	draw_line(Vector2(ux, 270.0), Vector2(ux, 330.0), Color(0.35, 0.25, 0.16), 6.0)
+	var canopy := PackedVector2Array()
+	for i in 13:
+		var a := PI + PI * float(i) / 12.0
+		canopy.append(Vector2(ux + cos(a) * 74.0, 272.0 + sin(a) * 46.0))
+	draw_colored_polygon(canopy, Color(0.94, 0.38, 0.30))
+	draw_line(Vector2(ux - 74, 272), Vector2(ux + 74, 272),
+		Color(0.72, 0.25, 0.20), 3.0)
+	# 远处的沙丘剪影，压住“背景突然结束”的直线
+	draw_colored_polygon(PackedVector2Array([
+		Vector2(x0 + 980.0, SURFACE_Y), Vector2(x0 + 1160.0, SURFACE_Y - 34.0),
+		Vector2(x0 + 1360.0, SURFACE_Y - 12.0), Vector2(x0 + 1520.0, SURFACE_Y),
+	]), Color(0.72, 0.60, 0.40))
+	# 大表哥：开场漫画同一轮廓。冲线时举手。
+	var cousin_p := Vector2(x0 + 470.0, 174.0)
+	draw_set_transform(cousin_p + Vector2(0, 126), 0.0, Vector2(1.0, 0.28))
+	draw_circle(Vector2.ZERO, 48.0, Color(0.22, 0.18, 0.12, 0.30))
+	draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
+	_draw_cousin(cousin_p, 1.05, finishing)
+	# 大表哥的提示/欢呼
+	var cue := Locale.t("world.finish_cousin" if not finishing else "world.finish_cheer")
+	# 气泡放在头顶、向左展开；镜头刚带到终点时也不会被右边缘切掉。
+	var bubble := Rect2(cousin_p + Vector2(-128, -170), Vector2(250, 34))
+	draw_rect(bubble, Color(0.05, 0.08, 0.10, 0.78))
+	draw_string(ThemeDB.fallback_font, bubble.position + Vector2(10, 23), cue,
+		HORIZONTAL_ALIGNMENT_LEFT, 230, 17, Color(1.0, 0.88, 0.48))
+	# 沙滩旗
+	for i in 3:
+		var fx2 := x0 + 1040.0 + i * 240.0
+		draw_line(Vector2(fx2, 300.0), Vector2(fx2, 214.0), post_col, 5.0)
+		draw_colored_polygon(PackedVector2Array([
+			Vector2(fx2 + 4, 218), Vector2(fx2 + 74, 238), Vector2(fx2 + 4, 258),
+		]), Color(0.94, 0.42, 0.32) if i % 2 == 0 else Color(0.30, 0.70, 0.78))
+
+
+## 与 opening_comic 的大表哥同一套灰盒轮廓；cheer=true 时抬手。
+func _draw_cousin(p: Vector2, s: float, cheer: bool) -> void:
+	var skin := Color(0.95, 0.72, 0.52)
+	var shirt := Color(1.0, 0.38, 0.3)
+	var line := Color(0.12, 0.08, 0.06)
+	draw_circle(p + Vector2(0, 40) * s, 58 * s, shirt)
+	draw_rect(Rect2(p + Vector2(-42, 48) * s, Vector2(84, 70) * s), shirt)
+	draw_circle(p + Vector2(0, -30) * s, 38 * s, skin)
+	draw_arc(p + Vector2(0, -36) * s, 26 * s, PI, TAU, 16, line, 4 * s)
+	draw_line(p + Vector2(-28, -30) * s, p + Vector2(-8, -30) * s, line, 5 * s)
+	draw_line(p + Vector2(8, -30) * s, p + Vector2(28, -30) * s, line, 5 * s)
+	if cheer:
+		draw_line(p + Vector2(-48, 20) * s, p + Vector2(-84, -42) * s, skin, 24 * s)
+		draw_line(p + Vector2(48, 20) * s, p + Vector2(84, -42) * s, skin, 24 * s)
+		draw_circle(p + Vector2(-88, -46) * s, 14 * s, skin)
+		draw_circle(p + Vector2(88, -46) * s, 14 * s, skin)
+	else:
+		draw_line(p + Vector2(-48, 20) * s, p + Vector2(-78, -18) * s, skin, 24 * s)
+		draw_line(p + Vector2(48, 20) * s, p + Vector2(78, -18) * s, skin, 24 * s)
+		draw_circle(p + Vector2(-80, -20) * s, 14 * s, skin)
+		draw_circle(p + Vector2(80, -20) * s, 14 * s, skin)
+	draw_line(p + Vector2(0, -6) * s, p + Vector2(0, 14) * s, line, 3 * s)
+	draw_circle(p + Vector2(0, 16) * s, 6 * s, Color(0.85, 0.85, 0.8))
 
 
 ## 主动垂直动作的灰盒演出：跃起是壳下破水 + 上抛水花；下潜是壳边气泡下压。
@@ -7226,6 +7326,25 @@ func _draw_hitboxes() -> void:
 			draw_rect(hazard_rect_live(group, i), Color(1.0, 0.2, 0.2, 0.8), false, 2.0)
 	draw_rect(turtle.get_body_rect(), Color(0.2, 1.0, 1.0, 0.9), false, 2.0)
 	draw_rect(rabbit.get_body_rect(), Color(0.2, 1.0, 0.5, 0.9), false, 2.0)
+
+
+## PHASE-2：终点沙滩/大表哥截图。只为视觉自检，不写 best。
+func _capture_finish(file_name: String) -> void:
+	opening_active = false
+	finishing = false
+	test_no_finish = false
+	turtle.reset(Vector2(world_end - 100.0, surface_ref()))
+	rabbit.reset()
+	rabbit.attach(turtle.get_mount_point())
+	mount.reset()
+	mount.mark_riding()
+	_update_zone()
+	_update_camera()
+	await get_tree().process_frame
+	await get_tree().process_frame
+	await RenderingServer.frame_post_draw
+	_save_shot(file_name)
+	get_tree().quit(0)
 
 
 func _capture_after(seconds: float, file_name: String) -> void:

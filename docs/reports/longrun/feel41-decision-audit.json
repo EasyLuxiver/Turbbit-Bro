@@ -6,13 +6,13 @@
       "ok": true
     },
     {
-      "detail": "by zone {\"1\":1,\"2\":7,\"3\":7}",
-      "name": "continuous_15",
+      "detail": "by zone {\"1\":1,\"2\":9,\"3\":7}",
+      "name": "continuous_17",
       "ok": true
     },
     {
-      "detail": "by zone {\"1\":2,\"2\":3,\"3\":0}",
-      "name": "dual_total_5",
+      "detail": "by zone {\"1\":2,\"2\":5,\"3\":3}",
+      "name": "dual_total_10",
       "ok": true
     },
     {
@@ -36,7 +36,7 @@
       "ok": true
     },
     {
-      "detail": "count=5",
+      "detail": "count=10",
       "name": "dual_count",
       "ok": true
     },
@@ -152,12 +152,62 @@
     },
     {
       "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"hit_roles\":{},\"oxygen_used\":false,\"passed\":true,\"rabbit_y\":296.0,\"turtle_y\":334.0,\"who\":\"rabbit\"}",
+      "name": "dual_rabbit_passes_bird4",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"hit_roles\":{},\"oxygen_used\":true,\"passed\":true,\"rabbit_y\":425.989593505859,\"turtle_y\":483.989593505859,\"who\":\"turtle\"}",
+      "name": "dual_turtle_passes_bird4",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"hit_roles\":{},\"oxygen_used\":false,\"passed\":true,\"rabbit_y\":296.0,\"turtle_y\":334.0,\"who\":\"rabbit\"}",
       "name": "dual_rabbit_passes_beam5",
       "ok": true
     },
     {
       "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"hit_roles\":{},\"oxygen_used\":true,\"passed\":true,\"rabbit_y\":425.997161865234,\"turtle_y\":483.997161865234,\"who\":\"turtle\"}",
       "name": "dual_turtle_passes_beam5",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"hit_roles\":{},\"oxygen_used\":false,\"passed\":true,\"rabbit_y\":296.0,\"turtle_y\":334.0,\"who\":\"rabbit\"}",
+      "name": "dual_rabbit_passes_bird5",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"hit_roles\":{},\"oxygen_used\":true,\"passed\":true,\"rabbit_y\":425.991241455078,\"turtle_y\":483.991241455078,\"who\":\"turtle\"}",
+      "name": "dual_turtle_passes_bird5",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"up\",\"hit_roles\":{},\"oxygen_used\":false,\"passed\":true,\"rabbit_y\":276.0,\"turtle_y\":334.0,\"who\":\"rabbit\"}",
+      "name": "dual_rabbit_passes_rock8",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"hit_roles\":{},\"oxygen_used\":true,\"passed\":true,\"rabbit_y\":425.985260009766,\"turtle_y\":483.985260009766,\"who\":\"turtle\"}",
+      "name": "dual_turtle_passes_rock8",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"hit_roles\":{},\"oxygen_used\":false,\"passed\":true,\"rabbit_y\":296.0,\"turtle_y\":334.0,\"who\":\"rabbit\"}",
+      "name": "dual_rabbit_passes_bird6",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"hit_roles\":{},\"oxygen_used\":true,\"passed\":true,\"rabbit_y\":425.982452392578,\"turtle_y\":483.982452392578,\"who\":\"turtle\"}",
+      "name": "dual_turtle_passes_bird6",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"up\",\"hit_roles\":{},\"oxygen_used\":false,\"passed\":true,\"rabbit_y\":319.5,\"turtle_y\":377.5,\"who\":\"rabbit\"}",
+      "name": "dual_rabbit_passes_rock10",
+      "ok": true
+    },
+    {
+      "detail": "{\"accident\":\"NONE\",\"action\":\"down\",\"hit_roles\":{},\"oxygen_used\":true,\"passed\":true,\"rabbit_y\":425.982452392578,\"turtle_y\":483.982452392578,\"who\":\"turtle\"}",
+      "name": "dual_turtle_passes_rock10",
       "ok": true
     },
     {

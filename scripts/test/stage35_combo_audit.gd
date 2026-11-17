@@ -40,7 +40,8 @@ func _run() -> void:
 	var must_by_zone := {1: 0, 2: 0, 3: 0}
 	var cont_by_zone := {1: 0, 2: 0, 3: 0}
 	var dual_by_zone := {1: 0, 2: 0, 3: 0}
-	var dual_names := ["bird2", "beam4", "beam5", "rock3", "rock6"]
+	var dual_names := ["bird2", "beam4", "beam5", "rock3", "rock6",
+		"bird4", "bird5", "bird6", "rock8", "rock10"]
 	var dual_groups: Array = []
 	for g in groups:
 		var z: int = int(g["zone"])
@@ -55,7 +56,7 @@ func _run() -> void:
 		if gkind in ["FLOATING_LOG", "HIGH_WALL"] \
 				or gname in ["gate1", "rock2", "beam3"]:
 			must_by_zone[z] = int(must_by_zone.get(z, 0)) + 1
-		if (gcombo != "" and not gdual) or (grelay and gcombo == ""):
+		if gcombo != "" or (grelay and gcombo == ""):
 			cont_by_zone[z] = int(cont_by_zone.get(z, 0)) + 1
 		if gdual:
 			dual_by_zone[z] = int(dual_by_zone.get(z, 0)) + 1
@@ -78,8 +79,8 @@ func _run() -> void:
 		cont_total += int(cont_by_zone[z])
 		dual_total += int(dual_by_zone[z])
 	_check("must_switch_14", must_total == 14, "by zone %s" % JSON.stringify(must_by_zone))
-	_check("continuous_15", cont_total == 15, "by zone %s" % JSON.stringify(cont_by_zone))
-	_check("dual_total_5", dual_total == 5, "by zone %s" % JSON.stringify(dual_by_zone))
+	_check("continuous_17", cont_total == 17, "by zone %s" % JSON.stringify(cont_by_zone))
+	_check("dual_total_10", dual_total == 10, "by zone %s" % JSON.stringify(dual_by_zone))
 	_check("coop_count", coop >= 16 and coop <= 22, "coop=%d combos=%d" % [coop, combos])
 	# 每个组合：和上一组的间隔必须在 400–800 px。
 	var gap_ok := true
@@ -115,7 +116,7 @@ func _run() -> void:
 		_check("z2_anticipation_gap", z2_gap / 240.0 >= 2.5 and z2_gap / 240.0 <= 3.5,
 			"rock6->gate4 %.0f px = %.2f s" % [z2_gap, z2_gap / 240.0])
 	# 双解：bird2 / beam4 / beam5 / rock3 / rock6。
-	_check("dual_count", dual_groups.size() == 5, "count=%d" % dual_groups.size())
+	_check("dual_count", dual_groups.size() == 10, "count=%d" % dual_groups.size())
 	var dual_prompt: String = race._lesson_prompt("LOW_BEAM", "", true)
 	_check("dual_beam_prompt", dual_prompt.contains("SHIFT") or dual_prompt.contains("shifting")
 		or dual_prompt.contains("下潜") or dual_prompt.contains("DIVE"), dual_prompt)

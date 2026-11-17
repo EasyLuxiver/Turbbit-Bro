@@ -518,6 +518,12 @@ const STRINGS := {
 	"world.zone_header": {"zh": "{0}  {1}", "en": "{0}  {1}"},
 	"world.danger_depth": {"zh": "危险深度", "en": "DANGER DEPTH"},
 	"world.finish": {"zh": "终点", "en": "FINISH"},
+	"world.finish_cousin": {
+		"zh": "大表哥：跑起来！别让我白等！",
+		"en": "COUSIN: BRING IT HOME! I'VE BEEN WAITING!"},
+	"world.finish_cheer": {
+		"zh": "大表哥：这才叫兄弟默契！",
+		"en": "COUSIN: THAT'S BRO SYNC!"},
 	"world.safe_above": {"zh": "跳上面", "en": "JUMP ABOVE"},
 	"world.safe_below": {"zh": "潜下面", "en": "DIVE BELOW"},
 	"world.current": {"zh": "急流", "en": "CURRENT"},

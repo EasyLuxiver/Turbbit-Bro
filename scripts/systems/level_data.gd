@@ -208,7 +208,7 @@ const GROUPS := [
 	{"group": "gate4", "zone": 2, "kind": "DIVE_GATE", "x": 26423.1, "w": 180.0,
 		"combo": "rock6_gate4", "relay": true},
 	{"group": "bird4", "zone": 2, "kind": "LOW_BIRD", "x": 27782.7, "w": 110.0,
-		"combo": "gate4_bird4", "relay": true},
+		"combo": "gate4_bird4", "relay": true, "dual": true},
 	{"group": "log3", "zone": 2, "kind": "FLOATING_LOG", "x": 29241.2, "w": 32.0},
 	{"group": "rock7", "zone": 2, "kind": "SURFACE_ROCK", "x": 30367.6, "w": 120.0, "identity": "dock_crate",
 		"motion": {"name": "tide_rock", "axis": "y", "amp": 52.0, "period": 3.6, "phase": 0.63}},
@@ -220,7 +220,7 @@ const GROUPS := [
 	{"group": "shark5", "zone": 2, "kind": "SHARK", "x": 32595.7, "w": 70.0,
 		"motion": {"name": "ambush_shark"}},
 	{"group": "bird5", "zone": 2, "kind": "LOW_BIRD", "x": 33719.4, "w": 120.0,
-		"combo": "shark5_bird5"},
+		"combo": "shark5_bird5", "dual": true},
 	{"group": "log4", "zone": 2, "kind": "FLOATING_LOG", "x": 35019.4, "w": 32.0},
 	# CORE-FEEL-07 P1-E：gate5 从 38000 收到 37480。log4（BRO DIVE）落下后
 	# 已经在下潜姿态，2.91 s 后紧接着要过礁拱——这一段是“连招”，不是两个单点。
@@ -239,7 +239,8 @@ const GROUPS := [
 	# P6（2026-11-13）：Z3 第三组岩加入潮汐（同 52 px / 3.6 s）。Z3 的高操作占比
 	# 原来被 Z2 压过（0.50 < 0.58），且这几个静态岩连着梁/拱做成整段“站着按键”。
 	# 它不在食物锚点链上（锚点是 shark8/beam8/shark9/gate8），动的是 y 轴，不影响食物。
-	{"group": "rock8", "zone": 3, "kind": "SURFACE_ROCK", "x": 40372.8, "w": 130.0, "identity": "drift_crate",
+	{"group": "rock8", "zone": 3, "kind": "SURFACE_ROCK", "x": 40372.8, "w": 130.0,
+		"identity": "drift_crate", "dual": true,
 		"motion": {"name": "tide_rock", "axis": "y", "amp": 52.0, "period": 3.6, "phase": 0.31}},
 	{"group": "gate6", "zone": 3, "kind": "DIVE_GATE", "x": 41553.3, "w": 180.0,
 		"relay": true},
@@ -251,7 +252,7 @@ const GROUPS := [
 		"motion": {"name": "swell_log", "axis": "y", "amp": 22.0, "period": 5.0,
 			"bias": -18.0, "phase": 0.35}},
 	{"group": "bird6", "zone": 3, "kind": "LOW_BIRD", "x": 42946.4, "w": 120.0,
-		"combo": "log5_bird6", "relay": true},
+		"combo": "log5_bird6", "relay": true, "dual": true},
 	{"group": "wall3", "zone": 3, "kind": "HIGH_WALL", "x": 44222.3, "w": 30.0},
 	{"group": "beam7", "zone": 3, "kind": "LOW_BEAM", "x": 44706.4, "w": 170.0,
 		"combo": "wall3_beam7"},
@@ -283,8 +284,8 @@ const GROUPS := [
 	{"group": "beam8", "zone": 3, "kind": "LOW_BEAM", "x": 52241.6, "w": 180.0},
 	{"group": "log7", "zone": 3, "kind": "FLOATING_LOG", "x": 53439.0, "w": 32.0},
 	# REBUILD-05 E3：Z3 第二组动态潮汐岩，phase 0.71。
-	{"group": "rock10", "zone": 3, "kind": "SURFACE_ROCK", "x": 54000.0, "w": 120.0, "identity": "drift_crate",
-		"combo": "log7_rock10", "relay": true,
+	{"group": "rock10", "zone": 3, "kind": "SURFACE_ROCK", "x": 54000.0, "w": 120.0,
+		"identity": "drift_crate", "combo": "log7_rock10", "relay": true, "dual": true,
 		"motion": {"name": "tide_rock", "axis": "y", "amp": 52.0, "period": 3.6, "phase": 0.71}},
 	{"group": "shark9", "zone": 3, "kind": "SHARK", "x": 55665.0, "w": 70.0,
 		"motion": {"name": "ambush_shark"}},
@@ -299,7 +300,8 @@ const GROUPS := [
 	{"group": "bird9", "zone": 3, "kind": "LOW_BIRD", "x": 61750.0, "w": 120.0,
 		"combo": "gate8_bird9", "relay": true},
 	# 终点前最后一跳仍是动态潮汐岩，phase 0.58；在浪里收尾。
-	{"group": "rock12", "zone": 3, "kind": "SURFACE_ROCK", "x": 62300.0, "w": 120.0, "identity": "drift_crate",
+	{"group": "rock12", "zone": 3, "kind": "SURFACE_ROCK", "x": 62300.0, "w": 120.0,
+		"identity": "drift_crate",
 		"motion": {"name": "tide_rock", "axis": "y", "amp": 52.0, "period": 3.6, "phase": 0.58}},
 ]
 
