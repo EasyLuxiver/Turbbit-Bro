@@ -1,7 +1,10 @@
 extends Control
 ## PHASE-FIX：HUD 里的兔子/乌龟小头像。只用原生 draw_*，不引入素材。
 
-var role := "rabbit"
+var role := "rabbit":
+	set(value):
+		role = value
+		queue_redraw()
 
 
 func _ready() -> void:

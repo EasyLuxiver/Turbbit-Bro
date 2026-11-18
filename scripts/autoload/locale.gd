@@ -387,11 +387,9 @@ const STRINGS := {
 	# 兄弟情和干净通过合并成一个三格计数。
 	"hud.bond": {"zh": "兄弟配合 {0}/{1}", "en": "BRO COMBO {0}/{1}"},
 	"hud.showtime_t": {"zh": "配合 {0}s", "en": "SHOWTIME {0}s"},
-	# 阶段 4：过载槽是“失误槽”，和上面的连击不是一回事。
 	# §七-9：hud.score 已移除——固定数字总分不再出现在玩家界面。
-	"hud.bro_meter": {"zh": "捣乱压力 {0}/{1}", "en": "OVERLOAD {0}/{1}"},
-	"hud.bro_other": {"zh": "{0} 捣乱压力 {1}/{2}", "en": "{0} OVERLOAD {1}/{2}"},
-	"hud.bro_meter_role": {"zh": "{0} 捣乱压力 {1}/{2}", "en": "{0} OVERLOAD {1}/{2}"},
+	# 旧 MISCHIEF 过载槽（hud.bro_meter / bro_other / bro_meter_role）
+	# 已无任何代码引用，2026-11-18 删除。
 
 	# ---- 角色与氧气状态 ----
 	"state.RIDING": {"zh": "骑乘", "en": "RIDING"},
@@ -577,9 +575,27 @@ const STRINGS := {
 	# 每条一行，最多两行；不新增美术素材。
 	"pause.help": {"zh": "帮助 / 操作说明", "en": "HELP / CONTROLS"},
 	"pause.help_title": {"zh": "操作说明", "en": "CONTROLS"},
-	"pause.help_body": {
-		"zh": "SHIFT 换人：兔子 ↑ 跳 / ↓ 趴低；乌龟 ↑ 跃起 / ↓ 下潜\n兔子 头顶的气泡是氧气；失误后他会嘟囔，没人管就可能自己找事\n海藻：SHIFT 决定谁吃——乌龟 加速，兔子 下一跳更高；不吃不扣分\n换人接力 · 海藻加速 · 下潜靠近救兄弟\n救援：乌龟 下潜靠近 兔子 就会接住；够不到按 SPACE 追一把",
-		"en": "SHIFT SWAP: TUBO ↑ JUMP / ↓ CROUCH; BITT ↑ LEAP / ↓ DIVE\nTHE BUBBLES OVER TUBO ARE AIR; A FULL OVERLOAD METER MAKES THE CURRENT BODY ACT OUT\nSEAWEED: SHIFT PICKS WHO EATS - BITT SPEEDS UP, TUBO JUMPS HIGHER; SKIPPING COSTS NOTHING\nSHIFT RELAYS · CLEAN PASSES BUILD BRO COMBO · TEAM MOVES CLICK INTO SHOWTIME\nRESCUE: DIVE THE BITT CLOSE TO A TUBO IN THE WATER; SPACE TO LUNGE"},
+	"pause.help_page_1": {
+		"zh": "SHIFT 换人：兔子 ↑ 跳 / ↓ 趴低；乌龟 ↑ 跃起 / ↓ 下潜",
+		"en": "SHIFT SWAP: TUBO ↑ JUMP / ↓ CROUCH; BITT ↑ LEAP / ↓ DIVE"},
+	"pause.help_page_2": {
+		"zh": "障碍分工：低梁/海鸟/岩石找兔子；礁拱/鲨鱼找乌龟；浮木和高墙要两人接力",
+		"en": "WHO HANDLES WHAT: BEAMS/GULLS/ROCKS = TUBO; ARCHES/SHARKS = BITT; LOGS AND WALLS = BOTH"},
+	"pause.help_page_3": {
+		"zh": "兔子 头顶的气泡是氧气；氧气低时切乌龟上浮，或让兔子吃海藻",
+		"en": "THE BUBBLES OVER TUBO ARE AIR; IF LOW, SHIFT BITT UP OR LET TUBO EAT KELP"},
+	"pause.help_page_4": {
+		"zh": "走神：没被控制的身体会走神；条满会漏电，把你电回它。切回去可叫醒",
+		"en": "DRIFT: THE BODY YOU'RE NOT DRIVING DRIFTS OFF; A FULL BAR LEAKS AND ZAPS YOU BACK INTO IT - SWITCH BACK TO WAKE IT"},
+	"pause.help_page_5": {
+		"zh": "海藻：SHIFT 决定谁吃——乌龟加速，兔子下一跳更高；不吃不扣分",
+		"en": "SEAWEED: SHIFT PICKS WHO EATS - BITT SPEEDS UP, TUBO JUMPS HIGHER; SKIPPING IS FREE"},
+	"pause.help_page_6": {
+		"zh": "接力/连击：干净通过和精准动作会积累兄弟配合；有时会触发 SHOWTIME",
+		"en": "RELAYS/COMBOS: CLEAN PASSES AND PRECISE MOVES BUILD BRO COMBO; SOMETIMES TRIGGERS SHOWTIME"},
+	"pause.help_page_7": {
+		"zh": "救援：乌龟下潜靠近落水的兔子；够不到按 SPACE 追一把",
+		"en": "RESCUE: DIVE BITT CLOSE TO A TUBO IN THE WATER; SPACE TO LUNGE"},
 	"world.pause_hint": {
 		"zh": "ESC 继续   SHIFT 换人   R 重开   M 主菜单",
 		"en": "ESC RESUME   SHIFT TRANSFER   R RESTART   M MENU"},
@@ -656,10 +672,8 @@ const STRINGS := {
 		"zh": "兔子开始走神……", "en": "TUBO IS DRIFTING OFF..."},
 	"sleep.telegraph_turtle": {
 		"zh": "乌龟开始走神……", "en": "BITT IS DRIFTING OFF..."},
-	"sleep.zap_rabbit": {
-		"zh": "兔子漏电！乌龟被电了一下", "en": "TUBO LEAKS! BITT GETS ZAPPED"},
-	"sleep.zap_turtle": {
-		"zh": "乌龟漏电！兔子被电了一下", "en": "BITT LEAKS! TUBO GETS ZAPPED"},
+	"sleep.zap_short": {
+		"zh": "漏电！意识被电回来了！", "en": "LEAK! MIND SNAPPED BACK!"},
 	"feedback.turtle_bonk": {
 		"zh": "咚！乌龟被弹回来了（{0}/{1}）",
 		"en": "BONK! BITT BOUNCED BACK ({0}/{1})"},
@@ -739,11 +753,7 @@ const STRINGS := {
 	"mischief.end": {"zh": "行了行了，我不闹了。", "en": "OKAY, OKAY - I'M DONE."},
 	"mischief.tag_tug": {"zh": "拽绳", "en": "TUG"},
 	"mischief.tag_zap": {"zh": "电击", "en": "ZAP"},
-	"feedback.complaint_rabbit": {"zh": "兔子 嘟囔：又是我……", "en": "TUBO MUTTERS: ME AGAIN..."},
-	"feedback.complaint_turtle": {"zh": "乌龟 嘟囔：你倒是看着点啊。", "en": "BITT MUTTERS: WATCH IT."},
 	"feedback.log_smash": {"zh": "浮木撞碎了——继续走！", "en": "LOG SMASHED - KEEP GOING!"},
-	"feedback.meter_mild": {"zh": "{0} 开始烦躁……", "en": "{0} IS GETTING FIDGETY..."},
-	"feedback.meter_warn": {"zh": "{0} 快忍不住了！", "en": "{0} IS ABOUT TO BLOW!"},
 	"mischief.hit_turtle": {"zh": "兔子 拽住绳子，乌龟 被勒得减速！", "en": "TUBO TUGGED THE ROPE - BITT SLOWED!"},
 	"feedback.rescue_ok": {"zh": "接住了！兄弟！", "en": "CAUGHT! BRO!"},
 	"feedback.rescue_reunion": {

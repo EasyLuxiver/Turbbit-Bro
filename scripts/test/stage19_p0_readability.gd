@@ -38,8 +38,8 @@ func _run() -> void:
 	_check("space_keycap_visible", race.hud.keycap_panels["pop"].visible,
 		str(race.hud.keycap_panels["pop"].visible))
 	# 教学只教换人/动词；救援 SPACE 由实时 prompt 与暂停帮助承载。
-	_check("pause_help_mentions_space", Locale.t("pause.help_body").contains("SPACE"),
-		Locale.t("pause.help_body"))
+	_check("pause_help_mentions_space", Locale.t("pause.help_page_7").contains("SPACE"),
+		Locale.t("pause.help_page_7"))
 	_write()
 	get_tree().quit(0 if checks.all(func(c): return bool(c["ok"])) else 1)
 
