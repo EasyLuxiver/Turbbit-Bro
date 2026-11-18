@@ -39,8 +39,6 @@ func _run() -> void:
 	_poop_hit("rabbit")
 	# FEEL-49：鸟已经飞过/拉起后，固定判定带不能再伤人。
 	_bird_pass_no_hit()
-	# 电弧抵消：只在 MISCHIEF shock ACTION 生效。
-	_arc_block()
 	# 30/60/120：攻击时间窗口在同一数量级，不随帧率改写。
 	for hz in [30.0, 60.0, 120.0]:
 		_hz_case(hz)
@@ -187,31 +185,6 @@ func _body_hit(name: String, target: String) -> void:
 	_check("body_hit_" + name, hit,
 		"accident=%s flip=%.2f speed=%.1f" % [GameManager.accident_state,
 			race.turtle.flip_lock, race.turtle.speed])
-
-
-func _arc_block() -> void:
-	_setup("bird3", "rabbit")
-	for i in 90:
-		race._tick_bird_behaviors(1.0 / FPS)
-		if race._bird_attacks.size() > 0:
-			break
-	if race._bird_attacks.is_empty():
-		_check("arc_block", false, "no projectile")
-		return
-	var a: Dictionary = race._bird_attacks[0]
-	a["t"] = float(a["life"]) - 0.02
-	race.rabbit.position = race._bird_attack_rect(a).get_center()
-	GameManager.current_control = "rabbit"
-	race._mischief_role = "turtle"
-	race._mischief_phase = "ACTION"
-	race._mischief_fx_kind = "shock"
-	GameManager.accident_state = "NONE"
-	var before: int = race._bird_attacks.size()
-	race._check_bird_attacks(0.02)
-	_check("arc_block", race._bird_attacks.size() < before
-		and GameManager.accident_state == "NONE",
-		"before=%d after=%d accident=%s" % [before, race._bird_attacks.size(),
-			GameManager.accident_state])
 
 
 func _hz_case(hz: float) -> void:

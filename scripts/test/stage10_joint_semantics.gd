@@ -63,8 +63,6 @@ func _reset() -> void:
 	GameManager.current_control = "rabbit"
 	GameManager.accident_state = "NONE"
 	GameManager.accident_count = 0
-	GameManager.role_mischief_pending = false
-	GameManager.role_mischief_role = ""
 	GameManager.accident_state = "NONE"
 	race.hazard_cooldown = 0.0
 	race.joint_show_t = 0.0

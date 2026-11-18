@@ -19,7 +19,6 @@ signal prompt(text: String)
 signal bro_say(who: String, text: String)
 ## BRO METER 三格共享事故槽：每涨一格、满格各发一次。
 signal bro_meter_changed(slots: int)
-signal bro_meter_full
 ## SHIFT 电击的表现接口（TBB-SHIFT-CORE-02 §8）：只在玩家真正换人那一帧发出。
 ## 订阅者只做视觉/音效，不得改控制、不得阻塞输入、不得加冷却/惩罚。
 signal shift_shocked(from_who: String, to_who: String)
@@ -95,21 +94,12 @@ var best_score: int = -1
 var best_streak_record: int = 0
 
 # ---- 阶段 4：BRO METER（三格共享事故槽）与指令里的分数表。 ----
-const BRO_METER_SLOTS := 3
+## 旧 BRO METER 数值仅保留给历史探针/测试读取；正式流程不再充能或显示。
 var bro_meter: int = 0
-var bro_meter_max: int = 0
-## FEEL-10 P0-A：累计失误满格时，只让“本次失误的角色”短暂捣乱，
-## 不再把三格累计误判成两人同时出事。
-var role_mischief_pending := false
-var role_mischief_role := ""
-## FEEL-24：一次失误就产生可读的抱怨事件；没有 3 格计数。
+## FEEL-24：一次失误生成一次可读的抱怨事件；旧 MISCHIEF 已移除，
+## 这里保留为测试/Showtime 清理用的兼容状态。
 var complaint_role := ""
 var complaint_t := 0.0
-## FEEL-15：两个角色各自的惩罚条（内部 0..3）；HUD 当前显示主控角色的那一条。
-## bro_meter 继续作为兼容/显示值，不再代表“两人共享”。
-var bro_meter_role := {"rabbit": 0, "turtle": 0}
-## MISCHIEF 进行中时锁住该角色的惩罚条：失误照常扣分/计事故，但不再充能。
-var mischief_lock_role := ""
 var failure_reason := ""
 ## FEEL-25：频繁落水造成的“气短”层数；不显示数字，靠气泡/动作表达。
 var waterlogged := 0
@@ -253,9 +243,6 @@ func toggle_control() -> void:
 	has_shifted = true
 	shift_count += 1
 	shift_lock_t = SHIFT_LOCK_TIME
-	# HUD 跟着主控角色切换显示它自己的惩罚条。
-	bro_meter = int(bro_meter_role.get(current_control, 0))
-	bro_meter_changed.emit(bro_meter)
 	shift_shocked.emit(from_who, current_control)
 
 
@@ -314,18 +301,11 @@ func _reset_run() -> void:
 	new_best_score = false
 	new_best_streak = false
 	bro_meter = 0
-	bro_meter_max = 0
 	bro_joint_pending = false
-	role_mischief_pending = false
-	role_mischief_role = ""
 	complaint_role = ""
 	complaint_t = 0.0
 	waterlogged = 0
 	waterlogged_t = 0.0
-	bro_meter_role = {"rabbit": 0, "turtle": 0}
-	complaint_role = ""
-	complaint_t = 0.0
-	mischief_lock_role = ""
 	failure_reason = ""
 	last_mistake_role = ""
 	joint_accident_count = 0
@@ -375,12 +355,8 @@ func note_mistake(reason: String, role: String = "") -> void:
 	add_score(-100, "mistake:" + reason)
 	if who not in ["rabbit", "turtle"]:
 		return
-	# FEEL-24：不再累计 3 格；一次失误生成一次可读的抱怨事件。
-	# PHASE-1：抱怨窗口从 2.6 s 拉到 7 s。玩家离开该角色后，捣乱才有机会
-	# 真正发生；2.6 s 在 220–260 px/s 下往往还没离开安全区就过期，导致
-	# 玩家几乎看不到“电对方/拽绳”。
-	if mischief_lock_role == who:
-		return
+	# FEEL-24：一次失误生成一次可读的抱怨事件；旧 MISCHIEF 不再消费它，
+	# 保留给历史探针/Showtime 清理测试读取。
 	complaint_role = who
 	complaint_t = 7.0
 
@@ -394,16 +370,6 @@ func _role_for_reason(reason: String) -> String:
 	if reason.begins_with("TURTLE"):
 		return "turtle"
 	return ""
-
-
-## race 取走一次“单角色捣乱”，取走后不重复触发。
-func take_role_mischief() -> String:
-	if not role_mischief_pending:
-		return ""
-	role_mischief_pending = false
-	var who := role_mischief_role
-	role_mischief_role = ""
-	return who
 
 
 func oxygen_capacity() -> float:
@@ -460,62 +426,15 @@ func accident_severity(reason: String) -> String:
 	return String(ACCIDENT_SEVERITY.get(reason, "severe"))
 
 
-## 联合惩罚演出结束时才清空：演出期间三格保持满，玩家看得到“这是第三格”。
+## 联合惩罚/Showtime 结束时清空旧压力状态；走神度由 race 自己维护，不在这里清。
 func clear_bro_meter() -> void:
 	bro_meter = 0
 	bro_joint_pending = false
-	role_mischief_pending = false
-	role_mischief_role = ""
 	complaint_role = ""
 	complaint_t = 0.0
 	waterlogged = 0
 	waterlogged_t = 0.0
-	bro_meter_role = {"rabbit": 0, "turtle": 0}
-	complaint_role = ""
-	complaint_t = 0.0
-	mischief_lock_role = ""
 	bro_meter_changed.emit(bro_meter)
-
-
-## FEEL-15：MISCHIEF 结束时明确清零该角色的惩罚条（不是缓慢自然恢复）。
-func reset_role_meter(who: String) -> void:
-	if not bro_meter_role.has(who):
-		return
-	bro_meter_role[who] = 0
-	if who == current_control:
-		bro_meter = 0
-		bro_meter_changed.emit(bro_meter)
-
-
-func role_meter(who: String) -> int:
-	return int(bro_meter_role.get(who, 0))
-
-
-## FEEL-24：抱怨窗口。玩家切到该角色会制止；窗口过期自然消散。
-func tick_complaint(delta: float) -> void:
-	if complaint_t <= 0.0:
-		return
-	complaint_t = maxf(complaint_t - delta, 0.0)
-	if complaint_t <= 0.0:
-		complaint_role = ""
-
-
-## FEEL-23：干净通过/有效操作给一次压力释放；这是玩家可理解的脱困途径。
-## 正在捣乱的角色不能靠这一步洗掉事件，必须由 SHIFT/结束流程处理。
-func relieve_pressure(who: String, amount: int = 1) -> void:
-	if who not in ["rabbit", "turtle"] or mischief_lock_role == who:
-		return
-	var cur := int(bro_meter_role.get(who, 0))
-	if cur <= 0:
-		return
-	cur = maxi(cur - amount, 0)
-	bro_meter_role[who] = cur
-	if who == current_control:
-		bro_meter = cur
-		bro_meter_changed.emit(bro_meter)
-	if cur < BRO_METER_SLOTS and role_mischief_role == who:
-		role_mischief_pending = false
-		role_mischief_role = ""
 
 
 # ---- 阶段 4：指令里的分数表（同一次动作只记一笔）。 ----

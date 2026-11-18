@@ -743,18 +743,7 @@ const STRINGS := {
 	"hint.motion_eel": {
 		"zh": "水渠鳗鱼：平时盘在水渠底，靠近时带电窜上来 - 提前跃起",
 		"en": "CANAL EEL - COILED ON THE CANAL BED, SPARKS AND LUNGES. LEAP EARLY"},
-	"mischief.telegraph_turtle": {"zh": "乌龟 眼神不对……", "en": "BITT IS PLANNING SOMETHING..."},
-	"mischief.telegraph_rabbit": {"zh": "兔子 开始拽绳子了……", "en": "TUBO IS GRABBING THE ROPE..."},
-	"mischief.start_turtle": {"zh": "乌龟 等烦了，开始搞事！", "en": "BITT GOT BORED - HERE WE GO!"},
-	"mischief.start_rabbit": {"zh": "兔子 等烦了，开始搞事！", "en": "TUBO GOT BORED - HERE WE GO!"},
-	"mischief.arc_block": {"zh": "乌龟 的电弧弹开了投射物！", "en": "BITT'S ARC DEFLECTED THE PROJECTILE!"},
-	"mischief.hit_rabbit": {"zh": "乌龟 电了 兔子 一下！", "en": "BITT ZAPPED TUBO!"},
-	"mischief.zap_landing": {"zh": "兔子 起跳时被 乌龟 电了一下，掉下去了！", "en": "BITT ZAPPED TUBO MID-AIR!"},
-	"mischief.end": {"zh": "行了行了，我不闹了。", "en": "OKAY, OKAY - I'M DONE."},
-	"mischief.tag_tug": {"zh": "拽绳", "en": "TUG"},
-	"mischief.tag_zap": {"zh": "电击", "en": "ZAP"},
 	"feedback.log_smash": {"zh": "浮木撞碎了——继续走！", "en": "LOG SMASHED - KEEP GOING!"},
-	"mischief.hit_turtle": {"zh": "兔子 拽住绳子，乌龟 被勒得减速！", "en": "TUBO TUGGED THE ROPE - BITT SLOWED!"},
 	"feedback.rescue_ok": {"zh": "接住了！兄弟！", "en": "CAUGHT! BRO!"},
 	"feedback.rescue_reunion": {
 		"zh": "兄弟回来了！氧气也回了一口",

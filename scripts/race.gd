@@ -98,8 +98,6 @@ var _visual_stress := {"rabbit": 0.0, "turtle": 0.0}
 ## FEEL-47 自检口径：视觉压力只走 _bump/_relieve + 头顶三格；不写 bro_meter、
 ## 不参与输入延迟、事故、氧气或分数。正赛教学文案由 quiet_lessons 关闭，
 ## 事件提示（好接/救援/事故）仍保留；headless 探针保留旧提示以测 UI。
-## FEEL-25：被晾着的角色以可见情绪累积，不修改输入/位置。
-var _ignore_t := {"rabbit": 0.0, "turtle": 0.0}
 ## CORE-FEEL-07 P1-D：上一帧的阶段序号，只在“升级”越过 6 s / 9 s 阈值时报警一次。
 var _last_drift_rank := {"rabbit": 0, "turtle": 0}
 var _camera_pulse_t := 0.0
@@ -208,14 +206,6 @@ var _drift_lag_fb_t := {"rabbit": -99.0, "turtle": -99.0}
 var _bitt_autocrouch_t := 0.0
 var _bitt_autocrouch_left := 0.0
 var _bitt_autocrouch_fb_t := -99.0
-## FEEL-15：BRO MISCHIEF 状态机。只有“未受控 + 该角色惩罚条满”才启动。
-## 单事件、单角色；SHIFT/救援/落水/Showtime 会立即取消，不会残留。
-const MISCHIEF_TELEGRAPH := 0.65
-const MISCHIEF_ACTION := 0.70
-const MISCHIEF_END := 0.22
-const MISCHIEF_CD := 3.0
-## 抱怨窗口 7 s，但要让玩家先有“我把他留失控了”的 1.2 s，才允许动手。
-const MISCHIEF_REACTION_DELAY := 1.2
 ## PHASE-SLEEP：走神度（电击蛋糕后遗症）。只做轻压力，不做硬惩罚。
 const SLEEP_MAX := 100.0
 const SLEEP_DOZE := 40.0
@@ -233,10 +223,6 @@ var _sleep_t := 0.0
 var _sleep_cd := 0.0
 var _sleep_fx_t := 0.0
 var sleep_log: Array = []
-var _mischief_role := ""
-var _mischief_phase := ""
-var _mischief_t := 0.0
-var _mischief_cd := 0.0
 ## PHASE-FIX：乌龟撞上乌龟层障碍后弹回；连续 6 次直接失败。
 var _bonk_streak := 0
 var _bonk_level := 0
@@ -256,14 +242,6 @@ var _bonk_anim_t := 0.0
 var _bonk_anim_from := 0.0
 var _bonk_anim_to := 0.0
 var _bonk_visual_t := 0.0
-var _mischief_last_control := ""
-var _mischief_fx_kind := ""
-var _mischief_fx_t := 0.0
-var _mischief_action_done := false
-## PHASE-1：每个角色自己的动作序列，保证“电击”不会被拽绳完全淹没。
-## 偶数次兔子捣乱必出电击；其余时候仍按上下潜/跃起情境选。
-var _mischief_action_seq := {"rabbit": 0, "turtle": 0}
-var mischief_log: Array = []
 ## 供探针读取：每次延迟/自主动作的记录（角色、类型、秒）。
 var drift_impair_log: Array = []
 var hazard_cooldown := 0.0
@@ -330,7 +308,8 @@ var test_no_lessons := false
 ## FEEL-47：正式窗口里正赛不再持续讲教学/连招/食物文案；
 ## headless 探针保留完整提示，避免把测试界面和玩家界面混在一起。
 var quiet_lessons := DisplayServer.get_name() != "headless"
-## FEEL-33：教学是教学，不是惩罚局；教学期间关闭抱怨/捣乱。
+## FEEL-33：教学/回归关闭走神度。变量名沿用旧测试的 test_no_mischief，
+## 旧 MISCHIEF 状态机已移除；现在只影响 _tick_sleep / _draw_sleep_fx。
 var test_no_mischief := false
 ## 回归测试可关掉概率 Showtime，避免整关结果抖动。
 var test_no_showtime := false
@@ -951,16 +930,6 @@ func reset_brains() -> void:
 	_bitt_autocrouch_left = 0.0
 	_bitt_autocrouch_fb_t = -99.0
 	drift_impair_log.clear()
-	_mischief_role = ""
-	_mischief_phase = ""
-	_mischief_t = 0.0
-	_mischief_cd = 0.0
-	_mischief_last_control = ""
-	_mischief_fx_kind = ""
-	_mischief_fx_t = 0.0
-	_mischief_action_done = false
-	_mischief_action_seq = {"rabbit": 0, "turtle": 0}
-	mischief_log.clear()
 	_sleep = {"rabbit": 0.0, "turtle": 0.0}
 	_sleep_event_role = ""
 	_sleep_phase = ""
@@ -968,8 +937,6 @@ func reset_brains() -> void:
 	_sleep_cd = 0.0
 	_sleep_fx_t = 0.0
 	sleep_log.clear()
-	if GameManager != null:
-		GameManager.mischief_lock_role = ""
 
 
 ## 独立原型段：只有五类障碍，没有加速带，终点提前到 8600。
@@ -1186,7 +1153,6 @@ func _physics_process(delta: float) -> void:
 
 	_tick_sleep(delta)
 	var control: String = GameManager.current_control
-	_tick_ignore(delta)
 	GameManager.tick_waterlogged(delta)
 	var rabbit_down: bool = GameManager.accident_state in [
 		"RABBIT_SLIP", "RABBIT_WATER", "RABBIT_AIR", "OXYGEN_OUT"
@@ -1198,7 +1164,7 @@ func _physics_process(delta: float) -> void:
 	# 吃下后是整组 TURBO：换兔子做动作时也继续，直到该遭遇的障碍通过 + 180 px。
 	var boosting: bool = snack_boost_active()
 	# FEEL-22：旧“神游”是离开控制时间驱动的第二套失控系统，已停用。
-	# 失控只由 bro_meter_role 触发；这里不再 tick BroBrain、不再改漂移量。
+	# 失控只由走神度触发；这里不再 tick BroBrain、不再改漂移量。
 	rabbit.drift = 0.0
 	rabbit.drift_state = "CALM"
 	turtle.drift = 0.0
@@ -3084,8 +3050,6 @@ func _start_overdrive(who: String) -> void:
 	# 关键障碍前不起慢镜头预兆：先让玩家处理眼前的东西。
 	var near := next_hazard_info()
 	if not near.is_empty() and float(near.get("distance", 1e9)) <= 340.0:
-		if GameManager.role_mischief_pending:
-			GameManager.role_mischief_role = who
 		return
 	_od_role = who
 	# 预兆本身就是“允许现在换走”的窗口：清掉 0.2 s 防连点锁，
@@ -3306,11 +3270,6 @@ func _showtime_clear_ahead() -> bool:
 
 func _clear_penalty_state() -> void:
 	GameManager.clear_bro_meter()
-	GameManager.complaint_role = ""
-	GameManager.complaint_t = 0.0
-	GameManager.role_mischief_pending = false
-	GameManager.role_mischief_role = ""
-	GameManager.mischief_lock_role = ""
 	_visual_stress = {"rabbit": 0.0, "turtle": 0.0}
 
 
@@ -4189,8 +4148,6 @@ func _tubo_autodrift() -> float:
 	return 0.0
 
 
-## FEEL-15：BRO MISCHIEF。惩罚条满只对“未受控”的角色生效。
-## 一个事件只有一个角色；SHIFT 当帧取消旧角色，新的未受控满格角色可以接管。
 ## PHASE-SLEEP：走神度。未控制的身体慢慢走神；满了会漏电，把意识电回它。
 func _tick_sleep(delta: float) -> void:
 	if test_no_mischief:
@@ -4313,38 +4270,6 @@ func _draw_sleep_fx() -> void:
 			Color(0.65, 0.95, 1.0, 0.9), 4.0, 10.0)
 
 
-func _tick_mischief(delta: float) -> void:
-	GameManager.tick_complaint(delta)
-	_mischief_cd = maxf(_mischief_cd - delta, 0.0)
-	_mischief_fx_t = maxf(_mischief_fx_t - delta, 0.0)
-	if _mischief_last_control != GameManager.current_control:
-		_mischief_last_control = GameManager.current_control
-		if _mischief_role != "" and _mischief_role == GameManager.current_control:
-			_end_mischief("shifted")
-	if _mischief_role != "":
-		# 救援/落水/Showtime 的优先级高于普通捣乱。
-		if _mischief_role == GameManager.current_control 				or _rescue_context() != "NONE" or showtime_active:
-			_end_mischief("priority")
-			return
-		_mischief_t += delta
-		if _mischief_phase == "TELEGRAPH":
-			if _mischief_t >= MISCHIEF_TELEGRAPH:
-				_mischief_phase = "ACTION"
-				_mischief_t = 0.0
-				_mischief_action_done = false
-		elif _mischief_phase == "ACTION":
-			if not _mischief_action_done:
-				_mischief_action_done = true
-				_apply_mischief_action()
-			if _mischief_t >= MISCHIEF_ACTION:
-				_mischief_phase = "END"
-				_mischief_t = 0.0
-		elif _mischief_phase == "END":
-			if _mischief_t >= MISCHIEF_END:
-				_end_mischief("completed")
-	else:
-		_maybe_start_mischief()
-
 
 func _tick_visual_stress(delta: float) -> void:
 	# FEEL-49：不再按“每撞一次永久加一格”慢慢衰减。受击表现是短时的：
@@ -4352,22 +4277,18 @@ func _tick_visual_stress(delta: float) -> void:
 	for who in ["rabbit", "turtle"]:
 		_visual_stress[who] = maxf(float(_visual_stress[who]) - delta * 0.45, 0.0)
 
-
 func visual_stress(who: String) -> float:
 	return float(_visual_stress.get(who, 0.0))
-
 
 func _bump_visual_stress(who: String, amount: float = 1.0) -> void:
 	if who not in ["rabbit", "turtle"]:
 		return
 	_visual_stress[who] = clampf(float(_visual_stress[who]) + amount, 0.0, 3.0)
 
-
 func _relieve_visual_stress(who: String, amount: float = 0.6) -> void:
 	if who not in ["rabbit", "turtle"]:
 		return
 	_visual_stress[who] = maxf(float(_visual_stress[who]) - amount, 0.0)
-
 
 func _visual_stage(who: String) -> int:
 	var v := visual_stress(who)
@@ -4378,7 +4299,6 @@ func _visual_stage(who: String) -> int:
 	if v > 0.1:
 		return 1
 	return 0
-
 
 func _draw_visual_stress(pos: Vector2, who: String) -> void:
 	var stage := _visual_stage(who)
@@ -4398,138 +4318,6 @@ func _draw_visual_stress(pos: Vector2, who: String) -> void:
 		"!" if stage < 3 else "!!", HORIZONTAL_ALIGNMENT_LEFT, -1,
 		22 + stage * 3, col)
 
-
-func _mischief_clear_of_hazards() -> bool:
-	var near := next_hazard_info()
-	if near.is_empty():
-		return true
-	return float(near.get("distance", 1.0e9)) > 520.0
-
-
-func _maybe_start_mischief() -> void:
-	if test_no_mischief:
-		return
-	if _mischief_cd > 0.0 or showtime_active or _rescue_context() != "NONE":
-		return
-	# 不在障碍前启动捣乱，避免速度损失直接变成必然撞。520 px 在 Z3
-	# 260 px/s 下约 2 s，足够从预兆里切回来。
-	if not _mischief_clear_of_hazards():
-		return
-	# 一次失误只生成一次抱怨窗口；没有 3 格计数。
-	var who := GameManager.complaint_role
-	if who == "" or who == GameManager.current_control:
-		return
-	# 给玩家 1.2 s 的“我把谁留失控了”反应时间，再动手。
-	if GameManager.complaint_t > 7.0 - MISCHIEF_REACTION_DELAY:
-		return
-	# 救援优先：兔子在水里时，先让玩家切 BITT 救援，不启动捣乱。
-	if who == "rabbit" and (GameManager.accident_state in ["RABBIT_WATER", "RABBIT_AIR"] 			or rabbit.state in ["FALLING_WATER", "PASSED_OUT"]):
-		return
-	# PHASE-1：去掉 32% 随机抑制。情绪窗口 + 失控 + 安全区就是确定性触发；
-	# 玩家看到预兆后仍可用 SHIFT 当帧取消。
-	GameManager.complaint_role = ""
-	GameManager.complaint_t = 0.0
-	GameManager.mischief_lock_role = who
-	_mischief_role = who
-	_mischief_phase = "TELEGRAPH"
-	_mischief_t = 0.0
-	_mischief_action_done = false
-	_mischief_fx_kind = ""
-	_mischief_fx_t = 0.0
-	GameManager.center_message.emit(Locale.t(
-		"mischief.telegraph_turtle" if who == "turtle" else "mischief.telegraph_rabbit"),
-		Color(1.0, 0.55, 0.25))
-	GameManager.feedback.emit(Locale.t(
-		"mischief.start_turtle" if who == "turtle" else "mischief.start_rabbit"), "hit")
-	mischief_log.append({"event": "start", "who": who, "t": accident_event_time})
-
-
-## 预兆阶段只读当前状态，不提前消耗随机/动作；用于把“拽绳/电击”写在脸上。
-func _mischief_predicted_kind() -> String:
-	if _mischief_role == "turtle":
-		return "zap_landing" if rabbit.state in ["JUMPING", "FALLING"] else "shock"
-	if _mischief_role == "rabbit":
-		if turtle.diving or turtle.leap_active:
-			return "rabbit_shock"
-		return "rabbit_shock" if int(_mischief_action_seq.get("rabbit", 0)) % 2 == 0 else "tug"
-	return ""
-
-
-func _apply_mischief_action() -> void:
-	_bump_visual_stress(_mischief_role, 0.8)
-	var seq := int(_mischief_action_seq.get(_mischief_role, 0))
-	_mischief_action_seq[_mischief_role] = seq + 1
-	if _mischief_role == "turtle":
-		# BITT 使坏：兔子在空中时把它打下来；否则电一下。
-		if rabbit.state in ["JUMPING", "FALLING"]:
-			_mischief_fx_kind = "zap_landing"
-			_mischief_fx_t = 0.65
-			rabbit.velocity.y = maxf(rabbit.velocity.y, 220.0)
-			rabbit.velocity.x += 18.0
-			GameManager.feedback.emit(Locale.t("mischief.zap_landing"), "hit")
-		else:
-			_mischief_fx_kind = "shock"
-			_mischief_fx_t = 0.65
-			# 真实后果：失衡更深、前冲更明显，不只是“头顶冒电”。
-			rabbit.add_imbalance(0.18)
-			rabbit.velocity.x += 32.0
-			GameManager.feedback.emit(Locale.t("mischief.hit_rabbit"), "hit")
-	else:
-		# TUBO 使坏动作池：乌龟正在潜/跃时电它并打断动作；乌龟巡航时
-		# 第一次也电击（让玩家真的看到“电对方”），之后在电击/拽绳之间交替。
-		var do_shock: bool = turtle.diving or turtle.leap_active or seq % 2 == 0
-		if do_shock:
-			_mischief_fx_kind = "rabbit_shock"
-			_mischief_fx_t = 0.65
-			# PHASE-1：电击必须真的打断下潜/跃起，不能只加一点失衡。
-			turtle.zap_stun_t = 0.35
-			turtle.leap_active = false
-			turtle.leap_timer = 0.0
-			if turtle.position.y < Tuning.NEUTRAL_DEPTH:
-				turtle.position.y = Tuning.NEUTRAL_DEPTH
-			else:
-				turtle.position.y = maxf(turtle.position.y - 22.0, SURFACE_Y)
-			turtle.speed *= 0.80
-			turtle.add_imbalance(0.16)
-			turtle.start_flip()
-			GameManager.feedback.emit(Locale.t("mischief.rabbit_shock"), "hit")
-		else:
-			_mischief_fx_kind = "tug"
-			_mischief_fx_t = 0.65
-			# PHASE-1：拽绳从“翻一下”改成真实的壳下沉 + 减速。
-			turtle.tug_t = 0.65
-			turtle.speed *= 0.85
-			turtle.add_imbalance(0.10)
-			turtle.start_flip()
-			GameManager.feedback.emit(Locale.t("mischief.hit_turtle"), "hit")
-	mischief_log.append({"event": "action", "who": _mischief_role,
-		"kind": _mischief_fx_kind, "t": accident_event_time})
-
-
-func _end_mischief(reason: String) -> void:
-	if _mischief_role == "":
-		return
-	var old := _mischief_role
-	GameManager.mischief_lock_role = ""
-	_ignore_t[old] = 8.0
-	_mischief_role = ""
-	_mischief_phase = ""
-	_mischief_t = 0.0
-	_mischief_action_done = false
-	_mischief_fx_kind = ""
-	if reason == "shifted":
-		# 换人中断后不要继续挂着“要捣乱了”的大字，避免看起来像仍在失控。
-		# 救援/其他高优先级中断不清，保留救援提示。
-		GameManager.center_message.emit("", Color(1, 1, 1))
-	# SHIFT 中断必须允许“新未受控角色”当帧接管，不能被旧事件的冷却挡住。
-	_mischief_cd = 0.0 if reason == "shifted" else MISCHIEF_CD
-	mischief_log.append({"event": "end", "who": old, "reason": reason,
-		"t": accident_event_time})
-	if reason == "completed":
-		GameManager.feedback.emit(Locale.t("mischief.end"), "clean")
-
-
-
 func _draw_bird_target_warning(group: Dictionary, st: Dictionary) -> void:
 	var rect: Rect2 = group["rects"][0]
 	var bp: Vector2 = _bird_target_pos(st)
@@ -4539,109 +4327,6 @@ func _draw_bird_target_warning(group: Dictionary, st: Dictionary) -> void:
 		0.0, TAU, 20, Color(1.0, 0.45, 0.25, 0.8), 3.0)
 	draw_string(ThemeDB.fallback_font, bp + Vector2(-6, -96), "!",
 		HORIZONTAL_ALIGNMENT_LEFT, -1, 26, Color(1.0, 0.55, 0.25, 0.95))
-
-
-func _tick_ignore(delta: float) -> void:
-	if test_no_mischief:
-		return
-	if GameManager.accident_state != "NONE" or showtime_active:
-		return
-	for who in ["rabbit", "turtle"]:
-		if who == GameManager.current_control:
-			_ignore_t[who] = 0.0
-		else:
-			_ignore_t[who] = minf(float(_ignore_t[who]) + delta * 1.10, 20.0)
-	# 12 s 还没被管：把可见抱怨交给 MISCHIEF 入口；之前只有表情/符号。
-	if GameManager.complaint_role == "":
-		for who in ["rabbit", "turtle"]:
-			if who != GameManager.current_control and float(_ignore_t[who]) >= 12.0:
-				GameManager.complaint_role = who
-				GameManager.complaint_t = 2.6
-				break
-
-
-func _draw_ignore_mood(pos: Vector2, who: String) -> void:
-	if who == GameManager.current_control:
-		return
-	var t: float = float(_ignore_t.get(who, 0.0))
-	if t < 4.0:
-		return
-	var mark := "?" if t < 8.0 else ("!" if t < 12.0 else "!!")
-	var col := Color(1.0, 0.82, 0.35, 0.95)
-	if t >= 12.0:
-		col = Color(1.0, 0.45, 0.30, 0.95)
-	var bob := sin(Time.get_ticks_msec() * 0.006) * 2.0
-	draw_circle(pos + Vector2(34, -92 + bob), 14.0, Color(0.05, 0.08, 0.10, 0.6))
-	draw_string(ThemeDB.fallback_font, pos + Vector2(26, -85 + bob), mark,
-		HORIZONTAL_ALIGNMENT_LEFT, -1, 20, col)
-
-
-func _draw_complaint() -> void:
-	if GameManager.complaint_role == "" or _mischief_role != "":
-		return
-	if GameManager.complaint_role == GameManager.current_control:
-		return
-	var p: Vector2 = turtle.position if GameManager.complaint_role == "turtle" else rabbit.position
-	var bob := sin(Time.get_ticks_msec() * 0.008) * 2.0
-	draw_circle(p + Vector2(28, -86 + bob), 13.0, Color(0.05, 0.08, 0.10, 0.65))
-	draw_string(ThemeDB.fallback_font, p + Vector2(22, -79 + bob), "…",
-		HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color(1.0, 0.82, 0.35, 0.95))
-
-
-func _draw_mischief() -> void:
-	if _mischief_role == "":
-		return
-	var active: bool = _mischief_phase == "TELEGRAPH" or _mischief_phase == "ACTION"
-	if not active:
-		return
-	var culprit: Vector2 = turtle.position if _mischief_role == "turtle" else rabbit.position
-	var other: Vector2 = rabbit.position if _mischief_role == "turtle" else turtle.position
-	if _mischief_phase == "TELEGRAPH":
-		# 预兆：先把“谁在使坏”画清楚，不等 ACTION 的 0.65 s。
-		for i in 3:
-			var a := culprit + Vector2(cos(float(i) * 2.1) * 28.0,
-				-34.0 + sin(float(i) * 1.7) * 18.0)
-			var b := other.lerp(culprit, 0.35 + 0.15 * float(i))
-			draw_line(a, b, Color(1.0, 0.72, 0.2, 0.35), 2.0)
-		draw_string(ThemeDB.fallback_font, culprit + Vector2(-8, -90), "!",
-			HORIZONTAL_ALIGNMENT_LEFT, -1, 30, Color(1.0, 0.55, 0.15, 0.95))
-		var tag := Locale.t("mischief.tag_tug" if _mischief_predicted_kind() == "tug"
-			else "mischief.tag_zap")
-		draw_string(ThemeDB.fallback_font, culprit + Vector2(-18, -112), tag,
-			HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color(1.0, 0.82, 0.35, 0.95))
-		return
-	if _mischief_fx_t <= 0.0:
-		return
-	var k := clampf(_mischief_fx_t / 0.65, 0.0, 1.0)
-	match _mischief_fx_kind:
-		"tug":
-			var a: Vector2 = turtle.position + Vector2(0, -18)
-			var b: Vector2 = rabbit.position + Vector2(0, -30)
-			draw_line(a, b, Color(0.35, 0.22, 0.12, 0.9 * k), 4.0)
-			draw_line(b, b + Vector2(0, 20), Color(0.35, 0.22, 0.12, 0.9 * k), 4.0)
-			draw_circle(b, 10.0 * k, Color(0.85, 0.4, 0.2, 0.3 * k))
-		_:
-			# 三种电击：turtle→rabbit、rabbit→turtle、空中兔子被电下来。
-			var z_from: Vector2 = culprit + Vector2(18, -18)
-			var z_to: Vector2 = other + Vector2(0, -12)
-			if _mischief_fx_kind == "rabbit_shock":
-				z_from = rabbit.position + Vector2(-18, -18)
-				z_to = turtle.position + Vector2(0, -12)
-			_draw_zap(z_from, z_to,
-				Color(1.0, 0.93, 0.30, 0.95 * k), 4.0, 9.0)
-			draw_circle(z_from, 18.0 * k, Color(1.0, 0.9, 0.25, 0.18 * k))
-			draw_circle(z_to, 26.0 * k, Color(1.0, 0.85, 0.2, 0.22 * k))
-			# 谁被电，头顶显示“！”，不依赖颜色分辨。
-			draw_string(ThemeDB.fallback_font, z_to + Vector2(-7, -48), "!",
-				HORIZONTAL_ALIGNMENT_LEFT, -1, 26, Color(1.0, 0.9, 0.35, 0.95))
-			if _mischief_fx_kind == "zap_landing":
-				draw_line(z_to, z_to + Vector2(0, 38.0 * k),
-					Color(1.0, 0.75, 0.25, 0.9 * k), 3.0)
-				draw_line(z_to + Vector2(0, 38.0 * k), z_to + Vector2(-8, 28.0 * k),
-					Color(1.0, 0.75, 0.25, 0.9 * k), 3.0)
-				draw_line(z_to + Vector2(0, 38.0 * k), z_to + Vector2(8, 28.0 * k),
-					Color(1.0, 0.75, 0.25, 0.9 * k), 3.0)
-
 
 ## 电击折线：两端固定、中间抖动，灰盒里也看得出“电到了谁”。
 func _draw_zap(a: Vector2, b: Vector2, col: Color, width: float, amp: float) -> void:
@@ -4792,7 +4477,6 @@ func _draw() -> void:
 	_draw_oxygen_bubbles()
 	_draw_guard_and_catch()
 	_draw_sleep_fx()
-	_draw_mischief()
 	# P4：跳跃强化的箭头必须在兔子之后画，否则被兔子身体盖住。
 	if snack_rabbit_boost_active():
 		_draw_rabbit_boost_fx()
@@ -6323,9 +6007,6 @@ func _check_bird_attacks(delta: float) -> void:
 				if GameManager.accident_state == "NONE" \
 						and _circle_hits_rect(land, radius,
 							_inset(rabbit.get_body_rect(), 3.0)):
-					if _mischief_role == "turtle" and _mischief_phase == "ACTION" 							and _mischief_fx_kind == "shock" 							and GameManager.current_control == "rabbit":
-						GameManager.feedback.emit(Locale.t("mischief.arc_block"), "clean")
-					else:
 						_rabbit_contact("LOW_BIRD", true)
 			_bird_attacks.remove_at(i)
 			continue
@@ -6336,18 +6017,9 @@ func _check_bird_attacks(delta: float) -> void:
 		var target := String(a["target"])
 		var hit := false
 		if target in ["turtle", "any"] and GameManager.accident_state == "NONE" 				and t_rect.intersects(rect):
-			# 失控 BITT 的电弧只在电击 ACTION 的短窗口内抵消远程投射物。
-			if String(a["type"]) == "poop" and _mischief_role == "turtle" 					and _mischief_phase == "ACTION" and _mischief_fx_kind == "shock" 					and GameManager.current_control == "rabbit":
-				GameManager.feedback.emit(Locale.t("mischief.arc_block"), "clean")
-				_bird_attacks.remove_at(i)
-				continue
 			_turtle_contact("bird_" + String(a["group"]), "LOW_BIRD", true)
 			hit = true
 		elif target in ["rabbit", "any"] and GameManager.accident_state == "NONE" 				and r_rect.intersects(rect):
-			if String(a["type"]) == "poop" and _mischief_role == "turtle" 					and _mischief_phase == "ACTION" and _mischief_fx_kind == "shock":
-				GameManager.feedback.emit(Locale.t("mischief.arc_block"), "clean")
-				_bird_attacks.remove_at(i)
-				continue
 			hit = _rabbit_contact("LOW_BIRD", true)
 		if hit:
 			if String(a["type"]) == "poop":
