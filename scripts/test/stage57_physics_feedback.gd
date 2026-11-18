@@ -186,6 +186,8 @@ func _run() -> void:
 	race.turtle.speed = 220.0
 	race.accident_flash = 0.0
 	race._dynamic_bump_cd.clear()
+	race._bounce_cd = 0.0
+	race._bonk_lock_t = 0.0
 	race._turtle_dynamic_bump("buoy_test", buoy)
 	var s1: float = race.turtle.speed
 	_check("dynamic_buoy_single", s1 < 220.0 and race.accident_flash == 0.0,
