@@ -2641,6 +2641,9 @@ func _apply_bounce(key: String, kind: String) -> void:
 	_bonk_key = key
 	_bonk_visual_t = BONK_VISUAL_TIME
 	turtle.speed = 0.0
+	# 弹回后允许玩家立刻用 ↑ 重试；否则上一个跳跃冷却会让高墙看起来“跳不起来”。
+	turtle.leap_cooldown = 0.0
+	turtle.dunk_timer = 0.0
 	_bounce_cd = BONK_CD
 	# 状态锁：这段时间内不再接受新的乌龟碰撞判定；
 	# 壳从弹回目标继续由 turtle.tick 向前加速，不会被同一次接触每帧重复触发。
@@ -2981,19 +2984,23 @@ func _resolve_turtle_solid() -> void:
 			# 壳已经完全越过障碍右沿时不再回拉，避免又出现一次瞬移；
 			# 但此时它可能正从障碍底下浮上来，后半截还压在浮木下沿——
 			# 于是沿 y 轴把它推回最近的那条水平边，不允许从背后穿上来。
-			if turtle.position.x > rect.end.x:
-				var up: float = rect.position.y - tr.end.y
-				var down: float = rect.end.y - tr.position.y
-				if absf(up) <= absf(down):
-					turtle.position.y += up - 0.5
-				else:
-					turtle.position.y += down + 0.5
-				tr = _inset(turtle.get_body_rect(), 3.0)
-				pushed = true
-				continue
 			var full_t: Rect2 = turtle.get_body_rect()
-			turtle.position.x = minf(turtle.position.x,
-				rect.position.x - full_t.size.x * 0.5 - 3.0)
+			if kind == "HIGH_WALL":
+				# 墙只左右顶，不把壳推到墙顶/墙底。
+				turtle.position.x = minf(turtle.position.x,
+					rect.position.x - full_t.size.x * 0.5 - 3.0)
+			else:
+				# 其他实心障碍按最近边推出；不往右推（不能替玩家过关）。
+				var c := tr.get_center()
+				var dl := absf(c.x - rect.position.x)
+				var dt := absf(c.y - rect.position.y)
+				var db := absf(rect.end.y - c.y)
+				if dt <= dl and dt <= db:
+					turtle.position.y = rect.position.y - full_t.size.y * 0.5 - 3.0
+				elif db <= dl:
+					turtle.position.y = rect.end.y + full_t.size.y * 0.5 + 3.0
+				else:
+					turtle.position.x = rect.position.x - full_t.size.x * 0.5 - 3.0
 			tr = _inset(turtle.get_body_rect(), 3.0)
 			pushed = true
 	# 壳被顶住时，坐在上面的兔子跟着一起退，不能自己留在墙里。
