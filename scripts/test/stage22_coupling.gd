@@ -1,7 +1,7 @@
 extends Node
 ## FEEL-22：核心状态耦合矩阵。只验证已经存在的状态机，不新增玩法。
-## 覆盖 SHIFT×MISCHIEF / SHOWTIME / OVERDRIVE，救援×氧气×动态攻击，
-## 以及失败/重开前的状态清理契约。
+## 覆盖 SHIFT / SHOWTIME / OVERDRIVE，救援×氧气×动态攻击，
+## 以及失败/重开前的状态清理契约。旧 MISCHIEF 用例已随机制移除。
 
 const LevelData = preload("res://scripts/systems/level_data.gd")
 const Tuning = preload("res://scripts/systems/tuning.gd")
@@ -36,7 +36,6 @@ func _run() -> void:
 	race.test_disable_hazards = false
 	race.load_level([], [])
 
-	_case_shift_mischief()
 	_case_shift_input_cleanup()
 	_case_real_physics_shift()
 	_case_shift_showtime()
@@ -65,12 +64,6 @@ func _base(control: String = "rabbit") -> void:
 	race._od_t = 0.0
 	race._od_cd = 0.0
 	race._od_afterimages.clear()
-	race._mischief_role = ""
-	race._mischief_phase = ""
-	race._mischief_t = 0.0
-	race._mischief_cd = 0.0
-	race._mischief_last_control = control
-	race._mischief_action_done = false
 	race._bird_attacks.clear()
 	race._shark_attacks.clear()
 	race._shark_pack.clear()
@@ -83,24 +76,6 @@ func _base(control: String = "rabbit") -> void:
 	race.mount.mark_riding()
 	race.turtle.speed = 220.0
 	race.rescue_prev_pos = race.rabbit.position
-
-
-func _case_shift_mischief() -> void:
-	_base("rabbit")
-	GameManager.complaint_role = "turtle"
-	GameManager.complaint_t = 2.6
-	race._tick_mischief(1.0 / FPS)
-	_check("mischief_starts_uncontrolled", race._mischief_role == "turtle"
-		and race._mischief_phase == "TELEGRAPH",
-		"role=%s phase=%s" % [race._mischief_role, race._mischief_phase])
-	# SHIFT 进入捣乱角色：旧事件当帧取消，条清零。
-	GameManager.shift_lock_t = 0.0
-	GameManager.toggle_control()
-	race._tick_mischief(1.0 / FPS)
-	_check("shift_into_role_cancels", GameManager.current_control == "turtle"
-		and race._mischief_role == "" and GameManager.complaint_role == "",
-		"control=%s role=%s complaint=%s" % [GameManager.current_control,
-			race._mischief_role, GameManager.complaint_role])
 
 
 func _case_shift_input_cleanup() -> void:
@@ -234,22 +209,18 @@ func _case_rescue_oxygen_attacks() -> void:
 
 func _case_failure_cleanup() -> void:
 	_base("rabbit")
-	GameManager.role_mischief_pending = true
-	GameManager.role_mischief_role = "turtle"
 	GameManager.showtime_active = true
 	GameManager.shift_lock_t = 0.2
 	GameManager.finished = true
 	GameManager._reset_run()
 	_check("retry_reset_global", GameManager.accident_state == "NONE"
-		and not GameManager.role_mischief_pending
 		and not GameManager.showtime_active
 		and GameManager.shift_lock_t == 0.0
 		and not GameManager.finished
 		and GameManager.oxygen == Tuning.OXYGEN_MAX,
-		"accident=%s pending=%s show=%s lock=%.2f finished=%s" % [
-			GameManager.accident_state, GameManager.role_mischief_pending,
-			GameManager.showtime_active, GameManager.shift_lock_t,
-			GameManager.finished])
+		"accident=%s show=%s lock=%.2f finished=%s" % [
+			GameManager.accident_state, GameManager.showtime_active,
+			GameManager.shift_lock_t, GameManager.finished])
 
 
 func _case_player_text() -> void:

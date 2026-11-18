@@ -57,7 +57,6 @@ func _reset() -> void:
 	GameManager.shift_lock_t = 0.0
 	GameManager.test_no_best = true
 	GameManager.accident_state = "NONE"
-	GameManager.role_mischief_pending = false
 	race.test_disable_hazards = true
 	race.test_no_finish = true
 	race.world_end = 1.0e9

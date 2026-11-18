@@ -1,7 +1,7 @@
 extends Node
 ## FEEL-19 P0：救援 SPACE 文案/键帽。
 ## FEEL-24 起右下角 0/3 面板已移除，原“满格可见”两条断言随之删除；
-## MISCHIEF 可读性由 stage15_mischief 覆盖。
+## 旧 MISCHIEF 已移除；走神度可读性由 stage53_soft_pressure 覆盖。
 
 var is_runner := false
 var race: Node
