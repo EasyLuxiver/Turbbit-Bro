@@ -180,6 +180,8 @@ func _run() -> void:
 		"zone": 3, "kind": "DIVE_GATE", "x": 2600.0, "w": 180.0})
 	race.hazard_groups = [gate]
 	var gr: Rect2 = gate["rects"][0]
+	race._bonk_anim_active = false
+	race._bonk_lock_t = 0.0
 	race.turtle.reset(gr.get_center())
 	race._resolve_turtle_solid()
 	_check("dive_gate_blocks", not race.turtle.get_body_rect().intersects(gr),

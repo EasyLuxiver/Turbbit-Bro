@@ -49,7 +49,8 @@ func _ready() -> void:
 	race.test_no_lessons = true
 	race.test_no_mischief = true
 	race.test_no_showtime = true
-	race.test_no_bounce = true
+	# 教学也使用统一弹开；否则高墙/礁石会变成“按住”而不是可读的碰撞反馈。
+	race.test_no_bounce = false
 	race.world_end = END_X
 	race.turtle.reset(Vector2(400.0, race.surface_ref()))
 	race.rabbit.reset()

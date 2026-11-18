@@ -255,13 +255,13 @@ var _bonk_lock_t := 0.0
 var _showtime_cd := 0.0
 var _showtime_turtle_y := 0.0
 var _showtime_turtle_spin := 0.0
-const BONK_BACK := 180.0
+const BONK_BACK := 220.0
 const BONK_CD := 0.8
 ## 碰撞状态锁：一次弹回后这段时间内不再重复判乌龟碰撞，让壳继续前进。
 const BONK_LOCK := 1.2
-const BONK_FAIL_COUNT := 6
+const BONK_FAIL_COUNT := 3
 const BONK_KINDS := ["DIVE_GATE", "HIGH_WALL", "FLOATING_LOG", "SHARK", "LOW_BEAM",
-	"SURFACE_ROCK"]
+	"LOW_BIRD", "SURFACE_ROCK"]
 const BONK_ANIM_TIME := 0.42
 const BONK_VISUAL_TIME := 0.55
 var _bonk_anim_active := false
@@ -2617,19 +2617,17 @@ func _apply_bounce(key: String, kind: String) -> void:
 		return
 	if _bounce_cd > 0.0:
 		return
-	if not (kind in BONK_KINDS) or key.begins_with("pack_"):
+	if not (kind in BONK_KINDS):
 		return
 	var g := _group_by_name(key)
-	if g.is_empty():
-		return
 	var idx := -1
-	for i in hazard_groups.size():
-		if String(hazard_groups[i].get("group", "")) == key:
-			idx = i
-			break
-	if idx < 0:
-		return
-	# 后退 140 px；如果会退进上一组，就停在上一组末端 + 80。
+	if not g.is_empty():
+		for i in hazard_groups.size():
+			if String(hazard_groups[i].get("group", "")) == key:
+				idx = i
+				break
+	# 后退 BONK_BACK；如果会退进上一组，就停在上一组末端 + 80。
+	# 鲨群/海鸟的临时 key 不在 hazard_groups 里，也照样弹开。
 	var floor_x := 40.0
 	if idx > 0:
 		floor_x = _group_end(hazard_groups[idx - 1]) + 80.0
@@ -2959,7 +2957,8 @@ func _resolve_rabbit_solid() -> void:
 
 
 func _resolve_turtle_solid() -> void:
-	if test_disable_hazards:
+	if test_disable_hazards or _bonk_anim_active:
+		# 弹回动画自己在移动壳；这时再按位置推回会互相拉扯成抽搐。
 		return
 	var tr := _inset(turtle.get_body_rect(), 3.0)
 	var before_x: float = turtle.position.x
@@ -5849,7 +5848,7 @@ func _pack_reset_actors() -> void:
 ## 攻击判定只读三只实体自己的 rect。rect 在 _advance_pack_actor 里随
 ## 上冲/压顶/下潜一起移动，所以画到哪就判到哪，不存在第二套攻击体。
 func _check_shark_attacks(_delta: float) -> void:
-	if test_disable_hazards or _shark_attacks.is_empty():
+	if test_disable_hazards or _shark_attacks.is_empty() or _bonk_lock_t > 0.0:
 		return
 	if _rescue_context() != "NONE" or rabbit.state in ["FALLING_WATER", "PASSED_OUT"]:
 		_shark_attacks.clear()
@@ -6313,7 +6312,8 @@ func _check_bird_attacks(delta: float) -> void:
 		var rect := _bird_attack_rect(a)
 		var target := String(a["target"])
 		var hit := false
-		if target in ["turtle", "any"] and GameManager.accident_state == "NONE" 				and t_rect.intersects(rect):
+		if target in ["turtle", "any"] and GameManager.accident_state == "NONE" \
+				and _bonk_lock_t <= 0.0 and t_rect.intersects(rect):
 			_turtle_contact("bird_" + String(a["group"]), "LOW_BIRD", true)
 			hit = true
 		elif target in ["rabbit", "any"] and GameManager.accident_state == "NONE" 				and r_rect.intersects(rect):
