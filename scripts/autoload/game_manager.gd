@@ -383,7 +383,6 @@ func note_mistake(reason: String, role: String = "") -> void:
 		return
 	complaint_role = who
 	complaint_t = 7.0
-	feedback.emit(Locale.t("feedback.complaint_" + who), "hit")
 
 
 var last_mistake_role := ""

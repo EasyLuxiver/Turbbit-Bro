@@ -173,6 +173,8 @@ func _run() -> void:
 	var entered_race: Node = null
 	if entered != null:
 		entered_race = entered.get("race") as Node
+		if entered_race != null:
+			entered_race.test_no_mischief = true
 	var no_opening := false
 	if entered_race != null:
 		no_opening = entered_race.get("opening") == null \
@@ -192,6 +194,8 @@ func _run() -> void:
 		var fresh_race: Node = null
 		if fresh != null:
 			fresh_race = fresh.get("race") as Node
+			if fresh_race != null:
+				fresh_race.test_no_mischief = true
 		if fresh_race != null:
 			restart_empty = fresh_race.hazard_groups.is_empty()
 		_check("arena_restart", restart_path.ends_with("test_arena.tscn") and restart_empty,
@@ -219,6 +223,8 @@ func _hit_once(race: Node, g: Dictionary, kind: String) -> bool:
 	race.hazard_cooldown = 0.0
 	race.turtle_grace = 0.0
 	race.rabbit_grace = 0.0
+	race._bonk_anim_active = false
+	race._bonk_visual_t = 0.0
 	var idx: int = g["rects"].size() - 1 if kind == "HIGH_WALL" else 0
 	var rect: Rect2 = race.hazard_rect_live(g, idx)
 	if kind == "SHARK6":

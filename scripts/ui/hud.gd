@@ -43,6 +43,8 @@ var _bottom_center: VBoxContainer
 var control_label: Label
 var rabbit_role: Label
 var rabbit_status: Label
+var rabbit_sleep_bar: ProgressBar
+var turtle_sleep_bar: ProgressBar
 var rabbit_coop: Label
 var turtle_role: Label
 var turtle_status: Label
@@ -128,6 +130,7 @@ func _ready() -> void:
 	rabbit_row.add_child(rabbit_portrait)
 	rabbit_role = _label(rabbit_row, 18, TEXT)
 	rabbit_status = _label(rabbit_row, 18, GREEN)
+	rabbit_sleep_bar = _sleep_bar(rabbit_row)
 	var rdr := _drift_row(tl, CYAN)
 	rabbit_drift_row = rdr[0]
 	rabbit_drift_bar = rdr[1]
@@ -150,6 +153,7 @@ func _ready() -> void:
 	turtle_row.add_child(turtle_portrait)
 	turtle_role = _label(turtle_row, 18, TEXT)
 	turtle_status = _label(turtle_row, 18, GREEN)
+	turtle_sleep_bar = _sleep_bar(turtle_row)
 	var tdr := _drift_row(tl, CYAN)
 	turtle_drift_row = tdr[0]
 	turtle_drift_bar = tdr[1]
@@ -273,6 +277,8 @@ func _refresh() -> void:
 	rabbit_glyph.controlled = cur == "rabbit"
 	turtle_glyph.level = _drift_level(turtle_drift)
 	turtle_glyph.controlled = cur == "turtle"
+	_update_sleep_bar(rabbit_sleep_bar, "rabbit")
+	_update_sleep_bar(turtle_sleep_bar, "turtle")
 	if cur == "rabbit":
 		rabbit_status.text = _acting_text(_rabbit_action())
 		rabbit_status.add_theme_color_override("font_color", GOLD)
@@ -827,6 +833,40 @@ func _bar_style(color: Color) -> StyleBoxFlat:
 
 func _set_bar_color(bar: ProgressBar, color: Color) -> void:
 	bar.add_theme_stylebox_override("fill", _bar_style(color))
+
+
+func _update_sleep_bar(bar: ProgressBar, who: String) -> void:
+	if bar == null or race == null or not race.has_method("sleep_value"):
+		return
+	var v: float = race.sleep_value(who)
+	bar.value = v
+	bar.visible = v > 0.5
+	var col: Color = CYAN
+	var stage: int = race.sleep_stage(who)
+	if stage >= 2:
+		col = RED
+	elif stage == 1:
+		col = AMBER
+	# 只在阶段变化时重建 StyleBox，避免每帧分配拖慢高 tick 探针。
+	if int(bar.get_meta("sleep_stage", -1)) != stage:
+		bar.set_meta("sleep_stage", stage)
+		bar.add_theme_stylebox_override("fill", _bar_style(col))
+
+
+func _sleep_bar(parent: Container) -> ProgressBar:
+	var bar := ProgressBar.new()
+	bar.min_value = 0
+	bar.max_value = 100
+	bar.value = 0
+	bar.show_percentage = false
+	bar.custom_minimum_size = Vector2(42, 4)
+	bar.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	bar.add_theme_stylebox_override("background",
+		_bar_style(Color(0.12, 0.16, 0.2, 0.9)))
+	bar.add_theme_stylebox_override("fill", _bar_style(CYAN))
+	bar.visible = false
+	parent.add_child(bar)
+	return bar
 
 
 func _label(parent: Container, font_size: int, color: Color) -> Label:

@@ -28,6 +28,7 @@ func _run() -> void:
 	for i in 5:
 		await get_tree().process_frame
 	race = get_tree().current_scene
+	race.test_no_mischief = true
 	race.set_physics_process(false)
 	race.opening_active = false
 	race.test_no_finish = true
@@ -161,7 +162,7 @@ func _run() -> void:
 	race._shark_pack["shark6"]["phase"] = "RETREAT"
 	race._shark_pack["shark6"]["t"] = 1.0
 	race._tick_shark_pack(1.0 / FPS)
-	_check("pack_enters_stands", race._shark_stands_t > 0.0,
+	_check("pack_no_stands", race._shark_stands_t <= 0.0,
 		"stands=%.1f" % race._shark_stands_t)
 
 	# 正式 Z3 组存在并能推进到第一段跟随攻击。

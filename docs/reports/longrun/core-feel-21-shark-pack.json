@@ -46,8 +46,8 @@
       "ok": true
     },
     {
-      "detail": "stands=12.0",
-      "name": "pack_enters_stands",
+      "detail": "stands=0.0",
+      "name": "pack_no_stands",
       "ok": true
     },
     {

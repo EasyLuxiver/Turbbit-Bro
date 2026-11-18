@@ -1,9 +1,10 @@
 extends Node
-## PHASE-ART：把制作人给的兔子/乌龟合照放进 Z1 场景里看比例与风格。
+## PHASE-SLEEP：Q 弹碰撞截图探针（窗口模式）。
+
+const LevelData = preload("res://scripts/systems/level_data.gd")
 
 var is_runner := false
 var race: Node
-var pair: Sprite2D
 var dir := ""
 
 
@@ -31,33 +32,32 @@ func _run() -> void:
 	race.opening_active = false
 	race.test_no_finish = true
 	race.test_disable_hazards = true
-	race.hazard_groups = []
-	race.test_no_control_ring = true
-	race.test_no_gameplay_draw = true
-	# 只看新角色与背景；隐藏灰盒角色和 HUD。
-	race.rabbit.visible = false
-	race.turtle.visible = false
+	var groups := [
+		LevelData.build_group({"group": "gate_test", "zone": 1,
+			"kind": "DIVE_GATE", "x": 2000.0, "w": 180.0}),
+	]
+	race.load_level(groups, [])
+	race.turtle.position = Vector2(1950.0, race.surface_ref())
+	race.rabbit.position = race.turtle.get_mount_point()
+	race.camera.position = Vector2(1950.0, 330.0)
+	race.camera.zoom = Vector2(1.8, 1.8)
 	if race.hud != null:
 		race.hud.visible = false
-	pair = Sprite2D.new()
-	pair.texture = load("res://assets/art/characters_pair.png")
-	pair.centered = false
-	pair.scale = Vector2(0.8, 0.8)
-	pair.z_index = 20
-	race.add_child(pair)
-	for x in [400.0, 1800.0]:
-		race.camera.position = Vector2(x, 450.0)
-		race.turtle.position = Vector2(x, race.surface_ref())
-		# 以合照中心对准角色位置，脚底压在水线上。
-		pair.position = Vector2(x - 250.0 * 0.8 * 0.5,
-			race.surface_ref() - 300.0 * 0.8 + 10.0)
-		race._update_dock()
+	race._bounce_cd = 0.0
+	race._bonk_streak = 0
+	race._turtle_contact("gate_test", "DIVE_GATE", true)
+	var frames := [0.0, 0.10, 0.22, 0.40]
+	var t := 0.0
+	for f in frames:
+		while t < f:
+			race._tick_bonk_anim(1.0 / 60.0)
+			t += 1.0 / 60.0
 		race.queue_redraw()
-		for i in 3:
+		for i in 2:
 			await get_tree().process_frame
 		await RenderingServer.frame_post_draw
-		var path: String = dir.path_join("char_pair_scene_%d.png" % int(x))
+		var path: String = dir.path_join("qbounce_%02d.png" % int(f * 100.0))
 		get_viewport().get_texture().get_image().save_png(path)
 		print("CAPTURE ", path)
-	print("CHAR PAIR CAPTURE: DONE")
+	print("QBOUNCE CAPTURE: DONE")
 	get_tree().quit(0)

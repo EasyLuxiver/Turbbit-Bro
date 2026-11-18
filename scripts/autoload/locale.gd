@@ -652,6 +652,14 @@ const STRINGS := {
 	"bro.down": {"zh": "往下！", "en": "GO DOWN!"},
 	"bro.leap": {"zh": "跃起来！", "en": "LEAP!"},
 	"bro.bonk": {"zh": "别硬顶！先换人！", "en": "STOP HEADBUTTING IT - SWITCH!"},
+	"sleep.telegraph_rabbit": {
+		"zh": "兔子开始走神……", "en": "TUBO IS DRIFTING OFF..."},
+	"sleep.telegraph_turtle": {
+		"zh": "乌龟开始走神……", "en": "BITT IS DRIFTING OFF..."},
+	"sleep.zap_rabbit": {
+		"zh": "兔子漏电！乌龟被电了一下", "en": "TUBO LEAKS! BITT GETS ZAPPED"},
+	"sleep.zap_turtle": {
+		"zh": "乌龟漏电！兔子被电了一下", "en": "BITT LEAKS! TUBO GETS ZAPPED"},
 	"feedback.turtle_bonk": {
 		"zh": "咚！乌龟被弹回来了（{0}/{1}）",
 		"en": "BONK! BITT BOUNCED BACK ({0}/{1})"},
