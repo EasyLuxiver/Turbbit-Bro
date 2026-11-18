@@ -48,7 +48,12 @@ func _run() -> void:
 	_check("next_enabled_first", not pause._help_next.disabled,
 		str(pause._help_next.disabled))
 	await _shot("pause_help_1")
-	for i in 6:
+	# 2–4 页逐页截图，确认改过的文案在实际暂停面板里读得通。
+	for n in [2, 3, 4]:
+		pause._help_next.pressed.emit()
+		await get_tree().process_frame
+		await _shot("pause_help_%d" % n)
+	for i in 3:
 		pause._help_next.pressed.emit()
 		await get_tree().process_frame
 	_check("last_page", pause._help_page_label.text == "7/7",
