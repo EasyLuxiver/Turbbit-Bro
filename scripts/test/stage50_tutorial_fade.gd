@@ -41,6 +41,10 @@ func _run() -> void:
 		"no_finish=%s world_end=%.0f no_best=%s" % [
 			str(tut.race.test_no_finish), tut.race.world_end,
 			str(GameManager.test_no_best)])
+	var near: Dictionary = tut.race.next_hazard_info()
+	_check("transition_gap", near.is_empty()
+		or float(near.get("distance", 0.0)) >= 1150.0,
+		"next=%s" % str(near.get("distance", -1.0)))
 	print("STAGE50 TUTORIAL FADE: " + ("PASS" if failures.is_empty() else "FAIL"))
 	get_tree().quit(0 if failures.is_empty() else 1)
 

@@ -259,10 +259,18 @@ func _continue_to_race() -> void:
 	race.test_no_bounce = false
 	race.opening_active = false
 	race.world_end = LevelData.WORLD_END
-	race.load_level(LevelData.groups(), [])
+	# 制作人：教学结束先走一段空路，正式障碍再从右边进入；
+	# 不在当前 x 脸前生成，也不把教学关卡整组换掉。
+	var gap_start: float = race.turtle.position.x + 1200.0
+	var next_groups := []
+	for g in LevelData.groups():
+		if LevelData.group_start(g) >= gap_start:
+			next_groups.append(g)
+	race.load_level(next_groups, [])
 	race.turtle.speed = float(race.current_zone.get("base_speed", SPEED))
 	race.turtle.base_speed = float(race.current_zone.get("base_speed", SPEED))
-	print("TUTORIAL CONTINUE x=%.0f" % race.turtle.position.x)
+	print("TUTORIAL CONTINUE x=%.0f next=%.0f groups=%d" % [
+		race.turtle.position.x, gap_start, next_groups.size()])
 
 
 func _finish() -> void:
