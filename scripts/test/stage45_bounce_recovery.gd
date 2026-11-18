@@ -74,11 +74,11 @@ func _run() -> void:
 	race._turtle_contact("beam_test", "LOW_BEAM", false)
 	_check("rabbit_layer_no_bounce", is_equal_approx(race.turtle.position.x, bx),
 		"x %.0f -> %.0f" % [bx, race.turtle.position.x])
-	# 连续第 6 次 -> BONK_OUT。
-	race._bonk_streak = 5
+	# 连续第 3 次 -> BONK_OUT（制作人：连续三次失败）。
+	race._bonk_streak = 2
 	race._bounce_cd = 0.0
 	race._turtle_contact("gate_test", "DIVE_GATE", false)
-	_check("sixth_hit_fails", GameManager.failure_reason == "BONK_OUT"
+	_check("third_hit_fails", GameManager.failure_reason == "BONK_OUT"
 		and GameManager.state == GameManager.GameState.FAILED,
 		"reason=%s state=%s" % [GameManager.failure_reason,
 			str(GameManager.state)])
