@@ -2986,8 +2986,9 @@ func _resolve_turtle_solid() -> void:
 			# 但此时它可能正从障碍底下浮上来，后半截还压在浮木下沿——
 			# 于是沿 y 轴把它推回最近的那条水平边，不允许从背后穿上来。
 			var full_t: Rect2 = turtle.get_body_rect()
-			if kind in ["HIGH_WALL", "DIVE_GATE"]:
-				# 墙/闸只左右顶，不把壳推到顶上或闸底。
+			if kind in ["HIGH_WALL", "DIVE_GATE", "SURFACE_ROCK"]:
+				# 墙/闸/礁石只做水平推出。礁石下面上浮时如果按最近边往下推，
+				# 会和浮力每帧对抗，形成抽搐；横着推出礁石下方才是稳定解。
 				turtle.position.x = minf(turtle.position.x,
 					rect.position.x - full_t.size.x * 0.5 - 3.0)
 			else:
