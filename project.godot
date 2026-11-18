@@ -33,4 +33,5 @@ enabled=PackedStringArray("res://addons/godot_mcp/plugin.cfg")
 
 [rendering]
 
+renderer/rendering_method.web="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.04, 0.12, 0.2, 1)
