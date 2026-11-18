@@ -27,6 +27,7 @@ func _run() -> void:
 	for i in 4:
 		await get_tree().process_frame
 	race = get_tree().current_scene
+	race.test_no_mischief = true
 	race.test_no_showtime = true
 	race.test_no_bounce = true
 	race.opening_active = false

@@ -27,6 +27,7 @@ func _run() -> void:
 	for i in 5:
 		await get_tree().process_frame
 	race = get_tree().current_scene
+	race.test_no_mischief = true
 	race.set_physics_process(false)
 	race.opening_active = false
 	race.test_no_finish = true
@@ -45,6 +46,11 @@ func _run() -> void:
 	race._bonk_level = 0
 	var x0: float = race.turtle.position.x
 	race._turtle_contact("gate_test", "DIVE_GATE", true)
+	_check("bounce_starts_spring", race._bonk_anim_active
+		and race._bonk_visual_t > 0.0,
+		"active=%s visual=%.2f" % [str(race._bonk_anim_active),
+			race._bonk_visual_t])
+	race._tick_bonk_anim(0.5)
 	_check("bounce_moves_back", race.turtle.position.x <= x0 - 139.0,
 		"x %.0f -> %.0f" % [x0, race.turtle.position.x])
 	_check("bounce_stops_speed", race.turtle.speed <= 0.01,
@@ -57,6 +63,7 @@ func _run() -> void:
 	race._bounce_cd = 0.0
 	var accidents := GameManager.accident_count
 	race._turtle_contact("gate_test", "DIVE_GATE", false)
+	race._tick_bonk_anim(0.5)
 	_check("second_bounce_no_double", GameManager.accident_count == accidents,
 		"accidents=%d" % GameManager.accident_count)
 	_check("bonk_level_two", race._bonk_level == 2,

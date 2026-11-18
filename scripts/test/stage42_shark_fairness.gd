@@ -33,6 +33,7 @@ func _run() -> void:
 	for i in 6:
 		await get_tree().process_frame
 	race = arena.race
+	race.test_no_mischief = true
 	GameManager.feedback.connect(func(text: String, _kind: String) -> void: feedback_seen.append(text))
 	# 正确操作三档延迟。
 	for d in DELTAS:

@@ -81,6 +81,11 @@
       "ok": true
     },
     {
+      "detail": "groups=1",
+      "name": "mouse_spawn_button",
+      "ok": true
+    },
+    {
       "detail": "best byte-identical",
       "name": "best_json_untouched",
       "ok": true

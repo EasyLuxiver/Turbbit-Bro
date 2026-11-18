@@ -175,6 +175,7 @@ func _check_hud_live_switch() -> void:
 	GameManager.start_race()
 	await _frames(6)
 	race = get_tree().current_scene
+	race.test_no_mischief = true
 	_check(race != null and race.scene_file_path.ends_with("race.tscn"), "race scene loads")
 	race.test_disable_hazards = true
 	await _frames(2)

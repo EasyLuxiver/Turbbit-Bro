@@ -27,6 +27,7 @@ func _run() -> void:
 	for i in 4:
 		await get_tree().process_frame
 	race = get_tree().current_scene
+	race.test_no_mischief = true
 	race.opening_active = false
 	race.test_no_finish = true
 	race.test_no_bird_behaviors = true

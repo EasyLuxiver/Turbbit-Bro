@@ -216,6 +216,23 @@ const MISCHIEF_END := 0.22
 const MISCHIEF_CD := 3.0
 ## 抱怨窗口 7 s，但要让玩家先有“我把他留失控了”的 1.2 s，才允许动手。
 const MISCHIEF_REACTION_DELAY := 1.2
+## PHASE-SLEEP：走神度（电击蛋糕后遗症）。只做轻压力，不做硬惩罚。
+const SLEEP_MAX := 100.0
+const SLEEP_DOZE := 40.0
+const SLEEP_PRE := 70.0
+const SLEEP_GROW := 100.0 / 16.0
+const SLEEP_RECOVER := 100.0 / 40.0
+const SLEEP_TELEGRAPH := 0.65
+const SLEEP_EVENT_END := 0.25
+const SLEEP_COOLDOWN := 3.0
+const SLEEP_NEAR_HAZARD := 160.0
+var _sleep := {"rabbit": 0.0, "turtle": 0.0}
+var _sleep_event_role := ""
+var _sleep_phase := ""
+var _sleep_t := 0.0
+var _sleep_cd := 0.0
+var _sleep_fx_t := 0.0
+var sleep_log: Array = []
 var _mischief_role := ""
 var _mischief_phase := ""
 var _mischief_t := 0.0
@@ -232,6 +249,13 @@ const BONK_BACK := 140.0
 const BONK_CD := 0.8
 const BONK_FAIL_COUNT := 6
 const BONK_KINDS := ["DIVE_GATE", "HIGH_WALL", "FLOATING_LOG", "SHARK"]
+const BONK_ANIM_TIME := 0.42
+const BONK_VISUAL_TIME := 0.55
+var _bonk_anim_active := false
+var _bonk_anim_t := 0.0
+var _bonk_anim_from := 0.0
+var _bonk_anim_to := 0.0
+var _bonk_visual_t := 0.0
 var _mischief_last_control := ""
 var _mischief_fx_kind := ""
 var _mischief_fx_t := 0.0
@@ -830,6 +854,13 @@ func load_level(groups: Array, lanes: Array) -> void:
 	_bonk_streak = 0
 	_bonk_level = 0
 	_bounce_cd = 0.0
+	_sleep = {"rabbit": 0.0, "turtle": 0.0}
+	_sleep_event_role = ""
+	_sleep_phase = ""
+	_sleep_t = 0.0
+	_sleep_cd = 0.0
+	_sleep_fx_t = 0.0
+	sleep_log.clear()
 	boost_lanes = lanes
 	reset_brains()
 	group_actions.clear()
@@ -930,6 +961,13 @@ func reset_brains() -> void:
 	_mischief_action_done = false
 	_mischief_action_seq = {"rabbit": 0, "turtle": 0}
 	mischief_log.clear()
+	_sleep = {"rabbit": 0.0, "turtle": 0.0}
+	_sleep_event_role = ""
+	_sleep_phase = ""
+	_sleep_t = 0.0
+	_sleep_cd = 0.0
+	_sleep_fx_t = 0.0
+	sleep_log.clear()
 	if GameManager != null:
 		GameManager.mischief_lock_role = ""
 
@@ -1146,6 +1184,7 @@ func _physics_process(delta: float) -> void:
 			_end_joint_show()
 		return
 
+	_tick_sleep(delta)
 	var control: String = GameManager.current_control
 	_tick_ignore(delta)
 	GameManager.tick_waterlogged(delta)
@@ -1165,7 +1204,6 @@ func _physics_process(delta: float) -> void:
 	turtle.drift = 0.0
 	turtle.drift_state = "CALM"
 	turtle.food_ahead = snack_ahead_distance()
-	_tick_mischief(delta)
 	_tick_visual_stress(delta)
 	rabbit.mischief_pose = false
 	# FEEL-22：切换后不继承旧的下潜尾/旧输入。下潜只来自玩家此刻按住的 ↓。
@@ -1199,6 +1237,7 @@ func _physics_process(delta: float) -> void:
 		vertical = assist_vertical
 	turtle.tick(delta, turtle_controlled, boosting, vertical,
 		true, snack_boost_speed if boosting else Tuning.BOOST_SPEED)
+	_tick_bonk_anim(delta)
 	_tick_bro_catch(delta)
 
 	# 可跳状态的宽限：壳刚沉下去/刚离开台面时还允许 100 ms 的补救跳。
@@ -2539,7 +2578,12 @@ func _apply_bounce(key: String, kind: String) -> void:
 	var floor_x := 40.0
 	if idx > 0:
 		floor_x = _group_end(hazard_groups[idx - 1]) + 80.0
-	turtle.position.x = maxf(turtle.position.x - BONK_BACK, floor_x)
+	var target := maxf(turtle.position.x - BONK_BACK, floor_x)
+	_bonk_anim_from = turtle.position.x
+	_bonk_anim_to = target
+	_bonk_anim_t = 0.0
+	_bonk_anim_active = true
+	_bonk_visual_t = BONK_VISUAL_TIME
 	turtle.speed = 0.0
 	_bounce_cd = BONK_CD
 	_bonk_streak += 1
@@ -2553,6 +2597,22 @@ func _apply_bounce(key: String, kind: String) -> void:
 		_bonk_fail()
 
 
+func _tick_bonk_anim(delta: float) -> void:
+	_bonk_visual_t = maxf(_bonk_visual_t - delta, 0.0)
+	if not _bonk_anim_active:
+		return
+	_bonk_anim_t += delta
+	var p := clampf(_bonk_anim_t / BONK_ANIM_TIME, 0.0, 1.0)
+	var c1 := 1.70158
+	var c3 := c1 + 1.0
+	var e := 1.0 + c3 * pow(p - 1.0, 3.0) + c1 * pow(p - 1.0, 2.0)
+	turtle.position.x = lerpf(_bonk_anim_from, _bonk_anim_to, e)
+	turtle.speed = 0.0
+	if p >= 1.0:
+		turtle.position.x = _bonk_anim_to
+		_bonk_anim_active = false
+
+
 func _bonk_fail() -> void:
 	GameManager.finish_failure("BONK_OUT")
 
@@ -2564,7 +2624,7 @@ func undertow_active() -> bool:
 
 
 func _check_hazards() -> void:
-	if test_disable_hazards:
+	if test_disable_hazards or _bonk_anim_active:
 		return
 	var t_rect := _inset(turtle.get_body_rect(), 3.0)
 	var r_rect := _inset(rabbit.get_body_rect(), 3.0)
@@ -4131,6 +4191,127 @@ func _tubo_autodrift() -> float:
 
 ## FEEL-15：BRO MISCHIEF。惩罚条满只对“未受控”的角色生效。
 ## 一个事件只有一个角色；SHIFT 当帧取消旧角色，新的未受控满格角色可以接管。
+## PHASE-SLEEP：走神度。未控制的身体慢慢走神；满了会漏电，把意识电回它。
+func _tick_sleep(delta: float) -> void:
+	if test_no_mischief:
+		return
+	_sleep_cd = maxf(_sleep_cd - delta, 0.0)
+	_sleep_fx_t = maxf(_sleep_fx_t - delta, 0.0)
+	var control := GameManager.current_control
+	for who in ["rabbit", "turtle"]:
+		if who == control:
+			_sleep[who] = maxf(float(_sleep[who]) - SLEEP_RECOVER * delta, 0.0)
+		else:
+			_sleep[who] = minf(float(_sleep[who]) + SLEEP_GROW * delta, SLEEP_MAX)
+	if _sleep_event_role != "":
+		if GameManager.current_control == _sleep_event_role:
+			_end_sleep_event("grounded")
+			return
+		if _rescue_context() != "NONE" or GameManager.accident_state != "NONE" 				or showtime_active:
+			_end_sleep_event("priority")
+			return
+		_sleep_t += delta
+		if _sleep_phase == "TELEGRAPH" and _sleep_t >= SLEEP_TELEGRAPH:
+			_apply_sleep_event()
+		elif _sleep_phase == "ACTION" and _sleep_t >= 0.30:
+			_sleep_phase = "END"
+			_sleep_t = 0.0
+		elif _sleep_phase == "END" and _sleep_t >= SLEEP_EVENT_END:
+			_end_sleep_event("completed")
+		return
+	if _sleep_cd > 0.0 or showtime_active or _rescue_context() != "NONE" 			or GameManager.accident_state != "NONE":
+		return
+	var other := "turtle" if control == "rabbit" else "rabbit"
+	if float(_sleep[other]) < SLEEP_MAX:
+		return
+	var near := next_hazard_info()
+	if not near.is_empty() and float(near.get("distance", 1.0e9)) < SLEEP_NEAR_HAZARD:
+		return
+	_sleep_event_role = other
+	_sleep_phase = "TELEGRAPH"
+	_sleep_t = 0.0
+	_sleep_fx_t = SLEEP_TELEGRAPH
+	GameManager.feedback.emit(Locale.t("sleep.telegraph_" + other), "hit")
+	sleep_log.append({"event": "telegraph", "who": other, "t": accident_event_time})
+
+
+func _apply_sleep_event() -> void:
+	var zapper := _sleep_event_role
+	if zapper == "":
+		return
+	var victim := "turtle" if zapper == "rabbit" else "rabbit"
+	if GameManager.current_control != victim:
+		_end_sleep_event("priority")
+		return
+	GameManager.set_control(zapper)
+	GameManager.shift_lock_t = 0.0
+	if victim == "rabbit":
+		rabbit_stun = maxf(rabbit_stun, 0.25)
+	else:
+		turtle.zap_stun_t = maxf(turtle.zap_stun_t, 0.25)
+	_sleep[zapper] = maxf(float(_sleep[zapper]) - 55.0, 0.0)
+	_sleep_phase = "ACTION"
+	_sleep_t = 0.0
+	_sleep_fx_t = 0.30
+	GameManager.feedback.emit(Locale.t("sleep.zap_" + zapper), "hit")
+	sleep_log.append({"event": "zap", "who": zapper, "victim": victim,
+		"t": accident_event_time})
+
+
+func _end_sleep_event(reason: String) -> void:
+	var old := _sleep_event_role
+	if old == "":
+		return
+	if reason == "grounded":
+		_sleep[old] = maxf(float(_sleep[old]) - 40.0, 0.0)
+	_sleep_event_role = ""
+	_sleep_phase = ""
+	_sleep_t = 0.0
+	_sleep_cd = SLEEP_COOLDOWN
+	sleep_log.append({"event": "end", "who": old, "reason": reason,
+		"t": accident_event_time})
+
+
+func sleep_value(who: String) -> float:
+	return float(_sleep.get(who, 0.0))
+
+
+func sleep_stage(who: String) -> int:
+	var v := sleep_value(who)
+	if v >= SLEEP_PRE:
+		return 2
+	if v >= SLEEP_DOZE:
+		return 1
+	return 0
+
+
+func _draw_sleep_fx() -> void:
+	if test_no_mischief:
+		return
+	var t := Time.get_ticks_msec() * 0.001
+	for who in ["rabbit", "turtle"]:
+		var v := sleep_value(who)
+		if v < SLEEP_DOZE:
+			continue
+		var p: Vector2 = turtle.position if who == "turtle" else rabbit.position
+		var z := "Z" if v < SLEEP_PRE else "ZZ"
+		var col := Color(0.62, 0.9, 1.0, 0.7 + 0.2 * sin(t * 2.0))
+		draw_string(ThemeDB.fallback_font, p + Vector2(26, -78 - sin(t * 2.2) * 3.0),
+			z, HORIZONTAL_ALIGNMENT_LEFT, -1, 18 + sleep_stage(who) * 4, col)
+		if _sleep_event_role == who and _sleep_phase == "TELEGRAPH":
+			for i in 5:
+				var a := t * 8.0 + float(i) * 1.3
+				draw_circle(p + Vector2(cos(a) * 26.0, -20.0 + sin(a) * 10.0),
+					2.4, Color(0.7, 0.95, 1.0, 0.85))
+	if _sleep_phase == "ACTION" and _sleep_event_role != "":
+		var zapper := _sleep_event_role
+		var victim := "turtle" if zapper == "rabbit" else "rabbit"
+		var a: Vector2 = turtle.position if zapper == "turtle" else rabbit.position
+		var b: Vector2 = turtle.position if victim == "turtle" else rabbit.position
+		_draw_zap(a + Vector2(0, -30), b + Vector2(0, -30),
+			Color(0.65, 0.95, 1.0, 0.9), 4.0, 10.0)
+
+
 func _tick_mischief(delta: float) -> void:
 	GameManager.tick_complaint(delta)
 	_mischief_cd = maxf(_mischief_cd - delta, 0.0)
@@ -4609,7 +4790,7 @@ func _draw() -> void:
 	_draw_shark_pack_fx()
 	_draw_oxygen_bubbles()
 	_draw_guard_and_catch()
-	_draw_complaint()
+	_draw_sleep_fx()
 	_draw_mischief()
 	# P4：跳跃强化的箭头必须在兔子之后画，否则被兔子身体盖住。
 	if snack_rabbit_boost_active():
@@ -7299,10 +7480,18 @@ func _draw_turtle() -> void:
 			var aa := tt + i * TAU / 5.0
 			draw_circle(pos + Vector2(cos(aa), sin(aa)) * 62.0, 3.0,
 				Color(0.7, 1.0, 1.0, 0.8))
+	var bvis := clampf(_bonk_visual_t / BONK_VISUAL_TIME, 0.0, 1.0)
+	var bsx := 1.0
+	var bsy := 1.0
+	if bvis > 0.0:
+		var wob := sin(bvis * TAU * 3.0) * 0.18 * (1.0 - bvis)
+		bsx = 1.0 + wob
+		bsy = 1.0 - wob
 	var shell := PackedVector2Array()
 	for i in 28:
 		var a := TAU * float(i) / 28.0
-		shell.append(pos + Vector2(cos(a) * 46.0, sin(a) * 28.0).rotated(tilt))
+		shell.append(pos + Vector2(cos(a) * 46.0 * bsx,
+			sin(a) * 28.0 * bsy).rotated(tilt))
 	draw_colored_polygon(shell, Color(0.25, 0.6, 0.3))
 	# BRO BRAIN：待命神游时头会左右张望 / 盯着食物；只动头，不动壳的判定。
 	var look: Vector2 = turtle.drift_look_px(GameManager.current_control == "turtle")
@@ -7317,6 +7506,7 @@ func _draw_turtle() -> void:
 	draw_circle(head_base, 14.0, Color(0.4, 0.7, 0.3))
 	draw_circle(head_base + Vector2(4.0 * _turtle_facing, -4), 3.0, Color(0.05, 0.1, 0.08))
 	_draw_bonk_face(head_base, tilt)
+	_draw_bonk_fx(pos)
 	if turtle.accident:
 		# 翻肚皮：浅色肚皮盖住壳面，四肢朝天，头被压在下面。
 		# 0.6 s 内从侧翻过渡到全翻，先“出事”再定格，不做瞬切。
@@ -7394,6 +7584,18 @@ func _draw_turtle() -> void:
 			draw_line(root, tip, Color(0.4, 0.7, 0.3), 6.0)
 			draw_circle(tip, 3.5, Color(0.5, 0.78, 0.36))
 	_draw_visual_stress(pos, "turtle")
+
+
+func _draw_bonk_fx(pos: Vector2) -> void:
+	if _bonk_visual_t <= 0.0:
+		return
+	var k := _bonk_visual_t / BONK_VISUAL_TIME
+	var c := Color(1.0, 0.82, 0.3, 0.95 * k)
+	var p := pos + Vector2(-34, -92.0 - 12.0 * sin(k * PI))
+	draw_string(ThemeDB.fallback_font, p, "BOING!",
+		HORIZONTAL_ALIGNMENT_LEFT, -1, 20 + int(8.0 * k), c)
+	draw_arc(pos + Vector2(0, 8), 34.0 + 22.0 * (1.0 - k),
+		0.15, PI - 0.15, 18, Color(0.85, 0.97, 1.0, 0.45 * k), 2.0)
 
 
 func _draw_bonk_face(head: Vector2, tilt: float) -> void:

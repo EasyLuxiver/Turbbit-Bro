@@ -1,6 +1,14 @@
 # Godot
 .godot/
+.nomedia
+.import/
 *.translation
+~*.dll
+.mono/
+data_*/
+mono_crash.*.json
+export.cfg
+export_credentials.cfg
 
 # Local captures / scratch
 screenshots/

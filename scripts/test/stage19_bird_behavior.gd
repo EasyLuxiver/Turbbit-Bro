@@ -26,6 +26,7 @@ func _run() -> void:
 	for i in 5:
 		await get_tree().process_frame
 	race = get_tree().current_scene
+	race.test_no_mischief = true
 	race.set_physics_process(false)
 	race.opening_active = false
 	race.test_no_finish = true
