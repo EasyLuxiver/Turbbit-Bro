@@ -2853,13 +2853,20 @@ func _check_hazards() -> void:
 ## 混合物理：兔子从空中落到礁石顶面。
 ## 只做“顶面 one-way 平台”：从上方落下才接，从下方跳仍可穿过。
 func _try_rock_landing(key: String, rect: Rect2, r_rect: Rect2) -> bool:
-	if _rock_perch_active or rabbit.velocity.y <= 0.0:
+	if _rock_perch_active:
 		return false
 	if r_rect.end.x < rect.position.x or r_rect.position.x > rect.end.x:
 		return false
 	var top := rect.position.y
-	if r_rect.end.y < top - 2.0 or r_rect.end.y > top + 10.0:
-		return false
+	# 只要兔子在石头 x 范围、身体中心没有低于石头中心，就优先吸到石顶。
+	# 不再要求脚底刚好落在 top-2…top+10 的窄带；否则长礁石会把兔子漏进石体。
+	var above_mid: bool = rabbit.position.y <= rect.get_center().y + 8.0
+	var descending: bool = rabbit.velocity.y >= -80.0
+	# 只有靠近顶面的高度才吸；高空越过礁石仍然让它飞过去。
+	var near_top: bool = r_rect.end.y >= top - 100.0 and r_rect.end.y <= top + 45.0
+	if not (above_mid and descending and near_top):
+		if r_rect.end.y < top - 2.0 or r_rect.end.y > top + 10.0:
+			return false
 	_rock_perch_active = true
 	_rock_perch_key = key
 	_rock_perch_rect = rect
@@ -2920,9 +2927,11 @@ func _resolve_rabbit_solid() -> void:
 			var dr := absf(rect.end.x - c.x)
 			var dt := absf(c.y - rect.position.y)
 			var db := absf(rect.end.y - c.y)
-			# 下落进顶面 -> 往上推；横向撞侧面 -> 按运动方向推回；
-			# 只有真正嵌在中间才按最近边。长礁石不能再被“最近边”带到石面里。
-			if rabbit.velocity.y > 40.0 and c.y < rect.end.y \
+			# 长礁石：身体中心在石头中线上方时优先吸到顶面，
+			# 而不是被“最近边”往下/往侧推。
+			if c.y <= rect.get_center().y + 8.0 and rabbit.velocity.y >= -80.0:
+				rabbit.position.y = rect.position.y - full.size.y * 0.5 - 3.0
+			elif rabbit.velocity.y > 40.0 and c.y < rect.end.y \
 					and rabbit.velocity.y > absf(rabbit.velocity.x) * 0.5:
 				rabbit.position.y = rect.position.y - full.size.y * 0.5 - 3.0
 			elif rabbit.velocity.x > 20.0 and c.x < rect.get_center().x:
@@ -5674,7 +5683,7 @@ func _update_pack_swimmers(delta: float) -> void:
 			continue
 		var want_x: float = turtle.position.x + float(a["offset"])
 		a["x"] = lerpf(float(a.get("x", want_x)), want_x,
-			clampf(delta * 8.0, 0.0, 1.0))
+			clampf(delta * 6.5, 0.0, 1.0))
 		a["y"] = 620.0 + sin(Time.get_ticks_msec() * 0.004 +
 			float(a["offset"]) * 0.013) * 5.0
 		var size: Vector2 = a["size"]
@@ -5775,7 +5784,8 @@ func _begin_pack_attack(a: Dictionary) -> void:
 	a["t"] = 0.0
 	a["phase"] = "RISE"
 	a["hit_logged"] = false
-	a["tx"] = _pack_target_x(a)
+	# 制作人：攻击目标在 WARN 开始时就锁定；这里不再重新追乌龟当前位置，
+	# 否则玩家看到预警后横移也会被命中，预警没有意义。
 	a["strike_rect"] = Rect2(float(a["tx"]) - (a["size"] as Vector2).x * 0.5,
 		float(a["attack_top"]), (a["size"] as Vector2).x, (a["size"] as Vector2).y)
 	if not _shark_attacks.has(a):

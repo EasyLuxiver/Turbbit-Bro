@@ -177,7 +177,10 @@ func _build_overlay() -> void:
 	# 原来 280 会把「SHIFT 当前控制」压掉；右移到 HUD 之后。
 	panel.position = Vector2(360, 18)
 	panel.custom_minimum_size = Vector2(880, 0)
-	panel.add_theme_stylebox_override("panel", UiTheme.panel_style())
+	# 制作人：对话框半透明，不遮住前方第一个海鸟。
+	var panel_style := UiTheme.panel_style()
+	panel_style.bg_color.a = 0.62
+	panel.add_theme_stylebox_override("panel", panel_style)
 	panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_overlay.add_child(panel)
 	var row := HBoxContainer.new()
@@ -195,15 +198,24 @@ func _build_overlay() -> void:
 	row.add_child(box)
 	_title = UiTheme.make_label("", 18, UiTheme.GOLD)
 	_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+	_title.add_theme_color_override("font_shadow_color", Color(0, 0, 0, 0.9))
+	_title.add_theme_constant_override("shadow_offset_x", 2)
+	_title.add_theme_constant_override("shadow_offset_y", 2)
 	box.add_child(_title)
 	_line = UiTheme.make_label("", 20, Color(0.95, 0.97, 1.0))
 	_line.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 	_line.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_line.add_theme_color_override("font_shadow_color", Color(0, 0, 0, 0.9))
+	_line.add_theme_constant_override("shadow_offset_x", 2)
+	_line.add_theme_constant_override("shadow_offset_y", 2)
 	box.add_child(_line)
 	_hint = UiTheme.make_label("", 16, Color(0.62, 0.95, 0.9))
 	_hint.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 	# FEEL-29：提示换人后会变长；允许换行，避免把整列撑宽、带偏主台词。
 	_hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_hint.add_theme_color_override("font_shadow_color", Color(0, 0, 0, 0.9))
+	_hint.add_theme_constant_override("shadow_offset_x", 2)
+	_hint.add_theme_constant_override("shadow_offset_y", 2)
 	box.add_child(_hint)
 	_fail = UiTheme.make_label("", 15, Color(1.0, 0.55, 0.4))
 	_fail.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT

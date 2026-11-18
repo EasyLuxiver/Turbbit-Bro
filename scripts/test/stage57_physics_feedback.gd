@@ -163,6 +163,17 @@ func _run() -> void:
 			clear = false
 	_check("long_reef_blocks", clear,
 		"rabbit=%s" % str(race.rabbit.get_body_rect()))
+	# 从长礁石内部/上方进入：优先吸到顶面，而不是漏进石体落水。
+	race.rabbit.position = Vector2(reef_r.get_center().x, reef_r.get_center().y)
+	race.rabbit.velocity = Vector2(0.0, 100.0)
+	race.rabbit.state = "FALLING"
+	race._rock_perch_active = false
+	var top_landed: bool = race._try_rock_landing("long_reef", reef_r,
+		race.rabbit.get_body_rect())
+	_check("long_reef_top_snap", top_landed and race._rock_perch_active
+		and race.rabbit.position.y < reef_r.position.y,
+		"landed=%s y=%.1f top=%.1f" % [str(top_landed),
+			race.rabbit.position.y, reef_r.position.y])
 
 	# 动态浮标：只减速/震动一次，不产生事故白闪，不连续推退。
 	var buoy: Dictionary = LevelData.build_group({"group": "buoy_test",
