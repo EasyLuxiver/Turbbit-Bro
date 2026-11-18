@@ -46,18 +46,14 @@ func _run() -> void:
 	race._tick_bird_behaviors(1.0 / 60.0)
 	_check("offscreen_state_done", String(st["phase"]) == "DONE",
 		"phase=%s" % String(st["phase"]))
-	# 鸟在屏内时正常发射；镜头越过后，下一次 tick 清掉投射物。
+	# 制作人质检：远程便便已撤掉；屏内也不再发射。
 	race.camera.position.x = 600.0
 	st["phase"] = "ACTION"
 	st["mode"] = "poop"
 	st["queue"] = ["poop"]
 	race._bird_attacks.clear()
 	race._spawn_bird_attack(g, st)
-	_check("onscreen_spawn_ok", race._bird_attacks.size() == 1,
-		"attacks=%d" % race._bird_attacks.size())
-	race.camera.position.x = 3000.0
-	race._tick_bird_behaviors(1.0 / 60.0)
-	_check("offscreen_attack_cleared", race._bird_attacks.is_empty(),
+	_check("onscreen_ranged_disabled", race._bird_attacks.is_empty(),
 		"attacks=%d" % race._bird_attacks.size())
 	print("STAGE48 BIRD OFFSCREEN: " + ("PASS" if failures.is_empty() else "FAIL"))
 	get_tree().quit(0 if failures.is_empty() else 1)
