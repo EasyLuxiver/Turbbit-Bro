@@ -186,6 +186,13 @@ func _run() -> void:
 	race._resolve_turtle_solid()
 	_check("dive_gate_blocks", not race.turtle.get_body_rect().intersects(gr),
 		"turtle=%s rect=%s" % [str(race.turtle.get_body_rect()), str(gr)])
+	race._rock_perch_active = false
+	race.rabbit.position = gr.get_center()
+	race.rabbit.velocity = Vector2(0.0, 100.0)
+	race.rabbit.state = "FALLING"
+	race._resolve_rabbit_solid()
+	_check("dive_gate_rabbit_pushed", not race.rabbit.get_body_rect().intersects(gr),
+		"rabbit=%s rect=%s" % [str(race.rabbit.get_body_rect()), str(gr)])
 
 	# 动态浮标：只减速/震动一次，不产生事故白闪，不连续推退。
 	var buoy: Dictionary = LevelData.build_group({"group": "buoy_test",

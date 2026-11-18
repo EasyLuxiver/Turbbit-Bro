@@ -2920,7 +2920,8 @@ func _resolve_rabbit_solid() -> void:
 		return
 	for g in hazard_groups:
 		var group: Dictionary = g
-		if String(group.get("kind", "")) != "SURFACE_ROCK":
+		var rkind := String(group.get("kind", ""))
+		if rkind not in ["SURFACE_ROCK", "DIVE_GATE", "HIGH_WALL"]:
 			continue
 		if destroyed_groups.has(String(group.get("group", ""))):
 			continue
