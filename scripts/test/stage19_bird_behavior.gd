@@ -217,13 +217,16 @@ func _plan_repro() -> void:
 			last = sig
 	_check("bird_seed_reproducible", a == b, "states=%d" % a.size())
 	_check("bird_no_adjacent_repeat", not repeat, "last=%s" % last)
-	# 换种子应改变至少一个遭遇（允许同一次随机碰巧相同，但全相同就失败）。
+	# 远程便便撤掉后，所有鸟都只排俯冲；种子不再改变特殊序列。
 	race.level_seed = 20261113
 	race.load_level(LevelData.groups(), [])
-	var c := {}
+	var all_dive := true
 	for k in race._bird_states.keys():
-		c[k] = race._bird_states[k]["queue"].duplicate()
-	_check("bird_seed_changes", a != c, "same=%s" % str(a == c))
+		var q: Array = race._bird_states[k]["queue"]
+		if q.size() != 1 or String(q[0]) != "dive":
+			all_dive = false
+	_check("bird_seed_all_dive", all_dive,
+		"states=%d" % race._bird_states.size())
 
 
 func _check(name: String, ok: bool, detail: String) -> void:

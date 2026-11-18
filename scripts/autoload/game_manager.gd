@@ -101,6 +101,8 @@ var bro_meter: int = 0
 var complaint_role := ""
 var complaint_t := 0.0
 var failure_reason := ""
+## 失败页按角色显示：BONK_OUT 是乌龟，OXYGEN_OUT 是兔子。
+var failure_role := ""
 ## FEEL-25：频繁落水造成的“气短”层数；不显示数字，靠气泡/动作表达。
 var waterlogged := 0
 var waterlogged_t := 0.0
@@ -215,6 +217,8 @@ func finish_failure(reason: String = "OXYGEN_OUT") -> void:
 	if state == GameState.FAILED:
 		return
 	failure_reason = reason
+	if failure_role == "":
+		failure_role = "turtle" if reason == "BONK_OUT" else "rabbit"
 	test_no_best = true
 	finished = false
 	state = GameState.FAILED
@@ -307,6 +311,7 @@ func _reset_run() -> void:
 	waterlogged = 0
 	waterlogged_t = 0.0
 	failure_reason = ""
+	failure_role = ""
 	last_mistake_role = ""
 	joint_accident_count = 0
 	combo_dive_count = 0

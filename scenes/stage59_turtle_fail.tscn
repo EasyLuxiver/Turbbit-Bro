@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/test/stage59_turtle_fail.gd" id="1"]
+
+[node name="Stage59TurtleFail" type="Node"]
+script = ExtResource("1")
