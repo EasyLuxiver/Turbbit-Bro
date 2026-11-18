@@ -275,7 +275,6 @@ var _bonk_key := ""
 const ROCK_RESTITUTION := 0.34
 const ROCK_ROLL_SPEED := 260.0
 const ROCK_PERCH_TIME := 0.20
-const ROCK_HOP_VY := -250.0
 var _rock_perch_key := ""
 var _rock_perch_rect := Rect2()
 var _rock_perch_t := 0.0
@@ -2567,10 +2566,10 @@ func _turtle_contact(_key: String, kind: String = "", charge: bool = true) -> vo
 	turtle.add_imbalance(Tuning.TURTLE_HIT_IMBALANCE)
 	# 制作人质检：高墙是“顶住/弹回”，不再套用浪击的下沉；
 	# 浪击下沉也从 115 px / 1.8 s 压到 55 px / 0.9 s，速度损失 0.6→0.78。
-	if kind not in ["HIGH_WALL", "LOW_BEAM"]:
+	# 乌龟层实体障碍统一走弹开；不再翻肚皮/下沉，避免咬住/墙前抽搐。
+	# 只有浪击等非弹回类型保留原来的失衡表现。
+	if kind not in BONK_KINDS:
 		turtle.start_dunk()
-	# 高墙不是浪击：翻肚皮会让教学/正赛在墙前软锁；只做顶住/弹回。
-	if kind != "HIGH_WALL":
 		turtle.start_flip()
 	turtle.speed *= 0.78
 	accident_flash = Tuning.ACCIDENT_FLASH
@@ -2895,9 +2894,9 @@ func _tick_rock_perch(delta: float) -> void:
 	if _rock_perch_t >= ROCK_PERCH_TIME or off_edge:
 		_rock_perch_active = false
 		_rock_perch_key = ""
-		# 从石面往前上方蹬出去，而不是直接掉水；这样礁石可以“滚过去”而不是卡住。
-		rabbit.state = "JUMPING"
-		rabbit.velocity = Vector2(ROCK_ROLL_SPEED * 0.9, ROCK_HOP_VY)
+		# 从石面边缘滚落：向前下方掉，不向上弹；落水后按正常水中下沉/救援处理。
+		rabbit.state = "FALLING"
+		rabbit.velocity = Vector2(ROCK_ROLL_SPEED * 0.75, 180.0)
 		mount.mark_airborne()
 
 
