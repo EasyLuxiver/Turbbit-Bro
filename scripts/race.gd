@@ -2971,8 +2971,10 @@ func _resolve_turtle_solid() -> void:
 		if destroyed_groups.has(String(group["group"])):
 			continue
 		var kind := String(group["kind"])
-		if kind in ["LOW_BEAM", "LOW_BIRD", "DIVE_GATE"]:
+		if kind in ["LOW_BEAM", "LOW_BIRD"]:
 			continue
+		# DIVE_GATE 不再整体跳过：没下潜时闸体必须把壳挡住；
+		# 真正潜到闸底以下后两者不相交，自然会通过。
 		if kind == "HIGH_WALL" and turtle.leap_active:
 			continue
 		for i in group["rects"].size():
@@ -2985,8 +2987,8 @@ func _resolve_turtle_solid() -> void:
 			# 但此时它可能正从障碍底下浮上来，后半截还压在浮木下沿——
 			# 于是沿 y 轴把它推回最近的那条水平边，不允许从背后穿上来。
 			var full_t: Rect2 = turtle.get_body_rect()
-			if kind == "HIGH_WALL":
-				# 墙只左右顶，不把壳推到墙顶/墙底。
+			if kind in ["HIGH_WALL", "DIVE_GATE"]:
+				# 墙/闸只左右顶，不把壳推到顶上或闸底。
 				turtle.position.x = minf(turtle.position.x,
 					rect.position.x - full_t.size.x * 0.5 - 3.0)
 			else:

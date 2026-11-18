@@ -175,6 +175,16 @@ func _run() -> void:
 		"landed=%s y=%.1f top=%.1f" % [str(top_landed),
 			race.rabbit.position.y, reef_r.position.y])
 
+	# DIVE_GATE：没下潜时不能停在闸体里。
+	var gate: Dictionary = LevelData.build_group({"group": "gate_solid",
+		"zone": 3, "kind": "DIVE_GATE", "x": 2600.0, "w": 180.0})
+	race.hazard_groups = [gate]
+	var gr: Rect2 = gate["rects"][0]
+	race.turtle.reset(gr.get_center())
+	race._resolve_turtle_solid()
+	_check("dive_gate_blocks", not race.turtle.get_body_rect().intersects(gr),
+		"turtle=%s rect=%s" % [str(race.turtle.get_body_rect()), str(gr)])
+
 	# 动态浮标：只减速/震动一次，不产生事故白闪，不连续推退。
 	var buoy: Dictionary = LevelData.build_group({"group": "buoy_test",
 		"zone": 1, "kind": "SURFACE_ROCK", "x": 1800.0, "w": 120.0,
