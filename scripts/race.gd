@@ -5513,7 +5513,6 @@ func _tick_shark_pack(delta: float) -> void:
 				st["t"] = 0.0
 				_shark_attacks.clear()
 				# 打完不是消失：鲨群沉到屏幕下方的看台，继续看兄弟俩跑。
-				show_shark_stands(12.0)
 
 
 ## 三只鱼平时都在船底跟随；只有轮到的那只离开队形上冲。
