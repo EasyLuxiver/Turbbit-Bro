@@ -259,7 +259,7 @@ const BONK_BACK := 220.0
 const BONK_CD := 0.8
 ## 碰撞状态锁：一次弹回后这段时间内不再重复判乌龟碰撞，让壳继续前进。
 const BONK_LOCK := 1.2
-const BONK_FAIL_COUNT := 3
+const BONK_FAIL_COUNT := 6
 const BONK_KINDS := ["DIVE_GATE", "HIGH_WALL", "FLOATING_LOG", "SHARK", "LOW_BEAM",
 	"LOW_BIRD", "SURFACE_ROCK"]
 const BONK_ANIM_TIME := 0.42

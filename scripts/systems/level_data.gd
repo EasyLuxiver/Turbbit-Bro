@@ -135,7 +135,7 @@ const GROUPS := [
 	# gate1→rock2 上，把礁拱往中间夹 100 px，两段从 6.36 / 5.45 s 收到 5.91 / 5.91 s；
 	# 食物仍锚在加速带右端 3250（clamp 生效，未移位），gate1→rock2 也不再拉长。
 	{"group": "gate1", "zone": 1, "kind": "DIVE_GATE", "x": 2400.0, "w": 180.0},
-	{"group": "rock2", "zone": 1, "kind": "SURFACE_ROCK", "x": 3240.0, "w": 140.0,
+	{"group": "rock2", "zone": 1, "kind": "SURFACE_ROCK", "x": 3240.0, "w": 110.0,
 		"combo": "gate1_rock2", "relay": true},
 	# FEEL-34：Z1 第一根浮木加高，乌龟单潜不再能从底部绕过；
 	# 必须兔子跳上沿 + 乌龟潜下沿（约 24 s，第一次真接力）。
