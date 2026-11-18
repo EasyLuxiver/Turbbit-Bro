@@ -9,8 +9,9 @@ const LevelData = preload("res://scripts/systems/level_data.gd")
 const UiTheme = preload("res://scripts/ui/ui_theme.gd")
 
 const SPEED := 220.0
-const END_X := 7000.0
-const STEP_X := [2200.0, 4000.0, 5600.0, 7000.0]
+## 教学直接跑正式 Z1：前几组障碍就是教学素材，不另建/不删除关卡。
+const END_X := 6800.0
+const STEP_X := [2400.0, 4920.0, 6600.0, 6800.0]
 
 var race: Node
 var step := 0
@@ -55,19 +56,8 @@ func _ready() -> void:
 	race.rabbit.attach(race.turtle.get_mount_point())
 	race.mount.reset()
 	race.mount.mark_riding()
-	var groups := [
-		{"group": "tut_rock", "zone": 1, "kind": "SURFACE_ROCK", "x": 1300.0, "w": 120.0},
-		{"group": "tut_beam", "zone": 1, "kind": "LOW_BEAM", "x": 2100.0, "w": 170.0},
-		{"group": "tut_gate", "zone": 1, "kind": "DIVE_GATE", "x": 3000.0, "w": 180.0},
-		{"group": "tut_shark", "zone": 1, "kind": "SHARK", "x": 3800.0, "w": 70.0},
-		{"group": "tut_log1", "zone": 1, "kind": "FLOATING_LOG", "x": 5000.0, "w": 32.0,
-			"h": 215.0},
-		{"group": "tut_log2", "zone": 1, "kind": "FLOATING_LOG", "x": 6400.0, "w": 32.0},
-	]
-	var built := []
-	for spec in groups:
-		built.append(LevelData.build_group(spec))
-	race.load_level(built, [])
+	# 正式 Z1 全量载入；教学只是覆盖层，不再自建/删除障碍。
+	race.load_level(LevelData.groups(), [])
 	race.world_end = END_X
 	race.turtle.base_speed = SPEED
 	race.turtle.speed = SPEED
@@ -109,6 +99,10 @@ func _process(delta: float) -> void:
 		_accidents0 = GameManager.accident_count
 		_show_fail()
 	var x: float = race.turtle.position.x
+	# 不管前面哪一步漏了，到教学终点必须收尾，不能因为 step<3 一直不结束。
+	if x >= END_X - 80.0:
+		_finish()
+		return
 	if step < 3:
 		var gate := false
 		match step:
@@ -259,18 +253,12 @@ func _continue_to_race() -> void:
 	race.test_no_bounce = false
 	race.opening_active = false
 	race.world_end = LevelData.WORLD_END
-	# 制作人：教学结束先走一段空路，正式障碍再从右边进入；
-	# 不在当前 x 脸前生成，也不把教学关卡整组换掉。
-	var gap_start: float = race.turtle.position.x + 1200.0
-	var next_groups := []
-	for g in LevelData.groups():
-		if LevelData.group_start(g) >= gap_start:
-			next_groups.append(g)
-	race.load_level(next_groups, [])
+	# 关卡从一开始就是正式 Z1，全量 53 组；这里只恢复系统，不 load_level。
 	race.turtle.speed = float(race.current_zone.get("base_speed", SPEED))
 	race.turtle.base_speed = float(race.current_zone.get("base_speed", SPEED))
-	print("TUTORIAL CONTINUE x=%.0f next=%.0f groups=%d" % [
-		race.turtle.position.x, gap_start, next_groups.size()])
+	var near: Dictionary = race.next_hazard_info()
+	print("TUTORIAL CONTINUE x=%.0f next=%.0f" % [
+		race.turtle.position.x, float(near.get("distance", -1.0))])
 
 
 func _finish() -> void:

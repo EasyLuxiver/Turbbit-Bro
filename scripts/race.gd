@@ -1927,7 +1927,11 @@ func _near_bro_dive_log() -> bool:
 
 
 func _tick_rabbit(delta: float, rabbit_controlled: bool, boosting: bool) -> void:
-	# 混合物理：落到礁石顶面后短暂滚动，再由边缘掉下去。
+	# 漏电落水的 SPACE 限制只在救援过程中有效；一旦回到正常骑乘就清掉，
+	# 避免下一次普通二连跳被旧标记挡住自动接。
+	if GameManager.accident_state == "NONE" and mount.state == "RIDING":
+		_sleep_fall_requires_space = false
+	# 混合物理：落到礁石顶面短暂滚动，再由边缘掉下去。
 	if _rock_perch_active:
 		_tick_rock_perch(delta)
 		return
@@ -2019,6 +2023,7 @@ func _tick_rabbit(delta: float, rabbit_controlled: bool, boosting: bool) -> void
 			# 这一路保持旧手感的当帧吸附，和帧率无关；120 ms 内的 ↑ 也在这帧交付。
 			if dy >= Tuning.PICKUP_DY_MIN:
 				GameManager.pickup_window = false
+				_sleep_fall_requires_space = false
 				rabbit.attach(mp)
 				mount.mark_riding()
 				# 日常落壳：记账照旧，但不放 G5 的庆祝弹跳（那是“接住”的信号）。
@@ -4473,20 +4478,36 @@ func sleep_stage(who: String) -> int:
 	return 0
 
 
+## 只改画法：走神越深，待命中的身体晃得越明显。
+func sleep_sway_px(who: String) -> float:
+	var v := sleep_value(who)
+	if v < SLEEP_DOZE:
+		return 0.0
+	var p := clampf((v - SLEEP_DOZE) / (SLEEP_MAX - SLEEP_DOZE), 0.0, 1.0)
+	var phase := 0.0 if who == "rabbit" else 1.7
+	return sin(Time.get_ticks_msec() * 0.006 + phase) * (0.8 + 4.0 * p)
+
+
 func _draw_sleep_fx() -> void:
 	if test_no_mischief:
 		return
 	var t := Time.get_ticks_msec() * 0.001
 	for who in ["rabbit", "turtle"]:
 		var v := sleep_value(who)
-		# Zzz 只在明显走神后出现；40–55 仍由小条提示，不挂字。
-		if v < SLEEP_ZZZ:
+		# 分阶段给角色状态：40 一个 Z，55 两个 Z，70 起三个 Z + 电弧。
+		if v < SLEEP_DOZE:
 			continue
 		var p: Vector2 = turtle.position if who == "turtle" else rabbit.position
-		var z := "Z" if v < SLEEP_PRE else "ZZ"
+		var z := "Z" if v < SLEEP_ZZZ else ("ZZ" if v < SLEEP_PRE else "ZZZ")
 		var col := Color(0.62, 0.9, 1.0, 0.7 + 0.2 * sin(t * 2.0))
 		draw_string(ThemeDB.fallback_font, p + Vector2(26, -78 - sin(t * 2.2) * 3.0),
 			z, HORIZONTAL_ALIGNMENT_LEFT, -1, 18 + sleep_stage(who) * 4, col)
+		if v >= SLEEP_PRE:
+			# 临界：身体周围开始冒小电弧，持续压力不只在条上。
+			for i in 4:
+				var a := t * 7.0 + float(i) * TAU / 4.0
+				draw_circle(p + Vector2(cos(a) * 30.0, sin(a) * 18.0 - 20.0),
+					2.0, Color(0.65, 0.95, 1.0, 0.8))
 		if _sleep_event_role == who and _sleep_phase == "TELEGRAPH":
 			for i in 5:
 				var a := t * 8.0 + float(i) * 1.3
@@ -4698,6 +4719,11 @@ func _draw() -> void:
 		var group: Dictionary = g
 		if _shark_arena_hides(group):
 			continue
+		# 只画镜头附近的障碍，别让整条 58k 赛道每帧都进绘制。
+		var gs := LevelDataScript.group_start(group)
+		var ge := _group_end(group)
+		if ge < cam_x - 1800.0 or gs > cam_x + 2200.0:
+			continue
 		for i in group["rects"].size():
 			_draw_hazard(group, i)
 		if not group.get("motion", {}).is_empty():
@@ -4726,9 +4752,7 @@ func _draw() -> void:
 	if show_hitboxes or debug_mode:
 		_draw_hitboxes()
 
-	if accident_flash > 0.0:
-		var a: float = 0.55 * (accident_flash / Tuning.ACCIDENT_FLASH)
-		draw_rect(Rect2(cam_x - 1400.0, -400.0, 2800.0, 1600.0), Color(1, 1, 1, a))
+	# 制作人质检：去掉全屏泛白；撞击反馈只保留 hitstop/震动/角色局部表现。
 
 
 ## PHASE-3：Z1/Z3 的灰盒纵深。只画远景/中景/前景，不参与判定。
@@ -4879,27 +4903,6 @@ func _draw_zone1_layers(cam_x: float) -> void:
 		draw_circle(Vector2(sx, cy), 28.0, Color(1, 1, 1, 0.11 * fade_far))
 		draw_circle(Vector2(sx + 34, cy + 4), 22.0, Color(1, 1, 1, 0.09 * fade_far))
 		draw_circle(Vector2(sx - 30, cy + 7), 18.0, Color(1, 1, 1, 0.08 * fade_far))
-	# 远景岛：p=0.32。
-	var islands := _layer_screen_positions(cam_x, 0.32, 1500.0, 4, 260.0)
-	for idx in islands.size():
-		var sx: float = islands[idx]
-		var w := 110.0 + float(idx % 3) * 42.0
-		draw_colored_polygon(PackedVector2Array([
-			Vector2(sx - w, SURFACE_Y), Vector2(sx - w * 0.6, SURFACE_Y - 34.0),
-			Vector2(sx - w * 0.1, SURFACE_Y - 18.0), Vector2(sx + w * 0.5, SURFACE_Y - 42.0),
-			Vector2(sx + w, SURFACE_Y),
-		]), Color(0.24, 0.38, 0.42, 0.62 * fade_far))
-	# 中景棕榈/木桩：p=0.62。
-	var palms := _layer_screen_positions(cam_x, 0.62, 980.0, 4, 120.0)
-	for idx in palms.size():
-		var sx: float = palms[idx]
-		var trunk := Color(0.22, 0.30, 0.23, 0.85 * fade_far)
-		draw_line(Vector2(sx, SURFACE_Y + 14.0), Vector2(sx + 10.0, SURFACE_Y - 52.0), trunk, 5.0)
-		for j in 3:
-			var a := -PI * 0.5 + (float(j) - 1.0) * 0.85
-			draw_line(Vector2(sx + 10.0, SURFACE_Y - 52.0),
-				Vector2(sx + 10.0, SURFACE_Y - 52.0) + Vector2(cos(a), sin(a)) * 34.0,
-				Color(0.20, 0.42, 0.28, 0.82 * fade_far), 4.0)
 	# 近景浪：p=1.12。
 	var waves := _layer_screen_positions(cam_x, 1.12, 360.0, 6, 0.0)
 	for idx in waves.size():
@@ -7341,6 +7344,7 @@ func _update_turtle_facing(x: float) -> void:
 func _draw_turtle() -> void:
 	# 受激动作只偏移画法；撞击框/落点仍用 turtle.position。
 	var pos: Vector2 = turtle.position + _shift_jolt_offset("turtle")
+	pos.x += sleep_sway_px("turtle")
 	# P1-5：撞击的 90 ms 里把“画出来的壳”按在撞击点，物理照常走。
 	if _hitstop_t > 0.0 and _hitstop_who == "turtle":
 		pos = _hitstop_draw + _shift_jolt_offset("turtle")
@@ -7592,6 +7596,7 @@ func _draw_rabbit() -> void:
 	# P1-5：兔子被撞的 50 ms 里画在撞击点；读作“撞住了”，不影响落水/救援判定。
 	if _hitstop_t > 0.0 and _hitstop_who == "rabbit":
 		pos = _hitstop_draw + _shift_jolt_offset("rabbit")
+	pos.x += sleep_sway_px("rabbit")
 	# FEEL-47：三段压力只改画法，不改物理位置/判定。
 	var vstress := visual_stress("rabbit")
 	if vstress > 0.0:

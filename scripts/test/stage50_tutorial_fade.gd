@@ -26,6 +26,8 @@ func _run() -> void:
 	for i in 8:
 		await get_tree().process_frame
 	var race_before: Node = tut.race
+	# 模拟真实教学结束位置（正式 Z1 的 wall1 之后）。
+	tut.race.turtle.position.x = 6800.0
 	var x_before: float = tut.race.turtle.position.x
 	tut._finish()
 	_check("finish_starts_handoff", tut._handoff_t > 0.0,
@@ -43,7 +45,7 @@ func _run() -> void:
 			str(GameManager.test_no_best)])
 	var near: Dictionary = tut.race.next_hazard_info()
 	_check("transition_gap", near.is_empty()
-		or float(near.get("distance", 0.0)) >= 1150.0,
+		or float(near.get("distance", 0.0)) >= 600.0,
 		"next=%s" % str(near.get("distance", -1.0)))
 	print("STAGE50 TUTORIAL FADE: " + ("PASS" if failures.is_empty() else "FAIL"))
 	get_tree().quit(0 if failures.is_empty() else 1)
