@@ -249,6 +249,7 @@ func _continue_to_race() -> void:
 	GameManager.tutorial_done = true
 	GameManager.test_no_best = false
 	GameManager.state = GameManager.GameState.RUNNING
+	Engine.time_scale = 1.0
 	GameManager.race_fade_in = false
 	race.test_no_finish = false
 	race.test_no_coop_hint = false
