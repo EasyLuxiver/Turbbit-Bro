@@ -70,7 +70,7 @@ const TUBO_AUTODRIFT_PX := 14.0
 # 氧气：GDD 建议 5 秒；P1 放宽到 6.5，但实测乌龟路线几乎无代价。
 # PHASE-2：容量 6.0、耗 1.2/s、回 2.0/s，连续两次下潜/长隧道会真的肉疼；
 # 仍保留三档提示（满/低/告急），不新增状态。
-const OXYGEN_MAX := 6.5
+const OXYGEN_MAX := 7.0
 const OXYGEN_LOW := 5.0
 const OXYGEN_CRITICAL := 2.5
 const OXYGEN_DRAIN := 1.1

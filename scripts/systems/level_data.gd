@@ -266,7 +266,7 @@ const GROUPS := [
 	# 环境一直在动，没有“过一组就歇”的节拍。
 	# FEEL-09 优化：D1 长隧道 760 → 600。它仍是全游戏最长的下潜段，但尾端到
 	# log6 的反应从 3.00 s 提到 3.62 s，满足单角色障碍 3.5 s 门槛。
-	{"group": "gate7", "zone": 3, "kind": "DIVE_GATE", "x": 42054.4, "w": 600.0},
+	{"group": "gate7", "zone": 3, "kind": "DIVE_GATE", "x": 42054.4, "w": 420.0},
 	# FEEL-13 P0-B：Z3 末段顺序与间距重排。
 	# 旧顺序在 shark8 之后是 bird7→beam8→rock10 三连兔子；现在把 log7 插进
 	# beam8 与 rock10 之间，再把 shark9 提前到 rock10 之后，最后四组改成
