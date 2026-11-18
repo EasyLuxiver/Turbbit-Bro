@@ -251,6 +251,7 @@ var _bonk_streak := 0
 var _bonk_level := 0
 var _bounce_cd := 0.0
 var _bonk_lock_t := 0.0
+var _wall_block_t := 0.0
 ## PHASE-FIX：Showtime 小奖励的冷却与乌龟视觉腾空。
 var _showtime_cd := 0.0
 var _showtime_turtle_y := 0.0
@@ -872,6 +873,7 @@ func load_level(groups: Array, lanes: Array) -> void:
 	_bonk_level = 0
 	_bounce_cd = 0.0
 	_bonk_lock_t = 0.0
+	_wall_block_t = 0.0
 	_sleep = {"rabbit": 0.0, "turtle": 0.0}
 	_sleep_event_role = ""
 	_sleep_phase = ""
@@ -1294,6 +1296,10 @@ func _physics_process(delta: float) -> void:
 	_update_ambush_sharks(delta)
 	_bounce_cd = maxf(_bounce_cd - delta, 0.0)
 	_bonk_lock_t = maxf(_bonk_lock_t - delta, 0.0)
+	_wall_block_t = maxf(_wall_block_t - delta, 0.0)
+	if turtle.leap_active:
+		# 玩家已经起跳：清掉墙前锁定，让这次跃起正常通过。
+		_wall_block_t = 0.0
 	_showtime_cd = maxf(_showtime_cd - delta, 0.0)
 	_tick_bird_behaviors(delta)
 	_check_bird_attacks(delta)
@@ -2568,7 +2574,11 @@ func _turtle_contact(_key: String, kind: String = "", charge: bool = true) -> vo
 	# 浪击下沉也从 115 px / 1.8 s 压到 55 px / 0.9 s，速度损失 0.6→0.78。
 	if kind not in ["HIGH_WALL", "LOW_BEAM"]:
 		turtle.start_dunk()
-	turtle.start_flip()
+	# 高墙不是浪击：翻肚皮会让教学/正赛在墙前软锁；只做顶住/弹回。
+	if kind != "HIGH_WALL":
+		turtle.start_flip()
+	else:
+		_wall_block_t = 1.5
 	turtle.speed *= 0.78
 	accident_flash = Tuning.ACCIDENT_FLASH
 	# PLAYFUL-04 §1/§2：浮木撞壳的提示必须说“下潜太晚”，
@@ -2775,6 +2785,10 @@ func _check_hazards() -> void:
 					turtle_hit = turtle_can_hit \
 						and (not roles.has("turtle") or kind in BONK_KINDS) \
 						and t_rect.intersects(rect)
+			# 高墙接触锁：没起跳时只响应一次，避免墙前每帧 flip/减速抽搐。
+			if turtle_hit and kind == "HIGH_WALL" and _wall_block_t > 0.0 \
+					and not turtle.leap_active:
+				turtle_hit = false
 			# 弹回状态锁：一次碰撞后 1.2 s 内不再判乌龟碰撞；
 			# 壳继续前进，避免贴墙时每帧重复触发/卡死。
 			if turtle_hit and _bonk_lock_t > 0.0:
