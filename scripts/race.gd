@@ -1300,6 +1300,7 @@ func _physics_process(delta: float) -> void:
 	if emergency_timer <= 0.0:
 		_check_hazards()
 		_resolve_turtle_solid()
+		_resolve_rabbit_solid()
 
 	# Phase G：daze_time 不再单独触发事故。它只是姿态/短硬直，
 	# 每一次有效失误都在发生当下记进 BRO METER，第三格才出联合事故。
@@ -2864,6 +2865,39 @@ func _tick_rock_perch(delta: float) -> void:
 ##
 ## 每帧在 turtle.tick() 之后、画之前跑，所以画出来的位置就是顶住后的位置；
 ## hitstop 冻结的也是这个位置。A 类只占兔子那一层，壳本来就不该被挡，跳过。
+## 兔子对礁石的实体推出：从侧面/下方进石头时按最近边推出去；
+## 落顶仍由 _try_rock_landing 负责，救援中也允许把兔子拉出石头。
+func _resolve_rabbit_solid() -> void:
+	if test_disable_hazards or _rock_perch_active or _sleep_phase == "ACTION":
+		return
+	for g in hazard_groups:
+		var group: Dictionary = g
+		if String(group.get("kind", "")) != "SURFACE_ROCK":
+			continue
+		if destroyed_groups.has(String(group.get("group", ""))):
+			continue
+		for i in group["rects"].size():
+			var rect := hazard_rect_live(group, i)
+			var rr := _inset(rabbit.get_body_rect(), 2.0)
+			if not rr.intersects(rect):
+				continue
+			var c := rr.get_center()
+			var full: Rect2 = rabbit.get_body_rect()
+			var dl := absf(c.x - rect.position.x)
+			var dr := absf(rect.end.x - c.x)
+			var dt := absf(c.y - rect.position.y)
+			var db := absf(rect.end.y - c.y)
+			var m := minf(minf(dl, dr), minf(dt, db))
+			if m == dt:
+				rabbit.position.y = rect.position.y - full.size.y * 0.5 - 3.0
+			elif m == db:
+				rabbit.position.y = rect.end.y + full.size.y * 0.5 + 3.0
+			elif m == dl:
+				rabbit.position.x = rect.position.x - full.size.x * 0.5 - 3.0
+			else:
+				rabbit.position.x = rect.end.x + full.size.x * 0.5 + 3.0
+
+
 func _resolve_turtle_solid() -> void:
 	if test_disable_hazards:
 		return
@@ -4830,16 +4864,21 @@ func _zone_layer_fade(cam_x: float, z: Dictionary) -> float:
 func _draw_zone1_layers(cam_x: float) -> void:
 	var z: Dictionary = LevelDataScript.ZONES[0]
 	var fade := _zone_layer_fade(cam_x, z)
-	if fade <= 0.01:
+	# 远景/中景（云、山、棕榈）不在 Z1→Z2 边界提前淡出；
+	# 留到 Z2 背景完全盖住之后再收，避免“靠近就消失”。
+	var far_margin := 2600.0
+	var fade_far := clampf(minf((cam_x - (float(z["start"]) - 600.0)) / 600.0,
+		((float(z["end"]) + far_margin) - cam_x) / far_margin), 0.0, 1.0)
+	if fade_far <= 0.01 and fade <= 0.01:
 		return
 	# 远景云：p=0.18。
 	var clouds := _layer_screen_positions(cam_x, 0.18, 820.0, 4, 0.0)
 	for idx in clouds.size():
 		var sx: float = clouds[idx]
 		var cy := 72.0 + float(idx % 3) * 34.0
-		draw_circle(Vector2(sx, cy), 28.0, Color(1, 1, 1, 0.11 * fade))
-		draw_circle(Vector2(sx + 34, cy + 4), 22.0, Color(1, 1, 1, 0.09 * fade))
-		draw_circle(Vector2(sx - 30, cy + 7), 18.0, Color(1, 1, 1, 0.08 * fade))
+		draw_circle(Vector2(sx, cy), 28.0, Color(1, 1, 1, 0.11 * fade_far))
+		draw_circle(Vector2(sx + 34, cy + 4), 22.0, Color(1, 1, 1, 0.09 * fade_far))
+		draw_circle(Vector2(sx - 30, cy + 7), 18.0, Color(1, 1, 1, 0.08 * fade_far))
 	# 远景岛：p=0.32。
 	var islands := _layer_screen_positions(cam_x, 0.32, 1500.0, 4, 260.0)
 	for idx in islands.size():
@@ -4849,18 +4888,18 @@ func _draw_zone1_layers(cam_x: float) -> void:
 			Vector2(sx - w, SURFACE_Y), Vector2(sx - w * 0.6, SURFACE_Y - 34.0),
 			Vector2(sx - w * 0.1, SURFACE_Y - 18.0), Vector2(sx + w * 0.5, SURFACE_Y - 42.0),
 			Vector2(sx + w, SURFACE_Y),
-		]), Color(0.24, 0.38, 0.42, 0.62 * fade))
+		]), Color(0.24, 0.38, 0.42, 0.62 * fade_far))
 	# 中景棕榈/木桩：p=0.62。
 	var palms := _layer_screen_positions(cam_x, 0.62, 980.0, 4, 120.0)
 	for idx in palms.size():
 		var sx: float = palms[idx]
-		var trunk := Color(0.22, 0.30, 0.23, 0.85 * fade)
+		var trunk := Color(0.22, 0.30, 0.23, 0.85 * fade_far)
 		draw_line(Vector2(sx, SURFACE_Y + 14.0), Vector2(sx + 10.0, SURFACE_Y - 52.0), trunk, 5.0)
 		for j in 3:
 			var a := -PI * 0.5 + (float(j) - 1.0) * 0.85
 			draw_line(Vector2(sx + 10.0, SURFACE_Y - 52.0),
 				Vector2(sx + 10.0, SURFACE_Y - 52.0) + Vector2(cos(a), sin(a)) * 34.0,
-				Color(0.20, 0.42, 0.28, 0.82 * fade), 4.0)
+				Color(0.20, 0.42, 0.28, 0.82 * fade_far), 4.0)
 	# 近景浪：p=1.12。
 	var waves := _layer_screen_positions(cam_x, 1.12, 360.0, 6, 0.0)
 	for idx in waves.size():
@@ -6599,7 +6638,8 @@ func _draw_rock_identity(rect: Rect2, identity: String, submerged: bool) -> void
 
 
 func _draw_plain_rock(rect: Rect2, submerged: bool) -> void:
-	var a := 0.45 if submerged else 1.0
+	# 制作人：主礁石必须实色；水下延伸段也不能透明到看不出轮廓。
+	var a := 0.82 if submerged else 1.0
 	draw_rect(rect, Color(0.31, 0.3, 0.29, a))
 	draw_circle(rect.position + Vector2(rect.size.x * 0.3, rect.size.y * 0.5),
 		28.0, Color(0.38, 0.36, 0.34, a))

@@ -58,6 +58,15 @@ func _run() -> void:
 		and race.rabbit.velocity.y < 0.0,
 		"active=%s vy=%.1f" % [str(race._rock_perch_active),
 			race.rabbit.velocity.y])
+	# 从侧面/内部进石头时，兔子要被推出去，不能卡住。
+	race.hazard_groups = [rock]
+	race.rabbit.position = rr.get_center()
+	race.rabbit.state = "FALLING"
+	race._rock_perch_active = false
+	race.test_disable_hazards = false
+	race._resolve_rabbit_solid()
+	_check("rabbit_pushed_out", not race.rabbit.get_body_rect().intersects(rr),
+		"rabbit=%s rect=%s" % [str(race.rabbit.get_body_rect()), str(rr)])
 
 	# 2) 乌龟跳撞低梁：A 类也要有碰撞/弹回反馈。
 	var beam: Dictionary = LevelData.build_group({"group": "tower_beam",
