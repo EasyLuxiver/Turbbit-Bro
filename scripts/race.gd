@@ -251,9 +251,6 @@ var _bonk_streak := 0
 var _bonk_level := 0
 var _bounce_cd := 0.0
 var _bonk_lock_t := 0.0
-## 高墙没跳时把壳稳定按在墙前，直到玩家按 ↑ 起跳；避免速度/推出每帧互相拉扯。
-var _wall_hold := false
-var _wall_capped := false
 ## PHASE-FIX：Showtime 小奖励的冷却与乌龟视觉腾空。
 var _showtime_cd := 0.0
 var _showtime_turtle_y := 0.0
@@ -263,7 +260,8 @@ const BONK_CD := 0.8
 ## 碰撞状态锁：一次弹回后这段时间内不再重复判乌龟碰撞，让壳继续前进。
 const BONK_LOCK := 1.2
 const BONK_FAIL_COUNT := 6
-const BONK_KINDS := ["DIVE_GATE", "HIGH_WALL", "FLOATING_LOG", "SHARK", "LOW_BEAM"]
+const BONK_KINDS := ["DIVE_GATE", "HIGH_WALL", "FLOATING_LOG", "SHARK", "LOW_BEAM",
+	"SURFACE_ROCK"]
 const BONK_ANIM_TIME := 0.42
 const BONK_VISUAL_TIME := 0.55
 var _bonk_anim_active := false
@@ -875,8 +873,6 @@ func load_level(groups: Array, lanes: Array) -> void:
 	_bonk_level = 0
 	_bounce_cd = 0.0
 	_bonk_lock_t = 0.0
-	_wall_hold = false
-	_wall_capped = false
 	_sleep = {"rabbit": 0.0, "turtle": 0.0}
 	_sleep_event_role = ""
 	_sleep_phase = ""
@@ -1265,15 +1261,6 @@ func _physics_process(delta: float) -> void:
 	var assist_vertical := _tick_dive_assist(delta, turtle_controlled)
 	if assist_vertical != 0:
 		vertical = assist_vertical
-	# 高墙没跳：把壳稳定按在墙前，速度 cap 归零，避免 tick 每帧前进又被
-	# _resolve_turtle_solid 推回造成“抽搐”。玩家按 ↑ 起跳后立即恢复。
-	if _wall_hold and not turtle.leap_active and _rescue_context() == "NONE":
-		turtle.speed = 0.0
-		turtle.speed_cap = 0.0
-		_wall_capped = true
-	elif _wall_capped:
-		turtle.speed_cap = 1.0e9
-		_wall_capped = false
 	turtle.tick(delta, turtle_controlled, boosting, vertical,
 		true, snack_boost_speed if boosting else Tuning.BOOST_SPEED)
 	_tick_bonk_anim(delta)
@@ -1308,9 +1295,6 @@ func _physics_process(delta: float) -> void:
 	_update_ambush_sharks(delta)
 	_bounce_cd = maxf(_bounce_cd - delta, 0.0)
 	_bonk_lock_t = maxf(_bonk_lock_t - delta, 0.0)
-	if turtle.leap_active:
-		# 玩家已经起跳：清掉墙前锁定，让这次跃起正常通过。
-		_wall_hold = false
 	_showtime_cd = maxf(_showtime_cd - delta, 0.0)
 	_tick_bird_behaviors(delta)
 	_check_bird_attacks(delta)
@@ -2533,8 +2517,8 @@ func _turtle_dynamic_bump(key: String, group: Dictionary) -> void:
 	_dynamic_bump_cd[key] = now
 	_trigger_hitstop("turtle")
 	_trigger_shake(false)
-	turtle.add_imbalance(0.04)
-	turtle.speed *= 0.90
+	# 和其他乌龟层障碍一致：弹开 + 状态锁，而不是原地下沉/推退抽搐。
+	_apply_bounce(key, "SURFACE_ROCK")
 	GameManager.feedback.emit(Locale.t("feedback.buoy_hit"), "hit")
 	GameManager.hint.emit(Locale.t("hint.buoy_hit"))
 
@@ -2588,8 +2572,6 @@ func _turtle_contact(_key: String, kind: String = "", charge: bool = true) -> vo
 	# 高墙不是浪击：翻肚皮会让教学/正赛在墙前软锁；只做顶住/弹回。
 	if kind != "HIGH_WALL":
 		turtle.start_flip()
-	else:
-		_wall_hold = true
 	turtle.speed *= 0.78
 	accident_flash = Tuning.ACCIDENT_FLASH
 	# PLAYFUL-04 §1/§2：浮木撞壳的提示必须说“下潜太晚”，
@@ -2630,7 +2612,8 @@ func _turtle_contact(_key: String, kind: String = "", charge: bool = true) -> vo
 
 
 func _apply_bounce(key: String, kind: String) -> void:
-	if test_no_bounce:
+	# 教学里其他障碍可关弹回，但高墙必须弹开，否则墙前会软锁。
+	if test_no_bounce and kind != "HIGH_WALL":
 		return
 	if _bounce_cd > 0.0:
 		return
@@ -2796,10 +2779,6 @@ func _check_hazards() -> void:
 					turtle_hit = turtle_can_hit \
 						and (not roles.has("turtle") or kind in BONK_KINDS) \
 						and t_rect.intersects(rect)
-			# 高墙接触锁：没起跳时只响应一次，避免墙前每帧 flip/减速抽搐。
-			if turtle_hit and kind == "HIGH_WALL" and _wall_hold \
-					and not turtle.leap_active:
-				turtle_hit = false
 			# 已经起跳就是高墙的正确解：这次跃起期间不再被墙身顶住。
 			if turtle_hit and kind == "HIGH_WALL" and turtle.leap_active:
 				turtle_hit = false
