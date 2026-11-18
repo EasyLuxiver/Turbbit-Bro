@@ -54,9 +54,10 @@ func _run() -> void:
 	_check("rock_rolls_forward", race.rabbit.position.x > rr.position.x + 60.0,
 		"x=%.1f" % race.rabbit.position.x)
 	race._tick_rock_perch(0.30)
-	_check("rock_rolls_off", not race._rock_perch_active
-		and race.rabbit.state == "FALLING",
-		"active=%s state=%s" % [str(race._rock_perch_active), race.rabbit.state])
+	_check("rock_hops_off", not race._rock_perch_active
+		and race.rabbit.velocity.y < 0.0,
+		"active=%s vy=%.1f" % [str(race._rock_perch_active),
+			race.rabbit.velocity.y])
 
 	# 2) 乌龟跳撞低梁：A 类也要有碰撞/弹回反馈。
 	var beam: Dictionary = LevelData.build_group({"group": "tower_beam",

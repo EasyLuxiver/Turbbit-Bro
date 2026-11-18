@@ -104,6 +104,8 @@ func _run() -> void:
 			GameManager.accident_count])
 	_check("fail_catch_unlocks", not race._sleep_lock_catch,
 		"lock=%s" % str(race._sleep_lock_catch))
+	_check("fail_requires_space", race._sleep_fall_requires_space,
+		"requires_space=%s" % str(race._sleep_fall_requires_space))
 
 	# B：控制乌龟，兔子漏电。抓壳成功 -> 切兔子、不落水。
 	race._reset_sleep_for_test("turtle", 100.0, 0.0, 1.0)

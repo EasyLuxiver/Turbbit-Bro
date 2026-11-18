@@ -221,14 +221,14 @@ const SLEEP_EVENT_END := 0.30
 const SLEEP_COOLDOWN := 3.0
 const SLEEP_NEAR_HAZARD := 160.0
 ## 漏电弹飞：兔子走真实抛物线；乌龟反向一顿。抓壳判定只掷一次。
-const SLEEP_LAUNCH_VY := -560.0
-const SLEEP_LAUNCH_VX := 70.0
+const SLEEP_LAUNCH_VY := -420.0
+const SLEEP_LAUNCH_VX := 120.0
 const SLEEP_GRAB_BASE := 0.60
 const SLEEP_GRAB_CROUCH_BONUS := 0.10
 const SLEEP_GRAB_AIR_PENALTY := 0.10
 const SLEEP_GRAB_MIN := 0.35
 const SLEEP_GRAB_MAX := 0.80
-const SLEEP_GRAB_TIME := 0.16
+const SLEEP_GRAB_TIME := 0.12
 const SLEEP_TURTLE_DIP := 24.0
 var _sleep := {"rabbit": 0.0, "turtle": 0.0}
 var _sleep_event_role := ""
@@ -244,6 +244,8 @@ var _sleep_grab_chance := 0.0
 var _sleep_lock_catch := false
 var _sleep_splash_done := false
 var _sleep_handoff_done := false
+## 漏电落水必须由玩家按 SPACE 主动救，不允许乌龟靠接近自动吸回。
+var _sleep_fall_requires_space := false
 ## PHASE-FIX：乌龟撞上乌龟层障碍后弹回；连续 6 次直接失败。
 var _bonk_streak := 0
 var _bonk_level := 0
@@ -267,8 +269,9 @@ var _bonk_visual_t := 0.0
 var _bonk_key := ""
 ## 混合物理：兔子落到礁石顶面后短暂停住/滚动，再掉下去。
 const ROCK_RESTITUTION := 0.34
-const ROCK_ROLL_SPEED := 220.0
-const ROCK_PERCH_TIME := 0.35
+const ROCK_ROLL_SPEED := 260.0
+const ROCK_PERCH_TIME := 0.20
+const ROCK_HOP_VY := -250.0
 var _rock_perch_key := ""
 var _rock_perch_rect := Rect2()
 var _rock_perch_t := 0.0
@@ -537,6 +540,8 @@ var _accident_t := 0.0
 
 
 func _ready() -> void:
+	# 防止测试/旧状态留下非 1.0 的时间缩放；正式比赛按实时跑。
+	Engine.time_scale = 1.0
 	_od_last_ms = Time.get_ticks_msec()
 	rabbit_brain = BroBrainScript.new("rabbit")
 	turtle_brain = BroBrainScript.new("turtle")
@@ -876,6 +881,7 @@ func load_level(groups: Array, lanes: Array) -> void:
 	_sleep_lock_catch = false
 	_sleep_splash_done = false
 	_sleep_handoff_done = false
+	_sleep_fall_requires_space = false
 	_rock_perch_active = false
 	_rock_perch_key = ""
 	_rock_perch_t = 0.0
@@ -981,6 +987,7 @@ func reset_brains() -> void:
 	_sleep_lock_catch = false
 	_sleep_splash_done = false
 	_sleep_handoff_done = false
+	_sleep_fall_requires_space = false
 	sleep_log.clear()
 
 
@@ -1897,6 +1904,7 @@ func _finish_rescue_return() -> void:
 	GameManager.complaint_t = 0.0
 	rescue_auto_blocked_t = 0.0
 	rescue_auto_disabled = false
+	_sleep_fall_requires_space = false
 	GameManager.accident_state = "NONE"
 	GameManager.oxygen = maxf(GameManager.oxygen, Tuning.OXYGEN_RECOVERED)
 	rabbit_grace = Tuning.GRACE_TIME
@@ -1993,6 +2001,7 @@ func _tick_rabbit(delta: float, rabbit_controlled: bool, boosting: bool) -> void
 		var mp: Vector2 = turtle.get_mount_point()
 		var dy: float = rabbit.position.y - mp.y
 		var caught: bool = not turtle.leap_active and not _sleep_lock_catch \
+			and (not _sleep_fall_requires_space or _catch_active) \
 			and mount.can_pickup(rabbit.position, rabbit.velocity.y, mp,
 				turtle.is_at_surface(), turtle.is_rising())
 		# REBUILD-05 G8：提示环是一个“落壳走廊”，比收人窗口早约 0.3 s 亮起。
@@ -2089,8 +2098,9 @@ func _tick_recovery(delta: float) -> void:
 		rabbit.velocity.y = move_toward(rabbit.velocity.y, Tuning.RESCUE_RABBIT_SINK,
 			Tuning.RESCUE_WATER_VY_DRAG * delta)
 		rabbit.position.y = minf(rabbit.position.y + rabbit.velocity.y * delta, 760.0)
-		# 轻微吸附只在真实靠近时生效（更外一圈），远处的兔子纹丝不动。
-		rabbit.position += mount.rescue_suction_offset(rabbit.position, mp, delta)
+		# 轻微吸附只在真实靠近时生效；漏电落水这一路必须等玩家主动按 SPACE。
+		if not _sleep_fall_requires_space:
+			rabbit.position += mount.rescue_suction_offset(rabbit.position, mp, delta)
 		var caught: bool = mount.can_rescue_catch(rabbit.position, mp,
 			rabbit.velocity, turtle.speed, prev)
 		rescue_prev_pos = rabbit.position
@@ -2194,6 +2204,7 @@ func _rescue_catch(mp: Vector2) -> void:
 	GameManager.oxygen = maxf(GameManager.oxygen, Tuning.OXYGEN_RECOVERED)
 	rescue_auto_blocked_t = 0.0
 	rescue_auto_disabled = false
+	_sleep_fall_requires_space = false
 	# PLAYFUL-04 §3：接住的瞬间先给表现，位置用 carry 连续抬回壳上——
 	# 这里不再直接 attach，否则兔子会从水里一帧瞬移到壳上。
 	GameManager.prompt.emit("")
@@ -2813,7 +2824,7 @@ func _try_rock_landing(key: String, rect: Rect2, r_rect: Rect2) -> bool:
 	if r_rect.end.x < rect.position.x or r_rect.position.x > rect.end.x:
 		return false
 	var top := rect.position.y
-	if r_rect.end.y < top - 8.0 or r_rect.end.y > top + 22.0:
+	if r_rect.end.y < top - 2.0 or r_rect.end.y > top + 10.0:
 		return false
 	_rock_perch_active = true
 	_rock_perch_key = key
@@ -2836,8 +2847,9 @@ func _tick_rock_perch(delta: float) -> void:
 	if _rock_perch_t >= ROCK_PERCH_TIME or off_edge:
 		_rock_perch_active = false
 		_rock_perch_key = ""
-		rabbit.state = "FALLING"
-		rabbit.velocity = Vector2(ROCK_ROLL_SPEED * 0.8, 120.0)
+		# 从石面往前上方蹬出去，而不是直接掉水；这样礁石可以“滚过去”而不是卡住。
+		rabbit.state = "JUMPING"
+		rabbit.velocity = Vector2(ROCK_ROLL_SPEED * 0.9, ROCK_HOP_VY)
 		mount.mark_airborne()
 
 
@@ -4360,6 +4372,7 @@ func _tick_sleep_shove(delta: float) -> void:
 	if rabbit.position.y >= surface_ref() + 8.0:
 		_sleep_splash_done = true
 		_sleep_lock_catch = false
+		_sleep_fall_requires_space = true
 		hazard_cooldown = 0.0
 		_trigger_accident("RABBIT_WATER")
 		# B 情况：控制乌龟时兔子失控，强切到兔子后落水；
@@ -4399,6 +4412,7 @@ func _reset_sleep_for_test(control: String, rabbit_v: float, turtle_v: float,
 	_sleep_lock_catch = false
 	_sleep_splash_done = false
 	_sleep_handoff_done = false
+	_sleep_fall_requires_space = false
 	_sleep_grab_success = false
 	test_sleep_grab_roll = roll
 	GameManager.accident_state = "NONE"
@@ -4622,9 +4636,11 @@ func _draw() -> void:
 	# FEEL-10 P0-D：Z1 平色背景在 15000 硬切，Z2 的六层从 15000 开始画，
 	# 两段之间会留下一条竖直的“图层跳变”。这里用 800 px 的 Z1→透明渐变带
 	# 把接缝化开：14600 还是完整 Z1，15400 完全交给码头，第一组障碍 15800 之前完成。
-	_draw_zone2_blend()
+	# 先画 Z1/Z3 的程序化远景，再用 Z2 渐变盖住接缝；
+	# 反过来画时 Z1 远景会在 Z2 上面淡出，看起来像“靠近就消失”。
 	_draw_zone1_layers(cam_x)
 	_draw_zone3_layers(cam_x)
+	_draw_zone2_blend()
 	# PHASE-ART：只铺一次码头图，叠在原有海岸背景上；700–1400 px 淡出回海岸。
 	if USE_Z1_ART:
 		_draw_z1_water_base(cam_x)
