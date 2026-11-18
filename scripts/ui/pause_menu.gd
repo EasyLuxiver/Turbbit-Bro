@@ -8,6 +8,12 @@ const UiTheme = preload("res://scripts/ui/ui_theme.gd")
 var _root: Control
 var _resume_button: Button
 var _widgets: Array[Button] = []
+const HELP_PAGES := 7
+var _help_page := 0
+var _help_body: Label
+var _help_page_label: Label
+var _help_prev: Button
+var _help_next: Button
 var _was_paused := false
 
 
@@ -79,15 +85,51 @@ func _rebuild() -> void:
 	box.add_child(_spacer(2))
 	box.add_child(UiTheme.make_label(Locale.t("pause.help_title"), 20,
 		UiTheme.GOLD))
-	var body := UiTheme.make_label(Locale.t("pause.help_body"), 18,
-		Color(0.82, 0.92, 1.0))
-	body.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	body.custom_minimum_size = Vector2(760, 0)
-	box.add_child(body)
+	_help_body = UiTheme.make_label("", 18, Color(0.82, 0.92, 1.0))
+	_help_body.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_help_body.custom_minimum_size = Vector2(760, 0)
+	box.add_child(_help_body)
+	var nav := HBoxContainer.new()
+	nav.alignment = BoxContainer.ALIGNMENT_CENTER
+	nav.add_theme_constant_override("separation", 12)
+	box.add_child(nav)
+	_help_prev = _help_arrow(nav, "◀", -1)
+	_help_page_label = UiTheme.make_label("", 16, Color(0.72, 0.86, 0.96))
+	_help_page_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_help_page_label.custom_minimum_size = Vector2(52, 0)
+	nav.add_child(_help_page_label)
+	_help_next = _help_arrow(nav, "▶", 1)
+	_set_help_page(_help_page)
 	box.add_child(_spacer(6))
 	# 帮助正文已经覆盖按键、障碍分工和食物；这里只留菜单快捷键。
 	box.add_child(UiTheme.make_label(Locale.t("pause.keys"), 18,
 		Color(0.68, 0.84, 0.94)))
+
+
+func _help_arrow(parent: HBoxContainer, text: String, dir: int) -> Button:
+	var button := Button.new()
+	button.text = text
+	UiTheme.style_button(button)
+	# style_button 会把最小尺寸设成菜单按钮的 460×58，箭头要盖回来。
+	button.custom_minimum_size = Vector2(44, 34)
+	button.add_theme_font_size_override("font_size", 18)
+	button.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+	button.pressed.connect(func() -> void: _set_help_page(_help_page + dir))
+	parent.add_child(button)
+	_widgets.append(button)
+	return button
+
+
+func _set_help_page(page: int) -> void:
+	_help_page = clampi(page, 0, HELP_PAGES - 1)
+	if _help_body == null or _help_page_label == null:
+		return
+	_help_body.text = Locale.t("pause.help_page_%d" % (_help_page + 1))
+	_help_page_label.text = "%d/%d" % [_help_page + 1, HELP_PAGES]
+	if _help_prev != null:
+		_help_prev.disabled = _help_page <= 0
+	if _help_next != null:
+		_help_next.disabled = _help_page >= HELP_PAGES - 1
 
 
 func _spacer(height: int) -> Control:

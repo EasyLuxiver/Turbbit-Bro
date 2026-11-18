@@ -5,6 +5,7 @@ extends Node
 var is_runner := false
 var race: Node
 var failures: Array[String] = []
+var dir := ""
 
 
 func _ready() -> void:
@@ -20,6 +21,8 @@ func _ready() -> void:
 
 
 func _run() -> void:
+	dir = ProjectSettings.globalize_path("res://screenshots")
+	DirAccess.make_dir_recursive_absolute(dir)
 	GameManager.test_no_best = true
 	GameManager.start_race()
 	for i in 5:
@@ -97,6 +100,12 @@ func _run() -> void:
 	_check("zap_short_stun", race.rabbit_stun > 0.0
 		and race.rabbit_stun <= 0.30,
 		"stun=%.2f" % race.rabbit_stun)
+	_check("zap_avatar_turtle", race.hud.bro_portrait.role == "turtle"
+		and not race.hud.bro_say_label.text.contains("兔子")
+		and not race.hud.bro_say_label.text.contains("乌龟"),
+		"avatar=%s text=%s" % [race.hud.bro_portrait.role,
+			race.hud.bro_say_label.text])
+	await _shot("sleep_zap_turtle")
 	_check("zap_no_accident_or_oxygen", GameManager.accident_count == acc0
 		and is_equal_approx(GameManager.oxygen, oxy0),
 		"accidents=%d oxy=%.1f" % [GameManager.accident_count, GameManager.oxygen])
@@ -108,8 +117,34 @@ func _run() -> void:
 	_check("can_switch_back", GameManager.current_control == "rabbit",
 		"control=%s" % GameManager.current_control)
 
+	# 头像身份：兔子漏电时显示兔子头像；文本不再写角色名。
+	race._sleep = {"rabbit": 100.0, "turtle": 0.0}
+	race._sleep_event_role = ""
+	race._sleep_phase = ""
+	race._sleep_cd = 0.0
+	GameManager.current_control = "turtle"
+	GameManager.accident_state = "NONE"
+	race._tick_sleep(0.01)
+	race._tick_sleep(0.66)
+	_check("zap_avatar_rabbit", race.hud.bro_portrait.role == "rabbit"
+		and not race.hud.bro_say_label.text.contains("兔子")
+		and not race.hud.bro_say_label.text.contains("乌龟"),
+		"avatar=%s text=%s" % [race.hud.bro_portrait.role,
+			race.hud.bro_say_label.text])
+	await _shot("sleep_zap_rabbit")
+
 	print("STAGE53 SLEEP: " + ("PASS" if failures.is_empty() else "FAIL"))
 	get_tree().quit(0 if failures.is_empty() else 1)
+
+
+func _shot(name: String) -> void:
+	if DisplayServer.get_name() == "headless":
+		return
+	for i in 2:
+		await get_tree().process_frame
+	await RenderingServer.frame_post_draw
+	get_viewport().get_texture().get_image().save_png(dir.path_join(name + ".png"))
+	print("CAPTURE ", name)
 
 
 func _check(name: String, ok: bool, detail: String) -> void:

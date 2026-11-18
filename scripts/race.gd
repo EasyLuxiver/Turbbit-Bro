@@ -4253,7 +4253,8 @@ func _apply_sleep_event() -> void:
 	_sleep_phase = "ACTION"
 	_sleep_t = 0.0
 	_sleep_fx_t = 0.30
-	GameManager.feedback.emit(Locale.t("sleep.zap_" + zapper), "hit")
+	# 身份由 HUD 的说话者头像表示，不在文本里写“兔子/乌龟”。
+	GameManager.bro_say.emit(zapper, Locale.t("sleep.zap_short"))
 	sleep_log.append({"event": "zap", "who": zapper, "victim": victim,
 		"t": accident_event_time})
 
