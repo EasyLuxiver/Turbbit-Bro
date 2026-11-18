@@ -327,6 +327,7 @@ const PACK_FOLLOW_TIME := 0.85
 const PACK_ACTOR_RISE := 0.30
 const PACK_ACTOR_HOLD := 0.60
 const PACK_ACTOR_RETREAT := 0.55
+const PACK_TRACK_MAX := 70.0
 const PACK_DEEP_TOP := 760.0
 var turtle_repair := 0.0
 var turtle_grace := 0.0
@@ -5714,6 +5715,7 @@ func _pack_begin_warn(mode: String, duration: float) -> void:
 	a["warn"] = duration
 	a["x0"] = float(a.get("x", 0.0))
 	a["tx"] = _pack_target_x(a)
+	a["warn_tx"] = a["tx"]
 	a["hit_logged"] = false
 	a["end_logged"] = false
 	if mode == "leader":
@@ -5792,8 +5794,11 @@ func _begin_pack_attack(a: Dictionary) -> void:
 	a["t"] = 0.0
 	a["phase"] = "RISE"
 	a["hit_logged"] = false
-	# 制作人：攻击目标在 WARN 开始时就锁定；这里不再重新追乌龟当前位置，
-	# 否则玩家看到预警后横移也会被命中，预警没有意义。
+	# 制作人：WARN 锁定的位置是基准；起手只允许 ±70 px 的有限修正，
+	# 让咬点更贴近角色，但玩家横移超过这个范围仍然能躲。
+	var base_x := float(a.get("warn_tx", a["tx"]))
+	var cur_x := _pack_target_x(a)
+	a["tx"] = clampf(cur_x, base_x - PACK_TRACK_MAX, base_x + PACK_TRACK_MAX)
 	a["strike_rect"] = Rect2(float(a["tx"]) - (a["size"] as Vector2).x * 0.5,
 		float(a["attack_top"]), (a["size"] as Vector2).x, (a["size"] as Vector2).y)
 	if not _shark_attacks.has(a):
