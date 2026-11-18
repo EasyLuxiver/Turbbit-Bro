@@ -579,17 +579,17 @@ const STRINGS := {
 		"zh": "SHIFT 换人：兔子 ↑ 跳 / ↓ 趴低；乌龟 ↑ 跃起 / ↓ 下潜",
 		"en": "SHIFT SWAP: TUBO ↑ JUMP / ↓ CROUCH; BITT ↑ LEAP / ↓ DIVE"},
 	"pause.help_page_2": {
-		"zh": "障碍分工：低梁/海鸟/岩石找兔子；礁拱/鲨鱼找乌龟；浮木和高墙要两人接力",
-		"en": "WHO HANDLES WHAT: BEAMS/GULLS/ROCKS = TUBO; ARCHES/SHARKS = BITT; LOGS AND WALLS = BOTH"},
+		"zh": "低梁/海鸟/岩石切换兔子；礁拱/鲨鱼切换乌龟；浮木和高墙要两人接力",
+		"en": "SWITCH TO TUBO FOR BEAMS/GULLS/ROCKS; SWITCH TO BITT FOR ARCHES/SHARKS; LOGS AND WALLS = BOTH"},
 	"pause.help_page_3": {
-		"zh": "兔子 头顶的气泡是氧气；氧气低时切乌龟上浮，或让兔子吃海藻",
-		"en": "THE BUBBLES OVER TUBO ARE AIR; IF LOW, SHIFT BITT UP OR LET TUBO EAT KELP"},
+		"zh": "兔子 头顶的气泡是氧气；氧气低时切换乌龟上浮，或让兔子吃海藻",
+		"en": "THE BUBBLES OVER TUBO ARE AIR; WHEN LOW, SWITCH TO BITT TO SURFACE, OR LET TUBO EAT KELP"},
 	"pause.help_page_4": {
-		"zh": "走神：没被控制的身体会走神；条满会漏电，把你电回它。切回去可叫醒",
-		"en": "DRIFT: THE BODY YOU'RE NOT DRIVING DRIFTS OFF; A FULL BAR LEAKS AND ZAPS YOU BACK INTO IT - SWITCH BACK TO WAKE IT"},
+		"zh": "走神：没被控制的身体会走神；拖太久会漏电，把你电回它。切回去可叫醒",
+		"en": "DRIFT: THE BODY YOU'RE NOT DRIVING DRIFTS OFF; LEAVE IT TOO LONG AND IT LEAKS, ZAPPING YOU BACK INTO IT - SWITCH BACK TO WAKE IT"},
 	"pause.help_page_5": {
-		"zh": "海藻：SHIFT 决定谁吃——乌龟加速，兔子下一跳更高；不吃不扣分",
-		"en": "SEAWEED: SHIFT PICKS WHO EATS - BITT SPEEDS UP, TUBO JUMPS HIGHER; SKIPPING IS FREE"},
+		"zh": "海藻：SHIFT 切换谁吃——乌龟加速，兔子下一跳更高",
+		"en": "SEAWEED: SHIFT SWITCHES WHO EATS - BITT SPEEDS UP, TUBO JUMPS HIGHER"},
 	"pause.help_page_6": {
 		"zh": "接力/连击：干净通过和精准动作会积累兄弟配合；有时会触发 SHOWTIME",
 		"en": "RELAYS/COMBOS: CLEAN PASSES AND PRECISE MOVES BUILD BRO COMBO; SOMETIMES TRIGGERS SHOWTIME"},
