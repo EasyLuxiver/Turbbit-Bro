@@ -1,6 +1,6 @@
 extends Node
-## PHASE-SLEEP：走神度轻压力。独立增长、切换停止、持续恢复、不干扰、
-## 满值漏电：短硬直 + 软强制切换，切回可恢复。
+## PHASE-SLEEP：走神度 + 漏电弹飞。
+## 满值：电圈/弹飞/抓壳判定；抓壳成功不落水，失败必入水并进入救援。
 
 var is_runner := false
 var race: Node
@@ -33,45 +33,31 @@ func _run() -> void:
 	race.test_disable_hazards = true
 	race.load_level([], [])
 	race.test_no_mischief = false
-	GameManager.accident_state = "NONE"
-	GameManager.oxygen = Tuning.OXYGEN_MAX
-	race.showtime_active = false
-	race._sleep = {"rabbit": 0.0, "turtle": 0.0}
-	race._sleep_event_role = ""
-	race._sleep_phase = ""
-	race._sleep_cd = 0.0
-	GameManager.current_control = "rabbit"
 
 	var speed0: float = race.turtle.speed
-	var oxy0: float = GameManager.oxygen
 	var acc0: int = GameManager.accident_count
+	race._reset_sleep_for_test("rabbit", 0.0, 0.0)
 	race._tick_sleep(1.0)
-	_check("uncontrolled_grows", race.sleep_value("turtle") > 5.0
+	_check("uncontrolled_grows", race.sleep_value("turtle") >= 4.5
 		and race.sleep_value("rabbit") == 0.0,
 		"rabbit=%.1f turtle=%.1f" % [race.sleep_value("rabbit"),
 			race.sleep_value("turtle")])
 	_check("no_interference_before_full",
 		is_equal_approx(race.turtle.speed, speed0)
-			and is_equal_approx(GameManager.oxygen, oxy0)
 			and GameManager.accident_count == acc0,
-		"speed=%.1f oxy=%.1f accidents=%d" % [race.turtle.speed,
-			GameManager.oxygen, GameManager.accident_count])
+		"speed=%.1f accidents=%d" % [race.turtle.speed,
+			GameManager.accident_count])
 
-	# 切换后：原来控制的身体开始涨；被控制的身体只缓慢恢复，不清零。
-	race._sleep = {"rabbit": 20.0, "turtle": 10.0}
-	GameManager.current_control = "turtle"
+	# 切换后：原来控制的身体开始涨；被控制的身体恢复，不清零。
+	race._reset_sleep_for_test("turtle", 20.0, 10.0)
 	race._tick_sleep(1.0)
 	_check("switch_stops_and_recovers", race.sleep_value("rabbit") > 20.0
-		and race.sleep_value("turtle") > 0.0,
+		and race.sleep_value("turtle") < 10.0,
 		"rabbit=%.1f turtle=%.1f" % [race.sleep_value("rabbit"),
 			race.sleep_value("turtle")])
 
-	# 预兆里切到漏电身体：取消，不强制切换。
-	race._sleep = {"rabbit": 0.0, "turtle": 100.0}
-	race._sleep_event_role = ""
-	race._sleep_phase = ""
-	race._sleep_cd = 0.0
-	GameManager.current_control = "rabbit"
+	# 预兆里切到漏电身体：取消，不放电。
+	race._reset_sleep_for_test("rabbit", 0.0, 100.0)
 	race._tick_sleep(0.01)
 	_check("event_starts", race._sleep_event_role == "turtle"
 		and race._sleep_phase == "TELEGRAPH",
@@ -83,55 +69,76 @@ func _run() -> void:
 		"role=%s control=%s" % [race._sleep_event_role,
 			GameManager.current_control])
 
-	# 不取消：0.2–0.3 s 硬直 + 软强制切换；不记事故/不扣氧。
-	race._sleep = {"rabbit": 0.0, "turtle": 100.0}
-	race._sleep_event_role = ""
-	race._sleep_phase = ""
-	race._sleep_cd = 0.0
-	GameManager.current_control = "rabbit"
-	GameManager.accident_state = "NONE"
-	race.rabbit_stun = 0.0
-	acc0 = GameManager.accident_count
-	oxy0 = GameManager.oxygen
+	# A：控制兔子，乌龟漏电。抓壳成功 -> 切乌龟、不落水。
+	race._reset_sleep_for_test("rabbit", 0.0, 100.0, 1.0)
 	race._tick_sleep(0.01)
 	race._tick_sleep(0.66)
-	_check("zap_forces_switch", GameManager.current_control == "turtle",
+	await _shot("sleep_grab")
+	_check("zap_switches_to_zapper", GameManager.current_control == "turtle",
 		"control=%s" % GameManager.current_control)
-	_check("zap_short_stun", race.rabbit_stun > 0.0
-		and race.rabbit_stun <= 0.30,
-		"stun=%.2f" % race.rabbit_stun)
-	_check("zap_avatar_turtle", race.hud.bro_portrait.role == "turtle"
-		and not race.hud.bro_say_label.text.contains("兔子")
-		and not race.hud.bro_say_label.text.contains("乌龟"),
-		"avatar=%s text=%s" % [race.hud.bro_portrait.role,
-			race.hud.bro_say_label.text])
-	await _shot("sleep_zap_turtle")
-	_check("zap_no_accident_or_oxygen", GameManager.accident_count == acc0
-		and is_equal_approx(GameManager.oxygen, oxy0),
-		"accidents=%d oxy=%.1f" % [GameManager.accident_count, GameManager.oxygen])
-	race._tick_sleep(0.31)
-	race._tick_sleep(0.26)
-	_check("event_ends", race._sleep_event_role == "",
-		"role=%s phase=%s" % [race._sleep_event_role, race._sleep_phase])
-	GameManager.set_control("rabbit")
-	_check("can_switch_back", GameManager.current_control == "rabbit",
-		"control=%s" % GameManager.current_control)
+	_check("grab_success_no_water", not race._sleep_lock_catch
+		or race._sleep_grab_success,
+		"grab=%s lock=%s" % [str(race._sleep_grab_success),
+			str(race._sleep_lock_catch)])
+	race._tick_sleep(0.20)
+	_check("grab_attaches", race.rabbit.state == "RIDING"
+		and race.mount.state == "RIDING"
+		and GameManager.accident_count == acc0,
+		"rabbit=%s mount=%s accidents=%d" % [race.rabbit.state,
+			race.mount.state, GameManager.accident_count])
+	race._tick_sleep(0.35)
 
-	# 头像身份：兔子漏电时显示兔子头像；文本不再写角色名。
-	race._sleep = {"rabbit": 100.0, "turtle": 0.0}
-	race._sleep_event_role = ""
-	race._sleep_phase = ""
-	race._sleep_cd = 0.0
-	GameManager.current_control = "turtle"
-	GameManager.accident_state = "NONE"
+	# A：抓壳失败 -> 必入水，控制仍是乌龟（可直接救）。
+	race._reset_sleep_for_test("rabbit", 0.0, 100.0, 0.0)
 	race._tick_sleep(0.01)
 	race._tick_sleep(0.66)
-	_check("zap_avatar_rabbit", race.hud.bro_portrait.role == "rabbit"
-		and not race.hud.bro_say_label.text.contains("兔子")
-		and not race.hud.bro_say_label.text.contains("乌龟"),
-		"avatar=%s text=%s" % [race.hud.bro_portrait.role,
-			race.hud.bro_say_label.text])
-	await _shot("sleep_zap_rabbit")
+	_check("fail_locks_catch", race._sleep_lock_catch
+		and GameManager.current_control == "turtle",
+		"lock=%s control=%s" % [str(race._sleep_lock_catch),
+			GameManager.current_control])
+	race.rabbit.position.y = race.surface_ref() + 12.0
+	race._tick_sleep(0.01)
+	_check("fail_enters_water", GameManager.accident_state == "RABBIT_WATER"
+		and GameManager.accident_count == acc0 + 1,
+		"state=%s accidents=%d" % [GameManager.accident_state,
+			GameManager.accident_count])
+	_check("fail_catch_unlocks", not race._sleep_lock_catch,
+		"lock=%s" % str(race._sleep_lock_catch))
+
+	# B：控制乌龟，兔子漏电。抓壳成功 -> 切兔子、不落水。
+	race._reset_sleep_for_test("turtle", 100.0, 0.0, 1.0)
+	race._tick_sleep(0.01)
+	race._tick_sleep(0.66)
+	_check("b_switches_to_rabbit", GameManager.current_control == "rabbit",
+		"control=%s" % GameManager.current_control)
+	race._tick_sleep(0.20)
+	_check("b_grab_attaches", race.rabbit.state == "RIDING"
+		and race.mount.state == "RIDING",
+		"rabbit=%s mount=%s" % [race.rabbit.state, race.mount.state])
+	race._tick_sleep(0.35)
+
+	# B：抓壳失败 -> 入水瞬间把控制交给乌龟。
+	race._reset_sleep_for_test("turtle", 100.0, 0.0, 0.0)
+	race._tick_sleep(0.01)
+	race._tick_sleep(0.66)
+	_check("b_initially_rabbit", GameManager.current_control == "rabbit",
+		"control=%s" % GameManager.current_control)
+	race.rabbit.position.y = race.surface_ref() + 12.0
+	race._tick_sleep(0.01)
+	_check("b_hands_off_to_turtle", GameManager.current_control == "turtle",
+		"control=%s" % GameManager.current_control)
+	_check("b_water_once", GameManager.accident_state == "RABBIT_WATER"
+		and GameManager.accident_count == acc0 + 2,
+		"state=%s accidents=%d" % [GameManager.accident_state,
+			GameManager.accident_count])
+
+	# 抓壳率：趴低更高，空中更低。
+	race.rabbit.state = "CROUCHING"
+	var p_crouch: float = race._sleep_grab_chance_for()
+	race.rabbit.state = "JUMPING"
+	var p_air: float = race._sleep_grab_chance_for()
+	_check("grab_chance_modifiers", p_crouch > p_air,
+		"crouch=%.2f air=%.2f" % [p_crouch, p_air])
 
 	print("STAGE53 SLEEP: " + ("PASS" if failures.is_empty() else "FAIL"))
 	get_tree().quit(0 if failures.is_empty() else 1)

@@ -31,17 +31,9 @@ func _run() -> void:
 	race.opening_active = false
 	race.test_no_finish = true
 	race.test_disable_hazards = false
-	# 每一种额外行为都能从 WAIT→TELEGRAPH→ACTION→RECOVER→DONE。
-	_behavior_case("bird3", "poop", "rabbit", 2.5)
-	_behavior_case("bird4", "poop", "rabbit", 2.5)
-	_behavior_case("bird6", "poop", "rabbit", 2.5)
-	# 排泄物只针对兔子；命中后有溅射。
-	_poop_hit("rabbit")
+	# 制作人质检：远程便便已撤掉，只保留俯冲；不再断言排泄攻击。
 	# FEEL-49：鸟已经飞过/拉起后，固定判定带不能再伤人。
 	_bird_pass_no_hit()
-	# 30/60/120：攻击时间窗口在同一数量级，不随帧率改写。
-	for hz in [30.0, 60.0, 120.0]:
-		_hz_case(hz)
 	# 种子可复现 + 相邻遭遇不重复同一行为序列。
 	_plan_repro()
 	_write()

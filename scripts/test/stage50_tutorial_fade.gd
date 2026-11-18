@@ -1,5 +1,7 @@
 extends Node
-## PHASE-FIX：教学结束 -> 0.35 s 黑场 -> 正赛淡入标记。
+## 制作人质检：教学结束不再重载场景，也不归位；从当前位置接着跑。
+
+const LevelData = preload("res://scripts/systems/level_data.gd")
 
 var is_runner := false
 var tut: Node
@@ -23,18 +25,22 @@ func _run() -> void:
 	get_tree().root.add_child(tut)
 	for i in 8:
 		await get_tree().process_frame
+	var race_before: Node = tut.race
+	var x_before: float = tut.race.turtle.position.x
 	tut._finish()
 	_check("finish_starts_handoff", tut._handoff_t > 0.0,
 		"handoff=%.2f" % tut._handoff_t)
 	tut._process(1.41)
-	_check("black_hold_starts", tut._black_t > 0.0
-		and tut._fade_rect != null and tut._fade_rect.visible,
-		"black=%.2f visible=%s" % [tut._black_t,
-			str(tut._fade_rect.visible if tut._fade_rect != null else false)])
-	GameManager.race_fade_in = false
-	tut._process(0.36)
-	_check("race_fade_flag", GameManager.race_fade_in,
-		"race_fade_in=%s" % str(GameManager.race_fade_in))
+	_check("same_race_instance", tut.race == race_before and is_instance_valid(race_before),
+		"same=%s" % str(tut.race == race_before))
+	_check("position_kept", absf(tut.race.turtle.position.x - x_before) < 0.5,
+		"x %.1f -> %.1f" % [x_before, tut.race.turtle.position.x])
+	_check("full_race_restored", not tut.race.test_no_finish \
+		and tut.race.world_end == LevelData.WORLD_END \
+		and not GameManager.test_no_best,
+		"no_finish=%s world_end=%.0f no_best=%s" % [
+			str(tut.race.test_no_finish), tut.race.world_end,
+			str(GameManager.test_no_best)])
 	print("STAGE50 TUTORIAL FADE: " + ("PASS" if failures.is_empty() else "FAIL"))
 	get_tree().quit(0 if failures.is_empty() else 1)
 

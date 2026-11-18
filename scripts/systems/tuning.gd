@@ -267,8 +267,8 @@ const DIVE_ASSIST_ACCEL := 14000.0
 ## 只对“前方最近障碍是浮木”的起跳生效，其他障碍仍是原来的跳。
 const LOG_JUMP_HEIGHT_SCALE := 1.15
 ## 被水下攻击/墙拍中后整组短暂没入水下，氧气因此真正有意义。
-const DUNK_TIME := 1.8
-const DUNK_DEPTH := 115.0
+const DUNK_TIME := 0.9
+const DUNK_DEPTH := 55.0
 ## REFINE-06 P5：浪击把乌龟掀个肚皮朝天。纯表现计时（不动判定/碰撞/惩罚），
 ## 1.0 s 内在“翻过去 → 四肢乱蹬 → 自己翻回来”走完，不影响 1.8 s 的入水。
 ## 上限定 0.9 s：任务书要求“轻微喜剧化，但不要让动画拖得过长”。

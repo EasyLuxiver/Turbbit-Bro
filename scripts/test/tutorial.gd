@@ -83,18 +83,7 @@ func _process(delta: float) -> void:
 	if _handoff_t > 0.0:
 		_handoff_t -= delta
 		if _handoff_t <= 0.0:
-			# 短暂空挡：先黑场 0.35 s，再切正赛。
-			_black_t = 0.35
-			if _fade_rect != null:
-				_fade_rect.visible = true
-				_fade_rect.color = Color(0, 0, 0, 1)
-		return
-	if _black_t > 0.0:
-		_black_t -= delta
-		if _black_t <= 0.0:
-			GameManager.race_fade_in = true
-			GameManager.test_no_best = false
-			GameManager.start_race()
+			_continue_to_race()
 		return
 	if _finished or race == null:
 		return
@@ -249,6 +238,30 @@ func _input(event: InputEvent) -> void:
 	if event.physical_keycode == KEY_K or event.keycode == KEY_K:
 		_finish()
 		get_viewport().set_input_as_handled()
+
+
+func _continue_to_race() -> void:
+	# 制作人质检：教学结束不再重载 race，也不把兔子和乌龟归位；
+	# 只收掉教学 UI、恢复正赛参数，从当前位置接着跑。
+	if _overlay != null and is_instance_valid(_overlay):
+		_overlay.queue_free()
+		_overlay = null
+	GameManager.tutorial_done = true
+	GameManager.test_no_best = false
+	GameManager.state = GameManager.GameState.RUNNING
+	GameManager.race_fade_in = false
+	race.test_no_finish = false
+	race.test_no_coop_hint = false
+	race.test_no_lessons = false
+	race.test_no_mischief = false
+	race.test_no_showtime = false
+	race.test_no_bounce = false
+	race.opening_active = false
+	race.world_end = LevelData.WORLD_END
+	race.load_level(LevelData.groups(), [])
+	race.turtle.speed = float(race.current_zone.get("base_speed", SPEED))
+	race.turtle.base_speed = float(race.current_zone.get("base_speed", SPEED))
+	print("TUTORIAL CONTINUE x=%.0f" % race.turtle.position.x)
 
 
 func _finish() -> void:

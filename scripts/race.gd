@@ -23,7 +23,8 @@ const Z1_ART_RIGHT := 1520.0
 const Z1_ART_W := 1920.0
 const Z1_ART_Y := -30.0
 const Z1_ART_H := 1080.0
-const USE_Z1_ART := true
+## 制作人质检：先撤掉 Z1 码头贴图，回到灰盒；判定/水面/视差不动。
+const USE_Z1_ART := false
 const WORLD_END := LevelDataScript.WORLD_END
 const HAZARD_WARN := 270.0
 ## 表演需要的空档：1.8 s 表演 + 1.0 s 结束宽限 + 换人/起跳提前量，按 260 px/s 取约 900 px。
@@ -210,12 +211,25 @@ var _bitt_autocrouch_fb_t := -99.0
 const SLEEP_MAX := 100.0
 const SLEEP_DOZE := 40.0
 const SLEEP_PRE := 70.0
-const SLEEP_GROW := 100.0 / 16.0
-const SLEEP_RECOVER := 100.0 / 40.0
+## 制作人质检：满值从 16 s 拉到 20 s，受控恢复从 40 s 缩到 12 s；
+## Zzz 只在 55+ 显示，避免长期两个 Z。
+const SLEEP_GROW := 100.0 / 20.0
+const SLEEP_RECOVER := 100.0 / 12.0
+const SLEEP_ZZZ := 55.0
 const SLEEP_TELEGRAPH := 0.65
-const SLEEP_EVENT_END := 0.25
+const SLEEP_EVENT_END := 0.30
 const SLEEP_COOLDOWN := 3.0
 const SLEEP_NEAR_HAZARD := 160.0
+## 漏电弹飞：兔子走真实抛物线；乌龟反向一顿。抓壳判定只掷一次。
+const SLEEP_LAUNCH_VY := -560.0
+const SLEEP_LAUNCH_VX := 70.0
+const SLEEP_GRAB_BASE := 0.60
+const SLEEP_GRAB_CROUCH_BONUS := 0.10
+const SLEEP_GRAB_AIR_PENALTY := 0.10
+const SLEEP_GRAB_MIN := 0.35
+const SLEEP_GRAB_MAX := 0.80
+const SLEEP_GRAB_TIME := 0.16
+const SLEEP_TURTLE_DIP := 24.0
 var _sleep := {"rabbit": 0.0, "turtle": 0.0}
 var _sleep_event_role := ""
 var _sleep_phase := ""
@@ -223,6 +237,13 @@ var _sleep_t := 0.0
 var _sleep_cd := 0.0
 var _sleep_fx_t := 0.0
 var sleep_log: Array = []
+## 测试用：>=0 时强制抓壳结果（1 成功 / 0 失败）。
+var test_sleep_grab_roll := -1.0
+var _sleep_grab_success := false
+var _sleep_grab_chance := 0.0
+var _sleep_lock_catch := false
+var _sleep_splash_done := false
+var _sleep_handoff_done := false
 ## PHASE-FIX：乌龟撞上乌龟层障碍后弹回；连续 6 次直接失败。
 var _bonk_streak := 0
 var _bonk_level := 0
@@ -234,7 +255,7 @@ var _showtime_turtle_spin := 0.0
 const BONK_BACK := 140.0
 const BONK_CD := 0.8
 const BONK_FAIL_COUNT := 6
-const BONK_KINDS := ["DIVE_GATE", "HIGH_WALL", "FLOATING_LOG", "SHARK"]
+const BONK_KINDS := ["DIVE_GATE", "HIGH_WALL", "FLOATING_LOG", "SHARK", "LOW_BEAM"]
 const BONK_ANIM_TIME := 0.42
 const BONK_VISUAL_TIME := 0.55
 var _bonk_anim_active := false
@@ -242,6 +263,16 @@ var _bonk_anim_t := 0.0
 var _bonk_anim_from := 0.0
 var _bonk_anim_to := 0.0
 var _bonk_visual_t := 0.0
+## 只对“正在弹回的同一组”免判，不全局关碰撞。
+var _bonk_key := ""
+## 混合物理：兔子落到礁石顶面后短暂停住/滚动，再掉下去。
+const ROCK_RESTITUTION := 0.34
+const ROCK_ROLL_SPEED := 220.0
+const ROCK_PERCH_TIME := 0.35
+var _rock_perch_key := ""
+var _rock_perch_rect := Rect2()
+var _rock_perch_t := 0.0
+var _rock_perch_active := false
 ## 供探针读取：每次延迟/自主动作的记录（角色、类型、秒）。
 var drift_impair_log: Array = []
 var hazard_cooldown := 0.0
@@ -279,16 +310,17 @@ const BIRD_TELEGRAPH := 1.15
 const BIRD_ACTION := 0.65
 const BIRD_RECOVER := 0.55
 ## FEEL-32：小头目三段的时间轴（不是“攻击间隔”，是分别计时）。
-const PACK_LEAD_WARN := 0.95
-const PACK_WARN_FAT := 0.95
-const PACK_WARN_THIN := 1.05
+const PACK_LEAD_WARN := 1.20
+const PACK_WARN_FAT := 1.20
+const PACK_WARN_THIN := 1.30
 const PACK_SAFETY := 0.70
 ## FEEL-49：三只实体共用的攻击动作。上冲 0.12 s，压顶 0.55 s，下潜 0.45 s；
 ## 攻击体不再有独立寿命，生命周期完全由同一只鲨鱼的相位驱动。
 const PACK_FOLLOW_TIME := 0.85
-const PACK_ACTOR_RISE := 0.26
-const PACK_ACTOR_HOLD := 0.60
-const PACK_ACTOR_RETREAT := 0.55
+## 制作人质检：上冲放慢、压顶缩短、退回留余量；预警加长，给反应时间。
+const PACK_ACTOR_RISE := 0.40
+const PACK_ACTOR_HOLD := 0.50
+const PACK_ACTOR_RETREAT := 0.70
 const PACK_DEEP_TOP := 760.0
 var turtle_repair := 0.0
 var turtle_grace := 0.0
@@ -839,6 +871,14 @@ func load_level(groups: Array, lanes: Array) -> void:
 	_sleep_t = 0.0
 	_sleep_cd = 0.0
 	_sleep_fx_t = 0.0
+	_sleep_grab_success = false
+	_sleep_grab_chance = 0.0
+	_sleep_lock_catch = false
+	_sleep_splash_done = false
+	_sleep_handoff_done = false
+	_rock_perch_active = false
+	_rock_perch_key = ""
+	_rock_perch_t = 0.0
 	sleep_log.clear()
 	boost_lanes = lanes
 	reset_brains()
@@ -936,6 +976,11 @@ func reset_brains() -> void:
 	_sleep_t = 0.0
 	_sleep_cd = 0.0
 	_sleep_fx_t = 0.0
+	_sleep_grab_success = false
+	_sleep_grab_chance = 0.0
+	_sleep_lock_catch = false
+	_sleep_splash_done = false
+	_sleep_handoff_done = false
 	sleep_log.clear()
 
 
@@ -1090,10 +1135,14 @@ func _physics_process(delta: float) -> void:
 	accident_flash = maxf(accident_flash - delta, 0.0)
 	if GameManager.accident_state != "NONE":
 		_accident_t += delta
-		if rescue_splash_t >= 0.0:
-			rescue_splash_t += delta
 	else:
 		_accident_t = 0.0
+	# 水花圈按自己的时间衰减，不跟着事故状态冻结；
+	# 否则救援提前结束会把白色圆圈永久留在水面上。
+	if rescue_splash_t >= 0.0:
+		rescue_splash_t += delta
+		if rescue_splash_t > 0.7:
+			rescue_splash_t = -1.0
 	turtle_grace = maxf(turtle_grace - delta, 0.0)
 	rabbit_grace = maxf(rabbit_grace - delta, 0.0)
 	_shift_jolt_t = maxf(_shift_jolt_t - delta, 0.0)
@@ -1159,7 +1208,8 @@ func _physics_process(delta: float) -> void:
 	]
 	var turtle_controlled: bool = control == "turtle" and not turtle.accident
 	var rabbit_controlled: bool = control == "rabbit" and not rabbit_down \
-		and rabbit_stun <= 0.0 and not showtime_active
+		and rabbit_stun <= 0.0 and not showtime_active \
+		and _sleep_phase != "ACTION"
 	# Phase O：加速只来自“操控乌龟吃下能量海藻”，不是进带自动提速。
 	# 吃下后是整组 TURBO：换兔子做动作时也继续，直到该遭遇的障碍通过 + 180 px。
 	var boosting: bool = snack_boost_active()
@@ -1868,6 +1918,10 @@ func _near_bro_dive_log() -> bool:
 
 
 func _tick_rabbit(delta: float, rabbit_controlled: bool, boosting: bool) -> void:
+	# 混合物理：落到礁石顶面后短暂滚动，再由边缘掉下去。
+	if _rock_perch_active:
+		_tick_rock_perch(delta)
+		return
 	# FEEL-29：BRO DIVE 接应时把兔子的空中水平速度收到壳速附近。
 	# 玩家按住 →（加速）起跳再 SHIFT 下潜时，兔子原本会以 +150 px/s 甩开壳，
 	# 接应只能从后面把兔子往回拉。浮木附近从起跳就限速，换人早晚都不会甩开。
@@ -1938,14 +1992,14 @@ func _tick_rabbit(delta: float, rabbit_controlled: bool, boosting: bool) -> void
 		# 半空收人会把兔子直接拽回壳上、拖进墙楣。落回必须等跃起结束、兔子下坠到位。
 		var mp: Vector2 = turtle.get_mount_point()
 		var dy: float = rabbit.position.y - mp.y
-		var caught: bool = not turtle.leap_active \
+		var caught: bool = not turtle.leap_active and not _sleep_lock_catch \
 			and mount.can_pickup(rabbit.position, rabbit.velocity.y, mp,
 				turtle.is_at_surface(), turtle.is_rising())
 		# REBUILD-05 G8：提示环是一个“落壳走廊”，比收人窗口早约 0.3 s 亮起。
 		# 收人仍只看 caught（PICKUP_DY_MIN 当帧吸附），显示不看它——
 		# 否则窗口同帧被消费，绿环永远只是一闪。条件与收人同源：
 		# 正在下落、壳在水面或上浮、横向对准，只是纵向从 -150 起。
-		GameManager.pickup_window = not turtle.leap_active \
+		GameManager.pickup_window = not turtle.leap_active and not _sleep_lock_catch \
 			and rabbit.velocity.y >= 0.0 \
 			and (turtle.is_at_surface() or turtle.is_rising()) \
 			and absf(rabbit.position.x - mp.x) <= Tuning.PICKUP_DX \
@@ -2481,10 +2535,12 @@ func _turtle_contact(_key: String, kind: String = "", charge: bool = true) -> vo
 	_trigger_hitstop("turtle")
 	_trigger_shake(true)
 	turtle.add_imbalance(Tuning.TURTLE_HIT_IMBALANCE)
-	turtle.start_dunk()
-	# P5：掀翻是“浪击”的可见后果，不是第二套惩罚：不另记事故/不清控制。
+	# 制作人质检：高墙是“顶住/弹回”，不再套用浪击的下沉；
+	# 浪击下沉也从 115 px / 1.8 s 压到 55 px / 0.9 s，速度损失 0.6→0.78。
+	if kind not in ["HIGH_WALL", "LOW_BEAM"]:
+		turtle.start_dunk()
 	turtle.start_flip()
-	turtle.speed *= 0.6
+	turtle.speed *= 0.78
 	accident_flash = Tuning.ACCIDENT_FLASH
 	# PLAYFUL-04 §1/§2：浮木撞壳的提示必须说“下潜太晚”，
 	# 不能一律说“被浪拍到”——那会让玩家以为换个姿势就行。
@@ -2549,6 +2605,7 @@ func _apply_bounce(key: String, kind: String) -> void:
 	_bonk_anim_to = target
 	_bonk_anim_t = 0.0
 	_bonk_anim_active = true
+	_bonk_key = key
 	_bonk_visual_t = BONK_VISUAL_TIME
 	turtle.speed = 0.0
 	_bounce_cd = BONK_CD
@@ -2577,6 +2634,7 @@ func _tick_bonk_anim(delta: float) -> void:
 	if p >= 1.0:
 		turtle.position.x = _bonk_anim_to
 		_bonk_anim_active = false
+		_bonk_key = ""
 
 
 func _bonk_fail() -> void:
@@ -2590,7 +2648,7 @@ func undertow_active() -> bool:
 
 
 func _check_hazards() -> void:
-	if test_disable_hazards or _bonk_anim_active:
+	if test_disable_hazards or _sleep_phase == "ACTION":
 		return
 	var t_rect := _inset(turtle.get_body_rect(), 3.0)
 	var r_rect := _inset(rabbit.get_body_rect(), 3.0)
@@ -2598,11 +2656,15 @@ func _check_hazards() -> void:
 	# - 兔子在落水/硬直/缺氧过程中不是自由操控角色，由落水流程自己记账；
 	#   此时它的身体（还在空中飘）不应该再触发一次落水事故。
 	# - 乌龟只要还在水里就参与判定——接应下潜途中撞到真障碍也算。
-	var rabbit_can_hit: bool = GameManager.accident_state == "NONE"
+	var rabbit_can_hit: bool = GameManager.accident_state == "NONE" \
+		and not _rock_perch_active
 	var turtle_can_hit: bool = not (GameManager.accident_state in ["TURTLE_REEF", "OXYGEN_OUT"])
 	for g in hazard_groups:
 		var group: Dictionary = g
 		var key := String(group["group"])
+		# 只对“正在弹回的同一组”免判，不把整只乌龟的碰撞关掉。
+		if _bonk_anim_active and key == _bonk_key:
+			continue
 		# 鲨群专场：三拍期间附近普通障碍不出现、不判。
 		if _shark_arena_hides(group):
 			continue
@@ -2613,8 +2675,6 @@ func _check_hazards() -> void:
 			continue
 		var kind := String(group["kind"])
 		var roles: Dictionary = hit_roles.get(key, {})
-		if roles.size() >= 2:
-			continue
 		for i in group["rects"].size():
 			# REBUILD-05 E2：动态障碍按这一帧的位置判。
 			var rect := hazard_rect_live(group, i)
@@ -2622,9 +2682,11 @@ func _check_hazards() -> void:
 			var turtle_hit := false
 			match kind:
 				"LOW_BEAM":
-					# A 类：只占兔子站立的那一层。趴在壳上就过，龟壳不受影响。
+					# A 类：兔子站立层；乌龟主动跃起撞梁时也要有真实反馈。
 					rabbit_hit = rabbit_can_hit and not roles.has("rabbit") \
 						and rabbit.state != "CROUCHING" and r_rect.intersects(rect)
+					turtle_hit = turtle_can_hit and not roles.has("turtle") \
+						and turtle.leap_active and t_rect.intersects(rect)
 				"LOW_BIRD":
 					# FEEL-49：只有鸟真正扎到攻击窗口时才判。
 					# 鸟已经飞过/拉起（RECOVER/CIRCLE）时，固定判定带不再伤人。
@@ -2637,18 +2699,22 @@ func _check_hazards() -> void:
 						and bird_live and rabbit.state != "CROUCHING" \
 						and r_rect.intersects(rect)
 				"SURFACE_ROCK":
-					# A 类（跳跃）：只压兔子；龟壳顶从岩石下沿让开 10 px。
-					# 起跳上升帧允许越过岩檐；下落仍会撞上。
+					# A 类（跳跃）：上升帧允许越过岩檐；下落时先尝试落在顶面。
+					if rabbit_can_hit and not roles.has("rabbit") \
+							and _try_rock_landing(key, rect, r_rect):
+						continue
 					rabbit_hit = rabbit_can_hit and not roles.has("rabbit") \
 						and r_rect.intersects(rect) \
 						and not (rabbit.state == "JUMPING" and rabbit.velocity.y < 0.0)
 				"SHARK":
-					# C 类：只判乌龟。跃起把整组带高，兔子跟着壳，不需要额外动作。
-					turtle_hit = turtle_can_hit and not roles.has("turtle") \
+					# C 类：只判乌龟。弹回类允许同一组重复触发，用于连续 6 次。
+					turtle_hit = turtle_can_hit \
+						and (not roles.has("turtle") or kind in BONK_KINDS) \
 						and t_rect.intersects(rect)
 				"DIVE_GATE":
 					# D 类：只判乌龟。下潜到位后整个壳（连同壳上的兔子）从下方过。
-					turtle_hit = turtle_can_hit and not roles.has("turtle") \
+					turtle_hit = turtle_can_hit \
+						and (not roles.has("turtle") or kind in BONK_KINDS) \
 						and t_rect.intersects(rect)
 				"FLOATING_LOG":
 					# B 类（组合）：上沿是兔子路线，下沿是乌龟路线，两条路径分别判。
@@ -2662,15 +2728,20 @@ func _check_hazards() -> void:
 							or (dive_assist != "OFF" and dive_assist_key == key))
 					rabbit_hit = rabbit_can_hit and not roles.has("rabbit") \
 						and r_rect.intersects(rect) and not bro_dive_tuck
-					turtle_hit = turtle_can_hit and not roles.has("turtle") \
+					turtle_hit = turtle_can_hit \
+						and (not roles.has("turtle") or kind in BONK_KINDS) \
 						and t_rect.intersects(rect)
 				"HIGH_WALL":
 					# E 类（BRO OLLIE）：墙楣只压骑乘兔，墙身压巡航壳。
 					# 跃起只把壳送进窗口；壳上的兔子会撞墙楣，必须玩家补一次蹬踏。
 					rabbit_hit = rabbit_can_hit and not roles.has("rabbit") \
 						and r_rect.intersects(rect)
-					turtle_hit = turtle_can_hit and not roles.has("turtle") \
+					turtle_hit = turtle_can_hit \
+						and (not roles.has("turtle") or kind in BONK_KINDS) \
 						and t_rect.intersects(rect)
+			# 弹回冷却中不再重复触发同一组，避免每帧 dunk/flip。
+			if turtle_hit and kind in BONK_KINDS and _bounce_cd > 0.0:
+				turtle_hit = false
 			# CORE-FEEL-07 P0-B：同一帧两边都撞也要先登记事实，再按“这一障碍的
 			# 事件是否结算过”决定谁记账。旧实现里 _turtle_contact 无条件直连
 			# note_mistake，兔子落水后再撞壳就是同一根浮木扣两次。
@@ -2732,6 +2803,42 @@ func _check_hazards() -> void:
 					lesson_retaught[_lesson_key(group)] = true
 					lesson_seen.erase(_lesson_key(group))
 				return
+
+
+## 混合物理：兔子从空中落到礁石顶面。
+## 只做“顶面 one-way 平台”：从上方落下才接，从下方跳仍可穿过。
+func _try_rock_landing(key: String, rect: Rect2, r_rect: Rect2) -> bool:
+	if _rock_perch_active or rabbit.velocity.y <= 0.0:
+		return false
+	if r_rect.end.x < rect.position.x or r_rect.position.x > rect.end.x:
+		return false
+	var top := rect.position.y
+	if r_rect.end.y < top - 8.0 or r_rect.end.y > top + 22.0:
+		return false
+	_rock_perch_active = true
+	_rock_perch_key = key
+	_rock_perch_rect = rect
+	_rock_perch_t = 0.0
+	rabbit.state = "RIDING"
+	rabbit.velocity = Vector2(ROCK_ROLL_SPEED, 0.0)
+	rabbit.position.y = top - r_rect.size.y * 0.5
+	return true
+
+
+func _tick_rock_perch(delta: float) -> void:
+	_rock_perch_t += delta
+	var half: float = rabbit.get_body_rect().size.y * 0.5
+	rabbit.position.y = _rock_perch_rect.position.y - half
+	rabbit.position.x += ROCK_ROLL_SPEED * delta
+	rabbit.velocity = Vector2(ROCK_ROLL_SPEED, 0.0)
+	rabbit.state = "RIDING"
+	var off_edge: bool = rabbit.position.x >= _rock_perch_rect.end.x - 2.0
+	if _rock_perch_t >= ROCK_PERCH_TIME or off_edge:
+		_rock_perch_active = false
+		_rock_perch_key = ""
+		rabbit.state = "FALLING"
+		rabbit.velocity = Vector2(ROCK_ROLL_SPEED * 0.8, 120.0)
+		mount.mark_airborne()
 
 
 ## REBUILD-06 P0：乌龟对实心障碍是“硬”的。
@@ -2979,7 +3086,7 @@ func _guard_precise_bounce(precise: bool) -> void:
 
 ## BITT 主动接近 TUBO：真实移动，不是传送；玩家 ↑/↓ 仍可覆盖垂直自动。
 func _tick_bro_catch(delta: float) -> void:
-	if not _catch_active:
+	if not _catch_active or _sleep_lock_catch:
 		return
 	if mount.state == "RIDING" or rabbit.state == "RIDING" \
 			or mount.state not in ["RESCUING", "RESCUE_FALLING", "RESCUE_ACTIVE", "RESCUE_AIR"]:
@@ -3177,7 +3284,12 @@ func _turtle_danger() -> bool:
 
 ## FEEL-10 P0-A：真正的联合事故——两人都在真实危险里，且进入时刻相差 ≤0.6 s。
 func _update_true_joint(_delta: float) -> void:
-	if joint_show_t > 0.0 or GameManager.accident_state == "BRO_BREAK":
+	if joint_show_t > 0.0 or GameManager.accident_state == "BRO_BREAK" \
+			or _sleep_phase == "ACTION":
+		return
+	# 兔子已经在落水/事故里时，不要升级成“联合”；那会把落水流程
+	# 和联合演出叠在一起，出现“瞬移接回来”的怪画面。
+	if GameManager.accident_state != "NONE":
 		return
 	var now := accident_event_time
 	var rd := _rabbit_danger()
@@ -3225,27 +3337,19 @@ func _start_joint_show() -> void:
 
 
 func _hold_joint_pose() -> void:
-	# 原地抖动 + 闪白：够短，不抢玩家的判断时间，但看得出“这是第三格”。
-	var t := JOINT_SHOW_TIME - joint_show_t
-	turtle.position.y = _joint_turtle_y + absf(sin(t * 30.0)) * 4.0
+	# 制作人质检：联合判罚只冻结/抖动，不把兔子重新钉到壳上；
+	# 否则“兔子已经跳过鲨鱼”会被瞬移回来，看起来像凭空获救。
 	turtle.speed = 0.0
-	rabbit.position = turtle.get_mount_point() + Vector2(0.0,
-		absf(sin(t * 30.0 + 0.6)) * 6.0)
 
 
 func _end_joint_show() -> void:
 	joint_show_t = 0.0
-	turtle.reset(Vector2(turtle.position.x, surface_ref()))
 	turtle.speed = current_zone["base_speed"]
-	rabbit.reset()
-	rabbit.attach(turtle.get_mount_point())
-	mount.reset()
-	mount.mark_riding()
 	GameManager.accident_state = "NONE"
 	GameManager.clear_bro_meter()
 	rabbit_grace = 1.5
 	turtle_grace = 1.5
-	# 联合惩罚结束不是“获救”：发 rescue_done 会让横幅错误显示“获救”。
+	# 不 reset/attach 任何一个角色：保留判罚发生时的真实位置与落水状态。
 	GameManager.center_message.emit(Locale.t("center.bro_recover"),
 		Color(0.5, 1.0, 0.6))
 
@@ -4161,7 +4265,9 @@ func _tick_sleep(delta: float) -> void:
 		else:
 			_sleep[who] = minf(float(_sleep[who]) + SLEEP_GROW * delta, SLEEP_MAX)
 	if _sleep_event_role != "":
-		if GameManager.current_control == _sleep_event_role:
+		# 只有“预兆里切回放电身体”才是取消；ACTION 已经放电，必须让弹飞/落水演完。
+		if _sleep_phase == "TELEGRAPH" \
+				and GameManager.current_control == _sleep_event_role:
 			_end_sleep_event("grounded")
 			return
 		if _rescue_context() != "NONE" or GameManager.accident_state != "NONE" 				or showtime_active:
@@ -4170,9 +4276,8 @@ func _tick_sleep(delta: float) -> void:
 		_sleep_t += delta
 		if _sleep_phase == "TELEGRAPH" and _sleep_t >= SLEEP_TELEGRAPH:
 			_apply_sleep_event()
-		elif _sleep_phase == "ACTION" and _sleep_t >= 0.30:
-			_sleep_phase = "END"
-			_sleep_t = 0.0
+		elif _sleep_phase == "ACTION":
+			_tick_sleep_shove(delta)
 		elif _sleep_phase == "END" and _sleep_t >= SLEEP_EVENT_END:
 			_end_sleep_event("completed")
 		return
@@ -4201,19 +4306,71 @@ func _apply_sleep_event() -> void:
 		_end_sleep_event("priority")
 		return
 	GameManager.set_control(zapper)
-	GameManager.shift_lock_t = 0.0
-	if victim == "rabbit":
-		rabbit_stun = maxf(rabbit_stun, 0.25)
-	else:
-		turtle.zap_stun_t = maxf(turtle.zap_stun_t, 0.25)
+	# 弹飞/落水这 0.3–0.5 s 内不让玩家再 SHIFT 打断演出；落水后的救援交接用 set_control。
+	GameManager.shift_lock_t = 0.50
 	_sleep[zapper] = maxf(float(_sleep[zapper]) - 55.0, 0.0)
+	# 制作人质检：不再静默换人/兄弟喊话。放电 → 兔子弹飞 → 抓壳或落水；
+	# 只有抓壳失败才走一次正常落水。抓壳率按姿态微调，只掷一次。
+	_sleep_grab_chance = _sleep_grab_chance_for()
+	if test_sleep_grab_roll >= 0.0:
+		_sleep_grab_success = test_sleep_grab_roll >= 0.5
+	else:
+		_sleep_grab_success = randf() < _sleep_grab_chance
+	_sleep_lock_catch = true
+	_sleep_splash_done = false
+	_sleep_handoff_done = false
+	rabbit.launch(turtle.get_mount_point(), turtle.speed, SLEEP_LAUNCH_VY, 1.0)
+	rabbit.velocity.x = turtle.speed + SLEEP_LAUNCH_VX
+	mount.mark_airborne()
+	# 控制乌龟时兔子失控：乌龟下潜一小段，兔子仍被弹飞。
+	if zapper == "rabbit":
+		turtle.start_dunk()
 	_sleep_phase = "ACTION"
 	_sleep_t = 0.0
-	_sleep_fx_t = 0.30
-	# 身份由 HUD 的说话者头像表示，不在文本里写“兔子/乌龟”。
-	GameManager.bro_say.emit(zapper, Locale.t("sleep.zap_short"))
+	_sleep_fx_t = 0.35
+	GameManager.feedback.emit(Locale.t("sleep.zap_short"), "hit")
 	sleep_log.append({"event": "zap", "who": zapper, "victim": victim,
+		"grab": _sleep_grab_success, "chance": _sleep_grab_chance,
 		"t": accident_event_time})
+
+
+func _sleep_grab_chance_for() -> float:
+	var p := SLEEP_GRAB_BASE
+	if rabbit.state == "CROUCHING":
+		p += SLEEP_GRAB_CROUCH_BONUS
+	if rabbit.is_airborne():
+		p -= SLEEP_GRAB_AIR_PENALTY
+	return clampf(p, SLEEP_GRAB_MIN, SLEEP_GRAB_MAX)
+
+
+func _tick_sleep_shove(delta: float) -> void:
+	_sleep_t += delta
+	if _sleep_grab_success:
+		# 抓壳成功：短回弹后重新骑上；不落水、不记事故。
+		if _sleep_t >= SLEEP_GRAB_TIME:
+			_sleep_lock_catch = false
+			rabbit.attach(turtle.get_mount_point())
+			mount.mark_riding()
+			_sleep_phase = "END"
+			_sleep_t = 0.0
+		return
+	# 抓壳失败：锁住接住/救援，直到兔子真的入水。
+	if _sleep_splash_done:
+		return
+	if rabbit.position.y >= surface_ref() + 8.0:
+		_sleep_splash_done = true
+		_sleep_lock_catch = false
+		hazard_cooldown = 0.0
+		_trigger_accident("RABBIT_WATER")
+		# B 情况：控制乌龟时兔子失控，强切到兔子后落水；
+		# 入水瞬间把控制交给乌龟，直接开始救援，别让玩家卡在落水兔子里。
+		if not _sleep_handoff_done and _sleep_event_role == "rabbit":
+			_sleep_handoff_done = true
+			GameManager.set_control("turtle")
+			GameManager.shift_lock_t = 0.0
+			GameManager.prompt.emit(Locale.t("prompt.rescue_dive"))
+		_sleep_phase = "END"
+		_sleep_t = 0.0
 
 
 func _end_sleep_event(reason: String) -> void:
@@ -4222,12 +4379,37 @@ func _end_sleep_event(reason: String) -> void:
 		return
 	if reason == "grounded":
 		_sleep[old] = maxf(float(_sleep[old]) - 40.0, 0.0)
+	_sleep_lock_catch = false
 	_sleep_event_role = ""
 	_sleep_phase = ""
 	_sleep_t = 0.0
 	_sleep_cd = SLEEP_COOLDOWN
 	sleep_log.append({"event": "end", "who": old, "reason": reason,
 		"t": accident_event_time})
+
+
+## 测试/探针：把睡眠事件恢复到可重复的干净起点。
+func _reset_sleep_for_test(control: String, rabbit_v: float, turtle_v: float,
+		roll: float = -1.0) -> void:
+	_sleep = {"rabbit": rabbit_v, "turtle": turtle_v}
+	_sleep_event_role = ""
+	_sleep_phase = ""
+	_sleep_t = 0.0
+	_sleep_cd = 0.0
+	_sleep_lock_catch = false
+	_sleep_splash_done = false
+	_sleep_handoff_done = false
+	_sleep_grab_success = false
+	test_sleep_grab_roll = roll
+	GameManager.accident_state = "NONE"
+	GameManager.current_control = control
+	GameManager.shift_lock_t = 0.0
+	rabbit_stun = 0.0
+	turtle.reset(Vector2(maxf(turtle.position.x, 800.0), surface_ref()))
+	rabbit.reset()
+	rabbit.attach(turtle.get_mount_point())
+	mount.reset()
+	mount.mark_riding()
 
 
 func sleep_value(who: String) -> float:
@@ -4249,7 +4431,8 @@ func _draw_sleep_fx() -> void:
 	var t := Time.get_ticks_msec() * 0.001
 	for who in ["rabbit", "turtle"]:
 		var v := sleep_value(who)
-		if v < SLEEP_DOZE:
+		# Zzz 只在明显走神后出现；40–55 仍由小条提示，不挂字。
+		if v < SLEEP_ZZZ:
 			continue
 		var p: Vector2 = turtle.position if who == "turtle" else rabbit.position
 		var z := "Z" if v < SLEEP_PRE else "ZZ"
@@ -4268,6 +4451,14 @@ func _draw_sleep_fx() -> void:
 		var b: Vector2 = turtle.position if victim == "turtle" else rabbit.position
 		_draw_zap(a + Vector2(0, -30), b + Vector2(0, -30),
 			Color(0.65, 0.95, 1.0, 0.9), 4.0, 10.0)
+		# 两人周围各一圈电，读作“电击蛋糕漏电”，不是文字提示。
+		for c in [a, b]:
+			draw_arc(c + Vector2(0, -24), 38.0 + sin(t * 12.0) * 3.0,
+				0.0, TAU, 28, Color(0.6, 0.95, 1.0, 0.7), 2.0)
+			for i in 4:
+				var aa := t * 9.0 + float(i) * TAU / 4.0
+				draw_circle(c + Vector2(cos(aa), sin(aa)) * 40.0 + Vector2(0, -24),
+					2.0, Color(0.8, 1.0, 1.0, 0.85))
 
 
 
@@ -5925,30 +6116,10 @@ func _spawn_bird_attack(g: Dictionary, st: Dictionary) -> void:
 	var mode := String(st["mode"])
 	if mode == "dive":
 		return
+	# 制作人质检：远程便便存在感太低，先撤掉，只保留海鸟俯冲。
+	# 要恢复时把下一行改成 false，并重新调飞行时间/溅射半径。
 	if mode == "poop":
-		# FEEL-47：排泄不能再“锁定发射瞬间的兔子位置”。
-		# 飞行约 1.25 s，必须按玩家前进速度做 lead；落点是一个区域，
-		# 不直接命中也会在落点留下溅射，而不是飞到终点凭空消失。
-		var flight := 1.25
-		var lead_speed: float = maxf(turtle.speed, rabbit.velocity.x)
-		# PHASE-FIX：便便最终打到水面，不再瞄兔子身体。
-		var target := Vector2(rabbit.position.x + lead_speed * flight * 0.92
-			+ randf_range(-18.0, 18.0), SURFACE_Y + 10.0)
-		# FEEL-47：远程排泄不要叠在 BRO DIVE 的接人/下潜准备上。
-		# 远程攻击只发生在没有紧邻地面障碍的开阔段，避免和 BRO DIVE/低梁叠拍。
-		for lg in hazard_groups:
-			if String(lg.get("kind", "")) == "LOW_BIRD":
-				continue
-			if absf(target.x - _group_start(lg)) < 700.0:
-				return
-		_bird_attacks.append({
-			"type": "poop", "group": String(g["group"]),
-			"p0": Vector2(band.position.x - 180.0, band.position.y - 150.0),
-			"p1": target,
-			"t": 0.0, "life": flight, "target": "rabbit",
-			"splash_radius": 30.0,
-		})
-		GameManager.feedback.emit(Locale.t("feedback.bird_attack"), "hit")
+		return
 
 
 func _circle_hits_rect(center: Vector2, radius: float, rect: Rect2) -> bool:
