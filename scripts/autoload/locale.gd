@@ -979,12 +979,18 @@ const STRINGS := {
 		"zh": "氧气见底了。\n乌龟 没能把他捞回来。",
 		"en": "TUBO RAN OUT OF AIR.\nBITT COULDN'T GET HIM BACK."},
 	"fail.reason_oxygen": {"zh": "原因：氧气耗尽", "en": "CAUSE: OUT OF AIR"},
+	"fail.sub_bonk": {
+		"zh": "连续撞了 6 次。\n乌龟 晕过去了。",
+		"en": "SIX BONKS IN A ROW.\nBITT IS OUT COLD."},
 	"fail.reason_bonk": {
 		"zh": "原因：连续撞了 6 次，乌龟晕过去了",
 		"en": "CAUSE: SIX BONKS IN A ROW - BITT IS OUT COLD"},
 	"fail.line_bonk": {
 		"zh": "我让我的兄弟晕过去了。",
 		"en": "I LET MY BRO PASS OUT."},
+	"fail.line_bonk_turtle": {
+		"zh": "我撞晕了……",
+		"en": "I BONKED MYSELF OUT..."},
 	"fail.tip_bonk": {
 		"zh": "先换人，再看清楚障碍再按。",
 		"en": "SWITCH FIRST, THEN READ THE OBSTACLE."},

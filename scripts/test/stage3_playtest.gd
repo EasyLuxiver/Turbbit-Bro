@@ -193,6 +193,18 @@ func _run_once(index: int, retry: bool) -> Dictionary:
 
 	await _autopilot()
 
+	# 结算会切到 result 场景并释放 race；先把本圈统计缓存下来。
+	var passed_cache := 0
+	var total_cache := 0
+	var hit_groups_cache: Array = []
+	var shark_log_cache: Array = []
+	if is_instance_valid(race):
+		passed_cache = race.passed_count()
+		total_cache = race.total_groups()
+		hit_groups_cache = race.hit_groups.keys()
+		shark_log_cache = race.get("_shark_pack_log").duplicate() \
+			if race.get("_shark_pack_log") != null else []
+
 	var start := Time.get_ticks_msec()
 	while not GameManager.finished and Time.get_ticks_msec() - start < 20000:
 		await get_tree().physics_frame
@@ -204,8 +216,8 @@ func _run_once(index: int, retry: bool) -> Dictionary:
 		"finish_time": GameManager.finish_time,
 		"score": GameManager.total_score,
 		"grade": GameManager.grade,
-		"passed": race.passed_count(),
-		"total": race.total_groups(),
+		"passed": passed_cache,
+		"total": total_cache,
 		"zones": GameManager.zones_visited.duplicate(),
 		"accidents": GameManager.accident_count,
 		"casualties": GameManager.rabbit_casualties,
@@ -220,15 +232,15 @@ func _run_once(index: int, retry: bool) -> Dictionary:
 			stats["casualties"], stats["engine_failures"],
 			stats["showtime"], stats["streak"]])
 	# FEEL-42：确认正式跑中鲨群三拍都发生，而不是只出老大/胖鲨。
-	if race != null and race.get("_shark_pack_log") != null:
-		_log("SHARK_PACK_LOG " + JSON.stringify(race._shark_pack_log))
+	if not shark_log_cache.is_empty():
+		_log("SHARK_PACK_LOG " + JSON.stringify(shark_log_cache))
 		var pack_who := []
-		for e in race._shark_pack_log:
+		for e in shark_log_cache:
 			if String(e.get("event", "")) == "attack":
 				pack_who.append(String(e.get("who", "")))
 		_check(pack_who.has("leader") and pack_who.has("fat") and pack_who.has("thin"),
 			"run %d shark pack three attacks %s" % [index, JSON.stringify(pack_who)])
-	_check_score_table(index)
+	_check_score_table(index, passed_cache, hit_groups_cache)
 
 	start = Time.get_ticks_msec()
 	while not _scene_is("result.tscn") and Time.get_ticks_msec() - start < 15000:
@@ -277,15 +289,20 @@ func _live_groups() -> Array:
 func _autopilot() -> void:
 	var groups: Array = _live_groups()
 	for i in groups.size():
-		if GameManager.finished:
+		if GameManager.finished or not is_instance_valid(race):
 			return
 		await _handle_group(groups[i])
+		if not is_instance_valid(race) or GameManager.finished:
+			return
 		if capture:
 			await _capture_zone_once()
-	await _travel_to(LevelDataScript.WORLD_END - 40.0)
+	if is_instance_valid(race):
+		await _travel_to(LevelDataScript.WORLD_END - 40.0)
 
 
 func _handle_group(g: Dictionary) -> void:
+	if not is_instance_valid(race) or GameManager.finished:
+		return
 	var kind: String = g["kind"]
 	var start := LevelDataScript.group_start(g)
 	var end := LevelDataScript.group_end(g)
@@ -1035,6 +1052,11 @@ func _frames(n: int) -> void:
 ## 推进一个物理帧并推进固定时钟。time_scale 会缩放每个物理帧的 delta，
 ## 所以这里乘上同一个系数；驾驶逻辑只用 sim_time 计时，保证每次运行一致。
 func _step() -> void:
+	if not is_instance_valid(race) or GameManager.finished:
+		# 让出一帧并推进固定时钟；否则以 sim_time 为条件的循环会永远不结束。
+		await get_tree().process_frame
+		sim_time += (1.0 / 60.0) * Engine.time_scale
+		return
 	await get_tree().physics_frame
 	sim_time += (1.0 / 60.0) * Engine.time_scale
 
@@ -1042,7 +1064,8 @@ func _step() -> void:
 ## 分数表可审计：本次每个组的得分都在 score_log 里，逐笔对表、按顺序重放，
 ## 重放结果必须等于运行时总分。这样“干净通过 +100、精准 +150、连招 +250/+300、
 ## 失误 -100、三格 -200、同一动作不重复计”不是看代码猜的，是这局跑出来的。
-func _check_score_table(index: int) -> void:
+func _check_score_table(index: int, passed_cache: int,
+		hit_groups_cache: Array) -> void:
 	var counts := {"clean": 0, "precise": 0, "bro_dive": 0, "bro_ollie": 0,
 		"mistake": 0, "joint": 0, "snack": 0, "showtime": 0,
 		"relay_clever": 0, "relay_perfect": 0, "rescue_switch": 0}
@@ -1101,12 +1124,12 @@ func _check_score_table(index: int) -> void:
 			index, replay, GameManager.total_score])
 	var pass_entries: int = counts["clean"] + counts["precise"] \
 		+ counts["bro_dive"] + counts["bro_ollie"]
-	_check(pass_entries == race.passed_count(),
+	_check(pass_entries == passed_cache,
 		"run %d every passed group is scored (passed=%d scored=%d)" % [
-			index, race.passed_count(), pass_entries])
-	_check(race.hit_groups.is_empty(),
+			index, passed_cache, pass_entries])
+	_check(hit_groups_cache.is_empty(),
 		"run %d has no hazard contacts (%s)" % [
-			index, race.hit_groups.keys()])
+			index, str(hit_groups_cache)])
 	_check(counts["bro_dive"] == GameManager.combo_dive_count
 		and counts["bro_ollie"] == GameManager.combo_ollie_count,
 		"run %d combo counters match the log (dive %d/%d ollie %d/%d)" % [

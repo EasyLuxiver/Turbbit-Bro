@@ -250,12 +250,15 @@ var _sleep_fall_requires_space := false
 var _bonk_streak := 0
 var _bonk_level := 0
 var _bounce_cd := 0.0
+var _bonk_lock_t := 0.0
 ## PHASE-FIX：Showtime 小奖励的冷却与乌龟视觉腾空。
 var _showtime_cd := 0.0
 var _showtime_turtle_y := 0.0
 var _showtime_turtle_spin := 0.0
-const BONK_BACK := 140.0
+const BONK_BACK := 180.0
 const BONK_CD := 0.8
+## 碰撞状态锁：一次弹回后这段时间内不再重复判乌龟碰撞，让壳继续前进。
+const BONK_LOCK := 1.2
 const BONK_FAIL_COUNT := 6
 const BONK_KINDS := ["DIVE_GATE", "HIGH_WALL", "FLOATING_LOG", "SHARK", "LOW_BEAM"]
 const BONK_ANIM_TIME := 0.42
@@ -313,17 +316,17 @@ const BIRD_TELEGRAPH := 1.15
 const BIRD_ACTION := 0.65
 const BIRD_RECOVER := 0.55
 ## FEEL-32：小头目三段的时间轴（不是“攻击间隔”，是分别计时）。
-const PACK_LEAD_WARN := 1.20
-const PACK_WARN_FAT := 1.20
-const PACK_WARN_THIN := 1.30
+const PACK_LEAD_WARN := 1.05
+const PACK_WARN_FAT := 1.05
+const PACK_WARN_THIN := 1.15
 const PACK_SAFETY := 0.70
 ## FEEL-49：三只实体共用的攻击动作。上冲 0.12 s，压顶 0.55 s，下潜 0.45 s；
 ## 攻击体不再有独立寿命，生命周期完全由同一只鲨鱼的相位驱动。
 const PACK_FOLLOW_TIME := 0.85
 ## 制作人质检：上冲放慢、压顶缩短、退回留余量；预警加长，给反应时间。
-const PACK_ACTOR_RISE := 0.40
-const PACK_ACTOR_HOLD := 0.50
-const PACK_ACTOR_RETREAT := 0.70
+const PACK_ACTOR_RISE := 0.30
+const PACK_ACTOR_HOLD := 0.60
+const PACK_ACTOR_RETREAT := 0.55
 const PACK_DEEP_TOP := 760.0
 var turtle_repair := 0.0
 var turtle_grace := 0.0
@@ -540,8 +543,6 @@ var _accident_t := 0.0
 
 
 func _ready() -> void:
-	# 防止测试/旧状态留下非 1.0 的时间缩放；正式比赛按实时跑。
-	Engine.time_scale = 1.0
 	_od_last_ms = Time.get_ticks_msec()
 	rabbit_brain = BroBrainScript.new("rabbit")
 	turtle_brain = BroBrainScript.new("turtle")
@@ -870,6 +871,7 @@ func load_level(groups: Array, lanes: Array) -> void:
 	_bonk_streak = 0
 	_bonk_level = 0
 	_bounce_cd = 0.0
+	_bonk_lock_t = 0.0
 	_sleep = {"rabbit": 0.0, "turtle": 0.0}
 	_sleep_event_role = ""
 	_sleep_phase = ""
@@ -1291,6 +1293,7 @@ func _physics_process(delta: float) -> void:
 	# 这一帧画出来的位置就是这一帧用来判的位置。
 	_update_ambush_sharks(delta)
 	_bounce_cd = maxf(_bounce_cd - delta, 0.0)
+	_bonk_lock_t = maxf(_bonk_lock_t - delta, 0.0)
 	_showtime_cd = maxf(_showtime_cd - delta, 0.0)
 	_tick_bird_behaviors(delta)
 	_check_bird_attacks(delta)
@@ -2009,6 +2012,14 @@ func _tick_rabbit(delta: float, rabbit_controlled: bool, boosting: bool) -> void
 			and (not _sleep_fall_requires_space or _catch_active) \
 			and mount.can_pickup(rabbit.position, rabbit.velocity.y, mp,
 				turtle.is_at_surface(), turtle.is_rising())
+		# 制作人：只要乌龟在兔子下面，普通下落就自动接，不再要求先切乌龟
+		# 或壳必须正好在水面（深一点的 BRO DIVE 也接）。
+		if not caught and not turtle.leap_active and not _sleep_lock_catch \
+				and (not _sleep_fall_requires_space or _catch_active) \
+				and rabbit.velocity.y >= 0.0 \
+				and absf(rabbit.position.x - mp.x) <= Tuning.PICKUP_DX \
+				and dy >= Tuning.PICKUP_DY_MIN and dy <= Tuning.PICKUP_DY_MAX:
+			caught = true
 		# REBUILD-05 G8：提示环是一个“落壳走廊”，比收人窗口早约 0.3 s 亮起。
 		# 收人仍只看 caught（PICKUP_DY_MIN 当帧吸附），显示不看它——
 		# 否则窗口同帧被消费，绿环永远只是一闪。条件与收人同源：
@@ -2498,14 +2509,15 @@ func _trigger_accident(reason: String, charge: bool = true) -> bool:
 ## 只减速 + 短暂停顿 + 一句说明；同一组 0.8 s 内不重复报。
 func _turtle_dynamic_bump(key: String, group: Dictionary) -> void:
 	var now := accident_event_time
-	if now - float(_dynamic_bump_cd.get(key, -99.0)) < 0.8:
+	# 动态浮标/货箱只走一条反馈链：短震动 + 减速，不叠 dunk/flip/白闪。
+	# 1.2 s 内同一组只触发一次，壳继续前进，不被连续推退。
+	if now - float(_dynamic_bump_cd.get(key, -99.0)) < 1.2:
 		return
 	_dynamic_bump_cd[key] = now
 	_trigger_hitstop("turtle")
 	_trigger_shake(false)
-	turtle.start_dunk()
-	turtle.add_imbalance(0.05)
-	turtle.speed *= 0.82
+	turtle.add_imbalance(0.04)
+	turtle.speed *= 0.90
 	GameManager.feedback.emit(Locale.t("feedback.buoy_hit"), "hit")
 	GameManager.hint.emit(Locale.t("hint.buoy_hit"))
 
@@ -2626,6 +2638,9 @@ func _apply_bounce(key: String, kind: String) -> void:
 	_bonk_visual_t = BONK_VISUAL_TIME
 	turtle.speed = 0.0
 	_bounce_cd = BONK_CD
+	# 状态锁：这段时间内不再接受新的乌龟碰撞判定；
+	# 壳从弹回目标继续由 turtle.tick 向前加速，不会被同一次接触每帧重复触发。
+	_bonk_lock_t = BONK_LOCK
 	_bonk_streak += 1
 	_bonk_level = mini(_bonk_streak, BONK_FAIL_COUNT)
 	GameManager.feedback.emit(Locale.t("feedback.turtle_bonk",
@@ -2655,6 +2670,7 @@ func _tick_bonk_anim(delta: float) -> void:
 
 
 func _bonk_fail() -> void:
+	GameManager.failure_role = "turtle"
 	GameManager.finish_failure("BONK_OUT")
 
 
@@ -2723,6 +2739,9 @@ func _check_hazards() -> void:
 					rabbit_hit = rabbit_can_hit and not roles.has("rabbit") \
 						and r_rect.intersects(rect) \
 						and not (rabbit.state == "JUMPING" and rabbit.velocity.y < 0.0)
+					turtle_hit = turtle_can_hit \
+						and (not roles.has("turtle") or kind in BONK_KINDS) \
+						and turtle.leap_active and t_rect.intersects(rect)
 				"SHARK":
 					# C 类：只判乌龟。弹回类允许同一组重复触发，用于连续 6 次。
 					turtle_hit = turtle_can_hit \
@@ -2756,6 +2775,10 @@ func _check_hazards() -> void:
 					turtle_hit = turtle_can_hit \
 						and (not roles.has("turtle") or kind in BONK_KINDS) \
 						and t_rect.intersects(rect)
+			# 弹回状态锁：一次碰撞后 1.2 s 内不再判乌龟碰撞；
+			# 壳继续前进，避免贴墙时每帧重复触发/卡死。
+			if turtle_hit and _bonk_lock_t > 0.0:
+				turtle_hit = false
 			# 弹回冷却中不再重复触发同一组，避免每帧 dunk/flip。
 			if turtle_hit and kind in BONK_KINDS and _bounce_cd > 0.0:
 				turtle_hit = false
@@ -2765,8 +2788,13 @@ func _check_hazards() -> void:
 			# FEEL-15：红白浮标 / 木质吊箱 / 漂流货箱只做“真实接触反馈”，
 			# 不升级成事故/扣格：TUBO 的跳跃路线仍是安全路线，BITT 被画到身上
 			# 时减速、震动、报一句，不能“画着撞、判定当没发生”。
-			if not group.get("motion", {}).is_empty() and turtle_can_hit 					and not roles.has("turtle") and t_rect.intersects(rect):
+			var dyn_id := String(group.get("identity", ""))
+			if not group.get("motion", {}).is_empty() and kind == "SURFACE_ROCK" \
+					and dyn_id in ["buoy", "dock_crate", "drift_crate"] \
+					and turtle_can_hit and t_rect.intersects(rect):
 				_turtle_dynamic_bump(key, group)
+				# 不再走 _turtle_contact 的事故/白闪/弹回链。
+				continue
 			if not (rabbit_hit or turtle_hit):
 				continue
 			# 兔子被冷却/别的事故挡住、而乌龟这一帧没有真实碰撞：不登记事实，
@@ -2892,12 +2920,20 @@ func _resolve_rabbit_solid() -> void:
 			var dr := absf(rect.end.x - c.x)
 			var dt := absf(c.y - rect.position.y)
 			var db := absf(rect.end.y - c.y)
-			var m := minf(minf(dl, dr), minf(dt, db))
-			if m == dt:
+			# 下落进顶面 -> 往上推；横向撞侧面 -> 按运动方向推回；
+			# 只有真正嵌在中间才按最近边。长礁石不能再被“最近边”带到石面里。
+			if rabbit.velocity.y > 40.0 and c.y < rect.end.y \
+					and rabbit.velocity.y > absf(rabbit.velocity.x) * 0.5:
 				rabbit.position.y = rect.position.y - full.size.y * 0.5 - 3.0
-			elif m == db:
+			elif rabbit.velocity.x > 20.0 and c.x < rect.get_center().x:
+				rabbit.position.x = rect.position.x - full.size.x * 0.5 - 3.0
+			elif rabbit.velocity.x < -20.0 and c.x > rect.get_center().x:
+				rabbit.position.x = rect.end.x + full.size.x * 0.5 + 3.0
+			elif dt <= dl and dt <= dr and dt <= db:
+				rabbit.position.y = rect.position.y - full.size.y * 0.5 - 3.0
+			elif db <= dl and db <= dr:
 				rabbit.position.y = rect.end.y + full.size.y * 0.5 + 3.0
-			elif m == dl:
+			elif dl <= dr:
 				rabbit.position.x = rect.position.x - full.size.x * 0.5 - 3.0
 			else:
 				rabbit.position.x = rect.end.x + full.size.x * 0.5 + 3.0
@@ -2916,7 +2952,7 @@ func _resolve_turtle_solid() -> void:
 		if destroyed_groups.has(String(group["group"])):
 			continue
 		var kind := String(group["kind"])
-		if kind in ["LOW_BEAM", "LOW_BIRD", "SURFACE_ROCK", "DIVE_GATE"]:
+		if kind in ["LOW_BEAM", "LOW_BIRD", "DIVE_GATE"]:
 			continue
 		for i in group["rects"].size():
 			var rect := hazard_rect_live(group, i)
@@ -2937,8 +2973,9 @@ func _resolve_turtle_solid() -> void:
 				tr = _inset(turtle.get_body_rect(), 3.0)
 				pushed = true
 				continue
+			var full_t: Rect2 = turtle.get_body_rect()
 			turtle.position.x = minf(turtle.position.x,
-				rect.position.x - tr.size.x * 0.5)
+				rect.position.x - full_t.size.x * 0.5 - 3.0)
 			tr = _inset(turtle.get_body_rect(), 3.0)
 			pushed = true
 	# 壳被顶住时，坐在上面的兔子跟着一起退，不能自己留在墙里。
@@ -6044,11 +6081,10 @@ func _init_bird_behaviors() -> void:
 	rng.seed = int(level_seed) ^ 0x51A7
 	# FEEL-46：海鸟先俯冲穿越到玩家左侧，再盘旋做第二段排泄；
 	# 不再有“排泄先于俯冲”的队列，也不再考虑水弹。
-	var pool := [
-		["dive"], ["dive", "poop"], ["dive", "dive", "poop"],
-	]
+	# 制作人：远程便便撤掉后，行为池只保留俯冲，不再生成瞄准/落点。
+	var pool := [["dive"]]
 	var last_sig := ""
-	var special_count := 0
+	var special_count := 3
 	var first_bird := true
 	for i in hazard_groups.size():
 		var g: Dictionary = hazard_groups[i]
@@ -6982,14 +7018,6 @@ func _draw_hazard(group: Dictionary, index: int) -> void:
 				var bst: Dictionary = _bird_states.get(String(group["group"]), {})
 				if bst.is_empty() or String(bst.get("mode", "dive")) == "dive" 						or String(bst.get("phase", "")) != "ACTION":
 					_draw_bird(group)
-				if not bst.is_empty() and String(bst.get("phase", "")) == "TELEGRAPH" 						and String(bst.get("mode", "dive")) != "dive":
-					var bp: Vector2 = _bird_target_pos(bst)
-					var bc: Vector2 = Vector2(rect.position.x + rect.size.x * 0.5, rect.position.y - 16.0)
-					draw_line(bc, bp + Vector2(0, -18), Color(1.0, 0.55, 0.25, 0.65), 2.0)
-					draw_arc(bp + Vector2(0, -18), 22.0 + sin(Time.get_ticks_msec() * 0.01) * 3.0,
-						0.0, TAU, 20, Color(1.0, 0.45, 0.25, 0.8), 3.0)
-					draw_string(ThemeDB.fallback_font, bp + Vector2(-6, -96), "!",
-						HORIZONTAL_ALIGNMENT_LEFT, -1, 26, Color(1.0, 0.55, 0.25, 0.95))
 		return
 	match kind:
 		"SURFACE_ROCK":

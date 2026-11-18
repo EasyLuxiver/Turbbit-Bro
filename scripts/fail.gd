@@ -27,17 +27,25 @@ func _draw() -> void:
 		var y := fmod(float(i) * 83.0 + 120.0, view.y)
 		draw_circle(Vector2(x, y), 3.0 + float(i % 4),
 			Color(0.5, 0.9, 1.0, 0.22))
-	# 下沉的 TUBO 轮廓 + 绝望的耳朵。
+	# 下沉的角色：BONK_OUT 画乌龟，氧气耗尽画兔子。
 	var c := Vector2(view.x * 0.16, view.y * 0.78)
-	draw_circle(c, 38, Color(0.92, 0.92, 0.88, 0.72))
-	draw_line(c + Vector2(-14, -30), c + Vector2(-25, -86),
-		Color(0.92, 0.92, 0.88, 0.72), 9)
-	draw_line(c + Vector2(14, -30), c + Vector2(27, -82),
-		Color(0.92, 0.92, 0.88, 0.72), 9)
-	draw_circle(c + Vector2(-10, -4), 4, Color(0.1, 0.15, 0.2, 0.8))
-	draw_circle(c + Vector2(10, -4), 4, Color(0.1, 0.15, 0.2, 0.8))
-	draw_line(c + Vector2(-8, 12), c + Vector2(8, 8),
-		Color(0.1, 0.15, 0.2, 0.8), 3)
+	if GameManager.failure_role == "turtle":
+		draw_circle(c + Vector2(-6, 2), 40, Color(0.35, 0.68, 0.36, 0.78))
+		draw_arc(c + Vector2(-6, 2), 24, 0, TAU, 24, Color(0.20, 0.42, 0.24, 0.8), 4)
+		draw_circle(c + Vector2(38, -8), 16, Color(0.55, 0.80, 0.40, 0.78))
+		draw_circle(c + Vector2(43, -12), 3, Color(0.1, 0.18, 0.12, 0.9))
+		draw_line(c + Vector2(34, 22), c + Vector2(48, 8),
+			Color(0.1, 0.18, 0.12, 0.75), 3)
+	else:
+		draw_circle(c, 38, Color(0.92, 0.92, 0.88, 0.72))
+		draw_line(c + Vector2(-14, -30), c + Vector2(-25, -86),
+			Color(0.92, 0.92, 0.88, 0.72), 9)
+		draw_line(c + Vector2(14, -30), c + Vector2(27, -82),
+			Color(0.92, 0.92, 0.88, 0.72), 9)
+		draw_circle(c + Vector2(-10, -4), 4, Color(0.1, 0.15, 0.2, 0.8))
+		draw_circle(c + Vector2(10, -4), 4, Color(0.1, 0.15, 0.2, 0.8))
+		draw_line(c + Vector2(-8, 12), c + Vector2(8, 8),
+			Color(0.1, 0.15, 0.2, 0.8), 3)
 	# 上方伸下来的 BITT 鳍/壳边：够不着。
 	draw_circle(Vector2(view.x * 0.84, view.y * 0.30), 52,
 		Color(0.30, 0.52, 0.30, 0.55))
@@ -62,19 +70,22 @@ func _build() -> void:
 	_title.add_theme_constant_override("outline_size", 10)
 	box.add_child(_title)
 	_sub = Label.new()
-	_sub.text = Locale.t("fail.sub")
+	_sub.text = Locale.t("fail.sub_bonk"
+		if GameManager.failure_reason == "BONK_OUT" else "fail.sub")
 	_sub.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	_sub.add_theme_font_size_override("font_size", 22)
 	_sub.add_theme_color_override("font_color", Color(0.72, 0.9, 1.0))
 	box.add_child(_sub)
 	if GameManager.failure_reason == "BONK_OUT":
 		var portrait = preload("res://scripts/ui/bro_portrait.gd").new()
-		portrait.role = "rabbit"
+		var role := GameManager.failure_role if GameManager.failure_role != "" else "turtle"
+		portrait.role = role
 		portrait.custom_minimum_size = Vector2(56, 56)
 		portrait.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 		box.add_child(portrait)
 		var quote := Label.new()
-		quote.text = Locale.t("fail.line_bonk")
+		quote.text = Locale.t("fail.line_bonk_turtle" if role == "turtle"
+			else "fail.line_bonk")
 		quote.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		quote.add_theme_font_size_override("font_size", 28)
 		quote.add_theme_color_override("font_color", Color(1.0, 0.86, 0.62))

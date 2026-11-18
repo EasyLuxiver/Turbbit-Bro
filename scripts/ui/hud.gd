@@ -851,6 +851,12 @@ func _update_sleep_bar(bar: ProgressBar, who: String) -> void:
 	if int(bar.get_meta("sleep_stage", -1)) != stage:
 		bar.set_meta("sleep_stage", stage)
 		bar.add_theme_stylebox_override("fill", _bar_style(col))
+	# 走神期间条轻微脉动：不改数值，只提醒“压力还在”。
+	if stage >= 1:
+		var pulse := 0.72 + 0.28 * absf(sin(Time.get_ticks_msec() * 0.005))
+		bar.modulate = Color(1, 1, 1, pulse)
+	else:
+		bar.modulate = Color.WHITE
 
 
 func _sleep_bar(parent: Container) -> ProgressBar:

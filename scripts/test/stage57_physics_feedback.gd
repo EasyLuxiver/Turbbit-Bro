@@ -67,6 +67,10 @@ func _run() -> void:
 	race._resolve_rabbit_solid()
 	_check("rabbit_pushed_out", not race.rabbit.get_body_rect().intersects(rr),
 		"rabbit=%s rect=%s" % [str(race.rabbit.get_body_rect()), str(rr)])
+	race.turtle.reset(rr.get_center())
+	race._resolve_turtle_solid()
+	_check("turtle_pushed_out", not race.turtle.get_body_rect().intersects(rr),
+		"turtle=%s rect=%s" % [str(race.turtle.get_body_rect()), str(rr)])
 
 	# 2) 乌龟跳撞低梁：A 类也要有碰撞/弹回反馈。
 	var beam: Dictionary = LevelData.build_group({"group": "tower_beam",
@@ -95,6 +99,7 @@ func _run() -> void:
 	var wr: Rect2 = wall["rects"][0]
 	race._bonk_streak = 0
 	race._bounce_cd = 0.0
+	race._bonk_lock_t = 0.0
 	race._bonk_anim_active = false
 	race.hit_roles["test_wall"] = {"rabbit": true, "turtle": true}
 	race.turtle.reset(Vector2(wr.position.x + wr.size.x * 0.5,
@@ -142,6 +147,41 @@ func _run() -> void:
 			break
 	_check("normal_jump_auto_catch", caught,
 		"rabbit=%s mount=%s" % [race.rabbit.state, race.mount.state])
+
+	# 长礁石：兔子横向进入时按运动方向推回，不被“最近边”带上石面。
+	var reef: Dictionary = LevelData.build_group({"group": "long_reef",
+		"zone": 3, "kind": "SURFACE_ROCK", "x": 2000.0, "w": 600.0})
+	race.hazard_groups = [reef]
+	race.test_disable_hazards = false
+	var reef_r: Rect2 = reef["rects"][0]
+	race.rabbit.position = Vector2(reef_r.position.x + 250.0, reef_r.position.y + 8.0)
+	race.rabbit.velocity = Vector2(300.0, 0.0)
+	race._resolve_rabbit_solid()
+	var clear := true
+	for r in reef["rects"]:
+		if race.rabbit.get_body_rect().intersects(r):
+			clear = false
+	_check("long_reef_blocks", clear,
+		"rabbit=%s" % str(race.rabbit.get_body_rect()))
+
+	# 动态浮标：只减速/震动一次，不产生事故白闪，不连续推退。
+	var buoy: Dictionary = LevelData.build_group({"group": "buoy_test",
+		"zone": 1, "kind": "SURFACE_ROCK", "x": 1800.0, "w": 120.0,
+		"identity": "buoy"})
+	buoy["motion"] = {"name": "tide", "axis": "y", "amp": 30.0,
+		"period": 3.0, "phase": 0.0}
+	race.hazard_groups = [buoy]
+	race.turtle.reset(buoy["rects"][0].get_center())
+	race.turtle.speed = 220.0
+	race.accident_flash = 0.0
+	race._dynamic_bump_cd.clear()
+	race._turtle_dynamic_bump("buoy_test", buoy)
+	var s1: float = race.turtle.speed
+	_check("dynamic_buoy_single", s1 < 220.0 and race.accident_flash == 0.0,
+		"speed=%.1f flash=%.2f" % [s1, race.accident_flash])
+	race._turtle_dynamic_bump("buoy_test", buoy)
+	_check("dynamic_buoy_no_retreat", is_equal_approx(race.turtle.speed, s1),
+		"speed=%.1f -> %.1f" % [s1, race.turtle.speed])
 
 	print("STAGE57 PHYSICS: " + ("PASS" if failures.is_empty() else "FAIL"))
 	get_tree().quit(0 if failures.is_empty() else 1)
