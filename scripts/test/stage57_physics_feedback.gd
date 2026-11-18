@@ -118,6 +118,31 @@ func _run() -> void:
 		and absf(race.rabbit.position.y - 180.0) < 12.0,
 		"rabbit=%s" % str(race.rabbit.position))
 
+	# 普通二连跳：乌龟在下面就自动接，不需要再切乌龟/按 SPACE。
+	race.hazard_groups = []
+	race.test_disable_hazards = true
+	GameManager.accident_state = "NONE"
+	GameManager.current_control = "rabbit"
+	race._sleep_fall_requires_space = false
+	race._sleep_lock_catch = false
+	race.turtle.reset(Vector2(900.0, race.surface_ref()))
+	race.rabbit.reset()
+	race.rabbit.attach(race.turtle.get_mount_point())
+	race.mount.reset()
+	race.mount.mark_riding()
+	race.turtle.speed = 0.0
+	race.turtle.base_speed = 0.0
+	race.rabbit.launch(race.turtle.get_mount_point(), 0.0, 0.0)
+	race.mount.mark_airborne()
+	var caught := false
+	for i in 240:
+		race._tick_rabbit(1.0 / 60.0, false, false)
+		if race.rabbit.state == "RIDING" and race.mount.state == "RIDING":
+			caught = true
+			break
+	_check("normal_jump_auto_catch", caught,
+		"rabbit=%s mount=%s" % [race.rabbit.state, race.mount.state])
+
 	print("STAGE57 PHYSICS: " + ("PASS" if failures.is_empty() else "FAIL"))
 	get_tree().quit(0 if failures.is_empty() else 1)
 

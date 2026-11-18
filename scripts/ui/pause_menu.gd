@@ -18,7 +18,8 @@ var _was_paused := false
 
 
 func _ready() -> void:
-	layer = 10
+	# 盖过教学 HUD（layer=35），暂停菜单永远在最前。
+	layer = 100
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	visible = false
 	_locale_changed()
@@ -53,7 +54,8 @@ func _rebuild() -> void:
 	_root = layer
 
 	var shade := ColorRect.new()
-	shade.color = Color(0, 0, 0, 0.68)
+	# 游戏画面半透明可见，暂停菜单仍然压在最前。
+	shade.color = Color(0, 0, 0, 0.50)
 	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	shade.mouse_filter = Control.MOUSE_FILTER_STOP
 	layer.add_child(shade)
